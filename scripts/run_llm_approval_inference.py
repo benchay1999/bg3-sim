@@ -4,6 +4,7 @@ import json
 import os
 import sys
 import time
+import re
 from typing import Dict, Any, List, Optional
 from tqdm import tqdm
 
@@ -64,18 +65,58 @@ def parse_model_response(text: str) -> Dict[str, Optional[Any]]:
     approval = None
     reason = None
 
-    # Try JSON first
-    try:
-        data = json.loads(text)
-        if isinstance(data, dict):
-            if isinstance(data.get("player_approval"), str):
-                approval = data.get("player_approval").strip()
-            if isinstance(data.get("player_reason"), str):
-                reason = data.get("player_reason").strip()
-    except Exception:
-        pass
+    # --- Prefer structured extraction over keyword heuristics ---
+    # 1) Try to parse JSON, including when wrapped in markdown code fences
+    def try_parse_json(candidate: str) -> Optional[Dict[str, Any]]:
+        candidate = candidate.replace("```json", "").replace("```", "")
+        try:
+            parsed = json.loads(candidate)
+            return parsed if isinstance(parsed, dict) else None
+        except Exception:
+            return None
 
-    # Fallback: keyword search in raw text
+    data_obj: Optional[Dict[str, Any]] = None
+
+    # a) Extract first fenced code block and try JSON
+    if isinstance(text, str):
+        fenced_blocks = re.findall(r"```(?:\w+)?\s*([\s\S]*?)```", text, flags=re.IGNORECASE)
+        for block in fenced_blocks:
+            candidate = block.strip()
+            # If block isn't pure JSON, try to locate the outermost braces
+            if "{" in candidate and "}" in candidate:
+                brace_match = re.search(r"\{[\s\S]*\}", candidate)
+                if brace_match:
+                    candidate = brace_match.group(0)
+            data_obj = try_parse_json(candidate)
+            if data_obj is not None:
+                break
+
+    # b) If no fenced JSON, try to find an object within braces in the whole text
+    if data_obj is None and isinstance(text, str) and ("{" in text and "}" in text):
+        brace_match = re.search(r"\{[\s\S]*\}", text)
+        if brace_match:
+            data_obj = try_parse_json(brace_match.group(0))
+
+    # c) As a last resort, try the whole text
+    if data_obj is None and isinstance(text, str):
+        data_obj = try_parse_json(text)
+
+    if data_obj is not None:
+        if isinstance(data_obj.get("player_approval"), str):
+            approval = data_obj.get("player_approval").strip()
+        if isinstance(data_obj.get("player_reason"), str):
+            reason = data_obj.get("player_reason").strip()
+
+    # 2) If still no explicit approval, try to regex-extract the field from text
+    if approval is None and isinstance(text, str):
+        m = re.search(r"\bplayer_approval\b\s*:\s*\"([^\"]+)\"", text, flags=re.IGNORECASE)
+        if m:
+            approval = m.group(1).strip()
+        m2 = re.search(r"\bplayer_reason\b\s*:\s*\"([^\"]+)\"", text, flags=re.IGNORECASE)
+        if m2 and not reason:
+            reason = m2.group(1).strip()
+
+    # 3) Fallback: keyword search in raw text (least reliable)
     if not approval and isinstance(text, str):
         lower = text.lower()
         # Order matters to avoid substring clashes
