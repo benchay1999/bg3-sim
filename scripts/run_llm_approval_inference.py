@@ -363,7 +363,7 @@ def main() -> None:
         ),
     }
     character_slug = args.character.lower().replace(" ", "_")
-    metrics_path = os.path.join(args.metrics_dir, f"{args.model}_{character_slug}_llm_metrics.json")
+    metrics_path = os.path.join(args.metrics_dir, f"{args.model.split('/')[-1]}_{character_slug}_llm_metrics.json")
     with open(metrics_path, "w", encoding="utf-8") as mf:
         json.dump(metrics, mf, ensure_ascii=False, indent=2)
     print(f"Saved metrics to {metrics_path}")
