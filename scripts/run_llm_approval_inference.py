@@ -8,35 +8,21 @@ import re
 from typing import Dict, Any, List, Optional
 from tqdm import tqdm
 
-# Workspace root for resolving relative context paths saved in the dataset
-WORKSPACE_ROOT = "/home/wschay/bg3sim"
 
-
-def load_persona_template(path: str) -> List[str]:
+def load_txt(path: str) -> List[str]:
     with open(path, "r", encoding="utf-8") as f:
-        return f.read().splitlines()
+        return f.read()
 
 
-def build_prompt_from_template(template_lines: List[str], context_text: str, conversation_text: str) -> str:
+def build_prompt_from_template(template: List[str], character_name: str, context_text: str, conversation_text: str) -> str:
     # Keep everything up to and including the first line that starts with "# Conversation"
     out_lines: List[str] = []
-    inserted = False
-    for line in template_lines:
-        out_lines.append(line)
-        if line.strip().startswith("# Conversation"):
-            inserted = True
-            break
-
-    if not inserted:
-        # If the template has no explicit Conversation anchor, just append at the end
-        out_lines.append("# Conversation")
-
-    # Insert per-sample block
-    out_lines.append(f"context: {context_text}".rstrip())
-    out_lines.append("")
-    out_lines.extend(conversation_text.splitlines())
-
-    return "\n".join(out_lines)
+    persona_text = load_txt(f"personas/{character_name}/persona.txt")
+    template = template.replace("<<<CHARACTER_NAME>>>", character_name)
+    template = template.replace("<<<CONTEXT>>>", context_text)
+    template = template.replace("<<<PERSONA>>>", persona_text)
+    template = template.replace("<<<CONVERSATION>>>", conversation_text)
+    return template
 
 
 def read_json(path: str) -> Any:
@@ -186,11 +172,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run LiteLLM approvals for BG3 samples using a persona template.")
     parser.add_argument("--input", required=True, help="Path to dataset file (JSON array or JSONL).")
     parser.add_argument("--output", required=True, help="Output JSONL path for model responses.")
-    parser.add_argument("--template", default=f"{WORKSPACE_ROOT}/bg3_characters_llm_input_prompt_example.txt", help="Persona template path.")
     parser.add_argument("--model", default="gpt-4o-mini", help="LiteLLM model name/id.")
     parser.add_argument("--max_samples", type=int, default=0, help="Optional cap on number of samples (0 = all).")
     parser.add_argument("--sleep", type=float, default=0.0, help="Sleep seconds between requests.")
-    parser.add_argument("--metrics_dir", default=f"{WORKSPACE_ROOT}/test", help="Directory to save metrics and plots.")
+    parser.add_argument("--metrics_dir", default=f"test", help="Directory to save metrics and plots.")
     parser.add_argument("--character", default="Astarion", help="Character name to use for ground-truth labels (e.g., Astarion, Lae'zel, Gale, Wyll, Shadowheart).")
     parser.add_argument("--api_base", default=None, help="Optional OpenAI-compatible base URL (e.g., http://localhost:8010/v1 for vLLM).")
     parser.add_argument("--api_key", default=None, help="Optional API key for OpenAI-compatible endpoints. Use a dummy if not required.")
@@ -225,7 +210,7 @@ def main() -> None:
     if args.max_samples and args.max_samples > 0:
         samples = samples[: args.max_samples]
 
-    template_lines = load_persona_template(args.template)
+    persona_template = load_txt("prompt/prompt.txt")
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     os.makedirs(args.metrics_dir, exist_ok=True)
@@ -245,7 +230,7 @@ def main() -> None:
         label: Dict[str, Any] = sample.get("label", {})
 
         # Load context text from the QA JSON referenced by relative path
-        ctx_abs = os.path.join(WORKSPACE_ROOT, context_rel)
+        ctx_abs = context_rel
         context_text = ""
         try:
             ctx_data = read_json(ctx_abs)
@@ -254,7 +239,7 @@ def main() -> None:
         except Exception:
             context_text = ""
 
-        prompt_text = build_prompt_from_template(template_lines, context_text, conversation_text)
+        prompt_text = build_prompt_from_template(persona_template, args.character, context_text, conversation_text)
 
         try:
             kwargs = {}

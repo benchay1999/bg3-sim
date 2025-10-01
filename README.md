@@ -27,11 +27,5 @@ The above will generate a QA set in `result-dataset/`0
 ## Run LLM approval inference
 ```python
 mkdir test
-python3 scripts/run_llm_approval_inference.py \
-  --input result-dataset/astarion_approval_dataset_subset.json \
-  --output test/gpt-4o-mini_astarion_llm_approvals.jsonl \
-  --template bg3_characters_llm_input_prompt_example.txt \
-  --model gpt-4o-mini \
-  --sleep 0.2 \
-  --metrics_dir test
+python3 scripts/run_llm_approval_inference.py --input result-dataset/astarion_approval_dataset_subset.json --output test/gpt-4o-mini_astarion_llm_approvals.jsonl --character Wyll --model gpt-4o-mini --sleep 0.1 --metrics_dir test
 ```
