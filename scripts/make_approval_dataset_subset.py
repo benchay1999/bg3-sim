@@ -5,8 +5,8 @@ import random
 import argparse
 from typing import Dict, List
 
-DEFAULT_INPUT = "/home/wschay/bg3sim/approval-dataset/approval_dataset_subset.jsonl"
-DEFAULT_OUTPUT_DIR = "/home/wschay/bg3sim/result-dataset"
+DEFAULT_INPUT = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_subset.jsonl"
+DEFAULT_OUTPUT_DIR = "/nfs_edlab/wschay/bg3-sim/result-dataset"
 
 # Context roots used in dataset `context` field
 QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
