@@ -1,0 +1,864 @@
+{
+  "metadata": {
+    "synopsis": "A sleeping bugbear is woken by the players hitting a nearby wall. Like a very angry drunk, woken up with a sore head. Guttural voice - not stupid-sounding, but savage and sinister."
+  },
+  "dialogue": {
+    "13": {
+      "id": "13",
+      "speaker": "Stimk",
+      "text": "Go away, True Soul. I need sleep.<br>",
+      "context": "NodeContext: just woke, tired and frustrated",
+      "checkflags": [
+        "GOB_Festivities_BugbearSleeper_00_TrueSoulCommand",
+        "GOB_Festivities_BugbearSleeper_00_HasMet",
+        "GOB_Festivities_Sleeper_WokenByNoise"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Stimk",
+      "text": "Go away, drow. I need sleep.",
+      "context": "NodeContext: just woke, tired and frustrated",
+      "checkflags": [
+        "GOB_Festivities_BugbearSleeper_00_HasMet",
+        "GOB_Festivities_Sleeper_WokenByNoise"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "DROWELF",
+        "DROWHALFELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "31": {
+      "id": "31",
+      "speaker": "Stimk",
+      "text": "Vaws-hak. My head hurts bad. You crash about like a drunken ogre.",
+      "context": "CinematicNodeContext: perhaps stmik walks into shot if the player is hitting the wall.\rNodeContext: (Vors-hack) means death - here delievered as an angry curse on waking. Not shouted. Seeting with anger, just woke and has a bad headache from drinking",
+      "checkflags": [
+        "GOB_Festivities_BugbearSleeper_00_HasMet = False",
+        "GOB_Festivities_Sleeper_WokenByNoise"
+      ],
+      "setflags": [
+        "GOB_Festivities_BugbearSleeper_00_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "0",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "41": {
+          "id": "41",
+          "speaker": "Stimk",
+          "text": "Didn't think drow were so clumsy. Leave us to rest.",
+          "context": "NodeContext: annoyed, but doesn't want to start a fight with a drow so trying to appease",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [
+            "DROWELF"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "19": {
+          "id": "19",
+          "speaker": "Stimk",
+          "text": "I'll rip your tongue, break your legs, make you quiet.",
+          "context": "NodeContext: increasing fury on the rhythm of these three phrases, but quietly sinister, not shouted",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "0",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "30": {
+              "id": "30",
+              "speaker": "Narrator",
+              "text": "*The mark glows, but you feel nothing in response. Your illithid power is beyond reach until you rest.*",
+              "context": "",
+              "checkflags": [
+                "GLO_Tadpoled_UsedToday1",
+                "ILLITHID"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "0",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "44": {
+                  "id": "44",
+                  "speaker": "Player",
+                  "text": "SLEEP, OR DIE. YOUR CHOICE.",
+                  "context": "",
+                  "checkflags": [
+                    "BARBARIAN"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "0",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "24": {
+                  "id": "24",
+                  "speaker": "Player",
+                  "text": "Go back to sleep before I put you to sleep.",
+                  "context": "",
+                  "checkflags": [
+                    "HALFORC"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "0",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "42": {
+                          "id": "42",
+                          "speaker": "Stimk",
+                          "text": "You are right. You are strong. But if you wake me again, I will kill you.",
+                          "context": "NodeContext: With a shake of the head - backing down from a fight. Sinister smile on final phrase",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "2": {
+                      "id": "2",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "20": {
+                          "id": "20",
+                          "speaker": "Stimk",
+                          "text": "Too much talking. Too much noise. Glath, glath. You die now!",
+                          "context": "NodeContext: Shaking away the drunkenness as he prepares to fight. glath (glaff) means 'blood', here it's a threat - 'you will bleed'.",
+                          "checkflags": [],
+                          "setflags": [
+                            "GOB_Festivities_SleepersFight"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "36": {
+                  "id": "36",
+                  "speaker": "Player",
+                  "text": "Sleep is for the weak. I could have killed you where you lay.<br>",
+                  "context": "",
+                  "checkflags": [
+                    "BARBARIAN = False",
+                    "HALFORC = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "0",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "12": {
+                  "id": "12",
+                  "speaker": "Player",
+                  "text": "Huh? I was sleeping with the rest of you. No idea who made that racket.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "20",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "25": {
+                      "id": "25",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "20",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {}
+                    },
+                    "9": {
+                      "id": "9",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "27": {
+                          "id": "27",
+                          "speaker": "Stimk",
+                          "text": "Stupid pests. The next person that wakes me dies.",
+                          "context": "NodeContext: Rubbing his head to clear a headache and sleepiness. Has just been convinced that 'goblins' made the noise that woke him and is annoyed but isn't going to do anything about it",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "3": {
+                  "id": "3",
+                  "speaker": "Player",
+                  "text": "Sorry - I thought you might need fresh drinks.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "8": {
+                      "id": "8",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "Stimk",
+                          "text": "Yes. Drink will help me to sleep again.",
+                          "context": "NodeContext: Drunk and tired, satisfied to have been offered alcohol",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "35": {
+                              "id": "35",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "trade",
+                              "children": {
+                                "34": {
+                                  "id": "34",
+                                  "speaker": "Stimk",
+                                  "text": "What did you bring for me?",
+                                  "context": "CinematicNodeContext: Checking his inventory - maybe shot from waist up, looking down at hands as we're supposed to have passed him something\rNodeContext: thoughtful",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "GOB_Festivities_SleeperCheckInventory"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "15": {
+                                      "id": "15",
+                                      "speaker": "Stimk",
+                                      "text": "Good. Go now. And do not wake me again.",
+                                      "context": "NodeContext: satisfied, dismissively waves us away",
+                                      "checkflags": [
+                                        "GOB_Festivities_SleeperGotBooze"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "14": {
+                                      "id": "14",
+                                      "speaker": "Stimk",
+                                      "text": "Nothing. I'll break your skull!",
+                                      "context": "NodeContext: 'nothing' is a reaction to not receiving the booze he was promised. He's furious.",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "GOB_Festivities_SleepersFight"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "10": {
+                      "id": "10",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "21": {
+                          "id": "21",
+                          "speaker": "Stimk",
+                          "text": "Rather break bones than drink more. Your bones.",
+                          "context": "NodeContext: tired and annoyed, about to attack us",
+                          "checkflags": [],
+                          "setflags": [
+                            "GOB_Festivities_SleepersFight"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "40": {
+                  "id": "40",
+                  "speaker": "Player",
+                  "text": "You dare speak to me like that? Go back to sleep.",
+                  "context": "",
+                  "checkflags": [
+                    "GLO_Tadpoled_UsedToday1 = False",
+                    "TRUESOUL = False",
+                    "ILLITHID"
+                  ],
+                  "setflags": [
+                    "GLO_Tadpoled_UsedToday1"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "29": {
+                      "id": "29",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "5",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {}
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "Stimk",
+                          "text": "I don't take orders from you. Kill 'em!",
+                          "context": "NodeContext: angry, shouting to nearby goblins to attack on final phrase",
+                          "checkflags": [],
+                          "setflags": [
+                            "GOB_Festivities_SleepersFight"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "26": {
+                  "id": "26",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "GOB_Festivities_SleepersFight"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "33": {
+              "id": "33",
+              "speaker": "Narrator",
+              "text": "*A strange symbol glows, marked on their flesh, and something within you stirs in response.*",
+              "context": "",
+              "checkflags": [
+                "ILLITHID",
+                "GLO_TadpoleIntro_NPC = False"
+              ],
+              "setflags": [
+                "GLO_TadpoleIntro_NPC"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "44",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "22": {
+                  "id": "22",
+                  "speaker": "Player",
+                  "text": "You dare speak to me like that? Go back to sleep.",
+                  "context": "",
+                  "checkflags": [
+                    "GLO_Tadpoled_UsedToday1 = False",
+                    "TRUESOUL"
+                  ],
+                  "setflags": [
+                    "GLO_Tadpoled_UsedToday1"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "38",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "Stimk",
+                      "text": "I hear the Absolute in you.",
+                      "context": "NodeContext: calm",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "38",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "18": {
+                          "id": "18",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "4",
+                          "link": "38",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "4": {
+                          "id": "4",
+                          "speaker": "Narrator",
+                          "text": "*A shiver runs across your mind... You feel sated.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount1 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount1"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "38",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "45": {
+                          "id": "45",
+                          "speaker": "Narrator",
+                          "text": "*Something stirs deep within you, hungry and alert... it's taking something you'll never get back.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount2 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount2"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "38",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "43": {
+                          "id": "43",
+                          "speaker": "Narrator",
+                          "text": "*Your mind lurches, reeling suddenly as if... bitten.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount3 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount3"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "38",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "23": {
+                          "id": "23",
+                          "speaker": "Narrator",
+                          "text": "*A shadow swims across your vision, and a familiar voice tells you to be calm. You are loved.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount4 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount4"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "38",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "6": {
+                          "id": "6",
+                          "speaker": "Narrator",
+                          "text": "*Your blood runs quicker, feeding the gnawing absence at the centre of your mind.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount5 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount5"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "38",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "28": {
+                          "id": "28",
+                          "speaker": "Narrator",
+                          "text": "*The presence deep in your mind is awake, unblinking. This is it. A single word pervades your consciousness: 'Soon'.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount6 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount6"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "38",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "1": {
+                          "id": "1",
+                          "speaker": "Narrator",
+                          "text": "*Your mind is full, bursting with ecstasy and terror. Finally, it is coming. You are becoming.*",
+                          "context": "",
+                          "checkflags": [
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "TRUESOUL"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "38": {
+                              "id": "38",
+                              "speaker": "Stimk",
+                              "text": "Do not disturb me again, True Soul.",
+                              "context": "NodeContext: a calm warning",
+                              "checkflags": [],
+                              "setflags": [
+                                "GOB_Festivities_BugbearSleeper_00_TrueSoulCommand"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "37": {
+              "id": "37",
+              "speaker": "Narrator",
+              "text": "*As the symbol glows, power courses through you. Authority.*",
+              "context": "",
+              "checkflags": [
+                "ILLITHID",
+                "GLO_TadpoleIntro_NPC"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "44",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "32": {
+      "id": "32",
+      "speaker": "Stimk",
+      "text": "Grashmog... araga ghistpok araga...",
+      "context": "NodeContext: Goblin language words muttered in his sleep (Grash rhymes with crash, a-rah-ga, hard g on 'ghist' and pok rhymes with lock)",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "39": {
+      "id": "39",
+      "speaker": "Stimk",
+      "text": "No more excuses. I'll crack your skull!",
+      "context": "NodeContext: just woke up with a bad hangover, angry enough to attack us",
+      "checkflags": [
+        "GOB_Festivities_BugbearSleeper_00_HasMet",
+        "GOB_Festivities_Sleeper_WokenByNoise"
+      ],
+      "setflags": [
+        "GOB_Festivities_SleepersFight"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

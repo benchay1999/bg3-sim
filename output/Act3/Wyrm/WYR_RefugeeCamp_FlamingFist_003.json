@@ -1,0 +1,398 @@
+{
+  "metadata": {
+    "synopsis": "A short dialog for the flaming fist patroling inside of the Big Barn which holds donations for the refugees. Same dialog will be used in a case of this flaming fist catching the player inside the barn.",
+    "how_to_trigger": "BGO_Main_A, Refugee Camp, Big Barn, 65; 43; -146Talk to Flaming Fist Broadhorn inside the barn"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Fist Broadhorn",
+      "text": "Manip Nestor may have given you the benefit of the doubt but I've got my eye on you, make no mistake.",
+      "context": "NodeContext: Wary of the player's motives",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_003_Access",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Fist Broadhorn",
+      "text": "A repeat offender, is it? Prison's the best place for you, it seems.",
+      "context": "NodeContext: A little disappointed in the player",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_State_GuardsAlerted = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Allow yourself to be taken to prison.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "Allow_Arrest"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "17": {
+          "id": "17",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "11",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Fist Broadhorn",
+      "text": "Just wanted to say I'm rather impressed with your work - you'd make a solid Flaming Fist.",
+      "context": "NodeContext: Warm, genuine compliment",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_003_Solved = False",
+        "WYR_RefugeeCamp_State_BigBarnSolved",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_003_Solved"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Fist Broadhorn",
+      "text": "Halt there! You know this area's restricted - maybe you'll remember better after a spell in the cells.",
+      "context": "NodeContext: Angry at the player's law breaking",
+      "checkflags": [
+        "WYR_RefugeeCamp_FlamingFistManip_State_Defeated",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Fist Broadhorn",
+      "text": "Halt, citizen! This is a restricted area - explain yourself.",
+      "context": "NodeContext: Stern and forceful; clearly loves her job",
+      "checkflags": [
+        "WYR_RefugeeCamp_FlamingFistManip_State_Defeated = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "There's something dangerous in the donations - I need to investigate.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Knows_SecretInBasement"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Fist Broadhorn",
+              "text": "And I'm the Duke's bed warmer. Follow me, please - Manip Nestor'll know what to do with you.",
+              "context": "NodeContext: Oddly good-natured sarcasm",
+              "checkflags": [
+                "WYR_RefugeeCamp_FlamingFistManip_State_Defeated = False"
+              ],
+              "setflags": [
+                "WYR_RefugeeCamp_Event_ManipForceInterrogate",
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "I just wanted to see what was inside this barn - no funny business.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Fist Broadhorn",
+              "text": "Funny enough for me to take you to Manip Nestor, I think - come on.",
+              "context": "NodeContext: Oddly good-natured sarcasm",
+              "checkflags": [
+                "WYR_RefugeeCamp_FlamingFistManip_State_Defeated = False"
+              ],
+              "setflags": [
+                "WYR_RefugeeCamp_Event_ManipForceInterrogate",
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "I was looking to see if there was anything worth stealing.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Wyll -1",
+            "Karlach -1",
+            "Astarion 1",
+            "Minthara 1",
+            "Lae'zel -1",
+            "Halsin -1",
+            "Jaheira -1",
+            "Minsc -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "Fist Broadhorn",
+              "text": "Thank you - honesty is the best policy. Let's go and have a chat with Manip Nestor, hm?",
+              "context": "NodeContext: Genuinely pleased the player owned up",
+              "checkflags": [
+                "WYR_RefugeeCamp_FlamingFistManip_State_Defeated = False"
+              ],
+              "setflags": [
+                "WYR_RefugeeCamp_Event_ManipForceInterrogate",
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Fist Broadhorn",
+      "text": "Explosives in toys... How despicable. Hope Lord Gortash gets this stuff sorted out.",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Fist Broadhorn",
+      "text": "I'll be following you crime-solving career with great interest, friend.",
+      "context": "NodeContext: Warm, genuine compliment",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_003_Solved",
+        "WYR_RefugeeCamp_State_BigBarnSolved",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Fist Broadhorn",
+      "text": "I hear you've been given permission to be here - don't disappoint me.",
+      "context": "NodeContext: Slightly wary of the player's motives",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_003_Access = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_003_Access"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

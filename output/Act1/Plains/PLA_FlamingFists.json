@@ -1,0 +1,651 @@
+{
+  "metadata": {
+    "synopsis": "A group of Flaming Fists are trying to force a way into the burning inn at Waukeen's Rest. They can hear someone inside - they believe it might be Grand Duke Ravengard, who they had been sent to protect."
+  },
+  "dialogue": {
+    "7": {
+      "id": "7",
+      "speaker": "Gauntlet Yeva",
+      "text": "Go! There has to be another way in!",
+      "context": "NodeContext: Brusque, impatient",
+      "checkflags": [
+        "PLA_TavernInvestigation_State_TriedOnce"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Gauntlet Yeva",
+      "text": "Stop staring, start helping!",
+      "context": "NodeContext: Less angry and more annoyed, actually.",
+      "checkflags": [
+        "PLA_TavernInvestigation_State_HasMet",
+        "PLA_TavernInvestigation_State_TriedOnce = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "24",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "33",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Gauntlet Yeva",
+      "text": "Grand Duke Ravengard could be inside! Don't just stand there - push!",
+      "context": "NodeContext: Urgent and focused; slightly annoyed with PC.",
+      "checkflags": [
+        "PLA_TavernInvestigation_State_HasMet = False",
+        "PLA_TavernInvestigation_State_TriedOnce = False"
+      ],
+      "setflags": [
+        "PLA_TavernInvestigation_State_HasMet",
+        "PLA_Tavern_Knows_DukeInTavern",
+        "OrderedBreachInn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "24",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "There was no duke inside, just a wood elf. And she's dead.",
+          "context": "",
+          "checkflags": [
+            "GLO_Knows_DesireDead"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "24",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Gauntlet Yeva",
+              "text": "The counsellor. Gods. We need to get moving, now.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "PLA_FlamingFists_State_Dismissed",
+                "PLA_FlamingFists_Knows_DesireDead"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "What happened to this place?",
+          "context": "",
+          "checkflags": [
+            "PLA_TavernInvestigation_Knows_AskedStelmane = False"
+          ],
+          "setflags": [
+            "PLA_TavernInvestigation_Knows_AskedStelmane"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "24",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "Gauntlet Yeva",
+              "text": "Goblins and drow happened.",
+              "context": "NodeContext: Impatient; this is really not the time for backstory.",
+              "checkflags": [
+                "DROWHALFELF = False",
+                "DROWELF = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Gauntlet Yeva",
+                  "text": "Now push, damn it!",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "32": {
+                      "id": "32",
+                      "speaker": "Narrator",
+                      "text": "*Arson is over-rated. Usually can't even see the victim die. Unless it's at the stake. The stake is better.*",
+                      "context": "",
+                      "checkflags": [
+                        "REALLY_DARK_URGE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "22": {
+                          "id": "22",
+                          "speaker": "Player",
+                          "text": "Who's trapped in there?",
+                          "context": "",
+                          "checkflags": [
+                            "PLA_Tavern_Knows_DukeInTavern = False"
+                          ],
+                          "setflags": [
+                            "PLA_Tavern_Knows_DukeInTavern"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "20": {
+                              "id": "20",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "35",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "8": {
+                          "id": "8",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "1",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "17": {
+                          "id": "17",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "14",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "26": {
+              "id": "26",
+              "speaker": "Gauntlet Yeva",
+              "text": "Your kind happened!",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [
+                "DROWELF",
+                "DROWHALFELF"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "Gauntlet Yeva",
+                  "text": "Unless you're here to finish the job, get over here and push!",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "5",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "29": {
+          "id": "29",
+          "speaker": "Player",
+          "text": "Grand Duke Ravengard?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "24",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "35": {
+              "id": "35",
+              "speaker": "Gauntlet Yeva",
+              "text": "Yes - the hero of Baldur's Gate.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "34": {
+                  "id": "34",
+                  "speaker": "Gauntlet Yeva",
+                  "text": "He could be trapped. Help us get through!",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Push against the wreckage.",
+          "context": "",
+          "checkflags": [
+            "PLA_TavernInvestigation_State_TriedOnce = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "24",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "24": {
+              "id": "24",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_TavernInvestigation_Quest_WallCollapsed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "13": {
+                      "id": "13",
+                      "speaker": "Gauntlet Yeva",
+                      "text": "Inside, hurry! We don't have much time!",
+                      "context": "CinematicNodeContext: Addressing the whole group\rNodeContext: Relieved and ready to move move move",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "28": {
+              "id": "28",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_TavernInvestigation_State_TriedOnce",
+                    "OrderedBreachInn_Fail"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Gauntlet Yeva",
+                      "text": "Damn. Find another way inside!",
+                      "context": "CinematicNodeContext: Addressing the whole group\rNodeContext: Disgusted, unimpressed with PC",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "25": {
+          "id": "25",
+          "speaker": "Player",
+          "text": "Let out a rallying cry as you help the Fists push. ONWARD!",
+          "context": "",
+          "checkflags": [
+            "PLA_TavernInvestigation_State_TriedOnce = False",
+            "PALADIN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "24",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "WE CAN DO IT! PUT YOUR BACKS INTO IT! PUSH!",
+          "context": "",
+          "checkflags": [
+            "PLA_TavernInvestigation_State_TriedOnce = False",
+            "BARD"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "27": {
+              "id": "27",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Gauntlet Yeva",
+                  "text": "That's right! THREE, TWO, ONE, PUSH!",
+                  "context": "CinematicNodeContext: Spurred on by the player's inspiring words, the Flaming fists brace, and move back to strike against the door in unison in time.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "23": {
+                      "id": "23",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "16",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "Gauntlet Yeva",
+                  "text": "Who on earth do you think you are? If you aren't helping, shove off!",
+                  "context": "CinematicNodeContext: The fists all try to push in the door, but fail.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "2",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

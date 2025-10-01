@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "synopsis": "A player got caught trying to lockpick an item.",
+    "how_to_trigger": "Lockpick an item while an NPC sees you"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False",
+        "AGGRESSIVE_CONSTRUCT"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry",
+        "AGGRESSIVE_CONSTRUCT"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*You'll need more than a lockpick to get yourself out of this - you're being attacked.*",
+      "context": "NodeContext: Greeting needs to be empty. It's used to cut off this flow from the others",
+      "checkflags": [
+        "GEB_Crime_IsAngry",
+        "CIVILIAN",
+        "BADASSCIVILIAN"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*Your lockpicking has angered a guard. Prepare to defend yourself.*",
+      "context": "NodeContext: Greeting needs to be empty. It's used to cut off this flow from the others",
+      "checkflags": [
+        "GEB_Crime_IsAngry",
+        "CIVILIAN = False"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*Whatever's behind that lock, it's being watched closely. Best to step away.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*Lockpicking is forbidden. Something is happening...*",
+      "context": "",
+      "checkflags": [
+        "CONSTRUCT"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Narrator",
+      "text": "*Your lockpicking has landed you in trouble. You're being reported.*",
+      "context": "NodeContext: Greeting needs to be empty. It's used to cut off this flow from the others",
+      "checkflags": [
+        "GEB_Crime_IsAngry"
+      ],
+      "setflags": [
+        "CRIME_FleeHelpFromDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "metadata": {
+    "synopsis": "A Harper, proposing a mission that will see them trying to kill a drider.",
+    "how_to_trigger": "Kill or silence any of the other harpers so no group dialog triggers. Or finish the ambush and meet the harper back at the inn."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Harper Manus",
+      "text": "An honour to battle at your side. Jaheira is right to trust in you.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperRanger000 = False",
+        "SCL_Drider_State_HarpersBackAtInn"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperRanger000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Harper Manus",
+      "text": "I must be brief: if you intend to reach Moonrise, no torch nor blessing will fully guard you.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperRanger000 = False",
+        "SCL_Drider_State_HarpersWaitingAtBridge"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperRanger000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Harper Manus",
+          "text": "Yet I know what can - a strange lantern, used by a cultist convoy that oft passes.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Harper Manus",
+              "text": "Together, we will take it by force - you simply need speak the word.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Player",
+                  "text": "Let's take on that convoy. You lead, I follow.",
+                  "context": "",
+                  "checkflags": [
+                    "SCL_Drider_Event_PlayersWillFindCaravanAtAmbush = False"
+                  ],
+                  "setflags": [
+                    "SCL_Drider_State_StartedAmbushQuestWithHarpers",
+                    "SCL_Drider_Event_StartHarpersAmbush"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "Harper Manus",
+                      "text": "Quickly, then. I will mark your map, should we be separated.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "23": {
+                  "id": "23",
+                  "speaker": "Player",
+                  "text": "Go on ahead. I'll catch up.",
+                  "context": "",
+                  "checkflags": [
+                    "SCL_Drider_Event_PlayersWillFindCaravanAtAmbush = False"
+                  ],
+                  "setflags": [
+                    "SCL_Drider_State_StartedAmbushQuestWithHarpers",
+                    "SCL_Drider_Event_StartHarpersAmbush"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "Harper Manus",
+                      "text": "Very well. I will mark your map.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "5": {
+                          "id": "5",
+                          "speaker": "Harper Manus",
+                          "text": "But do not be long. Our chances grow thinner with each moment that passes.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "22": {
+                  "id": "22",
+                  "speaker": "Player",
+                  "text": "You're too late - I've encountered the convoy, led by a drider.",
+                  "context": "",
+                  "checkflags": [
+                    "SCL_Drider_Event_PlayersWillFindCaravanAtAmbush"
+                  ],
+                  "setflags": [
+                    "SCL_Drider_State_HarpersLearnMissedCaravan"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Harper Manus",
+                      "text": "Indeed? Then be grateful your head still sits atop your shoulders.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "Harper Manus",
+                          "text": "The next step is yours alone to take. Make it a careful one.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "15": {
+                  "id": "15",
+                  "speaker": "Player",
+                  "text": "I need time to prepare.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "Harper Manus",
+                      "text": "Then prepare. I will stand wait.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Harper Manus",
+      "text": "You have other matters to pursue, surely.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperRanger000"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Harper Manus",
+      "text": "Keep on your toes. Cultists are on the move.",
+      "context": "",
+      "checkflags": [
+        "HAV_Mood_State_Alert"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperRanger000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Harper Manus",
+      "text": "The barrier's dropped. Find the light, and stick to it.",
+      "context": "",
+      "checkflags": [
+        "HAV_Mood_State_Unprotected"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperRanger000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Harper Manus",
+      "text": "Pardon, but I've no mind for small talk.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperRanger000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Harper Manus",
+      "text": "Let the Moonlantern light your way, friend.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperRanger000",
+        "SCL_Drider_State_HarpersBackAtInn",
+        "SCL_Drider_State_SidedWithHarpers"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Harper Manus",
+      "text": "Weapons at the ready.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperRanger000",
+        "SCL_Drider_State_HarpersWaitingAtBridge"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "13": {
+          "id": "13",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "10",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Harper Manus",
+      "text": "Time to show us your might.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperRanger000",
+        "HAV_Mood_State_Siege"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Harper Manus",
+      "text": "At the ready!",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperRanger000 = False",
+        "HAV_Mood_State_Siege"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperRanger000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Harper Manus",
+      "text": "Get to Moonrise, and get it done.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_State_HarpersLearnMissedCaravan"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperRanger000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

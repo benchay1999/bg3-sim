@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "synopsis": "A group of paladins react angrily to the player casting a speak with dead spell on one of their dead companions. They are angry enough to attack the player if the spell is repeated a second time."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "GROUP_ZarielCultists",
+      "text": "Stop that, or there'll be trouble. The dead deserve their rest.",
+      "context": "NodeContext: a harsh warning delivered to a player trying to cast a necromancy spell on the character's dead companion",
+      "checkflags": [
+        "PLA_KarlachRecruitmentTollhouse_State_WarnedAboutCrime = False"
+      ],
+      "setflags": [
+        "PLA_KarlachRecruitmentTollhouse_State_WarnedAboutCrime"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "GROUP_ZarielCultists",
+      "text": "To arms!",
+      "context": "NodeContext: shouting to alert companions in nearby rooms",
+      "checkflags": [
+        "PLA_KarlachRecruitmentTollhouse_State_WarnedAboutCrime"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "GROUP_ZarielCultists",
+          "text": "We won't tolerate necromancy.",
+          "context": "NodeContext: quieter than previous lines - a threat to the player right before attacking",
+          "checkflags": [],
+          "setflags": [
+            "PLA_KarlachRecruitmentTollhouse_State_CrimeSpotted",
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

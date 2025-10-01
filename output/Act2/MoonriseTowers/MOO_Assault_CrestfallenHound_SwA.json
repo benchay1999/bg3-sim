@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "synopsis": "If Ketherics Hound smelled Isobel's blessing on the player, she will move into Isobels room and not participate in the combat ongoing throughout the tower, as she is lost in vague feelings and hazy memories of a life past.",
+    "how_to_trigger": "loadlevel SCL_Main_Aoe debugbook > Go to region > Act 2 > HAV > Isobels roomSpeak with isobel and accept protection spell.Another dialogue will follow. Protect Isobel.killcombatteleport S_MOO_KethericHoundFollow through with dialogue and accept to deal with the goblins.crimes -disableteleport S_MOO_KethericHoundinteract with Hound, let her sniff youoe mooassault_alivethis will trigger moonrise assault eventteleport S_MOO_KethericHound"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*Her mournful eyes take in every detail of the room, but the hound looks right through you. She's lost in thoughts and memories.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "MOO_Assault_HasMet_KethericHound"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Squire",
+      "text": "That scent - the Sel\u00fbnite magic on your skin - it fills this place.",
+      "context": "",
+      "checkflags": [
+        "PETPAL"
+      ],
+      "setflags": [
+        "MOO_Assault_HasMet_KethericHound"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Squire",
+          "text": "It fills my head with things I miss. I cannot remember them, but I do miss them.",
+          "context": "NodeContext: Sadly - thinking of a past life, barely remembered",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*The sounds of battle do not disturb the creature. She seems to be in another time, another place.*",
+      "context": "",
+      "checkflags": [
+        "MOO_Assault_HasMet_KethericHound"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Squire",
+      "text": "I know the battle is outside, but there's peace here. And I'm tired of fighting.",
+      "context": "",
+      "checkflags": [
+        "MOO_Assault_HasMet_KethericHound",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

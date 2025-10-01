@@ -1,0 +1,660 @@
+{
+  "metadata": {
+    "synopsis": "Door to the Ballroom in Cazador's Palace.Requires you to use the Szarr Family Ring and read some text in an ancient language - Kozakuran).",
+    "how_to_trigger": "-84; 55; 36click on the door in front of youuse ReCon commandgive S_LOW_CazadorsPalace_Bedrooms_AncientLanguageBookand/orgive S_LOW_CazadorsPalace_Kennel_SzarrRingto see other nodes in the dialog"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*The door is covered in intricate text, but you can't see anywhere a key might fit - only a small, round hollow engraved with a family crest.*",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedDoor = False"
+      ],
+      "setflags": [
+        "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedDoor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "28",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Narrator",
+          "text": "*Looking closer, you recognise the writing - it's the same Kozakuran script from the dictionary you found.*",
+          "context": "NodeContext: [KO-za-KUR-an] /,k\u0252z\u0259'k\u028ar\u0259n/",
+          "checkflags": [
+            "LOW_CazadorsPalace_State_ReadBook"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "28",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "27": {
+              "id": "27",
+              "speaker": "Player",
+              "text": "Press the Szarr signet ring against the hollow and read the door's inscription aloud.",
+              "context": "",
+              "checkflags": [
+                "LOW_CazadorsPalace_State_ReadBook",
+                "LOW_CazadorsPalace_State_HasAnySzarrRing"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "28",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "28": {
+                  "id": "28",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: The player leans forward and is implied to press a ring into a small indentation in the door. (This does not need to be shown - only implied)\rInternalNodeContext: Same animation as the cinematic node in LOW_CazadorsPalace_EntranceHall_RitualRoomDoor",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "Narrator",
+                      "text": "*The ring slots perfectly into place and the door swings open.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_CazadorsPalace_Ballroom_Event_OpenDoor"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "Press the Szarr signet ring against the hollow in the door.",
+              "context": "",
+              "checkflags": [
+                "LOW_CazadorsPalace_State_ReadBook = False",
+                "LOW_CazadorsPalace_State_HasAnySzarrRing"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "28",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "28",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "15": {
+                      "id": "15",
+                      "speaker": "Narrator",
+                      "text": "*The ring slots perfectly into place, but nothing happens. However, you get a... feeling from the door, as if it expects something else.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "23": {
+                          "id": "23",
+                          "speaker": "Narrator",
+                          "text": "*The strange writing on the door glints in the candlelight. Perhaps it's significant.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedRingOnly"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "30": {
+              "id": "30",
+              "speaker": "Player",
+              "text": "Read the inscription aloud, recalling what you learned from the Kozakuran book.",
+              "context": "",
+              "checkflags": [
+                "LOW_CazadorsPalace_State_ReadBook",
+                "LOW_CazadorsPalace_State_HasAnySzarrRing = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Narrator",
+                  "text": "*Your voice echoes in the chamber, but nothing happens. The door remains resolutely shut.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "19": {
+              "id": "19",
+              "speaker": "Player",
+              "text": "Try to decipher the text on the door.",
+              "context": "",
+              "checkflags": [
+                "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedToDeciperText = False",
+                "LOW_CazadorsPalace_State_ReadBook = False"
+              ],
+              "setflags": [
+                "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedToDeciperText"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "Narrator",
+                      "text": "*It's written in archaic Kozakuran - a rare version of an already-obscure language.*",
+                      "context": "NodeContext: [KO-za-KUR-an] /,k\u0252z\u0259'k\u028ar\u0259n/",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_CazadorsPalace_Ballroom_MainDoor_Knows_Language"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "0": {
+                          "id": "0",
+                          "speaker": "Narrator",
+                          "text": "*The palace is full of inscriptions like this. Cazador always forbade you from learning the language, but you have picked up a few words.*",
+                          "context": "",
+                          "checkflags": [
+                            "REALLY_ASTARION"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "25": {
+                              "id": "25",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "ORI_Inclusion_Astarion"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "Astarion",
+                                  "text": "There are inscriptions like this all over the palace. Cazador strictly forbade us from learning the language.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "7": {
+                                      "id": "7",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "ORI_Inclusion_End_Astarion"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "31": {
+                                          "id": "31",
+                                          "speaker": "Narrator",
+                                          "text": "*You can make out enough to recognise an incantation, but the specifics elude you.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "17": {
+                                              "id": "17",
+                                              "speaker": "Narrator",
+                                              "text": "*You can tell you're missing something, though - you spot a reference to 'the family signet'.*",
+                                              "context": "",
+                                              "checkflags": [
+                                                "LOW_CazadorsPalace_State_HasAnySzarrRing = False"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "4": {
+                  "id": "4",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "29": {
+                      "id": "29",
+                      "speaker": "Narrator",
+                      "text": "*The writing means nothing to you. You can't even recognise the script.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "ORI_Inclusion_Astarion"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "Astarion",
+                              "text": "There's writing like this all over the palace - some old, probably dead language of Cazador's. We were strictly forbidden from learning it.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "33": {
+                                  "id": "33",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "ORI_Inclusion_End_Astarion"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "21": {
+              "id": "21",
+              "speaker": "Player",
+              "text": "Examine the hollow in the door.",
+              "context": "",
+              "checkflags": [
+                "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedToExamineHollow = False",
+                "LOW_CazadorsPalace_State_HasAnySzarrRing = False"
+              ],
+              "setflags": [
+                "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedToExamineHollow"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "34": {
+                  "id": "34",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "Narrator",
+                      "text": "*The indentation seems to be the right size and shape to fit a signet ring bearing the family crest.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "8": {
+                          "id": "8",
+                          "speaker": "Narrator",
+                          "text": "*Only a few people wear such a ring. Cazador and Godey, your old kennel master.*",
+                          "context": "",
+                          "checkflags": [
+                            "REALLY_ASTARION"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "10": {
+                  "id": "10",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "32": {
+                      "id": "32",
+                      "speaker": "Narrator",
+                      "text": "*The indentation is small and features an engraving of the family crest. Beyond that, it's a perfectly normal mysterious door.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Narrator",
+      "text": "*The door to Cazador's ballroom, where he hosted his most hedonistic nights. You've never seen it closed, let alone locked before.*",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedDoor = False",
+        "REALLY_ASTARION"
+      ],
+      "setflags": [
+        "LOW_CazadorsPalace_Ballroom_MainDoor_State_TriedDoor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "26": {
+          "id": "26",
+          "speaker": "Narrator",
+          "text": "*The door is covered in intricate text, but you can't see anywhere a key might fit - only a small, round hollow engraved with the Szarr family crest.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "35": {
+              "id": "35",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "3",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*The door remains sealed, with naught to see but strange writing and a small hollow.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

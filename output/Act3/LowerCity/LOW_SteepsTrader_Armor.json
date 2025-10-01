@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "synopsis": "One of the traders from Steeps Strake. He will sell armor pieces to the player.",
+    "how_to_trigger": "Speak with the trader at BGO_Main_A: -1835; 19; 558"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Gloomy Fentonson",
+      "text": "Easier to don some armour than learn to swing a sword - if you can manage the extra weight, that is.",
+      "context": "NodeContext: Matey salesman banter",
+      "checkflags": [
+        "LOW_SteepsTrader_Armor_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Gloomy Fentonson",
+      "text": "You in need of protection, friend? What am I saying - everyone's in need of protection.",
+      "context": "NodeContext: Matey salesman banter",
+      "checkflags": [
+        "LOW_SteepsTrader_Armor_HasMet = False"
+      ],
+      "setflags": [
+        "LOW_SteepsTrader_Armor_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Gloomy Fentonson",
+          "text": "Don't be shy. This armour can't keep you alive if it's sitting here with me.",
+          "context": "NodeContext: Matey salesman banter",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Player",
+              "text": "Let me take a look at what you have.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Narrator",
+                  "text": "*News of your good deeds has travelled fast. The merchant is all too happy to extend a certain generosity towards you, where the price of goods is concerned.*",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_BaldursMouth_State_PositiveArticlePublished",
+                    "LOW_BaldursMouth_State_ReactedToHeadline = False"
+                  ],
+                  "setflags": [
+                    "LOW_BaldursMouth_State_ReactedToHeadline"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "2",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "trade",
+                      "children": {
+                        "9": {
+                          "id": "9",
+                          "speaker": "Gloomy Fentonson",
+                          "text": "Truth be told, I wear chain mail to bed these days. I've heard too many stories to take any chances.",
+                          "context": "NodeContext: Shopkeeper philosophising",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "7": {
+                  "id": "7",
+                  "speaker": "Narrator",
+                  "text": "*Your notoriety precedes you. Prices have been moderated to reflect your less than welcome presence in the city.*",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_BaldursMouth_State_NegativeArticlePublished",
+                    "LOW_BaldursMouth_State_ReactedToHeadline = False"
+                  ],
+                  "setflags": [
+                    "LOW_BaldursMouth_State_ReactedToHeadline"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "2",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

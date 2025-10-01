@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "synopsis": "|A player picks up an item owned by an NPC that's tagged as TRADER, from within their shop's ownership trigger. If the shopkeeper notices this, they'll ask whether you want to buy it (through this dialogue) rather than trigger a steal crime. -- This dialogue can also be triggered for silenced players, so write the player responses in terms of nodding/indicating agreement rather than explicit talking.|",
+    "how_to_trigger": "Go to S_GOB_Festivities_Trader (goblin camp, across the central festivities area from the entrance to the king's hall), and pick up any of the items in his stall. The item will be added to his inventory (if you can buy it) and this dialogue will trigger. Same with the hag trader and cook in the Grove."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*The trader has no problem with you inspecting these goods, so long as you're willing to pay for them.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Trade.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "trade",
+              "children": {}
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*Even traders have private property - it seems that item is not for sale.*",
+      "context": "",
+      "checkflags": [
+        "GEB_ShopTrigger_State_NotForSale"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "View the trader's other wares.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "3",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

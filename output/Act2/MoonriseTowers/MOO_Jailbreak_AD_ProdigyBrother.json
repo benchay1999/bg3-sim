@@ -1,0 +1,445 @@
+{
+  "metadata": {
+    "synopsis": "Collection of solo ADs used by character during the Jailbreak escape in Moonrise Towers.",
+    "how_to_trigger": "Free character from their jailbreak cell. The various state nodes in this dialog indicate where you would see particular branches."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Cal",
+      "text": "I can't stand this place. What's the hold up?",
+      "context": "NodeContext: quiet and tense  - waiting by the boat and safe for now, but that could change at a moment's notice",
+      "checkflags": [
+        "HAV_ProdigyLament_Event_ToldDeadSiblings",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_E",
+        "MOO_Jailbreak_Event_ADWaitingForBoat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_F",
+        "MOO_Jailbreak_Event_ADWaitingForBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Cal",
+      "text": "Boat's free - let's go!",
+      "context": "NodeContext: calling out to player - doesn't want to leave but knows he won't survive if he waits",
+      "checkflags": [
+        "MOO_Jailbreak_State_PlayersCanUseBoat",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_B",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_State_BoatReady",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_B = False",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_A = False",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Cal",
+      "text": "Get to the boat, or we leave without you!",
+      "context": "",
+      "checkflags": [
+        "MOO_Jailbreak_State_BoatReady",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_H",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Cal",
+      "text": "I hope Rolan is all right... Please, let's just get out of here.",
+      "context": "NodeContext: quiet and tense  - waiting by the boat and safe for now, but that could change at a moment's notice",
+      "checkflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_E",
+        "MOO_Jailbreak_Event_ADWaitingForBoat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_F",
+        "MOO_Jailbreak_Event_ADWaitingForBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Cal",
+      "text": "Go, GO, GO!",
+      "context": "NodeContext: Panicked - player is in the middle of combat holding off the guards as he flees with the other prisoners",
+      "checkflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_B",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ForceBoatLeave",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_B = False",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_A = False",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Cal",
+      "text": "Just a bit further - I know I can make it!",
+      "context": "NodeContext: determined and hopeful - run through all of moonrise and just arrived outside (character is about to teleport out of sight)",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADLeaving"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADLeaving = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Cal",
+      "text": "Damn it - they'll be on us in no time. Move!",
+      "context": "NodeContext: an alarm has just started blaring, knows guards will arrive any moment",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADAlarmReaction"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADAlarmReaction = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Cal",
+      "text": "Shit. This thing is chained up - keep them off me!",
+      "context": "NodeContext: gritted teeth, trying to break the chains that have tied up the boat. Trying not to panic",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_A",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Cal",
+      "text": "There must be a way around.",
+      "context": "NodeContext: looking around, frantic but trying to keep his cool",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADBoatMissed"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADBoatMissed = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Cal",
+      "text": "A guard could pass by any moment - we need to go.",
+      "context": "NodeContext: quiet and tense  - waiting by the boat and safe for now, but that could change at a moment's notice",
+      "checkflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_E",
+        "MOO_Jailbreak_Event_ADWaitingForBoat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_F",
+        "MOO_Jailbreak_Event_ADWaitingForBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Cal",
+      "text": "I will make it out - I will.",
+      "context": "NodeContext: running for his life, trying not to panic",
+      "checkflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_G",
+        "MOO_Jailbreak_Event_ADEscaping"
+      ],
+      "setflags": [
+        "GLO_Prodigy_State_ToldSiblingsProdigyDead",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_G = False",
+        "MOO_Jailbreak_Event_ADEscaping = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Cal",
+      "text": "There's no time.",
+      "context": "NodeContext: leaving without the player, broken hearted and filled with regret",
+      "checkflags": [
+        "MOO_Jailbreak_State_BoatReady",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_H",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ForceBoatLeave",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_H = False",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Cal",
+      "text": "The boat is our way out - come on!",
+      "context": "NodeContext: running through prison - hope at seeing a way out",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADGoingToBoat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADGoingToBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "20": {
+      "id": "20",
+      "speaker": "Cal",
+      "text": "Done!",
+      "context": "NodeContext: triumphant - just freed the boat",
+      "checkflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_D",
+        "MOO_Jailbreak_Event_ADPrepareBoat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_BoatLeavesWithoutPlayers",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_C = False",
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_D = False",
+        "MOO_Jailbreak_Event_ADPrepareBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Cal",
+      "text": "If they reach the boat we're dead! Hold them back!",
+      "context": "NodeContext: combat has begun, tense but determined",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADGuardsReaction"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADGuardsReaction = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Cal",
+      "text": "Deep breath - just keep running.",
+      "context": "NodeContext: running through a prison - enemies all around you",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADEscaping"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_G",
+        "MOO_Jailbreak_Event_ADEscaping = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "26": {
+      "id": "26",
+      "speaker": "Cal",
+      "text": "I've... almost... got it...",
+      "context": "NodeContext: struggling to break the chains that have tied up the boat (no guarantee of what he'll be using, either barehands or a discovered weapon)",
+      "checkflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_C",
+        "MOO_Jailbreak_Event_ADPrepareBoat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_D",
+        "MOO_Jailbreak_Event_ADPrepareBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Cal",
+      "text": "The boat's chained up tight, hold on.",
+      "context": "NodeContext: trying to break the chains that have tied up the boat (no guarantee of what he'll be using, either barehands or a discovered weapon)",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADPrepareBoat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_C",
+        "MOO_Jailbreak_Event_ADPrepareBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Cal",
+      "text": "Damn it, I'm almost there!",
+      "context": "NodeContext: gritted teeth, trying to break the chains that have tied up the boat. Trying not to panic",
+      "checkflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_A",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_B",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "29": {
+      "id": "29",
+      "speaker": "Cal",
+      "text": "Can we agree to leave and never mention the 'Absolute' again?",
+      "context": "NodeContext: quiet and tense  - waiting by the boat and safe for now, but that could change at a moment's notice",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADWaitingForBoat"
+      ],
+      "setflags": [
+        "8f847adf-7b8a-3551-cfc0-4ea0c66a999a_E",
+        "MOO_Jailbreak_Event_ADWaitingForBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

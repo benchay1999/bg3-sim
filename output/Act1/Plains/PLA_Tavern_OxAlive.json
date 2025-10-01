@@ -1,0 +1,1156 @@
+{
+  "metadata": {
+    "synopsis": "An agitated ox, trapped in a stable near a burning inn. The inn was attacked by goblins and drow in the night. Players may try to calm him - if they fail, he attack.In his SwA version, he speaks like a human. He is initially in a state of terrified rage, barely able to form sentences. If he's pacified, he is calm and placid.The ox is standing in a stall, a dead goblin at his feet. When players arrive, he is agitated, ready to attack at a moment's notice. If calmed, he will relax and moo peacefully."
+  },
+  "dialogue": {
+    "8": {
+      "id": "8",
+      "speaker": "Frightened Ox",
+      "text": "Hm. You're not one of them.",
+      "context": "",
+      "checkflags": [
+        "PLA_Tavern_Ox_HasMet = False",
+        "PLA_Tavern_State_OxPacified",
+        "PETPAL"
+      ],
+      "setflags": [
+        "PLA_Tavern_Ox_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "64",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "26": {
+          "id": "26",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "64",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Narrator",
+      "text": "*The creature turns a piece of cud around its mouth, chewing contentedly.*",
+      "context": "CinematicNodeContext: Just a chilling cow.",
+      "checkflags": [
+        "PLA_Tavern_State_OxPacified",
+        "1ae9dcd5-ff2b-db0a-44dc-ca2314c9bb33_AnimalHandlingSuccess",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Frightened Ox",
+      "text": "You're one of them! Monster!",
+      "context": "",
+      "checkflags": [
+        "PETPAL"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [
+        "DROWELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Frightened Ox",
+      "text": "*Sniff.*",
+      "context": "",
+      "checkflags": [
+        "PLA_Tavern_State_OxPacified",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "31": {
+      "id": "31",
+      "speaker": "Frightened Ox",
+      "text": "Walk well, friend.",
+      "context": "",
+      "checkflags": [
+        "PLA_Tavern_Ox_HasMet",
+        "PLA_Tavern_State_OxPacified",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "44": {
+      "id": "44",
+      "speaker": "Frightened Ox",
+      "text": "Monsters... everywhere... kill...",
+      "context": "NodeContext: Taking deep, scared breaths, speaking on the exhale.",
+      "checkflags": [
+        "PLA_Tavern_State_OxPacified = False",
+        "DROWELF = False",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "64",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "50": {
+          "id": "50",
+          "speaker": "Player",
+          "text": "Look at me - I'm not a monster.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "64",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "64",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "58": {
+                  "id": "58",
+                  "speaker": "Frightened Ox",
+                  "text": "No... you're not. They were small like you, but uglier.",
+                  "context": "NodeContext: Slightly out of breath - calming down",
+                  "checkflags": [
+                    "SHORT"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "64",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "45": {
+                  "id": "45",
+                  "speaker": "Frightened Ox",
+                  "text": "No. You're not one of them at all.",
+                  "context": "NodeContext: Slightly out of breath - calming down",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "64": {
+                      "id": "64",
+                      "speaker": "Frightened Ox",
+                      "text": "I was ready to run you through. My mistake, friend.",
+                      "context": "NodeContext: Calmed.",
+                      "checkflags": [],
+                      "setflags": [
+                        "PLA_Tavern_Ox_HasMet",
+                        "PLA_Tavern_Event_CancelOxHostility",
+                        "PLA_Tavern_State_OxPacified"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "63": {
+                          "id": "63",
+                          "speaker": "Player",
+                          "text": "It's all right. What happened here?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "21": {
+                              "id": "21",
+                              "speaker": "Frightened Ox",
+                              "text": "An attack. Monsters... little ones, and taller ones.",
+                              "context": "CinematicNodeContext: Looks to the dead goblin - camera follows",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "4": {
+                                  "id": "4",
+                                  "speaker": "Frightened Ox",
+                                  "text": "They took the shiny one. He killed many.",
+                                  "context": "InternalNodeContext: refers to duke ravengard",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "18": {
+                          "id": "18",
+                          "speaker": "Player",
+                          "text": "Did you kill the goblin in the stable?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "41": {
+                              "id": "41",
+                              "speaker": "Frightened Ox",
+                              "text": "Yes. It was screaming, waving around its metal.",
+                              "context": "CinematicNodeContext: Front hoof stomps",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "54": {
+                                  "id": "54",
+                                  "speaker": "Frightened Ox",
+                                  "text": "I made him stop screaming.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "5": {
+                          "id": "5",
+                          "speaker": "Player",
+                          "text": "Do you know the dead ox outside?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "48": {
+                              "id": "48",
+                              "speaker": "Frightened Ox",
+                              "text": "Him? He was the biggest. Now I'm the biggest.",
+                              "context": "CinematicNodeContext: Lowers his head sadly",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "36": {
+                          "id": "36",
+                          "speaker": "Player",
+                          "text": "Leave.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "25": {
+              "id": "25",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "57": {
+                  "id": "57",
+                  "speaker": "Frightened Ox",
+                  "text": "LIAR! DIE!",
+                  "context": "NodeContext: Enraged, charging.",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Stay back. I don't want to hurt you, but I will.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "60": {
+              "id": "60",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "51": {
+                  "id": "51",
+                  "speaker": "Frightened Ox",
+                  "text": "You'd give me a choice? Hm. You're not like them.",
+                  "context": "NodeContext: Slightly out of breath - calming down",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "64",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "59": {
+              "id": "59",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Frightened Ox",
+                  "text": "NO! DIE!",
+                  "context": "NodeContext: Enraged, charging.",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Calm, friend. I won't harm you.",
+          "context": "",
+          "checkflags": [
+            "DRUID"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "40": {
+                  "id": "40",
+                  "speaker": "Frightened Ox",
+                  "text": "You speak to me? The monsters only scream.",
+                  "context": "NodeContext: Slightly out of breath - calming down",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "64",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "35": {
+              "id": "35",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "38": {
+                  "id": "38",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "57",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "33": {
+          "id": "33",
+          "speaker": "Player",
+          "text": "Back down. Or else.",
+          "context": "",
+          "checkflags": [
+            "BARBARIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "62": {
+              "id": "62",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "28": {
+                  "id": "28",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "51",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "9": {
+              "id": "9",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "56": {
+                  "id": "56",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "16",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "61": {
+          "id": "61",
+          "speaker": "Player",
+          "text": "Defend yourself.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "47": {
+      "id": "47",
+      "speaker": "Frightened Ox",
+      "text": "*Grunt!*",
+      "context": "CinematicNodeContext: Front hoof clawing at the ground, ready to charge.",
+      "checkflags": [
+        "PLA_Tavern_State_OxPacified = False",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "23",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "55": {
+          "id": "55",
+          "speaker": "Narrator",
+          "text": "*The ox tenses, horns lowered in your direction.*",
+          "context": "CinematicNodeContext: Ready to charge",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "23",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "Back away.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "23",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "37": {
+                  "id": "37",
+                  "speaker": "Frightened Ox",
+                  "text": "*Bellow!*",
+                  "context": "CinematicNodeContext: Charges.",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "11": {
+              "id": "11",
+              "speaker": "Player",
+              "text": "Interpret his behaviour.",
+              "context": "",
+              "checkflags": [
+                "PLA_OxAlive_State_AnimalHandlingFailed = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "23",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "30": {
+                  "id": "30",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "23",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "52": {
+                      "id": "52",
+                      "speaker": "Narrator",
+                      "text": "*His hide twitches, every muscle primed to bolt. He's terrified.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "1ae9dcd5-ff2b-db0a-44dc-ca2314c9bb33_AnimalHandlingSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "32": {
+                          "id": "32",
+                          "speaker": "Player",
+                          "text": "Hold out your hands peacefully.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "23",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "53": {
+                          "id": "53",
+                          "speaker": "Player",
+                          "text": "Square your stance and face him directly.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "39",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "46": {
+                          "id": "46",
+                          "speaker": "Player",
+                          "text": "Stare him down, as you have so many beasts in the wild.",
+                          "context": "",
+                          "checkflags": [
+                            "BARBARIAN"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "14",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "39": {
+                              "id": "39",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "34": {
+                                  "id": "34",
+                                  "speaker": "Narrator",
+                                  "text": "*He huffs and, after a moment, appears to relax.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "PLA_Tavern_Ox_HasMet",
+                                    "PLA_Tavern_Event_CancelOxHostility",
+                                    "PLA_Tavern_State_OxPacified"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "13": {
+                                      "id": "13",
+                                      "speaker": "Frightened Ox",
+                                      "text": "*Moo.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "2": {
+                          "id": "2",
+                          "speaker": "Player",
+                          "text": "Bow deeply - a submissive gesture.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [
+                            "DRUID",
+                            "RANGER"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "13",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "23": {
+                              "id": "23",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "13",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "42": {
+                                  "id": "42",
+                                  "speaker": "Narrator",
+                                  "text": "*The ox calms, his tail swishing a satisfied arc.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "PLA_Tavern_Ox_HasMet",
+                                    "PLA_Tavern_Event_CancelOxHostility",
+                                    "PLA_Tavern_State_OxPacified"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "13",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "14": {
+                              "id": "14",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "49": {
+                                  "id": "49",
+                                  "speaker": "Narrator",
+                                  "text": "*You manage only to agitate him more.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "27": {
+                                      "id": "27",
+                                      "speaker": "Narrator",
+                                      "text": "*His glassy eyes roll, wild with fear, as he begins to charge.*",
+                                      "context": "CinematicNodeContext: CHARGE",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "FactionHostileToPlayerGroupAfterDialog"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "6": {
+                          "id": "6",
+                          "speaker": "Player",
+                          "text": "Attack first.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "43": {
+                              "id": "43",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "27",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "29": {
+                  "id": "29",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Narrator",
+                      "text": "*You gather nothing from his intense stare.*",
+                      "context": "CinematicNodeContext: Ox charges.",
+                      "checkflags": [],
+                      "setflags": [
+                        "PLA_OxAlive_State_AnimalHandlingFailed"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "19": {
+              "id": "19",
+              "speaker": "Player",
+              "text": "Defend yourself.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

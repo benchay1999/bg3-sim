@@ -1,0 +1,516 @@
+{
+  "metadata": {
+    "synopsis": "The player interacts with a telescope at a druid grove, looking out at the scenery and potentially spotting a dragon in the sky."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*The telescope points straight ahead.*",
+      "context": "CinematicNodeContext: player sees the landscape ahead through the telescope lens - the dragon is gone",
+      "checkflags": [
+        "DEN_Stargazing_State_Left",
+        "DEN_Stargazing_State_Right"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "14": {
+          "id": "14",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "PLA_GithChokepoint_Event_DragonEventStarts = False",
+            "DEN_Stargazing_Event_SawDragon = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Player",
+              "text": "Squint at the distant object, trying to make out further details.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Focus the telescope on the distant object, trying to get a clear view.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "16",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "16",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "tagcinematic",
+                      "children": {}
+                    }
+                  }
+                },
+                "8": {
+                  "id": "8",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "16",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "tagcinematic",
+                      "children": {
+                        "0": {
+                          "id": "0",
+                          "speaker": "Narrator",
+                          "text": "*You recognise the dragon as the mount of a githyanki knight. Perhaps it had been tracking the ship.*",
+                          "context": "NodeContext: spoken only by gith players - a mixture of hope and doubt - watching the dragon through a telescope",
+                          "checkflags": [
+                            "REALLY_GITHYANKI"
+                          ],
+                          "setflags": [
+                            "DEN_Stargazing_Event_SawDragon"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "16",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "16": {
+                              "id": "16",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "25",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "17": {
+                          "id": "17",
+                          "speaker": "Narrator",
+                          "text": "*You see a red dragon. Tyrannical, greedy and vain; they hunt without pity.*",
+                          "context": "NodeContext: spoken only by sage and sorcerer players: shocked to see this creature here. watching it through a telescope so no immediate danger",
+                          "checkflags": [],
+                          "setflags": [
+                            "DEN_Stargazing_Event_SawDragon"
+                          ],
+                          "ruletags": [
+                            "RANGER",
+                            "WIZARD"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "16",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "25": {
+                          "id": "25",
+                          "speaker": "Narrator",
+                          "text": "*You see a dragon circling like a bird of prey. Hunting.*",
+                          "context": "NodeContext: watching the dragon through a telescope so fear but no immediate danger",
+                          "checkflags": [],
+                          "setflags": [
+                            "DEN_Stargazing_Event_SawDragon"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "27",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "26": {
+                              "id": "26",
+                              "speaker": "Player",
+                              "text": "Move the telescope to the left.",
+                              "context": "",
+                              "checkflags": [
+                                "DEN_Stargazing_State_Left",
+                                "DEN_Stargazing_State_Right"
+                              ],
+                              "setflags": [
+                                "DEN_Stargazing_State_Right = False"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "27",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "21": {
+                                  "id": "21",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "4",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "11": {
+                              "id": "11",
+                              "speaker": "Player",
+                              "text": "Move the telescope to the left.",
+                              "context": "",
+                              "checkflags": [
+                                "DEN_Stargazing_State_Left = False",
+                                "DEN_Stargazing_State_Right"
+                              ],
+                              "setflags": [
+                                "DEN_Stargazing_State_Left"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "27",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "3",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "22": {
+                              "id": "22",
+                              "speaker": "Player",
+                              "text": "Move the telescope to the right.",
+                              "context": "",
+                              "checkflags": [
+                                "DEN_Stargazing_State_Left",
+                                "DEN_Stargazing_State_Right = False"
+                              ],
+                              "setflags": [
+                                "DEN_Stargazing_State_Right"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "27",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "5": {
+                              "id": "5",
+                              "speaker": "Player",
+                              "text": "Move the telescope to the right.",
+                              "context": "",
+                              "checkflags": [
+                                "DEN_Stargazing_State_Left",
+                                "DEN_Stargazing_State_Right"
+                              ],
+                              "setflags": [
+                                "DEN_Stargazing_State_Left = False"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "18": {
+                                  "id": "18",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "19",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "13": {
+                              "id": "13",
+                              "speaker": "Player",
+                              "text": "Leave.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "13",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*The telescope points to the left.*",
+      "context": "CinematicNodeContext: the player look toward the crash-site through the telescope - tendrils of smoke still rising",
+      "checkflags": [
+        "DEN_Stargazing_State_Left"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {}
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Narrator",
+      "text": "*The telescope points to the right.*",
+      "context": "CinematicNodeContext: the player sees a very distant column of smoke (waukeen's rest) through the telescope",
+      "checkflags": [
+        "DEN_Stargazing_State_Right"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "14",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "25",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Narrator",
+      "text": "*You peer through the telescope.*",
+      "context": "CinematicNodeContext: player sees a view of the landscape through the telescope - there is an object moving in the sky, some distance away",
+      "checkflags": [
+        "DEN_Stargazing_State_Left = False",
+        "DEN_Stargazing_State_Right = False"
+      ],
+      "setflags": [
+        "DEN_Stargazing_State_Left",
+        "DEN_Stargazing_State_Right"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "14",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

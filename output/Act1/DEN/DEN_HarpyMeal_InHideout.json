@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "synopsis": "You encounter the kid you saved from the harpies in the children's hideout. He wants to thank you, but is still a little shy."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Mirkon",
+      "text": "Uh... h-hi.",
+      "context": "InternalNodeContext: Character wasn't on the beach during the harpy attack.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Mirkon",
+      "text": "I wish the harpies would've killed you!",
+      "context": "NodeContext: The player has done something very bad to the kids.",
+      "checkflags": [
+        "DEN_Thieflings_Event_HideoutAbandoned"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Mirkon",
+      "text": "*Sniffle.*",
+      "context": "NodeContext: The boy is crying.",
+      "checkflags": [
+        "DEN_HarpyMeal_InHideout_WasMean"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Mirkon",
+      "text": "You came! I have - here! Mol said I should thank you properly. For the harpies.",
+      "context": "CinematicNodeContext: The kid takes something out of his back pocket. If you can suggest that he's holding a pageoff-camera, that would be very good.",
+      "checkflags": [
+        "DEN_HarpyMeal_State_HelpedSaveVictim"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Mirkon",
+          "text": "So I wrote you a story!",
+          "context": "CinematicNodeContext: If you can suggest that he's offering the player a page off-camera, that would be very good.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Player",
+              "text": "Aren't you the clever one? That's very kind.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Mirkon",
+                  "text": "It's about you! I hope you like it.",
+                  "context": "CinematicNodeContext: De child hands the player the drawing.\rNodeContext: The child is very proud and happy because you accepted his story",
+                  "checkflags": [
+                    "DEN_HarpyMeal_State_HasStory"
+                  ],
+                  "setflags": [
+                    "DEN_HarpyMeal_InHideout_AcceptedGift",
+                    "DEN_HarpyMeal_Event_TransferStory"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "4": {
+                  "id": "4",
+                  "speaker": "Mirkon",
+                  "text": "Ah - ummm, it's gone. I had it just now, I'm - I'm sorry.",
+                  "context": "",
+                  "checkflags": [
+                    "DEN_HarpyMeal_State_HasStory = False"
+                  ],
+                  "setflags": [
+                    "DEN_HarpyMeal_InHideout_WasMean"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "11": {
+              "id": "11",
+              "speaker": "Player",
+              "text": "I've heard enough of your chatter. I don't need more.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Karlach -1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Mirkon",
+                  "text": "Oh. Umm... okay, I'll... keep it.",
+                  "context": "NodeContext: The player refused his gift, saying it's junk",
+                  "checkflags": [],
+                  "setflags": [
+                    "DEN_HarpyMeal_InHideout_WasMean"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Player",
+              "text": "That's not how I usually get paid for killing monsters.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Mirkon",
+                  "text": "I - I don't have any gold. Sorry.",
+                  "context": "NodeContext: the player sayd they don't want his gift, but want gold instead. He's very very disappointed that his gift got rejected..",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Mirkon",
+      "text": "I'm gonna be like you some day. Killing all the scary monsters!",
+      "context": "",
+      "checkflags": [
+        "DEN_HarpyMeal_InHideout_AcceptedGift"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

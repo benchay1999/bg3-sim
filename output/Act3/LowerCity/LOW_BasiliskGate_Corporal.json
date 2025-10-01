@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "synopsis": "One-liner dialog for the Flaming Fist drill master corporal overseeing the sparing between the two privates at the training grounds at the barracks near the Basilisk Gate.",
+    "how_to_trigger": "CTY_Main_A, 139; 50; -19"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Gauntlet Thunder",
+      "text": "The youngsters are upset about the death of Lord Gortash - they looked up to him. Saps. Leaders come and leaders go, but the Flaming Fist is still here.",
+      "context": "",
+      "checkflags": [
+        "GLO_Gortash_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Gauntlet Thunder",
+      "text": "You should join up with the Flaming Fist. Tired of coddling these witless wimps.",
+      "context": "",
+      "checkflags": [
+        "LOW_BasiliskGate_Corporal_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Gauntlet Thunder",
+      "text": "I like the look of you - you can clearly hold your own. Tell me, if you had two wimps who slept through their shifts, what would you do?",
+      "context": "NodeContext: admiration - seeking the advice from one warrior to another",
+      "checkflags": [
+        "LOW_BasiliskGate_Corporal_HasMet = False",
+        "FIGHTER"
+      ],
+      "setflags": [
+        "LOW_BasiliskGate_Corporal_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Exactly what you're doing - push them until they collapse.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion -1",
+            "Lae'zel 1",
+            "Gale 1",
+            "Shadowheart 1",
+            "Wyll 2",
+            "Karlach 1",
+            "Jaheira 1",
+            "Minthara 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Gauntlet Thunder",
+              "text": "Glad to know I've still got it. Let's see if we're both right.",
+              "context": "NodeContext: nods approvingly",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Double their shifts and dock their pay.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion -1",
+            "Lae'zel 1",
+            "Gale 1",
+            "Wyll 1",
+            "Karlach -1",
+            "Shadowheart 1",
+            "Jaheira 1",
+            "Minthara 1",
+            "Minsc 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Gauntlet Thunder",
+              "text": "Oh, now that's an idea. If I hear one more whine out of them, I might just do that - thanks.",
+              "context": "NodeContext: an impressed smile",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Let it slide - just this once.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Lae'zel -1",
+            "Gale 1",
+            "Wyll -1",
+            "Shadowheart -1",
+            "Karlach 1",
+            "Jaheira -1",
+            "Minthara -1",
+            "Minsc 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Gauntlet Thunder",
+              "text": "Hmm. I see you and I have two very different views on discipline.",
+              "context": "NodeContext: NOT impressed with player",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Gauntlet Thunder",
+      "text": "Excuse me - I've got blackguards to whip into shape. YOU CALL THAT A STRIKE?",
+      "context": "NodeContext: little distracted, then turns away from player and roars at her two underlings  (could be to her left or right depending on which direction player has approached her from)",
+      "checkflags": [
+        "LOW_BasiliskGate_Corporal_HasMet",
+        "FIGHTER"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Gauntlet Thunder",
+      "text": "I like your look - you've seen battle, shed some blood. Could show these softies here how it's done.",
+      "context": "",
+      "checkflags": [
+        "LOW_BasiliskGate_Corporal_HasMet = False"
+      ],
+      "setflags": [
+        "LOW_BasiliskGate_Corporal_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

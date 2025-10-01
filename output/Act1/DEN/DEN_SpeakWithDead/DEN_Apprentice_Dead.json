@@ -1,0 +1,738 @@
+{
+  "metadata": {
+    "synopsis": "Speak with Dead dialog with Nettie, Halsin's apprentice. Nettie likely died while trying to kill the player by poisoning them. She didn't want to, but did it to protect the grove, knowing that you might transform into a monster that would kill everyone there."
+  },
+  "dialogue": {
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*The corpse does not stir. It will answer no more questions.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Narrator",
+      "text": "*The corpse regards you lifelessly.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Halsin's dead. I thought you'd want to know.",
+          "context": "",
+          "checkflags": [
+            "GLO_Halsin_Quest_ToldAboutMoonrise",
+            "GLO_Halsin_State_PermaDefeated",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "DEN_Apprentice_State_NettieMournsHalsin",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Narrator",
+              "text": "*The corpse says nothing. Its dead eyes convey no pain, only acceptance.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "36": {
+          "id": "36",
+          "speaker": "Player",
+          "text": "How do I get out of this room?",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_Event_ReachedCyanideDialog",
+            "DEN_Apprentice_State_AllowLockedInSwDQuestion",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "23": {
+              "id": "23",
+              "speaker": "Nettie",
+              "text": "My circlet...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "How can I get rid of the mind flayer parasite?",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_Knows_HeardAboutNettie_PartialInfo",
+            "DEN_Apprentice_Event_ReachedCyanideDialog",
+            "GLO_Halsin_Knows_StudiedTadpole = False",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "DEN_Apprentice_Dead_MentionedHalsin",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "How can I get rid of a mind flayer parasite?",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_Knows_HeardAboutNettie_PartialInfo",
+            "DEN_Apprentice_Event_ReachedCyanideDialog = False",
+            "GLO_Halsin_Knows_StudiedTadpole = False",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "DEN_Apprentice_Dead_MentionedHalsin",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Nettie",
+              "text": "Find Halsin... knows parasites... studied them...",
+              "context": "",
+              "checkflags": [
+                "GLO_Halsin_State_PermaDefeated = False"
+              ],
+              "setflags": [
+                "DEN_Apprentice_Quest_FindHalsin",
+                "GLO_Halsin_Knows_StudiedTadpole",
+                "LearnedResearchHalsin"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Halsin's dead. Is there any other way to get rid of a mind flayer parasite?",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_Dead_MentionedMoonrise = False",
+            "GLO_Halsin_Quest_ToldAboutMoonrise = False",
+            "GLO_Halsin_State_PermaDefeated",
+            "GLO_Halsin_Knows_StudiedTadpole",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "DEN_Apprentice_Dead_MentionedMoonrise",
+            "DEN_Apprentice_State_NettieMournsHalsin",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "35",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Nettie",
+              "text": "Master Halsin... studied parasites... hunted the source...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "GLO_Halsin_Knows_StudiedTadpole"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Nettie",
+                  "text": "Absolute... Moonrise Towers...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "GLO_Absolute_Knows_MoonriseTowers"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "27": {
+          "id": "27",
+          "speaker": "Player",
+          "text": "Who are you?",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_UserShortcut = False",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "35",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Nettie",
+              "text": "Nettie... apprentice healer... to Master Halsin...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "DEN_Apprentice_Dead_MentionedHalsin",
+                "DEN_Apprentice_Knows_HeardAboutNettie"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "26": {
+          "id": "26",
+          "speaker": "Player",
+          "text": "Where is Halsin?",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_Dead_MentionedHalsin",
+            "GLO_Halsin_Knows_WentWithAdventurers = False",
+            "GLO_Halsin_Knows_IsFound = False",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "35",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "35": {
+              "id": "35",
+              "speaker": "Nettie",
+              "text": "Gone... with adventurers...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "32": {
+                  "id": "32",
+                  "speaker": "Nettie",
+                  "text": "Went to goblins... never came back...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "GLO_Halsin_Knows_WentWithAdventurers"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "30": {
+          "id": "30",
+          "speaker": "Player",
+          "text": "Where is Halsin?",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_Dead_MentionedHalsin = False",
+            "GLO_Halsin_Knows_WentWithAdventurers = False",
+            "GLO_Halsin_Knows_IsFound = False",
+            "GLO_Halsin_Knows_StudiedTadpole",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "DEN_Apprentice_Dead_MentionedHalsin",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "35",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "What happened to you?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Nettie",
+              "text": "Wanted to protect... wanted to give... mercy...",
+              "context": "",
+              "checkflags": [
+                "DEN_Apprentice_State_DiedInTadpoleScene"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            },
+            "29": {
+              "id": "29",
+              "speaker": "Nettie",
+              "text": "Tried to protect... our grove...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "28": {
+                  "id": "28",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "Where did you keep your valuables?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "DEN_Apprentice_Dead_MentionedRunes",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "37": {
+              "id": "37",
+              "speaker": "Nettie",
+              "text": "Beneath... locked by runes...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "And how do I get past these locks?",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_Dead_MentionedRunes",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "Nettie",
+              "text": "Wolf Rune... Rath...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "25": {
+                  "id": "25",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "31": {
+          "id": "31",
+          "speaker": "Narrator",
+          "text": "*The spell's power wanes. You can ask no more questions.*",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Narrator",
+      "text": "*The corpse seems willing to speak - but not to its killer.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_Killer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

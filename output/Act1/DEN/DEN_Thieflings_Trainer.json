@@ -1,0 +1,1008 @@
+{
+  "metadata": {
+    "synopsis": "Non-critpath. Trainer asks the player to inspire the children. Player can give speeches or roar. Trainer, Asharak should sound weary and a little sad. He doesn't want to have to train children to fight."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Asharak",
+      "text": "Not now, sorry. I have to comfort these little warriors.",
+      "context": "InternalNodeContext: The children were scared and they are still actively too scared to be training",
+      "checkflags": [
+        "DEN_Trainer_State_ScaredTrainees = False",
+        "DEN_Trainer_State_TraineesAreScared"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Asharak",
+      "text": "Fierce little fighters, aren't they?",
+      "context": "",
+      "checkflags": [
+        "DEN_Trainer_State_InspiredTrainees = False",
+        "DEN_Trainer_State_ChildrenWereInspired"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Asharak",
+      "text": "The Blade of Frontiers. What a thrill for the children.",
+      "context": "",
+      "checkflags": [
+        "DEN_Wyll_State_TrainingChildren"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "40": {
+          "id": "40",
+          "speaker": "Wyll",
+          "text": "They're tough kids. Smart, too. The future's in good hands.",
+          "context": "",
+          "checkflags": [
+            "DEN_Trainer_State_WyllPresent"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Asharak",
+      "text": "Can't talk now. The children need me.",
+      "context": "",
+      "checkflags": [
+        "DEN_Trainer_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Asharak",
+      "text": "I think you've inspired them enough today.",
+      "context": "NodeContext: Cautious, not giving offense, but the player fucked it up the first time.",
+      "checkflags": [
+        "DEN_Trainer_State_ScaredTrainees",
+        "DEN_Trainer_State_ChildrenWereScared"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Asharak",
+      "text": "I saw you at the gates. You fight well.",
+      "context": "InternalNodeContext: All the trainees are getting added to the dialog on this node\rNodeContext: Teacher voice.",
+      "checkflags": [],
+      "setflags": [
+        "DEN_Trainer_Event_IncludeTrainee1",
+        "DEN_Trainer_Event_IncludeTrainee2",
+        "DEN_Trainer_Event_IncludeTrainee3"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "Asharak",
+          "text": "A few words for the kids? Spare a story or two?",
+          "context": "InternalNodeContext: The global flag checks if any kid failed to be included\rNodeContext: lower, not for the ears of the children",
+          "checkflags": [
+            "LAEZEL",
+            "REALLY_LAEZEL"
+          ],
+          "setflags": [
+            "DEN_Trainer_Event_CheckChildrenInclusions"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "26": {
+              "id": "26",
+              "speaker": "Player",
+              "text": "These hatchlings are weak. Your teachings will fail.",
+              "context": "CinematicNodeContext: Said to trainer",
+              "checkflags": [
+                "LAEZEL",
+                "REALLY_LAEZEL"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "27": {
+                      "id": "27",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {
+                        "47": {
+                          "id": "47",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "alias",
+                          "children": {
+                            "1": {
+                              "id": "1",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "9",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "44": {
+                              "id": "44",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "50",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "24": {
+                              "id": "24",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "35",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "42": {
+                              "id": "42",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "11",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "13": {
+                              "id": "13",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "19",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "35": {
+              "id": "35",
+              "speaker": "Player",
+              "text": "I once sliced out a scavver's eye and ate it whole - and not out of hunger.",
+              "context": "CinematicNodeContext: Said to children",
+              "checkflags": [
+                "LAEZEL",
+                "REALLY_LAEZEL"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "46",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "11": {
+              "id": "11",
+              "speaker": "Player",
+              "text": "I slit my own cousin's throat and tasted her blood.",
+              "context": "CinematicNodeContext: Said to children",
+              "checkflags": [
+                "LAEZEL",
+                "REALLY_LAEZEL"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "37",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "46": {
+                  "id": "46",
+                  "speaker": "Asharak",
+                  "text": "I don't think...",
+                  "context": "NodeContext: Mildly horrified, but interrupted",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "37",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "43": {
+                      "id": "43",
+                      "speaker": "Player",
+                      "text": "I will rip off a horrid mind flayer's head and gift it to my Lich Queen!",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "37",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "37": {
+                          "id": "37",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "31",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "51": {
+                      "id": "51",
+                      "speaker": "Player",
+                      "text": "I crawled inside a red dragon's corpse to stay warm among the Tears of Sel\u00fbne.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "37",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "22": {
+                      "id": "22",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "20",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "19",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "34": {
+          "id": "34",
+          "speaker": "Asharak",
+          "text": "A few words for the kids? Spare a story or two?",
+          "context": "InternalNodeContext: The global flag checks if any kid failed to be included\rNodeContext: lower, not for the ears of the children",
+          "checkflags": [],
+          "setflags": [
+            "DEN_Trainer_Event_CheckChildrenInclusions"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "36": {
+              "id": "36",
+              "speaker": "Player",
+              "text": "They're just children - why are you teaching them to fight?",
+              "context": "CinematicNodeContext: Said to trainer",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "29": {
+                  "id": "29",
+                  "speaker": "Asharak",
+                  "text": "It's that or teach them to beg for their lives.",
+                  "context": "NodeContext: Lower voice.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "Asharak",
+                      "text": "The goblins will chase us to Baldur's Gate and these kids know it.",
+                      "context": "NodeContext: Lower voice.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "8": {
+                          "id": "8",
+                          "speaker": "Asharak",
+                          "text": "A warrior like you could lift their spirits.",
+                          "context": "NodeContext: Lower voice.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "9": {
+                              "id": "9",
+                              "speaker": "Player",
+                              "text": "I'll lift their spirits by wiping out that whole camp of goblins by myself.",
+                              "context": "CinematicNodeContext: Spoken to trainer (overheard by kids)",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "7": {
+                                  "id": "7",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "CinematicNodeContext: |Cinematic Node:  The children cheer.|",
+                                  "checkflags": [
+                                    "DEN_Trainer_State_HasMissingKid = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "tagcinematic",
+                                  "children": {
+                                    "38": {
+                                      "id": "38",
+                                      "speaker": "Asharak",
+                                      "text": "Thanks. I prefer when they smile.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "DEN_Trainer_State_InspiredTrainees",
+                                        "DEN_Trainer_State_ChildrenWereInspired"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "50": {
+                              "id": "50",
+                              "speaker": "Player",
+                              "text": "You're just going to get them killed - probably by each other.",
+                              "context": "CinematicNodeContext: Spoken to trainer (overheard by kids)",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "31": {
+                                  "id": "31",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "CinematicNodeContext: |Cinematic node: the children gasp in horror and S_DEN_Trainee_001 starts crying.|",
+                                  "checkflags": [
+                                    "DEN_Trainer_State_HasMissingKid = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "tagcinematic",
+                                  "children": {
+                                    "5": {
+                                      "id": "5",
+                                      "speaker": "Asharak",
+                                      "text": "Good job. Now they're even more scared.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "DEN_Trainer_State_SpokeOfBloodAndGlory"
+                                      ],
+                                      "setflags": [
+                                        "DEN_Trainer_State_ScaredTrainees",
+                                        "DEN_Trainer_State_ChildrenWereScared",
+                                        "DEN_Trainer_State_TraineesAreScared"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "33": {
+                                      "id": "33",
+                                      "speaker": "Asharak",
+                                      "text": "Good job. Little ears hear far - I better take care of this.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "DEN_Trainer_State_ScaredTrainees",
+                                        "DEN_Trainer_State_ChildrenWereScared",
+                                        "DEN_Trainer_State_TraineesAreScared"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "54": {
+                              "id": "54",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "10",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "15": {
+                              "id": "15",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "35",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "23": {
+                              "id": "23",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "11",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "49": {
+                              "id": "49",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "39",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "20": {
+                              "id": "20",
+                              "speaker": "Player",
+                              "text": "Leave.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "32": {
+              "id": "32",
+              "speaker": "Player",
+              "text": "Soak the battlefield with blood. Do not resist death, but embrace it!",
+              "context": "CinematicNodeContext: Addressed to children",
+              "checkflags": [],
+              "setflags": [
+                "DEN_Trainer_State_SpokeOfBloodAndGlory"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "52": {
+                  "id": "52",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "31",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "41": {
+              "id": "41",
+              "speaker": "Player",
+              "text": "Be strong and watch over your kin. In trust there is victory!<br>",
+              "context": "CinematicNodeContext: Addressed to children",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "7",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "18": {
+              "id": "18",
+              "speaker": "Player",
+              "text": "Bad news, children: you're all going to die.",
+              "context": "CinematicNodeContext: Addressed to children",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Astarion 1",
+                "Gale -1",
+                "Lae'zel 1",
+                "Wyll -1",
+                "Karlach -1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "31",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Player",
+              "text": "You must outsmart and outmanoeuvre. Your greatest weapon is your cunning!",
+              "context": "CinematicNodeContext: Addressed to children",
+              "checkflags": [
+                "REALLY_SELDARINEDROWELF"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "7",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "39": {
+              "id": "39",
+              "speaker": "Player",
+              "text": "After great adversity comes triumph. Honour and glory!",
+              "context": "CinematicNodeContext: Addressed to children",
+              "checkflags": [
+                "FIGHTER"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "19": {
+              "id": "19",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "DEN_Trainer_HasMet = False"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "45": {
+      "id": "45",
+      "speaker": "Asharak",
+      "text": "Look at them beaming. You did that.",
+      "context": "",
+      "checkflags": [
+        "DEN_Trainer_State_InspiredTrainees",
+        "DEN_Trainer_State_ChildrenWereInspired"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "48": {
+      "id": "48",
+      "speaker": "Asharak",
+      "text": "Not now, sorry. I have to comfort these little warriors.",
+      "context": "InternalNodeContext: The children were scared but they have now resumed their training",
+      "checkflags": [
+        "DEN_Trainer_State_ScaredTrainees = False",
+        "DEN_Trainer_State_ChildrenWereScared"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "53": {
+      "id": "53",
+      "speaker": "Asharak",
+      "text": "Thanks for spending time with the kids. I just wish... well. Thanks.",
+      "context": "",
+      "checkflags": [
+        "DEN_Trainer_HasMet = False",
+        "AVATAR = False",
+        "WYLL"
+      ],
+      "setflags": [
+        "DEN_Trainer_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "55": {
+      "id": "55",
+      "speaker": "Asharak",
+      "text": "Can't talk now. The children need me.",
+      "context": "InternalNodeContext: Delete this node if it can be the same as the one below",
+      "checkflags": [
+        "DEN_Trainer_HasMet",
+        "AVATAR = False",
+        "WYLL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

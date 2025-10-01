@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "synopsis": "|The player has the status DEN_APPRENTICE_THORN on them. This status has 3 stages leading to death. The player is slowly dying.The first stage is right after being stung by Nettie in the situation Halsin's Apprentice (the reaction of the player is covered in the dialog DEN_Apprentice_Cyanide).This PAD plays after a long rest: the player rested but the status is worsening. The status is getting to stage 2 and then to stage 3, each time having worse gameplay effects.After stage 3, the status kills the player; the PAD DEN_Apprentice_PAD_Dying plays in that case.|"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Player",
+      "text": "I don't feel too good. What did that druid scratch me with?",
+      "context": "NodeContext: Poison is slowly taking effect. You don't feel great, but it's nothing serious yet.",
+      "checkflags": [],
+      "setflags": [
+        "DEN_Apprentice_State_ThornStage2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Player",
+      "text": "The druid's poison is spreading. I need a cure, fast.",
+      "context": "NodeContext: Poison is gripping your system. You're probably in pain.",
+      "checkflags": [
+        "DEN_Apprentice_State_ThornStage2"
+      ],
+      "setflags": [
+        "DEN_Apprentice_State_ThornStage2 = False"
+      ],
+      "ruletags": [
+        "REALLY_GENERIC"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

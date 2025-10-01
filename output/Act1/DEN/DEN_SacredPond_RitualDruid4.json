@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "synopsis": "This dialogue can occur in three different states: In the first, Elwyn is in a trance, chanting a spell that will cover the druid grove in thorns. In the second, the ritual has been stopped after a druid named Kagha was exposed as a Shadow Druid. Elwyn is conflicted - she knows why the ritual had to be stopped, but she's scared that they've been left defenceless.In the third, a group of goblins that had threatened the grove has been dealt with and the grove is considered safe again. In this state, Elwyn is calm but exhausted, the weight of the goblin threat finally off her shoulders.The player always encounters Elwyn around a sacred druid pool."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Elwyn",
+      "text": "Ab spiritu humoque, aculeus vitisque.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: Ahb SPEE-ree-too oo-MOHK, AH-coo-lay-oos VEE-tees-kway.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantD"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Elwyn",
+      "text": "Do you hear them? The birds. They're beautiful.",
+      "context": "NodeContext: The ritual has been stopped and the goblin threat dealt with. She's emerging from a time of intense anxiety. She's exhausted emotionally, but feels calm for the first time in a long time.",
+      "checkflags": [
+        "DEN_RitualDruid_HasMet_Left4 = False",
+        "DEN_Refugees_State_LeadersAreDead"
+      ],
+      "setflags": [
+        "DEN_RitualDruid_HasMet_Left4"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "Elwyn",
+          "text": "I've thought of nothing but goblins and tieflings for so long, I stopped listening.",
+          "context": "NodeContext: The ritual has been stopped and the goblin threat dealt with. She's emerging from a time of intense anxiety. She's referring to her anxiety preventing her from listening to the birds in the grove.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Elwyn",
+      "text": "Aggeniculamur in umbra tua, Pater Arborum.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: AH-jeh-nee-koo-lah-moor een OOM-brah TWO-ah, PAH-tehr ARR-bore-oom.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Elwyn",
+      "text": "I know you had to stop her, but Kagha was just trying to protect us.",
+      "context": "NodeContext: Sagha turned to 'evil' means to protect the grove. Elwyn doesn't approve of her methods, but she would have welcomed the safety.",
+      "checkflags": [
+        "DEN_RitualDruid_HasMet_Pacified4 = False",
+        "DEN_GroveConflict_State_DruidsPacified"
+      ],
+      "setflags": [
+        "DEN_RitualDruid_HasMet_Pacified4"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Elwyn",
+          "text": "What are we doing to do now? She's gone. Master Halsin's missing. We're exposed.",
+          "context": "NodeContext: The ritual that would have sealed off the druid grove from outsiders and driven out the tieflings is over.",
+          "checkflags": [
+            "DEN_ShadowDruid_State_KaghaKilled"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Elwyn",
+          "text": "She went too far, but at least she had a plan.",
+          "context": "InternalNodeContext: DEN_ShadowDruid_Event_SaghaTurnedGood\rNodeContext: The ritual that would have sealed off the druid grove from outsiders and driven out the tieflings is over. She's speaking of Kagha, who turned to 'evil' means to protect the grove.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Elwyn",
+      "text": "The grove feels safe again. We have you to thank for that.",
+      "context": "NodeContext: The ritual has been stopped and the goblin threat dealt with. She's emerging from a time of intense anxiety. She's exhausted emotionally, but feels calm for the first time in a long time.",
+      "checkflags": [
+        "DEN_RitualDruid_HasMet_Left4"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Elwyn",
+      "text": "Complexum tuum, ab terra ortum, ad nos defer.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: Com-PLECK-soom TOO-oom, ahb TEH-rah ohr-TOOM, ahd nohs dee-FEHR.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantC"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Elwyn",
+      "text": "You get to move on. We're stuck here, defenceless.",
+      "context": "NodeContext: She's conflicted - she knows the player was right to stop the ritual, but she's irritated that they got in the way nonetheless.",
+      "checkflags": [
+        "DEN_RitualDruid_HasMet_Pacified4"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Elwyn",
+      "text": "Hostes subeunt. Protege nos. Muni nos.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: HO-stess soo-BAY-uhnt. PRO-teh-jay nohs. MOO-nee nohs.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantA"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Elwyn",
+      "text": "In umbram cretus, sanguine iuratus.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: Een OOM-brahm CRAY-toose, sahn-GWEE-neh ee-you-RAH-toose.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantE"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Elwyn",
+      "text": "Defende nos ab imminentibus aequilibrio tuo.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: deh-FEN-day nohs ahb ee-mee-NEN-tee-booce AI-kwee-lee-bree-oh TWO-oh.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantB"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

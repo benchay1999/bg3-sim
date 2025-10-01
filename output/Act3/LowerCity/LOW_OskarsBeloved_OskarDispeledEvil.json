@@ -1,0 +1,592 @@
+{
+  "metadata": {
+    "synopsis": "Players have just casted Dispel Evil and Good: Break Enchantment on Oskar, and for a shot while he is free from the effects of the possession, although the source of the evil that haunts him is not destroyed. He will give some information to players pointing to his previous actions before the possession, variously Mystic Carrion, the atelier, and the cursed paint. His words are hoarse and laboured - the ghost possessing him has been screaming and shouting. If Jannath is present she will interject at the beginning",
+    "how_to_trigger": "1) ReCon: oe LOW_OskarsBeloved_BringOskarHome2) Cast Dispel Evil and Good: Break Enchantment at Oskar in CTY_Main_A -250; 30; -46"
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*The malevolent presence controlling Oskar seems to have abandoned him for now. He almost looks peaceful.*",
+      "context": "",
+      "checkflags": [
+        "LOW_Oskar_State_IsPosessed = False",
+        "LOW_OskarsBeloved_TalkedToOskarAfterDispel"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Oskar Fevras",
+      "text": "Oskar is mine. Mine. MINE.",
+      "context": "NodeContext: Guttural, possessed by Kerri's furious spirit",
+      "checkflags": [
+        "LOW_OskarPosessed_HasMet",
+        "LOW_Oskar_State_IsPosessed",
+        "LOW_OskarsBeloved_TalkedToOskarAfterDispel"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Oskar Fevras",
+      "text": "Filthy bog troll. Keep your greasy paws to yourself!",
+      "context": "NodeContext: Guttural, possessed by Kerri's furious spirit",
+      "checkflags": [
+        "LOW_OskarPosessed_HasMet = False",
+        "LOW_Oskar_State_IsPosessed",
+        "LOW_OskarsBeloved_TalkedToOskarAfterDispel"
+      ],
+      "setflags": [
+        "LOW_OskarPosessed_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "31": {
+      "id": "31",
+      "speaker": "Oskar Fevras",
+      "text": "Kerri... Kerri...",
+      "context": "NodeContext: Hoarse, throat damaged from screaming while possessed",
+      "checkflags": [],
+      "setflags": [
+        "LOW_OskarsBeloved_TalkedToOskarAfterDispel"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "21": {
+          "id": "21",
+          "speaker": "Lady Jannath",
+          "text": "No, not Kerri. It's me, Fireliia. Your wife.",
+          "context": "NodeContext: Soothing, thinks he's mistaken her for someone else",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "18": {
+              "id": "18",
+              "speaker": "Oskar Fevras",
+              "text": "Fireliia? ...Please... I don't have much time...",
+              "context": "NodeContext: Words laboured, like he hasn't had control of his own tongue for a while",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "Player",
+                  "text": "I found the hidden portrait in your atelier.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_OskarsBeloved_State_PlayersAngeredPainting"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "Oskar Fevras",
+                      "text": "He said never... never to finish.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "24": {
+                          "id": "24",
+                          "speaker": "Oskar Fevras",
+                          "text": "But she cried out... and the paint... it wanted to be used.",
+                          "context": "NodeContext: Feverish, struggling to stay conscious",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "1": {
+                              "id": "1",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "7",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "27": {
+                  "id": "27",
+                  "speaker": "Player",
+                  "text": "Do you know what's wrong with you?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "Oskar Fevras",
+                      "text": "No... I was painting, painting her portrait...",
+                      "context": "NodeContext: Words laboured, like he hasn't had control of his own tongue for a while",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "Oskar Fevras",
+                          "text": "He helped me... gave me the paint...",
+                          "context": "NodeContext: Feverish, struggling to stay conscious",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "22": {
+                              "id": "22",
+                              "speaker": "Player",
+                              "text": "Who gave you the paint?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Oskar Fevras",
+                                  "text": "His invitation... in the atelier.",
+                                  "context": "NodeContext: Loses consciousness at the end of the line",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_Jannath_Event_ReactToDispeledOskar",
+                                    "LOW_OskarsBeloved_Event_GiveOskarKey"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "14": {
+                              "id": "14",
+                              "speaker": "Player",
+                              "text": "Whose portrait were you painting?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "6": {
+                                  "id": "6",
+                                  "speaker": "Oskar Fevras",
+                                  "text": "She watches, in my atelier... She has come back...",
+                                  "context": "NodeContext: Loses consciousness at the end of the line",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_Jannath_Event_ReactToDispeledOskar",
+                                    "LOW_OskarsBeloved_Event_GiveOskarKey"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "13": {
+                              "id": "13",
+                              "speaker": "Player",
+                              "text": "Why does the paint matter?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "0": {
+                                  "id": "0",
+                                  "speaker": "Oskar Fevras",
+                                  "text": "Paint... to capture her beauty... in the atelier...",
+                                  "context": "NodeContext: Loses consciousness at the end of the line",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_Jannath_Event_ReactToDispeledOskar",
+                                    "LOW_OskarsBeloved_Event_GiveOskarKey"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "8": {
+                  "id": "8",
+                  "speaker": "Player",
+                  "text": "Who is Kerri?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "30": {
+                      "id": "30",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "10",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "20": {
+                  "id": "20",
+                  "speaker": "Player",
+                  "text": "Whatever evil had you in its grip - it's gone now.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "25": {
+                      "id": "25",
+                      "speaker": "Oskar Fevras",
+                      "text": "No... no... it is still here. She is still here...",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "10": {
+                          "id": "10",
+                          "speaker": "Oskar Fevras",
+                          "text": "She wants me back... She is coming for me...",
+                          "context": "NodeContext: Feverish, struggling to stay conscious",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "15": {
+                              "id": "15",
+                              "speaker": "Player",
+                              "text": "Is there anything that could help free you?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "Oskar Fevras",
+                                  "text": "Carrion... His invitation, in the atelier...",
+                                  "context": "NodeContext: Loses consciousness at the end of the line",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_Jannath_Event_ReactToDispeledOskar",
+                                    "LOW_OskarsBeloved_Event_GiveOskarKey"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "11": {
+                              "id": "11",
+                              "speaker": "Player",
+                              "text": "Why is she coming for you?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "26": {
+                                  "id": "26",
+                                  "speaker": "Oskar Fevras",
+                                  "text": "I was painting her... in the atelier... He said it would work...",
+                                  "context": "NodeContext: Loses consciousness at the end of the line",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_Jannath_Event_ReactToDispeledOskar",
+                                    "LOW_OskarsBeloved_Event_GiveOskarKey"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "17": {
+                              "id": "17",
+                              "speaker": "Player",
+                              "text": "I can end this mercifully, if you prefer.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "29": {
+                                  "id": "29",
+                                  "speaker": "Oskar Fevras",
+                                  "text": "Not yet... Find his invitation... in the atelier...",
+                                  "context": "NodeContext: Loses consciousness at the end of the line",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_Jannath_Event_ReactToDispeledOskar",
+                                    "LOW_OskarsBeloved_Event_GiveOskarKey"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "3": {
+                  "id": "3",
+                  "speaker": "Player",
+                  "text": "Peace, Oskar. I will find a more permanent cure.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "23": {
+                      "id": "23",
+                      "speaker": "Oskar Fevras",
+                      "text": "You can't... She will come for me again...",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "32": {
+                          "id": "32",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "10",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

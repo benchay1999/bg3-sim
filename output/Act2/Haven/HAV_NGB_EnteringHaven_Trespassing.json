@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "synopsis": "A player got spotted by an NPC as they were trespassing without Jaheira's premission in Haven."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*You haven't got permission to remain here; now you'll need to defend yourself.*",
+      "context": "",
+      "checkflags": [
+        "GLO_Jaheira_State_Defeated"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*You won't be asked again - you'll need to get permission to walk freely in this place.*",
+      "context": "",
+      "checkflags": [
+        "GLO_Jaheira_State_Defeated = False",
+        "HAV_EnteringHaven_State_FlamingSpyRevealed"
+      ],
+      "setflags": [
+        "HAV_EnteringHaven_Event_TrespasserSpotted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*You've been caught sneaking around. Someone with authority will have to grant you safe passage.*",
+      "context": "",
+      "checkflags": [
+        "GLO_Jaheira_State_Defeated = False",
+        "HAV_EnteringHaven_State_FlamingSpyRevealed = False"
+      ],
+      "setflags": [
+        "HAV_EnteringHaven_Event_TrespasserSpotted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*You've been caught sneaking around. But the people here have more important things to worry about - as long as you don't cause any trouble.*",
+      "context": "",
+      "checkflags": [
+        "HAV_Mood_State_NightsongFreed"
+      ],
+      "setflags": [
+        "HAV_EnteringHaven_State_GainedAccess",
+        "HAV_EnteringHaven_State_GainedAccessNoJaheira"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

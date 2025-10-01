@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "synopsis": "Florrick's dialog when she is following you or waiting for you after you told her to wait.",
+    "how_to_trigger": "BGO_Main_Agoto 47; 8; -696oe wyr_florrick_unlockTalk with Florrick. Make her join you.Click on her again."
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Counsellor Florrick",
+      "text": "Ready?",
+      "context": "InternalNodeContext: The player told Florrick to wait,",
+      "checkflags": [
+        "WYR_WyrmRockPrison_State_FlorrickWaiting"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Let's get you out of here.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "WYR_WyrmRockPrison_State_FlorrickWaiting = False",
+            "WYR_WyrmRockPrison_Florrick_Event_AddToParty"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Not yet. Wait here a bit longer.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Counsellor Florrick",
+      "text": "Keep focused. We can talk once I'm free.",
+      "context": "InternalNodeContext: Florrick is following the player.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Very well. Let's get you to safety.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Wait here. I'll fetch you when I can.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Counsellor Florrick",
+              "text": "Fine - but be quick. There are no safe corners in this fortress.<br>",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "WYR_WyrmRockPrison_State_FlorrickWaiting",
+                "WYR_WyrmRockPrison_Florrick_Event_RemoveFromParty"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Counsellor Florrick",
+      "text": "Now's not the time for wandering. You can explore once I'm out of Wyrm's Rock.",
+      "context": "InternalNodeContext: The player tried to use a forbidden exit (door to the Audience Hall or Wyrm Way Dungeon). Florrick doesn't want to go.",
+      "checkflags": [
+        "WYR_WyrmRockPrison_State_FlorrickStoppedPlayer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Agreed. Let's get you to safety.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "WYR_WyrmRockPrison_State_FlorrickStoppedPlayer = False"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Wait here. I'll fetch you when I can.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "WYR_WyrmRockPrison_State_FlorrickStoppedPlayer = False"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "WYR_WyrmRockPrison_State_FlorrickWaiting",
+                "WYR_WyrmRockPrison_Florrick_Event_RemoveFromParty"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

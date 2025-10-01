@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "synopsis": "The player used the alarm drum. Depending on who the player is and how they performed, the goblins around the alarm will either be impressed, neutral, or willing to fight.",
+    "how_to_trigger": "loadlevel WLD_Main_Ateleport S_GOB_Checkpoint_Guard_005startDialog GOB_Checkpoint_AlarmVandalize_005_e3aec18f-44fb-af08-ba89-749048ebcf67 S_GOB_Checkpoint_Guard_005 [player id]"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Sharp-Eye Snurd",
+      "text": "Oi! What you doin' with the alarm?",
+      "context": "InternalNodeContext: Goblin saw a random person attacking the drum\rNodeContext: Catching you doing something you shouldn't be",
+      "checkflags": [
+        "GOB_Checkpoint_State_GainedAccess = False"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Sharp-Eye Snurd",
+          "text": "Looks like this idiot's after a kickin', lads!",
+          "context": "NodeContext: Annoyed, shouting to friends to attack you",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Sharp-Eye Snurd",
+      "text": "Beg pardon True Soul, but that's for callin' on the lads if we need 'em.",
+      "context": "InternalNodeContext: Goblin thinks we are a True Soul. And we just damaged the alarm drum.\rNodeContext: Worried, obsequious - you're a person in authority doing something you shouldn't.",
+      "checkflags": [
+        "GOB_Checkpoint_State_AlarmIsBroken = False",
+        "GOB_Checkpoint_State_GainedAccess",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "Sharp-Eye Snurd",
+          "text": "Might, eh... might be best if you left it alone. Beggin' pardon.",
+          "context": "NodeContext: Apologetic but firm.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Sharp-Eye Snurd",
+      "text": "Careful, that's -",
+      "context": "InternalNodeContext: Goblin thinks we are a True Soul. And we just destroyed the alarm drum.\rNodeContext: Initially sharp, but reining it in as we're a figure of authority.",
+      "checkflags": [
+        "GOB_Checkpoint_State_AlarmIsBroken",
+        "GOB_Checkpoint_State_GainedAccess",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Sharp-Eye Snurd",
+          "text": "Ah... no worries, True Soul. If we need the lads we'll just... holler, I spose.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Sharp-Eye Snurd",
+      "text": "We let you in and you go trashin' our stuff? Just bad manners, that.",
+      "context": "InternalNodeContext: Goblin let us in and then saw us attacking the drum\rNodeContext: Mock disgust, disappointment",
+      "checkflags": [
+        "GOB_Checkpoint_State_GainedAccess",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls = False"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Sharp-Eye Snurd",
+          "text": "Can't abide bad manners, can we lads?",
+          "context": "NodeContext: Shouting to guards - signalling to attack you",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

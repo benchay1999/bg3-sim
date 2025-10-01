@@ -1,0 +1,788 @@
+{
+  "metadata": {
+    "synopsis": "This book is recovered from the body of Xargrim, a wizard searching for the Adamantine Forge. It contains instructions on how to operate the forge, but is disguised as a rather smutty \"nature\" textbook.Flumph = FLUMF.",
+    "how_to_trigger": "Repro steps:1. Start the game.2. loadlevel WLD_Main_A3. goto 49.00, 42.15, -74.004. Loot the drow's corpse5. Open the inventory and read the book."
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*The cover is cool in your hand. And very slightly sticky.*<br>",
+      "context": "CinematicNodeContext: Player holding the closed book, inspecting the cover",
+      "checkflags": [
+        "UND_FurnaceSearch_HasMet_DisguisedJournal",
+        "UND_FurnaceSearch_Knows_JournalDisguised"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "31": {
+          "id": "31",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "39",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "23": {
+      "id": "23",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_FurnaceSearch_HasMet_DisguisedJournal"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Browse the contents.",
+          "context": "",
+          "checkflags": [
+            "e3555e9d-9114-2faa-e9a2-857a04854354_Browsed = False"
+          ],
+          "setflags": [
+            "e3555e9d-9114-2faa-e9a2-857a04854354_Browsed"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "33",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*Mad supposition, questionable diagrams, and many gleeful references to 'tentacles'. Not an overly academic text.*",
+              "context": "CinematicNodeContext: Player opens the book and studies the text before them",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "25": {
+          "id": "25",
+          "speaker": "Player",
+          "text": "Examine the book closely.",
+          "context": "",
+          "checkflags": [
+            "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped = False",
+            "UND_FurnaceSearch_State_TriedInvestigation = False"
+          ],
+          "setflags": [
+            "UND_FurnaceSearch_State_TriedInvestigation"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "33",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "16": {
+              "id": "16",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "33",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "29": {
+                  "id": "29",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "33",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "Narrator",
+                      "text": "*What remains are simple instructions written in a spare hand: the secret to forging adamantine.*",
+                      "context": "CinematicNodeContext: Simple instruction text appears\rInternalNodeContext: This end node will trigger the translated string to open, so player is reading the \"decoded\" text.",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_FurnaceSearch_State_FoundForgeManual"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "35": {
+              "id": "35",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "Narrator",
+                  "text": "*It is exactly what it appears to be - a rather stained and unsavoury look at the mating rituals of the common flumph.*",
+                  "context": "CinematicNodeContext: Player opens the book and studies the text before them",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "37": {
+          "id": "37",
+          "speaker": "Player",
+          "text": "Recall what you know of this title.",
+          "context": "",
+          "checkflags": [
+            "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped = False",
+            "WIZARD = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "27": {
+          "id": "27",
+          "speaker": "Player",
+          "text": "Recall what you know of this title.",
+          "context": "",
+          "checkflags": [
+            "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped = False",
+            "WIZARD"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "21",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "21",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Narrator",
+                  "text": "*Underdark fauna is a topic much written-on - but this title has never appeared in any collection you've seen.*",
+                  "context": "CinematicNodeContext: Player opens the book and studies the text before them",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "Narrator",
+                      "text": "*The scrutiny proves too much. The lurid text melts away before your eyes - an illusion.*",
+                      "context": "CinematicNodeContext: Player examining open book - VFX Material overlay of text disappearing",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "24": {
+              "id": "24",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "35",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "12",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "8": {
+          "id": "8",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "42",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "30": {
+          "id": "30",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "1",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "32": {
+          "id": "32",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "20",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "26": {
+      "id": "26",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "UND_FurnaceSearch_HasMet_DisguisedJournal",
+        "UND_FurnaceSearch_State_InteractedWithDisguisedJournal"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "38",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "18",
+          "link": "41",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "25",
+          "link": "41",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "3": {
+          "id": "3",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "37",
+          "link": "41",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "28": {
+          "id": "28",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "27",
+          "link": "41",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Flumphs - largely benign parasites. But what do you know of their love lives?",
+          "context": "",
+          "checkflags": [
+            "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped = False",
+            "REALLY_UNDERDARK",
+            "RANGER",
+            "DRUID = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "41",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "43": {
+              "id": "43",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Narrator",
+                  "text": "*Flumphs reproduce asexually - this text contends exactly the opposite, with far too vivid details to match.*",
+                  "context": "CinematicNodeContext: Player opens the book and studies the text before them",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "33",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "22": {
+                  "id": "22",
+                  "speaker": "Narrator",
+                  "text": "*Nothing. Flumphs are nomadic creatures, not well-suited to detailed study.*",
+                  "context": "CinematicNodeContext: Player opens the book and studies the text before them",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "42": {
+          "id": "42",
+          "speaker": "Player",
+          "text": "Flumphs - largely benign parasites. But what do you know of their love lives?",
+          "context": "",
+          "checkflags": [
+            "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped = False",
+            "REALLY_UNDERDARK",
+            "RANGER = False",
+            "DRUID"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "41",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Flumphs - largely benign parasites. But what do you know of their love lives?",
+          "context": "",
+          "checkflags": [
+            "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped = False",
+            "REALLY_UNDERDARK",
+            "RANGER = False",
+            "DRUID = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "41": {
+              "id": "41",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "12",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "Put it away.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "38": {
+      "id": "38",
+      "speaker": "Narrator",
+      "text": "*The cover proudly announces this book to be: 'Flumph Mating Rituals'.*",
+      "context": "CinematicNodeContext: Player holding the closed book, inspecting the cover\n\rNodeContext: Flumph = FLUMF",
+      "checkflags": [
+        "UND_FurnaceSearch_HasMet_DisguisedJournal = False",
+        "UND_FurnaceSearch_Knows_JournalDisguised"
+      ],
+      "setflags": [
+        "UND_FurnaceSearch_HasMet_DisguisedJournal",
+        "UND_FurnaceSearch_State_InteractedWithDisguisedJournal"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "39": {
+          "id": "39",
+          "speaker": "Narrator",
+          "text": "*If the drow's corpse is to be believed, it's something else entirely.*",
+          "context": "CinematicNodeContext: Player holding the closed book, inspecting the cover",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "Try to peer through the illusion.",
+              "context": "",
+              "checkflags": [
+                "UND_FurnaceSearch_State_DisguisedJournalIllusionDropped = False",
+                "UND_FurnaceSearch_State_TriedInvestigation = False"
+              ],
+              "setflags": [
+                "UND_FurnaceSearch_State_TriedInvestigation"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "40": {
+                  "id": "40",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "33",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "36": {
+                  "id": "36",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "Narrator",
+                      "text": "*Strain as you might, your eyes find nothing but an overly detailed description of the flumph's reproductive process.*",
+                      "context": "CinematicNodeContext: Player opens the book and studies the text before them",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "34": {
+              "id": "34",
+              "speaker": "Player",
+              "text": "Put it away.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

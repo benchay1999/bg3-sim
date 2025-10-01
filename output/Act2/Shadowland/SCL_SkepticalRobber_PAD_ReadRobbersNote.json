@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "synopsis": "When the player reads the Skeptical Robber's note after having already discovered the grave or found the ring, they are reminded about that with this dialog. The top node is if you already found the ring. The bottom is if you read the tombstone but HAVEN'T found the ring.",
+    "how_to_trigger": "Read the SkepticalRobber's note for the first time after having already read the wife's tombstone or found the ring."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Player",
+      "text": "Ellie May's ring? Guess I got there before him.",
+      "context": "InternalNodeContext: Plays if you have already found the ring when you read the robbers note",
+      "checkflags": [
+        "SCL_SkepticalRobber_Knows_WifesRing"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Player",
+      "text": "Ellie May - I think I read that name on a tombstone.",
+      "context": "InternalNodeContext: Plays if you have already read the Tombstone when you read the robbers note, but haven't found the ring yet",
+      "checkflags": [
+        "SCL_SkepticalRobber_Knows_WifesRing = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

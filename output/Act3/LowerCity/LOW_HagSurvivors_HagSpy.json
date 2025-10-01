@@ -1,0 +1,838 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue with hag spy, a redcap in dsiguise sent by the hag to spy on hag survivors. He is cold and accusatory to the player, trying to throw the player off the scent of the doll (that he sent). If Mayrina is present, Jatlo has used the doll to hex her and turn her into a sheep. If Mayrina isn't present, he's using it to pop up, scare, and generally torment the other hag survivors.",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Cllick on S_LOW_HagSurvivors_HagSpy_0cb0a73b-1f97-4481-b320-b8fff88cfe0f at the Hag Survivors Support Group, -45; 15; -155"
+  },
+  "dialogue": {
+    "6": {
+      "id": "6",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_HagSpy"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "34",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "34",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "31": {
+      "id": "31",
+      "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+      "text": "Are you here to help Mayrina or simply irritate me?",
+      "context": "NodeContext: cold, accusatory, suspicious",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_HagSpy",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurrogateMotherCured = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "24": {
+          "id": "24",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "35",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "33": {
+      "id": "33",
+      "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+      "text": "The more you interrupt, the less time I have to find this wretched doll.",
+      "context": "NodeContext: irritated",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_HagSpy"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "34": {
+      "id": "34",
+      "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+      "text": "Convenient - you showing up like this. How do we know the doll that taunts us is not yours?",
+      "context": "NodeContext: cold, accusatory, suspicious",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_HagSpy = False"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_HagSpy"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "19": {
+          "id": "19",
+          "speaker": "Player",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "REALLY_DRAGONBORN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Narrator",
+                  "text": "*There's something strange about this creature. He looks like one of your own, but he smells of blood and moss.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_HagSurvivors_State_PassivePerceptionSuccess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Player",
+                      "text": "There's something strange about you. Are you really a dragonborn?<br>",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_HagSurvivors_State_PassivePerceptionSuccess"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "Well aren't you a clever one, scale-pest. Faster than these idiots, at least. They mean to hurt Auntie - the best and most beautiful hag in the Realms.",
+                          "context": "NodeContext: love and adoration",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "16": {
+                              "id": "16",
+                              "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                              "text": "I won't have it. I'll carve out your corpse and serve it to her on a plate.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_HagSurvivors_Event_HagSpy_DropDisguise"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "Player",
+                      "text": "I found this note on you - who is Auntie?",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_HagSurvivors_State_PlayersReadHagSpysNote"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "1": {
+                          "id": "1",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "You dare rifle through my pockets?! You're either brave or stupid - likely both.",
+                          "context": "NodeContext: player has pickpocketed jatlo and discovered a note. Outrage then amusement",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "5": {
+                              "id": "5",
+                              "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                              "text": "I suppose there's no point in pretending. These idiots have the book. They mean to hurt Auntie - the best and most beautiful hag in the Realms.",
+                              "context": "NodeContext: love and adoration",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "18": {
+                                  "id": "18",
+                                  "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                                  "text": "But I won't let you - I will carve out your corpses and serve them to her on a plate.",
+                                  "context": "NodeContext: vicous, about to start combat",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_HagSurvivors_Event_HagSpy_DropDisguise"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "20": {
+                      "id": "20",
+                      "speaker": "Player",
+                      "text": "Let's find the doll first - where have you seen it?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "9": {
+                          "id": "9",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "Upstairs, downstairs, in boxes, atop chairs - it matters not. The moment we find it, it vanishes. This is a fool's errand.",
+                          "context": "NodeContext: dismissive, arrogant",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "10": {
+                      "id": "10",
+                      "speaker": "Player",
+                      "text": "Less complaining, more searching.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Gale 1",
+                        "Lae'zel 1",
+                        "Shadowheart 1",
+                        "Wyll 1",
+                        "Karlach 1",
+                        "Jaheira 1",
+                        "Minthara 1",
+                        "Minsc 1",
+                        "Halsin 1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "45": {
+                          "id": "45",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "Hmpf. Very well - but I will be watching you.",
+                          "context": "NodeContext: cold, accusatory, suspicious",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "32": {
+                      "id": "32",
+                      "speaker": "Player",
+                      "text": "Why not simply leave?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "28": {
+                          "id": "28",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "The doll follows us. I suggested we split up, but the cleric took umbrage. Let us see how she feels when the hag stops playing games - and the killing begins.",
+                          "context": "NodeContext: grim and cold - even at the mention of violence",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "17": {
+                      "id": "17",
+                      "speaker": "Player",
+                      "text": "If I were with the hag, you'd be dead by now.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "I am no novice to battle. You would do well to remember that.",
+                          "context": "NodeContext: cold, accusatory, suspicious",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "37": {
+                      "id": "37",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "38": {
+                  "id": "38",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "15",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "35": {
+      "id": "35",
+      "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+      "text": "Convenient - you showing up like this. You may have the others fooled, but I shall be keeping a close eye on you.",
+      "context": "NodeContext: cold, accusatory, suspicious",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_HagSpy = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurrogateMotherCured = False"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_HagSpy"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "43": {
+          "id": "43",
+          "speaker": "Player",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "REALLY_DRAGONBORN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "15",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "42": {
+              "id": "42",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_HagSurvivors_State_PassivePerceptionSuccess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "15",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "8",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    },
+                    "14": {
+                      "id": "14",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "0",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    },
+                    "12": {
+                      "id": "12",
+                      "speaker": "Player",
+                      "text": "Have you seen a doll around here?",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_HagSurvivors_SurrogateMother_MentionedDoll"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "41": {
+                          "id": "41",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "A doll? This is hardly the time for childish games - either help Mayrina or leave.",
+                          "context": "NodeContext: dismissive, trying to throw the player off the scent of the doll (that he planted)",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "39": {
+                      "id": "39",
+                      "speaker": "Player",
+                      "text": "Mayrina is an old friend - I wouldn't hurt her.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Lae'zel 1",
+                        "Gale 1",
+                        "Shadowheart 1",
+                        "Wyll 1",
+                        "Karlach 1",
+                        "Jaheira 1",
+                        "Minthara 1",
+                        "Minsc 1",
+                        "Halsin 1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "Then stop wasting my time and go help her.",
+                          "context": "NodeContext: irritated",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "27": {
+                      "id": "27",
+                      "speaker": "Player",
+                      "text": "Any idea how to remove the hex?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "If I did, I would not be standing here.",
+                          "context": "NodeContext: irritated",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "29": {
+                      "id": "29",
+                      "speaker": "Player",
+                      "text": "If you don't want my help, just say so.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Gale 1",
+                        "Lae'zel 1",
+                        "Shadowheart 1",
+                        "Karlach 1",
+                        "Wyll 1",
+                        "Jaheira 1",
+                        "Minthara 1",
+                        "Minsc 1",
+                        "Halsin 1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "40": {
+                          "id": "40",
+                          "speaker": "GROUP_Act3_LOW_HagSurvivors_HagSpy",
+                          "text": "I don't. Leave - and let us deal with this ourselves.",
+                          "context": "NodeContext: irritated",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "30": {
+                      "id": "30",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "36": {
+              "id": "36",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "44": {
+                  "id": "44",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "11",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "11",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

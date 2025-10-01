@@ -1,0 +1,1152 @@
+{
+  "metadata": {
+    "synopsis": "This goblin is guarding the entrance to a town his squad have occupied. The residents are long-dead, the town abandoned, and so he's taken it upon himself to rechristen the village as 'Bogrot'.",
+    "how_to_trigger": "- Goto 26, 23, 349"
+  },
+  "dialogue": {
+    "18": {
+      "id": "18",
+      "speaker": "Goblin Warrior",
+      "text": "Go on - more of us inside.",
+      "context": "",
+      "checkflags": [
+        "FOR_GoblinAmbush_GoblinsPacified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Goblin Warrior",
+      "text": "'Allo and welcome to Bogrot! Now, kindly - giz all your stuff.",
+      "context": "NodeContext: A goblin's closest approximation of courtesty, faintly mocking. He's loudly welcoming you to the town he has dubbed 'Bogrot'",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "41": {
+          "id": "41",
+          "speaker": "Narrator",
+          "text": "*The mark glows, but you feel nothing in response. Your illithid power is beyond reach until you rest.*",
+          "context": "",
+          "checkflags": [
+            "GLO_Tadpoled_UsedToday1"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "16",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "46": {
+          "id": "46",
+          "speaker": "Narrator",
+          "text": "*A strange symbol glows, marked on their flesh, and something within you stirs in response.*",
+          "context": "",
+          "checkflags": [
+            "GLO_TadpoleIntro_NPC = False"
+          ],
+          "setflags": [
+            "GLO_TadpoleIntro_NPC"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "16",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Narrator",
+          "text": "*As the symbol glows, power courses through you. Authority.*",
+          "context": "",
+          "checkflags": [
+            "GLO_TadpoleIntro_NPC"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "54",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "16": {
+              "id": "16",
+              "speaker": "Player",
+              "text": "'Bogrot'?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "FOR_GoblinAmbush_CheckpointGuards_AskedAboutBogrot"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "54",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "57": {
+                  "id": "57",
+                  "speaker": "Goblin Warrior",
+                  "text": "Local soil-scratchers probably called it something else, but they's dead a hundred years.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "28": {
+                      "id": "28",
+                      "speaker": "Goblin Warrior",
+                      "text": "So now it's Bogrot. And you got to give over your goods.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "speaker": "Player",
+              "text": "And you'll let me pass?",
+              "context": "",
+              "checkflags": [
+                "FOR_GoblinAmbush_CheckpointGuards_AskedAboutBogrot"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "54",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "36": {
+                  "id": "36",
+                  "speaker": "Goblin Warrior",
+                  "text": "Hah! Nah. But it'll save us scrubbing the goo off your goods when we kill ya, see?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "Player",
+              "text": "How about a donation instead? Some coin for the town. ([463b0f43-5410-412d-aba3-875cf81c38ca])",
+              "context": "",
+              "checkflags": [
+                "FOR_GoblinAmbush_CheckpointGuards_IncreasedBribe = False",
+                "FOR_GoblinAmbush_CheckpointGuards_AskedAboutBogrot",
+                "d6480be7-500e-4160-927f-86acfd5c4e7b"
+              ],
+              "setflags": [
+                "GEN_TransferNPCPayment_2"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "54",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "54": {
+                  "id": "54",
+                  "speaker": "Goblin Warrior",
+                  "text": "...Aye. Aye, I reckon that'll do nicely. The good folk of Bogrot give ya thanks.",
+                  "context": "NodeContext: Mulling it over - he was going to kill us but we've just handed him a sizable sum so he's decided to be magnanimous",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_GoblinAmbush_GoblinsPacified",
+                    "FOR_GoblinAmbush_State_NonCharlatanAccess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "59": {
+              "id": "59",
+              "speaker": "Player",
+              "text": "How about a donation...? ([01f129ea-b4dc-44b6-8154-9a948f876a82])",
+              "context": "",
+              "checkflags": [
+                "FOR_GoblinAmbush_CheckpointGuards_IncreasedBribe",
+                "FOR_GoblinAmbush_CheckpointGuards_AskedAboutBogrot",
+                "da0e2ddc-8a30-454e-b9c6-89e998a0d1db"
+              ],
+              "setflags": [
+                "GEN_TransferNPCPayment_3"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "54",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "25": {
+              "id": "25",
+              "speaker": "Player",
+              "text": "It's a fine day, my friend. Why spoil it with killing?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Astarion 1",
+                "Lae'zel -1",
+                "Karlach 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "14",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "39": {
+                      "id": "39",
+                      "speaker": "Goblin Warrior",
+                      "text": "Well ain't you got a sunny disposition? The bugbear'll hate ya.",
+                      "context": "NodeContext: Amused anticipation",
+                      "checkflags": [],
+                      "setflags": [
+                        "FOR_GoblinAmbush_GoblinsPacified"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "15": {
+                          "id": "15",
+                          "speaker": "Goblin Warrior",
+                          "text": "Go wake him up - and tell 'im I sent ya.",
+                          "context": "NodeContext: Almost rubbing his hands in glee",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "44": {
+                  "id": "44",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "27": {
+                      "id": "27",
+                      "speaker": "Goblin Warrior",
+                      "text": "Killing you would make my day, but I don't fancy cleaning up your guts afterwards. Hand over your stuff - now.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FOR_GoblinAmbush_CheckpointGuards_IncreasedBribe"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "30": {
+              "id": "30",
+              "speaker": "Player",
+              "text": "Nice town. I'll wipe my feet on your corpse before entering.",
+              "context": "",
+              "checkflags": [
+                "BARBARIAN = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Gale 1",
+                "Lae'zel 1",
+                "Shadowheart 1",
+                "Wyll 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "14",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "9": {
+              "id": "9",
+              "speaker": "Player",
+              "text": "You get nothing.",
+              "context": "",
+              "checkflags": [
+                "BARBARIAN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "24",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "19": {
+                      "id": "19",
+                      "speaker": "Goblin Warrior",
+                      "text": "Temper on you, eh? Fine - keep yer goods. Our crowd own this town - we can take you any time we want.",
+                      "context": "NodeContext: Spooked by us but trying to save face",
+                      "checkflags": [],
+                      "setflags": [
+                        "FOR_GoblinAmbush_GoblinsPacified",
+                        "FOR_GoblinAmbush_State_NonCharlatanAccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "35": {
+                  "id": "35",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "42": {
+                      "id": "42",
+                      "speaker": "Goblin Warrior",
+                      "text": "Hah! You got guts. Now show me what colour they are.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "20": {
+              "id": "20",
+              "speaker": "Player",
+              "text": "Then my search is over - I'm actually here to write the Ballad of Bogrot.",
+              "context": "",
+              "checkflags": [
+                "BARD"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "24",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "53": {
+                  "id": "53",
+                  "speaker": "Goblin Warrior",
+                  "text": "You what? Go on then, we're bored - give us a taste.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "31": {
+                      "id": "31",
+                      "speaker": "Player",
+                      "text": "'Bogrot, fair Bogrot - with hills as green as goblin snot.'",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Lae'zel -1",
+                        "Karlach 1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "38": {
+                          "id": "38",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "52": {
+                              "id": "52",
+                              "speaker": "Goblin Warrior",
+                              "text": "Bit flowersome, but you got something there. Go on in - reckon you can polish it up some once you've seen the place.",
+                              "context": "NodeContext: Considering, cautiously critical but deeming our music not bad.",
+                              "checkflags": [],
+                              "setflags": [
+                                "FOR_GoblinAmbush_GoblinsPacified"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "8": {
+                          "id": "8",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "26": {
+                              "id": "26",
+                              "speaker": "Goblin Warrior",
+                              "text": "Blegh. Reckon you'll make sweeter sounds once we slice you a bit.",
+                              "context": "NodeContext: Not enjoying our music at all, moving to attack as much out of disgust as anything.",
+                              "checkflags": [],
+                              "setflags": [
+                                "FactionHostileToPlayerGroupAfterDialog"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "49": {
+                      "id": "49",
+                      "speaker": "Player",
+                      "text": "'Built on BONES of goblin FOE, Bogrot bears a FEAST for CROWS!'",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Lae'zel -1",
+                        "Karlach 1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "33": {
+                          "id": "33",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "4": {
+                              "id": "4",
+                              "speaker": "Goblin Warrior",
+                              "text": "Aye, now that's a beat! Needs drumming, though - got some skulls inside you could use. Go on.",
+                              "context": "NodeContext: Bopping his head, appreciating your music. Friendly pointer towards the end.",
+                              "checkflags": [],
+                              "setflags": [
+                                "FOR_GoblinAmbush_GoblinsPacified"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "40": {
+                          "id": "40",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "22": {
+                              "id": "22",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "26",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "34": {
+                      "id": "34",
+                      "speaker": "Player",
+                      "text": "It's not ready - I need to see the town first.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "60": {
+                          "id": "60",
+                          "speaker": "Goblin Warrior",
+                          "text": "Compromise, then. We'll pop your eyes out and give them the tour, eh?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "FactionHostileToPlayerGroupAfterDialog"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "1": {
+                      "id": "1",
+                      "speaker": "Player",
+                      "text": "Take a deep breath - and attack.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "29": {
+              "id": "29",
+              "speaker": "Player",
+              "text": "I'll give you another chance. Look at me again and choose your words carefully.",
+              "context": "",
+              "checkflags": [
+                "REALLY_DROWELF"
+              ],
+              "setflags": [
+                "FOR_GoblinAmbush_State_DrowAutoPass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "24",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "24": {
+                  "id": "24",
+                  "speaker": "Goblin Warrior",
+                  "text": "I'm lookin' - just ain't seeing much. Might be we need to carve you open?",
+                  "context": "NodeContext: Looking at us critically, unimpressed",
+                  "checkflags": [
+                    "DROWELF = False"
+                  ],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "37": {
+                  "id": "37",
+                  "speaker": "Goblin Warrior",
+                  "text": "Ah. Right. Might be I was a little rude. All drow're welcome in Bogrot.",
+                  "context": "NodeContext: Gulping nervously, sees we're a race that typically dominates and enslaves his.",
+                  "checkflags": [
+                    "DROWELF"
+                  ],
+                  "setflags": [
+                    "FOR_GoblinAmbush_GoblinsPacified"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "45": {
+              "id": "45",
+              "speaker": "Player",
+              "text": "I'll give you another chance. Look at me again and choose your words carefully.",
+              "context": "",
+              "checkflags": [
+                "REALLY_DROWELF = False",
+                "DROWELF"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "24",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Player",
+              "text": "You do not give orders to me.",
+              "context": "",
+              "checkflags": [
+                "GLO_Tadpoled_UsedToday1 = False",
+                "TRUESOUL"
+              ],
+              "setflags": [
+                "GLO_Tadpoled_UsedToday1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "21",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "Goblin Warrior",
+                  "text": "...A True Soul. Right. Ah - welcome to Bogrot!",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_GoblinAmbush_State_NonCharlatanAccess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "50": {
+                      "id": "50",
+                      "speaker": "Narrator",
+                      "text": "*A shiver runs across your mind... You feel sated.*",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_TadpoledCount1 = False",
+                        "TRUESOUL = False"
+                      ],
+                      "setflags": [
+                        "GLO_TadpoledCount1"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "43": {
+                      "id": "43",
+                      "speaker": "Narrator",
+                      "text": "*Something stirs deep within you, hungry and alert... it's taking something you'll never get back.*",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_TadpoledCount2 = False",
+                        "TRUESOUL = False"
+                      ],
+                      "setflags": [
+                        "GLO_TadpoledCount2"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "56": {
+                      "id": "56",
+                      "speaker": "Narrator",
+                      "text": "*Your mind lurches, reeling suddenly as if... bitten.*",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_TadpoledCount3 = False",
+                        "TRUESOUL = False"
+                      ],
+                      "setflags": [
+                        "GLO_TadpoledCount3"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "51": {
+                      "id": "51",
+                      "speaker": "Narrator",
+                      "text": "*A shadow swims across your vision, and a familiar voice tells you to be calm. You are loved.*",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_TadpoledCount4 = False",
+                        "TRUESOUL = False"
+                      ],
+                      "setflags": [
+                        "GLO_TadpoledCount4"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "5": {
+                      "id": "5",
+                      "speaker": "Narrator",
+                      "text": "*Your blood runs quicker, feeding the gnawing absence at the centre of your mind.*",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_TadpoledCount5 = False",
+                        "TRUESOUL = False"
+                      ],
+                      "setflags": [
+                        "GLO_TadpoledCount5"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "0": {
+                      "id": "0",
+                      "speaker": "Narrator",
+                      "text": "*The presence deep in your mind is awake, unblinking. This is it. A single word pervades your consciousness: 'Soon'.*",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_TadpoledCount6 = False",
+                        "TRUESOUL = False"
+                      ],
+                      "setflags": [
+                        "GLO_TadpoledCount6"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "21": {
+                          "id": "21",
+                          "speaker": "Goblin Warrior",
+                          "text": "Or whatever you want to call it - 's your town now. Heh.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "FOR_GoblinAmbush_GoblinsPacified"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "Narrator",
+                      "text": "*Your mind is full, bursting with ecstasy and terror. Finally, it is coming. You are becoming.*",
+                      "context": "",
+                      "checkflags": [
+                        "TRUESOUL = False"
+                      ],
+                      "setflags": [
+                        "TRUESOUL"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "48": {
+                      "id": "48",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "50",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "55": {
+              "id": "55",
+              "speaker": "Player",
+              "text": "You do not give orders to me.",
+              "context": "",
+              "checkflags": [
+                "GLO_Tadpoled_UsedToday1 = False",
+                "TRUESOUL = False",
+                "ILLITHID"
+              ],
+              "setflags": [
+                "GLO_Tadpoled_UsedToday1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "47": {
+                  "id": "47",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "6",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {}
+                },
+                "32": {
+                  "id": "32",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "Goblin Warrior",
+                      "text": "This ain't your town, friend. But it can be your grave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "58": {
+              "id": "58",
+              "speaker": "Player",
+              "text": "The only thing you're getting is a beating.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "Goblin Warrior",
+                  "text": "Well that's just bloody rude.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

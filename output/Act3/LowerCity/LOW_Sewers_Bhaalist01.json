@@ -1,0 +1,362 @@
+{
+  "metadata": {
+    "synopsis": "Interactive dialogue with Bhaal cultist in the sewers. If player has made a deal with Orin, they get invited to join in. They can side with cultists, be neutral, or side against cultists. If they side against cultists, they break their pact with Orin.",
+    "how_to_trigger": "Make sure you have an agreement with Orin (it is not currently implemented) and go to -25; 22; 806 and click on Death's Head of Bhaal - S_LOW_Bhaalist01 336fe388-afbe-4b9b-a86e-aec927658019."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_MurderTribunal_Sarevok_State_Dead"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_Orin_State_BrokeDealToKillGortash",
+        "GLO_Orin_State_AgreedToKillGortash"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Sewers_Hasmet_Bhaalist01",
+        "LOW_MurderTribunal_State_BecameUnholyAssassin"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "11",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Death's Head of Bhaal Blythe",
+      "text": "Halt - this one is an ally of our Lady in Red.",
+      "context": "NodeContext: addressing the other cultists. 'the blessed one' refers to the player here.",
+      "checkflags": [
+        "GLO_Orin_State_BrokeDealToKillGortash = False",
+        "GLO_Orin_State_AgreedToKillGortash"
+      ],
+      "setflags": [
+        "LOW_Sewers_Hasmet_Bhaalist01"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "16": {
+          "id": "16",
+          "speaker": "Death's Head of Bhaal Blythe",
+          "text": "Orin spoke of you - you walk in the Dread Lord's favour. Perhaps you wish to partake in his service.",
+          "context": "NodeContext: sinister - 'service' refers to slaughtering refugees",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Death's Head of Bhaal Blythe",
+              "text": "Go ahead. Their blood is yours to spill.",
+              "context": "NodeContext: 'Their' refers to the refugees being tormented",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Player",
+                  "text": "Do as invited - attack the refugees.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_Sewers_State_AttackedRefugees"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "9": {
+                  "id": "9",
+                  "speaker": "Player",
+                  "text": "Carry on without me. I need my weapons sharp for other business.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "10": {
+                      "id": "10",
+                      "speaker": "Death's Head of Bhaal Blythe",
+                      "text": "As you wish. Bhaal's blessings upon you.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_Sewer_State_CultistsFightRefugees"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "7": {
+                  "id": "7",
+                  "speaker": "Player",
+                  "text": "I will not slaughter these people. I will free them from your tyranny.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "17": {
+                      "id": "17",
+                      "speaker": "Death's Head of Bhaal Blythe",
+                      "text": "Heretic! You act against Orin, you act against Bhaal. And our lord has no mercy for sinners.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Death's Head of Bhaal Blythe",
+      "text": "What's this? A heretic in our midst? Your death, in the Dread Lord's name.",
+      "context": "",
+      "checkflags": [
+        "GLO_Orin_State_AgreedToKillGortash = False"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_MurderTribunal_State_BecameUnholyAssassin"
+      ],
+      "setflags": [
+        "LOW_Sewers_Hasmet_Bhaalist01"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "16",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Death's Head of Bhaal Blythe",
+      "text": "Your bloody trail returns you to us. Will you partake now?",
+      "context": "",
+      "checkflags": [
+        "LOW_Sewers_Hasmet_Bhaalist01",
+        "GLO_Orin_State_BrokeDealToKillGortash = False",
+        "GLO_Orin_State_AgreedToKillGortash"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "11",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Sewer_State_RefugeesDefeated",
+        "LOW_MurderTribunal_State_BecameUnholyAssassin"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Death's Head of Bhaal Blythe",
+      "text": "You serve the Dread Lord well. Lady Orin's favour is well placed.",
+      "context": "",
+      "checkflags": [
+        "LOW_Sewer_State_RefugeesDefeated",
+        "GLO_Orin_State_BrokeDealToKillGortash = False",
+        "GLO_Orin_State_AgreedToKillGortash"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

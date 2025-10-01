@@ -1,0 +1,1899 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue for Adrielle, one of the hag support group players can meet in the Lower city. The hag support group is made up of people who have survived an encouter with a hag, and who have banded together to try to research hags, but also to be there for one another. However, one of their group (the dragonborn), is secretly a redcap and is toying with their minds. The redcap has also, if Mayrina is present, hexed her and turned her into a sheep. If Mayrina isn't present, the redcap has enchanted a doll that is terrifying the group.This dialogue covers a number of states such as 1) Mayrina is present and has been hexed 2) player cured her 3) player has saved Adrielle and the others from a redcap 4) the hag is dead and Adrielle rewards them (if no other npc is present) 5) if mayrina isn't present, a doll is terrorising them and she's trying to find it",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Click on S_LOW_HagSurvivors_Adrielle_aa38af5c-9c75-4b2e-89e3-0cc1b995dbd6, -54.527; 11.433; -157.816"
+  },
+  "dialogue": {
+    "10": {
+      "id": "10",
+      "speaker": "Adrielle",
+      "text": "You're here! Mayrina was looking for you - she says it's urgent.",
+      "context": "NodeContext: urgent but not panicked",
+      "checkflags": [
+        "LOW_HagSurvivors_State_KillHagQuestCompleted = False",
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_BlushingMermaid_State_HagIsTrulyDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Adrielle",
+      "text": "I'm an imbecile - the doll showed up days after the dragonborn joined us. Why didn't I see it?",
+      "context": "NodeContext: furious with herself",
+      "checkflags": [
+        "LOW_BlushingMermaid_State_MayrinaIsInBG = False",
+        "LOW_HagSurvivors_State_HagSpyAggroed"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "54",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "29": {
+          "id": "29",
+          "speaker": "Player",
+          "text": "Hag, and their agents, are talented liars.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "54",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "74": {
+              "id": "74",
+              "speaker": "Adrielle",
+              "text": "I fell for a hag's lies once, and in my arrogance was sure it would never happen again.",
+              "context": "NodeContext: disappointed in herself",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "54",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "67": {
+                  "id": "67",
+                  "speaker": "Adrielle",
+                  "text": "Blast it all - this is because of the book. I brought this on us all.",
+                  "context": "NodeContext: blaming herself",
+                  "checkflags": [
+                    "LOW_BlushingMermaid_State_HagRevealed = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "54",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "15": {
+                      "id": "15",
+                      "speaker": "Player",
+                      "text": "Tell me - maybe I can help.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "54",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "13": {
+                      "id": "13",
+                      "speaker": "Player",
+                      "text": "Must be some book.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "95",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "54": {
+                          "id": "54",
+                          "speaker": "Adrielle",
+                          "text": "I was researching hags - and came upon their darkest secret.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "95",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "98": {
+                              "id": "98",
+                              "speaker": "Adrielle",
+                              "text": "A way to burn their bones to ash - and ensure they never return. No tricks, no come-backs - only the cold permanence of death.",
+                              "context": "NodeContext: grimly determined",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_HagSurvivors_State_KillHagAccepted"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "95",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "Player",
+                                  "text": "Tell me what it is, and I'll deal with the hag - don't worry.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Astarion -1",
+                                    "Gale 1",
+                                    "Lae'zel 1",
+                                    "Wyll 2",
+                                    "Karlach 1",
+                                    "Shadowheart 1",
+                                    "Jaheira 1",
+                                    "Minthara -1",
+                                    "Halsin 2",
+                                    "Minsc 2"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "95",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "2": {
+                                      "id": "2",
+                                      "speaker": "Adrielle",
+                                      "text": "Thank you - the redcap proved that I'm no match for a hag. Much to my shame.",
+                                      "context": "NodeContext: disappointed in herself",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "95": {
+                                          "id": "95",
+                                          "speaker": "Adrielle",
+                                          "text": "There's a safe in the back - within is years worth of research. Kill her before she sends more of her monsters - I beg of you.",
+                                          "context": "NodeContext: it hurts her pride to beg but she will do it if it means keeping her research safe",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "LOW_HagSurvivors_Knows_HagLoreBook"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "101": {
+                                  "id": "101",
+                                  "speaker": "Player",
+                                  "text": "Explain it to me.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "95",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "62": {
+                                  "id": "62",
+                                  "speaker": "Player",
+                                  "text": "This is your problem, not mine.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Astarion 1",
+                                    "Lae'zel 1",
+                                    "Gale -1",
+                                    "Wyll -1",
+                                    "Karlach -1",
+                                    "Shadowheart 1",
+                                    "Jaheira -1",
+                                    "Minthara 1",
+                                    "Minsc -1",
+                                    "Halsin -1"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "57": {
+                                      "id": "57",
+                                      "speaker": "Adrielle",
+                                      "text": "Wait! My research has painted a target on my back - and the redcap proved I am no match for a hag.",
+                                      "context": "NodeContext: disappointed in herself",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "66": {
+                                          "id": "66",
+                                          "speaker": "Adrielle",
+                                          "text": "There's a safe in the back with my life's work. I cannot bear to destroy it, but so long as it exists, I will be hunted. Take it - I beg of you.",
+                                          "context": "NodeContext: it hurts her pride to beg but she will do it if it means keeping her research safe",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "LOW_HagSurvivors_Knows_HagLoreBook"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "51": {
+                      "id": "51",
+                      "speaker": "Player",
+                      "text": "I am not getting mixed up in this.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Lae'zel 1",
+                        "Gale -1",
+                        "Wyll -1",
+                        "Karlach -1",
+                        "Shadowheart 1",
+                        "Jaheira -1",
+                        "Minthara 1",
+                        "Minsc -1",
+                        "Halsin -1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "25": {
+                          "id": "25",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "57",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "Adrielle",
+                  "text": "This attack is proof. Auntie Ethel knows we've discovered her darkest secret, a way to send her to death's cold embrace - for all eternity.",
+                  "context": "NodeContext: grim but also determined",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "63",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "76": {
+                      "id": "76",
+                      "speaker": "Player",
+                      "text": "How?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "63",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "83": {
+                          "id": "83",
+                          "speaker": "Adrielle",
+                          "text": "I spent a lifetime researching these vile creatures - but to my shame I'm no match for Ethel.",
+                          "context": "NodeContext: disappointed in herself",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "63",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "45": {
+                      "id": "45",
+                      "speaker": "Player",
+                      "text": "Join me - I'll need all the help I can get.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "63",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "42": {
+                          "id": "42",
+                          "speaker": "Adrielle",
+                          "text": "I can't. If the dragonborn has shown me anything, it's that I'm not ready to face a hag - much to my shame.",
+                          "context": "NodeContext: disappointed in herself",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "63": {
+                              "id": "63",
+                              "speaker": "Adrielle",
+                              "text": "There's a safe in the back - within is everything I know about hags and their abominations.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "35": {
+                                  "id": "35",
+                                  "speaker": "Adrielle",
+                                  "text": "Kill Ethel before she seeks vengeance for her fallen redcap. Save us - I beg of you.",
+                                  "context": "NodeContext: it hurts her pride to beg but she will do it if it means keeping her research safe",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_HagSurvivors_Knows_HagLoreBook",
+                                    "LOW_HagSurvivors_State_KillHagAccepted"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "16": {
+                      "id": "16",
+                      "speaker": "Player",
+                      "text": "So get out there and kill her. Don't sit here like cowards.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Lae'zel 1",
+                        "Shadowheart 1",
+                        "Gale -1",
+                        "Wyll -1",
+                        "Karlach -1",
+                        "Jaheira 1",
+                        "Minthara 1",
+                        "Halsin -1",
+                        "Minsc 1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "63",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "50": {
+                          "id": "50",
+                          "speaker": "Adrielle",
+                          "text": "A doll was nearly our undoing - we have no chance against her, as much as it pains me to admit it.",
+                          "context": "NodeContext: disappointed in herself",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "63",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "96": {
+          "id": "96",
+          "speaker": "Player",
+          "text": "He mentioned a book - mean anything to you?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "67",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "80": {
+              "id": "80",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "54",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "47": {
+          "id": "47",
+          "speaker": "Player",
+          "text": "You endangered everyone.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "67",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "79": {
+              "id": "79",
+              "speaker": "Adrielle",
+              "text": "Yes. I am... painfully aware. But some good has come of this.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "67",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Adrielle",
+      "text": "The doll! Find the doll!",
+      "context": "NodeContext: authoritative",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "37": {
+      "id": "37",
+      "speaker": "Adrielle",
+      "text": "I'm glad you're here. I clearly lack the power to keep the hag, and her hexes, away from Mayrina.",
+      "context": "NodeContext: blaming herself",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurrogateMotherCured = False"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "81",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "84": {
+          "id": "84",
+          "speaker": "Player",
+          "text": "Have you seen a doll around here?",
+          "context": "",
+          "checkflags": [
+            "LOW_HagSurvivors_SurrogateMother_MentionedDoll"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "75": {
+              "id": "75",
+              "speaker": "Adrielle",
+              "text": "A doll? Hm. I saw a curious looking toy in some boxes upstairs, but I figured it the remnants of the previous tenants.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "You protected Mayrina until now - that's worth something.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Gale 1",
+            "Lae'zel -1",
+            "Shadowheart 1",
+            "Wyll 1",
+            "Karlach 1",
+            "Jaheira 1",
+            "Minthara -1",
+            "Minsc 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "24": {
+              "id": "24",
+              "speaker": "Adrielle",
+              "text": "You are kind, but I serve Helm - and failing to keep this hex from Mayrina is unforgivable in both his eyes and mine.",
+              "context": "NodeContext: small smile at the player's kindness. but in her mind, everything is still  her fault",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "86": {
+          "id": "86",
+          "speaker": "Player",
+          "text": "I know Mayrina is hexed, but why a sheep?",
+          "context": "",
+          "checkflags": [
+            "LOW_HagSurvivors_State_SawMayrinaAsSheep"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "82": {
+              "id": "82",
+              "speaker": "Adrielle",
+              "text": "Because to a hag, we are but lambs to her slaughter. We are mere toys - to be used and broken.",
+              "context": "NodeContext: grim",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Any idea how to remove the hex?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "64": {
+              "id": "64",
+              "speaker": "Adrielle",
+              "text": "None. The magic originates from a hag's twisted lair - of that I am sure. But as to its cure, Helm has not revealed it to me.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "56": {
+          "id": "56",
+          "speaker": "Player",
+          "text": "You should leave while you still can.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "91": {
+              "id": "91",
+              "speaker": "Adrielle",
+              "text": "I was lost when Mayrina and I first met. Yet her courage reminded me of who I am - Helm's shield. I will not turn my back on her.",
+              "context": "NodeContext: fiercely determined to help her friend",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "93": {
+          "id": "93",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "39": {
+      "id": "39",
+      "speaker": "Adrielle",
+      "text": "How fares Mayrina?",
+      "context": "NodeContext: concerned",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurrogateMotherCured = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "81",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "69": {
+          "id": "69",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "37",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "40": {
+      "id": "40",
+      "speaker": "Adrielle",
+      "text": "This is all my fault. Mayrina was hexed mere days after the dragonborn joined us. Why didn't I see it?",
+      "context": "NodeContext: ointed in herself",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap = False",
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_HagSpyAggroed",
+        "LOW_HagSurvivors_State_SurrogateMotherCured"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "81",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "92": {
+          "id": "92",
+          "speaker": "Player",
+          "text": "Hag, and their agents, are liars and cheats by nature.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Gale 1",
+            "Lae'zel -1",
+            "Shadowheart 1",
+            "Wyll 1",
+            "Karlach 1",
+            "Jaheira 1",
+            "Minthara -1",
+            "Minsc 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "81",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "55": {
+              "id": "55",
+              "speaker": "Adrielle",
+              "text": "That's no excuse - I know what they're like, yet still I welcomed the dragonborn with open arms.",
+              "context": "NodeContext: angry with herself - wishes she was 'better'",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "81",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "53": {
+          "id": "53",
+          "speaker": "Player",
+          "text": "You're lucky I was here to save your asses.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "81": {
+              "id": "81",
+              "speaker": "Adrielle",
+              "text": "Mayrina was right about you. Thank you - for saving her when I couldn't.",
+              "context": "NodeContext: sincere but also continuing to beat herself up for not being 'good enough'",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "More than stupid - moronic. You endangered everyone.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Lae'zel 1",
+            "Shadowheart 1",
+            "Gale -1",
+            "Wyll -1",
+            "Karlach -1",
+            "Jaheira 1",
+            "Minsc -1",
+            "Minthara 1",
+            "Halsin -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "32": {
+              "id": "32",
+              "speaker": "Adrielle",
+              "text": "I won't make the same mistake again - I swear it.",
+              "context": "NodeContext: grimly determined",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "44": {
+      "id": "44",
+      "speaker": "Adrielle",
+      "text": "Should you ever have need of a cleric of Helm, I shall be there - you have my word.",
+      "context": "NodeContext: sincere and grateful",
+      "checkflags": [
+        "LOW_HagSurvivors_State_KillHagQuestCompleted"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "48": {
+      "id": "48",
+      "speaker": "Adrielle",
+      "text": "Now is not the time for idle chatter - we need to find the doll!",
+      "context": "NodeContext: determined - taking charge",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG = False"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "36",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "58": {
+          "id": "58",
+          "speaker": "Player",
+          "text": "Just leave the building.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "88": {
+              "id": "88",
+              "speaker": "Adrielle",
+              "text": "We tried - the wretched thing followed us. We have no choice - we must find and destroy it. Before it consumes us all.",
+              "context": "NodeContext: grim",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "I need info - where have you seen the doll?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "26": {
+              "id": "26",
+              "speaker": "Adrielle",
+              "text": "Everywhere - inside boxes, under chairs. It could be anywhere.",
+              "context": "NodeContext: grim",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "What did you do to piss of a hag?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "41": {
+              "id": "41",
+              "speaker": "Adrielle",
+              "text": "This is not the time.",
+              "context": "NodeContext: no nonsense",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "49": {
+      "id": "49",
+      "speaker": "Adrielle",
+      "text": "There's so much blood. Mayrina! Check on Mayrina upstairs!",
+      "context": "NodeContext: shock at the dead redcap, trying to gain conftrol of the situation. Directing the player upstairs.",
+      "checkflags": [
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurvivorsFightAlongsideHagSpy"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "59": {
+      "id": "59",
+      "speaker": "Adrielle",
+      "text": "I'm an imbecile - Mayrina was hexed mere days after the dragonborn appeared.",
+      "context": "NodeContext: furious with herself",
+      "checkflags": [
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_HagSpyAggroed"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "36",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "99": {
+          "id": "99",
+          "speaker": "Adrielle",
+          "text": "And now she's dead. Why didn't I see it? Why didn't I stop him? Damn it - damn it all!",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "14",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "68": {
+      "id": "68",
+      "speaker": "Adrielle",
+      "text": "The city feels different - like evil's embrace has lessened its vice.",
+      "context": "NodeContext: peaceful, serene",
+      "checkflags": [
+        "LOW_HagSurvivors_State_KillHagQuestCompleted = False",
+        "LOW_BlushingMermaid_State_HagIsTrulyDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "36",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "61": {
+          "id": "61",
+          "speaker": "Adrielle",
+          "text": "The hag is dead, isn't she?",
+          "context": "NodeContext: peaceful, serene",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "36",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "33": {
+              "id": "33",
+              "speaker": "Player",
+              "text": "Yes - finally.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "36",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Adrielle",
+                  "text": "The city is still under threat, and the future is uncertain - but this is a victory for all that is good and kind.",
+                  "context": "NodeContext: a broad smile",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "36": {
+                      "id": "36",
+                      "speaker": "Adrielle",
+                      "text": "My only regret is that Mayrina did not live to see this. But she want me to set aside my sorrow - and would also yell at me for 'ruining the mood'.",
+                      "context": "NodeContext: small sad laugh",
+                      "checkflags": [
+                        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "6": {
+                          "id": "6",
+                          "speaker": "Adrielle",
+                          "text": "Never in my wildest dreams could I have bested the hag - thank you, my friend, for doing the impossible.",
+                          "context": "NodeContext: a broad smile",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_HagSurvivors_State_KillHagQuestCompleted"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "70": {
+              "id": "70",
+              "speaker": "Player",
+              "text": "How did you know?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "36",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "46": {
+                  "id": "46",
+                  "speaker": "Adrielle",
+                  "text": "Helm is known as the Vigiliant One for good reason - while I could not see the hag, I could sense her. Now I feel roses where once there were thorns.",
+                  "context": "NodeContext: a broad smile",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "36",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "52": {
+              "id": "52",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "71": {
+      "id": "71",
+      "speaker": "Adrielle",
+      "text": "The hag could be anywhere in the city - find and kill her. I beg of you.",
+      "context": "NodeContext: hates how powerless she feels",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap",
+        "LOW_HagSurvivors_Knows_HagLoreBook"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "94",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "94": {
+          "id": "94",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "60": {
+              "id": "60",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "LOW_BlushingMermaid_State_HagIsAllyInEND"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "23": {
+                  "id": "23",
+                  "speaker": "Player",
+                  "text": "I won't be killing Ethel. In fact, I've made a deal with her.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_BlushingMermaid_State_HagIsAllyInEND"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "1": {
+                      "id": "1",
+                      "speaker": "Adrielle",
+                      "text": "I'll send your head back to your mistress, you wretched scum.",
+                      "context": "NodeContext: serious, determined - combat about to start",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_HagSurvivors_State_ToldAboutHagDeal"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "5": {
+                  "id": "5",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "taganswer",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "78": {
+      "id": "78",
+      "speaker": "Adrielle",
+      "text": "When next I pray, you shall be the first name on my lips. Thank you.",
+      "context": "NodeContext: grateful",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap",
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_HagSpyAggroed",
+        "LOW_HagSurvivors_State_SurrogateMotherCured"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "85": {
+      "id": "85",
+      "speaker": "Adrielle",
+      "text": "You must stop the hag, or she'll never stop tormenting us. Please.",
+      "context": "NodeContext: hpleading - hates how powerless she feels",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap",
+        "LOW_HagSurvivors_State_KillHagAccepted"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "94",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "89": {
+      "id": "89",
+      "speaker": "Adrielle",
+      "text": "Damn that hag - damn her to the Nine Hells.",
+      "context": "NodeContext: dissapointed in herself that she 'let' this happen",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurvivorsFightAlongsideHagSpy"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "97": {
+      "id": "97",
+      "speaker": "Adrielle",
+      "text": "Forgive me for raising a hand against you. The dragonborn worked hard to stoke our paranoia - yet the fiend was working for the hag this whole time.",
+      "context": "NodeContext: horrified that she attacked the player and that she missed the truth about the dragonborn",
+      "checkflags": [
+        "LOW_BlushingMermaid_State_MayrinaIsInBG = False",
+        "LOW_HagSurvivors_State_SurvivorsFightAlongsideHagSpy"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_Adrielle_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "72": {
+          "id": "72",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "67",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "28": {
+          "id": "28",
+          "speaker": "Adrielle",
+          "text": "That means Ethel knows I'm here - and that I have it. Helm protect me - I'm dead.",
+          "context": "NodeContext: hint of fear as this dawns on her, building up to the last line",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "87": {
+              "id": "87",
+              "speaker": "Player",
+              "text": "I won't let that happen, I promise.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Astarion -1",
+                "Gale 1",
+                "Lae'zel 1",
+                "Wyll 2",
+                "Karlach 1",
+                "Shadowheart 1",
+                "Jaheira 1",
+                "Minthara -1",
+                "Halsin 2",
+                "Minsc 2"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "43": {
+                  "id": "43",
+                  "speaker": "Adrielle",
+                  "text": "You carry Helm's strength and assurance - He sent you to me, I know it.",
+                  "context": "NodeContext: thankful",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "77": {
+                      "id": "77",
+                      "speaker": "Adrielle",
+                      "text": "I discovered Ethel's darkest secret - a way to burn that witch for good. No more tricks, no more comebacks.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "18": {
+                          "id": "18",
+                          "speaker": "Adrielle",
+                          "text": "It's in a safe in the back - within lies everything I know about hags. Use that knowledge to kill Ethel, and free this world of her evil - I beg of you.",
+                          "context": "NodeContext: it hurts her pride to beg but she will do it if it means keeping her research safe",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_HagSurvivors_Knows_HagLoreBook"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "speaker": "Player",
+              "text": "Have what?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "38": {
+                  "id": "38",
+                  "speaker": "Adrielle",
+                  "text": "Ethel's darkest secret - a way to burn that witch for good. No more tricks, no more comebacks.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "Player",
+                      "text": "Tell me and I'll kill Ethel - I promise.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion -1",
+                        "Gale 1",
+                        "Lae'zel 1",
+                        "Wyll 2",
+                        "Karlach 1",
+                        "Shadowheart 1",
+                        "Jaheira 1",
+                        "Minthara -1",
+                        "Halsin 2",
+                        "Minsc 2"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "73": {
+                          "id": "73",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "2",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "12": {
+                      "id": "12",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "101",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    },
+                    "30": {
+                      "id": "30",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "62",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "65": {
+              "id": "65",
+              "speaker": "Player",
+              "text": "Probably - you are quite useless.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "90": {
+                  "id": "90",
+                  "speaker": "Adrielle",
+                  "text": "No, it cannot die with me! I discovered Ethel's darkest secret - a way to burn that witch for good. No more tricks, no more comebacks.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "34": {
+                      "id": "34",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "38",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "100": {
+      "id": "100",
+      "speaker": "Adrielle",
+      "text": "Jatlo took off like the fiends of the Nine Hells were on his tail...",
+      "context": "NodeContext: confused and concerned",
+      "checkflags": [
+        "LOW_HagSurvivors_State_HagSpyAggroed  = False",
+        "LOW_HagSurvivors_State_DollDestroyed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

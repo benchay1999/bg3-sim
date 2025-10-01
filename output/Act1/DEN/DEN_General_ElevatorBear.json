@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "synopsis": "A bear is sleeping on the elevator, blocking it off from use. She's very tired and doesn't want to get up"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Tuffet",
+      "text": "Hmm... salty fish... three heads...",
+      "context": "NodeContext: Talking in his sleep, smacking his lips.",
+      "checkflags": [
+        "DEN_General_Event_ElevatorBearMoves",
+        "DEN_General_Event_GaveBearFish",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Tuffet",
+      "text": "*Sniff.*",
+      "context": "CinematicNodeContext: The bear lifts up his head, sniffs the air and goes back to sleep.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "Throw a fish next to the elevator.",
+          "context": "",
+          "checkflags": [
+            "54d7be3c-6808-8c50-748f-4c57589be7e6"
+          ],
+          "setflags": [
+            "DEN_General_Event_ElevatorBearMoves",
+            "DEN_General_Event_GaveBearFish"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Tuffet",
+              "text": "*Hum.*",
+              "context": "CinematicNodeContext: The bear sniffs, smells the fish and follows it off the platform, eating it in one gulp before going back to sleep next to the platform.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "22": {
+          "id": "22",
+          "speaker": "Player",
+          "text": "Carefully nudge the bear's flank.",
+          "context": "",
+          "checkflags": [
+            "DEN_General_Event_TriedNudgingBear = False"
+          ],
+          "setflags": [
+            "DEN_General_Event_TriedNudgingBear"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Tuffet",
+                  "text": "*Grunt.*",
+                  "context": "CinematicNodeContext: The bear sluggishly gets up. (It moves in scripting, after the dialogue has ended.)",
+                  "checkflags": [],
+                  "setflags": [
+                    "DEN_General_Event_ElevatorBearMoves"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Tuffet",
+                  "text": "*Roar!*",
+                  "context": "CinematicNodeContext: The bear lifts its head and starts roaring at us. The roar turns into a yawn midway, and he goes back to sleep.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Imitate a squirrel's chatter to lure it away.",
+          "context": "",
+          "checkflags": [
+            "DEN_General_ElevatorBear_Knows_TriedSound = False",
+            "RANGER"
+          ],
+          "setflags": [
+            "DEN_General_ElevatorBear_Knows_TriedSound"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "21": {
+              "id": "21",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "Tuffet",
+                  "text": "*Roar!*",
+                  "context": "CinematicNodeContext: The bear jumps off the platform with a roar, hopeing to catch the squirrel, then looks around in confusion as it doesn't see a squirrel and goes back to sleep next to the platform.",
+                  "checkflags": [],
+                  "setflags": [
+                    "DEN_General_Event_ElevatorBearMoves"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "9": {
+              "id": "9",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "Tuffet",
+                  "text": "*Grunt.*",
+                  "context": "CinematicNodeContext: The bear looks up lazily and looks around, then grunts and goes back to sleep.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Tuffet",
+      "text": "*Snort.*",
+      "context": "CinematicNodeContext: The bear is sleeping.",
+      "checkflags": [
+        "DEN_General_Event_ElevatorBearMoves"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Tuffet",
+      "text": "Hmmm...? I'm... sleeping...",
+      "context": "CinematicNodeContext: The bear lifts up his head, sniffs the air and goes back to sleep.\rNodeContext: Mumbled - he's still half asleep and doesn't want to wake up. Can be said with a yawn, and have a snore after it.",
+      "checkflags": [
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Throw a fish next to the elevator.",
+          "context": "",
+          "checkflags": [
+            "54d7be3c-6808-8c50-748f-4c57589be7e6"
+          ],
+          "setflags": [
+            "DEN_General_Event_ElevatorBearMoves",
+            "DEN_General_Event_GaveBearFish"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "16": {
+              "id": "16",
+              "speaker": "Tuffet",
+              "text": "Huh? What's that?",
+              "context": "CinematicNodeContext: The bear sniffs, smells the fish and follows it off the platform, eating it in one gulp before going back to sleep next to the platform.\rNodeContext: The bear smelled a fish. She's suddenly wide awake.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Could you move just a little bit? I need to use the elevator.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "DEN_General_Event_ElevatorBearMoves"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "Tuffet",
+              "text": "Uuurghh... okay.",
+              "context": "CinematicNodeContext: The bear sluggishly gets up and moves.\rNodeContext: long groan, then she agrees to move - she's still very sleepy.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "14",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Tuffet",
+      "text": "Hmmmm...",
+      "context": "NodeContext: He's sleeping. Can be snoring a little.",
+      "checkflags": [
+        "DEN_General_Event_ElevatorBearMoves",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

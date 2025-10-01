@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "synopsis": "Patient of the surgeon. Eyes, tongue have been removed.",
+    "how_to_trigger": "SCL_Main_Agoto -199; 27; 44Use \"Attack\" button in the dialog and kill the surgeon and the nurses.Talk to the patient."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Distressed Patient",
+      "text": "Rgrl. Gn - ungh. Ngh!",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Unlock the restraints.",
+          "context": "",
+          "checkflags": [
+            "TWN_Hospital_State_SurgeonPermaDefeated",
+            "TWN_Hospital_State_PatientReleased = False",
+            "TWN_Hospital_State_HasSurgicalBedKey"
+          ],
+          "setflags": [
+            "TWN_Hospital_Event_ReleasePatient"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

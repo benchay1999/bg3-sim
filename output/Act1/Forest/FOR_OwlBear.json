@@ -1,0 +1,1904 @@
+{
+  "metadata": {
+    "synopsis": "In SwA, the owlbear speaks like a human. Her voice is deep and threatening - the voice of a seasoned fighter, at home in a fight and used to winning. However, she knows she's injured and at a disadvantage, but refuses to betray that to the player. Doing so might encourage the player to attack, putting her cub in danger.The player stumbles upon the nest of an owlbear; a large, predatory hybrid creature. They find themselves in a stand-off against the beast - if they get too close or act aggressively, it attacks. If they keep cool and back off when the opportunity presents itself, the owlbear will let them leave. The player may also notice that the owlbear is wounded - a broken spear protrudes from one eye socket. They may notice that the owlbear has a cub - this is the main reason for her aggression and territoriality.Additional note 1: the player may stumble upon this scenario by themselves, or they may have been pointed in the right direction after meeting some cultists who had a close encounter with the owlbear. If we won these cultists over, they may be available to fight the owlbear at our side.Additional note 2: If the owlbear mother is killed but her cub survives, we can decide the juvenile's fate. If we spare it, we may later find it being used for sport by the goblins in their camp.",
+    "how_to_trigger": "lRepro steps:1. Start the game.2. loadlevel WLD_Main_A3. goto 90.71, 12.67, 441.064. walk into the cave until you encounter the owlbear"
+  },
+  "dialogue": {
+    "20": {
+      "id": "20",
+      "speaker": "Narrator",
+      "text": "*The owlbear growls deep in its feathered chest - you had your chance.*",
+      "context": "NodeContext: A wild animal bellows and turns hostile after the player ignores its previous demands to leave its territory.",
+      "checkflags": [
+        "FOR_Owlbear_Hasmet",
+        "46fb584f-159c-261b-c058-f7809ee72535_AnimalHandlingSuccess",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Narrator",
+      "text": "*You feel the quake of its heavy footsteps before you see it: an owlbear, its beaked face looming out of the darkness.*",
+      "context": "InternalNodeContext: This greeting if the player doesn't have Speak with Animals.",
+      "checkflags": [
+        "FOR_Owlbear_Hasmet = False",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "FOR_Owlbear_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "17",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "66": {
+          "id": "66",
+          "speaker": "Owlbear",
+          "text": "*Growl.*",
+          "context": "CinematicNodeContext: Ready to pounce.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "17",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "81": {
+              "id": "81",
+              "speaker": "Player",
+              "text": "Study the owlbear's behaviour.",
+              "context": "",
+              "checkflags": [
+                "FOR_Owlbear_State_AnimalHandlingFailed = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "17",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "78": {
+                      "id": "78",
+                      "speaker": "Narrator",
+                      "text": "*The owlbear glances quickly back, then squares its gaze at you. You follow its glance...*",
+                      "context": "CinematicNodeContext: The owlbear glances toward the cubs.",
+                      "checkflags": [
+                        "FOR_OwlBear_Healed"
+                      ],
+                      "setflags": [
+                        "46fb584f-159c-261b-c058-f7809ee72535_AnimalHandlingSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "17",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "Narrator",
+                      "text": "*The owlbear's one good eye flicks away for a moment. You follow its glance...*",
+                      "context": "CinematicNodeContext: The owlbear glances over",
+                      "checkflags": [
+                        "FOR_OwlBear_Healed = False"
+                      ],
+                      "setflags": [
+                        "46fb584f-159c-261b-c058-f7809ee72535_AnimalHandlingSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "10",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "Narrator",
+                          "text": "*...and see an owlbear cub.*",
+                          "context": "CinematicNodeContext: Cub is highlighted.",
+                          "checkflags": [],
+                          "setflags": [
+                            "FOR_Owlbear_Knows_ProtectingCub"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "10",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "Player",
+                              "text": "Hold out your palms - you mean no harm.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "10",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "49": {
+                                  "id": "49",
+                                  "speaker": "Narrator",
+                                  "text": "*The owlbear stares, then sharply inhales your scent.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "10",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "34": {
+                                      "id": "34",
+                                      "speaker": "Narrator",
+                                      "text": "*It sits back, its eyes still fixed on you. A silent ultimatum...*",
+                                      "context": "",
+                                      "checkflags": [
+                                        "FOR_OwlBear_Healed"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "10",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "10": {
+                                          "id": "10",
+                                          "speaker": "Narrator",
+                                          "text": "*...You can leave now, or step closer and die.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "FOR_Owlbear_Retreat"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Gale 1",
+                                            "Lae'zel -1",
+                                            "Shadowheart 1",
+                                            "Karlach 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "59": {
+                                      "id": "59",
+                                      "speaker": "Narrator",
+                                      "text": "*It sits back, its eye still fixed on you. A silent ultimatum...*",
+                                      "context": "",
+                                      "checkflags": [
+                                        "FOR_OwlBear_Healed = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "10",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "51": {
+                              "id": "51",
+                              "speaker": "Player",
+                              "text": "Move toward the cub.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "62": {
+                                  "id": "62",
+                                  "speaker": "Narrator",
+                                  "text": "*A bloodthirsty screech erupts from the owlbear's throat.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "FactionHostileToPlayerGroupAfterDialog"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Lae'zel 1",
+                                    "Shadowheart -1",
+                                    "Karlach -1"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "74": {
+                              "id": "74",
+                              "speaker": "Player",
+                              "text": "Back away slowly.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "Narrator",
+                                  "text": "*As you retreat, the owlbear lets out a short huff. The message is clear...*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "50": {
+                                      "id": "50",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "10",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "71": {
+                              "id": "71",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "93",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "25": {
+                  "id": "25",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "94": {
+                      "id": "94",
+                      "speaker": "Narrator",
+                      "text": "*You can only surmise the obvious - the owlbear is out for blood.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FOR_Owlbear_State_AnimalHandlingFailed"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "63": {
+              "id": "63",
+              "speaker": "Player",
+              "text": "Back away.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "29": {
+                  "id": "29",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "72": {
+                      "id": "72",
+                      "speaker": "Owlbear",
+                      "text": "*Huff.*",
+                      "context": "NodeContext: A deep huff - the owlbear is considering its next move.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "54": {
+                          "id": "54",
+                          "speaker": "Narrator",
+                          "text": "*The owlbear stares, but doesn't move to attack. The way out seems clear.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "FOR_Owlbear_Retreat"
+                          ],
+                          "ruletags": [],
+                          "approval": [
+                            "Gale 1",
+                            "Lae'zel -1",
+                            "Shadowheart 1",
+                            "Karlach 1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "43": {
+                  "id": "43",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "26": {
+                      "id": "26",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "44",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "11": {
+              "id": "11",
+              "speaker": "Player",
+              "text": "Puff out your chest and roar.",
+              "context": "",
+              "checkflags": [
+                "BARBARIAN = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "89": {
+                  "id": "89",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Narrator",
+                      "text": "*The beast shrinks back, feathers quivering.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "85": {
+                          "id": "85",
+                          "speaker": "Owlbear",
+                          "text": "*Hoo-hoot!*",
+                          "context": "NodeContext: Intimidated.",
+                          "checkflags": [],
+                          "setflags": [
+                            "FOR_Owlbear_Retreat"
+                          ],
+                          "ruletags": [],
+                          "approval": [
+                            "Gale 1",
+                            "Lae'zel -1",
+                            "Shadowheart 1",
+                            "Karlach 1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "53": {
+                  "id": "53",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "82": {
+                      "id": "82",
+                      "speaker": "Narrator",
+                      "text": "*The beast returns the roar in kind.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Lae'zel 1",
+                        "Shadowheart -1",
+                        "Karlach -1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "95": {
+                          "id": "95",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "44",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "91": {
+              "id": "91",
+              "speaker": "Player",
+              "text": "ROAR.",
+              "context": "InternalNodeContext: Barbarian tagged variant of N1529 with advantage",
+              "checkflags": [
+                "BARBARIAN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "11",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "93": {
+              "id": "93",
+              "speaker": "Player",
+              "text": "Attack.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Lae'zel 1",
+                "Shadowheart -1",
+                "Karlach -1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "31": {
+                  "id": "31",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "44",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "23": {
+                  "id": "23",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "36": {
+      "id": "36",
+      "speaker": "Narrator",
+      "text": "*You feel the quake of its heavy footsteps before you see it: an owlbear, its beaked face looming out of the darkness.*",
+      "context": "InternalNodeContext: This greeting if the player has speak with Animals.",
+      "checkflags": [
+        "FOR_Owlbear_Hasmet = False",
+        "DEPRECATED",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "44": {
+      "id": "44",
+      "speaker": "Owlbear",
+      "text": "*Schrrreek!*",
+      "context": "",
+      "checkflags": [
+        "FOR_Owlbear_Hasmet",
+        "46fb584f-159c-261b-c058-f7809ee72535_AnimalHandlingSuccess = False",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "98": {
+      "id": "98",
+      "speaker": "Narrator",
+      "text": "*You feel the quake of its heavy footsteps before you see it: an owlbear, its beaked face looming out of the darkness.*",
+      "context": "",
+      "checkflags": [
+        "FOR_Owlbear_Hasmet = False",
+        "PETPAL"
+      ],
+      "setflags": [
+        "FOR_Owlbear_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "64",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "61": {
+          "id": "61",
+          "speaker": "Owlbear",
+          "text": "What's this? Something weak, something tender...",
+          "context": "NodeContext: Sizing up the player.",
+          "checkflags": [],
+          "setflags": [
+            "FOR_Owlbear_Hasmet"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "64",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Owlbear",
+              "text": "Won't even have to chew you before I feed you to my son, softmeat.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "64",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "30": {
+                  "id": "30",
+                  "speaker": "Player",
+                  "text": "You're injured - there's still half a spear lodged in your head.",
+                  "context": "",
+                  "checkflags": [
+                    "FOR_OwlBear_Healed = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "64",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "41": {
+                      "id": "41",
+                      "speaker": "Owlbear",
+                      "text": "It's a splinter. I've gutted bigger threats than you with worse.",
+                      "context": "NodeContext: She has a spear sticking out of her eye.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "39",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "60": {
+                  "id": "60",
+                  "speaker": "Player",
+                  "text": "Sorry - wrong cave. I'll be going.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "64",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "80": {
+                      "id": "80",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "38",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "4": {
+                  "id": "4",
+                  "speaker": "Player",
+                  "text": "Move closer.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "64",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "45": {
+                      "id": "45",
+                      "speaker": "Owlbear",
+                      "text": "Stop! One more step and I'll rip your throat out.",
+                      "context": "NodeContext: a snarling response",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "64",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "55": {
+                          "id": "55",
+                          "speaker": "Player",
+                          "text": "Oh, yes? What're you waiting for?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "64",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "22": {
+                              "id": "22",
+                              "speaker": "Owlbear",
+                              "text": "My cub must learn how to deal with a threat. How to make it fear.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "64",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "39": {
+                                  "id": "39",
+                                  "speaker": "Owlbear",
+                                  "text": "The meat tastes better when it's afraid.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "64",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "86": {
+                                      "id": "86",
+                                      "speaker": "Player",
+                                      "text": "Let me go, or you'll watch your cub die before I finish you.",
+                                      "context": "InternalNodeContext: Tagged for non-barbarians",
+                                      "checkflags": [
+                                        "BARBARIAN = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "64",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "37": {
+                                          "id": "37",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "57": {
+                                              "id": "57",
+                                              "speaker": "Owlbear",
+                                              "text": "Brave. Stupid, but brave. And I'm too tired to deal with brave.",
+                                              "context": "NodeContext: She's injured, and she knows it. This is a fight she might not win - but she can't let the player know that.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "67": {
+                                                  "id": "67",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "32",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "47": {
+                                          "id": "47",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "102": {
+                                              "id": "102",
+                                              "speaker": "Owlbear",
+                                              "text": "I'll tear you in half before you touch a feather on his head.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "FactionHostileToPlayerGroupAfterDialog"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [
+                                                "Lae'zel 1",
+                                                "Shadowheart -1",
+                                                "Karlach -1"
+                                              ],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "0": {
+                                      "id": "0",
+                                      "speaker": "Player",
+                                      "text": "Just allow me to leave. I'm no threat to you or your cub.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "64",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "79": {
+                                          "id": "79",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "88": {
+                                              "id": "88",
+                                              "speaker": "Owlbear",
+                                              "text": "You're small. Weak. Killing you would be a waste of time.",
+                                              "context": "NodeContext: She's injured, and she knows it. This is a fight she might not win - but she can't let the player know that.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "32": {
+                                                  "id": "32",
+                                                  "speaker": "Owlbear",
+                                                  "text": "You can go. But you make one wrong step, and I'll rip you to shreds.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "FOR_Owlbear_Retreat"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [
+                                                    "Gale 1",
+                                                    "Lae'zel -1",
+                                                    "Shadowheart 1",
+                                                    "Karlach 1"
+                                                  ],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "35": {
+                                          "id": "35",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "76": {
+                                              "id": "76",
+                                              "speaker": "Owlbear",
+                                              "text": "You'll be even less of a threat when you're in pieces.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "FactionHostileToPlayerGroupAfterDialog"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [
+                                                "Lae'zel 1",
+                                                "Shadowheart -1",
+                                                "Karlach -1"
+                                              ],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "7": {
+                                      "id": "7",
+                                      "speaker": "Player",
+                                      "text": "Come, then. Once I've plucked you, I'll have your cub for dessert.",
+                                      "context": "InternalNodeContext: Barbarian (non-berserker)",
+                                      "checkflags": [
+                                        "BARBARIAN",
+                                        "BERSERKER = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "64",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "70": {
+                                          "id": "70",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "103": {
+                                              "id": "103",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "57",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "92": {
+                                          "id": "92",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "105": {
+                                              "id": "105",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "102",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "24": {
+                                      "id": "24",
+                                      "speaker": "Player",
+                                      "text": "COME - FIGHT!",
+                                      "context": "InternalNodeContext: Berserker",
+                                      "checkflags": [
+                                        "BERSERKER"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "64",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "13": {
+                                          "id": "13",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "64",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "87": {
+                                              "id": "87",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "57",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "83": {
+                                          "id": "83",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "64",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "14": {
+                                              "id": "14",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [
+                                                "FOR_OwlBear_Healed"
+                                              ],
+                                              "setflags": [
+                                                "FactionHostileToIndivPlayerAfterDialog"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "alias",
+                                              "children": {}
+                                            },
+                                            "99": {
+                                              "id": "99",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [
+                                                "FOR_OwlBear_Healed = False"
+                                              ],
+                                              "setflags": [
+                                                "FactionHostileToPlayerGroupAfterDialog"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "alias",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "52": {
+                                      "id": "52",
+                                      "speaker": "Player",
+                                      "text": "You need rest - let nature heal you. This is no time for a fight.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "DRUID"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "48": {
+                                          "id": "48",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "15": {
+                                              "id": "15",
+                                              "speaker": "Owlbear",
+                                              "text": "A fight? You'd be a plaything - not worth the trouble.",
+                                              "context": "NodeContext: She's injured, and she knows it. This is a fight she might not win - but she can't let the player know that.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "96": {
+                                                  "id": "96",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "32",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "42": {
+                                          "id": "42",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "64": {
+                                              "id": "64",
+                                              "speaker": "Owlbear",
+                                              "text": "Thanks to you, I'm healed enough to cut you from belly to snout.",
+                                              "context": "CinematicNodeContext: She is healed here - has both good eyes and is about to go aggro on the player",
+                                              "checkflags": [
+                                                "FOR_OwlBear_Healed"
+                                              ],
+                                              "setflags": [
+                                                "FactionHostileToPlayerGroupAfterDialog"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            },
+                                            "75": {
+                                              "id": "75",
+                                              "speaker": "Owlbear",
+                                              "text": "I've still got one good eye. That's all I need.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "FOR_OwlBear_Healed = False"
+                                              ],
+                                              "setflags": [
+                                                "FactionHostileToPlayerGroupAfterDialog"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [
+                                                "Lae'zel 1",
+                                                "Shadowheart -1",
+                                                "Karlach -1"
+                                              ],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "90": {
+                                      "id": "90",
+                                      "speaker": "Player",
+                                      "text": "I would never intrude on your nest knowingly. This was a simple mistake.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "RANGER"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "9": {
+                                          "id": "9",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "58": {
+                                              "id": "58",
+                                              "speaker": "Owlbear",
+                                              "text": "A mistake that would cost your life - if you posed any real danger.",
+                                              "context": "NodeContext: She's injured, and she knows it. This is a fight she might not win - but she can't let the player know that.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "68": {
+                                                  "id": "68",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "32",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "73": {
+                                          "id": "73",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "65": {
+                                              "id": "65",
+                                              "speaker": "Owlbear",
+                                              "text": "A mistake you won't escape.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "FactionHostileToPlayerGroupAfterDialog"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [
+                                                "Lae'zel 1",
+                                                "Shadowheart -1",
+                                                "Karlach -1"
+                                              ],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "28": {
+                                      "id": "28",
+                                      "speaker": "Player",
+                                      "text": "Attack.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "FactionHostileToPlayerGroupAfterDialog"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [
+                                        "Lae'zel 1",
+                                        "Shadowheart -1",
+                                        "Karlach -1"
+                                      ],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "97": {
+                          "id": "97",
+                          "speaker": "Player",
+                          "text": "No need for that - I'll just leave.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "38": {
+                              "id": "38",
+                              "speaker": "Owlbear",
+                              "text": "I don't think so. You've seen my nest. You've seen my cub.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "84": {
+                                  "id": "84",
+                                  "speaker": "Owlbear",
+                                  "text": "That makes you dangerous. An easy meal.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "77": {
+                                      "id": "77",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "39",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "16": {
+                          "id": "16",
+                          "speaker": "Player",
+                          "text": "Step closer.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "40": {
+                              "id": "40",
+                              "speaker": "Owlbear",
+                              "text": "Should've listened when you had the chance.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "FactionHostileToPlayerGroupAfterDialog"
+                              ],
+                              "ruletags": [],
+                              "approval": [
+                                "Lae'zel 1",
+                                "Shadowheart -1",
+                                "Karlach -1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "Player",
+                  "text": "That eye - or lack of it - must have you in a lot of pain. I should know.",
+                  "context": "",
+                  "checkflags": [
+                    "FOR_OwlBear_Healed = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [
+                    "ONEEYED",
+                    "REALLY_WYLL"
+                  ],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "Owlbear",
+                      "text": "Scars don't make us kindred, softmeat. And they don't make you welcome in my nest.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "56": {
+                          "id": "56",
+                          "speaker": "Owlbear",
+                          "text": "You'll be missing more than your eye before I'm done.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "69": {
+                              "id": "69",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "39",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "46": {
+                  "id": "46",
+                  "speaker": "Player",
+                  "text": "You've had your last meal, beast. You and your cub alike.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "104": {
+                      "id": "104",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "102",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "100": {
+      "id": "100",
+      "speaker": "Owlbear",
+      "text": "I warned you, softmeat. You don't listen.",
+      "context": "NodeContext: A wild animal bellows and turns hostile after the player ignores its previous demands to leave its territory.",
+      "checkflags": [
+        "FOR_Owlbear_Hasmet",
+        "PETPAL"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

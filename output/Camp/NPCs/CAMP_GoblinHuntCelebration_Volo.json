@@ -1,0 +1,1902 @@
+{
+  "metadata": {
+    "synopsis": "Volo's dialog after the goblin hunt celebration party. Occurs whether tieflings or raiders win, with a variation for whether we've met Volo or not. This is his fallback in being added to our camp.In the tiefling victory variation, Volo is sitting at his desk and thinking/writing an account of our victory that day. As we approach he should set down his pen and turn to speak with us, only returning to work again once he's dismissed us.In the goblin victory celebration, Volo is standing in a cage much like the one in which he is placed in the goblin camp. In this case, he does not wish to be freed. He isn't writing anything or holding anything, but hands off his notes off-screen if intimidated into doing so."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Volo",
+      "text": "Quite a display that was - usually I'm the one providing the drama on nights such as these.",
+      "context": "NodeContext: Laden with schadenfreude - we just had a public dalliance with a woman he considers psychotic, and she very nearly killed us afterwards.",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_State_DrowBetrayalOver"
+      ],
+      "setflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_VoloAfterBetrayal",
+        "GLO_Volo_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "78",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "42": {
+          "id": "42",
+          "speaker": "Volo",
+          "text": "I do hope you didn't catch anything. I'm sure an itching conscience is quite enough.",
+          "context": "NodeContext: Very clearly false concern - he considers us scum for allying with this woman in the first place, and thinks we deserve whatever we get",
+          "checkflags": [
+            "CAMP_GoblinHunt_State_DrowPartner"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "91": {
+          "id": "91",
+          "speaker": "Volo",
+          "text": "What a fun friend you've made.",
+          "context": "NodeContext: Falsely congratulatory. - he considers us scum for allying with this woman in the first place, and thinks we deserve whatever we get",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Volo",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GOB_VoloBallad_State_PlayersMetVolo"
+      ],
+      "setflags": [
+        "GLO_Volo_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "78",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "87": {
+          "id": "87",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "68",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "41": {
+      "id": "41",
+      "speaker": "Volo",
+      "text": "You should get some rest. You've had such a big day.",
+      "context": "NodeContext: Falsely congratulatory - we've committed an atrocity in his eyes and have forced him to be at the celebration.",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_VoloAfterBetrayal",
+        "CAMP_GoblinHuntCelebration_State_DrowBetrayalOver"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "55": {
+      "id": "55",
+      "speaker": "Volo",
+      "text": "See your guests aren't bored. The last thing we want is for them to make their own fun.",
+      "context": "",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_Volo",
+        "DEN_AttackOnDen_State_RaiderVictory"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "57": {
+      "id": "57",
+      "speaker": "Volo",
+      "text": "Ah, the guest of honour arrives! I've been observing the festivities from a sensible distance.",
+      "context": "",
+      "checkflags": [
+        "DEN_AttackOnDen_State_RaiderVictory"
+      ],
+      "setflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_Volo"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "78",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "49": {
+          "id": "49",
+          "speaker": "Volo",
+          "text": "Volothamp Geddarm - realm-renowned author, auteur and now, it appears, very much your captive.",
+          "context": "",
+          "checkflags": [
+            "GLO_Volo_HasMet = False",
+            "GOB_VoloBallad_State_PlayersMetVolo = False"
+          ],
+          "setflags": [
+            "GLO_Volo_HasMet"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "78",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "45": {
+              "id": "45",
+              "speaker": "Player",
+              "text": "How did you get here?",
+              "context": "",
+              "checkflags": [
+                "GLO_Volo_HasMet = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "78",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "60": {
+                  "id": "60",
+                  "speaker": "Volo",
+                  "text": "I'd heard tell of a goblin camp that had been overtaken by some new upstart god.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "78",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "75": {
+                      "id": "75",
+                      "speaker": "Volo",
+                      "text": "When I came to investigate, they invited me to stay. Rather permanently.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "78",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "18": {
+                          "id": "18",
+                          "speaker": "Volo",
+                          "text": "It seems that following one story has tipped me head-long into another - yours. And I truly can't wait to write it.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "78",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "84": {
+              "id": "84",
+              "speaker": "Player",
+              "text": "Don't you want to join in the celebrations?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "80",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Volo",
+                  "text": "My friend, I am engaged in celebration in its purest form - commemoration.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "80",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Volo",
+                      "text": "I'm writing an account of your glorious victory.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "80",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "78": {
+                          "id": "78",
+                          "speaker": "Volo",
+                          "text": "What you did at the grove... I rather think the world should remember, don't you?",
+                          "context": "NodeContext: Volo thinks the player is a real villain. This should have the weight of 'don't you want your atrocities recorded?'",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "80",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "62": {
+                              "id": "62",
+                              "speaker": "Player",
+                              "text": "I'd rather no one knew.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "80",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "106": {
+                                  "id": "106",
+                                  "speaker": "Volo",
+                                  "text": "Your modesty does you credit, my fine friend. But bards and biographers need sordid details.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "80",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "92": {
+                                      "id": "92",
+                                      "speaker": "Volo",
+                                      "text": "The grove, for example. Its destruction was quite necessary to your purpose, I have no doubt.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "80",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "51": {
+                                          "id": "51",
+                                          "speaker": "Volo",
+                                          "text": "It's simply that, for the life of me, I cannot imagine what that purpose was. Could you elaborate?",
+                                          "context": "NodeContext: Innocently asking the player why they have committed a mass killing of innocent civlians - as if idly curious",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "80",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "104": {
+                              "id": "104",
+                              "speaker": "Player",
+                              "text": "The world will know my name. I don't need you for that.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "95",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "96": {
+                                  "id": "96",
+                                  "speaker": "Volo",
+                                  "text": "I have no doubt! But such grand deeds as yours often require... interpretation. The grove, for example.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "95",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "71": {
+                                      "id": "71",
+                                      "speaker": "Volo",
+                                      "text": "The unenlightened might see your actions there as no more than aimless slaughter.",
+                                      "context": "NodeContext: Volo is laying it on thick. He hates you but wants the scoop so he's playing devil's advocate",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "95",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "32": {
+                                          "id": "32",
+                                          "speaker": "Volo",
+                                          "text": "I know you had a purpose. Though I'll grant that I'm quite in the dark as to what it was. Might you elaborate?",
+                                          "context": "NodeContext: Innocently asking the player why they have committed a mass killing of innocent civlians - as if idly curious",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "95",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "80": {
+                                              "id": "80",
+                                              "speaker": "Player",
+                                              "text": "I don't need to justify myself to you.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "95",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "88": {
+                                                  "id": "88",
+                                                  "speaker": "Volo",
+                                                  "text": "Of course not! I am only here to bear witness.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "70": {
+                                                      "id": "70",
+                                                      "speaker": "Volo",
+                                                      "text": "It is for Kelemvor to judge you, when the time comes. May he do so justly.",
+                                                      "context": "NodeContext: Kelemvor is the god of the afterlife - being judged justly is not something the player would enjoy, in Volo's opinion",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "6": {
+                                              "id": "6",
+                                              "speaker": "Player",
+                                              "text": "I need the goblins to believe I'm on their side.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "95",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "33": {
+                                                  "id": "33",
+                                                  "speaker": "Volo",
+                                                  "text": "Ah, a ruse! You've played the part admirably, if I may say so.",
+                                                  "context": "NodeContext: Voice lowered; he's in on the secret.",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "47": {
+                                                      "id": "47",
+                                                      "speaker": "Volo",
+                                                      "text": "These beasts appear quite convinced that you're a comrade in arms. Just as the tieflings were, I expect.",
+                                                      "context": "NodeContext: this is thick with meaning. He's subtley admonishing you for doublecrossing the tieflings.",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "73": {
+                                                          "id": "73",
+                                                          "speaker": "Volo",
+                                                          "text": "But rest assured that your story is in safe hands. Volothamp Geddarm knows exactly what you are.",
+                                                          "context": "NodeContext: A hint of distaste to his usual enthusiasm, but not enough to cause overt offense.",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": true,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "69": {
+                                              "id": "69",
+                                              "speaker": "Player",
+                                              "text": "I didn't mean for any of this to happen.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "95",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "28": {
+                                                  "id": "28",
+                                                  "speaker": "Volo",
+                                                  "text": "Of course you didn't. History is but a series of accidents, after all, both happy and heinous.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "56": {
+                                                      "id": "56",
+                                                      "speaker": "Volo",
+                                                      "text": "But I daresay you're committed now, my friend. So chin up, look around, and remember your role, hm?",
+                                                      "context": "NodeContext: With an edge. Volo is encouraging you but he also thinks you're a war criminal.",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "46": {
+                                                          "id": "46",
+                                                          "speaker": "Volo",
+                                                          "text": "That way, perhaps we'll both survive the night.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": true,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "98": {
+                                              "id": "98",
+                                              "speaker": "Player",
+                                              "text": "Give me your notes. I'll decide what you write.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "95",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "81": {
+                                                  "id": "81",
+                                                  "speaker": "Volo",
+                                                  "text": "I appreciate your editorial instincts, but Deneir himself does not get a peek at my early drafts.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "95",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "64": {
+                                                      "id": "64",
+                                                      "speaker": "Player",
+                                                      "text": "And the goblins? Should I tell them what you're writing?",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "GOB_HasVoloGoblinManuscriptCopy"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [
+                                                        "Shadowheart 1",
+                                                        "Karlach -1"
+                                                      ],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "95",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "14": {
+                                                          "id": "14",
+                                                          "speaker": "Volo",
+                                                          "text": "Ah, well - no need to involve your guests, I should think.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "95",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "5": {
+                                                              "id": "5",
+                                                              "speaker": "Volo",
+                                                              "text": "Here - you can keep that copy. The details are very much burned into my memory.",
+                                                              "context": "CinematicNodeContext: Handing us his notes from his inventory (off-screen)",
+                                                              "checkflags": [
+                                                                "GOB_HasVoloGoblinManuscriptCopy"
+                                                              ],
+                                                              "setflags": [
+                                                                "GOB_GiveVoloGoblinManuscriptCopy"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            },
+                                                            "74": {
+                                                              "id": "74",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "GOB_HasVoloGoblinManuscriptCopy = False"
+                                                              ],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "alias",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "29": {
+                                                      "id": "29",
+                                                      "speaker": "Player",
+                                                      "text": "Maybe I'll keep you in this cage for good.",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "GOB_HasVoloGoblinManuscriptCopy"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [
+                                                        "Shadowheart 1",
+                                                        "Karlach -1"
+                                                      ],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "5",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "16": {
+                                                          "id": "16",
+                                                          "speaker": "Volo",
+                                                          "text": "...Perhaps I spoke in haste. Your insights would, of course, be most welcome.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "5",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    },
+                                                    "30": {
+                                                      "id": "30",
+                                                      "speaker": "Player",
+                                                      "text": "Fine. Keep your scribbles.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "94": {
+                                                          "id": "94",
+                                                          "speaker": "Volo",
+                                                          "text": "Should my writing favour facts over form, it is only to keep pace with events.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "95": {
+                                                              "id": "95",
+                                                              "speaker": "Volo",
+                                                              "text": "You have been quite busy, after all.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "101": {
+                                                      "id": "101",
+                                                      "speaker": "Player",
+                                                      "text": "Leave.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "59": {
+                              "id": "59",
+                              "speaker": "Player",
+                              "text": "You make that sound like a threat.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Volo",
+                                  "text": "I am simply saying that you are a creature of ambition. Drive. Intent.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "34": {
+                                      "id": "34",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "92",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "speaker": "Player",
+              "text": "Who locked you up?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "78",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "90": {
+                  "id": "90",
+                  "speaker": "Volo",
+                  "text": "Fear not! I am content - and quite forgotten - where I am. Better in a cell than in a stew, what?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "78",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "36": {
+                      "id": "36",
+                      "speaker": "Volo",
+                      "text": "But I'd rather talk about you. If I'm to write an account of the battle, I'll need details while they're still sticky.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "78",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "speaker": "Player",
+              "text": "Open the cage.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "78",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "103": {
+                  "id": "103",
+                  "speaker": "Volo",
+                  "text": "NO! I mean to say - I am quite content behind bars. A precautionary measure, you understand.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "78",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "26": {
+                      "id": "26",
+                      "speaker": "Volo",
+                      "text": "I can't rightly document your deeds from the bottom of a goblin cookpot, after all. Ha ha.",
+                      "context": "NodeContext: Mirthless charm.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "78",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "68": {
+      "id": "68",
+      "speaker": "Volo",
+      "text": "Aha, there you are! Come now, settle in.",
+      "context": "",
+      "checkflags": [
+        "GLO_Volo_HasMet"
+      ],
+      "setflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_Volo"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "44",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "72": {
+          "id": "72",
+          "speaker": "Volo",
+          "text": "I do hope you have partaken of something bracing? This may well take us all night.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "44",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "82": {
+              "id": "82",
+              "speaker": "Player",
+              "text": "And by 'this', you mean...?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "44",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "Volo",
+                  "text": "Why - your naming, quite obviously.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "44",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "102": {
+                      "id": "102",
+                      "speaker": "Volo",
+                      "text": "That ballad was but a crude preview, a frame without its crowning jewel - your nom de guerre.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "44",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "85": {
+              "id": "85",
+              "speaker": "Player",
+              "text": "Shouldn't we be celebrating?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "107": {
+                  "id": "107",
+                  "speaker": "Volo",
+                  "text": "But I am engaged in celebration of the purest form - commemoration.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "67": {
+                      "id": "67",
+                      "speaker": "Volo",
+                      "text": "If we are to write your legend in the stars, then we must first give you a name.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "48": {
+                          "id": "48",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "102",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "50": {
+              "id": "50",
+              "speaker": "Player",
+              "text": "I have other things to do.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "53": {
+                  "id": "53",
+                  "speaker": "Volo",
+                  "text": "The very heart of my dilemma! You are the do-er of deeds, I the mere chronicler.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "31": {
+                      "id": "31",
+                      "speaker": "Volo",
+                      "text": "But how am I to ensure your most-deserved renown without a suitably thrilling title?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "44": {
+                          "id": "44",
+                          "speaker": "Volo",
+                          "text": "Something iconic, but not too much of a mouthful. We don't want to exclude the common-folk, after all. I intend this tale to enrapture all.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "99": {
+                              "id": "99",
+                              "speaker": "Player",
+                              "text": "I already have a name.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "Volo",
+                                  "text": "A wonderful one indeed - but your deeds loom larger than life now, my friend. You simply must have a title to match.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "54": {
+                                      "id": "54",
+                                      "speaker": "Player",
+                                      "text": "I get it. Something flashy and made up, like 'Volothamp Geddarm'.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "100": {
+                                          "id": "100",
+                                          "speaker": "Volo",
+                                          "text": "Exac-tly wrong, my friend! I urge you to leave the fact-finding to experts, hmm?",
+                                          "context": "NodeContext: He was about ot say 'Exactly!' and confirm the player's claim, but hten remembered he should NOT reveal that to the player and tries to backpedal.",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "83": {
+                                              "id": "83",
+                                              "speaker": "Volo",
+                                              "text": "Now, back to your revels. I have some details of your victory to rearrange.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "43": {
+                                      "id": "43",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "44",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "35": {
+                              "id": "35",
+                              "speaker": "Player",
+                              "text": "What about 'Grovekeeper'?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "61": {
+                                  "id": "61",
+                                  "speaker": "Volo",
+                                  "text": "'Grovekeeper'? Are you a gardener? We aim to cultivate mystery, not... shrubbery.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "7": {
+                                      "id": "7",
+                                      "speaker": "Volo",
+                                      "text": "No, your actions in the grove were most heroic, but I am afraid this a matter of style, not sentiment.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "76": {
+                                          "id": "76",
+                                          "speaker": "Volo",
+                                          "text": "Back to the revelry with you! I'll give the matter some thought in small council.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "25": {
+                              "id": "25",
+                              "speaker": "Player",
+                              "text": "'Goblinsbane' has a nice ring to it.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "77": {
+                                  "id": "77",
+                                  "speaker": "Volo",
+                                  "text": "Not to meddle in your side of this partnership, but slaying goblins is not exactly the stuff of legends, is it?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "37": {
+                                      "id": "37",
+                                      "speaker": "Volo",
+                                      "text": "After all, I'm quite certain I once saw one expire from the strain of spelling his own name.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "39": {
+                                          "id": "39",
+                                          "speaker": "Volo",
+                                          "text": "No, I'm afraid that won't do. You shall simply have to go out and slay something decidedly more dramatic.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "1": {
+                              "id": "1",
+                              "speaker": "Player",
+                              "text": "I didn't ask anyone to write my story.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "86": {
+                                  "id": "86",
+                                  "speaker": "Volo",
+                                  "text": "And do you think Volothamp Geddarm got where he did by waiting to be asked?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "38": {
+                                      "id": "38",
+                                      "speaker": "Volo",
+                                      "text": "No, no - it is for you to slay the dragons, and for me to worry about the accolades.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "24": {
+                                          "id": "24",
+                                          "speaker": "Volo",
+                                          "text": "...Actually slaying a dragon would prove quite helpful, mind.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "2": {
+                              "id": "2",
+                              "speaker": "Player",
+                              "text": "You have something in mind?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "52": {
+                                  "id": "52",
+                                  "speaker": "Volo",
+                                  "text": "Far too much - this is the very problem. If you could set aside your many triumphs, carry out one defining act...",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "15": {
+                                      "id": "15",
+                                      "speaker": "Volo",
+                                      "text": "Not to belittle your achievements to date, of course! But besting a dragon, a giant, a god perhaps... hmm.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "8": {
+                                          "id": "8",
+                                          "speaker": "Volo",
+                                          "text": "I must deliberate. Go - enjoy your evening! I shall have work for you in the days to come.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "23": {
+                              "id": "23",
+                              "speaker": "Player",
+                              "text": "Don't you have anything of actual worth to work on?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "Volo",
+                                  "text": "'Worth'? Volothamp Geddarm takes the matters of names most seriously.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "65": {
+                                      "id": "65",
+                                      "speaker": "Volo",
+                                      "text": "And he has an arsenal of choice names for those who don't.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "58": {
+                                          "id": "58",
+                                          "speaker": "Volo",
+                                          "text": "Back to your revelry, then - when I have crafted your legend for you, no doubt you shall hear of it.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "93": {
+      "id": "93",
+      "speaker": "Volo",
+      "text": "Aha, there you are! Come now, settle in.",
+      "context": "",
+      "checkflags": [
+        "GLO_Volo_HasMet = False",
+        "GOB_VoloBallad_State_PlayersMetVolo = False"
+      ],
+      "setflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_Volo",
+        "GLO_Volo_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "89",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "66": {
+          "id": "66",
+          "speaker": "Volo",
+          "text": "If you are to repay what you owe, then there is no time to waste. Start at the beginning.",
+          "context": "NodeContext: Getting on with business, not taking time for us to catch up (we have no idea who this man is)",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "89",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "21": {
+              "id": "21",
+              "speaker": "Player",
+              "text": "Excuse me - who are you?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "89",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "97": {
+                  "id": "97",
+                  "speaker": "Volo",
+                  "text": "Volothamp Geddarm - realm-renowned author, auteur, and tastemaker.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "89",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "40": {
+              "id": "40",
+              "speaker": "Player",
+              "text": "I don't remember inviting you to my camp.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "89",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "Volo",
+                  "text": "And yet I found it nonetheless. Such is the nature of Volothamp Geddarm, author and interrogator of mysteries.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "89": {
+                      "id": "89",
+                      "speaker": "Volo",
+                      "text": "My next piece was meant to be an expos\u00e9 on the local goblins and their 'Absolute'.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "109": {
+                          "id": "109",
+                          "speaker": "Volo",
+                          "text": "They're quite dead now, as you know. Too dead to provide a single meaningful quote.",
+                          "context": "NodeContext: he's put out by this",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "79": {
+                              "id": "79",
+                              "speaker": "Volo",
+                              "text": "You stole a story from me. Courtesy demands I get yours in return.",
+                              "context": "NodeContext: As if repeating a grave rule of his profession that should be self-evident to anyone.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "9": {
+                                  "id": "9",
+                                  "speaker": "Volo",
+                                  "text": "First - you'll need a name.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "13": {
+                                      "id": "13",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "44",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "105": {
+              "id": "105",
+              "speaker": "Player",
+              "text": "What I owe? What are you talking about?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "89",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "63": {
+                  "id": "63",
+                  "speaker": "Volo",
+                  "text": "Ye gods, then let us add ignorance to your list of crimes. I am Volothamp Geddarm, realm-renowned author, auteur, and tastemaker.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "89",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "108": {
+      "id": "108",
+      "speaker": "Volo",
+      "text": "Away and have your fun! I have a myth to make.",
+      "context": "",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_Volo"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

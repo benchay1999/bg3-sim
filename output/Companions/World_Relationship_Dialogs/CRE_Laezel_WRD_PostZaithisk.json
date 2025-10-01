@@ -1,0 +1,764 @@
+{
+  "metadata": {
+    "synopsis": "Laezel reacts on the Zaithisk being a lie. Should point to the Inqusitor if the conflict with him hasn't started, or at the inquisitor's office if it has. If Vlaakith betrayal has already happened, should point that she needs time to reflect on this.",
+    "how_to_trigger": "Available after the Zaithisk in the Creche."
+  },
+  "dialogue": {
+    "17": {
+      "id": "17",
+      "speaker": "Lae'zel",
+      "text": "",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "ORI_Laezel_State_WRD_PostZaithisk"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Lae'zel",
+          "text": "I followed protocol. I kept to my faith. Yet the zaith'isk might have killed me.",
+          "context": "",
+          "checkflags": [
+            "CRE_GithInfirmary_State_CharacterUsedDevice"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Lae'zel",
+          "text": "Tsk'va! The zaith'isk - it might have killed you. I felt your torment.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "36",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Lae'zel",
+              "text": "Someone must have tampered with it. An aberrance I can't begin to comprehend.",
+              "context": "",
+              "checkflags": [
+                "CRE_GithInfirmary_State_ResolvedPeacefully"
+              ],
+              "setflags": [
+                "Laezel_InParty_Event_AccusedDoctor"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "36",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "6",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Lae'zel",
+              "text": "The ghustil tampered with it. Traitor - and there may be more still! This must be why the Inquisitor's come.",
+              "context": "NodeContext: Exhausted, but simmering anger",
+              "checkflags": [
+                "CRE_ChainOfCommand_State_TemplarResolved = False"
+              ],
+              "setflags": [
+                "Laezel_InParty_Event_AccusedDoctor"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "36",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "38": {
+                  "id": "38",
+                  "speaker": "Player",
+                  "text": "The zaith'isk is supposed to kill you. I saw it for myself.",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_GithInfirmary_Event_KnowsZaithiskKills"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "36",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Laezel_State_BetrayedByVlaakith = False",
+                        "CRE_GithInfirmary_State_ResolvedPeacefully"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "36",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "41",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "23": {
+                      "id": "23",
+                      "speaker": "Lae'zel",
+                      "text": "A deception - proof of the doctor's manipulations. The queen does not mislead Gith's children.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Laezel_State_BetrayedByVlaakith = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "7",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "36": {
+                      "id": "36",
+                      "speaker": "Lae'zel",
+                      "text": "This zaith'isk is a deviation. It was altered - there is no other explanation.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Laezel_State_BetrayedByVlaakith"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "7",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "13": {
+                  "id": "13",
+                  "speaker": "Player",
+                  "text": "A traitorous doctor? How can you be so sure?",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_GithInfirmary_State_ResolvedPeacefully = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "7",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Lae'zel",
+                      "text": "Vlaakith's does not abandon githyanki. The zaith'isk was tampered with. There is no other explanation.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Laezel_State_BetrayedByVlaakith = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "7",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "12": {
+                      "id": "12",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "36",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "29": {
+                  "id": "29",
+                  "speaker": "Player",
+                  "text": "Are traitors so common among the githyanki?",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_GithInfirmary_State_ResolvedPeacefully = False",
+                    "REALLY_GITHYANKI = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "1",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "32": {
+                      "id": "32",
+                      "speaker": "Lae'zel",
+                      "text": "Vlaakith has taught us of Hshar'lak - traitors hunted, slaughtered, and erased from our histories.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "1",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "39": {
+                  "id": "39",
+                  "speaker": "Player",
+                  "text": "Who could have tampered with the device?",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_GithInfirmary_State_ResolvedPeacefully"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "20",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Lae'zel",
+                      "text": "There must be Hshar'lak in this cr\u00e8che - a traitor. The sort that is hunted, slaughtered, and erased from our histories.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "1": {
+                          "id": "1",
+                          "speaker": "Lae'zel",
+                          "text": "Few would dare dishonour their queen. Fewer still would be so brazen.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "28": {
+                              "id": "28",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "41",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "15": {
+                  "id": "15",
+                  "speaker": "Player",
+                  "text": "How about a 'thank you'? I just saved your life.",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_GithInfirmary_State_CharacterUsedDevice"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "20",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "41": {
+                      "id": "41",
+                      "speaker": "Lae'zel",
+                      "text": "You have my thanks. Begrudgingly.",
+                      "context": "NodeContext: With a degree of sincereity",
+                      "checkflags": [
+                        "Approval_AtLeast_10_For_Sp2"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "20",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "21": {
+                          "id": "21",
+                          "speaker": "Lae'zel",
+                          "text": "Now hurry. We must go to the ch'r'ai and inform him of the zaith'isk's tampering.",
+                          "context": "NodeContext: cheerkh-RAI \"r'ai\" like \"rye\".",
+                          "checkflags": [
+                            "CRE_ChainOfCommand_State_TemplarResolved = False",
+                            "CRE_GithInfirmary_State_ResolvedPeacefully"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "20",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "26": {
+                          "id": "26",
+                          "speaker": "Lae'zel",
+                          "text": "Now hurry. We must go to the ch'r'ai and inform him of the doctor's sedition.",
+                          "context": "NodeContext: cheerkh-RAI \"r'ai\" like \"rye\".",
+                          "checkflags": [
+                            "CRE_ChainOfCommand_State_TemplarResolved = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "20",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "24": {
+                          "id": "24",
+                          "speaker": "Lae'zel",
+                          "text": "The zaith'isk, the Inquisitor - such aberrations beggar belief. To the command centre. We might find a way to inform Vlaakith of their treason.",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Laezel_State_BetrayedByVlaakith = False",
+                            "CRE_ChainOfCommand_State_TemplarResolved",
+                            "CRE_GithInfirmary_State_ResolvedPeacefully"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "20",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "19": {
+                          "id": "19",
+                          "speaker": "Lae'zel",
+                          "text": "The doctor, the Inquisitor - such heresy beggars belief. To the command centre. We might find a way to inform Vlaakith of their treason.",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Laezel_State_BetrayedByVlaakith = False",
+                            "CRE_ChainOfCommand_State_TemplarResolved"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "20": {
+                              "id": "20",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "27",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "11": {
+                          "id": "11",
+                          "speaker": "Lae'zel",
+                          "text": "Vlaakith must have some purpose, some design I'm not meant to see.",
+                          "context": "NodeContext: Faith very slightly shaken",
+                          "checkflags": [
+                            "ORI_Laezel_State_BetrayedByVlaakith"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "27": {
+                              "id": "27",
+                              "speaker": "Lae'zel",
+                              "text": "In my queen, I trust. One day soon she will honour me for it. She must.",
+                              "context": "NodeContext: Faith very slightly shaken",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "40": {
+                                  "id": "40",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [
+                                    "ORI_Laezel_State_InPartySplitHelper_EnteredFromQuestionBank"
+                                  ],
+                                  "setflags": [
+                                    "ORI_Laezel_State_InPartySplitHelper_EnteredFromQuestionBank = False",
+                                    "ORI_InParty_Event_EnterFromNestedEnd"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                },
+                                "35": {
+                                  "id": "35",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "30": {
+                      "id": "30",
+                      "speaker": "Lae'zel",
+                      "text": "'Thank you.' Happy? Good.",
+                      "context": "NodeContext: A bit sarcastically",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "31": {
+                          "id": "31",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "41",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "37": {
+                  "id": "37",
+                  "speaker": "Player",
+                  "text": "I was so close to a cure. If only I'd held on longer...",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_GithInfirmary_State_CharacterUsedDevice"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "2",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "33": {
+                  "id": "33",
+                  "speaker": "Player",
+                  "text": "You were so close to a cure, if only you'd held on longer...",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_GithInfirmary_State_CharacterUsedDevice"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "Lae'zel",
+                      "text": "There was nothing to be done. The ghustil corrupted the machine - it must be so.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "10": {
+                          "id": "10",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "41",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "16": {
+                  "id": "16",
+                  "speaker": "Player",
+                  "text": "We must inform the Inquisitor. The cr\u00e8che is in danger.",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_ChainOfCommand_State_TemplarResolved = False",
+                    "REALLY_GITHYANKI"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "8": {
+                      "id": "8",
+                      "speaker": "Lae'zel",
+                      "text": "Then we agree. Go - quickly.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "25": {
+                          "id": "25",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "27",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "34": {
+              "id": "34",
+              "speaker": "Lae'zel",
+              "text": "The ghustil' must have tampered with it. An aberrance I can't begin to comprehend. As is all of Cr\u00e8che Y'llek.",
+              "context": "NodeContext: cresh YIL-ik",
+              "checkflags": [
+                "CRE_ChainOfCommand_State_TemplarResolved"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "6",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

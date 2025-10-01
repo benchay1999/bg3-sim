@@ -1,0 +1,895 @@
+{
+  "metadata": {
+    "synopsis": "Alfira is leading the kids in a bit of fun moment of constructing their story into a ballad of sorts. When the player arrives they will have just finished up the lyrics and if the player is a bard, Alfira will invite them to play along with. At the end of the duet (gameplay playing animation with music, not a full cinematic) the Bard is given the Shining Dawn ability.",
+    "how_to_trigger": "1. Run oe SCE_TieflingFollowUp_SetFlags     1a.(Optional) Reclass to Bard for Bard Flow2. Run:oe SCE_TieflingFollowUp_AllTieflings-or-oe SCE_TieflingFollowUp_NoCerys3. Run oe SCE_SetupDebrief4. Click through the Jaheira/Florrick dialogue"
+  },
+  "dialogue": {
+    "8": {
+      "id": "8",
+      "speaker": "Alfira",
+      "text": "Sorry, now is not a good time - the kids need me.",
+      "context": "NodeContext: annoyed at player but trying to hide it",
+      "checkflags": [
+        "SCE_Alfira_Event_RefusedShiningDawn",
+        "SCE_Alfira_State_RequestedBard",
+        "SCE_Alfira_Event_GaveShiningDawn = False",
+        "BARD"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Alfira",
+      "text": "Ah! A fellow bard. Sorry to ask out of the blue, but would you like to play together?",
+      "context": "NodeContext: cheerful and excited",
+      "checkflags": [
+        "SCE_Alfira_State_RequestedBard",
+        "SCE_Alfira_Event_GaveShiningDawn = False",
+        "BARD"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "42",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Alfira",
+          "text": "The kids have been really down - I figured a concert would cheer them up. Or distract them, at least. What do you say?",
+          "context": "NodeContext: sincere and excited",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "6",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SCE_AlfiraTale_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Alfira",
+      "text": "I hope I'll find a bard in the city. The kids would love a little show, I'm sure of it!",
+      "context": "NodeContext: excited and determined",
+      "checkflags": [
+        "SCE_AlfiraTale_HasMet",
+        "SCE_Alfira_State_RequestedBard",
+        "SCE_Alfira_Event_GaveShiningDawn = False",
+        "BARD = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "35": {
+      "id": "35",
+      "speaker": "Alfira",
+      "text": "You're lucky to be travelling with such a talented musician - I hope I run into you both in the city.",
+      "context": "NodeContext: excited and a little star struck",
+      "checkflags": [
+        "SCE_Alfira_Event_GaveShiningDawn",
+        "SCE_TieflingFollowUp_Event_GiveShiningDawn"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "42": {
+      "id": "42",
+      "speaker": "Alfira",
+      "text": "I'll keep an eye on the kids, don't you worry.",
+      "context": "NodeContext: worried but determined to help the kids",
+      "checkflags": [
+        "SCE_AlfiraTale_HasMet",
+        "DEN_TieflingBard_State_ConvincedToQuit"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "44": {
+      "id": "44",
+      "speaker": "Alfira",
+      "text": "That was a blast - thank you! I hope we get to play again sometime soon.",
+      "context": "NodeContext: excited and a little star struck",
+      "checkflags": [
+        "SCE_Alfira_Event_GaveShiningDawn",
+        "SCE_TieflingFollowUp_Event_GiveShiningDawn"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "46": {
+      "id": "46",
+      "speaker": "Alfira",
+      "text": "You're here! Good... that's good.",
+      "context": "NodeContext: not convincing - she's trying to put on a brave face, but is upset",
+      "checkflags": [],
+      "setflags": [
+        "SCE_AlfiraTale_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "26",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "Are you all right?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "26",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "47": {
+              "id": "47",
+              "speaker": "Alfira",
+              "text": "Me? Oh, I'm fine. I'm just worried about the kids. Mol is still missing, and they haven't taken it too well.<br>",
+              "context": "NodeContext: worried",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "26",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "29": {
+          "id": "29",
+          "speaker": "Player",
+          "text": "I was expecting a little more enthusiasm.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "40": {
+              "id": "40",
+              "speaker": "Alfira",
+              "text": "Sorry, I'm just worried about the kids. Mol is still missing, and they haven't taken it too well.",
+              "context": "NodeContext: worried",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "26": {
+                  "id": "26",
+                  "speaker": "Alfira",
+                  "text": "I've been trying to cheer them up, we're writing a song together. But I think they're just humouring me...",
+                  "context": "NodeContext: sad smile",
+                  "checkflags": [
+                    "DEN_TieflingBard_State_ConvincedToQuit = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "6",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "41": {
+                      "id": "41",
+                      "speaker": "Player",
+                      "text": "I'm sure they appreciate it.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "6",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "Alfira",
+                          "text": "Oh, oh! I have an idea - why don't we play together?",
+                          "context": "",
+                          "checkflags": [
+                            "BARD"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "48": {
+                              "id": "48",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "6",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "22": {
+                          "id": "22",
+                          "speaker": "Alfira",
+                          "text": "Maybe... I'd love to put on a show - just for them. But it's boring if I'm the only one playing.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "30": {
+                              "id": "30",
+                              "speaker": "Alfira",
+                              "text": "I need another bard - maybe I'll find one in the city. Until then - the kids and I shall work on our masterpiece!",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "SCE_Alfira_State_RequestedBard"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "28": {
+                      "id": "28",
+                      "speaker": "Player",
+                      "text": "Writing a song is hardly going to distract them.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "6",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "39": {
+                          "id": "39",
+                          "speaker": "Alfira",
+                          "text": "You know what, you're right. So let's give them a real show, shall we?",
+                          "context": "",
+                          "checkflags": [
+                            "BARD"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "21": {
+                              "id": "21",
+                              "speaker": "Alfira",
+                              "text": "You and me, battling it out - bard to bard. What do you say?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "6": {
+                                  "id": "6",
+                                  "speaker": "Alfira",
+                                  "text": "It'd be like a private concert, just for them - they'd love it!",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "45": {
+                                      "id": "45",
+                                      "speaker": "Player",
+                                      "text": "Sure. Ready when you are.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [
+                                        "Gale 1",
+                                        "Astarion -1",
+                                        "Lae'zel -1",
+                                        "Wyll 1",
+                                        "Karlach 1",
+                                        "Shadowheart 1",
+                                        "Minthara -1",
+                                        "Halsin 1"
+                                      ],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "38": {
+                                          "id": "38",
+                                          "speaker": "Alfira",
+                                          "text": "Yes! I've missed this. If you can't keep up, don't take it to heart.",
+                                          "context": "NodeContext: excited, about to play with a bard for the first time in forever",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "SCE_Alfira_Event_GaveShiningDawn",
+                                            "SCE_TieflingFollowUp_Event_GiveShiningDawn"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "9": {
+                                      "id": "9",
+                                      "speaker": "Player",
+                                      "text": "Let's see what you've got.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [
+                                        "Gale 1",
+                                        "Astarion -1",
+                                        "Lae'zel -1",
+                                        "Wyll 1",
+                                        "Karlach 1",
+                                        "Shadowheart 1",
+                                        "Minthara -1",
+                                        "Halsin 1"
+                                      ],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "11": {
+                                          "id": "11",
+                                          "speaker": "Alfira",
+                                          "text": "Hah! Just try and keep up.",
+                                          "context": "NodeContext: cheeky and playful",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "SCE_Alfira_Event_GaveShiningDawn",
+                                            "SCE_TieflingFollowUp_Event_GiveShiningDawn"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "10": {
+                                      "id": "10",
+                                      "speaker": "Player",
+                                      "text": "No thanks.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [
+                                        "Gale -1",
+                                        "Astarion 1",
+                                        "Lae'zel 1",
+                                        "Wyll -1",
+                                        "Karlach -1",
+                                        "Shadowheart -1",
+                                        "Minthara 1",
+                                        "Halsin -1"
+                                      ],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "36": {
+                                          "id": "36",
+                                          "speaker": "Alfira",
+                                          "text": "Oh, I thought... all right. No problem.",
+                                          "context": "NodeContext: crestfallen",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "SCE_Alfira_Event_RefusedShiningDawn"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "32": {
+                          "id": "32",
+                          "speaker": "Alfira",
+                          "text": "True. You know what would be amazing? A concert - just for the kids. Problem is, it's boring if it's just me playing.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "34": {
+                              "id": "34",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "30",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "37": {
+                      "id": "37",
+                      "speaker": "Player",
+                      "text": "Like I'm humouring you by having this conversation?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "6",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "19": {
+                          "id": "19",
+                          "speaker": "Alfira",
+                          "text": "Well, brainy-breeches, I have a better idea, and I'm so glad you volunteered to help.",
+                          "context": "NodeContext: cheeky grin, being playful",
+                          "checkflags": [
+                            "BARD"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "31": {
+                              "id": "31",
+                              "speaker": "Alfira",
+                              "text": "You and me performing, a private concert - just for the kids. They'd love it, I'm sure!",
+                              "context": "NodeContext: excited",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "6",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "15": {
+                          "id": "15",
+                          "speaker": "Alfira",
+                          "text": "Well, brainy-breeches, I did have a better idea - a private concert, just for the kids! Alas, you're no bard.",
+                          "context": "NodeContext: cheeky grin, being playful",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "2": {
+                              "id": "2",
+                              "speaker": "Alfira",
+                              "text": "I'm sure I'll find someone else  to play with - maybe in the city. Until then, all I can do is be here for them.",
+                              "context": "NodeContext: sincere",
+                              "checkflags": [],
+                              "setflags": [
+                                "SCE_Alfira_State_RequestedBard"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "16": {
+                  "id": "16",
+                  "speaker": "Alfira",
+                  "text": "I've been trying to cheer them up, but I think they're just humouring me...",
+                  "context": "NodeContext: sad smile",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "Player",
+                      "text": "Their friend is gone - give them time.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "1": {
+                          "id": "1",
+                          "speaker": "Alfira",
+                          "text": "True - my instinct is to rush in and try to make everything better, you know?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "18": {
+                              "id": "18",
+                              "speaker": "Alfira",
+                              "text": "But you're right - I should give them some space.",
+                              "context": "NodeContext: a sad sigh, she feels powerless that she can't do more, but is grateful for the player's advice",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "25": {
+                      "id": "25",
+                      "speaker": "Player",
+                      "text": "Keep trying - they need some fun right now.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "12": {
+                          "id": "12",
+                          "speaker": "Alfira",
+                          "text": "Exactly! They've never had time to be kids. And who knows when they'll get a chance again...",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "4": {
+                              "id": "4",
+                              "speaker": "Alfira",
+                              "text": "Thank you - you always know just what to say.",
+                              "context": "NodeContext: grateful",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "0": {
+                      "id": "0",
+                      "speaker": "Player",
+                      "text": "Like I'm humouring you in this conversation?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "43": {
+                          "id": "43",
+                          "speaker": "Alfira",
+                          "text": "Rude as ever I see. Don't know why I bother.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "I just killed an immortal, and that's all you have to say?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Alfira",
+              "text": "Sorry, I didn't mean to snub you, I'm just worried about the kids. Mol is still missing, and they haven't taken it too well.",
+              "context": "NodeContext: worried",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "27": {
+                  "id": "27",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "47",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

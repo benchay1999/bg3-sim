@@ -1,0 +1,476 @@
+{
+  "metadata": {
+    "synopsis": "Baelen was out hunting Noblestalk when he was trapped in a field of explosive mushrooms. He's now dead - most likely because the player triggered those mushrooms to explode. He speaks in short, cryptic fragments from beyond the grave.",
+    "how_to_trigger": "Kill Balen.Cast SwD."
+  },
+  "dialogue": {
+    "10": {
+      "id": "10",
+      "speaker": "Narrator",
+      "text": "*The corpse seems willing to speak - but not to its killer.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_Killer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Narrator",
+      "text": "*The corpse regards you lifelessly.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "Who are you?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Baelen Bonecloak",
+              "text": "Baelen... Bonecloak...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "What was your profession?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Baelen Bonecloak",
+              "text": "Alchemist... shop... in Baldur's Gate...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "How did you die?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Baelen Bonecloak",
+              "text": "Hunting... noblestalk... fell... bibberbang... explosion...",
+              "context": "",
+              "checkflags": [
+                "UND_MushroomHunter_State_MushroomFieldExploded",
+                "GLO_SpeakWithDead_State_Killer = False"
+              ],
+              "setflags": [
+                "UND_MushroomHunter_ExplainedSituation",
+                "UND_MushroomHunter_Event_LearnedAboutNoblestalk"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Baelen Bonecloak",
+              "text": "Can't... remember... just... nothing...",
+              "context": "",
+              "checkflags": [
+                "UND_MushroomHunter_State_MushroomFieldExploded = False",
+                "GLO_SpeakWithDead_State_Killer = False"
+              ],
+              "setflags": [
+                "UND_MushroomHunter_ExplainedSituation"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            },
+            "11": {
+              "id": "11",
+              "speaker": "Baelen Bonecloak",
+              "text": "You... killed me...",
+              "context": "",
+              "checkflags": [
+                "GLO_SpeakWithDead_State_Killer"
+              ],
+              "setflags": [
+                "UND_MushroomHunter_ExplainedSituation"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "Why were you in the Underdark?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "UND_MushroomHunter_Dead_MentionedWife = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked",
+            "UND_MushroomHunter_Dead_MentionedWife"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "Baelen Bonecloak",
+              "text": "Hunting... ingredients... noblestalk... with my love...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "UND_MushroomHunter_Event_LearnedAboutNoblestalk"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "Where is your wife?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "UND_MushroomHunter_Dead_MentionedWife"
+          ],
+          "setflags": [
+            "UND_MushroomHunter_Event_CorpseMentionedWife",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "Baelen Bonecloak",
+              "text": "Derryth... with myconids... helping... gnome...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Did you have any valuables?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Baelen Bonecloak",
+              "text": "Home... shop... Baldur's Gate... Bonecloak's...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "24": {
+          "id": "24",
+          "speaker": "Narrator",
+          "text": "*The spell's power wanes. You can ask no more questions.*",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*The corpse does not stir. It will answer no more questions.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

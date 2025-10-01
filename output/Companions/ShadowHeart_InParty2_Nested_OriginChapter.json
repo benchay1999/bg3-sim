@@ -1,0 +1,4547 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue - the conversation you can have with Shadowheart at any time when she's a member of your party. You can ask her about herself, or events that you've experienced together during your adventures. Her responses to you may differ slightly depending on her current attitude towards you."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Shadowheart",
+      "text": "Speaking out of turn is an indiscretion. Trying to drink my blood is something else entirely.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_BitefailedStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_BitefailedStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "213",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "189": {
+          "id": "189",
+          "speaker": "Shadowheart",
+          "text": "Don't try it again. If you feel the urge, go find yourself a sheep or something.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Shadowheart",
+      "text": "So you're a vampire, Astarion? I suppose I shouldn't really act surprised - the signs are not exactly subtle, if you care to look.",
+      "context": "InternalNodeContext: Character saw Astarion use his 'bite' ability on someone else (probably in combat, but not necessarily) and confronts him about being a vampire.\rNodeContext: Confrontational. Just learned Astarion is a vampire after he bit someone",
+      "checkflags": [
+        "Shadowheart_InParty_Event_SawBittenStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_SawBittenStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "213",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "220": {
+          "id": "220",
+          "speaker": "Shadowheart",
+          "text": "Perhaps I should have said something before you actually bit someone.",
+          "context": "NodeContext: Confrontational. Just learned Astarion is a vampire after he bit someone",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "213",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Narrator",
+      "text": "*A dreadful idea. Shadowheart hasn't exactly warmed to you so far - she's bound to take the revelation badly.*",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_VampireConfessionStart",
+        "Approval_AtLeast_0_For_Sp2 = False"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_VampireConfessionStart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "145",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "55": {
+          "id": "55",
+          "speaker": "Player",
+          "text": "Confess the truth to her.",
+          "context": "",
+          "checkflags": [
+            "Approval_AtLeast_20_For_Sp2"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "145",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "145",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "148": {
+                  "id": "148",
+                  "speaker": "Shadowheart",
+                  "text": "You know... I had my suspicions, but I didn't want to act on them. And now it seems I won't have to.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Astarion_Knows_Vampireness"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Shadowheart 10"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "145",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "188": {
+              "id": "188",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "181",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "90": {
+                  "id": "90",
+                  "speaker": "Shadowheart",
+                  "text": "And you've been keeping this from me all this time...? I thought we trusted one another.",
+                  "context": "NodeContext: A little hurt. Astarion, who she has a good relationship with up until, confessed he's a vampire. This reaction is due to a failed skillcheck - she can also react more positively elsewhere.",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Astarion_Knows_Vampireness",
+                    "623c8394-dd20-7978-804e-2e6515d53502_AstarionVampreConfessionNegativeReaction"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Shadowheart -5"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "181",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "145": {
+                      "id": "145",
+                      "speaker": "Shadowheart",
+                      "text": "So... a vampire spawn. Is my throat safe?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "181",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "228": {
+                          "id": "228",
+                          "speaker": "Player",
+                          "text": "Safe as houses.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "181",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "53": {
+                              "id": "53",
+                              "speaker": "Shadowheart",
+                              "text": "Somehow, I'm not sure I'll take your word for it just yet. A little more trust needs to be cultivated first.",
+                              "context": "",
+                              "checkflags": [
+                                "623c8394-dd20-7978-804e-2e6515d53502_AstarionVampreConfessionNegativeReaction"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "181",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "236": {
+                              "id": "236",
+                              "speaker": "Shadowheart",
+                              "text": "That's good enough for me.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "87",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "175": {
+                          "id": "175",
+                          "speaker": "Player",
+                          "text": "I have more important things to worry about than your throat - the tadpole, for one.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "87",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "48": {
+                              "id": "48",
+                              "speaker": "Shadowheart",
+                              "text": "Concerned about turning into a monster? You're already halfway there, by most standards.",
+                              "context": "",
+                              "checkflags": [
+                                "623c8394-dd20-7978-804e-2e6515d53502_AstarionVampreConfessionNegativeReaction"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "87",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "181": {
+                                  "id": "181",
+                                  "speaker": "Shadowheart",
+                                  "text": "Well the truth's out now, for what it's worth. Are we done?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "162": {
+                              "id": "162",
+                              "speaker": "Shadowheart",
+                              "text": "True. Your proclivities might not matter at all soon enough, if we don't find a cure.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "87",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "206": {
+                          "id": "206",
+                          "speaker": "Player",
+                          "text": "From me, at least. But if my old master comes knocking, all bets are off.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "181",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "82": {
+                              "id": "82",
+                              "speaker": "Shadowheart",
+                              "text": "I sincerely hope you're worth the trouble.",
+                              "context": "",
+                              "checkflags": [
+                                "623c8394-dd20-7978-804e-2e6515d53502_AstarionVampreConfessionNegativeReaction"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "181",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "78": {
+                              "id": "78",
+                              "speaker": "Shadowheart",
+                              "text": "Well, let's hope he keeps his distance.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "87": {
+                                  "id": "87",
+                                  "speaker": "Shadowheart",
+                                  "text": "Well, the truth's out now, in either case. Did you want something else?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "98": {
+          "id": "98",
+          "speaker": "Player",
+          "text": "Admit the truth to her.",
+          "context": "",
+          "checkflags": [
+            "Approval_AtLeast_0_For_Sp2 = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "145",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "234": {
+              "id": "234",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "145",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "164": {
+                  "id": "164",
+                  "speaker": "Shadowheart",
+                  "text": "You know... I had my suspicions, but I didn't want to act on them. And now it seems I won't have to.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Astarion_Knows_Vampireness"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Shadowheart 10"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "145",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "173": {
+              "id": "173",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "145",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "187": {
+                  "id": "187",
+                  "speaker": "Shadowheart",
+                  "text": "I knew there was something untrustworthy about you.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Astarion_Knows_Vampireness",
+                    "623c8394-dd20-7978-804e-2e6515d53502_AstarionVampreConfessionNegativeReaction"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Shadowheart -5"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "145",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "191": {
+          "id": "191",
+          "speaker": "Player",
+          "text": "Tell her the truth.",
+          "context": "",
+          "checkflags": [
+            "Approval_AtLeast_20_For_Sp2 = False",
+            "Approval_AtLeast_0_For_Sp2"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "145",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "116": {
+              "id": "116",
+              "speaker": "Shadowheart",
+              "text": "Hells. Why can't I just have normal, boring companions? I should be grateful you told me, at least.",
+              "context": "NodeContext: 'Just my luck'/some exasperation. Astarion just confessed he's a vampire.",
+              "checkflags": [],
+              "setflags": [
+                "ORI_Astarion_Knows_Vampireness"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Shadowheart 10"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "145",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "33": {
+          "id": "33",
+          "speaker": "Player",
+          "text": "Change your mind. The secret can keep for now.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "138": {
+              "id": "138",
+              "speaker": "Shadowheart",
+              "text": "You have a faraway look on your face, Astarion. Did you forget what you were going to say? Happens to the best of us.",
+              "context": "NodeContext: Slight bemusement (avatar astarion considered confessing he is a vampire, only change his  mind  and say nothing)",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "32": {
+      "id": "32",
+      "speaker": "Shadowheart",
+      "text": "So you're not in full control of your faculties. If you think it might happen again, warn me. I would hate to have to kill you.",
+      "context": "NodeContext: Cautious",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeAlfira"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeAlfira = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "43": {
+      "id": "43",
+      "speaker": "Shadowheart",
+      "text": "Gods-damned leech - you bit me!",
+      "context": "InternalNodeContext: Character was bitten by Astarion in gameplay.\rNodeContext: Outraged. Astarion just bit her.",
+      "checkflags": [
+        "Shadowheart_InParty_Event_WasBittenStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_WasBittenStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "47": {
+          "id": "47",
+          "speaker": "Shadowheart",
+          "text": "I should have known you were a vampire - the signs were there.",
+          "context": "NodeContext: Outraged. Astarion just bit her.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "213": {
+              "id": "213",
+              "speaker": "Player",
+              "text": "Calm down - I'm on your side. I just got a little... peckish.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "141": {
+                  "id": "141",
+                  "speaker": "Shadowheart",
+                  "text": "Peckish...?!",
+                  "context": "NodeContext: Dumbstruck",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "230": {
+                      "id": "230",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "96",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "72": {
+              "id": "72",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "231",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            },
+            "235": {
+              "id": "235",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "76",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "45": {
+      "id": "45",
+      "speaker": "Shadowheart",
+      "text": "What happened was my dagger finding the back of her throat.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_LaezelFight"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_LaezelFight = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "70": {
+          "id": "70",
+          "speaker": "Shadowheart",
+          "text": "Are you looking for the lurid details?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "97": {
+              "id": "97",
+              "speaker": "Player",
+              "text": "I'll be watching you closely.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "199": {
+                  "id": "199",
+                  "speaker": "Shadowheart",
+                  "text": "You do that. I'll do something more productive, like find a cure.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "176": {
+              "id": "176",
+              "speaker": "Player",
+              "text": "It was always an uneasy pairing. I'm going to just trust that you had your reasons.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Shadowheart 10"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "104": {
+                  "id": "104",
+                  "speaker": "Shadowheart",
+                  "text": "That is... a great deal of trust.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "211": {
+                      "id": "211",
+                      "speaker": "Shadowheart",
+                      "text": "I appreciate it, but keep your guard up around others. We're gathering enemies by the day.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "125": {
+              "id": "125",
+              "speaker": "Player",
+              "text": "No details. I just want to know how you feel about it.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "240": {
+                  "id": "240",
+                  "speaker": "Shadowheart",
+                  "text": "Plumbing for guilt is pointless. I did what I must.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "67": {
+                      "id": "67",
+                      "speaker": "Shadowheart",
+                      "text": "I won't regret defending myself. There's nothing more to it.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "120": {
+              "id": "120",
+              "speaker": "Player",
+              "text": "My kin is dead. Perhaps I should avenge her.",
+              "context": "",
+              "checkflags": [
+                "REALLY_GITHYANKI"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Shadowheart",
+                  "text": "Please, she was weak. Your kind don't avenge those who fail.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "46": {
+      "id": "46",
+      "speaker": "Shadowheart",
+      "text": "I understand why you ask but memory loss is not as uncommon as you'd think. There may be other causes.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeTadpole"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeTadpole = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "56": {
+      "id": "56",
+      "speaker": "Shadowheart",
+      "text": "I've seen your resolve. Whatever is trying to control you, you're stronger.",
+      "context": "NodeContext: Supportive",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeIsobel"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeIsobel = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "60": {
+      "id": "60",
+      "speaker": "Narrator",
+      "text": "*Is this a good idea, you wonder? You and Shadowheart have a certain rapport, but is it strong enough to weather such a revelation?*",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_VampireConfessionStart",
+        "Approval_AtLeast_0_For_Sp2"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_VampireConfessionStart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "247": {
+          "id": "247",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "24",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "61": {
+      "id": "61",
+      "speaker": "Shadowheart",
+      "text": "I suppose that makes you quite remarkable... though not in a way I'd envy, perhaps.",
+      "context": "NodeContext: Wary",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeBhaal"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeBhaal = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "241": {
+          "id": "241",
+          "speaker": "Shadowheart",
+          "text": "Lady Shar chose me also, but because of the blood I spilled, not what flows in my veins. You are born of murder itself... perhaps your fate is out of your hands.",
+          "context": "",
+          "checkflags": [
+            "SHADOWHEART_SHARPATH"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "140": {
+          "id": "140",
+          "speaker": "Shadowheart",
+          "text": "From what little I can recall hearing of Bhaal's mortal children, not all succumbed to his influence. Perhaps you can still resist your nature... if you want to.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "63": {
+      "id": "63",
+      "speaker": "Shadowheart",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "CAMP_ShadowheartLaezelFight_State_ResolvedPeacefully",
+        "Shadowheart_InParty_Event_LaezelFightGreeting"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_LaezelFightGreeting = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "244": {
+          "id": "244",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "25",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "71": {
+      "id": "71",
+      "speaker": "Shadowheart",
+      "text": "How kind of you to remind me. But I don't think so - you've a tadpole too and seem stronger than ever.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_BiteHalfStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_BiteHalfStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "80": {
+          "id": "80",
+          "speaker": "Shadowheart",
+          "text": "I'll just have to try get some more rest when we next stop to camp...",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "84": {
+      "id": "84",
+      "speaker": "Shadowheart",
+      "text": "She went mad, now she's dead. What's there to talk about?",
+      "context": "",
+      "checkflags": [
+        "CAMP_Shadowheart_Event_Wound",
+        "Shadowheart_InParty_Event_LaezelFight"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_LaezelFight = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "40": {
+          "id": "40",
+          "speaker": "Shadowheart",
+          "text": "No loss to our little venture, either way.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Player",
+              "text": "There's more to this, I'm sure of it.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "81": {
+                  "id": "81",
+                  "speaker": "Shadowheart",
+                  "text": "Don't waste your time deciphering the actions of a lunatic.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "136": {
+              "id": "136",
+              "speaker": "Player",
+              "text": "Are you all right? You were wounded.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "197": {
+                  "id": "197",
+                  "speaker": "Shadowheart",
+                  "text": "Only a glancing blow. Clearly gith aren't quite the killers they believe themselves to be.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "27": {
+              "id": "27",
+              "speaker": "Player",
+              "text": "First you exhibit strange magic, now Lae'zel explodes. That sounds like a link to me.",
+              "context": "",
+              "checkflags": [
+                "ORI_Shadowheart_Knows_IncurableWound"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "223": {
+                  "id": "223",
+                  "speaker": "Shadowheart",
+                  "text": "It isn't. Now let's leave it at that.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "227": {
+                      "id": "227",
+                      "speaker": "Shadowheart",
+                      "text": "And by that, I mean, never bring up the subject again.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "59": {
+              "id": "59",
+              "speaker": "Player",
+              "text": "People don't just explode. I assume that's true of gith too.",
+              "context": "",
+              "checkflags": [
+                "ORI_Shadowheart_Knows_IncurableWound = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "205": {
+                  "id": "205",
+                  "speaker": "Shadowheart",
+                  "text": "And people don't just hear each other's thoughts, or turn into monsters. And yet...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "146": {
+                      "id": "146",
+                      "speaker": "Shadowheart",
+                      "text": "There's nothing more for you to uncover here. Let it rest.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "94": {
+      "id": "94",
+      "speaker": "Shadowheart",
+      "text": "I'm surprised I managed to get some rest, after last night's interruption.",
+      "context": "InternalNodeContext: Avatar Astarion tried to bite this companion during the night, but you woke up and discovered he was a vampire. You talked it through and resolved things peacefully in CAMP_AstarionHunger_IVB_SCO_Avatar_Choice.lsj\rNodeContext: Lingering sore feelings/suspicion. Caught avatar Astarion trying to drink her blood the night before, but he made amends.",
+      "checkflags": [
+        "Shadowheart_InParty_Event_NightBiteAftermathVictim"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_NightBiteAftermathVictim = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "207": {
+          "id": "207",
+          "speaker": "Shadowheart",
+          "text": "Would you have had the self-control to not drain me dry if I hadn't stirred? I'm not sure I want to think about it.",
+          "context": "NodeContext: Lingering sore feelings/suspicion. Caught avatar Astarion trying to drink her blood the night before, but he made amends.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "39",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "77": {
+              "id": "77",
+              "speaker": "Shadowheart",
+              "text": "I hope you can keep your cravings in check, going forward. Otherwise, I think you and I will be parting ways - understood?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "39",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "51": {
+                  "id": "51",
+                  "speaker": "Player",
+                  "text": "Understood.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "39",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "4": {
+                  "id": "4",
+                  "speaker": "Player",
+                  "text": "Don't worry, from now on I'll focus on our enemies.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "163",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "39": {
+                      "id": "39",
+                      "speaker": "Shadowheart",
+                      "text": "Fine. But don't take me for granted - not my company, and certainly not my blood.",
+                      "context": "NodeContext: Ultimatum. Willing to let it go if Astarion behaves.",
+                      "checkflags": [
+                        "ASTARION_BITE_VICTIM"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "163",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "124": {
+                          "id": "124",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "ORI_Inclusion_2Random"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "163",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {
+                            "238": {
+                              "id": "238",
+                              "speaker": "Lae'zel",
+                              "text": "A vampire among us? So be it.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_LAEZEL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "163",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "129": {
+                                  "id": "129",
+                                  "speaker": "Lae'zel",
+                                  "text": "But should I wake with so much as a drop of blood on my neck, I will end him.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "163",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "36": {
+                                      "id": "36",
+                                      "speaker": "Lae'zel",
+                                      "text": "For his sake, he best not develop an appetite for githyanki.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "ORI_Inclusion_PickedAtRandom2",
+                                        "REALLY_LAEZEL"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "163",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "163": {
+                                          "id": "163",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "92",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "64": {
+                                      "id": "64",
+                                      "speaker": "Shadowheart",
+                                      "text": "I'd just better not wake in the night to find fangs at my throat.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "ORI_Inclusion_PickedAtRandom2",
+                                        "REALLY_SHADOWHEART"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "163",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "149": {
+                                      "id": "149",
+                                      "speaker": "Wyll",
+                                      "text": "Fine - as long as he keeps his fangs off our necks.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "ORI_Inclusion_PickedAtRandom2",
+                                        "REALLY_WYLL"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "163",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "110": {
+                                      "id": "110",
+                                      "speaker": "Gale",
+                                      "text": "Oh, and a quick word of warning, Astarion: I taste absolutely awful. Keep your distance.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "ORI_Gale_Knows_Bomb = False",
+                                        "ORI_Inclusion_PickedAtRandom2",
+                                        "REALLY_GALE"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "163",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "66": {
+                                      "id": "66",
+                                      "speaker": "Gale",
+                                      "text": "I'd advise against satisfying your hunger on me. Who knows what the orb might do if it realises its host is the one being drained.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "ORI_Gale_Knows_Bomb",
+                                        "ORI_Inclusion_PickedAtRandom2",
+                                        "REALLY_GALE"
+                                      ],
+                                      "setflags": [
+                                        "ORI_Gale_State_AstarionSwayed"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "110",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "210": {
+                                          "id": "210",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "110",
+                                          "is_end": false,
+                                          "node_type": "alias",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "117": {
+                                      "id": "117",
+                                      "speaker": "Karlach",
+                                      "text": "Yeah. And I'm way too hot to touch.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "ORI_Inclusion_PickedAtRandom2",
+                                        "REALLY_KARLACH"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "163",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "208": {
+                              "id": "208",
+                              "speaker": "Wyll",
+                              "text": "Hunting with vampires? Never thought I'd see the day.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_WYLL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "101",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "74": {
+                                  "id": "74",
+                                  "speaker": "Wyll",
+                                  "text": "Very well - but I'm keeping an eye on you. And no wisecracks about having us for supper.",
+                                  "context": "CinematicNodeContext: Said to Astarion directly\rNodeContext: Said to Astarion directly",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "101": {
+                                      "id": "101",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "129",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "155": {
+                              "id": "155",
+                              "speaker": "Gale",
+                              "text": "So we're travelling with a vampire, are we? Of course we are.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Gale_Knows_Bomb = False",
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_GALE"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "101",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "178": {
+                                  "id": "178",
+                                  "speaker": "Gale",
+                                  "text": "A word of warning, Astarion: I taste absolutely awful.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "101",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "112": {
+                              "id": "112",
+                              "speaker": "Gale",
+                              "text": "I'd advise against satisfying your hunger on me. Who knows what the orb might do if it realises its host is the one being drained.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Gale_Knows_Bomb",
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_GALE"
+                              ],
+                              "setflags": [
+                                "ORI_Gale_State_AstarionSwayed"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "101",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "202": {
+                              "id": "202",
+                              "speaker": "Karlach",
+                              "text": "Vamps don't scare me. As long as they keep their teeth to themselves.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_KARLACH"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "101",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "219": {
+                                  "id": "219",
+                                  "speaker": "Karlach",
+                                  "text": "No sense judging someone for who they are. Except devils, obviously.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "101",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "15": {
+                              "id": "15",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "ORI_Inclusion_Random"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "238",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "224": {
+                                  "id": "224",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [
+                                    "ORI_Inclusion_PickedAtRandom",
+                                    "REALLY_LAEZEL"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "238",
+                                  "is_end": false,
+                                  "node_type": "alias",
+                                  "children": {
+                                    "139": {
+                                      "id": "139",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "129",
+                                      "is_end": false,
+                                      "node_type": "alias",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "133": {
+                                  "id": "133",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [
+                                    "ORI_Inclusion_PickedAtRandom",
+                                    "REALLY_WYLL"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "208",
+                                  "is_end": false,
+                                  "node_type": "alias",
+                                  "children": {
+                                    "158": {
+                                      "id": "158",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "74",
+                                      "is_end": false,
+                                      "node_type": "alias",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "9": {
+                                  "id": "9",
+                                  "speaker": "Karlach",
+                                  "text": "A vamp, huh? Interesting. Keep your teeth to yourself, Astarion, and we won't have any issues.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "ORI_Inclusion_PickedAtRandom",
+                                    "REALLY_KARLACH"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "92",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "22": {
+                                      "id": "22",
+                                      "speaker": "Karlach",
+                                      "text": "Anyway, you'd burn your tongue off if you went for this neck.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "92": {
+                                          "id": "92",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "ORI_Inclusion_End_Random"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {
+                                            "135": {
+                                              "id": "135",
+                                              "speaker": "Shadowheart",
+                                              "text": "A vampire could make for an interesting ally in combat, if nothing else.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "Shadowheart_InParty_State_EndDialog"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "89": {
+                                  "id": "89",
+                                  "speaker": "Gale",
+                                  "text": "So we're travelling with a vampire, are we?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "ORI_Gale_Knows_Bomb = False",
+                                    "ORI_Inclusion_PickedAtRandom",
+                                    "REALLY_GALE"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "92",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "214": {
+                                      "id": "214",
+                                      "speaker": "Gale",
+                                      "text": "A word of warning, Astarion: I taste absolutely awful. Keep your distance.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "92",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "250": {
+                                  "id": "250",
+                                  "speaker": "Gale",
+                                  "text": "I'd advise against satisfying your hunger on me. Who knows what the orb might do if it realises its host is the one being drained.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "ORI_Gale_Knows_Bomb",
+                                    "ORI_Inclusion_PickedAtRandom",
+                                    "REALLY_GALE"
+                                  ],
+                                  "setflags": [
+                                    "ORI_Gale_State_AstarionSwayed"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "150": {
+                                      "id": "150",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "92",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "185": {
+                      "id": "185",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "124",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {}
+                    }
+                  }
+                },
+                "144": {
+                  "id": "144",
+                  "speaker": "Player",
+                  "text": "I promise, I'll do my best to resist my hunger.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "39",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "102": {
+      "id": "102",
+      "speaker": "Shadowheart",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "CAMP_Shadowheart_Event_Wound",
+        "Shadowheart_InParty_Event_LaezelFightGreeting"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_LaezelFightGreeting = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "132": {
+          "id": "132",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "40",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "105": {
+      "id": "105",
+      "speaker": "Shadowheart",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_LaezelAvatarFightGreeting"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_LaezelAvatarFightGreeting = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "31": {
+          "id": "31",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "243",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "108": {
+      "id": "108",
+      "speaker": "Shadowheart",
+      "text": "Lady Shar willed it to fall... though even I won't quite revel in all those deaths as much as you. The unfaithful were vanquished, but I have little interest in slavering over their corpses.",
+      "context": "NodeContext: Some distaste",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeHaven",
+        "SHADOWHEART_SHARPATH"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeHaven = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "113": {
+      "id": "113",
+      "speaker": "Shadowheart",
+      "text": "Hmm... perhaps.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_BiteBadDreamStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_BiteBadDreamStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "121": {
+      "id": "121",
+      "speaker": "Shadowheart",
+      "text": "Good. I knew you had what it took to quieten your demons. I'd hate to have lost the real you.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeCured"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeCured = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "247",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Shadowheart",
+          "text": "You are quite remarkable.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "122": {
+      "id": "122",
+      "speaker": "Narrator",
+      "text": "*You and Shadowheart have forged a strong bond. Surely she will understand...*",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_VampireConfessionStart",
+        "Approval_AtLeast_20_For_Sp2"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_VampireConfessionStart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "247",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "152": {
+      "id": "152",
+      "speaker": "Shadowheart",
+      "text": "We aren't dear friends now, if that's what you're asking.",
+      "context": "",
+      "checkflags": [
+        "CAMP_ShadowheartLaezelFight_State_ResolvedPeacefully",
+        "Shadowheart_InParty_Event_LaezelFight"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_LaezelFight = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "25": {
+          "id": "25",
+          "speaker": "Shadowheart",
+          "text": "But I trust we can all sleep a little more soundly in camp now.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "128": {
+              "id": "128",
+              "speaker": "Player",
+              "text": "I'll be keeping an eye on both of you. I don't want a fight happening again.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "204": {
+                  "id": "204",
+                  "speaker": "Shadowheart",
+                  "text": "Relax. We'll kiss and make up on our own time.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "169": {
+                      "id": "169",
+                      "speaker": "Shadowheart",
+                      "text": "Someone prodding at a newly opened wound doesn't help matters.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "73": {
+              "id": "73",
+              "speaker": "Player",
+              "text": "I'm surprised you didn't leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "119": {
+                  "id": "119",
+                  "speaker": "Shadowheart",
+                  "text": "And get murdered by a pack of goblins or gnolls instead?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "29": {
+                      "id": "29",
+                      "speaker": "Shadowheart",
+                      "text": "Lae'zel might be a reluctant ally, but she is good at killing. I'll point her in their direction.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "34": {
+              "id": "34",
+              "speaker": "Player",
+              "text": "That's good. I'd rather keep things friendly between all of us.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "182": {
+                  "id": "182",
+                  "speaker": "Shadowheart",
+                  "text": "You have an interesting definition of 'friendly', but yes.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "106": {
+              "id": "106",
+              "speaker": "Player",
+              "text": "I haven't stabbed you.",
+              "context": "",
+              "checkflags": [
+                "REALLY_GITHYANKI"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "215": {
+                  "id": "215",
+                  "speaker": "Shadowheart",
+                  "text": "No, I think you'd stab me from the front, if it came to that.",
+                  "context": "",
+                  "checkflags": [
+                    "Approval_AtLeast_20_For_Sp2"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "38": {
+                      "id": "38",
+                      "speaker": "Shadowheart",
+                      "text": "Although... perhaps it won't.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "212": {
+                  "id": "212",
+                  "speaker": "Shadowheart",
+                  "text": "Don't sound so disappointed.",
+                  "context": "",
+                  "checkflags": [
+                    "Approval_AtLeast_0_For_Sp2"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "62": {
+                      "id": "62",
+                      "speaker": "Shadowheart",
+                      "text": "We could always spar if you want to practise.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "151": {
+                  "id": "151",
+                  "speaker": "Shadowheart",
+                  "text": "Yet.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "159": {
+      "id": "159",
+      "speaker": "Shadowheart",
+      "text": "When we make it to Baldur's Gate, you'll be at home in the slaughterhouses.",
+      "context": "NodeContext: Some distaste",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeHaven"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeHaven = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "160": {
+      "id": "160",
+      "speaker": "Shadowheart",
+      "text": "I'd be lying if I said I hadn't noticed the spasms and the fainting spells. You have my commiserations - I think I know how it must feel, in a sense.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_DarkUrgeStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_DarkUrgeStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "165": {
+      "id": "165",
+      "speaker": "Shadowheart",
+      "text": "So you're a vampire, Astarion? I suppose I shouldn't really act surprised - the signs are not exactly subtle, if you care to look.",
+      "context": "InternalNodeContext: Avatar Astarion tried to bite A DIFFERENT companion during the night, but they woke up and discovered he was a vampire. They talked it through and resolved things peacefully in CAMP_AstarionHunger_IVB_SCO_Avatar_Choice.lsj\rNodeContext: A little confrontational. Astarion was outed as a vampire after trying to feed on someone else",
+      "checkflags": [
+        "Shadowheart_InParty_Event_NightBiteAftermath"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_NightBiteAftermath = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "115": {
+          "id": "115",
+          "speaker": "Shadowheart",
+          "text": "Still, we're lucky nobody died - I hope you can keep your cravings in check, going forward. Otherwise, I think you and I will be parting ways - understood?",
+          "context": "NodeContext: Ultimatum. Willing to let it go if Astarion behaves.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "50": {
+              "id": "50",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "77",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "168": {
+      "id": "168",
+      "speaker": "Shadowheart",
+      "text": "You and I have markedly different ideas of what amounts to a gift...",
+      "context": "NodeContext: Quietly aghast",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeSlayer"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeSlayer = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "180": {
+      "id": "180",
+      "speaker": "Shadowheart",
+      "text": "Interesting.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeMurderLust"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeMurderLust = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "196": {
+          "id": "196",
+          "speaker": "Shadowheart",
+          "text": "You're hardly alone - bloodletting is quite popular of late. Though your twinge of conscience sets you apart from the brigands, monsters and kill-happy fiends of the world...",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "35": {
+              "id": "35",
+              "speaker": "Shadowheart",
+              "text": "Whatever you think may be compelling you... you may have greater ability to resist it than you realise. Everyone has unseemly thoughts. Being able to quieten them is what sets us apart from the beasts.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "192": {
+      "id": "192",
+      "speaker": "Shadowheart",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_LaezelFightGreeting"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_LaezelFightGreeting = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "70",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "193": {
+      "id": "193",
+      "speaker": "Shadowheart",
+      "text": "So, your very own queen has turned on you...? Your people are nothing if not ruthless.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_VlaakithBetrayalStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_VlaakithBetrayalStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "86": {
+          "id": "86",
+          "speaker": "Shadowheart",
+          "text": "You have my sympathies - especially after what Shar did to me. Perhaps you and I met the same ill fortune in who we came to serve.",
+          "context": "",
+          "checkflags": [
+            "SHADOWHEART_ENEMYOFSHARPATH"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "225": {
+              "id": "225",
+              "speaker": "Player",
+              "text": "Thank you for your clumsy platitudes and maudlin sympathies.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "242": {
+                  "id": "242",
+                  "speaker": "Shadowheart",
+                  "text": "Careful. I'm not sure I can withstand the charm.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "44": {
+              "id": "44",
+              "speaker": "Player",
+              "text": "I don't want to discuss it.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "233": {
+                  "id": "233",
+                  "speaker": "Shadowheart",
+                  "text": "Then I won't breathe another word about it. But the sentiment remains the same. Chin up.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "114": {
+          "id": "114",
+          "speaker": "Shadowheart",
+          "text": "I'm not entirely without sympathy, I should say. I can't imagine what I'd do if Lady Shar abandoned me.",
+          "context": "",
+          "checkflags": [
+            "ShadowHeart_InParty_Knows_SharWorshipper"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "194": {
+              "id": "194",
+              "speaker": "Player",
+              "text": "Don't give it a second thought. I'll persevere.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Shadowheart",
+                  "text": "I don't doubt that, funnily enough.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "83": {
+              "id": "83",
+              "speaker": "Player",
+              "text": "You speak with all the sincerity of a vulture pecking at carrion.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "Shadowheart",
+                  "text": "I tried. Enjoy your new status as pariah.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "137": {
+              "id": "137",
+              "speaker": "Player",
+              "text": "Pray that you never find yourself in the same position.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Shadowheart",
+                  "text": "I shall. Nightly.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "130": {
+          "id": "130",
+          "speaker": "Shadowheart",
+          "text": "I'm not entirely without sympathy, I should say. To fall out with someone you revered... it must be catastrophic.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "131": {
+              "id": "131",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "114",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "201": {
+      "id": "201",
+      "speaker": "Shadowheart",
+      "text": "No, I don't think so - you've a tadpole as well but you see fine...",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_BiteNotAstarion"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_BiteNotAstarion = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "232": {
+      "id": "232",
+      "speaker": "Shadowheart",
+      "text": "I never claimed to be wise, unfortunately.",
+      "context": "NodeContext: Unintimidated",
+      "checkflags": [
+        "Shadowheart_InParty_Event_UrgeChosen"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_UrgeChosen = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "103",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "127": {
+          "id": "127",
+          "speaker": "Shadowheart",
+          "text": "I think you may find you have more than a little healthy competition from would-be tyrants.",
+          "context": "NodeContext: Tough. Arc: Shadowheart remains loyal to Shar.",
+          "checkflags": [
+            "SHADOWHEART_SHARPATH"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "142": {
+              "id": "142",
+              "speaker": "Shadowheart",
+              "text": "Lady Shar is patient though - she can wait until the rest of you have torn each other apart.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "179": {
+          "id": "179",
+          "speaker": "Shadowheart",
+          "text": "You're the last thing the world needs - another would-be tyrant who thinks they have divine rights. You're just someone's pawn, you know. That's all we are to the gods.",
+          "context": "NodeContext: Tough. Arc: Shadowheart has rejected Shar",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "243": {
+      "id": "243",
+      "speaker": "Shadowheart",
+      "text": "If you say so. Our last discussion grew... heated. I'd rather not repeat it.",
+      "context": "",
+      "checkflags": [
+        "Shadowheart_InParty_Event_AvatarLaezelFightStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_AvatarLaezelFightStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "103",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "174": {
+          "id": "174",
+          "speaker": "Player",
+          "text": "Our enmity is a festering wound - it weakens us both. It must be sucked clean.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "103",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "126": {
+              "id": "126",
+              "speaker": "Shadowheart",
+              "text": "Gods... I both understand what you mean and am horrified you phrased it like that.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "103",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "85": {
+          "id": "85",
+          "speaker": "Player",
+          "text": "I confronted you in Vlaakith's name. Our conflict serves no purpose now.",
+          "context": "",
+          "checkflags": [
+            "ORI_Laezel_State_IsOnOrpheusPath"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "103",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "218": {
+              "id": "218",
+              "speaker": "Shadowheart",
+              "text": "Your queen turned on you, and my goddess turned on me. Perhaps we have more in common than we dare admit to.",
+              "context": "NodeContext: Tiny hint of understanding between frenemies.",
+              "checkflags": [
+                "ORI_Laezel_State_IsOnOrpheusPath",
+                "SHADOWHEART_ENEMYOFSHARPATH"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "103",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "186": {
+              "id": "186",
+              "speaker": "Shadowheart",
+              "text": "I see. It must be difficult, have someone you revere turn on you. I'm willing to let the past go, if you are as well.",
+              "context": "NodeContext: Tiny hint of understanding between frenemies.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "103",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "75": {
+          "id": "75",
+          "speaker": "Player",
+          "text": "I will respect our truce, if you do the same.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "28",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "93": {
+              "id": "93",
+              "speaker": "Shadowheart",
+              "text": "You took the words right out of my mouth.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "28",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "103": {
+                  "id": "103",
+                  "speaker": "Shadowheart",
+                  "text": "I lost more than a few comrades to your kin, but we were infiltrating githyanki territory. Blood was spilled on both sides - just soldiers following orders.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "28",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "156": {
+                      "id": "156",
+                      "speaker": "Shadowheart",
+                      "text": "Yet I no longer follow those orders. Shar has abandoned me. The artefact is no longer my mission - saving my family is.",
+                      "context": "",
+                      "checkflags": [
+                        "SHADOWHEART_ENEMYOFSHARPATH"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "28",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "52": {
+                      "id": "52",
+                      "speaker": "Shadowheart",
+                      "text": "And yet, it seems the one who gave those orders has run afoul of my goddess. Delivering the artefact is no longer my mission - cleansing Lady Shar's church is my mission.",
+                      "context": "",
+                      "checkflags": [
+                        "SHADOWHEART_SHARPATH"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "28": {
+                          "id": "28",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "alias",
+                          "children": {
+                            "13": {
+                              "id": "13",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "8",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "Shadowheart",
+                      "text": "Perhaps we can... come to an arrangement.",
+                      "context": "",
+                      "checkflags": [
+                        "Approval_AtLeast_20_For_Sp2"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "255",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "245": {
+                          "id": "245",
+                          "speaker": "Player",
+                          "text": "An arrangement? Explain.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "255",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "123": {
+                              "id": "123",
+                              "speaker": "Shadowheart",
+                              "text": "Having one less enemy to worry about mightn't count for much - not with the odds we're facing... but having more than that - an ally to count on, or even a, well...",
+                              "context": "NodeContext: Trying to be reasonable/diplomatic after a near-fatal blowout with Lae'zel",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "255",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "222": {
+                                  "id": "222",
+                                  "speaker": "Player",
+                                  "text": "You want to be friends? What a foolish notion.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "255",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "58": {
+                                      "id": "58",
+                                      "speaker": "Shadowheart",
+                                      "text": "Of course it is, and I said nothing about friendship. But a little less tension between us might benefit all.",
+                                      "context": "NodeContext: Trying to be reasonable/diplomatic after a near-fatal blowout with Lae'zel",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "255": {
+                                          "id": "255",
+                                          "speaker": "Shadowheart",
+                                          "text": "And... I'm sorry. For creeping up on you with a dagger. It won't happen again.",
+                                          "context": "NodeContext: Hesitant, but genuine",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "253": {
+                                              "id": "253",
+                                              "speaker": "Player",
+                                              "text": "If it did, I'd show you no mercy.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "198": {
+                                                  "id": "198",
+                                                  "speaker": "Shadowheart",
+                                                  "text": "I'll try poison next time. That was a joke, just to be clear.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "65": {
+                                              "id": "65",
+                                              "speaker": "Player",
+                                              "text": "Your stealth was commendable. Your flaw was to talk rather than strike.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "184": {
+                                                  "id": "184",
+                                                  "speaker": "Shadowheart",
+                                                  "text": "Thank you for the advice. See? We have much to learn from each other.",
+                                                  "context": "NodeContext: Wry",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "109": {
+                                              "id": "109",
+                                              "speaker": "Player",
+                                              "text": "If I were in your position, I'd probably have done the same.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "246": {
+                                                  "id": "246",
+                                                  "speaker": "Shadowheart",
+                                                  "text": "Well, at least I know I won't find you atop me in the middle of the night now.",
+                                                  "context": "NodeContext: Trying to be reasonable/diplomatic after a near-fatal blowout with Lae'zel",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "18": {
+                                                      "id": "18",
+                                                      "speaker": "Shadowheart",
+                                                      "text": "I mean... never mind. Let's consider the matter settled.",
+                                                      "context": "NodeContext: Slight stammer on unintended innuendo.",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "237": {
+                                  "id": "237",
+                                  "speaker": "Player",
+                                  "text": "I've made enough enemies. I'd welcome a kinship.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "255",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "170": {
+                                      "id": "170",
+                                      "speaker": "Shadowheart",
+                                      "text": "As would I, oddly enough.",
+                                      "context": "NodeContext: Trying to be reasonable/diplomatic after a near-fatal blowout with Lae'zel",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "255",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "95": {
+                          "id": "95",
+                          "speaker": "Player",
+                          "text": "Some manner of cooperation, you mean?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "248": {
+                              "id": "248",
+                              "speaker": "Shadowheart",
+                              "text": "We already do that, by and large. We journey together, fight together, share food and campfire...",
+                              "context": "NodeContext: Trying to be reasonable/diplomatic after a near-fatal blowout with Lae'zel",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "107": {
+                                  "id": "107",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "123",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "249": {
+                          "id": "249",
+                          "speaker": "Player",
+                          "text": "I want only a truce. Spare me your blade, and I'll do the same.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "229": {
+                              "id": "229",
+                              "speaker": "Shadowheart",
+                              "text": "Very well. At least you are consistent.",
+                              "context": "NodeContext: Brusque",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "49": {
+                                  "id": "49",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "166",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "91": {
+                      "id": "91",
+                      "speaker": "Shadowheart",
+                      "text": "But there are bigger, more immediate concerns. Let's put survival first, for now.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "I let you keep your head. But that doesn't mean you have my trust.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "166": {
+              "id": "166",
+              "speaker": "Shadowheart",
+              "text": "The feeling's mutual. I didn't think it needed to be stated again, frankly.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "57": {
+                  "id": "57",
+                  "speaker": "Shadowheart",
+                  "text": "We still have use for each other. But perhaps one day, that will no longer be the case.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "252": {
+      "id": "252",
+      "speaker": "Shadowheart",
+      "text": "Astarion. We need to talk.",
+      "context": "InternalNodeContext: Companion confronts Avatar Astarion, telling him they know he's a vampire. Triggers if you make it to Act 2 without him telling you himself or revealing it via camp night bite scene/using bite attack in front of you.",
+      "checkflags": [
+        "Shadowheart_InParty_Event_VampireConfrontationStart"
+      ],
+      "setflags": [
+        "Shadowheart_InParty_Event_VampireConfrontationStart = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "96",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "154": {
+          "id": "154",
+          "speaker": "Shadowheart",
+          "text": "Let's not dance around the subject - I know you're a vampire.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "ORI_Astarion_Knows_Vampireness"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "96",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Player",
+              "text": "I see... and what gave me away?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "96",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "221": {
+                  "id": "221",
+                  "speaker": "Shadowheart",
+                  "text": "Let me see - the deathly-pale skin? The red eyes? The fangs? I'm not blind, you know.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "96",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "231": {
+              "id": "231",
+              "speaker": "Player",
+              "text": "Technically I'm a vampire spawn.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "195",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "Shadowheart",
+                  "text": "The distinction's lost on me, if you still feed on blood.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "195",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "96": {
+                      "id": "96",
+                      "speaker": "Shadowheart",
+                      "text": "Why didn't you tell me?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "195",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "183": {
+                          "id": "183",
+                          "speaker": "Player",
+                          "text": "It's bad for my health. When I tell the truth, wooden stakes start appearing in people's hands.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "195",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "134": {
+                              "id": "134",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "195",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "41": {
+                                  "id": "41",
+                                  "speaker": "Shadowheart",
+                                  "text": "I suppose I can understand that. More than most, perhaps.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Shadowheart 1"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "195",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "171": {
+                                      "id": "171",
+                                      "speaker": "Shadowheart",
+                                      "text": "But no more secrets, understand?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "195",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "161": {
+                                          "id": "161",
+                                          "speaker": "Player",
+                                          "text": "You, of all people, cannot criticise me on the subject of keeping secrets.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "ShadowHeart_InParty_Knows_SharWorshipper"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "195",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "100": {
+                                              "id": "100",
+                                              "speaker": "Shadowheart",
+                                              "text": "The hypocrisy isn't lost on me. If anything, it makes me more likely to be sympathetic to you than anyone else.",
+                                              "context": "NodeContext: Self-awarness/outreach (referring to her outed secret about being a shar worshipper)",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "195",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "11": {
+                                          "id": "11",
+                                          "speaker": "Player",
+                                          "text": "A little ironic, no? I have a feeling you have a few secrets of your own. More than a few, in fact.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "ShadowHeart_InParty_Knows_SharWorshipper = False"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "195",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "54": {
+                                              "id": "54",
+                                              "speaker": "Shadowheart",
+                                              "text": "Perhaps I'm a better liar than you are, then. All the more reason to be honest with me - I'll see right through you.",
+                                              "context": "NodeContext: Poker face. Veiled reference to the fact her shar worship is a secret at present",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "195",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "217": {
+                                          "id": "217",
+                                          "speaker": "Player",
+                                          "text": "No more secrets, on my honour.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "195",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "26": {
+                                              "id": "26",
+                                              "speaker": "Shadowheart",
+                                              "text": "I'll take it on good faith that such a thing exists.",
+                                              "context": "NodeContext: Teasing/not intended to sound too harsh.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "195": {
+                                                  "id": "195",
+                                                  "speaker": "Shadowheart",
+                                                  "text": "Now that we have some semblance of an understanding, did you want anything else?",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "2": {
+                                          "id": "2",
+                                          "speaker": "Player",
+                                          "text": "I can promise you fewer secrets?",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "195",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "79": {
+                                              "id": "79",
+                                              "speaker": "Shadowheart",
+                                              "text": "Coming from you, I'll take that as a victory.",
+                                              "context": "NodeContext: Teasing/not intended to sound too harsh.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "195",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "6": {
+                                          "id": "6",
+                                          "speaker": "Player",
+                                          "text": "Secrets keep me safe. You'll just have to live with that.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "111": {
+                                              "id": "111",
+                                              "speaker": "Shadowheart",
+                                              "text": "Indeed. Though perhaps not always with you by my side.",
+                                              "context": "NodeContext: Cold",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [
+                                                "Shadowheart -5"
+                                              ],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "153": {
+                                                  "id": "153",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "42",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "203": {
+                              "id": "203",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "226": {
+                                  "id": "226",
+                                  "speaker": "Shadowheart",
+                                  "text": "You think I wouldn't have understood? We've all got a bigger problem to contend with - we need to be able to rely on one another.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Shadowheart -1"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "172": {
+                                      "id": "172",
+                                      "speaker": "Shadowheart",
+                                      "text": "The truth's out now, no thanks to you. No more secrets, understand?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "118": {
+                                          "id": "118",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "171",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "209": {
+                          "id": "209",
+                          "speaker": "Shadowheart",
+                          "text": "My master forbid me from revealing my true nature.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "177",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "239": {
+                              "id": "239",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "190": {
+                                  "id": "190",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "41",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "157": {
+                              "id": "157",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "68": {
+                                  "id": "68",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "226",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "143": {
+                          "id": "143",
+                          "speaker": "Player",
+                          "text": "It's no great mystery - I just wasn't sure if I could trust you.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "177",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "147": {
+                              "id": "147",
+                              "speaker": "Shadowheart",
+                              "text": "I can sympathise. It isn't easy for me to let people know about my faith. Often a lie by omission seems like the safest course.",
+                              "context": "",
+                              "checkflags": [
+                                "ShadowHeart_InParty_Knows_SharWorshipper"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "177",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "177": {
+                                  "id": "177",
+                                  "speaker": "Shadowheart",
+                                  "text": "We're all in this together. Provided you can keep your urges in check around me, I don't see why anything has to change.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "216": {
+                                      "id": "216",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "171",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "254": {
+                              "id": "254",
+                              "speaker": "Shadowheart",
+                              "text": "I can sympathise, actually. With some secrets, well... often a lie by omission seems like the safest course.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "177",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "76": {
+              "id": "76",
+              "speaker": "Player",
+              "text": "Rubbish! Your senses have taken leave of you, Shadowheart.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "200",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "88": {
+                  "id": "88",
+                  "speaker": "Shadowheart",
+                  "text": "Don't treat me like an idiot, please. Do you think it was easy for me, to try keeping my faith hidden? I know when someone's burdened with a secret.",
+                  "context": "",
+                  "checkflags": [
+                    "ShadowHeart_InParty_Knows_SharWorshipper"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "200",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "5": {
+                  "id": "5",
+                  "speaker": "Shadowheart",
+                  "text": "Don't treat me like an idiot, please. I have a talent for recognising when someone has a secret.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "96",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "200": {
+                      "id": "200",
+                      "speaker": "Shadowheart",
+                      "text": "Besides, just look at yourself. It couldn't be any more obvious.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "96",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "251": {
+                          "id": "251",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "96",
+                          "is_end": false,
+                          "node_type": "alias",
+                          "children": {
+                            "14": {
+                              "id": "14",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "183",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "99": {
+                              "id": "99",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "209",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "37": {
+                              "id": "37",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "143",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "167": {
+                              "id": "167",
+                              "speaker": "Player",
+                              "text": "I swear to you - I am not a vampire.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "69": {
+                                  "id": "69",
+                                  "speaker": "Shadowheart",
+                                  "text": "You're a bad liar. And perhaps an untrustworthy ally.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Shadowheart -10"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "42": {
+                                      "id": "42",
+                                      "speaker": "Shadowheart",
+                                      "text": "Best if you leave me alone, for now.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "Shadowheart_InParty_State_EndDialog"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

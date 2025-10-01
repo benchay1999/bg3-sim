@@ -1,0 +1,383 @@
+{
+  "metadata": {
+    "synopsis": "The mind flayer in control of the nautiloid reaches out to the player, commanding them to restart the engine so the ship can escape Avernus. If the gith guide is present, the mind flayer will try to control the gith in the fight against the devils.",
+    "how_to_trigger": "load Tutorial levelgoto -17, -389walk through doorscinematic triggers automatically"
+  },
+  "dialogue": {
+    "11": {
+      "id": "11",
+      "speaker": "Mind Flayer",
+      "text": "",
+      "context": "InternalNodeContext: ~The player and Laezel walk into the Pilot Chamber to find a pitched battle playing out in front of them",
+      "checkflags": [],
+      "setflags": [
+        "TUT_Helm_Event_DevilReinforcements"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "17",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "CinematicNodeContext: ~A mind flayer extracts a cambion's brain before getting swarmed by imps",
+          "checkflags": [
+            "MONSTER = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "17",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "MONSTER"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "Mind Flayer",
+              "text": "Thrall. Connect the nerves of the transponder. We must escape. Now.",
+              "context": "NodeContext: Urgent and emotional, injured",
+              "checkflags": [
+                "MONSTER = False"
+              ],
+              "setflags": [
+                "TUT_Misc_Quest_ReachedHelm"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "16": {
+              "id": "16",
+              "speaker": "Mind Flayer",
+              "text": "You! Find a thrall. They must connect the nerves of the transponder. We must escape. Now.",
+              "context": "NodeContext: Urgent and emotional, injured. To Us,, the intellect devourer.",
+              "checkflags": [
+                "MONSTER"
+              ],
+              "setflags": [
+                "TUT_Misc_Quest_ReachedHelm"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "TUT_Helm_Event_TeleportToHelm",
+                    "TUT_GithGuide_StartInclusion"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "8": {
+                      "id": "8",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "9549ae20-5e13-59b3-00df-7a87a760fb13_TUT_MindflayerCall_GuidePresent"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "Losiir",
+                          "text": "Do as it says - we will decide how to deal with the ghaik once we escape this place.",
+                          "context": "",
+                          "checkflags": [
+                            "9549ae20-5e13-59b3-00df-7a87a760fb13_TUT_MindflayerCall_GuidePresent"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "4": {
+                              "id": "4",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "TUT_GithGuide_EndInclusion"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "15": {
+                                  "id": "15",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "6",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "19": {
+                          "id": "19",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [
+                            "9549ae20-5e13-59b3-00df-7a87a760fb13_TUT_MindflayerCall_GuidePresent = False"
+                          ],
+                          "setflags": [
+                            "ORI_Inclusion_Laezel",
+                            "TUT_GithGuide_EndInclusion"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {
+                            "2": {
+                              "id": "2",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "14": {
+                                  "id": "14",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {
+                                    "18": {
+                                      "id": "18",
+                                      "speaker": "Lae'zel",
+                                      "text": "Do it. We will deal with the ghaik after we escape.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "MONSTER = False"
+                                      ],
+                                      "setflags": [
+                                        "TUT_TransformChamber_State_LaezelRushed"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "6": {
+                                          "id": "6",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "ORI_Inclusion_End_Laezel"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {
+                                            "0": {
+                                              "id": "0",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "TUT_Lab_StartInclusionDevourer"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "taganswer",
+                                              "children": {
+                                                "13": {
+                                                  "id": "13",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "taganswer",
+                                                  "children": {
+                                                    "9": {
+                                                      "id": "9",
+                                                      "speaker": "Us",
+                                                      "text": "Connect the nerves! We will connect them!",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "7": {
+                                                          "id": "7",
+                                                          "speaker": "",
+                                                          "text": "",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [
+                                                            "TUT_Lab_EndInclusionDevourer"
+                                                          ],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": true,
+                                                          "node_type": "taganswer",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "12": {
+                                              "id": "12",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [
+                                                "TUT_TransformChamber_State_DevourerSpotted = False"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "taganswer",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

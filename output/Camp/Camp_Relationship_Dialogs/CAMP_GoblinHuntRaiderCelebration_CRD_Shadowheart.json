@@ -1,0 +1,1251 @@
+{
+  "metadata": {
+    "synopsis": "After the goblin victory slaughtering the tieflings, Shadowheart is very inebriated in camp. She feels guilty about the massacre, but can't comprehend why. As a result, she's belligerent and moody with the player unless actively calmed down.",
+    "how_to_trigger": "- Load Wild Main A- Add shadowheart to party via debug book- Open recon:- oe readyattackonden- oe attackondenraidervictory- SetGlobalOsirisFlag DEN_AttackOnDen_Event_GoblinPartyInvitation- Go to camp- Skip though opening camp dialogue- talk to Shadowheart"
+  },
+  "dialogue": {
+    "8": {
+      "id": "8",
+      "speaker": "Shadowheart",
+      "text": "Shouldn't you be in someone else's bedroll by now?",
+      "context": "",
+      "checkflags": [
+        "CAMP_GoblinHunt_State_HasPartner",
+        "CAMP_GoblinHunt_HasMet_Shadowheart"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Shadowheart",
+      "text": "You sure know how to keep a party interesting.",
+      "context": "NodeContext: Droll understatement after the player killed Minthara (a drow 'ally'). She's had a few drinks.",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_State_DrowBetrayalOver"
+      ],
+      "setflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_ShadowheartAfterBetrayal"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "46": {
+          "id": "46",
+          "speaker": "Shadowheart",
+          "text": "Makes me wonder if you treat all your lovers that harshly.",
+          "context": "NodeContext: Referring to the fact that the player slept with Minthara shortly before things turned violent.",
+          "checkflags": [
+            "CAMP_GoblinHunt_State_DrowPartner"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "56": {
+          "id": "56",
+          "speaker": "Shadowheart",
+          "text": "At least you've spared them the hangover tomorrow.",
+          "context": "NodeContext: Drunken dark humour. Them = Minthara and her goblins, killed at the party by the player.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Shadowheart",
+      "text": "The fire's nice. I'll stay here a while.",
+      "context": "",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_State_ShadowheartFire",
+        "CAMP_GoblinHunt_State_ShadowheartRejected = False",
+        "CAMP_GoblinHunt_HasMet_Shadowheart"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "51": {
+      "id": "51",
+      "speaker": "Shadowheart",
+      "text": "Entertain yourself elsewhere.",
+      "context": "",
+      "checkflags": [
+        "CAMP_GoblinHunt_State_ShadowheartRejected",
+        "CAMP_GoblinHunt_HasMet_Shadowheart"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "63": {
+      "id": "63",
+      "speaker": "Shadowheart",
+      "text": "What a glorious celebration. Hip-deep in gore.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "CAMP_GoblinHunt_HasMet_Shadowheart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "35": {
+          "id": "35",
+          "speaker": "Shadowheart",
+          "text": "And you're carousing with Astarion.",
+          "context": "",
+          "checkflags": [
+            "CAMP_GoblinHunt_State_AstarionPartner"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "28": {
+              "id": "28",
+              "speaker": "Shadowheart",
+              "text": "The corpses probably do something extra for him, don't they?",
+              "context": "",
+              "checkflags": [
+                "ORI_Astarion_Knows_Vampireness"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "9": {
+              "id": "9",
+              "speaker": "Shadowheart",
+              "text": "He does seem like the decadent type.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "15": {
+          "id": "15",
+          "speaker": "Shadowheart",
+          "text": "And you're carousing with Lae'zel.",
+          "context": "",
+          "checkflags": [
+            "CAMP_GoblinHunt_State_LaezelPartner"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Shadowheart",
+              "text": "I'm surprised she hasn't dragged you off to rut already.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Shadowheart",
+                  "text": "Not that I'm judging. I have this.",
+                  "context": "CinematicNodeContext: Shadowheart gestures with her bottle.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "45": {
+                      "id": "45",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "11",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "47": {
+          "id": "47",
+          "speaker": "Shadowheart",
+          "text": "And you're carousing with Minthara.",
+          "context": "",
+          "checkflags": [
+            "CAMP_GoblinHunt_State_DrowPartner"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "60": {
+              "id": "60",
+              "speaker": "Shadowheart",
+              "text": "Careful that she doesn't take a piece of you as a souvenir.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Shadowheart",
+          "text": "The goblins stole good wine. It goes straight to the head.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "64": {
+              "id": "64",
+              "speaker": "Player",
+              "text": "You're tearing through that bottle. Is something wrong?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "69": {
+                  "id": "69",
+                  "speaker": "Shadowheart",
+                  "text": "What's wrong with enjoying a gift from our guests?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "Shadowheart",
+                      "text": "Maybe if I down enough of this swill, it'll pickle the worm in my skull.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "16": {
+              "id": "16",
+              "speaker": "Player",
+              "text": "Aren't you excited? We won.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Shadowheart",
+                  "text": "We set a pack of refugees on fire. A child could have done it.",
+                  "context": "NodeContext: Shadowheart's tone is vaguely mocking.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "68": {
+                      "id": "68",
+                      "speaker": "Shadowheart",
+                      "text": "Not exactly an ambush for the ages.",
+                      "context": "NodeContext: Shadowheart's tone is vaguely mocking.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "39": {
+              "id": "39",
+              "speaker": "Player",
+              "text": "Would you like a better distraction?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "66": {
+                  "id": "66",
+                  "speaker": "Shadowheart",
+                  "text": "Not interested in a vampire's leftovers, I'm afraid.",
+                  "context": "",
+                  "checkflags": [
+                    "ORI_Astarion_Knows_Vampireness",
+                    "CAMP_GoblinHunt_State_AstarionPartner"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "10",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "21": {
+                  "id": "21",
+                  "speaker": "Shadowheart",
+                  "text": "Not interested in Astarion's leftovers, I'm afraid.",
+                  "context": "",
+                  "checkflags": [
+                    "CAMP_GoblinHunt_State_AstarionPartner"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "10",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "40": {
+                  "id": "40",
+                  "speaker": "Shadowheart",
+                  "text": "Not interested in a gith's leftovers, I'm afraid.",
+                  "context": "",
+                  "checkflags": [
+                    "CAMP_GoblinHunt_State_LaezelPartner"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "10",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "44": {
+                  "id": "44",
+                  "speaker": "Shadowheart",
+                  "text": "Not interested in Minthara's leftovers, I'm afraid.",
+                  "context": "",
+                  "checkflags": [
+                    "CAMP_GoblinHunt_State_DrowPartner"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "10",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "17": {
+                  "id": "17",
+                  "speaker": "Shadowheart",
+                  "text": "Maybe... but I know better than to share my bed drunk.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "10": {
+                      "id": "10",
+                      "speaker": "Shadowheart",
+                      "text": "Unless you meant to raise my spirits by other means?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "22": {
+                          "id": "22",
+                          "speaker": "Player",
+                          "text": "We could sit by the fire?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "CAMP_GoblinHuntCelebration_State_ShadowheartFire"
+                          ],
+                          "ruletags": [],
+                          "approval": [
+                            "Shadowheart 10"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "61": {
+                              "id": "61",
+                              "speaker": "Shadowheart",
+                              "text": "Ah, sitting. Such an engaging activity.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "14": {
+                                  "id": "14",
+                                  "speaker": "Shadowheart",
+                                  "text": "But that... doesn't sound half bad.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "42": {
+                                      "id": "42",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "CinematicNodeContext: The player sits with Shadowheart by the campfire. After gazing into the fire for a moment, they turn to SH as if to say something, only to see she's already fallen asleep.",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "CAMP_GoblinHunt_State_ShadowheartRejected = False"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "tagcinematic",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "50": {
+                          "id": "50",
+                          "speaker": "Player",
+                          "text": "Certainly not. I find your misery amusing.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "32": {
+                              "id": "32",
+                              "speaker": "Shadowheart",
+                              "text": "Well, I don't find you entertaining in the least.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "0": {
+                                  "id": "0",
+                                  "speaker": "Shadowheart",
+                                  "text": "In fact, I prefer the wine to your blind stabs at mockery. Get away from me.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "CAMP_GoblinHunt_State_ShadowheartRejected"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "49": {
+                          "id": "49",
+                          "speaker": "Player",
+                          "text": "You could share what's on your mind - if you want.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [
+                            "Shadowheart 10"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "31": {
+                              "id": "31",
+                              "speaker": "Shadowheart",
+                              "text": "I prefer to keep a few things secret. It's old habit.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "53": {
+                                  "id": "53",
+                                  "speaker": "Shadowheart",
+                                  "text": "Thank you. The offer's kind, but it's not a kindness I can afford.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "CAMP_GoblinHunt_State_ShadowheartRejected = False"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "57": {
+                          "id": "57",
+                          "speaker": "Player",
+                          "text": "I'm not sure what to say. I've never done any of this... comforting.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [
+                            "REALLY_DUERGARDWARF",
+                            "REALLY_GITHYANKI"
+                          ],
+                          "approval": [
+                            "Shadowheart 10"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "43": {
+                              "id": "43",
+                              "speaker": "Shadowheart",
+                              "text": "It's awkward for me too, you know.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "6": {
+                                  "id": "6",
+                                  "speaker": "Shadowheart",
+                                  "text": "But I appreciate the thought.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "65": {
+                          "id": "65",
+                          "speaker": "Player",
+                          "text": "How about a warsong? Something to celebrate your triumph.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [
+                            "REALLY_HALFORC",
+                            "SELDARINEDROWELF"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "25": {
+                              "id": "25",
+                              "speaker": "Shadowheart",
+                              "text": "No more war tonight, I think.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "48": {
+                                  "id": "48",
+                                  "speaker": "Shadowheart",
+                                  "text": "I'd prefer the quiet, if it's all the same to you.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "24": {
+                          "id": "24",
+                          "speaker": "Player",
+                          "text": "Leave.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "4": {
+                              "id": "4",
+                              "speaker": "Shadowheart",
+                              "text": "Get a girl's hopes up, why don't you? I need another bottle.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "CAMP_GoblinHunt_State_ShadowheartRejected"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "54": {
+              "id": "54",
+              "speaker": "Player",
+              "text": "Pull yourself together. Your behaviour is unbecoming.",
+              "context": "",
+              "checkflags": [
+                "REALLY_GITHYANKI"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Shadowheart -5"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "41",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "37": {
+                  "id": "37",
+                  "speaker": "Shadowheart",
+                  "text": "You're the one becoming! Disgusting...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "27": {
+                      "id": "27",
+                      "speaker": "Shadowheart",
+                      "text": "...It's all disgusting.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "CAMP_GoblinHunt_State_ShadowheartRejected"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "33": {
+              "id": "33",
+              "speaker": "Player",
+              "text": "You look guilty. Tormented.",
+              "context": "",
+              "checkflags": [
+                "CAMP_GoblinHuntRaiderCelebration_ShadowheartMindRead"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "41",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "55": {
+                  "id": "55",
+                  "speaker": "Shadowheart",
+                  "text": "Guilty? Ridiculous. What's there to be guilty for?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "41",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "Shadowheart",
+                      "text": "I serve the Lady of Loss. We stripped those tieflings of hope itself.",
+                      "context": "",
+                      "checkflags": [
+                        "ShadowHeart_InParty_Knows_SharWorshipper"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "41",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "41": {
+                          "id": "41",
+                          "speaker": "Shadowheart",
+                          "text": "Just... let me enjoy a drink in peace.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "23": {
+                      "id": "23",
+                      "speaker": "Shadowheart",
+                      "text": "My goddess smiles on such bloodshed.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "41",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "59": {
+              "id": "59",
+              "speaker": "Player",
+              "text": "Will your magic to pierce Shadowheart's thoughts.",
+              "context": "",
+              "checkflags": [
+                "DETECTTHOUGHTS"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "Shadowheart",
+                  "text": "Why did killing those tieflings make me feel sick?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CAMP_GoblinHuntRaiderCelebration_ShadowheartMindRead"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "36": {
+                      "id": "36",
+                      "speaker": "Shadowheart",
+                      "text": "I've killed in her name before. Why now? Why isn't the wine helping?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "62": {
+                          "id": "62",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "11",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "30": {
+              "id": "30",
+              "speaker": "Player",
+              "text": "Push into her thoughts.",
+              "context": "",
+              "checkflags": [
+                "ILLITHID"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "29": {
+                      "id": "29",
+                      "speaker": "Narrator",
+                      "text": "*Shadowheart's mind is drenched in drink and confusion. She's killed before - enjoyed it, even.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "CAMP_GoblinHuntRaiderCelebration_ShadowheartMindRead"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "Narrator",
+                          "text": "*But now an ill, twisting feeling lingers in her gut. One that has nothing to do with the wine.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "58": {
+                              "id": "58",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "11",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "52": {
+                      "id": "52",
+                      "speaker": "Narrator",
+                      "text": "*Your head swims, nausea burning in your gut.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Shadowheart -10"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "Shadowheart",
+                          "text": "You just... you! Get away from me. Now.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "CAMP_GoblinHunt_State_ShadowheartRejected"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "38": {
+              "id": "38",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "67": {
+      "id": "67",
+      "speaker": "Shadowheart",
+      "text": "Ugh. Later. Ground's spinning.",
+      "context": "NodeContext: Drink's gone to her head. She waves off the player.",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_State_DrowBetrayalOver",
+        "CAMP_GoblinHuntCelebration_HasMet_ShadowheartAfterBetrayal"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

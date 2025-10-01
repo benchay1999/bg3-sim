@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "synopsis": "One of the traders from Steeps Strake. She will sell various lore books and low level scroll spells to the player. She is one of the potential",
+    "how_to_trigger": "Speak with the trader at BGO_Main_A: -1815; 19; 572"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Nansi Gretta",
+      "text": "Back again? I know a reader when I see one. What'll it be?",
+      "context": "NodeContext: salesperson pitching",
+      "checkflags": [
+        "LOW_SteepsTrader_Consumables_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Nansi Gretta",
+      "text": "Plenty of knowledge to be found in these books and scrolls, friend. That'll stand to you long after the spent gold is forgotten.",
+      "context": "NodeContext: salesperson pitching",
+      "checkflags": [
+        "LOW_SteepsTrader_Consumables_HasMet = False"
+      ],
+      "setflags": [
+        "LOW_SteepsTrader_Consumables_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Let me see what you have.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Narrator",
+              "text": "*News of your good deeds has travelled fast. The merchant is all too happy to extend a certain generosity towards you, where the price of goods is concerned.*",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_PositiveArticlePublished",
+                "LOW_BaldursMouth_State_ReactedToHeadline = False"
+              ],
+              "setflags": [
+                "LOW_BaldursMouth_State_ReactedToHeadline"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "trade",
+                  "children": {
+                    "8": {
+                      "id": "8",
+                      "speaker": "Nansi Gretta",
+                      "text": "My stall's no Candlekeep Library, I'll admit. But I've got a few nice finds tucked away.",
+                      "context": "NodeContext: salesperson pitching",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Narrator",
+              "text": "*Your notoriety precedes you. Prices have been moderated to reflect your less than welcome presence in the city.*",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_NegativeArticlePublished",
+                "LOW_BaldursMouth_State_ReactedToHeadline = False"
+              ],
+              "setflags": [
+                "LOW_BaldursMouth_State_ReactedToHeadline"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

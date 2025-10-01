@@ -1,0 +1,640 @@
+{
+  "metadata": {
+    "synopsis": "Goblin having a party after attack on den at player camp. This goblin looks up to the players, and offers them a lute he found on one of the tieflings.",
+    "how_to_trigger": "1. loadlevel WLD_Main_A2. oe readyattackonden3. oe attackondentieflingvictory4. SetGlobalOsirisFlag DEN_AttackOnDen_Event_TieflingPartyInvitation5. Go to camp6. Talk to Goblin Brawler sitting down at X: -636 Y: -182"
+  },
+  "dialogue": {
+    "14": {
+      "id": "14",
+      "speaker": "Goblin Brawler",
+      "text": "True Soul! A present, straight from the battlefield.",
+      "context": "CinematicNodeContext: The goblin has a lute in his hands, offering it to you.\rNodeContext: The goblin has a lute in his hands, offering it to you.",
+      "checkflags": [
+        "5c7da982-bc01-dcdb-bc8c-e9bc3ef5baea_GaveReward = False",
+        "CAMP_GoblinHuntCelebration_State_HasStolenInstrument"
+      ],
+      "setflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_Goblin001"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Narrator",
+          "text": "*The mark glows, but you feel nothing in response. Your illithid power is beyond reach until you rest.*",
+          "context": "",
+          "checkflags": [
+            "GLO_Tadpoled_UsedToday1"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Goblin Brawler",
+              "text": "Had to cut off the stiff's fingers to get to it.",
+              "context": "CinematicNodeContext: The goblin has a lute in his hands, offering it to you.\rNodeContext: The goblin has a lute in his hands, offering it to you.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Narrator",
+                  "text": "*Though it is scuffed and smeared with blood, you realise the lute belonged to Alfira, the tiefling bard.*",
+                  "context": "CinematicNodeContext: The goblin has a lute in his hands, offering it to you.",
+                  "checkflags": [
+                    "CAMP_GoblinHuntCelebration_Event_MetBardBeforeParty"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Player",
+                      "text": "Accept his gift.",
+                      "context": "",
+                      "checkflags": [
+                        "CAMP_GoblinHuntCelebration_State_HasStolenInstrument"
+                      ],
+                      "setflags": [
+                        "5c7da982-bc01-dcdb-bc8c-e9bc3ef5baea_GaveReward"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "9": {
+                          "id": "9",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [
+                            "CAMP_GoblinHuntCelebration_State_HasStolenInstrument"
+                          ],
+                          "setflags": [
+                            "CAMP_GoblinHuntCelebration_Event_TransferInstrument"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {
+                            "13": {
+                              "id": "13",
+                              "speaker": "Goblin Brawler",
+                              "text": "A pleasure. My name's Ripper - put in a good word for me at Moonrise, yeah?",
+                              "context": "CinematicNodeContext: The goblin gives you a lute.\rNodeContext: The goblin gives you a lute.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "Player",
+                      "text": "You fought well. This prize is yours.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "Goblin Brawler",
+                          "text": "Th-thank you, True Soul.",
+                          "context": "CinematicNodeContext: The goblin does a quick bow with the lute still in his hands.\rNodeContext: The playertold the goblin to keep his lute because he fought well. The goblin does a quick bow with the lute still in his hands.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "17": {
+                      "id": "17",
+                      "speaker": "Player",
+                      "text": "I know you have more than some bloodied instrument. Empty out your pockets.",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_Tadpoled_UsedToday1 = False",
+                        "TRUESOUL"
+                      ],
+                      "setflags": [
+                        "5c7da982-bc01-dcdb-bc8c-e9bc3ef5baea_GaveReward",
+                        "GLO_Tadpoled_UsedToday1"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "32": {
+                      "id": "32",
+                      "speaker": "Player",
+                      "text": "I know you have more than some bloodied instrument. Empty out your pockets.",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_Tadpoled_UsedToday1 = False",
+                        "TRUESOUL = False",
+                        "ILLITHID"
+                      ],
+                      "setflags": [
+                        "5c7da982-bc01-dcdb-bc8c-e9bc3ef5baea_GaveReward",
+                        "GLO_Tadpoled_UsedToday1"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "2",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "2",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "29": {
+                              "id": "29",
+                              "speaker": "Goblin Brawler",
+                              "text": "Of course. Didn't mean to hold out on you, True Soul.",
+                              "context": "CinematicNodeContext: The goblin is holding the lute in one hand.\rNodeContext: The goblin is a bit scared - he offered you something and you asked for more, something he didn;t expect, but he;s afraid of displeasing you. The goblin is holding the lute in one hand.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "2",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "21": {
+                                  "id": "21",
+                                  "speaker": "Narrator",
+                                  "text": "*A shiver runs across your mind... You feel sated.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "GLO_TadpoledCount1 = False",
+                                    "TRUESOUL = False"
+                                  ],
+                                  "setflags": [
+                                    "GLO_TadpoledCount1"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "2",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "11": {
+                                  "id": "11",
+                                  "speaker": "Narrator",
+                                  "text": "*Something stirs deep within you, hungry and alert... it's taking something you'll never get back.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "GLO_TadpoledCount2 = False",
+                                    "TRUESOUL = False"
+                                  ],
+                                  "setflags": [
+                                    "GLO_TadpoledCount2"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "2",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "Narrator",
+                                  "text": "*Your mind lurches, reeling suddenly as if... bitten.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "GLO_TadpoledCount3 = False",
+                                    "TRUESOUL = False"
+                                  ],
+                                  "setflags": [
+                                    "GLO_TadpoledCount3"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "2",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Narrator",
+                                  "text": "*A shadow swims across your vision, and a familiar voice tells you to be calm. You are loved.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "GLO_TadpoledCount4 = False",
+                                    "TRUESOUL = False"
+                                  ],
+                                  "setflags": [
+                                    "GLO_TadpoledCount4"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "2",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "3": {
+                                  "id": "3",
+                                  "speaker": "Narrator",
+                                  "text": "*Your blood runs quicker, feeding the gnawing absence at the centre of your mind.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "GLO_TadpoledCount5 = False",
+                                    "TRUESOUL = False"
+                                  ],
+                                  "setflags": [
+                                    "GLO_TadpoledCount5"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "2",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "2": {
+                                      "id": "2",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [
+                                        "CAMP_GoblinHuntCelebration_State_HasStolenInstrument"
+                                      ],
+                                      "setflags": [
+                                        "CAMP_GoblinHuntCelebration_Event_TransferInstrument"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "1": {
+                                          "id": "1",
+                                          "speaker": "Goblin Brawler",
+                                          "text": "Anything for the cause.",
+                                          "context": "CinematicNodeContext: The goblin gives you a weapon together with the lute.",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "CAMP_GoblinHuntCelebration_Event_TransferWeapon"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "5": {
+                                  "id": "5",
+                                  "speaker": "Narrator",
+                                  "text": "*The presence deep in your mind is awake, unblinking. This is it. A single word pervades your consciousness: 'Soon'.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "GLO_TadpoledCount6 = False",
+                                    "TRUESOUL = False"
+                                  ],
+                                  "setflags": [
+                                    "GLO_TadpoledCount6"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "2",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "28": {
+                                  "id": "28",
+                                  "speaker": "Narrator",
+                                  "text": "*Your mind is full, bursting with ecstasy and terror. Finally, it is coming. You are becoming.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "TRUESOUL = False"
+                                  ],
+                                  "setflags": [
+                                    "TRUESOUL"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "2",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "18": {
+                                  "id": "18",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "21",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "23": {
+                          "id": "23",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "25": {
+                              "id": "25",
+                              "speaker": "Goblin Brawler",
+                              "text": "Didn't mean to hold out on you. Just didn't think you'd be interested, is all.",
+                              "context": "CinematicNodeContext: The goblin is holding the lute in one hand and puts his other hand in his pocket and offers you a bloody heart.\rNodeContext: The goblin is holding the lute in one hand and puts his other hand in his pocket and offers you a bloody heart.",
+                              "checkflags": [],
+                              "setflags": [
+                                "CAMP_GoblinHuntCelebration_Event_TransferHeart"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "26": {
+                                  "id": "26",
+                                  "speaker": "Player",
+                                  "text": "Accept both the heart and the lute.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "CAMP_GoblinHuntCelebration_State_HasStolenInstrument"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "10": {
+                                      "id": "10",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [
+                                        "CAMP_GoblinHuntCelebration_State_HasStolenInstrument"
+                                      ],
+                                      "setflags": [
+                                        "CAMP_GoblinHuntCelebration_Event_TransferInstrument"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "6": {
+                                          "id": "6",
+                                          "speaker": "Goblin Brawler",
+                                          "text": "A pleasure. My name's Ripper - put in a good word for me at Moonrise, yeah?",
+                                          "context": "CinematicNodeContext: The goblin gives you a lute and a heart",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "31": {
+                                  "id": "31",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "8",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "30": {
+          "id": "30",
+          "speaker": "Narrator",
+          "text": "*A strange symbol glows, marked on their flesh, and something within you stirs in response.*",
+          "context": "",
+          "checkflags": [
+            "GLO_TadpoleIntro_NPC = False"
+          ],
+          "setflags": [
+            "GLO_TadpoleIntro_NPC"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "27": {
+          "id": "27",
+          "speaker": "Narrator",
+          "text": "*As the symbol glows, power courses through you. Authority.*",
+          "context": "",
+          "checkflags": [
+            "GLO_TadpoleIntro_NPC"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Goblin Brawler",
+      "text": "To think the Absolute sent you to us. We are truly blessed.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_Goblin001"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "20": {
+      "id": "20",
+      "speaker": "Goblin Brawler",
+      "text": "My True Soul.",
+      "context": "CinematicNodeContext: The goblin bows.",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_HasMet_Goblin001"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

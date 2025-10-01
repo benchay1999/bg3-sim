@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "synopsis": "One of the gith kids can't wait for the player to open the chest (knowing that a gremishka will pop out.) Before opening chest - gleeful anticipation. After opening chest - laughing in the player's face. If chest stolen - sulky.",
+    "how_to_trigger": "Speak to MageHandKid01 after you've made them stop shoving the chest."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Zel'i",
+      "text": "Ha! Weren't expecting that, were you, k'chakhi?",
+      "context": "InternalNodeContext: ke-CHOCK-ee \rNodeContext: Mocking; knew that a gremishka was going to jump out at the player",
+      "checkflags": [
+        "CRE_General_State_MageHandBoxUnlocked"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Zel'i",
+      "text": "Stealing toys from children? You're so brave.",
+      "context": "InternalNodeContext: Mocking, annoyed",
+      "checkflags": [
+        "CRE_MageHandGame_State_BoxPickedUp",
+        "CRE_General_State_MageHandBoxUnlocked = False"
+      ],
+      "setflags": [
+        "CRE_General_HasMet_MageHandKid01"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Zel'i",
+      "text": "What are you going to do with the chest, is'tark?",
+      "context": "InternalNodeContext: iss-TARK\rNodeContext: Impatient but excited; knows there's a gremishka in the chest they're trying to get the player to open",
+      "checkflags": [
+        "CRE_General_HasMet_MageHandKid01 = False",
+        "CRE_General_State_MageHandBoxUnlocked = False"
+      ],
+      "setflags": [
+        "CRE_General_HasMet_MageHandKid01"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Zel'i",
+      "text": "Doesn't matter. We were bored anyway.",
+      "context": "InternalNodeContext: Sulking, bit of bravado",
+      "checkflags": [
+        "CRE_General_HasMet_MageHandKid01",
+        "CRE_MageHandGame_State_BoxPickedUp",
+        "CRE_General_State_MageHandBoxUnlocked = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Zel'i",
+      "text": "I think you should open it.",
+      "context": "NodeContext: Goading; knows there's a gremishka in the chest they're trying to get the player to open",
+      "checkflags": [
+        "CRE_General_HasMet_MageHandKid01",
+        "CRE_General_State_MageHandBoxUnlocked = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

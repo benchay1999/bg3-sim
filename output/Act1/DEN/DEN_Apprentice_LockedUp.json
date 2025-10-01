@@ -1,0 +1,2685 @@
+{
+  "metadata": {
+    "synopsis": "During the scene where she scratches you. Nettie is in the lab, sitting at a table, studiying Halsin's notes. The player can still try to persuade her to give the antidote. The player must also accept to take the wyvern poison. The other choice is to kill Nettie."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Nettie",
+      "text": "If it helps, she won't feel any pain. It's the best death I can give her.",
+      "context": "NodeContext: Talking to non-infected player about infected player",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Nettie",
+      "text": "I hope your friend sees sense soon. They don't have much time left.",
+      "context": "",
+      "checkflags": [
+        "DEN_Apprentice_State_HostileToTadpoled = False",
+        "DEN_Apprentice_Event_RevealedTadpole = False",
+        "DEN_Apprentice_State_HasGenderNeutralTadpoled",
+        "DEN_Apprentice_State_Cyanide_Persuaded"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "146",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "107": {
+          "id": "107",
+          "speaker": "Nettie",
+          "text": "I want to help, but I can't. Not until I know they'll take the wyvern poison if they start to change.",
+          "context": "NodeContext: caught in a tough place",
+          "checkflags": [
+            "DEN_Apprentice_State_HasWyvernPoison"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "132": {
+          "id": "132",
+          "speaker": "Nettie",
+          "text": "I want to help, but I can't. Not until I know they'll do what has to be done, if it comes to that.",
+          "context": "NodeContext: caught in a tough place",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Nettie",
+      "text": "I hope your friend sees sense soon. He doesn't have much time left.",
+      "context": "NodeContext: Talking to non-infected player about infected player",
+      "checkflags": [
+        "DEN_Apprentice_State_HostileToTadpoled = False",
+        "DEN_Apprentice_State_HasMaleTadpoled",
+        "DEN_Apprentice_Event_RevealedTadpole = False",
+        "DEN_Apprentice_State_Cyanide_Persuaded"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "146",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "36": {
+          "id": "36",
+          "speaker": "Nettie",
+          "text": "I want to help, but I can't. Not until I know he'll take the wyvern poison if he starts to change.",
+          "context": "NodeContext: caught in a tough place",
+          "checkflags": [
+            "DEN_Apprentice_State_HasWyvernPoison"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "33": {
+          "id": "33",
+          "speaker": "Nettie",
+          "text": "I want to help, but I can't. Not until I know he'll do what has to be done, if it comes to that.",
+          "context": "NodeContext: caught in a tough place",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "51": {
+      "id": "51",
+      "speaker": "Nettie",
+      "text": "And? Will you swear you'd die before you turn?",
+      "context": "InternalNodeContext: She doesn't have the wyvern poison in her inventory, player pickpocketed it already",
+      "checkflags": [
+        "DEN_Apprentice_Event_RevealedTadpole",
+        "DEN_Apprentice_State_Cyanide_Persuaded"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "146",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "By my sacred oath, I swear it.",
+          "context": "",
+          "checkflags": [
+            "PALADIN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion -1",
+            "Shadowheart 1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "146",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Nettie",
+              "text": "I hope it doesn't come to that but... thank you. Here.",
+              "context": "CinematicNodeContext: Gives player vial of poison",
+              "checkflags": [
+                "DEN_Apprentice_State_HasWyvernPoison"
+              ],
+              "setflags": [
+                "DEN_Apprentice_State_TookPoison",
+                "DEN_Apprentice_Quest_TookPoison",
+                "DEN_Apprentice_Event_OpenDoor",
+                "DEN_Apprentice_Event_GiveWyvenPoison"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "146",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "143": {
+                  "id": "143",
+                  "speaker": "Nettie",
+                  "text": "And here's the antidote. Do not mix those two up.",
+                  "context": "CinematicNodeContext: Nettie hands you the antidote\rNodeContext: Hands you the antidote. 'Don't mix them up' refers to the antidote and the poison",
+                  "checkflags": [
+                    "DEN_Apprentice_State_CuredEarly = False",
+                    "DEN_Apprentice_State_HasAntidote"
+                  ],
+                  "setflags": [
+                    "DEN_Apprentice_Knows_AntidoteLocation",
+                    "ORI_Gale_State_NettieGaveAntidote",
+                    "DEN_Apprentice_Event_Gale_GotAntidoteApproval",
+                    "DEN_Apprentice_Event_GiveAntidote"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "146",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "67": {
+                  "id": "67",
+                  "speaker": "Nettie",
+                  "text": "Now, I've an antidote - um... where is the bloody thing?",
+                  "context": "",
+                  "checkflags": [
+                    "DEN_Apprentice_State_CuredEarly = False"
+                  ],
+                  "setflags": [
+                    "DEN_Apprentice_State_Cyanide_AntidotePickpocketed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "4",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "39": {
+                      "id": "39",
+                      "speaker": "Nettie",
+                      "text": "Well, not to worry. Have a read of that book - Flora of the Dalelands. There's a recipe for your antidote in there. It won't do anything for what's in your skull, though.",
+                      "context": "",
+                      "checkflags": [
+                        "DEN_Apprentice_State_CuredEarly = False"
+                      ],
+                      "setflags": [
+                        "DEN_Apprentice_Knows_AntidoteLocation",
+                        "ORI_Gale_State_NettieGaveAntidote",
+                        "DEN_Apprentice_Event_Gale_GotAntidoteApproval"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "4",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "146": {
+                          "id": "146",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "4",
+                          "is_end": false,
+                          "node_type": "visualstate",
+                          "children": {
+                            "10": {
+                              "id": "10",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [
+                                "DEN_Apprentice_State_CuredEarly"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "4",
+                              "is_end": false,
+                              "node_type": "alias",
+                              "children": {}
+                            },
+                            "4": {
+                              "id": "4",
+                              "speaker": "Nettie",
+                              "text": "I've spent my life treating folk and never once saw a mind flayer infection. Then suddenly there's dozens of you - maybe more.",
+                              "context": "CinematicNodeContext: Player Drinks the Antidote\rNodeContext: Reflecting on how weird all of this is",
+                              "checkflags": [
+                                "DEN_Apprentice_State_Cyanide_AntidotePickpocketed"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "46",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "41": {
+                                  "id": "41",
+                                  "speaker": "Nettie",
+                                  "text": "Master Halsin and I were tracking them, studying them, trying to figure out what the hells was going on.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "DEN_Apprentice_Quest_FindHalsin",
+                                    "DEN_Apprentice_Event_OpenDoor"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "46",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "20": {
+                                      "id": "20",
+                                      "speaker": "Nettie",
+                                      "text": "Because you should all be changing - there should be a small army of mind flayers out there! But you're not. Weird powers aside, you seem perfectly normal.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "GLO_Halsin_Knows_StudiedTadpole",
+                                        "LearnedResearchHalsin"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "46",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "89": {
+                                          "id": "89",
+                                          "speaker": "Player",
+                                          "text": "What do you mean 'should' be changing?",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "46",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "136": {
+                                              "id": "136",
+                                              "speaker": "Nettie",
+                                              "text": "Mind flayers reproduce by infecting someone with their parasite. Seven gruesome days later, the victim transforms and a new mind flayer is born.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "46",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "115": {
+                                                  "id": "115",
+                                                  "speaker": "Nettie",
+                                                  "text": "The thing in your skull, though? It's different to anything in our records.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "46",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "49": {
+                                          "id": "49",
+                                          "speaker": "Player",
+                                          "text": "You must've learned something from studying them.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "8",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "26": {
+                                              "id": "26",
+                                              "speaker": "Nettie",
+                                              "text": "For one, that thing in your head is like nothing we've ever seen from mind flayers.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "8",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "46": {
+                                                  "id": "46",
+                                                  "speaker": "Nettie",
+                                                  "text": "It's one of their worms, for sure, but this one gives you powers - telepathic connections. And it doesn't turn you into one of them.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "8",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "95": {
+                                                      "id": "95",
+                                                      "speaker": "Nettie",
+                                                      "text": "Not yet, anyhow.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "8",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "68": {
+                                                          "id": "68",
+                                                          "speaker": "Player",
+                                                          "text": "That's... good news?",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "8",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        },
+                                                        "28": {
+                                                          "id": "28",
+                                                          "speaker": "Player",
+                                                          "text": "So you think it's only a matter of time?",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "104",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "8": {
+                                                              "id": "8",
+                                                              "speaker": "Nettie",
+                                                              "text": "Could be, but there's a lot we don't know. Infected - folks like you - have been converging on an old temple of Sel\u00fbne, and I've no idea why.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "104",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "129": {
+                                                                  "id": "129",
+                                                                  "speaker": "Nettie",
+                                                                  "text": "When Master Halsin heard the adventurers were heading that way, he saw a chance to get answers. Joined on the spot.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "104",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "130": {
+                                                                      "id": "130",
+                                                                      "speaker": "Nettie",
+                                                                      "text": "Whatever he found there, he didn't make it back.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "104",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "91": {
+                                                                          "id": "91",
+                                                                          "speaker": "Player",
+                                                                          "text": "What do you want me to do?",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "104",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "90": {
+                                                                              "id": "90",
+                                                                              "speaker": "Nettie",
+                                                                              "text": "The thing is, I've sent birds to find him, but the place is rotten with goblins. None of us can even get close.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "104",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "125": {
+                                                                          "id": "125",
+                                                                          "speaker": "Player",
+                                                                          "text": "So? Go and get him.",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "104",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "72": {
+                                                                              "id": "72",
+                                                                              "speaker": "Nettie",
+                                                                              "text": "I've sent birds to find him, but the place is rotten with goblins. And if my birds can't get close, what chance do I have?",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "104",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "56": {
+                                                                          "id": "56",
+                                                                          "speaker": "Player",
+                                                                          "text": "You think he's still alive?",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "47",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "12": {
+                                                                              "id": "12",
+                                                                              "speaker": "Nettie",
+                                                                              "text": "I think so. I hope so. I've sent birds to find him, but they can't get close without goblins trying to shoot them down.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "47",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "104": {
+                                                                                  "id": "104",
+                                                                                  "speaker": "Nettie",
+                                                                                  "text": "You, though? You're one of them - technically speaking, I mean. They might not kill someone carrying their parasite.",
+                                                                                  "context": "",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "47",
+                                                                                  "is_end": false,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {
+                                                                                    "120": {
+                                                                                      "id": "120",
+                                                                                      "speaker": "Nettie",
+                                                                                      "text": "If you can find Halsin and get him out of there, we can discover what he learned. And perhaps he can save your life. How's that sound?",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "47",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "79": {
+                                                                                          "id": "79",
+                                                                                          "speaker": "Player",
+                                                                                          "text": "I already know where to find him: the worg pens of the goblin camp.",
+                                                                                          "context": "",
+                                                                                          "checkflags": [
+                                                                                            "GLO_Halsin_Knows_IsFound"
+                                                                                          ],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "47",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "60": {
+                                                                                              "id": "60",
+                                                                                              "speaker": "Nettie",
+                                                                                              "text": "Gods above - why didn't you say so?",
+                                                                                              "context": "NodeContext: exasperated - they just wasted a lot of time.",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "100": {
+                                                                                                  "id": "100",
+                                                                                                  "speaker": "Nettie",
+                                                                                                  "text": "Please, you have to bring him back to us. For your own sake as much as ours.",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [
+                                                                                                    "DEN_Apprentice_Quest_FindHalsin",
+                                                                                                    "DEN_Apprentice_Event_OpenDoor"
+                                                                                                  ],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {}
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "21": {
+                                                                                          "id": "21",
+                                                                                          "speaker": "Player",
+                                                                                          "text": "All right, I'll find Halsin.",
+                                                                                          "context": "",
+                                                                                          "checkflags": [
+                                                                                            "GLO_Halsin_Knows_IsFound = False"
+                                                                                          ],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "47",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "65": {
+                                                                                              "id": "65",
+                                                                                              "speaker": "Nettie",
+                                                                                              "text": "Thank you. It would mean everything to the grove. To me.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "47",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "57": {
+                                                                                                  "id": "57",
+                                                                                                  "speaker": "Nettie",
+                                                                                                  "text": "I wish I could tell you what happened out there, but those adventurers were the only witnesses. And they're long gone.",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [
+                                                                                                    "DEN_RaidingParty_Event_AdventurersLeave"
+                                                                                                  ],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "47",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {
+                                                                                                    "47": {
+                                                                                                      "id": "47",
+                                                                                                      "speaker": "Nettie",
+                                                                                                      "text": "All I can say for sure is they all went to the old temple of Sel\u00fbne and Master Halsin didn't make it back.",
+                                                                                                      "context": "NodeContext: \"Sel\u00fbne\" = Seh-loon-eh",
+                                                                                                      "checkflags": [],
+                                                                                                      "setflags": [
+                                                                                                        "GLO_Halsin_Knows_WentWithAdventurers"
+                                                                                                      ],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {
+                                                                                                        "94": {
+                                                                                                          "id": "94",
+                                                                                                          "speaker": "Nettie",
+                                                                                                          "text": "Good luck out there. And if things start to go bad - remember the oath you swore.",
+                                                                                                          "context": "NodeContext: Grave",
+                                                                                                          "checkflags": [
+                                                                                                            "DEN_Apprentice_Event_GiveWyvenPoison = False"
+                                                                                                          ],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": true,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {}
+                                                                                                        },
+                                                                                                        "13": {
+                                                                                                          "id": "13",
+                                                                                                          "speaker": "Nettie",
+                                                                                                          "text": "Good luck out there. And if things start to go bad - remember the vial. Remember your oath.",
+                                                                                                          "context": "NodeContext: Grave",
+                                                                                                          "checkflags": [
+                                                                                                            "DEN_Apprentice_Event_GiveWyvenPoison"
+                                                                                                          ],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": true,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {}
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                },
+                                                                                                "108": {
+                                                                                                  "id": "108",
+                                                                                                  "speaker": "Nettie",
+                                                                                                  "text": "I wish I could tell you more, but only those adventurers know what happened out there.",
+                                                                                                  "context": "NodeContext: A little bitterly",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "47",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {}
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "15": {
+                                                                                          "id": "15",
+                                                                                          "speaker": "Player",
+                                                                                          "text": "It sounds like you're making a lot of assumptions that could kill me.",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "42",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "24": {
+                                                                                              "id": "24",
+                                                                                              "speaker": "Nettie",
+                                                                                              "text": "The way I see it, you have two options: Halsin or that wyvern poison.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [
+                                                                                                "DEN_Apprentice_Event_GiveWyvenPoison"
+                                                                                              ],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "42",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "42": {
+                                                                                                  "id": "42",
+                                                                                                  "speaker": "Nettie",
+                                                                                                  "text": "I don't envy your choice, truly. But this is the hand fate's dealt you.",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {}
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "116": {
+                                                                                              "id": "116",
+                                                                                              "speaker": "Nettie",
+                                                                                              "text": "The way I see it, you have two options: Halsin or death - whatever form it takes.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "42",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {}
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "35": {
+                                                                                          "id": "35",
+                                                                                          "speaker": "Player",
+                                                                                          "text": "You're sure he can cure me?",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "101",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "96": {
+                                                                                              "id": "96",
+                                                                                              "speaker": "Nettie",
+                                                                                              "text": "I can't make any promises. This is like nothing we've seen before.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "44": {
+                                                                                                  "id": "44",
+                                                                                                  "speaker": "Nettie",
+                                                                                                  "text": "But I know this for sure: Master Halsin is the only one close to understanding these things. He's your best bet to survive.",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [
+                                                                                                    "DEN_Apprentice_State_Cyanide_WarnedOfOptions"
+                                                                                                  ],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {
+                                                                                                    "101": {
+                                                                                                      "id": "101",
+                                                                                                      "speaker": "Nettie",
+                                                                                                      "text": "Otherwise, that vial's your only option.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "DEN_Apprentice_Event_GiveWyvenPoison"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {}
+                                                                                                    },
+                                                                                                    "40": {
+                                                                                                      "id": "40",
+                                                                                                      "speaker": "Nettie",
+                                                                                                      "text": "Otherwise you'll need to end things yourself, before the transformation really takes hold.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "DEN_Apprentice_Event_GiveWyvenPoison = False"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {}
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "106": {
+                                                                                          "id": "106",
+                                                                                          "speaker": "Player",
+                                                                                          "text": "That sounds like suicide. I won't do it.",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "101",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "48": {
+                                                                                              "id": "48",
+                                                                                              "speaker": "Nettie",
+                                                                                              "text": "It might be suicide either way. Trust me, you do not want to become one of those monsters.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "101",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "140": {
+                                                                                                  "id": "140",
+                                                                                                  "speaker": "Nettie",
+                                                                                                  "text": "But of course, the choice is yours. I just hope you find a cure out there.",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [
+                                                                                                    "DEN_Apprentice_State_Cyanide_WarnedOfOptions = False"
+                                                                                                  ],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "101",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {
+                                                                                                    "30": {
+                                                                                                      "id": "30",
+                                                                                                      "speaker": "",
+                                                                                                      "text": "",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "DEN_Apprentice_Event_GiveWyvenPoison"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": true,
+                                                                                                      "node_type": "alias",
+                                                                                                      "children": {}
+                                                                                                    },
+                                                                                                    "52": {
+                                                                                                      "id": "52",
+                                                                                                      "speaker": "",
+                                                                                                      "text": "",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "DEN_Apprentice_Event_GiveWyvenPoison = False"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": true,
+                                                                                                      "node_type": "alias",
+                                                                                                      "children": {}
+                                                                                                    }
+                                                                                                  }
+                                                                                                },
+                                                                                                "142": {
+                                                                                                  "id": "142",
+                                                                                                  "speaker": "",
+                                                                                                  "text": "",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [
+                                                                                                    "DEN_Apprentice_State_Cyanide_WarnedOfOptions"
+                                                                                                  ],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "",
+                                                                                                  "is_end": true,
+                                                                                                  "node_type": "alias",
+                                                                                                  "children": {}
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "121": {
+                                                          "id": "121",
+                                                          "speaker": "Player",
+                                                          "text": "You said you were tracking other victims. Did they change?",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "129",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "99": {
+                                                              "id": "99",
+                                                              "speaker": "Nettie",
+                                                              "text": "Hard to say, but there's a lot we don't know. Infected - folks like you - have been converging on an old temple of Sel\u00fbne, and I've no idea why.",
+                                                              "context": "NodeContext: \"Sel\u00fbne\" = Seh-loon-eh",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "129",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        },
+                                                        "139": {
+                                                          "id": "139",
+                                                          "speaker": "Player",
+                                                          "text": "Excellent news! All the power, none of the tentacles.",
+                                                          "context": "",
+                                                          "checkflags": [
+                                                            "REALLY_ASTARION"
+                                                          ],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "129",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "123": {
+                                                              "id": "123",
+                                                              "speaker": "Nettie",
+                                                              "text": "I wouldn't be so sure. There's a lot we don't know. Infected - folks like you - have been converging on an old temple of Sel\u00fbne, and I've no idea why.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "129",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "19": {
+                                          "id": "19",
+                                          "speaker": "Player",
+                                          "text": "Just tell me if there's a cure or not.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "46",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "38": {
+                                              "id": "38",
+                                              "speaker": "Nettie",
+                                              "text": "You can't cure what you don't understand. And as much as I know about mind flayers, I can't make heads nor tails of this.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "46",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "135": {
+                              "id": "135",
+                              "speaker": "Nettie",
+                              "text": "I've spent my life treating folk and never once saw a mind flayer infection. Then suddenly there's dozens of you - maybe more.",
+                              "context": "CinematicNodeContext: Player Drinks the Antidote\rNodeContext: Reflecting on how weird all of this is",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "41",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "59": {
+              "id": "59",
+              "speaker": "Nettie",
+              "text": "Thank you. I truly hope it doesn't come to that.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "DEN_Apprentice_State_TookPoison",
+                "DEN_Apprentice_Quest_TookPoison",
+                "DEN_Apprentice_Event_OpenDoor"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "67",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "50": {
+                  "id": "50",
+                  "speaker": "Nettie",
+                  "text": "Here, take this. It'll stop the poison, but I can't do anything for that wriggler in your head.",
+                  "context": "CinematicNodeContext: Nettie hands you the antidote\rNodeContext: Nettie hands you the antidote",
+                  "checkflags": [
+                    "DEN_Apprentice_State_CuredEarly = False",
+                    "DEN_Apprentice_State_HasAntidote"
+                  ],
+                  "setflags": [
+                    "DEN_Apprentice_Knows_AntidoteLocation",
+                    "ORI_Gale_State_NettieGaveAntidote",
+                    "DEN_Apprentice_Event_Gale_GotAntidoteApproval",
+                    "DEN_Apprentice_Event_GiveAntidote"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "146",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "93": {
+          "id": "93",
+          "speaker": "Player",
+          "text": "I swear, Nettie.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion -1",
+            "Shadowheart 1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "119": {
+          "id": "119",
+          "speaker": "Player",
+          "text": "Fine, just give it to me.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Nettie",
+              "text": "Swear it.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "80": {
+          "id": "80",
+          "speaker": "Player",
+          "text": "I'll never swear to that.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "127",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            },
+            "141": {
+              "id": "141",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "17",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "53": {
+          "id": "53",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_State_CuredEarly"
+          ],
+          "setflags": [
+            "DEN_Apprentice_Event_NettieTurnsHostile"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Astarion 5",
+            "Lae'zel 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "86": {
+          "id": "86",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [
+            "DEN_Apprentice_State_CuredEarly = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "70": {
+              "id": "70",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "43",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "64": {
+      "id": "64",
+      "speaker": "Nettie",
+      "text": "Yes? Is there anything I can do?",
+      "context": "",
+      "checkflags": [
+        "DEN_Apprentice_Event_RevealedTadpole"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "66",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "128": {
+          "id": "128",
+          "speaker": "Nettie",
+          "text": "Aside from the obvious.",
+          "context": "NodeContext: A little sadly. She wants to save you, but feels that she morally can't.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "66",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "62": {
+              "id": "62",
+              "speaker": "Player",
+              "text": "I know where Halsin is! Give me the antidote or he'll die too!",
+              "context": "",
+              "checkflags": [
+                "GLO_Halsin_State_PermaDefeated = False",
+                "GLO_Halsin_Knows_IsFound"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "66",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "145": {
+                  "id": "145",
+                  "speaker": "Nettie",
+                  "text": "Hells' teeth. All right. I'll tell you where the antidote is, but there's a condition.",
+                  "context": "NodeContext: Realises that if she acts quickly, she can save her mentor.",
+                  "checkflags": [],
+                  "setflags": [
+                    "DEN_Apprentice_State_Cyanide_Persuaded"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "133": {
+                      "id": "133",
+                      "speaker": "Nettie",
+                      "text": "This is a vial of wyvern poison. Swear to me you'll swallow it if you feel any symptoms.",
+                      "context": "",
+                      "checkflags": [
+                        "DEN_Apprentice_State_HasWyvernPoison"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "73": {
+                          "id": "73",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "92",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "105": {
+                      "id": "105",
+                      "speaker": "Nettie",
+                      "text": "Swear to me that if you feel any symptoms, you'll end things yourself.",
+                      "context": "NodeContext: 'you'll end things yourself' = you'll kill yourself.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "78": {
+                          "id": "78",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "51",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "122": {
+              "id": "122",
+              "speaker": "Player",
+              "text": "We can both see I have no symptoms - I'm not about to change!",
+              "context": "",
+              "checkflags": [
+                "DEN_Apprentice_State_Cyanide_FailedToPersuadeNettie = False"
+              ],
+              "setflags": [
+                "DEN_Apprentice_State_Cyanide_Persuade1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "66",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "114": {
+                  "id": "114",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "102": {
+                      "id": "102",
+                      "speaker": "Nettie",
+                      "text": "Same as the drow... But Master Halsin said he'd turn eventually.",
+                      "context": "NodeContext: Considering",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "75": {
+                          "id": "75",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "62",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "54": {
+                          "id": "54",
+                          "speaker": "Player",
+                          "text": "Eventually? That gives me time to find a cure.",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_Apprentice_State_Cyanide_Persuade1"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Persuade2"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "16": {
+                          "id": "16",
+                          "speaker": "Player",
+                          "text": "Magic can cure me if you can't. I know the Weave well!",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_Apprentice_State_Cyanide_Intimidate1",
+                            "SORCERER = False",
+                            "WARLOCK = False",
+                            "WIZARD = False",
+                            "REALLY_GALE = False"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Intimidate2"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "9": {
+                          "id": "9",
+                          "speaker": "Player",
+                          "text": "Magic can cure me if you can't. I know the Weave well!",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_Apprentice_State_Cyanide_Intimidate1"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Intimidate2"
+                          ],
+                          "ruletags": [
+                            "REALLY_GALE",
+                            "SORCERER",
+                            "WARLOCK",
+                            "WIZARD"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "7": {
+                          "id": "7",
+                          "speaker": "Player",
+                          "text": "The grove is in terrible danger - cure me and I'll tell your leader how to save it.",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_Apprentice_State_Cyanide_Deceive1"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Deceive2"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "29": {
+                              "id": "29",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "6": {
+                                  "id": "6",
+                                  "speaker": "Nettie",
+                                  "text": "All right! Master Halsin thought the tadpole was dormant, so you have some time. Perhaps it's only fair I let you use it.",
+                                  "context": "NodeContext: Gives in",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "DEN_Apprentice_State_Cyanide_Persuaded"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "88": {
+                                      "id": "88",
+                                      "speaker": "Nettie",
+                                      "text": "But first - this is a vial of wyvern poison. Swear to me you'll swallow it if you feel any symptoms.",
+                                      "context": "CinematicNodeContext: Holds out vial of poison\rNodeContext: Firm tone. Holds out vial of poison",
+                                      "checkflags": [
+                                        "DEN_Apprentice_State_HasWyvernPoison"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "74": {
+                                          "id": "74",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "92",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "85": {
+                                      "id": "85",
+                                      "speaker": "Nettie",
+                                      "text": "But first - swear to me that if you feel any symptoms, you'll end things yourself.",
+                                      "context": "NodeContext: Firm tone. 'you'll end things yourself' = you'll kill yourself.",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "71": {
+                                          "id": "71",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "51",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "144": {
+                              "id": "144",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "134": {
+                                  "id": "134",
+                                  "speaker": "Nettie",
+                                  "text": "I'm sorry. There's nothing you can say to change my mind.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "DEN_Apprentice_State_Cyanide_FailedToPersuadeNettie",
+                                    "DEN_Apprentice_HasMet_PersuasionFailed"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "58": {
+                                      "id": "58",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "62",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    },
+                                    "37": {
+                                      "id": "37",
+                                      "speaker": "Player",
+                                      "text": "Leave.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "43": {
+                                          "id": "43",
+                                          "speaker": "Nettie",
+                                          "text": "The door's locked. Neither of us are leaving until this is done.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "77": {
+                                      "id": "77",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "84",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "103": {
+                          "id": "103",
+                          "speaker": "Player",
+                          "text": "It's been days. If I were going to turn, it would've happened by now.",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_Apprentice_State_Cyanide_Persuade1 = False"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Persuade1"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "117": {
+                          "id": "117",
+                          "speaker": "Player",
+                          "text": "Recite what you know of her order - this can't be allowed!",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_DruidLair_State_UnderstoodTwoFrescos = False",
+                            "DEN_Apprentice_State_Cyanide_Intimidate1 = False",
+                            "DRUID = False"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Intimidate1"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "137": {
+                          "id": "137",
+                          "speaker": "Player",
+                          "text": "Recite what you know of her order - this can't be allowed!",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_DruidLair_State_UnderstoodTwoFrescos",
+                            "DEN_Apprentice_State_Cyanide_Intimidate1 = False",
+                            "DRUID = False"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Intimidate1"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "45": {
+                          "id": "45",
+                          "speaker": "Player",
+                          "text": "Recite her order's druidic law - this can't be allowed!",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_Apprentice_State_Cyanide_Intimidate1 = False",
+                            "DRUID"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Intimidate1"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "124": {
+                          "id": "124",
+                          "speaker": "Player",
+                          "text": "You can't do this - your leader needs to talk to me.",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_Apprentice_State_Cyanide_Deceive1 = False"
+                          ],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_Deceive1"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "1": {
+                          "id": "1",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "84",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "69": {
+                          "id": "69",
+                          "speaker": "Player",
+                          "text": "Leave.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "DEN_Apprentice_State_Cyanide_FailedToPersuadeNettie",
+                            "DEN_Apprentice_HasMet_PersuasionFailed"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "111": {
+                              "id": "111",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "43",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "138": {
+              "id": "138",
+              "speaker": "Player",
+              "text": "You can't do this - I'm on a secret mission. Everything depends on it.",
+              "context": "",
+              "checkflags": [
+                "DEN_Apprentice_State_Cyanide_FailedToPersuadeNettie = False"
+              ],
+              "setflags": [
+                "DEN_Apprentice_State_Cyanide_Deceive1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "66",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "82": {
+                  "id": "82",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "83",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "110": {
+                      "id": "110",
+                      "speaker": "Nettie",
+                      "text": "It doesn't matter if you're Silvanus himself come to walk among us - infected is infected.",
+                      "context": "NodeContext: Sill-van-us, the god Nettie worships",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "83",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "34": {
+              "id": "34",
+              "speaker": "Player",
+              "text": "Try to recall the tenets of her order - she can't support this!",
+              "context": "",
+              "checkflags": [
+                "DEN_DruidLair_State_UnderstoodTwoFrescos = False",
+                "DEN_Apprentice_State_Cyanide_FailedToPersuadeNettie = False",
+                "DRUID = False"
+              ],
+              "setflags": [
+                "DEN_Apprentice_State_Cyanide_Intimidate1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "27",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "126": {
+              "id": "126",
+              "speaker": "Player",
+              "text": "Try to recall the tenets of her order - she can't support this!",
+              "context": "",
+              "checkflags": [
+                "DEN_DruidLair_State_UnderstoodTwoFrescos",
+                "DEN_Apprentice_State_Cyanide_FailedToPersuadeNettie = False",
+                "DRUID = False"
+              ],
+              "setflags": [
+                "DEN_Apprentice_State_Cyanide_Intimidate1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "27",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "31": {
+              "id": "31",
+              "speaker": "Player",
+              "text": "Try to recall the tenets of her order - no druid could support this!",
+              "context": "",
+              "checkflags": [
+                "DEN_Apprentice_State_Cyanide_FailedToPersuadeNettie = False",
+                "DRUID"
+              ],
+              "setflags": [
+                "DEN_Apprentice_State_Cyanide_Intimidate1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "27": {
+                  "id": "27",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "55": {
+                      "id": "55",
+                      "speaker": "Nettie",
+                      "text": "I know you're angry, but how many people would die if you changed? I can't take that risk.",
+                      "context": "NodeContext: Understanding",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "83": {
+                          "id": "83",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "102",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "66": {
+                  "id": "66",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "63": {
+                      "id": "63",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "6",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "147": {
+              "id": "147",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "84",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            },
+            "32": {
+              "id": "32",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "37",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "76": {
+      "id": "76",
+      "speaker": "Nettie",
+      "text": "There's no stopping you, is there?",
+      "context": "NodeContext: Said with a sigh.",
+      "checkflags": [
+        "DEN_Apprentice_Event_CuredBeforePersuasion",
+        "DEN_Apprentice_State_IsTadpoledPlayer"
+      ],
+      "setflags": [
+        "DEN_Apprentice_Event_CuredBeforePersuasion = False",
+        "DEN_Apprentice_State_Cyanide_Persuaded"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "18",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "98": {
+          "id": "98",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "81": {
+      "id": "81",
+      "speaker": "Nettie",
+      "text": "I'm sorry. There's nothing you can say to change my mind.",
+      "context": "NodeContext: Firm",
+      "checkflags": [
+        "DEN_Apprentice_HasMet_PersuasionFailed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "18",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "109": {
+          "id": "109",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "62",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "84": {
+          "id": "84",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "DEN_Apprentice_Event_NettieTurnsHostile"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Astarion 5",
+            "Lae'zel 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "87": {
+      "id": "87",
+      "speaker": "Nettie",
+      "text": "I hope your friend sees sense soon. She doesn't have much time left.",
+      "context": "NodeContext: Talking to non-infected player about infected player",
+      "checkflags": [
+        "DEN_Apprentice_State_HostileToTadpoled = False",
+        "DEN_Apprentice_Event_RevealedTadpole = False",
+        "DEN_Apprentice_State_Cyanide_Persuaded"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "18",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "22": {
+          "id": "22",
+          "speaker": "Nettie",
+          "text": "I want to help, but I can't. Not until I know she'll take the wyvern poison if she starts to change.",
+          "context": "NodeContext: caught in a tough place",
+          "checkflags": [
+            "DEN_Apprentice_State_HasWyvernPoison"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "131": {
+          "id": "131",
+          "speaker": "Nettie",
+          "text": "I want to help, but I can't. Not until I know she'll do what has to be done, if it comes to that.",
+          "context": "NodeContext: caught in a tough place",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "92": {
+      "id": "92",
+      "speaker": "Nettie",
+      "text": "And? Will you swear you'll take the poison?",
+      "context": "InternalNodeContext: She has the wyvern poison in her inventory",
+      "checkflags": [
+        "DEN_Apprentice_Event_RevealedTadpole",
+        "DEN_Apprentice_State_HasWyvernPoison",
+        "DEN_Apprentice_State_Cyanide_Persuaded"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "18",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "97": {
+          "id": "97",
+          "speaker": "Player",
+          "text": "Have you lost your mind? No!",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "127": {
+              "id": "127",
+              "speaker": "Nettie",
+              "text": "I don't want to hurt you, but I can't let you live. You're too dangerous.",
+              "context": "NodeContext: Player's cured themselves and may escape from the room you've locked them in",
+              "checkflags": [
+                "DEN_Apprentice_State_CuredEarly"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "25": {
+                  "id": "25",
+                  "speaker": "Nettie",
+                  "text": "I'm sorry. I'm so sorry.",
+                  "context": "NodeContext: You're about to attack the player with a poisoned thorn",
+                  "checkflags": [],
+                  "setflags": [
+                    "DEN_Apprentice_Event_NettieTurnsHostile"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "speaker": "Nettie",
+              "text": "Then we've nothing more to talk about.",
+              "context": "NodeContext: Player refuses to take your poison, you refuse to let them out.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "112": {
+      "id": "112",
+      "speaker": "Nettie",
+      "text": "If it helps, they won't feel any pain. It's the best death I can give them.",
+      "context": "",
+      "checkflags": [
+        "DEN_Apprentice_State_HasGenderNeutralTadpoled"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "113": {
+      "id": "113",
+      "speaker": "Nettie",
+      "text": "You're alive? There's no way I'm stopping you, is there?",
+      "context": "NodeContext: Surprised \"you're alive?\"  but then sadly resigned. She didn't want to let you go.",
+      "checkflags": [
+        "DEN_Apprentice_State_TadpolePlayerDied",
+        "DEN_Apprentice_Event_CuredBeforePersuasion",
+        "DEN_Apprentice_State_IsTadpoledPlayer"
+      ],
+      "setflags": [
+        "DEN_Apprentice_Event_CuredBeforePersuasion = False",
+        "DEN_Apprentice_State_Cyanide_Persuaded"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "98",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "118": {
+      "id": "118",
+      "speaker": "Nettie",
+      "text": "If it helps, he won't feel any pain. It's the best death I can give him.",
+      "context": "NodeContext: Talking to non-infected player about infected player",
+      "checkflags": [
+        "DEN_Apprentice_State_HasMaleTadpoled"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

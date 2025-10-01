@@ -1,0 +1,354 @@
+{
+  "metadata": {
+    "synopsis": "A player that was in prison escaped, and was recognised and is getting re-arrested or attacked."
+  },
+  "dialogue": {
+    "12": {
+      "id": "12",
+      "speaker": "Narrator",
+      "text": "*Your escape has been cut short. Choose your next move wisely.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Give in and return to your cell.",
+          "context": "",
+          "checkflags": [
+            "JAILOR = False"
+          ],
+          "setflags": [
+            "Allow_Arrest"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Try to talk your way out of this.",
+          "context": "",
+          "checkflags": [
+            "GEB_CharismaDisabled = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "I've been summoned to stand trial. Better not keep them waiting.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Narrator",
+                      "text": "*Your words are convincing. You may leave, and if you're lucky, you'll never come back.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "GEB_ClearTag_FUGITIVE",
+                        "CRIME_PersuasionSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "Narrator",
+                      "text": "*You were unconvincing. You're being taken back to your cell.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "Allow_Arrest"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "speaker": "Player",
+              "text": "I had a lot of time to think in prison. About killing you, for example.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Player",
+              "text": "If you let me go, that's one less head to count. It's a win-win.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "Maybe a bit of gold would change your mind? ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Narrator",
+              "text": "*The right gold slipped into the right pocket. If only all problems were solved so easily.*",
+              "context": "",
+              "checkflags": [
+                "2a7c4f74-438b-4987-9def-4f918c98b9db",
+                "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+              ],
+              "setflags": [
+                "GEN_TransferNPCPayment",
+                "GEB_ClearTag_FUGITIVE"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*It's customary to possess gold in order to bribe someone with it.*",
+              "context": "",
+              "checkflags": [
+                "e678bd59-74f4-4a7b-8776-aca807d9ef22 = False",
+                "CIVILIAN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "7": {
+              "id": "7",
+              "speaker": "Narrator",
+              "text": "*The guard isn't interested, except in locking you away. Again.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Narrator",
+      "text": "*Your break for freedom has been spotted. The punishment for escapees is death.*",
+      "context": "",
+      "checkflags": [
+        "JAILOR"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*Your silence does you few favours. It seems another way must be found to loosen your tongue.*",
+      "context": "",
+      "checkflags": [
+        "MUTED"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison = False"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "synopsis": "One liner dialog with a cleaning servant that was getting fired. If player stopped it and saved him, he will reveal the location of the masterpiece painting and reveal the hidden wall. If fired, he leaves the house, angry",
+    "how_to_trigger": "Talk to servant in CTY_Main_A -258; 29; -49 after interrupting his firing and convincing supervisor not to go through with it."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Servant Bailey",
+      "text": "Thanks for stepping in. One day I'll wipe that smile off his smug face. But not today - I need this job.",
+      "context": "NodeContext: Relieved, still seething at the reprimand he just got",
+      "checkflags": [
+        "LOW_OskarsBeloved_HasMet_CleaningServant = False",
+        "LOW_OskarsBeloved_Event_ServantFired = False"
+      ],
+      "setflags": [
+        "LOW_OskarsBeloved_HasMet_YellingHighServant"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Servant Bailey",
+          "text": "You're one of the collectors from downstairs, I suppose? As you're up here, you might be interested in the atelier.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Servant Bailey",
+              "text": "Lady Jannath keeps some of her finest works up there. Ready for a private viewing, if you catch my meaning. But you never heard it from me.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Servant Bailey",
+      "text": "We'd better not talk further. That arsehole will take any excuse to fire me.",
+      "context": "",
+      "checkflags": [
+        "LOW_OskarsBeloved_HasMet_CleaningServant",
+        "LOW_OskarsBeloved_Event_ServantFired = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Servant Bailey",
+      "text": "I can't help you. Ask someone who still works here.",
+      "context": "NodeContext: Pissed off, just got fired",
+      "checkflags": [
+        "LOW_OskarsBeloved_HasMet_CleaningServant = False",
+        "LOW_OskarsBeloved_Event_ServantFired"
+      ],
+      "setflags": [
+        "LOW_OskarsBeloved_HasMet_YellingHighServant"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Servant Bailey",
+      "text": "Out of my way.",
+      "context": "NodeContext: Pissed off, just got fired",
+      "checkflags": [
+        "LOW_OskarsBeloved_HasMet_CleaningServant",
+        "LOW_OskarsBeloved_Event_ServantFired"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

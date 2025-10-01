@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "synopsis": "Wyll companion dies if the party proceeded through the door to Ketheric Showdown, but wasn't together with the party at the moment.",
+    "how_to_trigger": "- Recruit Wyll as a companion, but send him to camp- goto 804.34, -41.79, -26.41 and click on the door, open it- you get a warning you may die- proceed further in and skip the dialog- wyll just dies (this dialog)"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: A psionic blast is released and Mizora is killed.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Narrator",
+          "text": "*Your heart burns red-hot, then goes hollow. A presence disappears from your mind.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "GLO_CharacterDie"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "3",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Narrator",
+              "text": "*You failed to fulfil Mizora's mission and the Absolute's cult has destroyed her. Wyll has failed his patron, and the Hells have taken the Blade of Frontiers as their own.*",
+              "context": "",
+              "checkflags": [
+                "TWN_Wyll_State_MizorasCaptureHappened",
+                "MOO_MizorasRescue_Event_WalkedAway"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "3",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "COL_MizorasRescue_State_KilledMizora"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "speaker": "Narrator",
+              "text": "*You failed to fulfil Mizora's mission. She was Zariel's asset you were meant to rescue - and the Absolute's cult has destroyed her. Wyll has failed his patron, and the Hells have taken the Blade of Frontiers as their own.*",
+              "context": "",
+              "checkflags": [
+                "TWN_Wyll_State_MizorasCaptureHappened",
+                "MOO_MizorasRescue_Event_WalkedAway = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "3",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*Mizora was captive in the illithid colony. In your haste, you ignored her and left her for the Absolute's cult to destroy. Wyll has failed his patron, and the Hells have taken the Blade of Frontiers as their own.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "3",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

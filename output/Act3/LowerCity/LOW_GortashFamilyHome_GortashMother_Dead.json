@@ -1,0 +1,558 @@
+{
+  "metadata": {
+    "synopsis": "Speak With Dead dialogue for Gortash's mother, Sally Flymm. Gortash tadpoled his parents, who sold him into slavery in his youth. They were aware of their state but cannot resist the tadpole's compulsion - which made them appear to be huge fans of their son. When they die, the tadpole loses its grip over them.",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- goto -36 22 -109- Kill Gortash's mother, Sally Flymm:\"select S_LOW_GortashFamilyHome_GortashMother\"\"setHPPercentage 0\"- Use Speak With Dead on her corpse"
+  },
+  "dialogue": {
+    "21": {
+      "id": "21",
+      "speaker": "Narrator",
+      "text": "*The corpse does not stir. It will answer no more questions.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*The corpse regards you lifelessly.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "24": {
+          "id": "24",
+          "speaker": "Player",
+          "text": "Who are you?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Sally Flymm",
+              "text": "Sally... Flymm... mother of... Enver. Flymm... Gortash...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "LOW_GortashFamilyHome_Knows_GortashParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "What can you tell me about your son?",
+          "context": "",
+          "checkflags": [
+            "LOW_GortashFamilyHome_Knows_GortashParents",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "Sally Flymm",
+              "text": "I should have ended him... in the womb...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "Sally Flymm",
+                  "text": "Dreadful child... sold him to a warlock... to save our shop...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "Sally Flymm",
+                      "text": "At least... he got... to live.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_HouseOfHope_Knows_GortashWasSlave"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "16": {
+                          "id": "16",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "I killed your son.",
+          "context": "",
+          "checkflags": [
+            "GLO_Gortash_State_PermaDefeated",
+            "LOW_GortashFamilyHome_Knows_GortashParents",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "27": {
+              "id": "27",
+              "speaker": "Sally Flymm",
+              "text": "So... it's finished. Good...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Is there anything I can do to gain an advantage over Gortash?",
+          "context": "",
+          "checkflags": [
+            "GLO_Gortash_State_PermaDefeated = False",
+            "LOW_GortashFamilyHome_Knows_GortashParents",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Sally Flymm",
+              "text": "He's... very... crafty...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Sally Flymm",
+                  "text": "Sabotage... his traps...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "13",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "29": {
+                      "id": "29",
+                      "speaker": "Sally Flymm",
+                      "text": "Someone... already got... his Watchers...",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_SteelWatchFoundry_State_Destroyed"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "13",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "23": {
+                      "id": "23",
+                      "speaker": "Sally Flymm",
+                      "text": "Start with the big... metal... freaks...",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "How did you come to be tadpoled?",
+          "context": "",
+          "checkflags": [
+            "LOW_GortashFamilyHome_Knows_GortashParentsTadpoled",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "LOW_GortashFamilyHome_GortashFather_State_Mindmelded = False",
+            "LOW_GortashFamilyHome_GortashMother_State_Mindmelded = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Sally Flymm",
+              "text": "Enver... got his... revenge...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Sally Flymm",
+                  "text": "Wanted us... to feel... what he felt. Powerless...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Why did you sell your son into slavery?",
+          "context": "",
+          "checkflags": [
+            "LOW_HouseOfHope_Knows_GortashWasSlave",
+            "LOW_GortashFamilyHome_Knows_GortashParents",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "LOW_GortashFamilyHome_GortashMother_HasMet_AskedAboutSlavery = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Sally Flymm",
+              "text": "Owed... money... to dangerous... people...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "Sally Flymm",
+                  "text": "It was... the only thing... we could do...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "8": {
+                      "id": "8",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "26": {
+          "id": "26",
+          "speaker": "Narrator",
+          "text": "*The spell's power wanes. You can ask no more questions.*",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Narrator",
+      "text": "*The corpse seems willing to speak - but not to its killer.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_Killer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

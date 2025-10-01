@@ -1,0 +1,833 @@
+{
+  "metadata": {
+    "synopsis": "The player discovers an altar in the temple of Shar. They can choose to pray at it, with the chance to receive a buff or debuff depending on the outcome of a religion check. Shar and Selune tags automatically get buff and debuff respectively. Avatar Shadowheart gets a unique and ambigous outcome, casting some doubt on her standing with her goddess."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SHA_AcademyAltar_Event_Hasmet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "32",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "38": {
+          "id": "38",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Narrator",
+      "text": "*A small prickle of dread finds your heart as you look upon the altar.*",
+      "context": "CinematicNodeContext: The player stands before an altar of Shar.",
+      "checkflags": [
+        "SHA_AcademyAltar_State_HasDebuff"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "REALLY_SHADOWHEART"
+      ],
+      "setflags": [
+        "SHA_AcademyAltar_Event_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "32",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*A contented emptiness washes over you as you gaze upon the altar.*",
+      "context": "CinematicNodeContext: The player stands before an altar of Shar.",
+      "checkflags": [
+        "SHA_AcademyAltar_State_HasBuff"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Narrator",
+      "text": "*A flicker of anxiety comes to you as you look upon the altar. Why was it so difficult to receive Shar's blessing...?*",
+      "context": "CinematicNodeContext: The player stands before an altar of Shar.",
+      "checkflags": [
+        "SHA_AcademyAltar_State_HasBuff",
+        "REALLY_SHADOWHEART"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "32": {
+      "id": "32",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: The player stands before an altar of Shar.",
+      "checkflags": [],
+      "setflags": [
+        "SHA_AcademyAltar_Event_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "14": {
+          "id": "14",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "ORI_Inclusion_ShadowHeart"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "33": {
+              "id": "33",
+              "speaker": "Shadowheart",
+              "text": "A place of offering to the Dark Lady. May she embrace the entire world.",
+              "context": "",
+              "checkflags": [
+                "ShadowHeart_InParty_Knows_SharWorshipper"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "19": {
+              "id": "19",
+              "speaker": "Shadowheart",
+              "text": "Such a noble shrine. I fail to understand why some speak ill of Shar. She radiates grace.",
+              "context": "",
+              "checkflags": [
+                "ShadowHeart_InParty_Knows_SharWorshipper = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "42",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_End_ShadowHeart"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "42",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "Narrator",
+                      "text": "*Your patron tugs briefly at the back of your mind - Lady Shar has left a boon in this altar for her faithful.*",
+                      "context": "",
+                      "checkflags": [
+                        "8a4a686d-6c47-411f-a0b3-d79ff33e2922 = False",
+                        "WARLOCK",
+                        "REALLY_SHADOWHEART = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "42",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "36": {
+                          "id": "36",
+                          "speaker": "Narrator",
+                          "text": "*A fiendish chuckle sounds throughout your very soul - to steal the blessing of a god could be most delicious.*",
+                          "context": "",
+                          "checkflags": [
+                            "8a4a686d-6c47-411f-a0b3-d79ff33e2922 = False",
+                            "WARLOCK",
+                            "REALLY_SHADOWHEART = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [
+                            "WARLOCK_FIEND"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "42",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "2": {
+                              "id": "2",
+                              "speaker": "Player",
+                              "text": "Offer prayer and devotion to the Dark Lady.",
+                              "context": "",
+                              "checkflags": [
+                                "REALLY_SHADOWHEART",
+                                "SHADOWHEART_ENEMYOFSHARPATH = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "42",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "41": {
+                                  "id": "41",
+                                  "speaker": "Narrator",
+                                  "text": "*Your prayers fade away. Nothing comes to you in return - no soothing presence, no spiritual embrace. Only darkness and silence.*",
+                                  "context": "CinematicNodeContext: Head bowed (still standing)",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "42",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "21": {
+                              "id": "21",
+                              "speaker": "Player",
+                              "text": "Bow your head and listen for Shar's presence.",
+                              "context": "",
+                              "checkflags": [
+                                "REALLY_SHADOWHEART",
+                                "SHADOWHEART_ENEMYOFSHARPATH"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "9": {
+                                  "id": "9",
+                                  "speaker": "Narrator",
+                                  "text": "*Nothing. No instruction or encouragement from the Dark Lady. The silence devours all.*",
+                                  "context": "CinematicNodeContext: Head bowed (still standing)",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "42": {
+                                      "id": "42",
+                                      "speaker": "Narrator",
+                                      "text": "*Your efforts must be inadequate. You must do more to please Shar, going forward.*",
+                                      "context": "CinematicNodeContext: Shadowheart looks up, troubled.",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "SHA_AcademyAltar_Event_ShadowheartInteraction"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "30": {
+                              "id": "30",
+                              "speaker": "Player",
+                              "text": "Shar is not your mistress, but she is worthy of respect. Offer her a prayer.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_AcademyAltar_State_HasStatus = False",
+                                "REALLY_SHADOWHEART = False",
+                                "SHADOWHEART_ENEMYOFSHARPATH",
+                                "CLERIC_EVIL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "26": {
+                              "id": "26",
+                              "speaker": "Player",
+                              "text": "Shar is not your mistress, but she is worthy of respect. Offer her a prayer.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_AcademyAltar_State_HasStatus = False",
+                                "REALLY_SHADOWHEART = False",
+                                "SHADOWHEART_ENEMYOFSHARPATH = False",
+                                "CLERIC_EVIL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Shadowheart 5"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "43",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "25": {
+                                  "id": "25",
+                                  "speaker": "Narrator",
+                                  "text": "*A pleasurable shiver runs down your spine. You feel as though you've unburdened a troubling thought and forgotten it forever.*",
+                                  "context": "CinematicNodeContext: Player's head bowed in silent prayer (still standing)",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "SHA_AcademyAltar_Event_GiveBuff"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "29": {
+                              "id": "29",
+                              "speaker": "Player",
+                              "text": "Sel\u00fbne's rival, but also her sister. Offer a prayer of reconciliation.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_AcademyAltar_State_HasStatus = False",
+                                "SELUNE",
+                                "SHADOWHEART_ENEMYOFSHARPATH"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "43",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "8": {
+                              "id": "8",
+                              "speaker": "Player",
+                              "text": "Sel\u00fbne's rival, but also her sister. Offer a prayer of reconciliation.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_AcademyAltar_State_HasStatus = False",
+                                "SELUNE",
+                                "SHADOWHEART_ENEMYOFSHARPATH = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Shadowheart 5"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "43": {
+                                  "id": "43",
+                                  "speaker": "Narrator",
+                                  "text": "*Your silent gesture vanishes into a pitiless, dark void. Your heart aches faintly with an inexplicable feeling of loss.*",
+                                  "context": "CinematicNodeContext: Player's head bowed in silent prayer (still standing)",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "SHA_AcademyAltar_Event_GiveDebuff"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "10": {
+                              "id": "10",
+                              "speaker": "Player",
+                              "text": "Silently swear your body and soul to Shar. Give yourself over entirely.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_AcademyAltar_Event_ShadowheartInteraction",
+                                "REALLY_SHADOWHEART",
+                                "SHADOWHEART_ENEMYOFSHARPATH = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "7": {
+                                  "id": "7",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "11": {
+                                      "id": "11",
+                                      "speaker": "Narrator",
+                                      "text": "*The faintest sensation of approval quickens your heart. A hard-won blessing from your Mistress.*",
+                                      "context": "CinematicNodeContext: Shadowheart looks relieved",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "SHA_AcademyAltar_Event_GiveBuff"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "1": {
+                                  "id": "1",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "40": {
+                                      "id": "40",
+                                      "speaker": "Narrator",
+                                      "text": "*Your show of fidelity is answered by silence. Your heart numbs.*",
+                                      "context": "CinematicNodeContext: Shadowheart looks extra-troubled.",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "SHA_AcademyAltar_Event_GiveDebuff"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "4": {
+                              "id": "4",
+                              "speaker": "Player",
+                              "text": "Pray at the altar.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_AcademyAltar_State_HasStatus = False",
+                                "SELUNE = False",
+                                "REALLY_SHADOWHEART = False",
+                                "SHADOWHEART_ENEMYOFSHARPATH",
+                                "CLERIC_EVIL = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "17": {
+                                  "id": "17",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "18",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "18": {
+                              "id": "18",
+                              "speaker": "Player",
+                              "text": "Pray at the altar.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_AcademyAltar_State_HasStatus = False",
+                                "SELUNE = False",
+                                "REALLY_SHADOWHEART = False",
+                                "SHADOWHEART_ENEMYOFSHARPATH = False",
+                                "CLERIC_EVIL = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Shadowheart 5"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "37": {
+                                  "id": "37",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "23": {
+                                      "id": "23",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "25",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "15": {
+                                  "id": "15",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "34": {
+                                      "id": "34",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "43",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "0": {
+                              "id": "0",
+                              "speaker": "Player",
+                              "text": "Feign a prayer while your patron thieves the altar's magic.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_AcademyAltar_State_HasStatus = False",
+                                "8a4a686d-6c47-411f-a0b3-d79ff33e2922 = False",
+                                "WARLOCK",
+                                "REALLY_SHADOWHEART = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "13": {
+                                  "id": "13",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "25",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "20": {
+                                      "id": "20",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "SHA_AcademyAltar_Event_GiveBuff"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "25",
+                                      "is_end": false,
+                                      "node_type": "alias",
+                                      "children": {
+                                        "31": {
+                                          "id": "31",
+                                          "speaker": "Narrator",
+                                          "text": "*An overwhelming satisfaction - both innate and exterior - runs across your being. Your patron is pleased.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "28": {
+                                  "id": "28",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "27": {
+                                      "id": "27",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "43",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "35": {
+                              "id": "35",
+                              "speaker": "Player",
+                              "text": "Leave.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "39": {
+      "id": "39",
+      "speaker": "Narrator",
+      "text": "*A wave of anxiety washes over you as you look upon the statue. Why did Shar withhold her blessing?*",
+      "context": "CinematicNodeContext: The player stands before an altar of Shar.",
+      "checkflags": [
+        "SHA_AcademyAltar_State_HasDebuff",
+        "REALLY_SHADOWHEART"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

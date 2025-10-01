@@ -1,0 +1,303 @@
+{
+  "metadata": {
+    "synopsis": "After the drow Nere dies, the players have the option to cut off his head if they are on a Myconid Revenge quest. If they fail the Strength check, the player makes a mess of it and the party gets splattered.",
+    "how_to_trigger": "- Accept Myconid Revenge quest:-- Talk to Myconid Soevereign at 79; 51; -106, agree to help-- Kill Lone Duergar at 5; 11; -189-- return to Spaw, agree to kill drow Nere- Goto -646; 14; 298, kill Nere- Loot his corpse"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*The decaying corpse lies before you.*",
+      "context": "CinematicNodeContext: Shot of Nere's dead body.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Remove its head.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Narrator",
+                  "text": "*The head breaks off cleanly from the drow's body.*",
+                  "context": "CinematicNodeContext: Show player's face as they finish decapitation, stow knife. Raise head to inspect it.",
+                  "checkflags": [],
+                  "setflags": [
+                    "GLO_HeadRemoval_Event_HeadToInventory",
+                    "UND_MyconidRevenge_Event_TakeHead"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "13": {
+              "id": "13",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: player removes head off-camera - but does a terible job of it. You see the player grimace is blood splatters on them.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "6",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "ORI_Inclusion_Random"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "6",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "Lae'zel",
+                          "text": "Bah - a pathetic show. Yet undeniably satisfying to watch.",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_LAEZEL"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "8": {
+                          "id": "8",
+                          "speaker": "Shadowheart",
+                          "text": "I sincerely hope you never find employment as an executioner.",
+                          "context": "NodeContext: A little aghast (the player is cutting the head off a corpse and is making a bloody mess of the job)",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_SHADOWHEART"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "2": {
+                          "id": "2",
+                          "speaker": "Karlach",
+                          "text": "Like watching a lemure eat porridge. Messy and unsettling.",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_KARLACH"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "6": {
+                              "id": "6",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "ORI_Inclusion_End_Random"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "10": {
+                                  "id": "10",
+                                  "speaker": "Narrator",
+                                  "text": "*You finish wresting the head from the drow's twisted neck.*",
+                                  "context": "CinematicNodeContext: Show player's face wincing as they remove the head. The body can remain off camera, head is raised up to be inspected.",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "UND_MyconidRevenge_Event_FailedRemoval",
+                                    "GLO_HeadRemoval_Event_HeadToInventory",
+                                    "UND_MyconidRevenge_Event_TakeHead"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "12": {
+                          "id": "12",
+                          "speaker": "Astarion",
+                          "text": "What are you - have you never decapitated a corpse before?! Urgh, what a waste...",
+                          "context": "NodeContext: Watching someone make a balls of something you think should be easy",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_ASTARION"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "5": {
+                          "id": "5",
+                          "speaker": "Wyll",
+                          "text": "Ugh - more blood than an abattoir.",
+                          "context": "NodeContext: Grossed out by player messily beheading someone",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_WYLL"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "11": {
+                          "id": "11",
+                          "speaker": "Gale",
+                          "text": "I can lend you a third left hand if you need one.",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_GALE"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "GLO_HeadRemoval_Event_OpenLoot"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

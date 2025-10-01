@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "Emperor subbed AD when players activate the portal to go to House of Hope.",
+    "how_to_trigger": "On Devil's Fee, near the Circle of Invocation, S_LOW_DevilsFee_CircleOfInvocation_8841f33a-d17b-475e-848f-8f256407e7d0, when players put the items in the right place (check Devil's Fee QDD) they will activate the following flag: LOW_DevilsFee_Event_OpeningPortal_4dfbe814-2457-40ae-bead-b997d0724af2Setting that flag will start this AD. Alternatively, you can set that flag using ReCon."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "GROUP_Emperors",
+      "text": "There is nothing to be gained by invading the devil's home, and everything to be lost.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "GROUP_Emperors",
+      "text": "Signing the devil's contract was an impulsive error. Do not seek to correct one mistake with another.",
+      "context": "",
+      "checkflags": [
+        "GLO_Emperor_Knows_PlayersTookDeal"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "GROUP_Emperors",
+      "text": "You were wise to reject the devil's offer, but there is no reason to provoke him by invading his home.",
+      "context": "",
+      "checkflags": [
+        "GLO_Monitor_State_MadeDeal = False",
+        "GLO_Emperor_Knows_PlayersTookDeal = False",
+        "GLO_Emperor_Knows_RaphaelInvolvement"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_Monitor_State_MadeDeal",
+        "GLO_Emperor_Knows_PlayersTookDeal = False",
+        "WYR_RaphaelTango_State_PlayersLiedDeal",
+        "GLO_Emperor_Knows_RaphaelInvolvement"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

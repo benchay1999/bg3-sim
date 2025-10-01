@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "synopsis": "One liner for GondianWorker_PostIRN01, who only comes on stage if at least 2 workroom gondians are dead when the player returns from the Iron Throne. This gondian has helped the player kill the banites and is now afraid of what the consequences will be. The Gondians thinks they never should have fought back.",
+    "how_to_trigger": "Load up CTY_Main_AGo to -267; 6; -148pick a fight with the people in the room and kill everyoneopen debugbook and set all prisoners to savedWatch the confrontation dialogkillcombat in the fight that startsclick on GondianWorker_PostIRN01"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Gondian Lilly Tilly",
+      "text": "Gods, the Overseers will kill us - if these collars don't get us first.",
+      "context": "NodeContext: scared, frustrated",
+      "checkflags": [
+        "LOW_SteelWatchFoundry_Hasmet_GondianWorker_PostIRN01",
+        "IRN_IronThrone_State_Visited",
+        "LOW_SteelWatchFoundry_State_FundangoPermadefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Gondian Lilly Tilly",
+      "text": "Go away - you, the Banites, everyone.",
+      "context": "NodeContext: scared, frustrated",
+      "checkflags": [
+        "LOW_SteelFoundry_HasMet_PostIRN01_Toobin",
+        "LOW_SteelWatchFoundry_Hasmet_FundangoToobin_PostIRN"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Gondian Lilly Tilly",
+      "text": "So what if the Iron Throne is gone? Nothing changes - we're still stuck here. Still bound to these damn collars.",
+      "context": "NodeContext: scared, frustrated",
+      "checkflags": [
+        "LOW_SteelFoundry_HasMet_PostIRN01_Toobin = False",
+        "LOW_SteelWatchFoundry_Hasmet_FundangoToobin_PostIRN"
+      ],
+      "setflags": [
+        "LOW_SteelFoundry_HasMet_PostIRN01_Toobin"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Gondian Lilly Tilly",
+      "text": "They're going to kill us for fighting back, you understand? We're dead.",
+      "context": "NodeContext: scared",
+      "checkflags": [
+        "LOW_SteelWatchFoundry_Hasmet_GondianWorker_PostIRN01 = False"
+      ],
+      "setflags": [
+        "LOW_SteelWatchFoundry_Hasmet_GondianWorker_PostIRN01"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Gondian Lilly Tilly",
+      "text": "I don't know who was the bigger fool - you or Toobin! We never should have fought back.",
+      "context": "NodeContext: scared, frustrated",
+      "checkflags": [
+        "LOW_SteelWatchFoundry_Hasmet_GondianWorker_PostIRN01 = False",
+        "IRN_IronThrone_State_Visited",
+        "LOW_SteelWatchFoundry_State_FundangoPermadefeated"
+      ],
+      "setflags": [
+        "LOW_SteelWatchFoundry_Hasmet_GondianWorker_PostIRN01"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_SteelWatchFoundry_Hasmet_GondianWorker_PostIRN01"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

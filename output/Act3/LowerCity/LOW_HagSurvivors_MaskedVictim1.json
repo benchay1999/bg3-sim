@@ -1,0 +1,1448 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue for Hydrangea, one of the hag support group players can meet in the Lower city. The hag support group is made up of people who have survived an encouter with a hag, and who have banded together to try to research hags, but also to be there for one another. However, one of their group (the dragonborn), is secretly a redcap and is toying with their minds. The redcap has also, if Mayrina is present, hexed her and turned her into a sheep. If Mayrina isn't present, the redcap has enchanted a doll that is terrifying the group.This dialogue covers a number of states such as 1) Mayrina is present and has been hexed 2) player cured her 3) player has saved Hydrangea and the others from a redcap 4) the hag is dead and Hydrangea rewards them (if no other npc is present) 5) if mayrina isn't present, a doll is terrorising them and she's trying to find it",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Debugbook option \"Act3 \u2192 LOW - Auntie Ethel's Revenge \u2192 Hag was defeated in Act I\"- Cllick on Hydrangea Wubb at the Hag Survivors Support Group, -52; 11; -157"
+  },
+  "dialogue": {
+    "9": {
+      "id": "9",
+      "speaker": "Mask of Regret",
+      "text": "Oi! Mayrina's been looking for you. Best speak to her sharpish.",
+      "context": "NodeContext: urgent but not panicked",
+      "checkflags": [
+        "LOW_HagSurvivors_State_KillHagQuestCompleted = False",
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_BlushingMermaid_State_HagIsTrulyDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Mask of Regret",
+      "text": "I can't believe one of our own was a redcap! Why didn't I see it?!",
+      "context": "NodeContext: furious",
+      "checkflags": [
+        "LOW_BlushingMermaid_State_MayrinaIsInBG = False",
+        "LOW_HagSurvivors_State_HagSpyAggroed"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Don't blame yourself - his disguise was excellent.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "15",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "44": {
+              "id": "44",
+              "speaker": "Mask of Regret",
+              "text": "I've seen it before - had a hag mask root itself to my face! I should've known.",
+              "context": "NodeContext: angry at herself",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "73": {
+                  "id": "73",
+                  "speaker": "Mask of Regret",
+                  "text": "And the worst part is, this isn't gonna stop. The hag knows about that damn book. What am I going to do?",
+                  "context": "NodeContext: a little panicked, but trying to keep her cool",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "15",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "Player",
+                      "text": "Tell me about this book.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "15",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "Mask of Regret",
+                          "text": "I'll be honest, I don't bloody understand it. I just know the cleric was excited about it, said it was a hag's 'deepest secret'.",
+                          "context": "NodeContext: annoyed at herself, speaking a little fast",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "15": {
+                              "id": "15",
+                              "speaker": "Mask of Regret",
+                              "text": "It's in a safe in the back - take the damn thing, preferably far away. I didn't sign up for this.",
+                              "context": "NodeContext: scared but trying to hide it",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_HagSurvivors_Knows_HagLoreBook",
+                                "LOW_HagSurvivors_State_KillHagAccepted"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "76": {
+                      "id": "76",
+                      "speaker": "Player",
+                      "text": "Look, all I care about is killing Ethel.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_HagSurvivors_State_SurvivorsFightAlongsideHagSpy"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Lae'zel 1",
+                        "Gale 1",
+                        "Shadowheart 1",
+                        "Wyll -1",
+                        "Karlach -1",
+                        "Jaheira -1",
+                        "Minthara 1",
+                        "Minsc -1",
+                        "Halsin -1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "15",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "Mask of Regret",
+                          "text": "Wait - the cleric said this was a hag's 'deepest secret'! Something about the 'cold permanence of death' or some shit.",
+                          "context": "NodeContext: speaking a little fast, frantic - this could be the key",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "15",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "35": {
+                      "id": "35",
+                      "speaker": "Player",
+                      "text": "Let's find this hag then - where is she?",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_HagSurvivors_State_SurvivorsFightAlongsideHagSpy = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "37",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "47": {
+                          "id": "47",
+                          "speaker": "Mask of Regret",
+                          "text": "Not a godsdamned clue - she could be anywhere. Any one of us.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "37": {
+                              "id": "37",
+                              "speaker": "Mask of Regret",
+                              "text": "There's a safe in the back - cleric hid the book there. Said it was a hag's 'deepest secret' or something.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "64": {
+                                  "id": "64",
+                                  "speaker": "Mask of Regret",
+                                  "text": "But I didn't sign up for this - take the damn thing, preferably far away from here.",
+                                  "context": "NodeContext: scared but trying to hide it",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_HagSurvivors_Knows_HagLoreBook",
+                                    "LOW_HagSurvivors_State_KillHagAccepted"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "59": {
+                      "id": "59",
+                      "speaker": "Player",
+                      "text": "I'm not getting mixed up in this.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Lae'zel 1",
+                        "Gale -1",
+                        "Shadowheart 1",
+                        "Wyll -1",
+                        "Karlach -1",
+                        "Jaheira -1",
+                        "Minthara 1",
+                        "Minsc -1",
+                        "Halsin -1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "37",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "70": {
+                          "id": "70",
+                          "speaker": "Mask of Regret",
+                          "text": "You think I want to be?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "37",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "41": {
+          "id": "41",
+          "speaker": "Player",
+          "text": "He mentioned a book. What was he talking about?",
+          "context": "",
+          "checkflags": [
+            "LOW_HagSurvivors_HagSpy_MentionedBook"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "24",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Mask of Regret",
+              "text": "Gods, the book - how could I have forgotten about the book.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "24": {
+                  "id": "24",
+                  "speaker": "Mask of Regret",
+                  "text": "As long as I have it the hag will never stop hunting me. What am I going to do?",
+                  "context": "NodeContext: a little panicked, but trying to keep her cool",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "40": {
+                      "id": "40",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "73",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "66": {
+          "id": "66",
+          "speaker": "Player",
+          "text": "Why was he even here? Why go to the trouble?",
+          "context": "",
+          "checkflags": [
+            "LOW_HagSurvivors_HagSpy_MentionedBook = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "24",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "36": {
+              "id": "36",
+              "speaker": "Mask of Regret",
+              "text": "Of course - the book.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "24",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "You should have known better - this isn't your first hag.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "67": {
+              "id": "67",
+              "speaker": "Mask of Regret",
+              "text": "Bloody hells, I know.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "73",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Mask of Regret",
+      "text": "My head is splitting - damn hag magic. What was that redcap even doing here? Oh, gods.",
+      "context": "NodeContext: speaking to herself, head is in pain, trying to calm down (just after combat)",
+      "checkflags": [
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurvivorsFightAlongsideHagSpy"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "13": {
+          "id": "13",
+          "speaker": "Mask of Regret",
+          "text": "Mayrina! The redcap might have hurt her - she's just upstairs. Hurry!",
+          "context": "NodeContext: Freaking out, full on anxiety spiral after a fight with a red cap - pulling out long enough to direct the player and the burrying face in hands and freaking out again",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Mask of Regret",
+      "text": "Not here, or here - where is this bloody doll?",
+      "context": "NodeContext: determned, searching",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Mask of Regret",
+      "text": "You should have 'hag-slayer supreme' tattooed on you. I might know a guy...",
+      "context": "NodeContext: half joking, a smile",
+      "checkflags": [
+        "LOW_HagSurvivors_State_KillHagQuestCompleted"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "29": {
+      "id": "29",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_HagSpyAggroed"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "His disguise was excellent - you couldn't have known.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Lae'zel -1",
+            "Gale 1",
+            "Shadowheart 1",
+            "Wyll 1",
+            "Karlach 1",
+            "Jaheira 1",
+            "Minthara -1",
+            "Minsc 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "33",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Hags, and their minions, do evil things.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "44",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "33": {
+              "id": "33",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "44",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        },
+        "65": {
+          "id": "65",
+          "speaker": "Player",
+          "text": "You need to do a better job protecting Mayrina.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Lae'zel 1",
+            "Astarion 1",
+            "Shadowheart 1",
+            "Wyll 1",
+            "Karlach 1",
+            "Gale 1",
+            "Jaheira 1",
+            "Minsc 1",
+            "Minthara 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "32": {
+              "id": "32",
+              "speaker": "Mask of Regret",
+              "text": "Or maybe I'm not cut out for this.",
+              "context": "NodeContext: disappointed in herself",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Mask of Regret",
+                  "text": "Sorry - don't mind my pity party.",
+                  "context": "NodeContext: annoyed at herself",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "30": {
+                      "id": "30",
+                      "speaker": "Mask of Regret",
+                      "text": "Thank you - for stepping up when I didn't. I'm damn glad you were here.",
+                      "context": "NodeContext: grateful and also disappointed in herself",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Mask of Regret",
+      "text": "You'll make the hag rue the day she set foot in this city - I know it. Go get her.",
+      "context": "NodeContext: determined, hopeful",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap",
+        "LOW_HagSurvivors_Knows_HagLoreBook"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "42": {
+      "id": "42",
+      "speaker": "Mask of Regret",
+      "text": "Any luck turning our girl Mayrina back to her fine human-self?",
+      "context": "",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurrogateMotherCured = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "55",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "52": {
+          "id": "52",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "17",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "45": {
+      "id": "45",
+      "speaker": "Mask of Regret",
+      "text": "The hells is Jatlo roaring about?",
+      "context": "NodeContext: confused, looking about",
+      "checkflags": [
+        "LOW_HagSurvivors_State_HagSpyAggroed  = False",
+        "LOW_HagSurvivors_State_DollDestroyed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "46": {
+      "id": "46",
+      "speaker": "Mask of Regret",
+      "text": "I'll keep an eye out for any more hag tricks, don't you worry.",
+      "context": "NodeContext: determined",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap",
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurrogateMotherCured"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "53": {
+      "id": "53",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1 = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurrogateMotherCured = False"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "55",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "17": {
+          "id": "17",
+          "speaker": "Mask of Regret",
+          "text": "Our girl Mayrina is in a bind - and I'm praying you can figure out this hex.",
+          "context": "NodeContext: familiar, player is a comrad in arms",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Player",
+              "text": "Have you seen a doll around here?",
+              "context": "",
+              "checkflags": [
+                "LOW_HagSurvivors_SurrogateMother_MentionedDoll"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "27": {
+                  "id": "27",
+                  "speaker": "Mask of Regret",
+                  "text": "Thought I spotted something doll-like in the back, but it was only for a moment. Can't say for sure.",
+                  "context": "NodeContext: unsure, but not dismissive -knows if the player brought it up it was for good reason",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "63": {
+              "id": "63",
+              "speaker": "Player",
+              "text": "A sheep is fine. Mayrina's suffered worse.",
+              "context": "",
+              "checkflags": [
+                "LOW_HagSurvivors_State_SawMayrinaAsSheep"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "72": {
+                  "id": "72",
+                  "speaker": "Mask of Regret",
+                  "text": "True, but there's a reason it's a straw that breaks the worg's back. She needs help - and fast.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "I'm surprised to see you tangled up with a hag again.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "48": {
+                  "id": "48",
+                  "speaker": "Mask of Regret",
+                  "text": "Well, it was stick around or curl up into a ball and cry - which is still on the cards.",
+                  "context": "NodeContext: a grim smile",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Mask of Regret",
+                      "text": "Mayrina better come out of this in one piece. Hag magic leaves scars - ones that aren't so easily healed.",
+                      "context": "NodeContext: thinking of her own run in with ethel (ethel forced her to wear a mask of roots and serve her)",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "75": {
+              "id": "75",
+              "speaker": "Player",
+              "text": "You should leave while you still can.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "43": {
+                  "id": "43",
+                  "speaker": "Mask of Regret",
+                  "text": "I don't leave friends in witch's claws.",
+                  "context": "NodeContext: determined",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "69": {
+              "id": "69",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "55": {
+      "id": "55",
+      "speaker": "Mask of Regret",
+      "text": "Haven't seen you since you saved my hide from Eth - from the hag. But we've no time for a drink and natter.",
+      "context": "NodeContext: can't say 'ethel' too traumatised since the hag. Regardless, determined, no nonsense",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1 = False",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG = False"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "48",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "77": {
+          "id": "77",
+          "speaker": "Mask of Regret",
+          "text": "We need to find the doll - now, before its hag magic gets its teeth in us.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "48",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "How do you know this is the work of a hag?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "48",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "38": {
+                  "id": "38",
+                  "speaker": "Mask of Regret",
+                  "text": "It's a creepy doll that pops up to scare the skin off of us - of course it's a hag. Who else would be that deranged?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "56": {
+              "id": "56",
+              "speaker": "Player",
+              "text": "Where have you seen the doll?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "48",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Mask of Regret",
+                  "text": "Upstairs, downstairs - all over the place.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "54": {
+              "id": "54",
+              "speaker": "Player",
+              "text": "If this is the work of a hag, I'm surprised you're still here.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "48",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "50": {
+                  "id": "50",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "48",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "71": {
+                      "id": "71",
+                      "speaker": "Mask of Regret",
+                      "text": "But a certain someone showed me that hags aren't invincible. So let's find this damn doll, and prove that we won't be so easily beaten.",
+                      "context": "NodeContext: admiration",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "57": {
+      "id": "57",
+      "speaker": "Mask of Regret",
+      "text": "I've had a splitting headache since I woke up in the hag's lair.",
+      "context": "NodeContext: voice peaceful - she knows something is changed",
+      "checkflags": [
+        "LOW_HagSurvivors_State_KillHagQuestCompleted = False",
+        "LOW_BlushingMermaid_State_HagIsTrulyDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "74",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "49": {
+          "id": "49",
+          "speaker": "Mask of Regret",
+          "text": "But it's gone - I can think clearly. The hag - no. Ethel is finally dead, isn't she?",
+          "context": "NodeContext: this is the first time she's said ethel's name aloud - big moment for her - she's not scared, not anymore",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "74",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "Player",
+              "text": "Yes - finally.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "74",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "74": {
+                  "id": "74",
+                  "speaker": "Mask of Regret",
+                  "text": "Bloody hells - it's over?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "60": {
+                      "id": "60",
+                      "speaker": "Mask of Regret",
+                      "text": "I wish Mayrina could see this - she'd be dancing with me on Ethel's grave.<br>",
+                      "context": "NodeContext: sad smile",
+                      "checkflags": [
+                        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "51": {
+                          "id": "51",
+                          "speaker": "Mask of Regret",
+                          "text": "My grandkids are going to be sick of hearing about the time I met the greatest hag-slayer of them all. Thank you.",
+                          "context": "NodeContext: smile, grateful",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_HagSurvivors_State_KillHagQuestCompleted"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "61": {
+              "id": "61",
+              "speaker": "Player",
+              "text": "Thanks to me.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Lae'zel -1",
+                "Astarion -1",
+                "Gale -1",
+                "Shadowheart -1",
+                "Wyll 1",
+                "Karlach 1",
+                "Jaheira 1",
+                "Minthara -1",
+                "Minsc 1",
+                "Halsin 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "74",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "58": {
+      "id": "58",
+      "speaker": "Mask of Regret",
+      "text": "Mate, I'm so bloody sorry for coming at you. I'd no idea the dragonborn was one of the hag's.",
+      "context": "NodeContext: grim - she attacked the player",
+      "checkflags": [
+        "LOW_BlushingMermaid_State_MayrinaIsInBG = False",
+        "LOW_HagSurvivors_State_SurvivorsFightAlongsideHagSpy"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "11",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "62": {
+      "id": "62",
+      "speaker": "Mask of Regret",
+      "text": "Mayrina - gods damn it all.",
+      "context": "NodeContext: furious",
+      "checkflags": [
+        "LOW_HagSurvivors_State_SurrogateMother_PermaDefeated",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_HagSpyAggroed"
+      ],
+      "setflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Mask of Regret",
+          "text": "I should have known something was up with that sleazy shit. I should've stopped him!",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "39": {
+              "id": "39",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "11",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "68": {
+      "id": "68",
+      "speaker": "Mask of Regret",
+      "text": "Breathe, come on - get your head together.",
+      "context": "NodeContext: speaking to herself, head is in pain, trying to calm down",
+      "checkflags": [
+        "LOW_HagSurvivors_HasMet_MaskedVictim1_PostRedcap",
+        "LOW_BlushingMermaid_State_MayrinaIsInBG",
+        "LOW_HagSurvivors_State_SurvivorsFightAlongsideHagSpy"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

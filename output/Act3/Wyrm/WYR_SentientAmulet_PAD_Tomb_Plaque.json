@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "synopsis": "Investigating the plaque on the coffin in the Open Hand Temple crypt. Shirra Clarwen is buried here - the granddaughter of the Sentient Amulet's Mad Monk.",
+    "how_to_trigger": "- Load up GustavDev/BGO_Main_A- Use ReCon command \"oe SAM_Crypt\"- Interact with S_WYR_SentientAmulet_Tomb_Plaque_641ec497-4208-4f57-a01b-40c9997edfae"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_SentientAmulet_State_LostAmulet"
+      ],
+      "setflags": [
+        "WYR_SentientAmulet_Knows_ShirraIsInCrypt"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*Here lies Sister Shirra Clarwen. <br>Date of birth unknown - Died 1491 DR*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "WYR_SentientAmulet_Knows_ShirraIsInCrypt"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Gone already. Perhaps the amulet can offer some insight.",
+          "context": "",
+          "checkflags": [
+            "UND_MonkAmulet_Event_OfferedQuest",
+            "WYR_SentientAmulet_State_StartedShirraPossession = False",
+            "WYR_SentientAmulet_Knows_FoundShirraTomb = False"
+          ],
+          "setflags": [
+            "WYR_SentientAmulet_Knows_FoundShirraTomb"
+          ],
+          "ruletags": [
+            "REALLY_HALSIN"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Narrator",
+          "text": "*The amulet's spirit's granddaughter - she's already gone.*",
+          "context": "",
+          "checkflags": [
+            "UND_MonkAmulet_Event_OfferedQuest",
+            "WYR_SentientAmulet_State_StartedShirraPossession = False",
+            "WYR_SentientAmulet_Knows_FoundShirraTomb = False"
+          ],
+          "setflags": [
+            "WYR_SentientAmulet_Knows_FoundShirraTomb"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "taganswer",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_MonkAmulet_Event_OfferedQuest",
+        "WYR_SentientAmulet_Knows_ShirraIsInCrypt",
+        "WYR_SentientAmulet_Knows_FoundShirraTomb = False"
+      ],
+      "setflags": [
+        "WYR_SentientAmulet_Knows_ShirraIsInCrypt"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Here it is - the tomb of the amulet spirit's granddaughter. Time for a family reunion.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "WYR_SentientAmulet_Knows_FoundShirraTomb"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "synopsis": "Trespass dialog started if player enters Ironhand gnomes hideout in WYR before helping gnomes in the Checkpoint Scene.",
+    "how_to_trigger": "Load SCL_Main, in debug book choose \"Set quest flags & options\" -> Act3 -> Ironhand gnomes -> Setup all gnomes -> Setup Oppress Scene. Then through debug book \"Go to region\" -> Act3 -> WYR -> Ironhand gnomes hideout. Walk in sight of any gnome in the basement."
+  },
+  "dialogue": {
+    "6": {
+      "id": "6",
+      "speaker": "Narrator",
+      "text": "*It seems you're not welcome here - you should choose your next steps with caution.*",
+      "context": "NodeContext: Outraged",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Is Barcus around? He'll vouch for me.",
+          "context": "",
+          "checkflags": [
+            "WYR_Ironhand_InAct3_UnfortunateGnome"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "I'm here to speak to Wulbren.",
+          "context": "",
+          "checkflags": [
+            "WYR_Ironhand_InAct3_Wulbren"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Narrator",
+              "text": "*The name is clearly familiar, and you are allowed to stay - for now.*",
+              "context": "NodeContext: Exasperated resignation",
+              "checkflags": [],
+              "setflags": [
+                "WYR_Ironhand_Event_TrespassAllowed"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Apologies - I'm as surprised I came out here as you are.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Narrator",
+              "text": "*Your embarrassment is noted - but you are to be swiftly removed from the premises regardless.*",
+              "context": "NodeContext: Irritated",
+              "checkflags": [],
+              "setflags": [
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TeleportOutOfTrespass"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Narrator",
+      "text": "*While your arrival appears unexpected, you are recognised and thus allowed to proceed.*",
+      "context": "",
+      "checkflags": [
+        "WYR_Ironhand_FromPrecedingAct"
+      ],
+      "setflags": [
+        "WYR_Ironhand_Event_TrespassAllowed"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

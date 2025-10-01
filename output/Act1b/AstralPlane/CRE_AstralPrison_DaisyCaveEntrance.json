@@ -1,0 +1,662 @@
+{
+  "metadata": {
+    "synopsis": "The player has a dialog with a disembodied voice of Daisy at the entrance to a cave in the Astral Prism. She is only willing to talk to one player Avatar. No companions.Will add group decision for the leader avatar when it's available.",
+    "how_to_trigger": "Load up CRE_Main_Agoto 1769.975; 32.383; 348.513interact witht he portal"
+  },
+  "dialogue": {
+    "14": {
+      "id": "14",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "CRE_AstralPrison_Hasmet_DaisyCaveEntrance = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "GROUP_Daisy",
+          "text": "So you came. You just couldn't leave it alone, could you? Your instincts leave much to be desired.",
+          "context": "",
+          "checkflags": [
+            "CRE_AstralPrison_Hasmet_DaisyCaveEntrance_User = False"
+          ],
+          "setflags": [],
+          "ruletags": [
+            "DAISY_FEARTRACK",
+            "DAISY_FEMALE_VOICE"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "GROUP_Daisy",
+              "text": "But it is not you I wish to speak with.",
+              "context": "",
+              "checkflags": [
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance = False",
+                "AVATAR = False",
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance_User = False"
+              ],
+              "setflags": [
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance",
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance_User"
+              ],
+              "ruletags": [
+                "DAISY_FEMALE_VOICE"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "GROUP_Daisy",
+                  "text": "I will only speak with the one in charge.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [
+                    "DAISY_FEMALE_VOICE"
+                  ],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "31": {
+              "id": "31",
+              "speaker": "GROUP_Daisy",
+              "text": "You are not the one I wish to speak with.",
+              "context": "",
+              "checkflags": [
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance = False",
+                "AVATAR = False",
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance_User"
+              ],
+              "setflags": [
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance",
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance_User"
+              ],
+              "ruletags": [
+                "DAISY_FEMALE_VOICE"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "13": {
+              "id": "13",
+              "speaker": "GROUP_Daisy",
+              "text": "Come. We will talk in private. Just the two of us.",
+              "context": "",
+              "checkflags": [
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance = False",
+                "CRE_AstralPrison_State_MultipleAvatars = False",
+                "AVATAR"
+              ],
+              "setflags": [
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance",
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance_User"
+              ],
+              "ruletags": [
+                "DAISY_FEMALE_VOICE"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "21",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Player",
+                  "text": "Follow the voice in.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_AstralPrison_Event_StartDaisyDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "6": {
+                  "id": "6",
+                  "speaker": "Player",
+                  "text": "I'm not leaving my companions behind.",
+                  "context": "",
+                  "checkflags": [
+                    "CRE_AstralPrison_State_CompanionPresent",
+                    "CRE_AstralPrison_State_DaisyCave_CompanionsSpoke = False"
+                  ],
+                  "setflags": [
+                    "CRE_AstralPrison_State_DaisyCave_CompanionsSpoke"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "17": {
+                      "id": "17",
+                      "speaker": "GROUP_Daisy",
+                      "text": "Suit yourself, but only the leader of your group is coming in. I will not allow anyone else.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "DAISY_MALE_VOICE"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "ORI_Inclusion_Random"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "21",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {
+                            "15": {
+                              "id": "15",
+                              "speaker": "Lae'zel",
+                              "text": "If it must be so, it must be so. Do not fail me. Do not fail us.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_LAEZEL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "21",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "26": {
+                              "id": "26",
+                              "speaker": "Shadowheart",
+                              "text": "This one's all yours.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_SHADOWHEART"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "21",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "32": {
+                              "id": "32",
+                              "speaker": "Astarion",
+                              "text": "Oh, don't look at me. That is all yours.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_ASTARION"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "21",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "20": {
+                              "id": "20",
+                              "speaker": "Wyll",
+                              "text": "Go on. I'll keep watch here.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_WYLL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "21",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "28": {
+                              "id": "28",
+                              "speaker": "Gale",
+                              "text": "By all means, carry on. I'll come running if you need me.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_GALE"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "21",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "10": {
+                              "id": "10",
+                              "speaker": "Karlach",
+                              "text": "Go on, soldier. If anything goes wrong, I'll come in swinging.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Inclusion_PickedAtRandom",
+                                "REALLY_KARLACH"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "21": {
+                                  "id": "21",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "ORI_Inclusion_End_Random"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "16": {
+                  "id": "16",
+                  "speaker": "Player",
+                  "text": "Give me a moment first.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "GROUP_Daisy",
+                      "text": "A moment. Nothing more.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "DAISY_FEMALE_VOICE"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "30": {
+              "id": "30",
+              "speaker": "GROUP_Daisy",
+              "text": "Tell me - are you the one in charge?",
+              "context": "",
+              "checkflags": [
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance = False",
+                "CRE_AstralPrison_State_MultipleAvatars",
+                "AVATAR"
+              ],
+              "setflags": [
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance",
+                "CRE_AstralPrison_Hasmet_DaisyCaveEntrance_User"
+              ],
+              "ruletags": [
+                "DAISY_FEMALE_VOICE"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "29": {
+                  "id": "29",
+                  "speaker": "Player",
+                  "text": "Yes.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "GROUP_Daisy",
+                      "text": "Then enter. We need to talk.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "CRE_AstralPrison_Event_StartDaisyDialog"
+                      ],
+                      "ruletags": [
+                        "DAISY_FEMALE_VOICE"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "22": {
+                  "id": "22",
+                  "speaker": "Player",
+                  "text": "No.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "GROUP_Daisy",
+                      "text": "Then come back with the one who is.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "DAISY_FEMALE_VOICE"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Narrator",
+      "text": "*The way is blocked now - for good.*",
+      "context": "",
+      "checkflags": [
+        "CRE_AstralPrison_State_DaisyDialogDone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "23": {
+      "id": "23",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: Shot of shimmering veil/barrier that prevents player from entering the cave.",
+      "checkflags": [
+        "CRE_AstralPrison_Hasmet_DaisyCaveEntrance"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "GROUP_Daisy",
+          "text": "You are not the one I wish to speak with.",
+          "context": "",
+          "checkflags": [
+            "CRE_AstralPrison_Hasmet_DaisyCaveEntrance",
+            "AVATAR = False"
+          ],
+          "setflags": [],
+          "ruletags": [
+            "DAISY_FEMALE_VOICE"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "24": {
+              "id": "24",
+              "speaker": "GROUP_Daisy",
+              "text": "I will only have words with the one you answer to - alone.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [
+                "DAISY_FEMALE_VOICE"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "GROUP_Daisy",
+          "text": "You are the one in charge, aren't you? Come in.",
+          "context": "",
+          "checkflags": [
+            "CRE_AstralPrison_Hasmet_DaisyCaveEntrance",
+            "CRE_AstralPrison_State_MultipleAvatars = False",
+            "AVATAR"
+          ],
+          "setflags": [],
+          "ruletags": [
+            "DAISY_FEMALE_VOICE"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "13",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "GROUP_Daisy",
+          "text": "Are you the one in charge or not?",
+          "context": "",
+          "checkflags": [
+            "CRE_AstralPrison_Hasmet_DaisyCaveEntrance",
+            "CRE_AstralPrison_State_MultipleAvatars",
+            "AVATAR"
+          ],
+          "setflags": [],
+          "ruletags": [
+            "DAISY_FEMALE_VOICE"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "30",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Narrator",
+      "text": "*Your mind and body are muted on approach. A privacy denser than any stone prevents you from entering.*",
+      "context": "",
+      "checkflags": [
+        "CRE_AstralPrison_State_DaisyDialogInProgress",
+        "AVATAR = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

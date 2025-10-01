@@ -1,0 +1,425 @@
+{
+  "metadata": {
+    "synopsis": "The guard warns you to stay away from the gates. If the primary guard is dead, he will instead let you in or attack.",
+    "how_to_trigger": "Go near the gates at the main Creche checkpoint in the upper creche."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Warrior Khunaruth",
+      "text": "You may proceed to the cr\u00e8che.",
+      "context": "",
+      "checkflags": [
+        "CRE_UpperGuards_State_GainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Warrior Khunaruth",
+      "text": "Talk to Gish Far'aag. She will decide your fate.",
+      "context": "NodeContext: Abrupt. No-nonsense. (far-arg)",
+      "checkflags": [
+        "CRE_UpperGuards_State_GainedAccess = False",
+        "CRE_UpperGuards_State_MainPrimaryGuardDefeated = False",
+        "CRE_UpperGuards_State_MainPrimaryGuardInDialog = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Warrior Khunaruth",
+      "text": "Stop. We're not finished with your companion over there.",
+      "context": "",
+      "checkflags": [
+        "CRE_UpperGuards_State_GainedAccess = False",
+        "CRE_UpperGuards_State_MainPrimaryGuardDefeated = False",
+        "CRE_UpperGuards_State_MainPrimaryGuardInDialog"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Warrior Khunaruth",
+      "text": "Halt. Zech... You are gith? State your business.",
+      "context": "NodeContext: 'Zech' pronounced ZECK meaning 'wait'",
+      "checkflags": [
+        "CRE_UpperGuards_State_GainedAccess = False",
+        "CRE_UpperGuards_State_MainPrimaryGuardDefeated",
+        "GITHYANKI"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "18",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Warrior Khunaruth",
+      "text": "Halt. One step further and I end your primitive existence.",
+      "context": "",
+      "checkflags": [
+        "CRE_UpperGuards_State_GainedAccess = False",
+        "CRE_UpperGuards_State_MainPrimaryGuardDefeated",
+        "GITHYANKI = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "I have important business with your Kith'rak. Step aside.",
+          "context": "",
+          "checkflags": [
+            "GITHYANKI"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Warrior Khunaruth",
+              "text": "At Cr\u00e8che Y'llek? Report to Kith'rak Therezzyn. Quickly.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_UpperGuards_State_GainedAccess",
+                "CRE_ChainOfCommand_Quest_GoToCaptain"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "Captain Voss sent me in search of a weapon. I am bringing it to this cr\u00e8che.",
+          "context": "",
+          "checkflags": [
+            "PLA_GithChokepoint_State_SpokeToVoss",
+            "GLO_GithChokepoint_Quest_GithLeave"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Warrior Khunaruth",
+              "text": "An istik? A curious choice, if indeed he sent you.",
+              "context": "",
+              "checkflags": [
+                "GITHYANKI = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Warrior Khunaruth",
+                  "text": "Enter, and seek Kith'rak Therezzyn. If you are lying, you will not return.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_UpperGuards_State_GainedAccess",
+                    "CRE_ChainOfCommand_Quest_GoToCaptain"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Captain Voss was searching for an item. I have it.",
+          "context": "",
+          "checkflags": [
+            "PLA_GithChokepoint_State_SpokeToVoss",
+            "GLO_GithChokepoint_Quest_GithLeave = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Warrior Khunaruth",
+              "text": "Is that so? Then his efficiency is to be commended. As is  yours.",
+              "context": "",
+              "checkflags": [
+                "GITHYANKI"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Warrior Khunaruth",
+                  "text": "Excellent work, ra'stil. Enter, and seek Kith'rak Therezzyn.",
+                  "context": "NodeContext: \"ra-STIL\" meaning \"ally\"",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_UpperGuards_State_GainedAccess",
+                    "CRE_ChainOfCommand_Quest_GoToCaptain"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "speaker": "Warrior Khunaruth",
+              "text": "That's quite a claim, istik.",
+              "context": "",
+              "checkflags": [
+                "GITHYANKI = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "16",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "A nautiloid crashed on your doorstep. Illithids are infecting the population. I need your help.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "Warrior Khunaruth",
+              "text": "Kith'rak Therezzyn shares your concerns. You should seek her within.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_UpperGuards_State_GainedAccess",
+                "CRE_ChainOfCommand_Quest_GoToCaptain"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "My apologies, I'll get out of here.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Warrior Khunaruth",
+              "text": "I'm afraid you will not, istik.",
+              "context": "",
+              "checkflags": [
+                "GITHYANKI = False"
+              ],
+              "setflags": [
+                "CRE_UpperGuards_Event_MainCheckpointHostile"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "13": {
+              "id": "13",
+              "speaker": "Warrior Khunaruth",
+              "text": "Wait. Report to our kith'rak first, she may have use of you.",
+              "context": "",
+              "checkflags": [
+                "GITHYANKI"
+              ],
+              "setflags": [
+                "CRE_UpperGuards_State_GainedAccess",
+                "CRE_ChainOfCommand_Quest_GoToCaptain"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CRE_UpperGuards_Event_MainCheckpointHostile"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,940 @@
+{
+  "metadata": {
+    "synopsis": "The player peeks into a crevice to see a coin pouch covered in small spiders."
+  },
+  "dialogue": {
+    "25": {
+      "id": "25",
+      "speaker": "Narrator",
+      "text": "*Several spiders rest in the rear of the crevice.*",
+      "context": "CinematicNodeContext: The player looks into the crevice. There are spiders there.",
+      "checkflags": [
+        "CHA_Outpost_Event_Calmed",
+        "CHA_Outpost_State_BagOut"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "22": {
+          "id": "22",
+          "speaker": "Player",
+          "text": "Reach in to crush the spiders.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "Narrator",
+              "text": "*The infuriated spiders pour in all directions like sand. The swarm is coming.*",
+              "context": "InternalNodeContext: Focus on player's horror rather than spiders",
+              "checkflags": [],
+              "setflags": [
+                "CHA_Outpost_Event_SnakeOut"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "20": {
+          "id": "20",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "28",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Narrator",
+      "text": "*This crevice is empty, save a bit of dust.*",
+      "context": "CinematicNodeContext: The player looks into the crevice. We see it is empty.",
+      "checkflags": [
+        "CHA_Outpost_Event_SnakeOut",
+        "CHA_Outpost_State_BagOut"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Narrator",
+      "text": "*At the back of the crevice lies a bag, enfolded in the chitinous squabbling of spiders. A shiny gold coin pokes from its mouth.*",
+      "context": "",
+      "checkflags": [
+        "CHA_Outpost_Event_SnakeOut = False",
+        "CHA_Outpost_State_BagOut = False",
+        "687a5077-5eb0-495c-a974-06fced65d325_SpiderCheck"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "42": {
+          "id": "42",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "1",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "35": {
+      "id": "35",
+      "speaker": "Narrator",
+      "text": "*A bag lies within the crevice, enfolded in the chitinous squabbling of spiders. A shiny gold coin pokes from its mouth.*",
+      "context": "CinematicNodeContext: The player looks into the crevice. We see a bag at the bottom with a coin sticking out.",
+      "checkflags": [
+        "CHA_Outpost_Event_SnakeOut"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "38": {
+          "id": "38",
+          "speaker": "Player",
+          "text": "Take the bag.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "21": {
+              "id": "21",
+              "speaker": "Narrator",
+              "text": "*You stash the bag in your pack. Something clinks among the coins.*",
+              "context": "InternalNodeContext: A clinking noise among jangling coins",
+              "checkflags": [
+                "CHA_Outpost_State_BagOut = False"
+              ],
+              "setflags": [
+                "CHA_Outpost_Event_GiveBag",
+                "CRA_HarperBooster_Looted"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Narrator",
+              "text": "*Your fingers search, but find no bag. Was it a trick of the light?*",
+              "context": "",
+              "checkflags": [
+                "CHA_Outpost_State_BagOut"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "28",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "37": {
+      "id": "37",
+      "speaker": "Narrator",
+      "text": "*At the back of the crevice lies a bag, enfolded in the chitinous squabbling of spiders. A shiny gold coin pokes from its mouth.*",
+      "context": "CinematicNodeContext: The player looks into the crevice. We see a bag at the bottom with a coin sticking out.",
+      "checkflags": [
+        "CHA_Outpost_Event_SnakeOut = False",
+        "CHA_Outpost_State_BagOut = False",
+        "687a5077-5eb0-495c-a974-06fced65d325_SpiderCheck = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "Attune yourself to the spiders' natural rhythm.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "687a5077-5eb0-495c-a974-06fced65d325_SpiderCheck"
+          ],
+          "ruletags": [
+            "DRUID"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "45": {
+          "id": "45",
+          "speaker": "Player",
+          "text": "Survey the spiders.",
+          "context": "",
+          "checkflags": [
+            "RANGER = False",
+            "DRUID = False"
+          ],
+          "setflags": [
+            "687a5077-5eb0-495c-a974-06fced65d325_SpiderCheck"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "43",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "43",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Narrator",
+                  "text": "*The creatures clutch the pouch possessively. You have no doubt: a spider egg is nestled within.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "43",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "49": {
+                      "id": "49",
+                      "speaker": "Player",
+                      "text": "Boldly reach for the bag.",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_Outpost_Event_Calmed"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "43",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "41": {
+                          "id": "41",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "26",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "39": {
+                      "id": "39",
+                      "speaker": "Player",
+                      "text": "Soothe the spiders with a calming lullaby.",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_Outpost_Event_Handled = False",
+                        "CHA_Outpost_Event_Calmed = False",
+                        "BARD"
+                      ],
+                      "setflags": [
+                        "CHA_Outpost_Event_Handled"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "43",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "Narrator",
+                          "text": "*Your voice draws their attention. They are suspicious, then curious, and finally at peace.*",
+                          "context": "",
+                          "checkflags": [
+                            "PETPAL"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "5": {
+                              "id": "5",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "17",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "16": {
+                      "id": "16",
+                      "speaker": "Player",
+                      "text": "Speak softly to the spiders in hopes of calming them.",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_Outpost_Event_Handled = False",
+                        "CHA_Outpost_Event_Calmed = False"
+                      ],
+                      "setflags": [
+                        "CHA_Outpost_Event_Handled"
+                      ],
+                      "ruletags": [
+                        "DRUID",
+                        "RANGER"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "43",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "43": {
+                          "id": "43",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "24": {
+                              "id": "24",
+                              "speaker": "Narrator",
+                              "text": "*Your voice draws their attention. They are suspicious, then curious, and finally at peace.*",
+                              "context": "",
+                              "checkflags": [
+                                "PETPAL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "17": {
+                                  "id": "17",
+                                  "speaker": "Narrator",
+                                  "text": "*One by one, the spiders retreat to the rear of the crevice, lulled by your murmurs.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "CHA_Outpost_Event_Calmed"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "6": {
+                          "id": "6",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "10": {
+                              "id": "10",
+                              "speaker": "Narrator",
+                              "text": "*Agitated clacking chokes your thoughts. The spiders skitter about, more nervous than before.*",
+                              "context": "InternalNodeContext: A hissing noise should sound out in this node.",
+                              "checkflags": [
+                                "PETPAL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "48": {
+                              "id": "48",
+                              "speaker": "Narrator",
+                              "text": "*The spiders skitter about, more nervous than before.*",
+                              "context": "InternalNodeContext: A hissing noise should sound out in this node.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "30": {
+                      "id": "30",
+                      "speaker": "Player",
+                      "text": "Speak softly to the spiders in hopes of calming them.",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_Outpost_Event_Handled = False",
+                        "CHA_Outpost_Event_Calmed = False",
+                        "BARD = False"
+                      ],
+                      "setflags": [
+                        "CHA_Outpost_Event_Handled"
+                      ],
+                      "ruletags": [
+                        "DRUID",
+                        "RANGER"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "43",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "29": {
+                      "id": "29",
+                      "speaker": "Player",
+                      "text": "Dart your hand in once more, hoping to snatch the bag.",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_Outpost_Event_Bit",
+                        "CHA_Outpost_Event_Calmed = False",
+                        "ROGUE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "40",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "4": {
+                      "id": "4",
+                      "speaker": "Player",
+                      "text": "Dart your hand in once more, hoping to snatch the bag.",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_Outpost_Event_Bit",
+                        "CHA_Outpost_Event_Calmed = False",
+                        "ROGUE = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "40",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "40": {
+                          "id": "40",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "31": {
+                              "id": "31",
+                              "speaker": "Narrator",
+                              "text": "*The spiders scatter, but your hand comes up empty. Was the bag a trick of the light?*",
+                              "context": "",
+                              "checkflags": [
+                                "CHA_Outpost_State_BagOut"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "26": {
+                              "id": "26",
+                              "speaker": "Narrator",
+                              "text": "*The spiders scatter. You feel their panic; the beloved was taken!*",
+                              "context": "",
+                              "checkflags": [
+                                "CHA_Outpost_State_BagOut = False",
+                                "PETPAL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "36": {
+                                  "id": "36",
+                                  "speaker": "Narrator",
+                                  "text": "*You stash the bag. Something clinks among the coins.*",
+                                  "context": "InternalNodeContext: A clinking noise among jangling coins",
+                                  "checkflags": [
+                                    "CHA_Outpost_State_BagOut = False"
+                                  ],
+                                  "setflags": [
+                                    "CHA_Outpost_Event_GiveBag",
+                                    "CRA_HarperBooster_Looted"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "44": {
+                              "id": "44",
+                              "speaker": "Narrator",
+                              "text": "*The spiders scatter and you stash the bag. Something clinks among the coins.*",
+                              "context": "InternalNodeContext: A clinking noise with the jangling of coins.",
+                              "checkflags": [
+                                "CHA_Outpost_State_BagOut = False"
+                              ],
+                              "setflags": [
+                                "CHA_Outpost_Event_GiveBag",
+                                "CRA_HarperBooster_Looted"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "33": {
+                          "id": "33",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "Narrator",
+                              "text": "*The infuriated spiders pour in all directions like sand. The swarm is coming.*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "CHA_Outpost_Event_SnakeOut"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "47": {
+                      "id": "47",
+                      "speaker": "Player",
+                      "text": "Dart your hand in, hoping to snatch the bag.",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_Outpost_Event_Bit = False",
+                        "CHA_Outpost_Event_Calmed = False",
+                        "ROGUE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "40",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "Player",
+                      "text": "Dart your hand in, hoping to snatch the bag.",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_Outpost_Event_Bit = False",
+                        "CHA_Outpost_Event_Calmed = False",
+                        "ROGUE = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "40",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "18": {
+                          "id": "18",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "32": {
+                              "id": "32",
+                              "speaker": "Narrator",
+                              "text": "*Pincers pierce your flesh. Their chitters became giggles - the intruder is punished!*",
+                              "context": "",
+                              "checkflags": [
+                                "PETPAL"
+                              ],
+                              "setflags": [
+                                "CHA_Outpost_Event_Bit"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "19": {
+                              "id": "19",
+                              "speaker": "Narrator",
+                              "text": "*Pincers pierce your flesh, and pain shoots up your arm and across your back.*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "CHA_Outpost_Event_Bit"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "28": {
+                      "id": "28",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "11": {
+              "id": "11",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Narrator",
+                  "text": "*The creatures clutch the pouch possessively. Is gold so precious to spiders?*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "1",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "46": {
+      "id": "46",
+      "speaker": "Narrator",
+      "text": "*A cluster of spiders scuttle inside the crevice.*",
+      "context": "CinematicNodeContext: The player looks into the crevice. There are spiders there.",
+      "checkflags": [
+        "CHA_Outpost_Event_Calmed = False",
+        "CHA_Outpost_State_BagOut"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

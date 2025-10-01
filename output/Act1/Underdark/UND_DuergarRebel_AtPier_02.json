@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "synopsis": "Gruff duergar guard standing watch ovre the entrance to Ketheric City.",
+    "how_to_trigger": "To trigger Greetings (HasMet)1. Start the game.2. loadlevel WLD_Main_A3. Use bebug book > Location > Act 1 > UND > Duergar Camp4. Finish first dialog.5, Talk to Cleric Morghal.To trigger Nere Killed1. Start the game.2. loadlevel WLD_Main_A3. Use bebug book > Location > Act 1 > UND > Duergar Camp4. Finish first dialog.5, Use Recon command: \"SetGlobalOsirisFlag UND_TheDrowNere_State_Dead\"6. Talk with Cleric MorghalTo trigger Mutiny happened1. Start the game.2. loadlevel WLD_Main_A3. Use bebug book > Location > Act 1 > UND > Duergar Camp4. Finish first dialog.5, Use Recon command: \"SetGlobalOsirisFlag UND_DuergarCamp_State_Mutiny\"6. Talk with Cleric MorghalTo trigger Greeting (Deepgnome tag)1. Start the game.2. loadlevel WLD_Main_A3. Use bebug book > Location > Act 1 > UND > Duergar Camp4. Finish first dialog.5, Use Recon command: \"addTag DEEPGNOME:2bbc3217-3d8c-46e6-b599-a0f1c9063f9a\"6. Talk with Cleric Morghal."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Morghal",
+      "text": "Runt.",
+      "context": "NodeContext: Real malice",
+      "checkflags": [
+        "UND_DuergarGuard_AtPier_02_HasMet = False",
+        "DEEPGNOME"
+      ],
+      "setflags": [
+        "UND_DuergarGuard_AtPier_02_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_TheDrowNere_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Morghal",
+      "text": "What're you looking at? Move.",
+      "context": "",
+      "checkflags": [
+        "UND_DuergarGuard_AtPier_02_HasMet = False",
+        "DEEPGNOME = False"
+      ],
+      "setflags": [
+        "UND_DuergarGuard_AtPier_02_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Morghal",
+      "text": "Get moving, or I'll move you.",
+      "context": "NodeContext: Real malice",
+      "checkflags": [
+        "UND_DuergarGuard_AtPier_02_HasMet",
+        "DEEPGNOME"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Morghal",
+      "text": "You got grit, I'll give you that much.",
+      "context": "",
+      "checkflags": [
+        "UND_DuergarCamp_State_SidedMutineers"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Morghal",
+      "text": "Speak Common don't you? Move.",
+      "context": "",
+      "checkflags": [
+        "UND_DuergarGuard_AtPier_02_HasMet",
+        "DEEPGNOME = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

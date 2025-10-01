@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "synopsis": "Locke is hidden alongside multiple other tieflings as the druids attack the grove. In his post attack lines he is grim and depressed if his daughter is dead (even as he thanks the player.) If his daughter is alive, he is saddened that violence occured but thankful the player was there to help.",
+    "how_to_trigger": "Repro steps:1. Start the game2. oe startdruidattack3. oe druidattackkilldruids4. goto -43 775. Talk to Locke"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Locke",
+      "text": "Never thought the druids would attack. Thank you. We were lucky to have you.",
+      "context": "NodeContext: Sincere and grateful",
+      "checkflags": [
+        "DEN_DruidAttack_HasMet_ParentAAfterAttack = False",
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [
+        "DEN_DruidAttack_HasMet_ParentAAfterAttack"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Locke",
+      "text": "May this be the last fight any of us see for a while.",
+      "context": "NodeContext: Sincere and grateful",
+      "checkflags": [
+        "DEN_DruidAttack_HasMet_ParentAAfterAttack",
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Locke",
+      "text": "Blood has followed us since Elturel. I just want to leave this place and never look back.",
+      "context": "NodeContext: Exhausted, tired, grieving for your daughter but grateful",
+      "checkflags": [
+        "DEN_DruidAttack_HasMet_ParentAAfterAttack",
+        "DEN_ShadowDruid_State_KidDied",
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Locke",
+      "text": "Dead druids means my daughter Arabella saw some justice. Thank you.",
+      "context": "NodeContext: Exhausted, tired, grieving for your daughter but grateful",
+      "checkflags": [
+        "DEN_DruidAttack_HasMet_ParentAAfterAttack = False",
+        "DEN_ShadowDruid_State_KidDied",
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [
+        "DEN_DruidAttack_HasMet_ParentAAfterAttack"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Locke",
+      "text": "Damn it. Why did it come to this?",
+      "context": "NodeContext: Fearful - you're not a fighter and you're hidden alongside the other tieflings.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "synopsis": "Fires as the hag grabs Mayrina and teleports to the lair OR Hag is injured and disappears from the fight alone."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "GROUP_Act1_GLO_HagHag",
+      "text": "Come now, Mayrina! Time to go.",
+      "context": "InternalNodeContext: Leaving with Mayrina, i.e. outside of combat.",
+      "checkflags": [
+        "HAG_HagSpawn_SurrogateMother_State_InLair = False",
+        "HAG_Hag_State_SaidGoodbye = False",
+        "HAG_Hag_State_InCombatWhileLeavingWithMayrina = False",
+        "HUMAN"
+      ],
+      "setflags": [
+        "HAG_Hag_State_TeleportSurrogateMotherToLair"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "GROUP_Act1_GLO_HagHag",
+          "text": "Bye-bye, lovelies.",
+          "context": "InternalNodeContext: Mayrina & hag leave together, Hag is not in combat\rNodeContext: Mocking tone and wave as you taunt the player.",
+          "checkflags": [],
+          "setflags": [
+            "HAG_Hag_State_SaidGoodbye"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "GROUP_Act1_GLO_HagHag",
+      "text": "Enjoy playing with your new friends. Bye-bye!",
+      "context": "InternalNodeContext: Hag only disappears, no blessings have been turned to curses",
+      "checkflags": [
+        "HAG_Hag_State_ToLairBecauseCombat",
+        "HAG_Well_State_Worsened = False",
+        "HAG_ForrestIllusion_State_RedcapsDead = False"
+      ],
+      "setflags": [
+        "HAG_Hag_State_SaidGoodbye"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "GROUP_Act1_GLO_HagHag",
+      "text": "Bye-bye, lovelies! Oh, and enjoy my well water. Hah!",
+      "context": "InternalNodeContext: Hag only disappears, blessings have been turned to poison.\rNodeContext: Calling out as you gleefully disappear - adding the water note almost as an 'after thought'. The water the player drank turns to poison in their veins - all part of your plan.",
+      "checkflags": [
+        "HAG_Well_State_Worsened"
+      ],
+      "setflags": [
+        "HAG_Hag_State_SaidGoodbye"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_HagSpawn_SurrogateMother_State_InLair = False",
+        "HAG_Hag_State_SaidGoodbye = False",
+        "HAG_Hag_State_InCombatWhileLeavingWithMayrina",
+        "HUMAN"
+      ],
+      "setflags": [
+        "HAG_Hag_State_TeleportSurrogateMotherToLair"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_Hag_State_ToLairBecauseCombat",
+        "HAG_Well_State_Worsened = False",
+        "HAG_ForrestIllusion_State_RedcapsDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "9",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_HagSpawn_SurrogateMother_State_InLair = False",
+        "HAG_Hag_State_SaidGoodbye",
+        "HUMAN"
+      ],
+      "setflags": [
+        "HAG_Hag_State_TeleportSurrogateMotherToLair"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_HagSpawn_SurrogateMother_State_InLair = False",
+        "HAG_Hag_State_ReadyForLair = False",
+        "HAG_Hag_State_SaidGoodbye = False",
+        "HAG_Hag_State_InCombatWhileLeavingWithMayrina = False",
+        "HUMAN"
+      ],
+      "setflags": [
+        "HAG_Hag_State_TeleportSurrogateMotherToLair"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "GROUP_Act1_GLO_HagHag",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_Hag_State_ToLairBecauseCombat = False",
+        "HAG_Well_State_Worsened = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "HAG_Hag_State_SaidGoodbye"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "alias",
+          "children": {}
+        }
+      }
+    }
+  }
+}

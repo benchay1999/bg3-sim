@@ -1,0 +1,509 @@
+{
+  "metadata": {
+    "synopsis": "Player discovers an improvised shrine to a dead drow warrior. There's a helmet resting on a sword that's been rammed into a stone. You can take the helmet, but you'll need to think of another way to get the sword free."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*A slender drow blade impales the stone before you, keeping a silent vigil.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Narrator",
+          "text": "*You recognise your goddess' rite - a warrior's sacrifice. Only blood, freely given, will honour the fallen.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "UND_SwordInStone_State_ReligionSuccess"
+          ],
+          "ruletags": [
+            "CLERIC_EILISTRAEE"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "22",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Player",
+              "text": "Shed a few drops of blood onto the stone.",
+              "context": "",
+              "checkflags": [
+                "UND_SwordInStone_State_ReligionSuccess"
+              ],
+              "setflags": [
+                "UND_SwordInStone_State_SwordUnlocked",
+                "UND_SwordInStone_Event_GiveBlood"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "22",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "23": {
+                  "id": "23",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: player raises a knife to their arm and cuts it",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "22",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Narrator",
+                      "text": "*The drow script inscribed on the blade flickers and glows. It rises from the stone, hanging in the air in silent offering.*",
+                      "context": "CinematicNodeContext: The drow script enscribed on the blade flickers and glows. It rises from the stone, hanging in the air",
+                      "checkflags": [
+                        "CLERIC_LOLTH = False",
+                        "CLERIC_EILISTRAEE = False"
+                      ],
+                      "setflags": [
+                        "UND_SwordInStone_State_RewardGiven",
+                        "UND_SwordInStone_Event_GiveReward"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "10": {
+                      "id": "10",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_SwordInStone_State_RewardGiven",
+                        "UND_SwordInStone_Event_GiveReward"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "22",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {
+                        "20": {
+                          "id": "20",
+                          "speaker": "Narrator",
+                          "text": "*A soft melody resounds through your head - Eilistraee's divine gratitude.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [
+                            "CLERIC_EILISTRAEE"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "11": {
+                          "id": "11",
+                          "speaker": "Narrator",
+                          "text": "*Suddenly, you feel hundreds of spiders crawl down your spine - a warning from Lolth not to displease her again.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [
+                            "CLERIC_LOLTH"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "speaker": "Player",
+              "text": "Grab the sword with both hands and pull.",
+              "context": "",
+              "checkflags": [
+                "UND_SwordInStone_State_PullFailed = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "Narrator",
+                      "text": "*It feels like you're warring with ten people for the blade, but with another hard yank, the weapon slips free from the stone.*",
+                      "context": "CinematicNodeContext: character struggles with sword, but eventually pulls it out. what a feat of strength!",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_SwordInStone_State_RewardGiven",
+                        "UND_SwordInStone_Event_GiveReward"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "Narrator",
+                      "text": "*No matter how you grip or tug, the sword remains firmly lodged in the stone.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_SwordInStone_State_PullFailed"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "This feels holy. Consider what the appropriate ritual might be.",
+              "context": "",
+              "checkflags": [
+                "UND_SwordInStone_State_ReligionSuccess = False",
+                "UND_SwordInStone_State_ReligionFailed = False",
+                "PALADIN = False",
+                "CLERIC_LOLTH = False",
+                "CLERIC_EILISTRAEE = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "26": {
+                      "id": "26",
+                      "speaker": "Narrator",
+                      "text": "*This blade was a warrior's sacrifice to Eilistraee. Blood can only be honoured with blood.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_SwordInStone_State_ReligionSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "13": {
+                  "id": "13",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "Narrator",
+                      "text": "*You can't recall anything this esoteric. There are too many rituals about swords to count.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_SwordInStone_State_ReligionFailed"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "25": {
+              "id": "25",
+              "speaker": "Player",
+              "text": "This feels holy. Consider what the appropriate ritual might be.",
+              "context": "",
+              "checkflags": [
+                "UND_SwordInStone_State_ReligionSuccess = False",
+                "UND_SwordInStone_State_ReligionFailed = False",
+                "CLERIC_EILISTRAEE = False"
+              ],
+              "setflags": [],
+              "ruletags": [
+                "CLERIC_LOLTH",
+                "PALADIN_LOLTH"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "15": {
+              "id": "15",
+              "speaker": "Player",
+              "text": "Consider what the appropriate ritual might be.",
+              "context": "",
+              "checkflags": [
+                "UND_SwordInStone_State_ReligionSuccess = False",
+                "UND_SwordInStone_State_ReligionFailed = False",
+                "PALADIN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "8",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "24": {
+              "id": "24",
+              "speaker": "Player",
+              "text": "Let your embodied oath pour through you. Grip the sword. Prove your worth.",
+              "context": "",
+              "checkflags": [
+                "UND_SwordInStone_State_ReligionSuccess",
+                "PALADIN",
+                "OATHBREAKER = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "2",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "9": {
+              "id": "9",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*Blood touches steel, and the sword reacts.*",
+      "context": "",
+      "checkflags": [
+        "UND_SwordInStone_State_SwordUnlocked"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "22",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "16": {
+          "id": "16",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "10",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

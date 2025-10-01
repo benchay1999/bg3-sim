@@ -1,0 +1,1551 @@
+{
+  "metadata": {
+    "synopsis": "Dialog for one of the zombie beggars. After player talks to Father Carrion and has been tasked to kill them, they will react to this and either run to warn their leader, Thrumbo, or confront player. The following states are one-liners and hasmets for each possible quest state (meeting with thrumbo, outside house and inside father carrion's house once fully killed.)",
+    "how_to_trigger": "Talk to Morbus Location: CTY_Main_A Initial position: -105; 19; -104Meeting: 66; 1; -120Outside house: -8; 11; -145Inside house: 1; 8; -157"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Strange Beggar Morbus",
+      "text": "'Down the stairs, across the sand. Down the stairs, across the sand...'",
+      "context": "NodeContext: Sing song, amusing himself",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_MorbusHint = False",
+        "LOW_Morbus_State_TrustsPlayers"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_HasMet_MorbusHint",
+        "BeggarHint_Morbus"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Strange Beggar Morbus",
+      "text": "Sister was always good at hiding. But I'll find her this time.",
+      "context": "",
+      "checkflags": [
+        "LOW_Morbus_HasMet_Initial",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_PhilgravesMansion_Morbus_MentionedSisterBuried",
+        "LOW_Morbus_State_Recognised = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "30": {
+      "id": "30",
+      "speaker": "Strange Beggar Morbus",
+      "text": "Will Thrumbo come and play with me soon?",
+      "context": "NodeContext: Full of childish hope",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_MorbusHint",
+        "LOW_Morbus_State_TrustsPlayers"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "35": {
+      "id": "35",
+      "speaker": "Strange Beggar Morbus",
+      "text": "You aren't very nice. But I am. So you can stay.",
+      "context": "NodeContext: A child who's been told to play nicely",
+      "checkflags": [
+        "LOW_Morbus_HasMet_InsideHouse = False",
+        "LOW_PhilgravesMansion_State_BeggarCommentedAnger = False",
+        "LOW_PhilgravesMansion_State_ZombieInHouse",
+        "LOW_PhilgravesMansion_BeggarAngryAtPlayers"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_State_BeggarCommentedAnger"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "48": {
+      "id": "48",
+      "speaker": "Strange Beggar Morbus",
+      "text": "I will get a bedroom of my own now. I can keep lovely things in it, for when sister can visit.",
+      "context": "",
+      "checkflags": [
+        "LOW_Morbus_HasMet_InsideHouse = False",
+        "LOW_PhilgravesMansion_State_ZombieInHouse"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "52": {
+      "id": "52",
+      "speaker": "Strange Beggar Morbus",
+      "text": "Sister was always good at hiding. But I'll find her this time.",
+      "context": "",
+      "checkflags": [
+        "LOW_Morbus_HasMet_Initial",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_PhilgravesMansion_Morbus_MentionedSisterBuried = False",
+        "LOW_Morbus_State_Recognised"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "73",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "59": {
+      "id": "59",
+      "speaker": "Strange Beggar Morbus",
+      "text": "Brother Thrumbo said you saved us. You are welcome to play here any time.",
+      "context": "",
+      "checkflags": [
+        "LOW_Morbus_HasMet_InsideHouse = False",
+        "LOW_PhilgravesMansion_State_ZombieInHouse"
+      ],
+      "setflags": [
+        "LOW_Morbus_HasMet_InsideHouse"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "62": {
+      "id": "62",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Morbus_HasMet_Initial",
+        "LOW_FatherCarrion_State_ExplainedTask",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Morbus_State_Recognised = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "52",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "Narrator",
+          "text": "*You recall where you've smelled this beggar's rotten musk before - in Mystic Carrion's chambers. This is one of the runaways he seeks.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_Morbus_State_Recognised"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "73": {
+              "id": "73",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "68",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "74": {
+      "id": "74",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Morbus_HasMet_Initial",
+        "LOW_FatherCarrion_State_ExplainedTask = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_PhilgravesMansion_Morbus_MentionedSisterBuried = False",
+        "LOW_Morbus_State_Recognised = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "52",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "76": {
+      "id": "76",
+      "speaker": "Strange Beggar Morbus",
+      "text": "Come out, sister - I will find you!",
+      "context": "CinematicNodeContext: Morbus calls out to his sister (not present - he's actually standing near her grave)\rNodeContext: Playful, calling out as though playing hide and seek",
+      "checkflags": [
+        "LOW_Morbus_HasMet_Initial = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation"
+      ],
+      "setflags": [
+        "LOW_Morbus_HasMet_Initial"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "68",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "49": {
+          "id": "49",
+          "speaker": "Narrator",
+          "text": "*An air of decay hangs over the stooped beggar's form, the same that tainted Mystic Carrion's chambers. This is one of his runaway servants.*",
+          "context": "",
+          "checkflags": [
+            "LOW_FatherCarrion_State_ExplainedTask"
+          ],
+          "setflags": [
+            "LOW_Morbus_State_Recognised"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "68",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Narrator",
+          "text": "*That smell again - fetid flesh and bone. This is another of Mystic Carrion's runaways.*",
+          "context": "",
+          "checkflags": [
+            "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+            "LOW_FatherCarrion_State_ExplainedTask"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "77",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "68": {
+              "id": "68",
+              "speaker": "Strange Beggar Morbus",
+              "text": "Sister always hides from me. She likes to play.",
+              "context": "NodeContext: Explaining to the player, as if they asked",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "77",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "67": {
+                  "id": "67",
+                  "speaker": "Player",
+                  "text": "Is your sister a zombie, too?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Morbus_State_RecognisedZombie"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "77",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "83": {
+                      "id": "83",
+                      "speaker": "Strange Beggar Morbus",
+                      "text": "A zombie? Are you playing with me?",
+                      "context": "NodeContext: Not lying to you. He genuinely believes this is part of a game",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "29": {
+                          "id": "29",
+                          "speaker": "Strange Beggar Morbus",
+                          "text": "When I find sister, I will ask her if you can join our game. She's the oldest.",
+                          "context": "NodeContext: 'She's the oldest' as though this explains why it isn't his decision.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "69": {
+                  "id": "69",
+                  "speaker": "Player",
+                  "text": "Mystic Carrion is looking for you. He sent me.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_ExplainedTask"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "77",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "64": {
+                      "id": "64",
+                      "speaker": "Strange Beggar Morbus",
+                      "text": "No, not him. He isn't allowed to play. Thrumbo said he can't find us.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "77",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "38": {
+                          "id": "38",
+                          "speaker": "Strange Beggar Morbus",
+                          "text": "Thrumbo said not - not to tell anyone where we went...",
+                          "context": "NodeContext: Very uncertain - naturally trusting, so this instruction is hard for him to understand",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "77",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "42": {
+                              "id": "42",
+                              "speaker": "Player",
+                              "text": "We're playing Rivington rules, remember? Which means Thrumbo won, and I have to go congratulate him.",
+                              "context": "",
+                              "checkflags": [
+                                "BARD"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "77",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "14": {
+                              "id": "14",
+                              "speaker": "Player",
+                              "text": "It's too late for that. I already caught you. The game's over.",
+                              "context": "",
+                              "checkflags": [
+                                "BARD = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "66",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "77": {
+                                  "id": "77",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "12": {
+                                      "id": "12",
+                                      "speaker": "Strange Beggar Morbus",
+                                      "text": "You were playing, too? You must be nice, like Thrumbo.",
+                                      "context": "NodeContext: Absolutely believes you, a bit dissapointed but will be over it by the next line",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "LOW_Morbus_State_TrustsPlayers"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "24": {
+                                          "id": "24",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "46",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "22": {
+                                  "id": "22",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "4": {
+                                      "id": "4",
+                                      "speaker": "Strange Beggar Morbus",
+                                      "text": "No, no. You're cheating! I have to hide!",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "70": {
+                              "id": "70",
+                              "speaker": "Player",
+                              "text": "Thrumbo's not here to protect you, is he? So tell me. NOW!",
+                              "context": "",
+                              "checkflags": [
+                                "RANGER = False",
+                                "DRUID = False",
+                                "CLERIC_EVIL = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "66",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "60": {
+                              "id": "60",
+                              "speaker": "Player",
+                              "text": "Undead defy the natural order - tell me, or I'll correct the mistake that is your existence.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [
+                                "DRUID",
+                                "RANGER"
+                              ],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "40",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "66": {
+                                  "id": "66",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "78": {
+                                      "id": "78",
+                                      "speaker": "Strange Beggar Morbus",
+                                      "text": "I don't know! He explained, but I didn't understand...",
+                                      "context": "NodeContext: Scared, panicking",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "16": {
+                                          "id": "16",
+                                          "speaker": "Strange Beggar Morbus",
+                                          "text": "'Down the stairs, across the sand. Down the stairs, across the sand.'",
+                                          "context": "NodeContext: Repeating something he's worked very hard to memorise, stressed out by being put under pressure",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "BeggarHint_Morbus"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "19": {
+                                              "id": "19",
+                                              "speaker": "Strange Beggar Morbus",
+                                              "text": "I don't like this game. Leave me alone!",
+                                              "context": "NodeContext: Scared, panicking - about to run away",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "80": {
+                                  "id": "80",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "34": {
+                                      "id": "34",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "4",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "32": {
+                              "id": "32",
+                              "speaker": "Player",
+                              "text": "You poor creature. I'll not hurt your friend - I swear on all I hold sacred.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [
+                                "CLERIC_GOOD",
+                                "CLERIC_NEUTRAL"
+                              ],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "40",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "63": {
+                              "id": "63",
+                              "speaker": "Player",
+                              "text": "I'll not hurt Thrumbo - I swear it. You can trust me.",
+                              "context": "",
+                              "checkflags": [
+                                "PALADIN"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "40",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "15": {
+                              "id": "15",
+                              "speaker": "Player",
+                              "text": "Come now - we're friends, aren't we? You can trust me.",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_NEUTRAL = False",
+                                "CLERIC_GOOD = False",
+                                "PALADIN = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "40": {
+                                  "id": "40",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "7": {
+                                      "id": "7",
+                                      "speaker": "Strange Beggar Morbus",
+                                      "text": "I can? That's good, because I like you. You're nice, like Thrumbo.",
+                                      "context": "NodeContext: Utterly trusting of the player, really sweet",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "LOW_Morbus_State_TrustsPlayers"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "46": {
+                                          "id": "46",
+                                          "speaker": "Strange Beggar Morbus",
+                                          "text": "He told me what to do, but he said it very quickly. I didn't understand.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "18": {
+                                              "id": "18",
+                                              "speaker": "Strange Beggar Morbus",
+                                              "text": "All I remember is, 'Down the stairs, across the sand. Down the stairs, across the sand.'",
+                                              "context": "NodeContext: 'Down the stairs, across the sand' with a sing-song rhythm/tune - it's a memory aid, supposed to have helped him escape.",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "BeggarHint_Morbus"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "71": {
+                                  "id": "71",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "26": {
+                                      "id": "26",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "4",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "21": {
+                              "id": "21",
+                              "speaker": "Player",
+                              "text": "Very sensible. Don't tell anyone anything.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "58": {
+                                  "id": "58",
+                                  "speaker": "Strange Beggar Morbus",
+                                  "text": "I won't! I'll hide where no one will find me.",
+                                  "context": "NodeContext: eager to please",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "79": {
+                  "id": "79",
+                  "speaker": "Player",
+                  "text": "I'm playing hide and seek with Thrumbo. Can you help me find him?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_PlayersAcceptedTask"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "1": {
+                      "id": "1",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "38",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "44": {
+                  "id": "44",
+                  "speaker": "Player",
+                  "text": "You're a bit old for hide and seek, aren't you?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_ExplainedTask = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "53": {
+                      "id": "53",
+                      "speaker": "Strange Beggar Morbus",
+                      "text": "Sister is older than me. She always likes to play.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "Strange Beggar Morbus",
+                          "text": "She hides in the ground, but I will find her.",
+                          "context": "NodeContext: No awareness that this means they are dead. Playful, almost gleeful - thinks he's about to win.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "13": {
+                              "id": "13",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "25",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "61": {
+                  "id": "61",
+                  "speaker": "Player",
+                  "text": "Do you know where she's hiding?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_ExplainedTask = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "43": {
+                      "id": "43",
+                      "speaker": "Strange Beggar Morbus",
+                      "text": "In the ground, over there.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "5",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "25": {
+                          "id": "25",
+                          "speaker": "Strange Beggar Morbus",
+                          "text": "Some people covered her in dirt. But I will find her again.",
+                          "context": "NodeContext: Playful, like he knows a secret",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_PhilgravesMansion_Morbus_MentionedSisterBuried"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "5",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "33": {
+                              "id": "33",
+                              "speaker": "Player",
+                              "text": "Have you no one else? No other family?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "5",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "23": {
+                                  "id": "23",
+                                  "speaker": "Strange Beggar Morbus",
+                                  "text": "Mother and father hide in the ground with her.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "41": {
+                                      "id": "41",
+                                      "speaker": "Strange Beggar Morbus",
+                                      "text": "I hope I find them soon. I like this game, but it is less fun to play it alone.",
+                                      "context": "NodeContext: Aware of his sadness, but not quite able to realise that they aren't coming back.",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "36": {
+                              "id": "36",
+                              "speaker": "Player",
+                              "text": "I'm sorry, but your sister is gone. Best let her rest in peace.",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_NEUTRAL = False",
+                                "CLERIC_GOOD = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "5",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "37": {
+                                  "id": "37",
+                                  "speaker": "Strange Beggar Morbus",
+                                  "text": "I can't leave her out here alone.",
+                                  "context": "NodeContext: \"What a silly suggestion\"",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "85": {
+                                      "id": "85",
+                                      "speaker": "Strange Beggar Morbus",
+                                      "text": "Sister is always happy to see me - she told me so. She will smile so much when I find her.",
+                                      "context": "NodeContext: Happy in thoughts of his sister",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "54": {
+                              "id": "54",
+                              "speaker": "Player",
+                              "text": "Your sister is no more - her soul has left this plane. Do you understand?",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_NEUTRAL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "5",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "81": {
+                              "id": "81",
+                              "speaker": "Player",
+                              "text": "Your sister is no more - her soul has left this plane. If you like, we could pray for her?",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_GOOD"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "5",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "55": {
+                              "id": "55",
+                              "speaker": "Player",
+                              "text": "Your sister is food for the worms, and her soul twists in agony as we speak. She's dead.",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_EVIL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "5",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "45": {
+                              "id": "45",
+                              "speaker": "Player",
+                              "text": "If she's in the ground, that means she's dead.",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_EVIL = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "5": {
+                                  "id": "5",
+                                  "speaker": "Strange Beggar Morbus",
+                                  "text": "No... no, she is just good at keeping still.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "50": {
+                                      "id": "50",
+                                      "speaker": "Strange Beggar Morbus",
+                                      "text": "She is the best at this game. I never win, except when she lets me.",
+                                      "context": "NodeContext: Proud of his sister's skills, not bothered that she lets him win - it makes him love here even more",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "28": {
+                  "id": "28",
+                  "speaker": "Player",
+                  "text": "If I were her, I'd be hiding, too. You smell terrible up close.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_ExplainedTask = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "72",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "Strange Beggar Morbus",
+                      "text": "NO. I am clean. I take good care of myself, like sister taught me.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "8": {
+                          "id": "8",
+                          "speaker": "Strange Beggar Morbus",
+                          "text": "Sister might need a wash though. She is hiding from me, in the ground over there.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "27": {
+                              "id": "27",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "25",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "47": {
+                  "id": "47",
+                  "speaker": "Player",
+                  "text": "Look closer. Try to identify the cause of the smell.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+                    "LOW_FatherCarrion_State_ExplainedTask = False",
+                    "BARBARIAN = False",
+                    "CLERIC = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "72",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "84": {
+                  "id": "84",
+                  "speaker": "Player",
+                  "text": "Sniff the area, expanding your senses. Try to identify the smell.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+                    "LOW_FatherCarrion_State_ExplainedTask = False",
+                    "BARBARIAN"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "72",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "9": {
+                  "id": "9",
+                  "speaker": "Player",
+                  "text": "The divine tugs at you. Give in, letting your god flow through you.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+                    "LOW_FatherCarrion_State_ExplainedTask = False",
+                    "CLERIC"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "72": {
+                      "id": "72",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "11": {
+                          "id": "11",
+                          "speaker": "Narrator",
+                          "text": "*Your divine power focuses on the beggar - revealing the magic that sustains him. This man is a corpse - a zombie.*",
+                          "context": "",
+                          "checkflags": [
+                            "CLERIC"
+                          ],
+                          "setflags": [
+                            "LOW_Morbus_State_RecognisedZombie"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "31": {
+                          "id": "31",
+                          "speaker": "Narrator",
+                          "text": "*Beneath his ragged clothing, you catch a glimpse of rotten flesh - more than any living being could sustain. This man is a zombie.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_Morbus_State_RecognisedZombie"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "39": {
+                      "id": "39",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "56": {
+                          "id": "56",
+                          "speaker": "Narrator",
+                          "text": "*You try to focus on the beggar, but the smell is too strong, too nauseating. Perhaps the cause is better left unknown.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "65": {
+                  "id": "65",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_ExplainedTask"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "82": {
+                      "id": "82",
+                      "speaker": "Strange Beggar Morbus",
+                      "text": "No. No! Leave me alone!",
+                      "context": "NodeContext: Defiant",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_PhilgravesMansion_Event_ZombiesGoToMeetingAttacked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "75": {
+                  "id": "75",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Narrator",
+          "text": "*That smell again - fetid flesh and bone. This is another zombie.*",
+          "context": "",
+          "checkflags": [
+            "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+            "LOW_FatherCarrion_State_ExplainedTask = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "68",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "57": {
+          "id": "57",
+          "speaker": "Narrator",
+          "text": "*An air of decay hangs over the stooped beggar's form. The smell of rot. The smell of death.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "68",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

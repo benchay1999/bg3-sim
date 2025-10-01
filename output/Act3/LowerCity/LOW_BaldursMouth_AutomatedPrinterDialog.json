@@ -1,0 +1,2770 @@
+{
+  "metadata": {
+    "synopsis": "Interaction dialog with the automatic printer in the Baldurs Mouth basement. Lets you check the current headlines in the machine or load new ones.",
+    "how_to_trigger": "Use the printer in the Baldurs Mouth basement. CTY_Main_A coords -1024, 0, 1015 Set the flag SCL_Drider_Event_PixieReleased to see the most helpful version of the gremlins dialog."
+  },
+  "dialogue": {
+    "25": {
+      "id": "25",
+      "speaker": "Printing Press",
+      "text": "It was surely fun while it lasted - but looks like the late Lord Gortash has nabbed your headline spot.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_State_PositiveArticlePublished",
+        "GLO_Gortash_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "37": {
+      "id": "37",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_State_EttvardIsDead",
+        "LOW_BaldursMouth_HasMet_Ettvard = False",
+        "LOW_BaldursMouth_HasMet_PrinterGremlin = False"
+      ],
+      "setflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_HasmetPostGortashDeath"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "61",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "82": {
+          "id": "82",
+          "speaker": "Narrator",
+          "text": "*Your attention is drawn to a metal block loaded into a slot labelled 'Headline Article'.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "112",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "57": {
+              "id": "57",
+              "speaker": "Player",
+              "text": "Check the headline currently in the printer.",
+              "context": "",
+              "checkflags": [
+                "GLO_Gortash_State_PermaDefeated",
+                "LOW_BaldursMouth_HasMet_PrinterGremlin = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "112",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "80": {
+                  "id": "80",
+                  "speaker": "Narrator",
+                  "text": "*The Mouth's next edition appears to be led by a piece commemorating the late Lord Gortash.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "68": {
+              "id": "68",
+              "speaker": "Player",
+              "text": "Load another headline in to the printer.",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_PrinterUnlocked"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "112",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Force the printing press open and clear the loaded headline.",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_PrinterUnlocked = False",
+                "BARBARIAN = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "43",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "43": {
+                  "id": "43",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "112": {
+                      "id": "112",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "148",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "58": {
+                  "id": "58",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "99": {
+                      "id": "99",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "29",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "106": {
+              "id": "106",
+              "speaker": "Player",
+              "text": "Reach inside and carefully remove the loaded headline.",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_PrinterUnlocked = False",
+                "ROGUE = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "43",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "39": {
+              "id": "39",
+              "speaker": "Player",
+              "text": "Dislodge the current headline with a precise flick of the wrist.",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_PrinterUnlocked = False",
+                "ROGUE"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "43",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "44": {
+              "id": "44",
+              "speaker": "Player",
+              "text": "Wrench the printing press open and rip out the loaded headline.",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_PrinterUnlocked = False",
+                "BARBARIAN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "43",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "114": {
+              "id": "114",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "40": {
+      "id": "40",
+      "speaker": "Printing Press",
+      "text": "Ohoho... You've returned. Ready to sow some discord?",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_State_GremlinUnlocked",
+        "LOW_BaldursMouth_HasMet_PrinterGremlin"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "82",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "101": {
+          "id": "101",
+          "speaker": "Player",
+          "text": "Absolutely.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "151": {
+              "id": "151",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "104",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "54": {
+          "id": "54",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "32",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "93": {
+          "id": "93",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "129",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "61": {
+      "id": "61",
+      "speaker": "Narrator",
+      "text": "*The smell of hot ink and whirr of machinery fills your senses as you approach the Baldur's Mouth printworks.*",
+      "context": "CinematicNodeContext: The player walks towards the imposing printer, rumbling away. - REUSE ANIMATION FROM N45",
+      "checkflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_HasmetPostGortashDeath = False",
+        "GLO_Gortash_State_PermaDefeated"
+      ],
+      "setflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_HasmetPostGortashDeath"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "82",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "71": {
+      "id": "71",
+      "speaker": "Narrator",
+      "text": "*The printing press whirrs furiously - hopefully Gortash's death will take your spot in the headlines.*",
+      "context": "",
+      "checkflags": [
+        "GLO_Gortash_State_PermaDefeated",
+        "LOW_BaldursMouth_State_NegativeArticlePublished"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "81": {
+      "id": "81",
+      "speaker": "Printing Press",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_HasMet_PrinterGremlin",
+        "LOW_BaldursMouth_State_LeftPrinterDialogLate"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "133",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "65": {
+          "id": "65",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "28",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "86": {
+      "id": "86",
+      "speaker": "Narrator",
+      "text": "*As you get closer to the printworks, something odd happens. You hear it speak.*",
+      "context": "CinematicNodeContext: The player walks towards the imposing printer, rumbling away.",
+      "checkflags": [],
+      "setflags": [
+        "LOW_BaldursMouth_Event_PrinterLoad = False",
+        "LOW_BaldursMouth_Event_PrinterCheck = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "133",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "89": {
+          "id": "89",
+          "speaker": "Printing Press",
+          "text": "Oi, gormless - not one step further! You are interrupting art.",
+          "context": "NodeContext: the printer whispers this to itself",
+          "checkflags": [],
+          "setflags": [
+            "LOW_BaldursMouth_HasMet_PrinterGremlin"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "133",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Player",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "HAGEYED = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "133",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "79": {
+                  "id": "79",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "133",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "144": {
+                      "id": "144",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "133",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "154": {
+                          "id": "154",
+                          "speaker": "Player",
+                          "text": "Sorry to disturb you, but I need to change the next edition's headline.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_BaldursMouth_Knows_AboutNegativeArticle"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "133",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "135": {
+                              "id": "135",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "77",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "147": {
+                          "id": "147",
+                          "speaker": "Player",
+                          "text": "What 'art' would that be?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "133",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "113": {
+                              "id": "113",
+                              "speaker": "Printing Press",
+                              "text": "My art! I'm an artiste. Name's Jelliwig.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "133",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "15": {
+                          "id": "15",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "13",
+                          "link": "64",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "108": {
+                          "id": "108",
+                          "speaker": "Player",
+                          "text": "Take one step further.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "64",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "69": {
+                              "id": "69",
+                              "speaker": "Printing Press",
+                              "text": "I'm warning you, fleshlet!",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "64",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "47": {
+                                  "id": "47",
+                                  "speaker": "Player",
+                                  "text": "I need to change an article in the next edition.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "LOW_BaldursMouth_Knows_AboutNegativeArticle"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "64",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "128": {
+                                      "id": "128",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "77",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "13": {
+                                  "id": "13",
+                                  "speaker": "Player",
+                                  "text": "Are you a talking printer?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "64",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "85": {
+                                      "id": "85",
+                                      "speaker": "Printing Press",
+                                      "text": "Are you addled in the head? I am no chattering contraption, I am a person. An artist. Name's Jelliwig.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "64",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "133": {
+                                          "id": "133",
+                                          "speaker": "Printing Press",
+                                          "text": "This is my paintbrush. I make sure everything that's in those big ugly article blocks becomes fine printed artistry. I'm a master pensman, I am.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "64",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "153": {
+                                              "id": "153",
+                                              "speaker": "Printing Press",
+                                              "text": "Dolly can't stop talking about you. Hero this, hero that, hero here, hero there. Hello, hero.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "GLO_Pixie_Event_Released"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "64",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "17": {
+                                                  "id": "17",
+                                                  "speaker": "Printing Press",
+                                                  "text": "You know, there's some absolute filth about you in tomorrow's edition. Seeing as you were kind enough to free Dolly, how's about I do you a favour?",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "64",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "145": {
+                                                      "id": "145",
+                                                      "speaker": "Printing Press",
+                                                      "text": "Why don't we change the headline? We can load up something a bit less... damaging for your reputation?",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "64",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "121": {
+                                                          "id": "121",
+                                                          "speaker": "Player",
+                                                          "text": "Sounds good to me.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "64",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        },
+                                                        "22": {
+                                                          "id": "22",
+                                                          "speaker": "Player",
+                                                          "text": "How do we do that?",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "64": {
+                                                              "id": "64",
+                                                              "speaker": "Printing Press",
+                                                              "text": "Well, first, I've got to release the old, nasty top story. Oooh, there. Now, you've got to find a new article to replace it.",
+                                                              "context": "CinematicNodeContext: there's a rumble as the articles are loosened, and a thunk on \"there.\"",
+                                                              "checkflags": [],
+                                                              "setflags": [
+                                                                "LOW_BaldursMouth_AutomatedPrinterDialog_State_GremlinUnlocked"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "91": {
+                                                                  "id": "91",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "141",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "jump",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "27": {
+                                                          "id": "27",
+                                                          "speaker": "Player",
+                                                          "text": "I don't want to meddle with the paper.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "50": {
+                                                              "id": "50",
+                                                              "speaker": "Printing Press",
+                                                              "text": "BORING. You deserve exactly what Ettvard prints about you - I might even add a footnote about you having the clap.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "83": {
+                                                                  "id": "83",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "26",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "jump",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "19": {
+                                              "id": "19",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [
+                                                "GLO_Pixie_Event_Released = False"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "92",
+                                              "is_end": false,
+                                              "node_type": "taganswer",
+                                              "children": {
+                                                "16": {
+                                                  "id": "16",
+                                                  "speaker": "Printing Press",
+                                                  "text": "Now scram it. One mistake and the reputation of Baldur's Mouth Gazette crumbles to dust.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "92",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "72": {
+                                                      "id": "72",
+                                                      "speaker": "Player",
+                                                      "text": "There's an article about me in the next edition - I need to stop it printing.",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "LOW_BaldursMouth_Knows_AboutNegativeArticle"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "92",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "77": {
+                                                          "id": "77",
+                                                          "speaker": "Printing Press",
+                                                          "text": "Oho... really? There was that rather defamatory headline... Yes, I see the resemblance.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "94": {
+                                                              "id": "94",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "28",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "jump",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "132": {
+                                                      "id": "132",
+                                                      "speaker": "Player",
+                                                      "text": "What reputation?",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "LOW_BaldursMouth_State_LeftPrinterDialogEarly = False"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "92",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "20": {
+                                                          "id": "20",
+                                                          "speaker": "Printing Press",
+                                                          "text": "Think you're clever? It takes a lot of craft to write trash this good.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "126": {
+                                                              "id": "126",
+                                                              "speaker": "Printing Press",
+                                                              "text": "Where's your gazette's Golden Quill Award for Truth and Excellence? Don't have one? Bloody thought not.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "76": {
+                                                      "id": "76",
+                                                      "speaker": "Player",
+                                                      "text": "I'd love to see an example of your work.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "92",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    },
+                                                    "45": {
+                                                      "id": "45",
+                                                      "speaker": "Player",
+                                                      "text": "I'm actually a great admirer of your work - may I see?",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "136",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "92": {
+                                                          "id": "92",
+                                                          "speaker": "",
+                                                          "text": "True",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "136",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "118": {
+                                                              "id": "118",
+                                                              "speaker": "Printing Press",
+                                                              "text": "Ahah, someone who appreciates the art of words. And a celebrity to boot. You'll enjoy this.",
+                                                              "context": "NodeContext: \"Ahah\" is a laugh",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "136",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "49": {
+                                                                  "id": "49",
+                                                                  "speaker": "Printing Press",
+                                                                  "text": "As it happens, the next edition has an article about you. Ooh, it's a mean one, too - real nasty. Ettvard must really have it out for you. Hard luck.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [
+                                                                    "LOW_BaldursMouth_State_NegativeArticleStarted"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "136",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "7": {
+                                                                      "id": "7",
+                                                                      "speaker": "Printing Press",
+                                                                      "text": "Will require a delicate touch to spruce up. Think I'll need my number seven pen. Real sharp.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "136",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "74": {
+                                                                          "id": "74",
+                                                                          "speaker": "Player",
+                                                                          "text": "You need to stop it from being printed.",
+                                                                          "context": "",
+                                                                          "checkflags": [
+                                                                            "LOW_BaldursMouth_Knows_AboutNegativeArticle"
+                                                                          ],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "136",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "28": {
+                                                                              "id": "28",
+                                                                              "speaker": "Printing Press",
+                                                                              "text": "I'm afraid I can't help you. I've got a good thing going here - letting you swap out a whole article might get Ettvard suspicious.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "136",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "124": {
+                                                                          "id": "124",
+                                                                          "speaker": "Player",
+                                                                          "text": "Maybe you could do me a favour and stop the presses? Change the article?",
+                                                                          "context": "",
+                                                                          "checkflags": [
+                                                                            "LOW_BaldursMouth_Knows_AboutNegativeArticle = False"
+                                                                          ],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "28",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        },
+                                                                        "18": {
+                                                                          "id": "18",
+                                                                          "speaker": "Player",
+                                                                          "text": "What does Ettvard have against me?",
+                                                                          "context": "",
+                                                                          "checkflags": [
+                                                                            "LOW_BaldursMouth_State_EttvardIsPermaDefeated = False"
+                                                                          ],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "90",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "136": {
+                                                                              "id": "136",
+                                                                              "speaker": "Printing Press",
+                                                                              "text": "I wouldn't take it too personal. Ettvard gets his lines from up top, then gets all worked up over it.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [
+                                                                                "LOW_BaldursMouth_State_NegativeArticleStarted"
+                                                                              ],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "90",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "0": {
+                                                                                  "id": "0",
+                                                                                  "speaker": "Printing Press",
+                                                                                  "text": "Although, it not being personal doesn't change how shafted you'll be.",
+                                                                                  "context": "",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "90",
+                                                                                  "is_end": false,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {
+                                                                                    "9": {
+                                                                                      "id": "9",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Then get out my way. I need to clear my reputation.",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "90",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "41": {
+                                                                                          "id": "41",
+                                                                                          "speaker": "Printing Press",
+                                                                                          "text": "The absolute cheek!",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "150": {
+                                                                                              "id": "150",
+                                                                                              "speaker": "",
+                                                                                              "text": "",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "26",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "jump",
+                                                                                              "children": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "131": {
+                                                                                      "id": "131",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Help me change the article or I'll banish you from the printer.",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "90",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "98": {
+                                                                                          "id": "98",
+                                                                                          "speaker": "",
+                                                                                          "text": "True",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "90",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "rollresult",
+                                                                                          "children": {
+                                                                                            "48": {
+                                                                                              "id": "48",
+                                                                                              "speaker": "Printing Press",
+                                                                                              "text": "Now, I'm not sure you could get me out of here, but I'm not taking any bloody chances.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "141": {
+                                                                                                  "id": "141",
+                                                                                                  "speaker": "Printing Press",
+                                                                                                  "text": "Right. Let's get this article nice and loose... There. You'll need to find a replacement piece, of course. Make sure it's a good one.",
+                                                                                                  "context": "CinematicNodeContext: there's a rumble as the articles are loosened, and a thunk on \"there.\"",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [
+                                                                                                    "LOW_BaldursMouth_AutomatedPrinterDialog_State_GremlinUnlocked"
+                                                                                                  ],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {
+                                                                                                    "32": {
+                                                                                                      "id": "32",
+                                                                                                      "speaker": "Player",
+                                                                                                      "text": "Where can I find the stuff to print a new broadsheet?",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "LOW_BaldursMouth_State_AskedAboutBlocks = False"
+                                                                                                      ],
+                                                                                                      "setflags": [
+                                                                                                        "LOW_BaldursMouth_State_AskedAboutBlocks"
+                                                                                                      ],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {
+                                                                                                        "100": {
+                                                                                                          "id": "100",
+                                                                                                          "speaker": "Printing Press",
+                                                                                                          "text": "Listen, mate. I'm already doing you a favour. I'm sure you can figure it out yourself.",
+                                                                                                          "context": "",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": false,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {
+                                                                                                            "120": {
+                                                                                                              "id": "120",
+                                                                                                              "speaker": "Printing Press",
+                                                                                                              "text": "As the old saying goes: 'Ours is not to wonder why, ours is but to print or die.' Or something like that.",
+                                                                                                              "context": "",
+                                                                                                              "checkflags": [],
+                                                                                                              "setflags": [],
+                                                                                                              "ruletags": [],
+                                                                                                              "approval": [],
+                                                                                                              "rolls": "",
+                                                                                                              "goto": "",
+                                                                                                              "link": "",
+                                                                                                              "is_end": true,
+                                                                                                              "node_type": "normal",
+                                                                                                              "children": {}
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "55": {
+                                                                                                      "id": "55",
+                                                                                                      "speaker": "Player",
+                                                                                                      "text": "I have an article. Let's get started.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "LOW_BaldursMouth_State_HasAnyArticleBlocks"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {
+                                                                                                        "104": {
+                                                                                                          "id": "104",
+                                                                                                          "speaker": "Printing Press",
+                                                                                                          "text": "How delightful.",
+                                                                                                          "context": "",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [
+                                                                                                            "LOW_BaldursMouth_Event_PrinterLoad"
+                                                                                                          ],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": true,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {}
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "129": {
+                                                                                                      "id": "129",
+                                                                                                      "speaker": "Player",
+                                                                                                      "text": "I'll get on with finding an article.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {
+                                                                                                        "8": {
+                                                                                                          "id": "8",
+                                                                                                          "speaker": "Printing Press",
+                                                                                                          "text": "Hurry up, then!",
+                                                                                                          "context": "",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": true,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {}
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "46": {
+                                                                                          "id": "46",
+                                                                                          "speaker": "",
+                                                                                          "text": "False",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "90",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "rollresult",
+                                                                                          "children": {
+                                                                                            "59": {
+                                                                                              "id": "59",
+                                                                                              "speaker": "Printing Press",
+                                                                                              "text": "You lie worse than Ettvard spells. If you care so much, change them yourself. I have work to do.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "90",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "26": {
+                                                                                                  "id": "26",
+                                                                                                  "speaker": "Narrator",
+                                                                                                  "text": "*There is a brief, disgruntled huff, then no more noises from the fey creature. It seems you are on your own.*",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [
+                                                                                                    "LOW_BaldursMouth_AutomatedPrinterDialog_State_GremlinPeeved"
+                                                                                                  ],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "90",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {
+                                                                                                    "36": {
+                                                                                                      "id": "36",
+                                                                                                      "speaker": "Player",
+                                                                                                      "text": "Force the printing press open and clear the loaded headline.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "BARBARIAN = False"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "90",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {
+                                                                                                        "90": {
+                                                                                                          "id": "90",
+                                                                                                          "speaker": "",
+                                                                                                          "text": "True",
+                                                                                                          "context": "",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": false,
+                                                                                                          "node_type": "rollresult",
+                                                                                                          "children": {
+                                                                                                            "149": {
+                                                                                                              "id": "149",
+                                                                                                              "speaker": "Printing Press",
+                                                                                                              "text": "Oi! Oi! OI!",
+                                                                                                              "context": "NodeContext: Increasingly upset",
+                                                                                                              "checkflags": [],
+                                                                                                              "setflags": [],
+                                                                                                              "ruletags": [],
+                                                                                                              "approval": [],
+                                                                                                              "rolls": "",
+                                                                                                              "goto": "",
+                                                                                                              "link": "",
+                                                                                                              "is_end": false,
+                                                                                                              "node_type": "normal",
+                                                                                                              "children": {
+                                                                                                                "148": {
+                                                                                                                  "id": "148",
+                                                                                                                  "speaker": "Narrator",
+                                                                                                                  "text": "*You manage to clear the printer's load. It is ready for a new headline.*",
+                                                                                                                  "context": "",
+                                                                                                                  "checkflags": [],
+                                                                                                                  "setflags": [
+                                                                                                                    "LOW_BaldursMouth_AutomatedPrinterDialog_State_GremlinUnlocked",
+                                                                                                                    "LOW_BaldursMouth_Event_PrinterLoad",
+                                                                                                                    "LOW_BaldursMouth_State_PrinterUnlocked"
+                                                                                                                  ],
+                                                                                                                  "ruletags": [],
+                                                                                                                  "approval": [],
+                                                                                                                  "rolls": "",
+                                                                                                                  "goto": "",
+                                                                                                                  "link": "",
+                                                                                                                  "is_end": true,
+                                                                                                                  "node_type": "normal",
+                                                                                                                  "children": {}
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        },
+                                                                                                        "33": {
+                                                                                                          "id": "33",
+                                                                                                          "speaker": "",
+                                                                                                          "text": "False",
+                                                                                                          "context": "",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": false,
+                                                                                                          "node_type": "rollresult",
+                                                                                                          "children": {
+                                                                                                            "29": {
+                                                                                                              "id": "29",
+                                                                                                              "speaker": "Narrator",
+                                                                                                              "text": "*You fumble unsuccessfully with the printer and hear a loud thud. The machine leaps into life, printing whatever was already inside.*",
+                                                                                                              "context": "",
+                                                                                                              "checkflags": [],
+                                                                                                              "setflags": [
+                                                                                                                "LOW_BaldursMouth_State_PrinterJammed"
+                                                                                                              ],
+                                                                                                              "ruletags": [],
+                                                                                                              "approval": [],
+                                                                                                              "rolls": "",
+                                                                                                              "goto": "",
+                                                                                                              "link": "",
+                                                                                                              "is_end": true,
+                                                                                                              "node_type": "normal",
+                                                                                                              "children": {}
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "60": {
+                                                                                                      "id": "60",
+                                                                                                      "speaker": "Player",
+                                                                                                      "text": "Reach inside and carefully remove the loaded headline.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "ROGUE = False"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "90",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {}
+                                                                                                    },
+                                                                                                    "38": {
+                                                                                                      "id": "38",
+                                                                                                      "speaker": "Player",
+                                                                                                      "text": "Reach inside and carefully remove the loaded headline.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "ROGUE"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "90",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {}
+                                                                                                    },
+                                                                                                    "142": {
+                                                                                                      "id": "142",
+                                                                                                      "speaker": "Player",
+                                                                                                      "text": "Wrench the printing press open and rip out the loaded headline.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "BARBARIAN"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "90",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {}
+                                                                                                    },
+                                                                                                    "123": {
+                                                                                                      "id": "123",
+                                                                                                      "speaker": "Player",
+                                                                                                      "text": "Leave.",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {
+                                                                                                        "110": {
+                                                                                                          "id": "110",
+                                                                                                          "speaker": "Printing Press",
+                                                                                                          "text": "It'll suck to be you tomorrow, mate.",
+                                                                                                          "context": "",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": true,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {}
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "11": {
+                                                                                      "id": "11",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Wouldn't changing the article be delightfully naughty?",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "26",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "56": {
+                                                                                          "id": "56",
+                                                                                          "speaker": "",
+                                                                                          "text": "False",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "26",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "rollresult",
+                                                                                          "children": {
+                                                                                            "139": {
+                                                                                              "id": "139",
+                                                                                              "speaker": "Printing Press",
+                                                                                              "text": "You would twist my love of mischief-making for your own perverse needs? Despicable.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "26",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {}
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "35": {
+                                                                                          "id": "35",
+                                                                                          "speaker": "",
+                                                                                          "text": "True",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "rollresult",
+                                                                                          "children": {
+                                                                                            "73": {
+                                                                                              "id": "73",
+                                                                                              "speaker": "Printing Press",
+                                                                                              "text": "A-ha! A meddler after my own heart - wonderful.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [
+                                                                                                "Astarion 1",
+                                                                                                "Karlach 1",
+                                                                                                "Shadowheart 1"
+                                                                                              ],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "70": {
+                                                                                                  "id": "70",
+                                                                                                  "speaker": "",
+                                                                                                  "text": "",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "141",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "jump",
+                                                                                                  "children": {}
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "102": {
+                                                                                      "id": "102",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Do it, you stupid creature. Unless you want to be ripped apart, piece by piece?",
+                                                                                      "context": "",
+                                                                                      "checkflags": [
+                                                                                        "BARBARIAN"
+                                                                                      ],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "84",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "84": {
+                                                                                          "id": "84",
+                                                                                          "speaker": "",
+                                                                                          "text": "True",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "rollresult",
+                                                                                          "children": {
+                                                                                            "53": {
+                                                                                              "id": "53",
+                                                                                              "speaker": "Printing Press",
+                                                                                              "text": "All right, all right! No need for violence.",
+                                                                                              "context": "NodeContext: offended and a little huffy",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "21": {
+                                                                                                  "id": "21",
+                                                                                                  "speaker": "",
+                                                                                                  "text": "",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "141",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "jump",
+                                                                                                  "children": {}
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "88": {
+                                                                                          "id": "88",
+                                                                                          "speaker": "",
+                                                                                          "text": "False",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "rollresult",
+                                                                                          "children": {
+                                                                                            "4": {
+                                                                                              "id": "4",
+                                                                                              "speaker": "",
+                                                                                              "text": "",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "41",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "jump",
+                                                                                              "children": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "156": {
+                                                                                      "id": "156",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Do it, or I'll melt you into a steaming puddle of iron and regret.",
+                                                                                      "context": "",
+                                                                                      "checkflags": [
+                                                                                        "SORCERER"
+                                                                                      ],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "84",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {}
+                                                                                    },
+                                                                                    "62": {
+                                                                                      "id": "62",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Leave.",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [
+                                                                                        "LOW_BaldursMouth_State_LeftPrinterDialogLate"
+                                                                                      ],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "117": {
+                                                                                          "id": "117",
+                                                                                          "speaker": "",
+                                                                                          "text": "",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "110",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "jump",
+                                                                                          "children": {}
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "23": {
+                                                                          "id": "23",
+                                                                          "speaker": "Player",
+                                                                          "text": "Too bad Ettvard will never get to enjoy it - I killed him.",
+                                                                          "context": "",
+                                                                          "checkflags": [
+                                                                            "LOW_BaldursMouth_State_EttvardIsDead"
+                                                                          ],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "138": {
+                                                                              "id": "138",
+                                                                              "speaker": "",
+                                                                              "text": "",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "73",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "jump",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "30": {
+                                                                          "id": "30",
+                                                                          "speaker": "Player",
+                                                                          "text": "Leave.",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [
+                                                                            "LOW_BaldursMouth_State_LeftPrinterDialogLate"
+                                                                          ],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "12": {
+                                                                              "id": "12",
+                                                                              "speaker": "",
+                                                                              "text": "",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "110",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "jump",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "119": {
+                                                          "id": "119",
+                                                          "speaker": "",
+                                                          "text": "False",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "87": {
+                                                              "id": "87",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "41",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "jump",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "63": {
+                                                      "id": "63",
+                                                      "speaker": "Player",
+                                                      "text": "I agree. The right words at the right time - literal magic. We're alike, you and I.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [
+                                                        "BARD",
+                                                        "SORCERER",
+                                                        "WIZARD"
+                                                      ],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "92",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    },
+                                                    "143": {
+                                                      "id": "143",
+                                                      "speaker": "Player",
+                                                      "text": "Leave.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [
+                                                        "LOW_BaldursMouth_State_LeftPrinterDialogEarly"
+                                                      ],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "51": {
+                                  "id": "51",
+                                  "speaker": "Player",
+                                  "text": "Take another step further.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "1": {
+                                      "id": "1",
+                                      "speaker": "Printing Press",
+                                      "text": "FINE! Have it your way! No appreciation of art, these bloody arm-havers.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "78": {
+                                          "id": "78",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "26",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "34": {
+                  "id": "34",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "155": {
+                      "id": "155",
+                      "speaker": "Narrator",
+                      "text": "*You feel a dancing, mischievous magic sparking through air around the printer. A fey creature resides within.*",
+                      "context": "",
+                      "checkflags": [
+                        "HAGEYED = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "24": {
+                          "id": "24",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "154",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "103": {
+                          "id": "103",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "147",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "52": {
+                          "id": "52",
+                          "speaker": "Player",
+                          "text": "A talking printer? Fey magic never ceases to amaze.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "140": {
+                              "id": "140",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "85",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "137": {
+                          "id": "137",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "108",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "31": {
+                      "id": "31",
+                      "speaker": "Narrator",
+                      "text": "*A familiar magic dances around the printer, reminiscent of your own hag-touched eye. A fey creature resides within the machine.*",
+                      "context": "",
+                      "checkflags": [
+                        "HAGEYED"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "67": {
+                          "id": "67",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "155",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "105": {
+              "id": "105",
+              "speaker": "Player",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "HAGEYED"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "79",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "95": {
+      "id": "95",
+      "speaker": "Printing Press",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_HasMet_PrinterGremlin",
+        "LOW_BaldursMouth_State_LeftPrinterDialogEarly"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "69",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "69",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {
+            "66": {
+              "id": "66",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "16",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "96": {
+      "id": "96",
+      "speaker": "Printing Press",
+      "text": "Paper's printing right now, pal. Should be on the streets tomorrow.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_State_GremlinPeeved = False",
+        "LOW_BaldursMouth_State_PlayerChangedPaper",
+        "LOW_BaldursMouth_State_PrinterJammed = False",
+        "LOW_BaldursMouth_HasMet_PrinterGremlin"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "97": {
+      "id": "97",
+      "speaker": "Printing Press",
+      "text": "I may not like you, but I loved the look Ettvard had on his face when he saw the broadsheet. Well played, mortal.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_State_GremlinPeeved",
+        "LOW_BaldursMouth_State_PositiveArticlePublished",
+        "LOW_BaldursMouth_State_EttvardIsPermaDefeated = False",
+        "LOW_BaldursMouth_HasMet_PrinterGremlin"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "107": {
+      "id": "107",
+      "speaker": "Narrator",
+      "text": "*You approach the printer, noting its ink splots and intricate cogs. Before you can get closer, however, it begins to speak.*",
+      "context": "CinematicNodeContext: The player walks towards the imposing printer, rumbling away.",
+      "checkflags": [
+        "GLO_Pixie_Event_Released",
+        "LOW_BaldursMouth_HasMet_PrinterGremlin = False"
+      ],
+      "setflags": [
+        "LOW_BaldursMouth_HasMet_PrinterGremlin"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "115",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "130": {
+          "id": "130",
+          "speaker": "Printing Press",
+          "text": "Oi! Gormless! Over here. Thought I recognised you. Dolly Dolly Dolly was right - you aren't much of a looker.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_BaldursMouth_HasMet_PrinterGremlin"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "Player",
+              "text": "How do you know Dolly?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "116": {
+                  "id": "116",
+                  "speaker": "Printing Press",
+                  "text": "We both love cheeky words. She does all the shouting, I do the writing.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "42": {
+                      "id": "42",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "133",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "75": {
+              "id": "75",
+              "speaker": "Player",
+              "text": "Am I going mad or are you a talking printer?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "127": {
+                  "id": "127",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "85",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "146": {
+              "id": "146",
+              "speaker": "Player",
+              "text": "Let me guess - another fey who needs freeing?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Printing Press",
+                  "text": "I'm not trapped, you fool. This printing machine is just marvellous. We've nothing like it in the Feywild.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "109": {
+                      "id": "109",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "133",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "111": {
+      "id": "111",
+      "speaker": "Narrator",
+      "text": "*The printing press is running at full tilt. You don't see any way to interfere with it now without losing several fingers.*",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_State_PrinterJammed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "115": {
+      "id": "115",
+      "speaker": "Narrator",
+      "text": "*The printer whirrs, ready to print an edition with the currently loaded headline.*",
+      "context": "CinematicNodeContext: The player walks towards the imposing printer, rumbling away. - REUSE ANIMATION FROM N45",
+      "checkflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_HasmetPostGortashDeath",
+        "GLO_Gortash_State_PermaDefeated",
+        "LOW_BaldursMouth_HasMet_PrinterGremlin = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "115",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "152": {
+          "id": "152",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "82",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "122": {
+      "id": "122",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_HasmetPostGortashDeath = False",
+        "LOW_BaldursMouth_AutomatedPrinterDialog_State_GremlinPeeved"
+      ],
+      "setflags": [
+        "LOW_BaldursMouth_AutomatedPrinterDialog_HasmetPostGortashDeath"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "115",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "125": {
+      "id": "125",
+      "speaker": "Narrator",
+      "text": "*The machine whirrs noisily as your broadsheet prints.*",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_State_PlayerChangedPaper"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "134": {
+      "id": "134",
+      "speaker": "Printing Press",
+      "text": "Ohohoho... Ettvard was fuming this morn... What a grand jape. It's best we lie low for a while, though - don't want him figuring us out.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_State_PositiveArticlePublished",
+        "LOW_BaldursMouth_State_EttvardIsPermaDefeated = False",
+        "LOW_BaldursMouth_HasMet_PrinterGremlin"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

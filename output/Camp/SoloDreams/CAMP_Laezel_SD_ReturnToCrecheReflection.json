@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "synopsis": "Avatar laezel reflects that she should probably return to find/finish the Creche. Branching depending on current state of the Creche.Cancelled by getting betrayed by Vlaakith in the Creche or the creche being destroyed.",
+    "how_to_trigger": "Becomes available after players recieve instructions and information about getting to Moonrise. Either by starting the Drider escort, or by getting the mission from Jaheira. Or by reaching Moonrise or Shar Temple."
+  },
+  "dialogue": {
+    "6": {
+      "id": "6",
+      "speaker": "Narrator",
+      "text": "*Your eyelids grow heavy and your heart begins to slow. In the fog of your mind, a single thought sparks:*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Narrator",
+          "text": "*You should return to the cr\u00e8che. You have yet to insert the artefact into the planecaster.*",
+          "context": "",
+          "checkflags": [
+            "ORI_Laezel_State_BetrayedByVlaakith = False",
+            "CRE_ChainOfCommand_State_RecievedMissionFromVlaakith"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Narrator",
+              "text": "*The thought fades, and you cross the border between waking and dream.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Narrator",
+          "text": "*You should return to the githyanki cr\u00e8che and face the inquisitor who turned against you.*",
+          "context": "",
+          "checkflags": [
+            "CRE_ChainOfCommand_State_SecurityOfficeHostile",
+            "CRE_Templar_State_Defeated = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Narrator",
+          "text": "*The zaith'isk failed you. You should return to the githyanki cr\u00e8che and speak with the inquisitor.*",
+          "context": "NodeContext: ZAYTH-isk",
+          "checkflags": [
+            "CRE_GithInfirmary_State_UsedDevice"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Narrator",
+          "text": "*You should return to the githyanki cr\u00e8che and enter the zaith'isk. It is imperative that your infection is cleansed.*",
+          "context": "NodeContext: ZAYTH-isk",
+          "checkflags": [
+            "ORI_Laezel_Knows_FoundCreche"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Narrator",
+          "text": "*You should return to the githyanki cr\u00e8che and access the zaith'isk. It is imperative that your infection is cleansed.*",
+          "context": "NodeContext: ZAYTH-isk",
+          "checkflags": [
+            "ORI_Laezel_Knows_CrecheLocation"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Narrator",
+          "text": "*You should find a githyanki cr\u00e8che and enter its zaith'isk. It is imperative that your infection is cleansed.*",
+          "context": "NodeContext: ZAYTH-isk",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

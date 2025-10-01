@@ -1,0 +1,382 @@
+{
+  "metadata": {
+    "synopsis": "The player encounters a wall riddled with small holes. A successful Survival check reveals that they were created by carrion crawlers. Small characters can reach in for loot.[Editor's note: try to think of some alternate ways of getting to the loot that don't involve choosing a gnome or halflng at the start of the game.][Scripter comment: we have spell Enlarge/Reduce planned, but I've also added Mage Hand support. Thanks!]",
+    "how_to_trigger": "Repro steps:1. Start the game.2. loadlevel WLD_Main_A3. goto 31.18, 11.42, -237.43 4. Interact with the hole in the wall"
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*There's nothing of value left inside the holes.*",
+      "context": "CinematicNodeContext: camera on cavern wall",
+      "checkflags": [
+        "UND_WormWall_State_RetrievedLoot"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Narrator",
+      "text": "*The wall is riddled with holes. A suffocating stench of long-rotten meat wafts out.*",
+      "context": "CinematicNodeContext: camera on holes in cavern wall",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "0",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Inspect the holes.",
+          "context": "",
+          "checkflags": [
+            "UND_WormWall_State_RecognisedCrawlers = False",
+            "UND_WormWall_State_FailedToRecognizeCrawlers = False",
+            "REALLY_UNDERDARK"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "0",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Narrator",
+                  "text": "*You recognise the odour - the foul scent of carrion crawlers, centipede-like aberrations that feast on the dead.*",
+                  "context": "CinematicNodeContext: player inspecting holes",
+                  "checkflags": [],
+                  "setflags": [
+                    "UND_WormWall_State_RecognisedCrawlers"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "Narrator",
+                      "text": "*At one time, these caverns must have been their banquet hall. The creatures are either long gone, or waiting patiently in the darkness.*",
+                      "context": "CinematicNodeContext: player inspecting holes",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "20": {
+              "id": "20",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "Narrator",
+                  "text": "*The tunnels were created deliberately, but whether by tools or claws you cannot say.*",
+                  "context": "CinematicNodeContext: player inspecting holes",
+                  "checkflags": [],
+                  "setflags": [
+                    "UND_WormWall_State_FailedToRecognizeCrawlers"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "15": {
+          "id": "15",
+          "speaker": "Player",
+          "text": "Inspect the holes.<br>",
+          "context": "",
+          "checkflags": [
+            "UND_WormWall_State_RecognisedCrawlers = False",
+            "UND_WormWall_State_FailedToRecognizeCrawlers = False",
+            "REALLY_UNDERDARK = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "0",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Reach into one of the holes.",
+          "context": "",
+          "checkflags": [
+            "SHORT"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "3",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Narrator",
+              "text": "*The passage narrows and bends - you're shoulder-deep when your fingers brush against a fleshy tentacle.*",
+              "context": "CinematicNodeContext: player reaching into wall up to their shoulder, struggling to reach deeper",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "3",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Player",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [
+                    "UND_WormWall_State_RecognisedCrawlers"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "3",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "5": {
+                  "id": "5",
+                  "speaker": "Player",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "11": {
+                          "id": "11",
+                          "speaker": "Narrator",
+                          "text": "*You flinch, but the tentacle is limp and cold. You push it aside and retrieve something loose, lying beneath.*",
+                          "context": "CinematicNodeContext: shock on player's face, but they continue to rummage inside the hole and withdraw their hand, fist held tight",
+                          "checkflags": [],
+                          "setflags": [
+                            "UND_WormWall_State_RetrievedLoot",
+                            "UND_WormWall_Event_LowerGiveReward"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "13": {
+                      "id": "13",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "1": {
+                          "id": "1",
+                          "speaker": "Narrator",
+                          "text": "*Horrified, you withdraw your hand instinctively, before whatever's lurking inside can react.*",
+                          "context": "CinematicNodeContext: look of shock and digust as player withdraws arm from hole quickly",
+                          "checkflags": [],
+                          "setflags": [
+                            "UND_WormWall_State_Scared"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Reach into one of the holes.",
+          "context": "",
+          "checkflags": [
+            "SHORT = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "Narrator",
+              "text": "*The passage narrows and bends, becoming impassable before you're even elbow-deep.*",
+              "context": "CinematicNodeContext: player has arm inside hole in wall, up to the elbow, frustrated",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*There's nothing but trouble inside those holes.*",
+      "context": "CinematicNodeContext: camera on cavern wall, and possible look of disgust/fear from player",
+      "checkflags": [
+        "UND_WormWall_State_Scared"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

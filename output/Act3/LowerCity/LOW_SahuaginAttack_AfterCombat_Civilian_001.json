@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue with one of the civilians (female gnome near the docks) near the Sahuagin attack on a shore in the Lower City. This dialogue only gets added once the Sahuagin are defeated.",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Use ReCon command \"goto 52 3 -138\"- \"killcombat\" to kill all the Sahuagin after they appear and attack.- Talk to this civilian near the docks:S_LOW_BeachSahuagin_Civilian_001_912002e8-480d-4039-a75d-fb2e2796976d"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Rossina",
+      "text": "Well, that could have gone a lot worse - thanks for that.",
+      "context": "NodeContext: Relieved now the sahuagin monsters are dead",
+      "checkflags": [],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_001"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Rossina",
+      "text": "Next time I might suggest we go for a walk somewhere else - away from any water.",
+      "context": "NodeContext: Pensively",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_001",
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Rossina",
+      "text": "I have to admit being attacked by sea devils definitely isn't my best date - but it wasn't the worst, either.",
+      "context": "NodeContext: Relived after the attack (and trying to cope with a little humour)",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_001"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Rossina",
+      "text": "Can't say I'm not expecting more of those sea devils to pop out of the water - let's hope they don't.",
+      "context": "NodeContext: With a touch of mirth but also genuinely wary",
+      "checkflags": [
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_001"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

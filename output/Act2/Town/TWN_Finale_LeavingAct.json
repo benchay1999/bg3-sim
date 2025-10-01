@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "synopsis": "Scene of players leaving SCL to travel to Intermezzo. This scene triggers when the party leave Moonrise Tower after defeating Ketheric. There are two variants. One where the curse has been lifted, one where the curse hasn't been lifted.If the curse has been lifted, Halsin and/or Art Cullagh will be present at Moonrise if alive, and will tell players that the quest has succeeded, and that when they leave Moonrise, they'll see the restults. They tell you to wrap up your business here first. This happens in the dialogues for those characters, not here.If the curse hasn't been lifted, players see a vista of the shadow-cursed lands on leaving Moonrise, and move on toward the Risen Road.",
+    "how_to_trigger": "1. Complete the colony2. Receive debriefing3. Exit Moonrise TowerDebug book > SCE - Epilogue > Start epiloguerecongoto -286 22 -17Click on \"To Baldur's Gate\"To test curse being lifted recon : SetGlobalOsirisFlag GLO_LiftingTheCurse_State_BreathHasBeenRestored"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*Ketheric is defeated, the path ahead clear. You should be elated, but the sight of the land you leave behind does nothing to alleviate your sorrow.*",
+      "context": "CinematicNodeContext: The party look back from the Risen Road, across the cursed lands.",
+      "checkflags": [
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Narrator",
+          "text": "*Though however deep your pain, it cannot compare to Halsin's.*",
+          "context": "CinematicNodeContext: The party walk down the road, continuing their journey. Halsin stays behind and watches the party walk away down the road. Then he looks out into the shadows, determined to maintain his vigil over SCL. We will not see him again.",
+          "checkflags": [
+            "25c1ac70-f65f-4869-8a74-eff5827d9cde"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: Final shot of the curse, still stretching across the whole region.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "tagcinematic",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored",
+        "REALLY_SHADOWHEART"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "tagcinematic",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Narrator",
+      "text": "*The curse has been lifted, the lands cleansed of the shadows. Ketheric's reign of living death is over.*",
+      "context": "CinematicNodeContext: Players leave SCL by the Risen Road. They look back to see beams of light breaking through the clouds.-The curse has been lifted. The clouds above part, and a powerful beam of moonlight shines through and illuminates the town centre where the statue of Ketheric stood. It is now shattered.",
+      "checkflags": [
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored",
+        "REALLY_SHADOWHEART = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Narrator",
+          "text": "*Your courage has been tested, and in this, at least, you have triumphed.*",
+          "context": "CinematicNodeContext: Cut to close up of the shattered statue. An enormous silver tree bursts through the ground where the statue once stood, silver leaves/fruits sprouting, and the light from above intensifies as the shadows disperse.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: Cut back to party, with Halsin in shot, looking across the rejuvenating region. Halsin takes front and centre, looking back across the 'healed'vista, overjoyed, and then the party turn and continue their journey",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "tagcinematic",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

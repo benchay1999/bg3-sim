@@ -1,0 +1,1287 @@
+{
+  "metadata": {
+    "synopsis": "The player continues to kill the rats. The rats begin to group up and attempt to bargain with the player. Their memories are starting to converge into a single consciousness of the last dark justiciar. Some players who accepted a quest from the Orthon may realise there is a Dark Justiciar in hiding, amongst these rats. If the player repeatedly talks to the rats at this point without accepting a truce, they'll turn hostile.",
+    "how_to_trigger": "Kill a third of the rats in Shar Temple then talk to them"
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+      "text": "You kill many, but many remain. Stop. Spare our lives, or face my teeth and claws.",
+      "context": "NodeContext: On edge, seeking a truce",
+      "checkflags": [
+        "PETPAL"
+      ],
+      "setflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "GROUP_SHA_LastJusticiar_Rats",
+          "text": "Every little death fills my head with more thoughts. It's too much - too painful. Kill one more of us, and you will pay.",
+          "context": "NodeContext: On edge, seeking a truce",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "49": {
+              "id": "49",
+              "speaker": "Player",
+              "text": "I don't usually bargain with rats. If I let you live, what's in it for me?",
+              "context": "",
+              "checkflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Event_RatOfferedTreasure = False",
+                "SHA_LastJusticiar_State_PlayerTruce = False"
+              ],
+              "setflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Event_RatOfferedTreasure"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                  "text": "There are treasures. Useless to us now, but once they had value - meaning. We hid them away, untouched for a lifetime.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "61": {
+                      "id": "61",
+                      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                      "text": "Keep your word, and we will reveal them to you.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "18": {
+              "id": "18",
+              "speaker": "Player",
+              "text": "All right. Your lives for this treasure. You'd better be level with me.",
+              "context": "",
+              "checkflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Event_RatOfferedTreasure",
+                "SHA_LastJusticiar_RatsNegotiate_State_AcceptedTreasureOffer = False",
+                "SHA_LastJusticiar_State_PlayerTruce = False"
+              ],
+              "setflags": [
+                "SHA_LastJusticiar_RatsNegotiate_State_AcceptedTreasureOffer"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Astarion -1",
+                "Lae'zel -1",
+                "Shadowheart 1",
+                "Halsin 5"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "32": {
+                  "id": "32",
+                  "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                  "text": "And you better be true to your word. I am small, but we are many. Now fetch your prize, and leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "SHA_LastJusticiar_State_PlayerTruce",
+                    "SHA_LastJusticiar_State_SharedTreasure"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "50": {
+              "id": "50",
+              "speaker": "Player",
+              "text": "You're no ordinary rat, are you? None of you are.",
+              "context": "",
+              "checkflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Event_QuestionedStrangeness = False"
+              ],
+              "setflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Event_QuestionedStrangeness"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                  "text": "An ordinary rat alone. But together? Something more.",
+                  "context": "NodeContext: Speaking of memories",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "35": {
+                      "id": "35",
+                      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                      "text": "Some remember turning away from the sun. Some remember donning a black cloak. Some remember plunging a blade into an innocent heart.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "34": {
+                          "id": "34",
+                          "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                          "text": "But we all remember a name. Lyrthindor. We share who he was.",
+                          "context": "NodeContext: Lir-thin-door",
+                          "checkflags": [],
+                          "setflags": [
+                            "SHA_LastJusticiar_Knows_RatsAreMany"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "41": {
+                              "id": "41",
+                              "speaker": "Narrator",
+                              "text": "*The rats are describing a Dark Justiciar's memories. The orthon's quarry was here all along, scattered and hidden in plain sight.*",
+                              "context": "InternalNodeContext: This node only if the player learned of the terms of the Orthon's contract (kill all Dark justiciars)",
+                              "checkflags": [
+                                "SHA_Orthon_Knows_ContractClause"
+                              ],
+                              "setflags": [
+                                "SHA_LastJusticiar_RatsNegotiate_Knows_RatsAreJusticiar"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "64": {
+                              "id": "64",
+                              "speaker": "Player",
+                              "text": "",
+                              "context": "InternalNodeContext: This passive roll only if the player",
+                              "checkflags": [
+                                "SHA_Orthon_Knows_ContractClause = False",
+                                "SHAR"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "68": {
+                                  "id": "68",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "28": {
+                                      "id": "28",
+                                      "speaker": "Narrator",
+                                      "text": "*The rat sounds like it's describing the sacred rites of Shar's Dark Justiciars.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "SHA_LastJusticiar_RatsNegotiate_Knows_RatsAreJusticiar"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "9": {
+                                  "id": "9",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "58": {
+                                      "id": "58",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "1",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "60": {
+                              "id": "60",
+                              "speaker": "Player",
+                              "text": "",
+                              "context": "InternalNodeContext: This passive roll only if the player",
+                              "checkflags": [
+                                "SHA_Orthon_Knows_ContractClause = False",
+                                "SHAR = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "54": {
+                                  "id": "54",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "26": {
+                                      "id": "26",
+                                      "speaker": "Narrator",
+                                      "text": "*The rat sounds like it's describing Sharran rites of initiation - those of the Dark Justiciars.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "SHA_LastJusticiar_RatsNegotiate_Knows_RatsAreJusticiar"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "39": {
+                                  "id": "39",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "52": {
+                                      "id": "52",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "1",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "59": {
+                              "id": "59",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "1",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "69": {
+              "id": "69",
+              "speaker": "Player",
+              "text": "One Shar follower turned into scores of rats? How can that be?",
+              "context": "",
+              "checkflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Event_QuestionedStrangeness",
+                "SHA_LastJusticiar_RatsNegotiate_Knows_RatsAreJusticiar"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "43": {
+              "id": "43",
+              "speaker": "Player",
+              "text": "Are you telling me you're one person turned into a swarm of rats? How can that be?",
+              "context": "",
+              "checkflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Event_QuestionedStrangeness",
+                "SHA_LastJusticiar_RatsNegotiate_Knows_RatsAreJusticiar = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "14",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                  "text": "It shouldn't be. We should be one, long dead. Instead we are many - scurrying, hiding, surviving.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                      "text": "We are just crumbs of a life. Harmless nothings, unless you test us. Leave us in peace.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "21": {
+              "id": "21",
+              "speaker": "Player",
+              "text": "There was an infernal bounty hunter seeking Dark Justiciars. Seems he missed a target.",
+              "context": "",
+              "checkflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Knows_RatsAreJusticiar",
+                "SHA_Orthon_Knows_ContractClause",
+                "SHA_Orthon_State_Defeated"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "14",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Player",
+              "text": "There's an infernal bounty hunter seeking Dark Justiciars. Seems he missed a target.",
+              "context": "",
+              "checkflags": [
+                "SHA_LastJusticiar_RatsNegotiate_Knows_RatsAreJusticiar",
+                "SHA_Orthon_Knows_ContractClause",
+                "SHA_Orthon_State_Defeated = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                  "text": "The horned beast. He killed many, now you kill more. Leave us. Please.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                      "text": "I am harmless - until we are cornered.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "13": {
+              "id": "13",
+              "speaker": "Player",
+              "text": "Attack.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "TemporaryHostilityAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "30": {
+              "id": "30",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Narrator",
+      "text": "*The rat's beady eyes hold your gaze intently. What does it want?*",
+      "context": "",
+      "checkflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet",
+        "SHA_LastJusticiar_State_PlayerTruce = False",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet2",
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "47",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "42": {
+          "id": "42",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "55",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "40": {
+      "id": "40",
+      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+      "text": "Remember your word - spare us, leave this place. Your reward awaits.",
+      "context": "NodeContext: Word of warning/delicate truce",
+      "checkflags": [
+        "SHA_LastJusticiar_State_PlayerTruce",
+        "SHA_LastJusticiar_State_RitualCircleDiplorat",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "47",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "66": {
+          "id": "66",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "1",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "44": {
+      "id": "44",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SHA_LastJusticiar_State_RitualCircleDiplorat",
+        "PETPAL"
+      ],
+      "setflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "47",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "57": {
+          "id": "57",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "1",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "47": {
+      "id": "47",
+      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+      "text": "A final warning - offer us peace, now, or be devoured.",
+      "context": "NodeContext: Deadly serious",
+      "checkflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet2",
+        "SHA_LastJusticiar_State_PlayerTruce",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "63": {
+          "id": "63",
+          "speaker": "Player",
+          "text": "I'm not cutting deals with vermin. Do your worst.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "29": {
+              "id": "29",
+              "speaker": "GROUP_SHA_LastJusticiar_Rats",
+              "text": "Fool. We gave you every opportunity, but still you choose death. So be it.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "All right - a truce, then.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "GROUP_SHA_LastJusticiar_Rats",
+              "text": "At last, you see sense. Fetch your reward and leave us. Do not come back.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "SHA_LastJusticiar_State_PlayerTruce"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "24": {
+          "id": "24",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "GROUP_SHA_LastJusticiar_Rats",
+              "text": "No, you cannot leave - not without your word. Not without peace.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "55": {
+      "id": "55",
+      "speaker": "Narrator",
+      "text": "*The rat stares at you. It almost seems like it wants your attention.*",
+      "context": "",
+      "checkflags": [
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "46": {
+          "id": "46",
+          "speaker": "Player",
+          "text": "Scowl at the rat and shoo it away.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "37": {
+              "id": "37",
+              "speaker": "GROUP_SHA_LastJusticiar_Rats",
+              "text": "*Squeeeee!*",
+              "context": "NodeContext: Animal noise. SFX Only",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "51": {
+          "id": "51",
+          "speaker": "Player",
+          "text": "Hold up your hands in peace.",
+          "context": "",
+          "checkflags": [
+            "SHA_LastJusticiar_State_StudiedDiplorat"
+          ],
+          "setflags": [
+            "SHA_LastJusticiar_State_PlayerTruce"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Astarion -1",
+            "Lae'zel -1",
+            "Shadowheart 1",
+            "Halsin 5"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "27": {
+              "id": "27",
+              "speaker": "Narrator",
+              "text": "*The rat's eyes gleam with uncanny intelligence. It seems to grasp your gesture, and accept it.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "GROUP_SHA_LastJusticiar_Rats",
+                  "text": "*Squeak!*",
+                  "context": "NodeContext: Animal noise. SFX Only",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "48": {
+          "id": "48",
+          "speaker": "Player",
+          "text": "Study the rat. Try to figure out what it wants.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "38": {
+              "id": "38",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "Narrator",
+                  "text": "*It wants for you to leave it and its fellow rats in peace.*",
+                  "context": "",
+                  "checkflags": [
+                    "SHA_LastJusticiar_State_RitualCircleDiplorat"
+                  ],
+                  "setflags": [
+                    "SHA_LastJusticiar_State_StudiedDiplorat"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "12": {
+                  "id": "12",
+                  "speaker": "Narrator",
+                  "text": "*It wants you to stop killing its fellow rats. Understandable enough.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "SHA_LastJusticiar_State_StudiedDiplorat"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "22": {
+                  "id": "22",
+                  "speaker": "Narrator",
+                  "text": "*Beady, malicious eyes stare at you. The rat probably wants to feast on your corpse along with its friends.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "56": {
+      "id": "56",
+      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+      "text": "We only seek peace. Kill no more, and we will let you live.",
+      "context": "NodeContext: Growing frustration",
+      "checkflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet",
+        "SHA_LastJusticiar_State_PlayerTruce",
+        "PETPAL"
+      ],
+      "setflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet2",
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "33": {
+          "id": "33",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "1",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "65": {
+      "id": "65",
+      "speaker": "GROUP_SHA_LastJusticiar_Rats",
+      "text": "*Squeeeak!*",
+      "context": "NodeContext: Animal noise. SFX Only",
+      "checkflags": [
+        "SHA_LastJusticiar_RatsNegotiation_Event_Hasmet2",
+        "SHA_LastJusticiar_State_PlayerTruce = False",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "31": {
+          "id": "31",
+          "speaker": "Player",
+          "text": "Yell at the rat. Frighten it away.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "62": {
+              "id": "62",
+              "speaker": "GROUP_SHA_LastJusticiar_Rats",
+              "text": "*Hiss!*",
+              "context": "NodeContext: Animal noise. SFX Only",
+              "checkflags": [],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "45": {
+          "id": "45",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "51",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "53": {
+          "id": "53",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "36": {
+          "id": "36",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Narrator",
+              "text": "*The rat seems agitated, like it doesn't want you to leave. Not without getting what it wants.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "67": {
+      "id": "67",
+      "speaker": "Narrator",
+      "text": "*The rat watches intently, as if eager for you to leave.*",
+      "context": "",
+      "checkflags": [
+        "SHA_LastJusticiar_State_PlayerTruce",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

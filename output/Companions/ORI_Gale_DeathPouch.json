@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "synopsis": "This dialog describes the interaction with a magic pouch. Only if the players know how to open it can they do so successfully. If not, the pouch self-destructs, destroying the contents within.",
+    "how_to_trigger": "Repro steps:1. Start the game2. loadlevel WLD_Main_A3. Recruit Gale4. Kill Gale 5. Loot the pouch on his body6. Open the pouch"
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*The pouch is sealed with differently coloured strands of thread.*",
+      "context": "CinematicNodeContext: The player holds a sealed pouch.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Narrator",
+          "text": "*An inscription on the leather reads: 'Do not open unless I have instructed you to do so. In case of doubt, await instructions near my body. Gale, Wizard of Waterdeep.'*",
+          "context": "NodeContext: the last part, Gale's name and 'title', are his sign-off at the end of the note",
+          "checkflags": [
+            "Gale_DeathVoice_KnowProtocol = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Player",
+              "text": "Pull the purple thread in a counter clockwise fashion.",
+              "context": "",
+              "checkflags": [
+                "Gale_DeathVoice_KnowProtocol"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Narrator",
+                  "text": "*As the purple thread becomes undone, the pouch opens to reveal a letter and flute inside.*",
+                  "context": "CinematicNodeContext: The pouch is opened.",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Gale_State_OpenedPouch"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "Pull the threads to open the pouch.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Narrator",
+                  "text": "*You get a feeling something's wrong. It's as if the pouch struggles against you.*",
+                  "context": "CinematicNodeContext: The player tries to open the pouch, but it's not working.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "1": {
+                      "id": "1",
+                      "speaker": "Player",
+                      "text": "You keep pulling.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "6": {
+                          "id": "6",
+                          "speaker": "Narrator",
+                          "text": "*As the threads become undone, the pouch itself evaporates.*",
+                          "context": "CinematicNodeContext: The player violently opens the pouch, which makes it evaporate, i.e. self-destruct.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "3": {
+                              "id": "3",
+                              "speaker": "Narrator",
+                              "text": "*The letter and flute inside are now forever beyond your grasp.*",
+                              "context": "CinematicNodeContext: The player is left standing with empty hands.",
+                              "checkflags": [
+                                "Gale_DeathVoice_KnowProtocol"
+                              ],
+                              "setflags": [
+                                "ORI_Gale_State_DestroyedPouch",
+                                "DestroyedPouch"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "0": {
+                              "id": "0",
+                              "speaker": "Narrator",
+                              "text": "*Whatever contents were inside, they've been utterly destroyed.*",
+                              "context": "CinematicNodeContext: The player is left standing with empty hands.",
+                              "checkflags": [
+                                "Gale_DeathVoice_KnowProtocol = False"
+                              ],
+                              "setflags": [
+                                "ORI_Gale_State_DestroyedPouch",
+                                "DestroyedPouch"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "id": "2",
+                      "speaker": "Player",
+                      "text": "You leave the pouch alone.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Player",
+              "text": "You put the pouch away.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

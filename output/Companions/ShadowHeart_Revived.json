@@ -1,0 +1,1131 @@
+{
+  "metadata": {
+    "synopsis": "The player resurrects or revives Shadowheart after she was killed or knocked unconscious. Shadowheart can recognise the player as her attacker if that is the case, and reacts to the loss of her box if it was taken from her.",
+    "how_to_trigger": "This dialogue only triggers if the player resurrects/revives SH when she's not recruited."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Shadowheart",
+      "text": "What the... it's gone! The artefact - what have you done with it?",
+      "context": "CinematicNodeContext: Looks down at herself, realising box is missing. Looks up to player.",
+      "checkflags": [
+        "GLO_InfernalBox_State_CharacterHasBox = False"
+      ],
+      "setflags": [
+        "ORI_ShadowheartRecruitment_State_RevivedShadowheart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "45",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "ORI_ShadowHeart_HasMet = False"
+          ],
+          "setflags": [
+            "ORI_ShadowHeart_HasMet"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "45",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {
+            "52": {
+              "id": "52",
+              "speaker": "Player",
+              "text": "Here, take it.",
+              "context": "",
+              "checkflags": [
+                "GLO_InfernalBox_State_CharacterHasBox"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "34",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Shadowheart",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "34",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "39": {
+                      "id": "39",
+                      "speaker": "Shadowheart",
+                      "text": "Thank you... though you shouldn't have had it to begin with.",
+                      "context": "CinematicNodeContext: SH takes box in hands.\rInternalNodeContext: Fallback just in case SH is in party (shouldn't be possible)\rNodeContext: Grateful, but with a dash of suspicion.",
+                      "checkflags": [],
+                      "setflags": [
+                        "GLO_InfernalBox_Event_ForceGiveBox"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "34",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "24": {
+                          "id": "24",
+                          "speaker": "",
+                          "text": "",
+                          "context": "CinematicNodeContext: SH puts box away,",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "34",
+                          "is_end": false,
+                          "node_type": "tagcinematic",
+                          "children": {
+                            "47": {
+                              "id": "47",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "34",
+                              "is_end": false,
+                              "node_type": "visualstate",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "58": {
+                  "id": "58",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "44": {
+                      "id": "44",
+                      "speaker": "Shadowheart",
+                      "text": "Take what? You don't have it!",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "29": {
+              "id": "29",
+              "speaker": "Player",
+              "text": "None of your concern - it's mine now.",
+              "context": "",
+              "checkflags": [
+                "GLO_InfernalBox_State_CharacterHasBox"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "31": {
+                  "id": "31",
+                  "speaker": "Shadowheart",
+                  "text": "I can't let you do that.",
+                  "context": "InternalNodeContext: Combat starts after this.\rNodeContext: Steely resolve - she's going to fight the player to get the box back.",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "33": {
+              "id": "33",
+              "speaker": "Player",
+              "text": "Artefact? I don't have anything like that.",
+              "context": "",
+              "checkflags": [
+                "GLO_InfernalBox_State_CharacterHasBox = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Shadowheart",
+                  "text": "No - you're trying to trick me. You must have it. I'll take it off your corpse soon enough.",
+                  "context": "InternalNodeContext: Combat starts after this.\rNodeContext: Suspicious, angry. Convinced the player has the object she's supposed to protect. Combat rigth afterwards",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "57": {
+              "id": "57",
+              "speaker": "Player",
+              "text": "There must be some kind of mistake.",
+              "context": "",
+              "checkflags": [
+                "GLO_InfernalBox_State_CharacterHasBox = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "22": {
+                  "id": "22",
+                  "speaker": "Shadowheart",
+                  "text": "Yes. But it'll soon be remedied, once I've taken what's mine from your corpse.",
+                  "context": "InternalNodeContext: Combat starts after this.\rNodeContext: Suspicious, angry. Convinced the player has the object she's supposed to protect. Combat rigth afterwards",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Shadowheart",
+      "text": "Wait - you're the one who attacked me! What the hells are you playing at?!",
+      "context": "NodeContext: Surprised and angry (player knocked her unconscious, now revived her)",
+      "checkflags": [
+        "GLO_InfernalBox_State_CharacterHasBox"
+      ],
+      "setflags": [
+        "ORI_ShadowheartRecruitment_State_RevivedShadowheart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "45",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "28": {
+          "id": "28",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "ORI_ShadowHeart_HasMet = False"
+          ],
+          "setflags": [
+            "ORI_ShadowHeart_HasMet"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "45",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "To fix a mistake. I didn't mean to kill you.",
+              "context": "",
+              "checkflags": [
+                "ORI_ShadowheartRecruitment_State_ShadowheartKilled"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "34",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "61": {
+                  "id": "61",
+                  "speaker": "Shadowheart",
+                  "text": "Well make sure it's a mistake you don't repeat.",
+                  "context": "NodeContext: A bit calmer",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "34",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "27": {
+                      "id": "27",
+                      "speaker": "Shadowheart",
+                      "text": "Now, instead of killing and resurrecting each other, we should just work together and try to stay alive.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "34",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "55": {
+              "id": "55",
+              "speaker": "Player",
+              "text": "It was a mistake - I didn't mean to knock you out.",
+              "context": "",
+              "checkflags": [
+                "ORI_ShadowheartRecruitment_State_ShadowheartKilled = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "34",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "Shadowheart",
+                  "text": "Well, make sure it's a mistake you don't repeat. I've enough problems with my memory as it is...",
+                  "context": "NodeContext: Second sentence spoken under breath,",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "34",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "Player",
+                      "text": "Your memory? What's wrong?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "34",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "37": {
+                          "id": "37",
+                          "speaker": "Shadowheart",
+                          "text": "Nothing. You and I ought to be considering how we're going to survive this mess - we should stay together.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "34",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "3": {
+                      "id": "3",
+                      "speaker": "Player",
+                      "text": "What now?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "34",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "38": {
+                          "id": "38",
+                          "speaker": "Shadowheart",
+                          "text": "Seems you're the closest thing to an ally I've encountered so far - we should stay together, in the interest of survival.<br>",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "34",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "49": {
+              "id": "49",
+              "speaker": "Player",
+              "text": "I decided you might prove useful.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "34",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "41": {
+                  "id": "41",
+                  "speaker": "Shadowheart",
+                  "text": "How gracious of you. Try it again, and I'll leave you in pieces.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "34",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "62": {
+                      "id": "62",
+                      "speaker": "Shadowheart",
+                      "text": "That said, you're the likeliest ally I've encountered so far. Perhaps we should stay together.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "34",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Player",
+              "text": "I had so much fun killing you last time, I figured I'd do it again.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "23": {
+                  "id": "23",
+                  "speaker": "Shadowheart",
+                  "text": "Bloody maniac!",
+                  "context": "InternalNodeContext: Combat starts after this.\rNodeContext: Angry, hostile. (combat immediately after)",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "26": {
+      "id": "26",
+      "speaker": "Shadowheart",
+      "text": "What the - you're the one who killed me! Why did you bring me back?",
+      "context": "NodeContext: Surprised and alarmed (the player killed her, then resurrected her)",
+      "checkflags": [
+        "ORI_ShadowheartRecruitment_State_ShadowheartAttacker",
+        "ORI_ShadowheartRecruitment_State_ShadowheartKilled",
+        "GLO_InfernalBox_State_CharacterHasBox"
+      ],
+      "setflags": [
+        "ORI_ShadowheartRecruitment_State_RevivedShadowheart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "28",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "59": {
+      "id": "59",
+      "speaker": "Shadowheart",
+      "text": "I'm alive... did you save me?",
+      "context": "",
+      "checkflags": [
+        "ORI_ShadowheartRecruitment_State_ShadowheartAttacker = False",
+        "ORI_ShadowheartRecruitment_State_ShadowheartKilled",
+        "GLO_InfernalBox_State_CharacterHasBox"
+      ],
+      "setflags": [
+        "ORI_ShadowheartRecruitment_State_RevivedShadowheart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "34",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "45": {
+          "id": "45",
+          "speaker": "Narrator",
+          "text": "*Your mind briefly swaps with hers. You both wince in discomfort as you recognise you share the same infection.*",
+          "context": "CinematicNodeContext: SH and the player briedly recoil from the effects of the mindmeld.\rInternalNodeContext: Mindmeld narration node only if SH wasn't met previously",
+          "checkflags": [
+            "ORI_ShadowHeart_HasMet = False"
+          ],
+          "setflags": [
+            "ORI_ShadowHeart_HasMet"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "34",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "53": {
+              "id": "53",
+              "speaker": "Player",
+              "text": "I did. You're welcome.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "34",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "35": {
+                  "id": "35",
+                  "speaker": "Shadowheart",
+                  "text": "Thank you... maybe I should come with you - return the favour by watching your back.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "34",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "60": {
+              "id": "60",
+              "speaker": "Player",
+              "text": "Just try to stay alive this time.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Shadowheart",
+                  "text": "I intend to, trust me... On that score, maybe we should stay together - better odds of survival.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "34": {
+                      "id": "34",
+                      "speaker": "Shadowheart",
+                      "text": "We've got the same problem, after all. Let's try to find a solution together, before it's too late.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "40": {
+                          "id": "40",
+                          "speaker": "Player",
+                          "text": "All right, fine. Let's stay together.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "19": {
+                              "id": "19",
+                              "speaker": "Shadowheart",
+                              "text": "Wait. Perhaps we shouldn't. You're not the one I need to talk to, are you? Not really.",
+                              "context": "NodeContext: realisation that she isn't talking to the person in charge.",
+                              "checkflags": [
+                                "AVATAR = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "21": {
+                                  "id": "21",
+                                  "speaker": "Shadowheart",
+                                  "text": "I can feel it, in your head. You follow someone else's orders. I'll deal with them, not you.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "36": {
+                                      "id": "36",
+                                      "speaker": "Player",
+                                      "text": "Fine. I'll see about introducing you.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "56": {
+                                          "id": "56",
+                                          "speaker": "Shadowheart",
+                                          "text": "I can't promise I'll wait forever. Perhaps our paths will cross again later.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "50": {
+                                      "id": "50",
+                                      "speaker": "Player",
+                                      "text": "Wait - after all that, you won't join me?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "16": {
+                                          "id": "16",
+                                          "speaker": "Shadowheart",
+                                          "text": "I'll join - if I can speak to whoever's really in charge. Otherwise, I'd best be on my way.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "11": {
+                                      "id": "11",
+                                      "speaker": "Player",
+                                      "text": "You know, I think I'd rather take my chances without you.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "17": {
+                                          "id": "17",
+                                          "speaker": "Shadowheart",
+                                          "text": "Perhaps we'll meet again. If you survive, that is.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "46": {
+                              "id": "46",
+                              "speaker": "Shadowheart",
+                              "text": "You seem overburdened with hangers-on already.",
+                              "context": "",
+                              "checkflags": [
+                                "GEN_MaxPlayerCountReached"
+                              ],
+                              "setflags": [
+                                "GLO_Tutorials_FullPartyRejection"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "43": {
+                                  "id": "43",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {
+                                    "30": {
+                                      "id": "30",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [
+                                        "ORI_Shadowheart_Revived_State_Leaving"
+                                      ],
+                                      "setflags": [
+                                        "GLO_ND_CompanionSwap_ForceChoice"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "5": {
+                                          "id": "5",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "42": {
+                                              "id": "42",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [
+                                                "GLO_ND_CompanionSwap_ToCamp"
+                                              ],
+                                              "setflags": [
+                                                "GLO_ORI_Event_InvitedToCamp_Run"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "taganswer",
+                                              "children": {}
+                                            },
+                                            "51": {
+                                              "id": "51",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [
+                                                "GLO_ND_CompanionSwap_ToCamp = False"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "taganswer",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "54": {
+                                  "id": "54",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {
+                                    "18": {
+                                      "id": "18",
+                                      "speaker": "Player",
+                                      "text": "I'll mark my camp on your map. You can rest there.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "GLO_ORI_Event_InvitedToCamp_Run"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "6": {
+                                          "id": "6",
+                                          "speaker": "Shadowheart",
+                                          "text": "Fine. But don't delay.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "48": {
+                                      "id": "48",
+                                      "speaker": "Player",
+                                      "text": "Leave.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "13": {
+                              "id": "13",
+                              "speaker": "Shadowheart",
+                              "text": "Lead the way.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "OriginAddToParty"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "25": {
+                          "id": "25",
+                          "speaker": "Player",
+                          "text": "You're on your own.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "0": {
+                              "id": "0",
+                              "speaker": "Shadowheart",
+                              "text": "I often am. Farewell.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "I wanted to kill you myself.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "32": {
+                  "id": "32",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "23",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

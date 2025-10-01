@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "synopsis": "The player has stopped the windmill from rotating and can now cut Barcus Wroot, the captive gnome, free from its sails. They can do this immediately, or else demand payment first, much to the gnome's frustration.",
+    "how_to_trigger": "- Go to 18 416- Get through the goblins by playing as a drow and forcing them to leave- Go to the back of the windmill (-11 428) and flick the release brake lever- Talk to the gnome"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Barcus Wroot",
+      "text": "Cut me loose!",
+      "context": "CinematicNodeContext: The gnome is tied to the (stationary) sail of a wind, begging to be cut free by the player. He's close to the ground and within normal speaking range.\rNodeContext: Urgent, panicked. The gnome begs to be untied from the sail of a windmill. The sail is at the lowermost part of its rotation in relation to the ground, and the gnome is within normal speaking range.",
+      "checkflags": [
+        "FOR_UnfortunateGone_TiedUpHasmet = False"
+      ],
+      "setflags": [
+        "FOR_UnfortunateGone_TiedUpHasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "What's in it for me?",
+          "context": "NodeContext: Incredulous. His good samaritan seems to be haggling for a reward before even freeing him.",
+          "checkflags": [
+            "FOR_UnfortunateGnome_Bargaining = False"
+          ],
+          "setflags": [
+            "FOR_UnfortunateGnome_Bargaining"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Barcus Wroot",
+              "text": "Free me and find out.",
+              "context": "NodeContext: Impatient. He's used to being extorted.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "Player",
+                  "text": "Free him.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_UnfortunateGnome_Event_FreeGnomeDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "tagcinematic",
+                      "children": {
+                        "9": {
+                          "id": "9",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "4": {
+                  "id": "4",
+                  "speaker": "Player",
+                  "text": "Leave him.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Barcus Wroot",
+      "text": "Come on! What are you waiting for?!",
+      "context": "NodeContext: The gnome grows exasperated and panicky over the player's delay in cutting him free.",
+      "checkflags": [
+        "FOR_UnfortunateGone_TiedUpHasmet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "2",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1513 @@
+{
+  "metadata": {
+    "synopsis": "Dialog for one of the zombie beggars. After player talks to Father Carrion and has been tasked to kill them, they will react to this and either run to warn their leader, Thrumbo, or confront player. The following states are one-liners and hasmets for each possible quest state (meeting with thrumbo, outside house and inside father carrion's house once fully killed.)",
+    "how_to_trigger": "Talk to LumbarLocation: CTY_Main_A Initial: 86; 41; -69Meeting: 66; 1; -120Outside house: -8; 11; -145Inside house: 1; 8; -157"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "Back for more? I don't mind, so long as you're paying. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_Initial",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Lumbar_State_Recognised",
+        "LOW_Lumbar_State_PunchedByPlayer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "45": {
+          "id": "45",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "80",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_Initial",
+        "LOW_FatherCarrion_State_ExplainedTask",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Lumbar_State_Recognised = False",
+        "LOW_Lumbar_State_PunchedByPlayer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "35": {
+          "id": "35",
+          "speaker": "Narrator",
+          "text": "*You recall where you've smelled this beggar's rotten musk before - in Mystic Carrion's chambers. This is one of his runaway servants.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_Lumbar_State_Recognised"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "45",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "I told you all I know. Now go and find him, before you get me in trouble.",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_LumbarHint",
+        "LOW_Lumbar_State_TrustsPlayers"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_Initial",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "Think Carrion's corpse would make a good punching bag?",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_InsideHouse = False",
+        "LOW_PhilgravesMansion_State_ZombieInHouse"
+      ],
+      "setflags": [
+        "LOW_Lumbar_HasMet_InsideHouse"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "Find the boats, you'll find Thrumbo. That's all I know!",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_LumbarHint = False",
+        "LOW_Lumbar_State_TrustsPlayers"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_HasMet_LumbarHint"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "Changed your mind? Offer's still there. Go on - have a swing. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_Initial",
+        "LOW_FatherCarrion_State_ExplainedTask = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_PhilgravesMansion_PaidLumbar = False",
+        "LOW_Lumbar_State_PunchedByPlayer = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "63": {
+          "id": "63",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "80",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "Nope. Not talking.",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_State_FailedTrustAttempt",
+        "LOW_PhilgravesMansion_HasMet_LumbarHint"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "32": {
+      "id": "32",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "I'll make sure no one harms us again. Keep training, keep fighting.",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_InsideHouse",
+        "LOW_PhilgravesMansion_State_ZombieInHouse"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "41": {
+      "id": "41",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "Come to have a go? Give it your best shot.",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_Initial = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation"
+      ],
+      "setflags": [
+        "LOW_Lumbar_HasMet_Initial"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "80",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "50": {
+          "id": "50",
+          "speaker": "Narrator",
+          "text": "*An air of decay hangs over the stooped beggar's form, the same that tainted Mystic Carrion's chambers. This is one of his runaway servants.*",
+          "context": "",
+          "checkflags": [
+            "LOW_FatherCarrion_State_ExplainedTask"
+          ],
+          "setflags": [
+            "LOW_Lumbar_State_Recognised"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "80",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "30": {
+          "id": "30",
+          "speaker": "Narrator",
+          "text": "*That smell again - fetid flesh and bone. This is another of Mystic Carrion's runaways.*",
+          "context": "",
+          "checkflags": [
+            "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+            "LOW_FatherCarrion_State_ExplainedTask"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "78",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "80": {
+              "id": "80",
+              "speaker": "Strange Beggar Lumbar",
+              "text": "Gold first. Then you can hit me. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "78",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "23": {
+                  "id": "23",
+                  "speaker": "Player",
+                  "text": "Isn't this cheating if you're already dead?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Lumbar_State_RecognisedZombie"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "78",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "81": {
+                      "id": "81",
+                      "speaker": "Strange Beggar Lumbar",
+                      "text": "I'm not dead. Just got a bit of nerve damage. So, you having a go or not? ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "75": {
+                  "id": "75",
+                  "speaker": "Player",
+                  "text": "You ran away from Mystic Carrion to do this?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_ExplainedTask"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "78",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "60": {
+                  "id": "60",
+                  "speaker": "Player",
+                  "text": "I'm looking for Thrumbo. Mystic Carrion wants him home.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_PlayersAcceptedTask"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "38",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "78": {
+                      "id": "78",
+                      "speaker": "Strange Beggar Lumbar",
+                      "text": "Carrion sent you? Shit.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "38",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "31": {
+                          "id": "31",
+                          "speaker": "Strange Beggar Lumbar",
+                          "text": "Don't think about trying anything. I'll fight back.",
+                          "context": "CinematicNodeContext: Raises his fists, nervous but ready for a fight\rNodeContext: Shouted to friends in the distance",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "38",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "14": {
+                              "id": "14",
+                              "speaker": "Player",
+                              "text": "Relax, the boss just wanted to give you and Thrumbo a proper send off. Does you need anything?",
+                              "context": "",
+                              "checkflags": [
+                                "ROGUE"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "38",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "47": {
+                                  "id": "47",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "38",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "53": {
+                                      "id": "53",
+                                      "speaker": "Strange Beggar Lumbar",
+                                      "text": "He did? I suppose, I mean - really?",
+                                      "context": "CinematicNodeContext: Relaxing from fists up pose into normal standing stance\rNodeContext: Utter disbelief",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "38",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "29": {
+                                  "id": "29",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "54": {
+                                      "id": "54",
+                                      "speaker": "Strange Beggar Lumbar",
+                                      "text": "No chance. I'm not telling you a thing.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "LOW_Lumbar_State_FailedTrustAttempt"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "25": {
+                              "id": "25",
+                              "speaker": "Player",
+                              "text": "Carrion means Thrumbo no harm. He sent me with provisions for his journey.",
+                              "context": "",
+                              "checkflags": [
+                                "ROGUE = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "47",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "34": {
+                              "id": "34",
+                              "speaker": "Player",
+                              "text": "Unless you want me to purge this realm of you and your undead brothers, you'll talk.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [
+                                "CLERIC",
+                                "PALADIN"
+                              ],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "9",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "15": {
+                              "id": "15",
+                              "speaker": "Player",
+                              "text": "Either you tell me where Thrumbo is, or I drive my fist through your skull.",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC = False",
+                                "PALADIN = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "38",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "9": {
+                                  "id": "9",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "28": {
+                                      "id": "28",
+                                      "speaker": "Strange Beggar Lumbar",
+                                      "text": "Bloody hells. And I thought Carrion was a bastard.",
+                                      "context": "CinematicNodeContext: Going from his fists up pose to flinching, then relaxing into a regular standing posture\rNodeContext: Shocked at how violent the threat was, almost impressed",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "38": {
+                                          "id": "38",
+                                          "speaker": "Strange Beggar Lumbar",
+                                          "text": "Thrumbo was going to get us a boat. But I haven't heard from him since.",
+                                          "context": "NodeContext: Struggling to remember, hard to tell if he's making a joke at his own (zombie) expense",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "BeggarHint_Lumbar"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "44": {
+                                              "id": "44",
+                                              "speaker": "Strange Beggar Lumbar",
+                                              "text": "He must be somewhere near the water. I just hope he didn't drown.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "LOW_Lumbar_State_TrustsPlayers"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "48": {
+                                  "id": "48",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "46": {
+                                      "id": "46",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "54",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "37": {
+                              "id": "37",
+                              "speaker": "Player",
+                              "text": "Tell me where Thrumbo is, and it'll be like we never met.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "38",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "49": {
+                                  "id": "49",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "38",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "71": {
+                                      "id": "71",
+                                      "speaker": "Strange Beggar Lumbar",
+                                      "text": "I suppose that's all right. Thrumbo's more of a talker than I am.",
+                                      "context": "CinematicNodeContext: Relaxing from fists up pose into normal standing stance",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "38",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "84": {
+                                  "id": "84",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "16": {
+                                      "id": "16",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "54",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "0": {
+                              "id": "0",
+                              "speaker": "Player",
+                              "text": "Leave.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_Lumbar_State_FailedTrustAttempt"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "82": {
+                  "id": "82",
+                  "speaker": "Player",
+                  "text": "A strange way to earn your keep. Do many take you up on this?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "69",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "52": {
+                      "id": "52",
+                      "speaker": "Strange Beggar Lumbar",
+                      "text": "Plenty. Lots of angry people in this city. No one else to take it out on.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "Strange Beggar Lumbar",
+                          "text": "Go on. You seem like you've something pent up.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "69": {
+                              "id": "69",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "66",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "67": {
+                  "id": "67",
+                  "speaker": "Player",
+                  "text": "That's a cheap price for allowing someone to beat you up.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "69",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "56": {
+                      "id": "56",
+                      "speaker": "Strange Beggar Lumbar",
+                      "text": "Charge too much, people hit you harder. Then they take the gold back.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "69",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "77": {
+                          "id": "77",
+                          "speaker": "Strange Beggar Lumbar",
+                          "text": "Besides, I've taken enough punches for free. Least this way I get paid something.",
+                          "context": "NodeContext: Small laugh - not clear if he's joking, 'something' as in it's not nothing",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "69",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "18": {
+                  "id": "18",
+                  "speaker": "Player",
+                  "text": "Usually people pay me not to hit them.",
+                  "context": "",
+                  "checkflags": [
+                    "MONK = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "24",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "43": {
+                      "id": "43",
+                      "speaker": "Strange Beggar Lumbar",
+                      "text": "Tried that once. They took the gold and hit me anyway.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "62": {
+                          "id": "62",
+                          "speaker": "Strange Beggar Lumbar",
+                          "text": "Better this way. I still leave with gold in my pocket.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "66": {
+                              "id": "66",
+                              "speaker": "Strange Beggar Lumbar",
+                              "text": "So, you having a go or not?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "42": {
+                                  "id": "42",
+                                  "speaker": "Player",
+                                  "text": "Of course I'm not going to hit you.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "64": {
+                                      "id": "64",
+                                      "speaker": "Strange Beggar Lumbar",
+                                      "text": "Then move. Let someone else have a go.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "26": {
+                                  "id": "26",
+                                  "speaker": "Player",
+                                  "text": "I can't afford it. How about giving me a free trial?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "e678bd59-74f4-4a7b-8776-aca807d9ef22 = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "55": {
+                                      "id": "55",
+                                      "speaker": "Strange Beggar Lumbar",
+                                      "text": "No gold, no punch. Sorry.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "19": {
+                                  "id": "19",
+                                  "speaker": "Player",
+                                  "text": "Pay the gold. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                                  "context": "",
+                                  "checkflags": [
+                                    "LOW_PhilgravesMansion_PaidLumbar = False",
+                                    "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                                  ],
+                                  "setflags": [
+                                    "LOW_Lumbar_NextPunchWillBeHostile = False",
+                                    "GEN_TransferNPCPayment",
+                                    "LOW_PhilgravesMansion_PaidLumbar"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "36": {
+                  "id": "36",
+                  "speaker": "Player",
+                  "text": "Look closer. Try to identify the cause of the smell.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Lumbar_State_RecognisedZombie = False",
+                    "LOW_PhilgravesMansion_State_AttemptedRecognizeLumbar",
+                    "BARBARIAN = False",
+                    "CLERIC = False"
+                  ],
+                  "setflags": [
+                    "LOW_PhilgravesMansion_State_AttemptedRecognizeLumbar"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "24",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "74": {
+                      "id": "74",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "61",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "40": {
+                  "id": "40",
+                  "speaker": "Player",
+                  "text": "I hit very fast. Are you sure you're up to it?",
+                  "context": "",
+                  "checkflags": [
+                    "MONK"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "24",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "Strange Beggar Lumbar",
+                      "text": "S'not a flat fee - you pay per punch, mate. Faster you hit, faster I make coin.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "1": {
+                          "id": "1",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "66",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "61": {
+                  "id": "61",
+                  "speaker": "Player",
+                  "text": "Sniff the area, expanding your senses. Try to identify the smell.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Lumbar_State_RecognisedZombie = False",
+                    "LOW_PhilgravesMansion_State_AttemptedRecognizeLumbar = False",
+                    "BARBARIAN"
+                  ],
+                  "setflags": [
+                    "LOW_PhilgravesMansion_State_AttemptedRecognizeLumbar"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "24",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "12": {
+                          "id": "12",
+                          "speaker": "Narrator",
+                          "text": "*Your divine power focuses on the beggar - revealing the magic that sustains him. This man is a corpse - a zombie.*",
+                          "context": "",
+                          "checkflags": [
+                            "CLERIC"
+                          ],
+                          "setflags": [
+                            "LOW_Sacrum_State_RecognisedZombie"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "7": {
+                          "id": "7",
+                          "speaker": "Narrator",
+                          "text": "*Beneath his ragged clothing, you catch a glimpse of rotten flesh - more than any living being could sustain. This man is a zombie.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_Lumbar_State_RecognisedZombie"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "10": {
+                          "id": "10",
+                          "speaker": "Narrator",
+                          "text": "*You try to focus on the beggar, but the smell is too strong, too nauseating. Perhaps the cause is better left unknown.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "65": {
+                  "id": "65",
+                  "speaker": "Player",
+                  "text": "The divine tugs at you. Give in, letting your god flow through you.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Lumbar_State_RecognisedZombie = False",
+                    "LOW_PhilgravesMansion_State_AttemptedRecognizeLumbar = False",
+                    "CLERIC"
+                  ],
+                  "setflags": [
+                    "LOW_PhilgravesMansion_State_AttemptedRecognizeLumbar"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "24",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "33": {
+                  "id": "33",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "26",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "85": {
+                  "id": "85",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "19",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "79": {
+                  "id": "79",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_FatherCarrion_State_ExplainedTask"
+                  ],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "Strange Beggar Lumbar",
+                      "text": "Run, brothers!",
+                      "context": "CinematicNodeContext: Shouted out towards his zombie brothers (not nearby, unseen)\rNodeContext: Shouted to friends in the distance",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_PhilgravesMansion_Event_ZombiesGoToMeetingAttacked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "39": {
+                  "id": "39",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "68": {
+          "id": "68",
+          "speaker": "Narrator",
+          "text": "*That smell again - fetid flesh and bone. This is another zombie.*",
+          "context": "",
+          "checkflags": [
+            "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+            "LOW_FatherCarrion_State_ExplainedTask = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "80",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "58": {
+          "id": "58",
+          "speaker": "Narrator",
+          "text": "*An air of decay hangs over the stooped beggar's form. The smell of rot. The smell of death.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "80",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "51": {
+      "id": "51",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "Thrumbo said you saved us, so thanks, I guess. Doesn't mean you don't need some sense knocking into you.",
+      "context": "NodeContext: Grumpy/surly - he was pissed off at you but is reluctantly getting over it",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_InsideHouse = False",
+        "LOW_PhilgravesMansion_State_BeggarCommentedAnger = False",
+        "LOW_PhilgravesMansion_State_ZombieInHouse",
+        "LOW_PhilgravesMansion_BeggarAngryAtPlayers"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_State_BeggarCommentedAnger"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "57": {
+      "id": "57",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_Initial",
+        "LOW_FatherCarrion_State_ExplainedTask = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Lumbar_State_Recognised = False",
+        "LOW_Lumbar_State_PunchedByPlayer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "59": {
+      "id": "59",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_Initial",
+        "LOW_FatherCarrion_State_ExplainedTask",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Lumbar_State_Recognised = False",
+        "LOW_PhilgravesMansion_PaidLumbar = False",
+        "LOW_Lumbar_State_PunchedByPlayer = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "70": {
+      "id": "70",
+      "speaker": "Strange Beggar Lumbar",
+      "text": "Go away. I'm not telling you squat.",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_State_FailedTrustAttempt",
+        "LOW_PhilgravesMansion_HasMet_LumbarHint = False"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_HasMet_LumbarHint"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "83": {
+      "id": "83",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Lumbar_HasMet_Initial",
+        "LOW_FatherCarrion_State_ExplainedTask",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Lumbar_State_Recognised = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

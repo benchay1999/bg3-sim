@@ -1,0 +1,400 @@
+{
+  "metadata": {
+    "synopsis": "Interacting with the mind flayer device in the Tadpoling Centre that controls the pods inside. You get to choose whether to free or purge the occupants of the pods - mind flayers and innocents alike.",
+    "how_to_trigger": "- Load up GustavDev/SCL_Main_A- Go to the Colony Tadpoling Centre (ReCon command \"oe tc_teleport\")- Interact with the mind flayer device that controls the pod."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*The device is inert, and unresponsive.*",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_Event_ReleasePods"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*You connect to the device, and gain control of the pods - and the fate of their occupants.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "Narrator",
+          "text": "*The device is open to your tadpole's command - to your authority.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Player",
+              "text": "Release.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "COL_TadpolingCentre_Event_ReleasePods"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Astarion -1",
+                "Karlach 5",
+                "Lae'zel -1",
+                "Shadowheart 5",
+                "Wyll 5",
+                "Minthara -1",
+                "Halsin 5"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: |*The pods slide open, its occupants released. We cut to gameplay before seeing the occupants leave the pods.*|",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "tagcinematic",
+                  "children": {}
+                }
+              }
+            },
+            "18": {
+              "id": "18",
+              "speaker": "Player",
+              "text": "Purge.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "COL_TadpolingCentre_Event_PurgePods"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Gale -1",
+                "Karlach -5",
+                "Lae'zel 5",
+                "Shadowheart -5",
+                "Wyll 5",
+                "Minthara 1",
+                "Halsin -5"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "Narrator",
+                  "text": "*Screams. Psychic agony. Terror. Then... nothing.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "Leave the pods be.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Narrator",
+      "text": "*There is no visible means of operating the device.*",
+      "context": "",
+      "checkflags": [
+        "ILLITHID = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Narrator",
+      "text": "*Your tadpole forms a telepathic connection with the device, and chorus of static energy fills your mind.*",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_Lever_HasMet = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Narrator",
+          "text": "*Every mind flayer in the room calls out hungrily from its pod, seeking release. And sustenance.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "COL_TadpolingCentre_Lever_HasMet"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*But there are others in the pods - those not yet infected, not yet illithid. Terrified, desperate to escape.*",
+              "context": "",
+              "checkflags": [
+                "COL_TadpolingCentre_State_NoInnocentOccupants = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [
+                    "HUMANOID"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "7",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "19": {
+                      "id": "19",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "HUMANOID"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "7",
+                      "is_end": false,
+                      "node_type": "tagcinematic",
+                      "children": {
+                        "10": {
+                          "id": "10",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [
+                            "HUMANOID"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "7",
+                          "is_end": false,
+                          "node_type": "tagcinematic",
+                          "children": {
+                            "2": {
+                              "id": "2",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "7",
+                              "is_end": false,
+                              "node_type": "alias",
+                              "children": {
+                                "13": {
+                                  "id": "13",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "ORI_Inclusion_Laezel"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {
+                                    "15": {
+                                      "id": "15",
+                                      "speaker": "Lae'zel",
+                                      "text": "Ghaik machinery. Cold as the Sea of Night, alien as time to the Astral Plane. Avert your eyes, close your mind.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "4": {
+                                          "id": "4",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "ORI_Inclusion_End_Laezel"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {
+                                            "12": {
+                                              "id": "12",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "7",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "20": {
+      "id": "20",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_Event_PurgePods"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "metadata": {
+    "synopsis": "Reaction to interrupting Krustine's blessing ceremony in the Colony Barracks. She is blessing three Skull Lashers, and approaching or interrupting will cause her to interrogate you.",
+    "how_to_trigger": "- Load up GustavDev/SCL_Main_A- Go to the Colony Barracks with \"goto 728 16 14\"- Let the Mistress of Souls finish blessing the Skull Lashers. Do not come too close or interfere.- Talk to Krustine, Mistress of Souls, after the blessing AD has finished.- If you attacked Ketheric on the Moonrise rooftop before coming to Colony, the Myrkulites will be hostile to you on sight."
+  },
+  "dialogue": {
+    "7": {
+      "id": "7",
+      "speaker": "Kressa Bonedaughter",
+      "text": "Halt. Who are you, pretty dead thing, that interrupts this consecration of the undying?",
+      "context": "",
+      "checkflags": [
+        "REALLY_ASTARION"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "17",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Kressa Bonedaughter",
+      "text": "Halt. Who are you, warm of blood and quick of heart, that interrupts this consecration of the undying?",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Apologies - I didn't mean to interrupt.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Kressa Bonedaughter",
+              "text": "And yet you did. Answer me - who are you?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "I am a True Soul.",
+          "context": "",
+          "checkflags": [
+            "ILLITHID_HIDDEN_CHECK"
+          ],
+          "setflags": [
+            "COL_Barracks_State_InterruptConvinced"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Kressa Bonedaughter",
+              "text": "The order to leave has been given, True Soul. Report to the ships and leave us be.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "I am unworthy of your notice - a nobody.",
+          "context": "InternalNodeContext: Non-bards. No advantage.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Kressa Bonedaughter",
+                  "text": "Tsk. A defective thrall that should have had its tongue removed.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "Kressa Bonedaughter",
+                      "text": "Return to Balthazar - he may be able to correct your defects.",
+                      "context": "",
+                      "checkflags": [
+                        "MOO_Necromancer_State_AtMoonrise"
+                      ],
+                      "setflags": [
+                        "COL_Barracks_Mistress_Knows_ThinksPlayerIsThrall",
+                        "COL_Barracks_State_InterruptConvinced"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "14": {
+                      "id": "14",
+                      "speaker": "Kressa Bonedaughter",
+                      "text": "We are preparing to leave. Make yourself useful below.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "COL_Barracks_Mistress_Knows_ThinksPlayerIsThrall",
+                        "COL_Barracks_State_InterruptConvinced"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "12": {
+              "id": "12",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "Kressa Bonedaughter",
+                  "text": "And yet I have noticed you, and I do not like what I see.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "Kressa Bonedaughter",
+                      "text": "Come - I will make better use of your bones than you do.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "Let's find out how 'undying' you really are.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Kressa Bonedaughter",
+              "text": "A defective thrall.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "2",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

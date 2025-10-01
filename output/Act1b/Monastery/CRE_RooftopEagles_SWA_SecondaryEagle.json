@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "synopsis": "A secondary eagle for the eagle checkpoint on the roof. He warns a player if they try to walk past the first one while another player character is in dialog with it.",
+    "how_to_trigger": "While another character is engaged in dialog with the main Eagle, walk towards the eagle nest at: 83; 37; 43."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Giant Eagle",
+      "text": "You can pass, but you're NOT to talk to me. Gross.",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_State_CheckpointPassed",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Giant Eagle",
+      "text": "*CAW!*",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_SecondaryEagle_HasMet",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "CRE_Eagles_State_Hostile"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Giant Eagle",
+      "text": "Mooooother! The plucked one! It speaks to me! Help!",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_SecondaryEagle_HasMet_SWA = False",
+        "PETPAL"
+      ],
+      "setflags": [
+        "CRE_Eagles_SecondaryEagle_HasMet_SWA"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "I'm not going to hurt you. I just wanted to say hello.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Giant Eagle",
+              "text": "What a terrible idea! Get away!",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "TeleportOutOfTrespass",
+                "CRE_Eagles_TeleportBackAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CRE_Eagles_State_Hostile",
+            "CRE_Eagles_State_CheckpointPassed = False"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TeleportOutOfTrespass",
+            "CRE_Eagles_TeleportBackAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Giant Eagle",
+      "text": "Ew! It smells, and it does weird noises! Make it stop!",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_SecondaryEagle_HasMet_SWA",
+        "CRE_Eagles_State_CheckpointPassed = False",
+        "PETPAL"
+      ],
+      "setflags": [
+        "CRE_Eagles_State_Hostile"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Narrator",
+      "text": "*The eagle screeches at you in warning and looks to the bigger bird for reassurance.*",
+      "context": "CinematicNodeContext: May require a custom animation to aid the acting beat",
+      "checkflags": [
+        "CRE_Eagles_SecondaryEagle_HasMet = False",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "CRE_Eagles_SecondaryEagle_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Giant Eagle",
+              "text": "*Screech!*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_Eagles_State_Hostile"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TeleportOutOfTrespass",
+            "CRE_Eagles_TeleportBackAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Narrator",
+      "text": "*The bird eyes you with suspicion, but doesn't attack.*",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_State_CheckpointPassed",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

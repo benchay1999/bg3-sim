@@ -1,0 +1,243 @@
+#!/usr/bin/env python3
+import json
+import os
+import re
+from typing import Dict, List, Tuple, Optional
+from tqdm import tqdm
+import random
+
+APPROVAL_DIR = "/nfs_edlab/wschay/bg3-approval-paths/approval-paths"
+QA_CONTEXTS_DIR_PRIMARY = "/home/wschay/bg3sim/qa-contexts-rag"
+QA_CONTEXTS_DIR_ALT = "/home/wschay/bg3sim/qa-context-rag"  # fallback if singular dir exists
+WORKSPACE_ROOT = "/home/wschay/bg3sim"
+OUTPUT_PATH = "/home/wschay/bg3sim/approval-dataset/approval_dataset.jsonl"
+
+
+ORIGIN_CANONICAL = {
+    "astarion": "Astarion",
+    "gale": "Gale",
+    "karlach": "Karlach",
+    "lae'zel": "Lae'zel",
+    "laezel": "Lae'zel",
+    "shadowheart": "Shadowheart",
+    "wyll": "Wyll",
+}
+
+
+APPROVAL_RE = re.compile(r"\[approval\]\s*(.+)")
+CONTEXT_HEADER_RE = re.compile(r"^Context:\s*$", re.IGNORECASE)
+SYNOPSIS_RE = re.compile(r"^Synopsis:\s*(.*)$", re.IGNORECASE)
+
+
+def read_text(path: str) -> List[str]:
+    with open(path, "r", encoding="utf-8") as f:
+        return [line.rstrip("\n") for line in f]
+
+
+def extract_context_from_file(lines: List[str]) -> str:
+    in_context = False
+    context_lines: List[str] = []
+    for line in lines:
+        if not in_context:
+            if CONTEXT_HEADER_RE.match(line):
+                in_context = True
+            continue
+        # Stop when we hit an empty line followed by a Path header or a Path header directly
+        if line.strip().startswith("Path "):
+            break
+        context_lines.append(line)
+
+    context = "\n".join([l for l in context_lines if l.strip() != ""]).strip()
+    if context:
+        return context
+
+    # Fallback: some files may not have explicit Context, try Synopsis
+    for line in lines:
+        m = SYNOPSIS_RE.match(line)
+        if m:
+            return m.group(1).strip()
+    return ""
+
+
+def to_context_json_path(approval_file_path: str) -> Optional[str]:
+    # Build relative path under approval-paths
+    try:
+        rel = os.path.relpath(approval_file_path, APPROVAL_DIR)
+    except Exception:
+        return None
+    # Remove suffix _approval_paths.txt and change extension to .json
+    base = os.path.splitext(rel)[0]
+    if base.endswith("_approval_paths"):
+        base = base[: -len("_approval_paths")]
+    candidate_primary = os.path.join(QA_CONTEXTS_DIR_PRIMARY, base + ".json")
+    if os.path.isfile(candidate_primary):
+        return candidate_primary
+    candidate_alt = os.path.join(QA_CONTEXTS_DIR_ALT, base + ".json")
+    if os.path.isfile(candidate_alt):
+        return candidate_alt
+    # Even if file is missing, return primary candidate path for stable referencing
+    return candidate_primary
+
+
+def compute_context_relpath(approval_file_path: str) -> str:
+    ctx_abs = to_context_json_path(approval_file_path)
+    if not ctx_abs:
+        return ""
+    try:
+        return os.path.relpath(ctx_abs, WORKSPACE_ROOT)
+    except Exception:
+        return ctx_abs
+
+
+def parse_approval_payload(payload: str) -> Dict[str, int]:
+    # payload example: "Gale 1, Shadowheart 1, Wyll 1, Karlach 1"
+    label: Dict[str, int] = {}
+    # split by comma
+    parts = [p.strip() for p in payload.split(",") if p.strip()]
+    for part in parts:
+        # Names can contain spaces or apostrophes; number at end
+        m = re.match(r"(.+?)\s+(-?\d+)$", part)
+        if not m:
+            continue
+        raw_name = m.group(1).strip()
+        try:
+            value = int(m.group(2))
+        except ValueError:
+            continue
+        key = raw_name.lower()
+        if key in ORIGIN_CANONICAL:
+            name = ORIGIN_CANONICAL[key]
+            label[name] = value
+    return label
+
+
+def normalize_convo_text(text: str) -> str:
+    # Normalize whitespace and <br> tags to newlines
+    text = text.replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
+    # Collapse multiple blank lines
+    lines = [ln.rstrip() for ln in text.split("\n")]
+    # Remove trailing extra whitespace, keep single blanks where intentional
+    while lines and lines[-1].strip() == "":
+        lines.pop()
+    return "\n".join(lines)
+
+
+def extract_paths(lines: List[str]) -> List[List[str]]:
+    # Split the file into path blocks starting with "Path X:"
+    paths: List[List[str]] = []
+    current: List[str] = []
+    in_paths = False
+    for line in lines:
+        if line.strip().startswith("Path ") and line.strip().endswith(":"):
+            in_paths = True
+            if current:
+                paths.append(current)
+                current = []
+            continue
+        if in_paths:
+            current.append(line)
+    if current:
+        paths.append(current)
+    return paths
+
+
+def build_conversation_and_label(path_lines: List[str]) -> Optional[Tuple[str, Dict[str, int]]]:
+    # We need to capture conversation up to the LAST approval in the path.
+    # Also, there can be other annotations like [context] or [description].
+    # We'll scan while tracking approval occurrences and their positions.
+    approval_positions: List[Tuple[int, Dict[str, int]]] = []
+    processed_lines: List[str] = []
+
+    for idx, raw in enumerate(path_lines):
+        line = raw
+        # Skip pure check-result metadata lines like ":: True" / ":: False"
+        if re.match(r"^\s*::\s*(True|False)\s*$", line):
+            continue
+
+        text_part = line
+        labels: Optional[Dict[str, int]] = None
+
+        if "||" in line:
+            left, right = line.split("||", 1)
+            text_part = left.rstrip()
+            appr_match = APPROVAL_RE.search(right)
+            if appr_match:
+                labels = parse_approval_payload(appr_match.group(1))
+        else:
+            # Look for approval even without explicit separator
+            appr_match_inline = APPROVAL_RE.search(line)
+            if appr_match_inline:
+                text_part = line[: appr_match_inline.start()].rstrip()
+                labels = parse_approval_payload(appr_match_inline.group(1))
+
+        processed_lines.append(text_part)
+
+        if labels:
+            approval_positions.append((len(processed_lines) - 1, labels))
+
+    if not approval_positions:
+        return None
+
+    # last approval wins
+    last_index, last_labels = approval_positions[-1]
+
+    # Construct conversation up to and including that line (but without any approval annotation)
+    convo_lines = processed_lines[: last_index + 1]
+
+    # Clean trailing/leading empties
+    convo = "\n".join([ln for ln in convo_lines if ln is not None])
+    convo = normalize_convo_text(convo)
+
+    return convo, last_labels
+
+
+def main() -> None:
+    all_samples: List[Dict] = []
+    # To deduplicate, use a set keyed by (context_rel_path, conversation)
+    seen_keys = set()
+
+    for root, dirs, files in os.walk(APPROVAL_DIR):
+        # Shuffle traversal order for directories and files to increase variety
+        random.shuffle(dirs)
+        random.shuffle(files)
+        
+        files = files[:100]
+        for fname in tqdm(files):
+            if not fname.endswith("_approval_paths.txt"):
+                continue
+            fpath = os.path.join(root, fname)
+            try:
+                lines = read_text(fpath)
+            except Exception:
+                continue
+            context_rel = compute_context_relpath(fpath)
+            paths = extract_paths(lines)
+            for path_lines in paths:
+                result = build_conversation_and_label(path_lines)
+                if not result:
+                    continue
+                conversation, label = result
+                if not label:
+                    continue
+                key = (context_rel, conversation)
+                if key in seen_keys:
+                    continue
+                seen_keys.add(key)
+                all_samples.append({
+                    "context": context_rel,
+                    "conversation": conversation,
+                    "label": label,
+                })
+
+        os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+        with open(OUTPUT_PATH, "w", encoding="utf-8") as out:
+            for sample in all_samples:
+                out.write(json.dumps(sample, ensure_ascii=False) + "\n")
+
+    print(f"Wrote {len(all_samples)} samples to {OUTPUT_PATH}")
+
+
+if __name__ == "__main__":
+    main()
+
+

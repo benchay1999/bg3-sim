@@ -1,0 +1,2102 @@
+{
+  "metadata": {
+    "synopsis": "After the lanceboard game (HAV_MolsDeal_Lanceboard_ThreeWay.lsj), Mol will slink off away from Raphael and can be spoken to alone to discuss his deal. This dialogue can happen as long as the inn has not been attacked yet.After the game with Raphael, Mol can be found in a corner by a dusty shelf, where she's shoved the lanceboard. She clearly stole a piece from the set, fiddling with it as the player approaches.",
+    "how_to_trigger": "- Load SCL_Main_A- Talk to Mol and Raphael at the lanceboard (-61, 132)- Find Mol at the bar (-72, 143)- Click to talk to her"
+  },
+  "dialogue": {
+    "82": {
+      "id": "82",
+      "speaker": "Mol",
+      "text": "Wonder if I could con some gold off that cleric.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "99": {
+      "id": "99",
+      "speaker": "Mol",
+      "text": "Should've trusted my gut instead of asking for help.",
+      "context": "CinematicNodeContext: Mol is fiddling with a piece of the lanceboard set. She pockets it behind her back before talking to the player.\rNodeContext: Disappointed.",
+      "checkflags": [
+        "HAV_MolsDeal_HasMet_Mol = False",
+        "HAV_MolsDeal_State_LostGame"
+      ],
+      "setflags": [
+        "HAV_MolsDeal_HasMet_Mol",
+        "DEN_Thieflings_HasMet_Mol",
+        "HAV_MolsDeal_Event_Confronted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "86",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "29": {
+          "id": "29",
+          "speaker": "Mol",
+          "text": "Nothin' personal.",
+          "context": "CinematicNodeContext: grimaces before the line.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "105",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "101": {
+      "id": "101",
+      "speaker": "Mol",
+      "text": "Nice strategy back there.",
+      "context": "CinematicNodeContext: Mol is fiddling with a piece of the lanceboard set. She pockets it behind her back before talking to the player, smiling\rNodeContext: Very pleased.",
+      "checkflags": [
+        "HAV_MolsDeal_HasMet_Mol = False",
+        "HAV_MolsDeal_State_WonGame"
+      ],
+      "setflags": [
+        "HAV_MolsDeal_HasMet_Mol",
+        "DEN_Thieflings_HasMet_Mol",
+        "HAV_MolsDeal_Event_Confronted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "86",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "105": {
+          "id": "105",
+          "speaker": "Mol",
+          "text": "If we put our heads together, I bet you and me could make a tidy stack of coin in Baldur's Gate.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "86",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "112": {
+              "id": "112",
+              "speaker": "Mol",
+              "text": "But Raphael's offered me a partnership already, and it seems like a sweeter deal than throwing my lot in with you.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "86",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_Karlach"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "86",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "88": {
+                      "id": "88",
+                      "speaker": "Karlach",
+                      "text": "No, kid. No.",
+                      "context": "NodeContext: Subtext is thinking about herself. She's advising a kid not to deal with a devil. It's a quiet convo so not to dramatic, but very sincere on Karlach's part.",
+                      "checkflags": [],
+                      "setflags": [
+                        "HAV_MolsDeal_Event_KarlachPresentInFollowUp"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "86",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "67": {
+                          "id": "67",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "ORI_Inclusion_End_Karlach"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "86",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {
+                            "87": {
+                              "id": "87",
+                              "speaker": "Player",
+                              "text": "Make a deal with a devil, little one. Once you fall, you'll never look back.",
+                              "context": "",
+                              "checkflags": [
+                                "REALLY_DARK_URGE"
+                              ],
+                              "setflags": [
+                                "HAV_MolsDeal_Event_EncouragedDeal"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "86",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "76": {
+                                  "id": "76",
+                                  "speaker": "Mol",
+                                  "text": "Hey! I'm not so little! Grown-up enough to have grown up ages ago.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "65": {
+                                      "id": "65",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "4",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "52": {
+                              "id": "52",
+                              "speaker": "Player",
+                              "text": "Though it can be near-impossible to stay on the good path, you have to try. We all have to try.",
+                              "context": "",
+                              "checkflags": [
+                                "REALLY_DARK_URGE"
+                              ],
+                              "setflags": [
+                                "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "86",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "51": {
+                                  "id": "51",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "57",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "116": {
+                              "id": "116",
+                              "speaker": "Player",
+                              "text": "You need to stay away from Raphael. His deals are poison.",
+                              "context": "",
+                              "checkflags": [
+                                "MONK = False"
+                              ],
+                              "setflags": [
+                                "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "86",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "13": {
+                              "id": "13",
+                              "speaker": "Player",
+                              "text": "Like a prick from a scorpion, Raphael's deals seem innocuous, but they are poison.",
+                              "context": "",
+                              "checkflags": [
+                                "MONK"
+                              ],
+                              "setflags": [
+                                "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "47",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "86": {
+                                  "id": "86",
+                                  "speaker": "Mol",
+                                  "text": "Poison. Sure.",
+                                  "context": "CinematicNodeContext: She frowns",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "47",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "5": {
+                                      "id": "5",
+                                      "speaker": "Mol",
+                                      "text": "You must love the taste of it. He seems to know you pretty well.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "47",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "57": {
+                                          "id": "57",
+                                          "speaker": "Player",
+                                          "text": "I know him well enough to know he's a trickster.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "47",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "47": {
+                                              "id": "47",
+                                              "speaker": "Mol",
+                                              "text": "Whatever. I'm tired of taking orders from people who think they know better than me.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "DEN_AttackOnDen_State_DenVictory = False",
+                                                "GOB_State_LeadersAreDead = False"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "47",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "39": {
+                                                  "id": "39",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "106",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "64": {
+                                              "id": "64",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [
+                                                "DEN_TieflingLeader_State_PermaDefeated"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "47",
+                                              "is_end": false,
+                                              "node_type": "alias",
+                                              "children": {
+                                                "60": {
+                                                  "id": "60",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "81",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "59": {
+                                              "id": "59",
+                                              "speaker": "Mol",
+                                              "text": "Do as I say, not as I do, right? Got a lot of that from Zev too, and he was a walking pile of imp shite at the end of the day.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "38": {
+                                                  "id": "38",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "8",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "74": {
+                                          "id": "74",
+                                          "speaker": "Player",
+                                          "text": "I haven't made any kind of deal with him. He's just trying to tempt me.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "66": {
+                                              "id": "66",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "8",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "50": {
+                                          "id": "50",
+                                          "speaker": "Player",
+                                          "text": "My problems are more urgent than yours - I have to deal with him.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "94": {
+                                              "id": "94",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "80",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "95": {
+                                          "id": "95",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "43",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "22": {
+                              "id": "22",
+                              "speaker": "Player",
+                              "text": "What exactly did he offer you?",
+                              "context": "",
+                              "checkflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "107",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "32": {
+                                  "id": "32",
+                                  "speaker": "Mol",
+                                  "text": "Protection for me and my kids. That's all.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "107",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "20": {
+                                      "id": "20",
+                                      "speaker": "Player",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "107",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "70": {
+                                          "id": "70",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "107",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "37": {
+                                              "id": "37",
+                                              "speaker": "Narrator",
+                                              "text": "*Her smile is broad, her eyes twinkling, her face the very picture of innocence. She's clearly lying.*",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "107",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "31": {
+                                                  "id": "31",
+                                                  "speaker": "Mol",
+                                                  "text": "But I haven't accepted nothing yet. Sounds like you're in deeper than I am.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "107",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "75": {
+                                                      "id": "75",
+                                                      "speaker": "Player",
+                                                      "text": "Raphael's dangerous, Mol. What did he really offer you?",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "CLERIC = False",
+                                                        "RANGER = False",
+                                                        "BARD = False"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "107",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "72": {
+                                                          "id": "72",
+                                                          "speaker": "",
+                                                          "text": "True",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "107",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "27": {
+                                                              "id": "27",
+                                                              "speaker": "Mol",
+                                                              "text": "What I said! That he'd get me and my gang safely to Baldur's Gate.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "107",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "19": {
+                                                                  "id": "19",
+                                                                  "speaker": "Mol",
+                                                                  "text": "And also... when we get there, I'd be head of the Thieves' Guild.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "107",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "15": {
+                                                                      "id": "15",
+                                                                      "speaker": "Player",
+                                                                      "text": "Trust me, it might sound good but it's not worth it.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [
+                                                                        "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                                                                      ],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "107",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "117": {
+                                                                          "id": "117",
+                                                                          "speaker": "Mol",
+                                                                          "text": "Easy for you to say - you can do what you want, go where you want. My kids need protecting, and I'm going to protect 'em.",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "107",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "56": {
+                                                                      "id": "56",
+                                                                      "speaker": "Player",
+                                                                      "text": "And what happens to the current head of the Guild?",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "107",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "71": {
+                                                                          "id": "71",
+                                                                          "speaker": "Mol",
+                                                                          "text": "I dunno, devil stuff? What matters is I can keep my kids safe. Everyone else's let them down, but I won't.",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "107",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "102": {
+                                                                      "id": "102",
+                                                                      "speaker": "Player",
+                                                                      "text": "Ha! Ambitious - I like it.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [
+                                                                        "HAV_MolsDeal_Event_EncouragedDeal"
+                                                                      ],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "93": {
+                                                                          "id": "93",
+                                                                          "speaker": "",
+                                                                          "text": "",
+                                                                          "context": "",
+                                                                          "checkflags": [
+                                                                            "PALADIN"
+                                                                          ],
+                                                                          "setflags": [
+                                                                            "GLO_PaladinOathbreaker_Event_BrokeOath"
+                                                                          ],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "taganswer",
+                                                                          "children": {
+                                                                            "63": {
+                                                                              "id": "63",
+                                                                              "speaker": "Mol",
+                                                                              "text": "I had the grove running pretty smooth, I'll do the same in Baldur's Gate. And I can keep the kids safe.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "107": {
+                                                                                  "id": "107",
+                                                                                  "speaker": "",
+                                                                                  "text": "",
+                                                                                  "context": "",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "97",
+                                                                                  "link": "",
+                                                                                  "is_end": false,
+                                                                                  "node_type": "jump",
+                                                                                  "children": {}
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "68": {
+                                                          "id": "68",
+                                                          "speaker": "",
+                                                          "text": "False",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "27",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "110": {
+                                                              "id": "110",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "27",
+                                                              "is_end": false,
+                                                              "node_type": "alias",
+                                                              "children": {
+                                                                "97": {
+                                                                  "id": "97",
+                                                                  "speaker": "Mol",
+                                                                  "text": "Everyone they turned to let my kids down - the druids, Zevlor, everyone. Now it's my job to keep 'em safe, and I'm gonna do it right.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "100",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "90": {
+                                                      "id": "90",
+                                                      "speaker": "Player",
+                                                      "text": "I haven't made a deal. He's just trying to tempt me.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "106",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "8": {
+                                                          "id": "8",
+                                                          "speaker": "Mol",
+                                                          "text": "Looked like he was doin' a pretty good job. If I had to deal with gods and worms in my head, I'd make a deal with anyone.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "106",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "100": {
+                                                              "id": "100",
+                                                              "speaker": "Mol",
+                                                              "text": "Not like we have anyone in charge now. Zev's dead.",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "DEN_TieflingLeader_State_PermaDefeated"
+                                                              ],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "106",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            },
+                                                            "6": {
+                                                              "id": "6",
+                                                              "speaker": "Mol",
+                                                              "text": "Look, you saved us. Not knockin' that. But after you left, Zevlor lost his nerve - gave up the fight. I won't.",
+                                                              "context": "CinematicNodeContext: Mol's expression turns grim.",
+                                                              "checkflags": [
+                                                                "DEN_AttackOnDen_State_DenVictory",
+                                                                "GOB_State_LeadersAreDead"
+                                                              ],
+                                                              "setflags": [
+                                                                "COL_FindZevlor_Knows_MissingHav"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "106",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "106": {
+                                                                  "id": "106",
+                                                                  "speaker": "Mol",
+                                                                  "text": "You could have helped us. With the goblins, with the druids. But you saved your own skin.",
+                                                                  "context": "",
+                                                                  "checkflags": [
+                                                                    "DEN_AttackOnDen_State_DenVictory = False",
+                                                                    "GOB_State_LeadersAreDead = False"
+                                                                  ],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "89": {
+                                                                      "id": "89",
+                                                                      "speaker": "Mol",
+                                                                      "text": "I get looking out for number one - respect it, even. So if I make a deal, you can be damn sure it's what's best for me and my crew.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": true,
+                                                                      "node_type": "normal",
+                                                                      "children": {}
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "81": {
+                                                                  "id": "81",
+                                                                  "speaker": "Mol",
+                                                                  "text": "Now there's no grove, no coin, no one taking us to the city. I'm not letting my crew get eaten by shadows.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "104": {
+                                                                      "id": "104",
+                                                                      "speaker": "Mol",
+                                                                      "text": "Maybe I'll make a deal, maybe I won't. But it'll be my choice - not the devil's and not yours.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": true,
+                                                                      "node_type": "normal",
+                                                                      "children": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "46": {
+                                                              "id": "46",
+                                                              "speaker": "Mol",
+                                                              "text": "Zevlor couldn't save everyone - it's my job to look after those who survived.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "106",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "62": {
+                                                      "id": "62",
+                                                      "speaker": "Player",
+                                                      "text": "My problems are a lot more pressing than yours.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "77",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "80": {
+                                                          "id": "80",
+                                                          "speaker": "Mol",
+                                                          "text": "Yeah, I bet. What kind of problems could someone like me have? You hero types are all the same.",
+                                                          "context": "NodeContext: She scoffs before saying \"You hero types are all the same.\"",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "77",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    },
+                                                    "58": {
+                                                      "id": "58",
+                                                      "speaker": "Player",
+                                                      "text": "I can read you like a book, Mol - call it hunter's instincts. Now tell me, what did he really offer?",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "RANGER"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "41",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "69": {
+                                                          "id": "69",
+                                                          "speaker": "",
+                                                          "text": "",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "96",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "jump",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    },
+                                                    "9": {
+                                                      "id": "9",
+                                                      "speaker": "Player",
+                                                      "text": "This isn't about me, it's about your soul. What did he really offer?<br>",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "CLERIC"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "27",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "41": {
+                                                          "id": "41",
+                                                          "speaker": "",
+                                                          "text": "False",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "27",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "113": {
+                                                              "id": "113",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "27",
+                                                              "is_end": false,
+                                                              "node_type": "alias",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        },
+                                                        "96": {
+                                                          "id": "96",
+                                                          "speaker": "",
+                                                          "text": "True",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "14": {
+                                                              "id": "14",
+                                                              "speaker": "Mol",
+                                                              "text": "He said he could get me and my gang get to Baldur's Gate. I reckon he can do it too - don't care what your 'lore' says.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "23": {
+                                                                  "id": "23",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "19",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "jump",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "83": {
+                                                      "id": "83",
+                                                      "speaker": "Player",
+                                                      "text": "Devils of lore don't deal in such low stakes, Mol. What'd he really offer?<br>",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "BARD"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "96",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "109": {
+                                                          "id": "109",
+                                                          "speaker": "",
+                                                          "text": "False",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "14",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "18": {
+                                                              "id": "18",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "14",
+                                                              "is_end": false,
+                                                              "node_type": "alias",
+                                                              "children": {
+                                                                "78": {
+                                                                  "id": "78",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "97",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "jump",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "43": {
+                                                      "id": "43",
+                                                      "speaker": "Player",
+                                                      "text": "Leave.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "115": {
+                                          "id": "115",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "114": {
+                                              "id": "114",
+                                              "speaker": "Mol",
+                                              "text": "Not that it's any of your business - I'm not poking my nose into whatever trade you made with him.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "108": {
+                                                  "id": "108",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "90",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                },
+                                                "84": {
+                                                  "id": "84",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "62",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                },
+                                                "49": {
+                                                  "id": "49",
+                                                  "speaker": "Player",
+                                                  "text": "I'm not judging, Mol. Only curious about the details.",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "BARD = False"
+                                                  ],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "42": {
+                                                      "id": "42",
+                                                      "speaker": "Mol",
+                                                      "text": "Safe passage to Baldur's Gate. Safe from everyone, like Zev was supposed to do.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "77": {
+                                                          "id": "77",
+                                                          "speaker": "",
+                                                          "text": "",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "8",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "jump",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "24": {
+                                                  "id": "24",
+                                                  "speaker": "Player",
+                                                  "text": "Simply professional curiosity, Mol. Devils of lore don't usually deal in such low stakes.",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "BARD"
+                                                  ],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "28": {
+                                                      "id": "28",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "96",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    },
+                                                    "73": {
+                                                      "id": "73",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "109",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                },
+                                                "53": {
+                                                  "id": "53",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "43",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "16": {
+                              "id": "16",
+                              "speaker": "Player",
+                              "text": "If Raphael offered you a good trade, you should take it.",
+                              "context": "",
+                              "checkflags": [
+                                "ROGUE = False"
+                              ],
+                              "setflags": [
+                                "HAV_MolsDeal_Event_EncouragedDeal"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "93",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "2": {
+                                  "id": "2",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [
+                                    "PALADIN"
+                                  ],
+                                  "setflags": [
+                                    "GLO_PaladinOathbreaker_Event_BrokeOath"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "93",
+                                  "is_end": false,
+                                  "node_type": "alias",
+                                  "children": {
+                                    "26": {
+                                      "id": "26",
+                                      "speaker": "Mol",
+                                      "text": "No idea if it's good or not. A lot of people like to promise pretty things, but it's empty air.",
+                                      "context": "CinematicNodeContext: Mol shrugs.",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "4": {
+                                          "id": "4",
+                                          "speaker": "Mol",
+                                          "text": "Did he deal with you straight? Heard you two talking.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "48": {
+                                              "id": "48",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "90",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            },
+                                            "111": {
+                                              "id": "111",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "62",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            },
+                                            "33": {
+                                              "id": "33",
+                                              "speaker": "Player",
+                                              "text": "I'm holding out. Better to make him a little desperate.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "85": {
+                                                  "id": "85",
+                                                  "speaker": "Mol",
+                                                  "text": "Yeah, that's the way to go. His lanceboard trick was meant to soften me up, but I know better.",
+                                                  "context": "CinematicNodeContext: She smirks.",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "34": {
+                                                      "id": "34",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "8",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "45": {
+                                              "id": "45",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "43",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "30": {
+                              "id": "30",
+                              "speaker": "Player",
+                              "text": "Take the deal if you want, kid. But a word of advice - let him get a little desperate first.",
+                              "context": "",
+                              "checkflags": [
+                                "ROGUE"
+                              ],
+                              "setflags": [
+                                "HAV_MolsDeal_Event_EncouragedDeal"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "93",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "3": {
+                                  "id": "3",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [
+                                    "PALADIN"
+                                  ],
+                                  "setflags": [
+                                    "GLO_PaladinOathbreaker_Event_BrokeOath"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "93",
+                                  "is_end": false,
+                                  "node_type": "alias",
+                                  "children": {
+                                    "91": {
+                                      "id": "91",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "85",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "10": {
+                              "id": "10",
+                              "speaker": "Player",
+                              "text": "Our kind have enough trouble with devils. You should stay away from this one.",
+                              "context": "",
+                              "checkflags": [
+                                "TIEFLING"
+                              ],
+                              "setflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil",
+                                "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "54": {
+                                  "id": "54",
+                                  "speaker": "Mol",
+                                  "text": "If our kind looked out for one another, we wouldn't need to deal with devils.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "79": {
+                              "id": "79",
+                              "speaker": "Player",
+                              "text": "Raphael is a real, literal devil. You and your soul are in danger, Mol.",
+                              "context": "",
+                              "checkflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil = False",
+                                "CLERIC = False",
+                                "SORCERER = False",
+                                "WARLOCK = False",
+                                "WIZARD = False"
+                              ],
+                              "setflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil",
+                                "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "0": {
+                              "id": "0",
+                              "speaker": "Player",
+                              "text": "Raphael is a real, literal devil. These creatures care not for you - only your soul.",
+                              "context": "",
+                              "checkflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil = False",
+                                "CLERIC",
+                                "WARLOCK = False"
+                              ],
+                              "setflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil",
+                                "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "25": {
+                                  "id": "25",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "35": {
+                                      "id": "35",
+                                      "speaker": "Mol",
+                                      "text": "You... you aren't joking? Huh. I kind of believe him more now than I did a minute ago.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "44": {
+                                  "id": "44",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "17": {
+                                      "id": "17",
+                                      "speaker": "Mol",
+                                      "text": "Whatever. My soul's not gonna matter if we get eaten by shadow freaks.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "98": {
+                              "id": "98",
+                              "speaker": "Player",
+                              "text": "Do you not hear it? The power of the Nine Hells, woven in his every word? He is a devil who wishes for your very soul.",
+                              "context": "",
+                              "checkflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil = False",
+                                "WARLOCK = False"
+                              ],
+                              "setflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil",
+                                "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                              ],
+                              "ruletags": [
+                                "SORCERER",
+                                "WIZARD"
+                              ],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "25",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "55": {
+                              "id": "55",
+                              "speaker": "Player",
+                              "text": "You need to believe in yourself, Mol. Not the empty promises of a fork-tongued monster.",
+                              "context": "",
+                              "checkflags": [
+                                "PALADIN"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "Mol",
+                                  "text": "Zevlor had belief - didn't get him anywhere good. Besides, Raphael wasn't promising anything stupid.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "61": {
+                                      "id": "61",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "32",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "103": {
+                              "id": "103",
+                              "speaker": "Player",
+                              "text": "One should consider all options before forming a battle strategy - not just the easiest deal.",
+                              "context": "",
+                              "checkflags": [
+                                "FIGHTER"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "92": {
+                                  "id": "92",
+                                  "speaker": "Mol",
+                                  "text": "There aren't any other options, soldier. Raphael said he could keep me and my kids safe, and that's that.",
+                                  "context": "NodeContext: solider said with maximum sarcasm",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "40": {
+                                      "id": "40",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "20",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "7": {
+                              "id": "7",
+                              "speaker": "Player",
+                              "text": "I swore a pact with a creature like Raphael once. He's a devil, Mol. Be cautious.",
+                              "context": "",
+                              "checkflags": [
+                                "WARLOCK"
+                              ],
+                              "setflags": [
+                                "f908976f-ef66-a83b-7960-49ea44efd9e5_HAV_MolsDeal_LancerBoard_ThreeWay_ToldDevil",
+                                "HAV_MolsDeal_Event_WarnedAboutRaphael"
+                              ],
+                              "ruletags": [
+                                "WARLOCK_FIEND"
+                              ],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "11": {
+                                  "id": "11",
+                                  "speaker": "Mol",
+                                  "text": "So what if Raphael's a devil? Means he's got the power to keep his promise.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "36": {
+                                      "id": "36",
+                                      "speaker": "Mol",
+                                      "text": "Also - bit rich for you to tell me who I can or can't make deals with. All things considered.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

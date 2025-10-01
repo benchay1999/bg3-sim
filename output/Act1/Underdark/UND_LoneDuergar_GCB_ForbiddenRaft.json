@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "synopsis": "A henchman of Gekh Coal, a duergar follower of the Absolute, stops the player when he sees them interacting with a raft that'll let them progress across a lake and beyond his reach. If they haven't yet fulfilled their promise to help him, he warns them to leave the raft alone.",
+    "how_to_trigger": "Click on Garmor or use the Raft while it is still marked as owned"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Novice Garmor",
+      "text": "What're you playing at?",
+      "context": "",
+      "checkflags": [
+        "UND_LoneDuergar_State_TouchedRaft = False"
+      ],
+      "setflags": [
+        "UND_LoneDuergar_State_TouchedRaft"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "I've got a pair of boots to return.",
+          "context": "",
+          "checkflags": [
+            "UND_LoneDuergar_Quest_AttackMyconids",
+            "UND_InjuredGnome_State_HasBoots"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Novice Garmor",
+              "text": "Could've told me that before. Go ahead.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "UND_LoneDuergar_Quest_ReadyToLeave"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "No harm intended. Just looking.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Novice Garmor",
+              "text": "Well you've looked. Now keep away from that raft until I say otherwise.",
+              "context": "",
+              "checkflags": [
+                "UND_LoneDuergar_Quest_AttackMyconids"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Novice Garmor",
+              "text": "Speak for yourself - I've got plenty of harm intended.",
+              "context": "NodeContext: Aggressive. (combat ensues).",
+              "checkflags": [],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Novice Garmor",
+      "text": "Saw you, making off with our boat. You should've stayed away, sun-scum.",
+      "context": "NodeContext: Confrontational, believing the player stole the duergar's boat. Combat ensues afterwards",
+      "checkflags": [
+        "UND_LoneDuergar_State_StoleRaft"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Novice Garmor",
+      "text": "Gekh does the talking around here - bother him.",
+      "context": "",
+      "checkflags": [
+        "GEB_State_CrimeDialog = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "12",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Novice Garmor",
+      "text": "Told you to keep away from there, didn't I?",
+      "context": "",
+      "checkflags": [
+        "UND_LoneDuergar_State_TouchedRaft",
+        "UND_LoneDuergar_Quest_AttackMyconids",
+        "UND_InjuredGnome_State_HasBoots"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "13": {
+          "id": "13",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "12",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_LoneDuergar_State_TouchedRaft"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

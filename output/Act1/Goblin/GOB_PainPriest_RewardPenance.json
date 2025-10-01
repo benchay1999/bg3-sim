@@ -1,0 +1,384 @@
+{
+  "metadata": {
+    "synopsis": "Father Abdirak is a follower of Loviatar, a goddess that thrives on inflicting pain on others. He is indulging in some private 'worship' (self flagellation). He offers to help alleviate the player's pain by giving them 'penance' - i.e, beating them. \nLoviatar = loh-VEE-a-tar. He is a young and charismatic preacher with a threatening and creepy edge.",
+    "how_to_trigger": "oe debugbook > Go to region > GOB > To Abdirak the Pain Priestgod onroll amazingtrigger penance dialog and do not chose to leavedialog will automatically trigger after 3 hits"
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Abdirak",
+      "text": "Sweet child. While I enjoyed that, I'm afraid your reaction was... lacking.",
+      "context": "NodeContext: Voice low and intimate. Player did penance but did not react correctly. He regrets that the player does not get a reward (but he had a great time, which is all he really cares abotu)",
+      "checkflags": [],
+      "setflags": [
+        "GOB_PainPriest_State_WasPenitent",
+        "GOB_PainPriest_State_Penitent = False",
+        "GOB_PainPriest_State_CancelledPenitent = False",
+        "GOB_PainPriest_State_ReactedToPenance"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Abdirak",
+          "text": "To gain Loviatar's favour, every single strike should be met with an honest cry of pain - or perhaps a touch of begging.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "16": {
+              "id": "16",
+              "speaker": "Abdirak",
+              "text": "Nevertheless, thank you. And I pray you've learned from today's little... lesson.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Abdirak",
+      "text": "Sweet child, you bore the pain like a true believer.",
+      "context": "InternalNodeContext: BadReaction isn't set, therefore all reactions were good!\rNodeContext: Penance is finished. He's a little breathless after beating the player near senseless. Voice is low and intimate.",
+      "checkflags": [
+        "GOB_PainPriest_Event_SecondHitDone",
+        "GOB_PainPriest_Event_BadReaction = False",
+        "GOB_PainPriest_Event_FirstHitDone"
+      ],
+      "setflags": [
+        "GOB_PainPriest_State_WasPenitent",
+        "GOB_PainPriest_State_Penitent = False",
+        "GOB_PainPriest_State_CancelledPenitent = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Abdirak",
+          "text": "I could feel Loviatar's pleasure with every sting of my scourge.",
+          "context": "NodeContext: Ibid.",
+          "checkflags": [
+            "GOB_PainPriest_Event_PickScourge"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Abdirak",
+          "text": "I could feel Loviatar's pleasure with every slice of my dagger.",
+          "context": "",
+          "checkflags": [
+            "GOB_PainPriest_Event_PickPiercing"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Abdirak",
+          "text": "I could feel Loviatar's pleasure with every swing of my axe.",
+          "context": "",
+          "checkflags": [
+            "GOB_PainPriest_Event_PickSlashing"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "11",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Abdirak",
+              "text": "I am proud to have served you this penance.",
+              "context": "NodeContext: Got his breath back a little. Voice is low and intimate.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Player",
+                  "text": "Thank you. I enjoyed myself.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "11",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "Abdirak",
+                      "text": "As did I, dear one.",
+                      "context": "NodeContext: voice low and intimate, as if speaking to a lover.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "11",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "14": {
+                  "id": "14",
+                  "speaker": "Player",
+                  "text": "It was an... interesting experience.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "11",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "Abdirak",
+                      "text": "Interesting is an understatement, dear one.",
+                      "context": "NodeContext: voice low and intimate, as if speaking to a lover.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "11",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "20": {
+                  "id": "20",
+                  "speaker": "Player",
+                  "text": "I asked you for mercy!",
+                  "context": "",
+                  "checkflags": [
+                    "GOB_PainPriest_Event_MercyTwice"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "11",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Abdirak",
+                      "text": "I know, dear one. That was my favourite part. <br>",
+                      "context": "NodeContext: Player has told him that they had begged for mercy during the penance. Smile on Abdirak's face as he recalls that moment.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "11",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "13": {
+                  "id": "13",
+                  "speaker": "Player",
+                  "text": "You could have hit me much harder.",
+                  "context": "",
+                  "checkflags": [
+                    "GOB_PainPriest_Event_HarderTwice"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "11",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "10": {
+                      "id": "10",
+                      "speaker": "Abdirak",
+                      "text": "You're starting to sound like the goddess herself, dear one.",
+                      "context": "NodeContext: Voice intimate and filled with admiration.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "11",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "9": {
+                  "id": "9",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "1": {
+                      "id": "1",
+                      "speaker": "Abdirak",
+                      "text": "Wait, penitent one.",
+                      "context": "NodeContext: Voice intimate and filled with admiration.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "11": {
+                          "id": "11",
+                          "speaker": "Abdirak",
+                          "text": "Loviatar herself found your performance... inspiring. She has deemed you worthy of her blessing.",
+                          "context": "NodeContext: Voice intimate and filled with admiration. His goddess has chosen to bless the player - a sacred gift.",
+                          "checkflags": [],
+                          "setflags": [
+                            "GOB_PainPriest_State_ReactedToPenance",
+                            "GOB_PainPriest_Event_Reward",
+                            "GOB_PainPriest_Penanced"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "2": {
+                              "id": "2",
+                              "speaker": "",
+                              "text": "",
+                              "context": "CinematicNodeContext: This can be anything - for reaching a hand out and gently passing it over the player to holding both hands out and closing his eyes in concentration as he passes on the blessing. As long as it is something that indicates that a spell/blessing is happening, it can be anything. \rNodeContext: Not voiced",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "tagcinematic",
+                              "children": {
+                                "15": {
+                                  "id": "15",
+                                  "speaker": "Abdirak",
+                                  "text": "And on a personal note, thank you. That was positively divine.",
+                                  "context": "NodeContext: This is a low, sultry. Almost whispered in the player's ear. Sexy and intimate. But also creepy as all hell.",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "synopsis": "Non-critpath. Occurs when the player is trying to smuggle the goblin out of the Druid Grove."
+  },
+  "dialogue": {
+    "11": {
+      "id": "11",
+      "speaker": "Narrator",
+      "text": "*Your rescue attempt has been noticed. Choose your next move carefully.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Before he left, Halsin told me to set this goblin free.",
+          "context": "",
+          "checkflags": [
+            "GLO_Halsin_Knows_IsMissing"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "2",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Anyone who wants to hurt Sazza will face me first.",
+          "context": "",
+          "checkflags": [
+            "BARBARIAN = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Narrator",
+                  "text": "*You are persuasive enough. You, and the goblin, are free to go.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "12": {
+              "id": "12",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "Narrator",
+                  "text": "*Your words are futile. The goblin will not be allowed to leave. Neither will you.*",
+                  "context": "NodeContext: threatening",
+                  "checkflags": [],
+                  "setflags": [
+                    "TemporaryHostilityAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "STAND DOWN. OR I BREAK YOU.",
+          "context": "",
+          "checkflags": [
+            "BARBARIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Quiet. She's going to help me destroy her old camp.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "2",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Hand the goblin over.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "DEN_CapturedGoblin_Event_GoblinBetrayed",
+            "DEN_CapturedGoblin_Event_LeftGoblin"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Attack the goblin.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "DEN_CapturedGoblin_Event_GoblinBetrayed"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

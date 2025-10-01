@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "synopsis": "Player discovers a merregon's mask. Note: It is only ever player 1 talking, so you can be linear!Merregons are infernal warriors that wear metallic masks that are screwed to their faces and only come off after death.",
+    "how_to_trigger": "Pick up one of the Merregon Masks in Ketheric City"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Player",
+      "text": "Another mask.",
+      "context": "",
+      "checkflags": [
+        "2b9ceec6-d423-81dd-9196-6cf3eab1762b_B"
+      ],
+      "setflags": [
+        "2b9ceec6-d423-81dd-9196-6cf3eab1762b_C"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "8",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Player",
+      "text": "Curious mask. What's it doing here?",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "2b9ceec6-d423-81dd-9196-6cf3eab1762b_A"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "I recognise this. A merregon wore it. But they won't fight without a commander...",
+          "context": "",
+          "checkflags": [
+            "UND_MerregonMask_Knows_Merregon",
+            "UND_MerregonMask_Knows_Commander = False",
+            "UND_MerregonMask_Event_ArcanaSuccess"
+          ],
+          "setflags": [
+            "UND_MerregonMask_Knows_Commander",
+            "UND_DarkJusticiars_Quest_FoundFiends"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "The merregons' leader might still be around here.",
+          "context": "",
+          "checkflags": [
+            "UND_MerregonMask_Knows_Commander",
+            "UND_MerregonMask_Knows_CommanderAlive = False"
+          ],
+          "setflags": [
+            "UND_MerregonMask_State_FinishedAllComments",
+            "UND_MerregonMask_Knows_CommanderAlive"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "The more I find, the more curious I get.",
+          "context": "",
+          "checkflags": [
+            "2b9ceec6-d423-81dd-9196-6cf3eab1762b_C"
+          ],
+          "setflags": [
+            "UND_MerregonMask_State_FinishedAllComments"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Heavier than it looks. Wouldn't be very comfortable.",
+          "context": "",
+          "checkflags": [
+            "2b9ceec6-d423-81dd-9196-6cf3eab1762b_B"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "This belonged to a merregon - one of Hell's footsoldiers. Their corpses dissolve when they die.",
+          "context": "",
+          "checkflags": [
+            "UND_MerregonMask_Event_ArcanaSuccess",
+            "DEBUG"
+          ],
+          "setflags": [
+            "UND_MerregonMask_Knows_Merregon",
+            "UND_DarkJusticiars_Quest_FoundFiends"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "This belonged to a merregon - one of Hell's footsoldiers.",
+          "context": "",
+          "checkflags": [
+            "UND_MerregonMask_Event_ArcanaSuccess"
+          ],
+          "setflags": [
+            "UND_MerregonMask_Knows_Merregon",
+            "UND_DarkJusticiars_Quest_FoundFiends"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "I've never seen anything like it.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Player",
+      "text": "Another mask.",
+      "context": "",
+      "checkflags": [
+        "2b9ceec6-d423-81dd-9196-6cf3eab1762b_A"
+      ],
+      "setflags": [
+        "2b9ceec6-d423-81dd-9196-6cf3eab1762b_B"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

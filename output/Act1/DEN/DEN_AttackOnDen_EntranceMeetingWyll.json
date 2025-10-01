@@ -1,0 +1,409 @@
+{
+  "metadata": {
+    "synopsis": "Player returns to den after letting Wyll return beforehand. NOTE: A NARRATOR NODE IS REQUIRED IN THE FIRST NODE BECAUSE IT IS A SPEAKER SELECTION WITH A CINEMATIC.",
+    "how_to_trigger": "Repro steps:1. Start the game2. oe denraiddone in debug3. goto 324.31, 41.35, 42.19. Recruit Wyll via debugbook. He must be close by when the following dialog happens.4. Speak to Minthara. Select dialog option 1 >Wyll will interject. Pick dialog option >3 (tell him to be quiet),5. Continue dialog with Minthara >2>1>2>2>2,  Give away the Druid grove location;Wyll will protest. Select dialog option >3: The refugees aren't my problem. This will cause Wyll to leave the party6. goto 208.30, 24.70, 436.96 and enter the Druid's Groove7. goto -53.59, -12.58, 69.45 to trigger the re-arrangement of NPCs for ready attack on den.8. goto 200.37, 35.43, 445.92, speak to Wyll"
+  },
+  "dialogue": {
+    "7": {
+      "id": "7",
+      "speaker": "Narrator",
+      "text": "*The parasite seizes as you approach.*",
+      "context": "CinematicNodeContext: | *The men turned towards player, hand at their swords.* |",
+      "checkflags": [
+        "DEN_AttackOnDen_Event_PassedByEntrance = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "Wyll",
+          "text": "You dare show your face?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "22",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "18": {
+              "id": "18",
+              "speaker": "Wyll",
+              "text": "Give me one reason why they shouldn't slay you where you stand.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "22",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "Player",
+                  "text": "You need all the help you can get. Now stand down before I put you down.",
+                  "context": "",
+                  "checkflags": [
+                    "BARBARIAN = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "22",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "17": {
+                      "id": "17",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "0": {
+                          "id": "0",
+                          "speaker": "Wyll",
+                          "text": "Fine - one last chance. See that you don't waste it.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [
+                            "Gale 1",
+                            "Shadowheart 1",
+                            "Karlach 1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "16": {
+                              "id": "16",
+                              "speaker": "Wyll",
+                              "text": "Inside, and hurry. I want that gate closed when the goblins get here.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "ArrivedAtGrove"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "22": {
+                          "id": "22",
+                          "speaker": "Wyll",
+                          "text": "You had your chance, and you wasted it.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "19": {
+                              "id": "19",
+                              "speaker": "Wyll",
+                              "text": "In the name of the Blade, attack!",
+                              "context": "CinematicNodeContext: To the tieflings",
+                              "checkflags": [],
+                              "setflags": [
+                                "DEN_AttackOnDen_Event_BetrayTieflingsBeforeFight"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "14": {
+                  "id": "14",
+                  "speaker": "Player",
+                  "text": "I'm here to help. But not afraid to fight.",
+                  "context": "",
+                  "checkflags": [
+                    "BARBARIAN"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "22",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "12": {
+                          "id": "12",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "0",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "10": {
+                      "id": "10",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "11": {
+                          "id": "11",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "22",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "13": {
+                  "id": "13",
+                  "speaker": "Player",
+                  "text": "The goblins are on their way. I've led them right into your trap.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "22",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "15": {
+                      "id": "15",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "22",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {}
+                    },
+                    "1": {
+                      "id": "1",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "Wyll",
+                          "text": "Did you, now?",
+                          "context": "NodeContext: Slightly angry, but coming around.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [
+                            "Gale 1",
+                            "Shadowheart 1",
+                            "Karlach 1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "16",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "3": {
+                              "id": "3",
+                              "speaker": "Wyll",
+                              "text": "I hate to admit it, but... it's a good plan. Looks like the team's back together.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "16",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "6": {
+                  "id": "6",
+                  "speaker": "Player",
+                  "text": "Let them try.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "19",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Narrator",
+      "text": "*The parasite seizes as you approach.*",
+      "context": "CinematicNodeContext: | *The men turned towards player, hand at their swords.* |",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

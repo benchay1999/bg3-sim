@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "synopsis": "Jaheira has seen you attack her allies (specifically general allies like Harpers or her animal friends - Minsc/her family have specific reactions) and gradually loses patience with you.",
+    "how_to_trigger": "- Attack harpers in Act 2/3- Attack the animals in Jaheira's Basement"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Jaheira",
+      "text": "You forced me to raise arms against my own. That will not happen again.",
+      "context": "InternalNodeContext: Using for Jaheira/Minsc attacking her allies. Hence vagueness\rNodeContext: Irritated, saw us attacking a friend of hers.",
+      "checkflags": [
+        "GLO_Jaheira_State_CompanionAttackedAlly"
+      ],
+      "setflags": [
+        "GLO_Jaheira_State_CompanionAttackedAlly = False",
+        "GLO_Jaheira_State_WarnedPlayer"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Jaheira",
+      "text": "What was this - some trick of the tadpole, to make me attack my own? I won't stay here to be your plaything.",
+      "context": "NodeContext: Irritated",
+      "checkflags": [
+        "GLO_Jaheira_State_WarnedPlayer"
+      ],
+      "setflags": [
+        "GLO_Jaheira_State_LeftInAnger",
+        "GLO_Companion_Leave"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "ORI_Inclusion_Minsc"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Minsc",
+              "text": "Where Jaheira goes, so follows Boo. And so follows Minsc. Farewell, my friend.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "GLO_Companion_Leave"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_End_Minsc"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "taganswer",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Jaheira",
+      "text": "Would you like to keep those hands to yourself? We have few enough allies - do not harm them.",
+      "context": "NodeContext: Irritated, saw us attacking a friend of hers.",
+      "checkflags": [],
+      "setflags": [
+        "GLO_Jaheira_State_WarnedPlayer"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Jaheira",
+      "text": "I am not in the habit of giving second warnings. We still have a common enemy in the Absolute - but here our paths diverge. May you find good fortune - and some sense, too.",
+      "context": "NodeContext: Irritated",
+      "checkflags": [
+        "GLO_Jaheira_State_WarnedPlayer"
+      ],
+      "setflags": [
+        "GLO_Jaheira_State_LeftInAnger",
+        "GLO_Companion_Leave"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

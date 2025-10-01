@@ -1,0 +1,418 @@
+{
+  "metadata": {
+    "synopsis": "The guard warns you to stay away back. If the primary guard is dead, he will instead let you in or attack.",
+    "how_to_trigger": "Try to bypass the hidden Creche checkpoint. Input \"oe cre_voss_friendly\" and \"oe cre_voss_hostile\" as debug commands respectively to test the different Voss permutations (\"oe cre_voss_skipped\" clears both tags)."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Warrior Qen",
+      "text": "Hold, kin. State your purpose.",
+      "context": "",
+      "checkflags": [
+        "CRE_UpperGuards_State_HiddenPrimaryGuardDefeated",
+        "CRE_UpperGuards_State_GainedAccess = False",
+        "GITHYANKI"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "17": {
+          "id": "17",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Warrior Qen",
+      "text": "You! Trespasser! Get back.",
+      "context": "",
+      "checkflags": [
+        "CRE_UpperGuards_State_HiddenPrimaryGuardDefeated = False",
+        "CRE_UpperGuards_State_GainedAccess = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Warrior Qen",
+      "text": "Leave me alone. The watch must remain undisturbed.",
+      "context": "",
+      "checkflags": [
+        "CRE_UpperGuards_State_GainedAccess",
+        "GITHYANKI = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Warrior Qen",
+      "text": "I must return to my duty. Walk well, ra'stil.",
+      "context": "",
+      "checkflags": [
+        "CRE_UpperGuards_State_GainedAccess",
+        "GITHYANKI"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Warrior Qen",
+      "text": "You! Istik. Halt.",
+      "context": "NodeContext: Pronouced \"Iss-tick\", meaning outsider/non gith - preparing to attack",
+      "checkflags": [
+        "CRE_UpperGuards_State_HiddenPrimaryGuardDefeated",
+        "CRE_UpperGuards_State_GainedAccess = False",
+        "GITHYANKI = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "I have business with your Kith'rak. Stand aside.",
+          "context": "",
+          "checkflags": [
+            "GITHYANKI"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Warrior Qen",
+              "text": "That will be for her to decide. Go to her directly. Do not stray.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_UpperGuards_State_GainedAccess"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Kith'rak Voss sent me to find a weapon of our kin. I have it.",
+          "context": "",
+          "checkflags": [
+            "PLA_GithChokepoint_State_SpokeToVoss",
+            "GLO_GithChokepoint_Quest_GithLeave",
+            "GITHYANKI"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Warrior Qen",
+              "text": "Kith'rak Voss sent you directly? Chk. We are never informed first.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Warrior Qen",
+                  "text": "But if this is true, you do our cr\u00e8che a great honour. Report to Kith'rak Therezzyn inside.",
+                  "context": "NodeContext: gith \"tsk\" - disapproval",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_UpperGuards_State_GainedAccess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "I have the item you're searching for. Captain Voss asked me to find it.",
+          "context": "",
+          "checkflags": [
+            "PLA_GithChokepoint_State_SpokeToVoss",
+            "GLO_GithChokepoint_Quest_GithLeave",
+            "GITHYANKI = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Warrior Qen",
+                  "text": "Fine. Enter. If you are lying, Kith'rak Therezzyn will make short work of you.",
+                  "context": "NodeContext: gith \"tsk\" - disapproval",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_UpperGuards_State_GainedAccess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "I have the githyanki item Captain Voss was hunting for.",
+          "context": "",
+          "checkflags": [
+            "PLA_GithChokepoint_State_SpokeToVoss",
+            "GLO_GithChokepoint_Quest_GithLeave = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "16",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Warrior Qen",
+              "text": "And you didn't hand it over? Interesting.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "16",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "A nautiloid crashed on your doorstep. Illithids are infecting the population. I need your help.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Warrior Qen",
+              "text": "Kith'rak Therezzyn shares your concerns. You should seek her within.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_UpperGuards_State_GainedAccess"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Sorry, didn't meant to intrude.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Warrior Qen",
+              "text": "You will die, trespasser!",
+              "context": "",
+              "checkflags": [
+                "GITHYANKI = False"
+              ],
+              "setflags": [
+                "CRE_UpperGuards_Event_HiddenCheckpointHostile"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Warrior Qen",
+              "text": "Wait. You should report to Kith'rak Therezzyn inside - you may be of use to her.",
+              "context": "",
+              "checkflags": [
+                "GITHYANKI"
+              ],
+              "setflags": [
+                "CRE_UpperGuards_State_GainedAccess"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CRE_UpperGuards_Event_HiddenCheckpointHostile"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "synopsis": "This random Fist is standing by the door to Flaming Fist HQ. As opposed to the shame spot at the gate this is an honor spot basically employee of the moth reward. He has some reactions to execution of Florrick. Turns out he's extremely lawful.. and awful.",
+    "how_to_trigger": "CTY_Main_A, LOW, teleport to S_LOW_Prison_Door_TeleportTo_6be6fb14-3920-4765-b2db-ce2f34b5246b, talk to the NPC"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "S_LOW_BasiliskGate_DoorGuard_HasMet",
+        "LOW_BasiliskGate_State_FlorrickExecuted = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Fist Miller",
+      "text": "Justice is swift and severe in Baldur's Gate - as it should be.",
+      "context": "",
+      "checkflags": [
+        "S_LOW_BasiliskGate_HasMet_DoorGuard_PostExecution",
+        "LOW_BasiliskGate_State_FlorrickExecuted"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Fist Miller",
+      "text": "A half-orc? Hmm. Keep your head down and your fists to yourself, and we won't have any problems.",
+      "context": "NodeContext: Unimpressed, racist dick about half orcs (thinks they're violent)",
+      "checkflags": [
+        "S_LOW_BasiliskGate_DoorGuard_HasMet = False",
+        "LOW_BasiliskGate_State_FlorrickExecuted = False",
+        "HALFORC"
+      ],
+      "setflags": [
+        "S_LOW_BasiliskGate_DoorGuard_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Fist Miller",
+      "text": "First they took Duke Stelmane, now they've taken Lord Gortash. Count on it - the Flaming Fist will make those Absolute bastards pay.",
+      "context": "",
+      "checkflags": [
+        "GLO_Gortash_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Fist Miller",
+      "text": "Keep crime reports short - do not waste our time with frivolous issues.",
+      "context": "",
+      "checkflags": [
+        "S_LOW_BasiliskGate_DoorGuard_HasMet = False",
+        "LOW_BasiliskGate_State_FlorrickExecuted = False"
+      ],
+      "setflags": [
+        "S_LOW_BasiliskGate_DoorGuard_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Fist Miller",
+      "text": "Take heed, citizen - the traitor Florrick swings in the square. She won't be missed.",
+      "context": "",
+      "checkflags": [
+        "S_LOW_BasiliskGate_HasMet_DoorGuard_PostExecution = False",
+        "LOW_BasiliskGate_State_FlorrickExecuted"
+      ],
+      "setflags": [
+        "S_LOW_BasiliskGate_HasMet_DoorGuard_PostExecution"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "She didn't deserve to die.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion -1",
+            "Lae'zel -1",
+            "Gale 1",
+            "Shadowheart 1",
+            "Wyll 2",
+            "Karlach 1",
+            "Jaheira 1",
+            "Minthara 1",
+            "Halsin 1",
+            "Minsc 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Fist Miller",
+              "text": "Sympathisers have no place in the city - you'd do well to remember that.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Good riddance.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Lae'zel 1",
+            "Astarion 1",
+            "Gale -1",
+            "Shadowheart 1",
+            "Wyll -2",
+            "Karlach -1",
+            "Jaheira -1",
+            "Minthara 1",
+            "Halsin -1",
+            "Minsc -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Fist Miller",
+              "text": "Well said - order before all.",
+              "context": "NodeContext: 'order before all' is like the fist 'protect and serve'. It's both a farewell and a warning not to step out of line",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "That's a cruel way to talk about her.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion -1",
+            "Lae'zel -1",
+            "Gale 1",
+            "Shadowheart 1",
+            "Wyll 2",
+            "Karlach 1",
+            "Jaheira 1",
+            "Minthara 1",
+            "Halsin 1",
+            "Minsc 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Fist Miller",
+              "text": "Traitors deserve no soft hands.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

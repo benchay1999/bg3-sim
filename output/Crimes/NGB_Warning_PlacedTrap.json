@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "synopsis": "This triggers when an NPC detects the player has placed a Rune of Warding. Those include the sleep and thunder ones. The NPC must have succeeded in a skill check in order to notice this, and will then react to the player.",
+    "how_to_trigger": "roll amazingaddDebugSpell Target_GlyphOfWardingcast the spell on/near an NPC"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*Your magic is drawing the wrong kind of attention. Continue, and there will be trouble.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry",
+        "CIVILIAN",
+        "BADASSCIVILIAN"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*Such magic is considered a criminal offence - and you're about to face punishment.*",
+      "context": "InternalNodeContext: Logic node\rNodeContext: Greeting needs to be empty. It's used to cut off this flow from the others",
+      "checkflags": [
+        "GEB_Crime_IsAngry",
+        "CIVILIAN = False"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*Your magical ward has drawn scrutiny. A repeat offence will have dire consequences.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False",
+        "CONSTRUCT"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

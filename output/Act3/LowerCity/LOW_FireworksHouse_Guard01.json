@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "synopsis": "Banite guard in the Fireworks House. Denies entry unless the players know and use the password \"Uncle Felogyr\", which can be learned as part of the Merchants House situation in WYR",
+    "how_to_trigger": "Speak to the guard at the bottom of the stairs in the Firework House in Lower City."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Feloguard Sigurd",
+      "text": "Employees only past this point. You wanna buy something, talk to Mr Sonshal.",
+      "context": "NodeContext: No nonsense",
+      "checkflags": [],
+      "setflags": [
+        "LOW_FireworksHouse_HasMet_Guard01"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "LOW_FireworksHouse_Event_UsedPassword = False",
+            "LOW_FireworksHouse_Knows_Password"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Player",
+              "text": "Uncle Felogyr sent for me.",
+              "context": "",
+              "checkflags": [
+                "LOW_FireworksHouse_Event_UsedPassword = False",
+                "LOW_FireworksHouse_Knows_Password"
+              ],
+              "setflags": [
+                "LOW_FireworksHouse_Event_UsedPassword"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Feloguard Sigurd",
+                  "text": "Ah! Right you are. Head on up then.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "taganswer",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Feloguard Sigurd",
+      "text": "Head on up. Your uncle is waiting for you upstairs.",
+      "context": "NodeContext: wink wink nudge nudge (there's no uncle)",
+      "checkflags": [
+        "LOW_FireworksHouse_HasMet_Guard01 = False",
+        "LOW_FireworksHouse_Event_UsedPassword"
+      ],
+      "setflags": [
+        "LOW_FireworksHouse_HasMet_Guard01"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Feloguard Sigurd",
+      "text": "You still look like a customer to me, mate. Talk to Mr Sonshal.",
+      "context": "NodeContext: No nonsense; ever so slightly annoyed now",
+      "checkflags": [
+        "LOW_FireworksHouse_HasMet_Guard01"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "0",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Feloguard Sigurd",
+      "text": "Seen your uncle yet? Best not to keep him waiting.",
+      "context": "NodeContext: wink wink nudge nudge (there's no uncle)",
+      "checkflags": [
+        "LOW_FireworksHouse_HasMet_Guard01",
+        "LOW_FireworksHouse_Event_UsedPassword"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

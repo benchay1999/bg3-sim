@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "synopsis": "One of the duergar guards near some deep rothe that're being used as hauling animals. Gruff and grim. Little patience and less empathy.Different reactions if:- animals are panicking;- animals are calm;- animals are dead (doesn't matter how);",
+    "how_to_trigger": "Repro steps:1. Start the game.2. loadlevel WLD_Main_A3. goto -669.41, 13.33, 439.814. Skip cinematic by choosing \"leave\"5. Talk with Gundril"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Grundril",
+      "text": "Here to help? Talk to Skarjall. Here to gawk? Find a ledge to fall off.",
+      "context": "NodeContext: 'I just work here.' Skarjall = skar-jall, just like it sounds (duergar in charge)",
+      "checkflags": [
+        "UND_FearfulRothe_HasMet_Guard_002 = False",
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble = False",
+        "UND_FearfulRothe_State_RotheAreDead = False"
+      ],
+      "setflags": [
+        "UND_FearfulRothe_HasMet_Guard_002"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Grundril",
+      "text": "Nicely handled. Those roth\u00e9 old sweethearts of yours or something?",
+      "context": "NodeContext: The player did well, but duergar are rarely the complimentary types.",
+      "checkflags": [
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble",
+        "UND_FearfulRothe_State_RubbleDestroyed"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "UNDERDARK"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Grundril",
+          "text": "Pity I got to split you - that forge ain't for sharing.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "UND_FearfulRothe_Event_MakeDuergarHostileInDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "I calmed the roth\u00e9, and now you want me dead?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Grundril",
+                  "text": "You think we're letting you near that forge? You're as dumb as you are stupid.",
+                  "context": "NodeContext: Jargh = fool. ZHARGH!",
+                  "checkflags": [],
+                  "setflags": [
+                    "UND_FearfulRothe_Event_MakeDuergarHostileInDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Go ahead. We'll see who ends up split.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "UND_FearfulRothe_Event_MakeDuergarHostileInDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Grundril",
+      "text": "And I thought deep roth\u00e9 stank while they were alive...",
+      "context": "NodeContext: Disgust. Zero empathy. The animals being supervised died somehow.",
+      "checkflags": [
+        "UND_FearfulRothe_State_RotheAreDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Grundril",
+      "text": "You got a knack. Won't be long before the beasts break through.",
+      "context": "NodeContext: The player did well, but duergar are rarely the complimentary types.",
+      "checkflags": [
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble",
+        "UND_FearfulRothe_State_RubbleDestroyed = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Grundril",
+      "text": "Nere was soft. No reason for you to strut about like a damn hero.",
+      "context": "NodeContext: Sarcastic",
+      "checkflags": [
+        "UND_FearfulRothe_HasMet_Guard_002 = False",
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble = False",
+        "UND_TheDrowNere_State_PermaDefeated",
+        "UND_FearfulRothe_State_RotheAreDead = False"
+      ],
+      "setflags": [
+        "UND_FearfulRothe_HasMet_Guard_002"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Grundril",
+      "text": "Don't see you helping. Best you find a ledge and jump.",
+      "context": "NodeContext: 'Go away'.",
+      "checkflags": [
+        "UND_FearfulRothe_HasMet_Guard_002",
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble = False",
+        "UND_FearfulRothe_State_RotheAreDead = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

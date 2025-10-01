@@ -1,0 +1,1777 @@
+{
+  "metadata": {
+    "synopsis": "Dialog for one of the zombie beggars. After player talks to Father Carrion and has been tasked to kill them, they will react to this and either run to warn their leader, Thrumbo, or confront player. The following states are one-liners and hasmets for each possible quest state (meeting with thrumbo, outside house and inside father carrion's house once fully killed.)",
+    "how_to_trigger": "Talk to Sacrum in CTY_Main_A near -75; 20; -93"
+  },
+  "dialogue": {
+    "5": {
+      "id": "5",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "Please. I've begging to do.",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_SacrumHint = False",
+        "LOW_Sacrum_State_FailedTrustAttempt"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_HasMet_SacrumHint"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_Initial",
+        "LOW_Sacrum_State_PaidGold",
+        "LOW_FatherCarrion_State_ExplainedTask",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Sacrum_State_Recognised = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "54",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "40": {
+          "id": "40",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "86",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "A toast to your kindness! And to Carrion rotting in his grave!",
+      "context": "",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_InsideHouse = False",
+        "LOW_PhilgravesMansion_State_ZombieInHouse"
+      ],
+      "setflags": [
+        "LOW_Sacrum_HasMet_InsideHouse"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "20": {
+      "id": "20",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "So, you came through for us in the end. Bravo!",
+      "context": "",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_InsideHouse = False",
+        "LOW_PhilgravesMansion_State_BeggarCommentedAnger = False",
+        "LOW_PhilgravesMansion_State_ZombieInHouse",
+        "LOW_PhilgravesMansion_BeggarAngryAtPlayers"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_State_BeggarCommentedAnger"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "29": {
+      "id": "29",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "Yes. Um, alms for the poor?",
+      "context": "CinematicNodeContext: Puts out his hands in a begging gesture\rNodeContext: Nervous, putting on his best begging voice.",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_Initial = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation"
+      ],
+      "setflags": [
+        "LOW_Sacrum_HasMet_Initial",
+        "LOW_PhilgravesMansion_State_TalkedToAtLeastABeggar"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "19",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "85": {
+          "id": "85",
+          "speaker": "Narrator",
+          "text": "*That smell again - fetid flesh and bone. This is another of Mystic Carrion's runaways.*",
+          "context": "",
+          "checkflags": [
+            "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+            "LOW_FatherCarrion_State_ExplainedTask"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "69": {
+          "id": "69",
+          "speaker": "Narrator",
+          "text": "*That smell again - fetid flesh and bone. This is another zombie.*",
+          "context": "",
+          "checkflags": [
+            "LOW_PhilgravesMansion_Event_RecognisedCarrionZombie",
+            "LOW_FatherCarrion_State_ExplainedTask = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Narrator",
+          "text": "*An air of decay hangs over the stooped beggar's form, the same that tainted Mystic Carrion's chambers. This is one of his runaway servants.*",
+          "context": "",
+          "checkflags": [
+            "LOW_FatherCarrion_State_ExplainedTask"
+          ],
+          "setflags": [
+            "LOW_Sacrum_State_Recognised"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "72",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Strange Beggar Sacrum",
+              "text": "Anything you can spare for a humble beggar?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "72",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "71": {
+                  "id": "71",
+                  "speaker": "Player",
+                  "text": "I didn't know zombies liked their fruit and vegetables?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Sacrum_State_RecognisedZombie"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "72",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "59": {
+                      "id": "59",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "A zombie? Oh no - a touch of scurvy, that's all. Nothing a basket of fruit wouldn't solve, could I afford one...",
+                      "context": "NodeContext: Nervous lies, leading into a new, subtler appeal for money",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "34": {
+                  "id": "34",
+                  "speaker": "Player",
+                  "text": "Have you seen Thrumbo? Mystic Carrion is looking for him.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "72",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "15": {
+                      "id": "15",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "Thrumbo? Is he in trouble?",
+                      "context": "NodeContext: Horrified - he's been caught out",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "72",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "55": {
+                          "id": "55",
+                          "speaker": "Strange Beggar Sacrum",
+                          "text": "Afraid I can't help you. I've lost track of him myself. Took a wrong turn somewhere and poof, he was gone.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "72",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "2": {
+                              "id": "2",
+                              "speaker": "Strange Beggar Sacrum",
+                              "text": "And that's the truth. I never lie.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "72",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "49": {
+                                  "id": "49",
+                                  "speaker": "Player",
+                                  "text": "You're protecting your friend, I understand. But you can trust me - I promise.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "PALADIN = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "72",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "72": {
+                                      "id": "72",
+                                      "speaker": "",
+                                      "text": "True",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "13": {
+                                          "id": "13",
+                                          "speaker": "Strange Beggar Sacrum",
+                                          "text": "You do seem the honest type. I can always tell.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "9": {
+                                              "id": "9",
+                                              "speaker": "Strange Beggar Sacrum",
+                                              "text": "Thrumbo had a plan. He was going to find us an abandoned house, somewhere to hide away from Carrion.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "LOW_Sacrum_State_TrustsPlayers",
+                                                "BeggarHint_Sacrum"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "8": {
+                                                  "id": "8",
+                                                  "speaker": "Strange Beggar Sacrum",
+                                                  "text": "But I haven't heard from him since. Lots of empty houses to check, you see.",
+                                                  "context": "NodeContext: Justifying himself",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "57": {
+                                                      "id": "57",
+                                                      "speaker": "Strange Beggar Sacrum",
+                                                      "text": "You have to search them thoroughly. Especially the wardrobes - Thrumbo said that's the smartest place to hide.",
+                                                      "context": "NodeContext: Justifying himself, not realising this is valuable information",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "92": {
+                                      "id": "92",
+                                      "speaker": "",
+                                      "text": "False",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "45": {
+                                          "id": "45",
+                                          "speaker": "Strange Beggar Sacrum",
+                                          "text": "No, no I don't think so. My lips are sealed.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "LOW_Sacrum_State_FailedTrustAttempt"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "65": {
+                                  "id": "65",
+                                  "speaker": "Player",
+                                  "text": "This is important. I need to find your friend - someone's life is at stake.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "PALADIN"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "72",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "11": {
+                                  "id": "11",
+                                  "speaker": "Player",
+                                  "text": "Tell me, or spend the rest of your miserable existence waiting for my knife to slit your throat.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "ROGUE"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "9",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "62": {
+                                      "id": "62",
+                                      "speaker": "",
+                                      "text": "True",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "9",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "91": {
+                                          "id": "91",
+                                          "speaker": "Strange Beggar Sacrum",
+                                          "text": "Ah. So that's how it is? Very well.",
+                                          "context": "NodeContext: Clearing his throat, trying to sound confident dealing with you",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "9",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "12": {
+                                      "id": "12",
+                                      "speaker": "",
+                                      "text": "False",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "76": {
+                                          "id": "76",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "45",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "46": {
+                                  "id": "46",
+                                  "speaker": "Player",
+                                  "text": "I've hunted monsters, beggar. And I won't hesitate to make you my next kill.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "RANGER"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "62",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "28": {
+                                  "id": "28",
+                                  "speaker": "Player",
+                                  "text": "I'll crush your bones to dust, beggar - tell me what you know.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "BARBARIAN"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "62",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "35": {
+                                  "id": "35",
+                                  "speaker": "Player",
+                                  "text": "You'll lose your head in a minute unless you tell me what you know.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "BARBARIAN = False",
+                                    "RANGER = False",
+                                    "ROGUE = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "62",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "44": {
+                                  "id": "44",
+                                  "speaker": "Player",
+                                  "text": "I've heard more than one confession in my time. Tell me what you know - it'll lighten the load.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "CLERIC"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "68",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "21": {
+                                  "id": "21",
+                                  "speaker": "Player",
+                                  "text": "You words say one thing, your face another. I see your lies, so let us dispense with them.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "MONK"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "9",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "68": {
+                                      "id": "68",
+                                      "speaker": "",
+                                      "text": "True",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "9",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "77": {
+                                          "id": "77",
+                                          "speaker": "Strange Beggar Sacrum",
+                                          "text": "Yes. What an excellent idea.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "9",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "51": {
+                                      "id": "51",
+                                      "speaker": "",
+                                      "text": "False",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "10": {
+                                          "id": "10",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "45",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "74": {
+                                  "id": "74",
+                                  "speaker": "Player",
+                                  "text": "Tell me what you remember, and I might be able to find him for you.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "CLERIC = False",
+                                    "MONK = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "68",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Player",
+                                  "text": "Would a donation to your escape fund reassure you? ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                                  "context": "",
+                                  "checkflags": [
+                                    "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                                  ],
+                                  "setflags": [
+                                    "GEN_TransferNPCPayment"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "32": {
+                                      "id": "32",
+                                      "speaker": "Strange Beggar Sacrum",
+                                      "text": "Yes, amazing. It's all coming back to me.",
+                                      "context": "CinematicNodeContext: Player hands gold to Sacrum (unseen)",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "47": {
+                                          "id": "47",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "9",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "42": {
+                                  "id": "42",
+                                  "speaker": "Player",
+                                  "text": "Fair enough.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_Sacrum_State_FailedTrustAttempt"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "1": {
+                                      "id": "1",
+                                      "speaker": "Strange Beggar Sacrum",
+                                      "text": "Glad we could get that all straightened out.",
+                                      "context": "NodeContext: Relieved this is going no further",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "LOW_Sacrum_State_FailedTrustAttempt"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "78": {
+                  "id": "78",
+                  "speaker": "Player",
+                  "text": "Cut the act. Tell me where Thrumbo is hiding.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_PlayersAcceptedTask"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "15",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "80": {
+                  "id": "80",
+                  "speaker": "Player",
+                  "text": "Thrumbo is dead. I killed him.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_IsDead"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "6",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "You - you did? Why did you do that, you vicious creature?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "23": {
+                  "id": "23",
+                  "speaker": "Player",
+                  "text": "An ear, if you're willing to tell me your tale. How did you end up here?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "6",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "That devil, drink! I spent it all.",
+                      "context": "NodeContext: Mournful, lamenting - a tad overdramatic",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "52": {
+                          "id": "52",
+                          "speaker": "Strange Beggar Sacrum",
+                          "text": "All behind me, of course. Now I only require the gold for, ah, sustenance.",
+                          "context": "NodeContext: Realises he's given away too much, collecting himself",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "90": {
+                  "id": "90",
+                  "speaker": "Player",
+                  "text": "An ear, if you're willing to tell me your tale. How did you end up here?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "6",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "82": {
+                  "id": "82",
+                  "speaker": "Player",
+                  "text": "Toss the beggar some gold. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask = False",
+                    "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                  ],
+                  "setflags": [
+                    "LOW_Sacrum_State_PaidGold",
+                    "GEN_TransferNPCPayment"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Karlach 1",
+                    "Wyll 1",
+                    "Lae'zel -1",
+                    "Astarion -1",
+                    "Shadowheart 1",
+                    "Minthara -1",
+                    "Halsin 1",
+                    "Jaheira 1",
+                    "Minsc 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "36",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "41": {
+                  "id": "41",
+                  "speaker": "Player",
+                  "text": "Toss the beggar some gold. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting",
+                    "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                  ],
+                  "setflags": [
+                    "LOW_Sacrum_State_PaidGold",
+                    "GEN_TransferNPCPayment"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Karlach 1",
+                    "Wyll 1",
+                    "Lae'zel -1",
+                    "Astarion -1",
+                    "Shadowheart 1",
+                    "Minthara -1",
+                    "Halsin 1",
+                    "Jaheira 1",
+                    "Minsc 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "33",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "36": {
+                      "id": "36",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "Oh, thank you. Such generosity.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "Strange Beggar Sacrum",
+                          "text": "I will see that it is put to good use. A crate of apples perhaps, or a bottle of wine...",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "79": {
+                  "id": "79",
+                  "speaker": "Player",
+                  "text": "Give generously. The man is clearly in desperate need. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask = False",
+                    "d6480be7-500e-4160-927f-86acfd5c4e7b"
+                  ],
+                  "setflags": [
+                    "LOW_Sacrum_State_PaidGold",
+                    "GEN_TransferNPCPayment_2"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Karlach 1",
+                    "Wyll 1",
+                    "Lae'zel -1",
+                    "Astarion -1",
+                    "Shadowheart 1",
+                    "Minthara -1",
+                    "Halsin 1",
+                    "Jaheira 1",
+                    "Minsc 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "33",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "39": {
+                  "id": "39",
+                  "speaker": "Player",
+                  "text": "Give generously. The man is clearly in desperate need. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting",
+                    "d6480be7-500e-4160-927f-86acfd5c4e7b"
+                  ],
+                  "setflags": [
+                    "LOW_Sacrum_State_PaidGold",
+                    "GEN_TransferNPCPayment_2"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Karlach 1",
+                    "Wyll 1",
+                    "Lae'zel -1",
+                    "Astarion -1",
+                    "Shadowheart 1",
+                    "Minthara -1",
+                    "Halsin 1",
+                    "Jaheira 1",
+                    "Minsc 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "81",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "You'd really give so much? Thank you.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "24": {
+                          "id": "24",
+                          "speaker": "Strange Beggar Sacrum",
+                          "text": "My brothers will be most surprised. I usually return with empty pockets.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "67": {
+                  "id": "67",
+                  "speaker": "Player",
+                  "text": "I'm sorry, my purse is rather light at present.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "81",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "66": {
+                  "id": "66",
+                  "speaker": "Player",
+                  "text": "I'm sorry, I've nothing to spare.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "50",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "81": {
+                      "id": "81",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "Times are hard for us all. But we must persevere!",
+                      "context": "NodeContext: Trying to make the player feel better",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "48": {
+                          "id": "48",
+                          "speaker": "Strange Beggar Sacrum",
+                          "text": "My brothers are depending on me.",
+                          "context": "NodeContext: Proud of the responsibility he's been given",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "25": {
+                  "id": "25",
+                  "speaker": "Player",
+                  "text": "Earn your keep, beggar. The rest of us have to.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "50",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "50": {
+                      "id": "50",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "I am trying! But people haven't the gold to spare, it seems.",
+                      "context": "NodeContext: Doesn't want to believe people are so selfish as to not help him",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "Strange Beggar Sacrum",
+                          "text": "People were more generous in days gone by.",
+                          "context": "NodeContext: Saddened, recalling his previous life",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "75": {
+                  "id": "75",
+                  "speaker": "Player",
+                  "text": "Earn your keep, beggar. The rest of us have to.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "50",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "43": {
+                  "id": "43",
+                  "speaker": "Player",
+                  "text": "Look closer. See what truly ails this pungent beggar.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask = False",
+                    "BARBARIAN = False",
+                    "CLERIC = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "87",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "30": {
+                  "id": "30",
+                  "speaker": "Player",
+                  "text": "Sniff the area, expanding your senses. Try to identify the smell.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask = False",
+                    "BARBARIAN"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "87",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "87": {
+                      "id": "87",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "64": {
+                          "id": "64",
+                          "speaker": "Narrator",
+                          "text": "*Your divine power focuses on the beggar - revealing the magic that sustains him. This man is a corpse - a zombie.*",
+                          "context": "",
+                          "checkflags": [
+                            "CLERIC"
+                          ],
+                          "setflags": [
+                            "LOW_Sacrum_State_RecognisedZombie"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "63": {
+                          "id": "63",
+                          "speaker": "Narrator",
+                          "text": "*Beneath his ragged clothing, you catch a glimpse of rotten flesh - more than any living being could sustain. This man is a zombie.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_Sacrum_State_RecognisedZombie"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "4": {
+                      "id": "4",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "73": {
+                          "id": "73",
+                          "speaker": "Narrator",
+                          "text": "*You try to focus on the beggar, but the smell is too strong, too nauseating. Perhaps the cause is better left unknown.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "31": {
+                  "id": "31",
+                  "speaker": "Player",
+                  "text": "The divine tugs at you. Give in, letting your god flow through you.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask = False",
+                    "CLERIC"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "87",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "27": {
+                  "id": "27",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_Thrumbo_State_HasMetParty_Waiting = False",
+                    "LOW_FatherCarrion_State_ExplainedTask"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "61": {
+                      "id": "61",
+                      "speaker": "Strange Beggar Sacrum",
+                      "text": "Why? You vicious creature!",
+                      "context": "NodeContext: Defiant",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_PhilgravesMansion_Event_ZombiesGoToMeetingAttacked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "14": {
+                  "id": "14",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "56": {
+          "id": "56",
+          "speaker": "Narrator",
+          "text": "*An air of decay hangs over the stooped beggar's form. The smell of rot. The smell of death.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "37": {
+      "id": "37",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "I hope wherever Thrumbo's hiding, he's comfortable. Nothing worse than a tight squeeze.",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_SacrumHint",
+        "LOW_Sacrum_State_TrustsPlayers"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "53": {
+      "id": "53",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_Initial",
+        "LOW_Sacrum_State_PaidGold = False",
+        "LOW_FatherCarrion_State_ExplainedTask",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Sacrum_State_Recognised = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "89",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "86": {
+          "id": "86",
+          "speaker": "Narrator",
+          "text": "*You recall where you've smelled this beggar's rotten musk before - in Mystic Carrion's chambers. This is one of the runaways he seeks.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_Sacrum_State_Recognised"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "38": {
+              "id": "38",
+              "speaker": "Strange Beggar Sacrum",
+              "text": "Anything you can lend will be most gratefully received.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "58": {
+                  "id": "58",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "19",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "54": {
+      "id": "54",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "My thanks to you - your gold will be most gratefully spent.",
+      "context": "NodeContext: Gracious, overly fawning - hiding nerves",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_Initial",
+        "LOW_Sacrum_State_PaidGold",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Sacrum_State_Recognised"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "54",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "19",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "60": {
+      "id": "60",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_Initial",
+        "LOW_Sacrum_HasMet_Initial",
+        "LOW_Sacrum_State_PaidGold",
+        "LOW_FatherCarrion_State_ExplainedTask = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Sacrum_State_Recognised = False",
+        "LOW_Sacrum_State_Recognised = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "70": {
+      "id": "70",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "I'm afraid I've nothing more to tell you. Don't forget to check under the bed!",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_SacrumHint = False",
+        "LOW_Sacrum_State_TrustsPlayers"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_HasMet_SacrumHint",
+        "BeggarHint_Sacrum"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "83": {
+      "id": "83",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "Can't a man earn some gold in peace?",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_SacrumHint",
+        "LOW_Sacrum_State_FailedTrustAttempt"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "84": {
+      "id": "84",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "A home at last - this calls for a toast! Now where did that old miser keep the wine?",
+      "context": "NodeContext: Celebrating",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_InsideHouse",
+        "LOW_PhilgravesMansion_State_ZombieInHouse"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "88": {
+      "id": "88",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_Initial",
+        "LOW_Sacrum_State_PaidGold = False",
+        "LOW_FatherCarrion_State_ExplainedTask = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Sacrum_State_Recognised = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "89",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "89": {
+      "id": "89",
+      "speaker": "Strange Beggar Sacrum",
+      "text": "Spare a coin for a lost soul?",
+      "context": "NodeContext: Nervous, putting on his best begging voice.",
+      "checkflags": [
+        "LOW_Sacrum_HasMet_Initial",
+        "LOW_Sacrum_State_PaidGold = False",
+        "LOW_PhilgravesMansion_State_ZombieInOriginalLocation",
+        "LOW_Sacrum_State_Recognised"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "38",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

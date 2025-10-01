@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "Small crime dialogue with Spike if he sees you kill Liam."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Torturer Spike",
+      "text": "No! I wanted him to suffer! N-not that you killed him too easily, your drowness. I meant no offence.",
+      "context": "NodeContext: He says the 'no! I wanted him to suffer!' on instinct, then realises he's talking to a drow and scrambles to correct himself and show enough reverence.",
+      "checkflags": [
+        "GOB_Torturers_State_KnowDen",
+        "DROWELF"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Torturer Spike",
+      "text": "He can't be dead! I never got any answers out of him!",
+      "context": "InternalNodeContext: Goblins don't know where the den is.\rNodeContext: Spike is extremely worried. The palyer killed the prisoner he had to extract information from, and he's certain his commander will kill him for his failure.",
+      "checkflags": [
+        "GOB_Torturers_State_KnowDen = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Torturer Spike",
+          "text": "She'll kill me. This is it. This is the end... but oh, I'll make you pay before I die.",
+          "context": "NodeContext: Fiercely angry - about to attack the player.",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Torturer Spike",
+      "text": "No! I still had more to do with him! Guess I'll have to give his due to you, eh?",
+      "context": "NodeContext: sadistic - he couldn't exact revenge on the prisoner, so the player will have to pay instead. Starts combat.",
+      "checkflags": [
+        "GOB_Torturers_State_KnowDen"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

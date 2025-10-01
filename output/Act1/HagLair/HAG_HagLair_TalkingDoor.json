@@ -1,0 +1,1357 @@
+{
+  "metadata": {
+    "synopsis": "The door guarding the entrance to the hag's lair. It's actually transparent and the player can walk through it. It's a cut scene as the door tries to project images onto the player and communicate to them. Pleading with them to leave. The door was a thief that was taken by Ethel and torn to shreds, with the remainder of his body transformed into a door.Much of this is a 'cut scene' as the door projects visions into the player's mind instead of communicating.",
+    "how_to_trigger": "- loadlevel WLD_Main_A- goto -307; 589- Skip through HAG_HagLair_EntranceDouble dialogue- Approach the gnarled door"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*You feel the barest hint of life from within the door.*",
+      "context": "",
+      "checkflags": [
+        "HAG_HagLair_State_PlayerPassedDoor = False",
+        "HAG_HagLair_TalkingDoor_HasMet",
+        "HAG_Hag_State_HagInLair"
+      ],
+      "setflags": [
+        "HAG_HagLair_Knows_DoorWasAlive"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "53",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "61": {
+          "id": "61",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "5",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Narrator",
+      "text": "*You feel crushing waves of fear as the presence within the door recoils. It can't let people through. Not again!*",
+      "context": "CinematicNodeContext: Just a shot of the player and the door - no visions yet. Player pressing a hand to their head as waves of fear hit them.",
+      "checkflags": [
+        "HAG_HagLair_State_PlayerPassedDoor = False",
+        "HAG_HagLair_TalkingDoor_HasMet = False",
+        "HAG_Hag_State_HagInLair",
+        "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_SelectSpeakerPlayedOnce = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "53",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "70": {
+          "id": "70",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "HAG_HagLair_TalkingDoor_HasMet",
+            "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_SelectSpeakerPlayedOnce",
+            "HAG_HagLair_Knows_DoorWasAlive"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "53",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*You feel a touch of the hag's magic, but whatever this door once held is gone.*",
+      "context": "InternalNodeContext: The hag is dead, and the player never knew that it was alive in the past.",
+      "checkflags": [
+        "HAG_Hag_State_IsDead",
+        "HAG_HagLair_Knows_DoorWasAlive = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Narrator",
+      "text": "*The presence within cowers - terrified of you.*",
+      "context": "",
+      "checkflags": [
+        "HAG_HagLair_TalkingDoor_State_PersuasionSuccess",
+        "HAG_HagLair_State_PlayerPassedDoor = False",
+        "HAG_HagLair_TalkingDoor_HasMet",
+        "HAG_Hag_State_HagInLair"
+      ],
+      "setflags": [
+        "HAG_HagLair_Knows_DoorWasAlive"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "39": {
+      "id": "39",
+      "speaker": "Narrator",
+      "text": "*The presence within sobs. The hag is gone. He's trapped in this door, this wooden prison - forever.*",
+      "context": "InternalNodeContext: The hag is dead, and the player saw that it was alive in the past.",
+      "checkflags": [
+        "HAG_Hag_State_HagGivenMercy"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "48": {
+      "id": "48",
+      "speaker": "Narrator",
+      "text": "*You feel the barest touch of magic, wild and chaotic, beneath the twisted surface of the door.*",
+      "context": "InternalNodeContext: The hag didn't flee to her lair.",
+      "checkflags": [
+        "HAG_Hag_State_HagInLair = False"
+      ],
+      "setflags": [
+        "HAG_HagLair_Knows_DoorWasAlive"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "54": {
+      "id": "54",
+      "speaker": "Narrator",
+      "text": "*You feel crushing waves of fear as a presence within the door recoils. It can't let people through. Not again!*",
+      "context": "CinematicNodeContext: Just a shot of the player and the door - no visions yet. Player pressing a hand to their head as waves of fear hit them.",
+      "checkflags": [
+        "HAG_HagLair_State_PlayerPassedDoor = False",
+        "HAG_HagLair_TalkingDoor_HasMet = False",
+        "HAG_Hag_State_HagInLair"
+      ],
+      "setflags": [
+        "HAG_HagLair_TalkingDoor_HasMet",
+        "HAG_HagLair_Knows_DoorWasAlive"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "53": {
+          "id": "53",
+          "speaker": "Player",
+          "text": "What happened last time you opened?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Narrator",
+              "text": "*Images flash: a man cowering, a bag open at his feet. Gold coins spilling onto the floor.*",
+              "context": "CinematicNodeContext: Cue cut scene: a shot of a man cowering, terrified on the ground. A bag of coins - open and spilled out on the ground.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Narrator",
+                  "text": "*His cries for mercy are cut short as the hag slices into him, dismembering him painstakingly, limb by limb.*",
+                  "context": "CinematicNodeContext: Cut scene: He's crying - shaking his head - back away clearly terrified. Shot of the hag - talons out appraoching him . Silohuette shot of her diving her claws down - ripping sounds.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "1",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "44": {
+                      "id": "44",
+                      "speaker": "Narrator",
+                      "text": "*She cackles. The man's remaining flesh twisted and contorted...*",
+                      "context": "CinematicNodeContext: Shot - hag laughing as she raising her hands - vines erupt from the man's body - twisting upwards",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "1",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "52": {
+                          "id": "52",
+                          "speaker": "Narrator",
+                          "text": "*...becoming the twisted surface of the door before you.*",
+                          "context": "CinematicNodeContext: Ibid",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "1",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "25": {
+          "id": "25",
+          "speaker": "Player",
+          "text": "Come on, open up!",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "51",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "Narrator",
+              "text": "*You see the gallery, its walls lined with the hag's victims - their bodies and minds twisted beyond ruin.*",
+              "context": "CinematicNodeContext: Shot of the gallery - the huddled victim in the mirror, the headless victim, the vacant bleeding eyes sockets",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "51",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Narrator",
+                  "text": "*Flee, you feel it cry.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "51",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Player",
+                      "text": "I'm not afraid of that hag.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "51",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "35": {
+                          "id": "35",
+                          "speaker": "Narrator",
+                          "text": "*A scene appears in your mind: two paladins and a cleric marching through the door - shrouded in the glow of the divine.*",
+                          "context": "CinematicNodeContext: Cut scene - two paladins and a cleric walking in the area after the door, cleric hands at the ready to cast a spelll, one paladin with a two handed sword out, the other with a shield and mace - moving forward",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "51",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "22": {
+                              "id": "22",
+                              "speaker": "Narrator",
+                              "text": "*Weapons brandished, they charge into the hag's lair.*",
+                              "context": "CinematicNodeContext: The charge forward - deeper into the lair",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "51",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "66": {
+                                  "id": "66",
+                                  "speaker": "Narrator",
+                                  "text": "*Screams of terror pierce the air.*",
+                                  "context": "CinematicNodeContext: Screams, sounds of flesh tearing and the hag laughing",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "51",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "38": {
+                                      "id": "38",
+                                      "speaker": "GROUP_Act1_GLO_HagHag",
+                                      "text": "You let them in? Naughty. That's a decade for each. You're mine for thirty more years, petal.",
+                                      "context": "CinematicNodeContext: Shot of hag's feet as she walks towards the door, camera on her face covered in blood as she smiles at the door\rNodeContext: Full hag mode - you've just murdered three people in cold blood;. You approach the person who let them in, taunting them and being cruel.",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "51",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "57": {
+                                          "id": "57",
+                                          "speaker": "Narrator",
+                                          "text": "*They are left as scabs of life, while she spits on the beauty their death would sow.*",
+                                          "context": "",
+                                          "checkflags": [
+                                            "REALLY_DARK_URGE"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "51",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "49": {
+                                              "id": "49",
+                                              "speaker": "Player",
+                                              "text": "I mean it. Let me through.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "51",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "10": {
+                                                  "id": "10",
+                                                  "speaker": "Narrator",
+                                                  "text": "*The door stays silent.*",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "51",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "50": {
+                                                      "id": "50",
+                                                      "speaker": "Player",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "51",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "67": {
+                                                          "id": "67",
+                                                          "speaker": "",
+                                                          "text": "True",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "51",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "5": {
+                                                              "id": "5",
+                                                              "speaker": "Narrator",
+                                                              "text": "*Its form flickers, and you realise that the door is transparent.*",
+                                                              "context": "CinematicNodeContext: The coloured sheen from the masks (when you wear them) passes over the doors",
+                                                              "checkflags": [],
+                                                              "setflags": [
+                                                                "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_perceptionsuccess"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "51": {
+                                                                  "id": "51",
+                                                                  "speaker": "Player",
+                                                                  "text": "I can see through you. I can just walk right in.",
+                                                                  "context": "",
+                                                                  "checkflags": [
+                                                                    "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_perceptionsuccess"
+                                                                  ],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "2": {
+                                                                      "id": "2",
+                                                                      "speaker": "Narrator",
+                                                                      "text": "*You see the hag, eyes bright with glee, as she sets fire to the door.*",
+                                                                      "context": "CinematicNodeContext: Shot of the hag, laughing as she throws back her head, the door engulfed in flames",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "24": {
+                                                                          "id": "24",
+                                                                          "speaker": "Narrator",
+                                                                          "text": "*With a jerk, you're pulled from the vision. The presence within shrinks - begging you not to run through it.*",
+                                                                          "context": "CinematicNodeContext: Shot of player - touching their head in confusion",
+                                                                          "checkflags": [],
+                                                                          "setflags": [
+                                                                            "HAG_HagLair_TalkingDoor_State_PersuasionSuccess"
+                                                                          ],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": true,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "58": {
+                                                                  "id": "58",
+                                                                  "speaker": "Player",
+                                                                  "text": "Open up, or I'll burn you to ashes.",
+                                                                  "context": "",
+                                                                  "checkflags": [
+                                                                    "HAG_HagLair_TalkingDoor_State_PersuasionSuccess = False",
+                                                                    "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_p1_Once = False",
+                                                                    "BARBARIAN = False"
+                                                                  ],
+                                                                  "setflags": [
+                                                                    "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_p1_Once"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [
+                                                                    "Astarion 1",
+                                                                    "Lae'zel 1",
+                                                                    "Shadowheart 1"
+                                                                  ],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "65": {
+                                                                      "id": "65",
+                                                                      "speaker": "",
+                                                                      "text": "True",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "rollresult",
+                                                                      "children": {
+                                                                        "46": {
+                                                                          "id": "46",
+                                                                          "speaker": "Narrator",
+                                                                          "text": "*The door shudders, imagining its wooden frame cracking and splintering in a raging inferno.*",
+                                                                          "context": "CinematicNodeContext: Shot of the door burning in fire - you hear a man's scream",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "30": {
+                                                                              "id": "30",
+                                                                              "speaker": "Narrator",
+                                                                              "text": "*You see the hag. She walks through the door, its form shimmering.*",
+                                                                              "context": "CinematicNodeContext: Shot of door shimmering in coloured sheen (like mask effect) and hag walking through it",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "32": {
+                                                                                  "id": "32",
+                                                                                  "speaker": "Narrator",
+                                                                                  "text": "*With a jerk, you're pulled from the vision. You feel the presence within shrink - terrified.*",
+                                                                                  "context": "",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [
+                                                                                    "HAG_HagLair_TalkingDoor_State_PersuasionSuccess"
+                                                                                  ],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "",
+                                                                                  "is_end": true,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {}
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "56": {
+                                                                      "id": "56",
+                                                                      "speaker": "",
+                                                                      "text": "False",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "rollresult",
+                                                                      "children": {
+                                                                        "62": {
+                                                                          "id": "62",
+                                                                          "speaker": "Narrator",
+                                                                          "text": "*The door remains firmly closed as the presence shrinks, twisting with fear and despair.*",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": true,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "34": {
+                                                                  "id": "34",
+                                                                  "speaker": "Player",
+                                                                  "text": "If I kill the hag, you'll be free.",
+                                                                  "context": "",
+                                                                  "checkflags": [
+                                                                    "HAG_HagLair_TalkingDoor_State_PersuasionSuccess = False",
+                                                                    "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_p2_Once = False"
+                                                                  ],
+                                                                  "setflags": [
+                                                                    "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_p2_Once"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "60": {
+                                                                      "id": "60",
+                                                                      "speaker": "",
+                                                                      "text": "True",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "rollresult",
+                                                                      "children": {
+                                                                        "26": {
+                                                                          "id": "26",
+                                                                          "speaker": "Narrator",
+                                                                          "text": "*You see the hag. She walks through the door - its form shimmering.*",
+                                                                          "context": "CinematicNodeContext: Shot of door shimmering in coloured sheen (like mask effect) and hag walking through it",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "28": {
+                                                                              "id": "28",
+                                                                              "speaker": "Narrator",
+                                                                              "text": "*The lightest touch of hope brushes your mind as the presence within retreats.*",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [
+                                                                                "HAG_HagLair_TalkingDoor_State_PersuasionSuccess"
+                                                                              ],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": true,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "40": {
+                                                                      "id": "40",
+                                                                      "speaker": "",
+                                                                      "text": "False",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "rollresult",
+                                                                      "children": {
+                                                                        "42": {
+                                                                          "id": "42",
+                                                                          "speaker": "Narrator",
+                                                                          "text": "*Fear rushes through you as the door shakes, remembering the hag's smile.*",
+                                                                          "context": "CinematicNodeContext: Shot of door - maybe a rattling sound?",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "12": {
+                                                                              "id": "12",
+                                                                              "speaker": "Narrator",
+                                                                              "text": "*It remains firmly closed as the presence huddles within.*",
+                                                                              "context": "CinematicNodeContext: Shot of player glaring at door",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": true,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "69": {
+                                                                  "id": "69",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "17",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "jump",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "16": {
+                                                          "id": "16",
+                                                          "speaker": "",
+                                                          "text": "False",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "51",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "33": {
+                                                              "id": "33",
+                                                              "speaker": "Player",
+                                                              "text": "I will strike the hag down with the full force of my fury - I swear it.",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "GLO_Not_For_EA",
+                                                                "PALADIN_VENGEANCE"
+                                                              ],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "13",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            },
+                                                            "7": {
+                                                              "id": "7",
+                                                              "speaker": "Player",
+                                                              "text": "If you let me through, I will do all I can to free you from your torment - I swear it.",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "PALADIN_DEVOTION"
+                                                              ],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "13",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "13": {
+                                                                  "id": "13",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "65",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "jump",
+                                                                  "children": {}
+                                                                },
+                                                                "15": {
+                                                                  "id": "15",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "56",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "jump",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            },
+                                                            "74": {
+                                                              "id": "74",
+                                                              "speaker": "Player",
+                                                              "text": "The hag is perversion of nature, and I am sworn to strike her down - you have nothing to fear from me.",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "PALADIN_ANCIENTS"
+                                                              ],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "13",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            },
+                                                            "68": {
+                                                              "id": "68",
+                                                              "speaker": "Player",
+                                                              "text": "Open. Now.",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "HAG_HagLair_TalkingDoor_State_PersuasionSuccess = False",
+                                                                "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_p1_Once = False",
+                                                                "BARBARIAN"
+                                                              ],
+                                                              "setflags": [
+                                                                "8adffca0-956b-e9ff-89f7-2c89bcaa2b9d_p1_Once"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "23": {
+                                                                  "id": "23",
+                                                                  "speaker": "",
+                                                                  "text": "True",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "rollresult",
+                                                                  "children": {
+                                                                    "73": {
+                                                                      "id": "73",
+                                                                      "speaker": "",
+                                                                      "text": "",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "46",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "jump",
+                                                                      "children": {}
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "19": {
+                                                                  "id": "19",
+                                                                  "speaker": "",
+                                                                  "text": "False",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "rollresult",
+                                                                  "children": {
+                                                                    "41": {
+                                                                      "id": "41",
+                                                                      "speaker": "",
+                                                                      "text": "",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "62",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "jump",
+                                                                      "children": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "8": {
+                                              "id": "8",
+                                              "speaker": "Player",
+                                              "text": "All right, is there another way in?",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "50",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "18": {
+                                                  "id": "18",
+                                                  "speaker": "Narrator",
+                                                  "text": "*You see an image of blue skies and sunshine as the door shudders a warning - run.*",
+                                                  "context": "CinematicNodeContext: Shot of blue sky - sunshine. A happy forest scene.",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "50",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "72": {
+                                              "id": "72",
+                                              "speaker": "Player",
+                                              "text": "The hag will be the least of your problems if you don't open up.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "50",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "37": {
+                                                  "id": "37",
+                                                  "speaker": "Narrator",
+                                                  "text": "*The door twitches but stays firm.*",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "50",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "17": {
+                                              "id": "17",
+                                              "speaker": "Player",
+                                              "text": "Leave.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "45": {
+                      "id": "45",
+                      "speaker": "Player",
+                      "text": "I have to get through. Now.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "43",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "20": {
+                          "id": "20",
+                          "speaker": "Narrator",
+                          "text": "*Frustrated, the door rattles. You see the hag and... yourself?*",
+                          "context": "CinematicNodeContext: Shot as if through the player's eyes. Perspective from the ground looking up - seeing the hag looking down at you - smiling",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "43",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "29": {
+                              "id": "29",
+                              "speaker": "Narrator",
+                              "text": "*You lay bleeding as she leans over you - a smile on her face.*",
+                              "context": "CinematicNodeContext: Ibid",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "43",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "36": {
+                                  "id": "36",
+                                  "speaker": "Narrator",
+                                  "text": "*Her teeth, a row of deadly needles, shine as they dive into your throat, blood spraying.*",
+                                  "context": "CinematicNodeContext: Her mouth opens as she laughs and she dives towards you - shot of blood spraying into the air/onto the ground",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "43",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "59": {
+                                      "id": "59",
+                                      "speaker": "Player",
+                                      "text": "Not happening. The hag will die first - count on it.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "43",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "47": {
+                                      "id": "47",
+                                      "speaker": "Player",
+                                      "text": "Are you going to open up or not?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "43": {
+                                          "id": "43",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "37",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "55": {
+                                      "id": "55",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "49",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    },
+                                    "6": {
+                                      "id": "6",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "17",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "64": {
+                      "id": "64",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "No time to chat. I'm here to kill the hag.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "63": {
+              "id": "63",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "35",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "71": {
+      "id": "71",
+      "speaker": "Narrator",
+      "text": "*The door trembles at the thought of the hag. She would be furious if she caught intruders here.*",
+      "context": "",
+      "checkflags": [
+        "HAG_HagLair_State_PlayerPassedDoor",
+        "HAG_Hag_State_HagInLair"
+      ],
+      "setflags": [
+        "HAG_HagLair_TalkingDoor_HasMet",
+        "HAG_HagLair_Knows_DoorWasAlive"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "75": {
+      "id": "75",
+      "speaker": "Narrator",
+      "text": "*You feel a whisper of thanks as the door's prisoner fades away.*",
+      "context": "InternalNodeContext: The hag is dead, and the player saw that it was alive in the past.",
+      "checkflags": [
+        "HAG_Hag_State_IsDead",
+        "HAG_HagLair_Knows_DoorWasAlive"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

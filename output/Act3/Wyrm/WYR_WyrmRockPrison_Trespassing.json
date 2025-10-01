@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "synopsis": "Dialog when the guards spot you after you entered the prison without being allowed by the entrance guard.",
+    "how_to_trigger": "goto 54; 8; -717"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*A prison guard has spotted you. It's either lie - or fight.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "I've been authorised to inspect the prison. Now stand aside.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Narrator",
+                  "text": "*Somehow, the guard buys your excuse. You're free to roam Wyrm's Rock Prison.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "WYR_WyrmRockPrison_State_GainedAccess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Narrator",
+                  "text": "*The guard sees through your deception. You'll have to battle your way out of this mess.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "TemporaryHostilityAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

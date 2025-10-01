@@ -1,0 +1,541 @@
+{
+  "metadata": {
+    "synopsis": "The player used the alarm drum, which is meant to alert other guards that there are enemies attacking. Depending on who the player is and how they performed, the goblins around the alarm will either be impressed, neutral, or willing to fight."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Sentinel Olak",
+      "text": "That's lovely stuff, True Soul. Only... we smack that drum so the lads know there's killin' on.",
+      "context": "NodeContext: Goblin repsects player and is impressed by the song they played.",
+      "checkflags": [
+        "GOB_Checkpoint_State_PlayerPerformedSong",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls",
+        "GOB_Checkpoint_State_BackupAnnoyed = False"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_State_UsedAlarmOnce"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "27": {
+          "id": "27",
+          "speaker": "Sentinel Olak",
+          "text": "Not to worry! I'll set 'em straight. Bit of music never hurt anyone, eh?",
+          "context": "NodeContext: Bright, cheerful, reassuring you",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Sentinel Olak",
+      "text": "I let you in and you raise the alarm anyway? Hurts my feelings, that does.",
+      "context": "NodeContext: Mock hurt - he let you in and you've proved yourself unworthy immediately. Now he's going to kill you",
+      "checkflags": [
+        "GOB_Checkpoint_State_PlayerRaisedAlarm",
+        "GOB_Checkpoint_State_GainedAccess",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "19": {
+          "id": "19",
+          "speaker": "Sentinel Olak",
+          "text": "Backup's comin'. Reckon I'll tell 'em you were an intruder after all.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Sentinel Olak",
+      "text": "Eh... drum's still workin' all right, True Soul.",
+      "context": "InternalNodeContext: Raising the alarm for the third and next times\rNodeContext: Player has made a mistake but is respected. Goblin is deferential.",
+      "checkflags": [
+        "GOB_Checkpoint_State_PlayerRaisedAlarm",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls",
+        "GOB_Checkpoint_State_BackupAnnoyed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Sentinel Olak",
+          "text": "Reckon the lads'll stay put this time.<br>",
+          "context": "NodeContext: Still deferential but more and more convinced that you're actually stupid. Flat - humouring you.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Sentinel Olak",
+      "text": "Sorry for this, but I tried warnin' you.",
+      "context": "NodeContext: He's speaking to his better - a drow, who he'd normally be subservient to. But he's secretly relishing the opportunity to take one on.",
+      "checkflags": [
+        "GOB_Checkpoint_State_ForgaveForUsingAlarm"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "DROWELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Sentinel Olak",
+      "text": "Lovely rhythm, that. Pity the drum's for callin' in backup.",
+      "context": "InternalNodeContext: Starts dancing afterwards\rNodeContext: You've sounded the alarm, but played a nice beat while doing it. The goblin is snidely warning you that NORMALLY you'd be killed for it, but he'll do you a favour and let you off the hook this time.",
+      "checkflags": [
+        "GOB_Checkpoint_State_GainedAccess",
+        "GOB_Checkpoint_State_PlayerPerformedSong",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls = False"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_State_ForgaveForUsingAlarm"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Sentinel Olak",
+          "text": "Don't worry - seein' how you made us dance, I won't let 'em kill ya - this time.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Sentinel Olak",
+      "text": "Careful, your lordness. That drum's for callin' backup.",
+      "context": "NodeContext: He's speaking to his 'better' - trying his best to delicately warn the player that they're about to call in a horde of angry goblins.",
+      "checkflags": [
+        "GOB_Checkpoint_State_GainedAccess",
+        "GOB_Checkpoint_State_PlayerPerformedSong",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls = False"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_State_ForgaveForUsingAlarm"
+      ],
+      "ruletags": [
+        "DROWELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "25": {
+          "id": "25",
+          "speaker": "Sentinel Olak",
+          "text": "I'll calm 'em down, seein' as it was a lovely rhythm. But, erh, don't do it again.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Sentinel Olak",
+      "text": "What th-",
+      "context": "NodeContext: Leads to combat",
+      "checkflags": [
+        "GOB_Checkpoint_State_GainedAccess = False",
+        "GOB_Checkpoint_State_PlayerPerformedSong"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "16": {
+          "id": "16",
+          "speaker": "Sentinel Olak",
+          "text": "A lovely rhythm, your lordness. Shame you just raised the alarm.",
+          "context": "NodeContext: He's speaking to his better - a drow, who he'd normally be subservient to. But he's secretly relishing the opportunity to take one on.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [
+            "DROWELF"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Sentinel Olak",
+          "text": "Lovely beat, that - course you warned half the camp there's killin' to be done. Get 'em, lads!",
+          "context": "NodeContext: Derisive, can't believe you're this stupid",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Sentinel Olak",
+      "text": "Lovely beat, that, True Soul. Just lovely.",
+      "context": "InternalNodeContext: Using the alarm for the third and next times\rNodeContext: Sort of detached - just humouring you at this point.",
+      "checkflags": [
+        "GOB_Checkpoint_State_PlayerPerformedSong",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls",
+        "GOB_Checkpoint_State_BackupAnnoyed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "Sentinel Olak",
+          "text": "Reckon the lads'll stay put this time.<br>",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Sentinel Olak",
+      "text": "Still got it, True Soul! Must be all that practice you're doin', heh.",
+      "context": "NodeContext: Still cheerful and respectul, but a bit more forced this time. You've done this once before and he's growing tired of it, even if he can't say it.",
+      "checkflags": [
+        "GOB_Checkpoint_State_UsedAlarmOnce",
+        "GOB_Checkpoint_State_PlayerPerformedSong",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls",
+        "GOB_Checkpoint_State_BackupAnnoyed = False"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_State_BackupAnnoyed"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "Sentinel Olak",
+          "text": "Oh look - backup's on its way. Again.",
+          "context": "NodeContext: Creeping annoyance, but masking it. He's already had to explain your mistake once and he knows they're going to be annoyed.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Sentinel Olak",
+      "text": "Ah, your excelness, you weren't supposed to touch that.",
+      "context": "NodeContext: He's speaking to his better - a drow, who he'd normally be subservient to. But he's secretly relishing the opportunity to take one on.",
+      "checkflags": [
+        "GOB_Checkpoint_State_PlayerRaisedAlarm",
+        "GOB_Checkpoint_State_GainedAccess",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls = False"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "DROWELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "Sentinel Olak",
+          "text": "Sorry 'bout this, but rules is rules.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Sentinel Olak",
+      "text": "Oi! Can't say you weren't warned, mate.",
+      "context": "InternalNodeContext: This node MUST be above other Not True Soul nodes\rNodeContext: Losing patience with you - he let you off the hook once and now he's going to attack",
+      "checkflags": [
+        "GOB_Checkpoint_State_ForgaveForUsingAlarm"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Sentinel Olak",
+      "text": "Eh... beg pardon, True Soul, but that's the alarm. Not to worry, though - I'll handle the lads.",
+      "context": "NodeContext: Player has made a mistake but is respected. Goblin is deferential.",
+      "checkflags": [
+        "GOB_Checkpoint_State_PlayerRaisedAlarm",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls",
+        "GOB_Checkpoint_State_BackupAnnoyed = False"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_State_UsedAlarmOnce"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Sentinel Olak",
+          "text": "Heh. No harm gettin' the buggers off their arses, eh?",
+          "context": "NodeContext: Sucking up, making a joke of it",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Sentinel Olak",
+      "text": "Ah, nice one, True Soul. Keepin' the lads on their toes.",
+      "context": "NodeContext: Player has made a mistake - again - but goblin remains deferential.",
+      "checkflags": [
+        "GOB_Checkpoint_State_UsedAlarmOnce",
+        "GOB_Checkpoint_State_PlayerRaisedAlarm",
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls",
+        "GOB_Checkpoint_State_BackupAnnoyed = False"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_State_BackupAnnoyed"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "Sentinel Olak",
+          "text": "Can't have 'em fallin' asleep now, can we?",
+          "context": "NodeContext: Making light of the situation to mask his annoyance",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "26": {
+      "id": "26",
+      "speaker": "Sentinel Olak",
+      "text": "Who th -",
+      "context": "NodeContext: Leads to combat",
+      "checkflags": [
+        "GOB_Checkpoint_State_PlayerRaisedAlarm",
+        "GOB_Checkpoint_State_GainedAccess = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Sentinel Olak",
+          "text": "A fine entrance, your drowship, but we got orders. Lads, intruder!",
+          "context": "NodeContext: He's speaking to his better - a drow, who he'd normally be subservient to. But he's secretly relishing the opportunity to take one on.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [
+            "DROWELF"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Sentinel Olak",
+          "text": "Hah! Lads, looks like this idiot just went and raised the alarm on theirselves!<br>",
+          "context": "NodeContext: Derisive, can't believe you're this stupid",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

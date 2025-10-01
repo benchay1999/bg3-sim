@@ -1,0 +1,1633 @@
+{
+  "metadata": {
+    "synopsis": "Dialog with Blurg in the Lodge.Blurg is present there in case the gith massacre hasn't happened and players have met it in UND.",
+    "how_to_trigger": "- CTY_Main_A- Debugbook option Act3 \u2192 LOW - LOW Lodge \u2192 Blurg is present- Talk to Blurg at -203; 24; -80"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*There is nothing left to speak of. His friend is gone, his focus now diverted to the nurturing  of Omeluum's legacy - his work.*",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg",
+        "LOW_TheLodge_State_OmeluumIsMissing",
+        "8b94f978-7f96-059e-84f0-1dbc341b5076_ToldBlurgOmeluumDiedInIRN"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Blurg",
+      "text": "You again. I hope you left your violent impulses back in the Underdark. They have no place in the Society of Brilliance.",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg = False",
+        "LOW_TheLodge_State_BlurgRemembersAct1Hostility"
+      ],
+      "setflags": [
+        "LOW_TheLodge_HasMet_Blurg"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "68": {
+          "id": "68",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "2",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Blurg",
+      "text": "Omeluum tells me I have you to thank for its safe return.",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg_OmeluumSaved = False",
+        "LOW_TheLodge_State_OmeluumArrived"
+      ],
+      "setflags": [
+        "LOW_TheLodge_HasMet_Blurg_OmeluumSaved"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "52": {
+          "id": "52",
+          "speaker": "Blurg",
+          "text": "We know the risks when we go out into the field, but to lose my friend in such a way would have been most disheartening.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_TheLodge_State_BlurgThankedForSavingOmeluum"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "87": {
+              "id": "87",
+              "speaker": "Player",
+              "text": "Bravery is no bad thing. In fact, your research could be invaluable for my cause.",
+              "context": "",
+              "checkflags": [
+                "LOW_TheLodge_CommentedOnResearchMethods = False"
+              ],
+              "setflags": [
+                "LOW_TheLodge_CommentedOnResearchMethods"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Minsc 1",
+                "Wyll 1",
+                "Karlach 1",
+                "Halsin 1",
+                "Jaheira 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "78": {
+              "id": "78",
+              "speaker": "Player",
+              "text": "You should stick to reading books. It's much safer.",
+              "context": "",
+              "checkflags": [
+                "LOW_TheLodge_CommentedOnResearchMethods = False",
+                "RANGER = False"
+              ],
+              "setflags": [
+                "LOW_TheLodge_CommentedOnResearchMethods"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Gale 1",
+                "Shadowheart 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "85",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "82": {
+                  "id": "82",
+                  "speaker": "Blurg",
+                  "text": "I know a wizard over in Elturel who'd disagree. Incurable paper cuts are no laughing matter.",
+                  "context": "NodeContext: Amused by the memory",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "85",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "29": {
+                      "id": "29",
+                      "speaker": "Blurg",
+                      "text": "If there's any conclusion to be drawn from this, I think it's that Omeluum and I are safest back in the Underdark.",
+                      "context": "NodeContext: Breezily dismissing the suggestion",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "85",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "36": {
+                          "id": "36",
+                          "speaker": "Blurg",
+                          "text": "Our research there must continue. We may not be able to fight on the front lines as you do, but we may yet do some good for those who call it home.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "85",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "21": {
+                              "id": "21",
+                              "speaker": "Blurg",
+                              "text": "We'll depart when this Absolute army is defeated. I understand you are involved in the matter.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "85",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "40": {
+                                  "id": "40",
+                                  "speaker": "Blurg",
+                                  "text": "We will not let you leave empty-handed, though. Make sure you speak to Omeluum before you leave.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "LOW_TheLodge_State_OmeluumGaveReward = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "85",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "47": {
+                                      "id": "47",
+                                      "speaker": "Player",
+                                      "text": "Have you anything to trade?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "LOW_TheLodge_Event_CheckBlurgsAttitude"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "85",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "7": {
+                                          "id": "7",
+                                          "speaker": "Blurg",
+                                          "text": "Of course. And for a friend such as yourself, I'm happy to apply our full academic discount.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_TheLodge_State_PlayerMaxedOutBlurgsAttitude"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "85",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "85": {
+                                              "id": "85",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "trade",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "88": {
+                                          "id": "88",
+                                          "speaker": "Blurg",
+                                          "text": "Of course. And given the aid you provided to Omeluum, I'm happy to offer you Society member rates.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "85",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "72": {
+                                      "id": "72",
+                                      "speaker": "Player",
+                                      "text": "Leave.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "77": {
+                                  "id": "77",
+                                  "speaker": "Blurg",
+                                  "text": "I hope our gifts will provide you with some meaningful assistance in fighting the evil Omeluum uncovered. Do let us know how you get on.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "LOW_TheLodge_State_OmeluumGaveReward"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "47",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "41": {
+              "id": "41",
+              "speaker": "Player",
+              "text": "I usual tell people to keep to the city - but in your case, perhaps the wilds are safer.",
+              "context": "",
+              "checkflags": [
+                "LOW_TheLodge_CommentedOnResearchMethods = False",
+                "RANGER"
+              ],
+              "setflags": [
+                "LOW_TheLodge_CommentedOnResearchMethods"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "35": {
+                  "id": "35",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "29",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "71": {
+              "id": "71",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "47",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            },
+            "23": {
+              "id": "23",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "72",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Blurg",
+      "text": "Is there something I can do for you?",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "52",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "2",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Blurg",
+      "text": "Is there anything I can do for you, friend?",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg_OmeluumSaved",
+        "LOW_TheLodge_State_OmeluumArrived"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "52",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "58": {
+          "id": "58",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "52",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Blurg",
+      "text": "My surface-dwelling friend. I take it you were curious to see the Society of Brilliance for yourself?",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg = False"
+      ],
+      "setflags": [
+        "LOW_TheLodge_HasMet_Blurg"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "52",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "39": {
+          "id": "39",
+          "speaker": "Blurg",
+          "text": "The lure of knowledge is a hard one to resist. Even where it requires us to endure discomfort.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Blurg",
+              "text": "For example, it is quite bright up here. I had forgotten about the malady known as 'sunburn'.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "26": {
+                  "id": "26",
+                  "speaker": "Player",
+                  "text": "I hear there's an unguent that protects against the sun's powers...",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_TheLodge_State_BlurgRemembersAct1Hostility = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Blurg",
+                      "text": "A field of research I am glad exists - it will be of immense value for those exposed to it on a more regular basis.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "63": {
+                          "id": "63",
+                          "speaker": "Blurg",
+                          "text": "As for me - I'll remain indoors. The Society's library will keep me quite busy until I return to my research in the Underdark.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "56": {
+                  "id": "56",
+                  "speaker": "Player",
+                  "text": "Why did you leave the Underdark?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_TheLodge_AskedWhyBlurgInLodge = False"
+                  ],
+                  "setflags": [
+                    "LOW_TheLodge_AskedWhyBlurgInLodge"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "Blurg",
+                      "text": "We are required to attend the Lodge from time to time, in order to present our findings to the Society's members.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "69": {
+                          "id": "69",
+                          "speaker": "Blurg",
+                          "text": "My research partner prefers to avoid crowds, and so has remained in the Underdark to monitor our zurkhwood samples.",
+                          "context": "NodeContext: [ZURK-wood]",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "76": {
+                              "id": "76",
+                              "speaker": "Blurg",
+                              "text": "I am eager to return myself, but I must prepare my treatise before I depart. Sharing knowledge is one of the Society's most important tenets.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "61": {
+                  "id": "61",
+                  "speaker": "Player",
+                  "text": "What's the subject of your treatise?",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_TheLodge_AskedWhyBlurgInLodge",
+                    "LOW_TheLodge_AskedAbout Treatise = False"
+                  ],
+                  "setflags": [
+                    "LOW_TheLodge_AskedAbout Treatise"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "80": {
+                      "id": "80",
+                      "speaker": "Blurg",
+                      "text": "'The Underused Underdark: Applications for Zurkhwood in Unlocking the Future of Subterranean Civilisations.'",
+                      "context": "NodeContext: Proud",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "48": {
+                          "id": "48",
+                          "speaker": "Blurg",
+                          "text": "I may be indulging myself somewhat with its title, but I do believe our research harbours such potential. I only hope the Society's members agree.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "79": {
+                              "id": "79",
+                              "speaker": "Blurg",
+                              "text": "Speaking of which, I should get back to annotating my references. Is there anything else I can do for you?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "81": {
+                                  "id": "81",
+                                  "speaker": "Player",
+                                  "text": "Have you anything to trade?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "32": {
+                                      "id": "32",
+                                      "speaker": "Blurg",
+                                      "text": "Of course. I always carry samples, in case there are inquiring minds looking to purchase them.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "57": {
+                                          "id": "57",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "trade",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "67": {
+                                  "id": "67",
+                                  "speaker": "Player",
+                                  "text": "Nothing for now.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "51": {
+                                      "id": "51",
+                                      "speaker": "Blurg",
+                                      "text": "Then I wish you a pleasant day. May it bring you a wealth of discoveries.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "49": {
+                  "id": "49",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "81",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "27": {
+                  "id": "27",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "38": {
+      "id": "38",
+      "speaker": "Blurg",
+      "text": "It seems your aggression has its uses after all. Omeluum tells me I've you to thank for its safe return.",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg_OmeluumSaved = False",
+        "LOW_TheLodge_State_OmeluumArrived",
+        "LOW_TheLodge_State_BlurgRemembersAct1Hostility"
+      ],
+      "setflags": [
+        "LOW_TheLodge_HasMet_Blurg_OmeluumSaved"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "52",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "43": {
+      "id": "43",
+      "speaker": "Blurg",
+      "text": "My surface-dwelling friend. How long has it been?",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg = False",
+        "LOW_TheLodge_State_OmeluumIsMissing"
+      ],
+      "setflags": [
+        "LOW_TheLodge_HasMet_Blurg"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Blurg",
+          "text": "I am glad to see you well. I see your tadpole remains in its state of suspension.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "74": {
+              "id": "74",
+              "speaker": "Blurg",
+              "text": "Your case has set us on quite the detour from our planned expedition work. We've thought about very little else.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "89",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "60": {
+                  "id": "60",
+                  "speaker": "Player",
+                  "text": "Where is Omeluum?",
+                  "context": "",
+                  "checkflags": [
+                    "IRN_IronThrone_State_Visited = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "Blurg",
+                      "text": "In the field, seeking further subjects for study. Though it has been gone for longer than I anticipated.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "5",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "53": {
+                          "id": "53",
+                          "speaker": "Blurg",
+                          "text": "After observing the nature of your tadpole's stasis, we felt it wise to report back to the Society.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "LOW_TheLodge_State_BlurgToldWhyHeIsInBG"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "5",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "65": {
+                              "id": "65",
+                              "speaker": "Blurg",
+                              "text": "Omeluum went out into the city to seek out further undeveloped infections like yours, but I have heard nothing since.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "5",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "55": {
+                                  "id": "55",
+                                  "speaker": "Blurg",
+                                  "text": "I admit, I'm somewhat concerned. We are usually sticklers for updating one another on our progress.",
+                                  "context": "NodeContext: Worried",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "5",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "89": {
+                                      "id": "89",
+                                      "speaker": "Player",
+                                      "text": "I have bad news. Your friend the mind flayer, Omeluum, is dead.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "IRN_IronThrone_State_Omeluum_PermaDefeated",
+                                        "8b94f978-7f96-059e-84f0-1dbc341b5076_ToldBlurgOmeluumDiedInIRN = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "84": {
+                                          "id": "84",
+                                          "speaker": "Blurg",
+                                          "text": "Poor Omeluum. This is terrible news. Our research is meant for good - it should not get us killed.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "90": {
+                                              "id": "90",
+                                              "speaker": "Blurg",
+                                              "text": "Omeluum would want me to continue its work, and I have a rudimentary understanding of its hypothesis.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "8b94f978-7f96-059e-84f0-1dbc341b5076_ToldBlurgOmeluumDiedInIRN"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "20": {
+                                      "id": "20",
+                                      "speaker": "Player",
+                                      "text": "I'll track Omeluum down. Where was it headed?",
+                                      "context": "",
+                                      "checkflags": [
+                                        "IRN_IronThrone_State_Visited = False"
+                                      ],
+                                      "setflags": [
+                                        "LOW_TheLodge_State_PromisedBlurgLookForOmeluum",
+                                        "8b94f978-7f96-059e-84f0-1dbc341b5076_acceptedquest"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "6": {
+                                          "id": "6",
+                                          "speaker": "Blurg",
+                                          "text": "Omeluum believed the answer to this riddle lay within the city walls, and held some connection to the cult of the Absolute.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "46": {
+                                              "id": "46",
+                                              "speaker": "Blurg",
+                                              "text": "I had the distinct impression it was intentionally keeping its hypothesis from me. As though even the theory would be enough to put me in danger.",
+                                              "context": "NodeContext: Trying to sound calm, but very worried",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "86": {
+                                                  "id": "86",
+                                                  "speaker": "Blurg",
+                                                  "text": "Why that would be, I can only theorise myself. It is rather outside my area of expertise.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "4": {
+                                                      "id": "4",
+                                                      "speaker": "Blurg",
+                                                      "text": "Omeluum is most likely safe and well, and simply absorbed in its work. However, it would put my mind at rest to confirm it, if you happen across its path.",
+                                                      "context": "NodeContext: Trying to sound calm, but very worried",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "50": {
+                                      "id": "50",
+                                      "speaker": "Player",
+                                      "text": "Perhaps Omeluum prefers to work alone, given its connection to the subject matter.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "8b94f978-7f96-059e-84f0-1dbc341b5076_acceptedquest = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "44": {
+                                          "id": "44",
+                                          "speaker": "Blurg",
+                                          "text": "A fair assumption. Omeluum is not given to strong emotion, but I know it regrets the damage caused by others of its kind.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "34": {
+                                              "id": "34",
+                                              "speaker": "Blurg",
+                                              "text": "I am doing my best to conduct my own research in its absence.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "37": {
+                                                  "id": "37",
+                                                  "speaker": "Blurg",
+                                                  "text": "Unfortunately my second-hand knowledge does not compare to the innate understanding Omeluum brings to such study.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "73": {
+                                      "id": "73",
+                                      "speaker": "Player",
+                                      "text": "Have you anything to trade?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "14": {
+                                          "id": "14",
+                                          "speaker": "Blurg",
+                                          "text": "Naturally. The Underdark provided us with some most unusual salvage. Plenty to keep an inquiring mind busy.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "31": {
+                                              "id": "31",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "trade",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "18": {
+                                      "id": "18",
+                                      "speaker": "Player",
+                                      "text": "Now is not the time for concern - now is a time for action. Go out and find your friend!",
+                                      "context": "",
+                                      "checkflags": [
+                                        "IRN_IronThrone_State_Omeluum_PermaDefeated = False",
+                                        "HALFORC"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "30": {
+                                          "id": "30",
+                                          "speaker": "Blurg",
+                                          "text": "To jump to action without evidence is hardly becoming of the Society of Brilliance.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "45": {
+                                              "id": "45",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "4",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "59": {
+                                      "id": "59",
+                                      "speaker": "Player",
+                                      "text": "I'll head out now - see if I can pick up Omeluum's trail.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "8b94f978-7f96-059e-84f0-1dbc341b5076_acceptedquest"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "5": {
+                                          "id": "5",
+                                          "speaker": "Blurg",
+                                          "text": "Of course. I should get back to my research.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "75": {
+                                      "id": "75",
+                                      "speaker": "Player",
+                                      "text": "I'll leave you to it.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "17": {
+                  "id": "17",
+                  "speaker": "Player",
+                  "text": "I thought you were conducting research in the Underdark?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "53",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "11": {
+                  "id": "11",
+                  "speaker": "Player",
+                  "text": "I've become quite the expert on my tadpole since we last met.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "53",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "83": {
+                      "id": "83",
+                      "speaker": "Blurg",
+                      "text": "You have? I would love to hear your conclusions, but it would not feel right to do so without my research partner.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "53",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "Player",
+                  "text": "Have you anything to trade?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "14",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "22": {
+                  "id": "22",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "54": {
+      "id": "54",
+      "speaker": "Blurg",
+      "text": "Your tadpole's stasis is a most curious area of study. I will have much to share with Omeluum upon its return.",
+      "context": "",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg",
+        "LOW_TheLodge_State_OmeluumIsMissing"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "74",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "66": {
+          "id": "66",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "LOW_TheLodge_State_BlurgToldWhyHeIsInBG = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "42": {
+              "id": "42",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "74",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "62": {
+          "id": "62",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "LOW_TheLodge_State_BlurgToldWhyHeIsInBG"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "55",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "64": {
+      "id": "64",
+      "speaker": "Blurg",
+      "text": "We meet again. This time without the need for violence, I hope.",
+      "context": "NodeContext: Not impressed with the player, but moving on from your conflict",
+      "checkflags": [
+        "LOW_TheLodge_HasMet_Blurg = False",
+        "LOW_TheLodge_State_OmeluumIsMissing",
+        "LOW_TheLodge_State_BlurgRemembersAct1Hostility"
+      ],
+      "setflags": [
+        "LOW_TheLodge_HasMet_Blurg"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "74",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "70": {
+          "id": "70",
+          "speaker": "Blurg",
+          "text": "I see you have not yet undergone ceremorphosis. I can only assume your tadpole remains in stasis.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "74",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

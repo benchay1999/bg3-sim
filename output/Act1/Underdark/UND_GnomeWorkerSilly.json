@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "synopsis": "One-liner dialog in Ketheric City for a gnome working on the cave-in.",
+    "how_to_trigger": "Repro steps:1. Start the game2. loadlevel WLD_Main_A3. goto -635.141; 14.738; 3104. Destroy the rubbles to free Nere5. In dialog choose to side with Gnomes.6. Talk with Lunkbug."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_TheDrowNere_State_PermaDefeated"
+      ],
+      "setflags": [
+        "UND_GnomeWorkerSilly_HasMet2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "24",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Lunkbug",
+          "text": "... well. It's too late now. Thank you.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Lunkbug",
+      "text": "There's more back there. Get them out, please!",
+      "context": "",
+      "checkflags": [
+        "UND_DuergarGuards_Excavation_State_PermaDefeated",
+        "UND_DuergarCamp_State_CaveInCleared = False"
+      ],
+      "setflags": [
+        "UND_GnomeWorkerSilly_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "19",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Lunkbug",
+      "text": "Place the powder and use fire to explode it!",
+      "context": "",
+      "checkflags": [
+        "UND_GnomeWorkerSilly_Event_ToldLunkbugHasPowderq",
+        "f827139c-5f16-84a1-5892-2bd6ae5e54a6"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Lunkbug",
+      "text": "Please. We have to free Beldron.",
+      "context": "CinematicNodeContext: Addressed to herself",
+      "checkflags": [
+        "UND_ArguingGnomes_Quest_Refused"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "I've got explosive powder. That should open the way.",
+          "context": "",
+          "checkflags": [
+            "UND_GnomeWorkerSilly_Event_ToldLunkbugHasPowderq = False",
+            "f827139c-5f16-84a1-5892-2bd6ae5e54a6"
+          ],
+          "setflags": [
+            "UND_GnomeWorkerSilly_Event_ToldLunkbugHasPowderq"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Lunkbug",
+              "text": "Incredible news. Drop it near the cave-in and set it alight!",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Philomeen is - gone. I thought you should know.",
+          "context": "",
+          "checkflags": [
+            "UND_ArguingGnomes_State_SaidEscapeeDead = False",
+            "UND_ArguingGnomes_State_SaidEscapeeSafe = False",
+            "UND_PanicRoom_State_GnomePermaDefeated"
+          ],
+          "setflags": [
+            "UND_ArguingGnomes_State_SaidEscapeeDead"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Lunkbug",
+              "text": "Gods. We've lost too many.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "28": {
+          "id": "28",
+          "speaker": "Player",
+          "text": "Philomeen is safe.",
+          "context": "",
+          "checkflags": [
+            "UND_ArguingGnomes_State_SaidEscapeeDead = False",
+            "UND_ArguingGnomes_State_SaidEscapeeSafe = False",
+            "UND_EscapedGnome_State_GnomeSaved"
+          ],
+          "setflags": [
+            "UND_ArguingGnomes_State_SaidEscapeeSafe"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Lunkbug",
+              "text": "Oh, thank the highest heavens. A touch of good news.",
+              "context": "NodeContext: GAIR-dul EYE-urn-h\u00e6nd: A gnome deity. Basically, 'Thank God!'",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Lunkbug",
+                  "text": "But my Beldron is still trapped. Blow that wall open, I'm begging you.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Lunkbug",
+      "text": "Please, just... just let me dig.",
+      "context": "CinematicNodeContext: Laridda is crying.",
+      "checkflags": [
+        "UND_ArguingGnomes_State_Inconsolable"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "22": {
+          "id": "22",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "8",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Lunkbug",
+      "text": "Beldron's still back there. Find Philomeen - and hurry!",
+      "context": "",
+      "checkflags": [
+        "UND_ArguingGnomes_Quest_Accepted"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Lunkbug",
+      "text": "Beldron - he's gone. And you stood there and watched.",
+      "context": "",
+      "checkflags": [
+        "UND_GnomeForeman_State_PermaDefeated"
+      ],
+      "setflags": [
+        "UND_GnomeWorkerSilly_Event_ChidedPlayer"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "27": {
+          "id": "27",
+          "speaker": "Lunkbug",
+          "text": "You're no hero, no matter what the others say.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Lunkbug",
+      "text": "Can't talk!",
+      "context": "",
+      "checkflags": [
+        "UND_GnomeWorkerSilly_HasMet",
+        "UND_DuergarGuards_Excavation_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_DuergarCamp_State_SidedMutineers"
+      ],
+      "setflags": [
+        "UND_GnomeWorkerSilly_HasMet2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "24",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_DuergarCamp_State_ExplosivesAtCaveIn"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "19",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Lunkbug",
+      "text": "Get Beldron out of there. Please.",
+      "context": "",
+      "checkflags": [
+        "UND_ArguingGnomes_State_SaidEscapeeSafe"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "26": {
+          "id": "26",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "1",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "21": {
+          "id": "21",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "2",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Lunkbug",
+      "text": "Freedom - I'd forgotten how it felt. Thank you.",
+      "context": "",
+      "checkflags": [
+        "UND_TheDrowNere_State_PermaDefeated",
+        "UND_DuergarMutineers_State_PermaDefeated"
+      ],
+      "setflags": [
+        "UND_GnomeWorkerSilly_HasMet2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Lunkbug",
+      "text": "Thank you. For saving Beldron, I mean. I just wish...",
+      "context": "",
+      "checkflags": [
+        "UND_State_LeaderFreedGnomes"
+      ],
+      "setflags": [
+        "UND_GnomeWorkerSilly_HasMet2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Lunkbug",
+      "text": "Ironhand keep us safe.",
+      "context": "NodeContext: GAIR-dul EYE-urn-h\u00e6nd",
+      "checkflags": [
+        "UND_GnomeWorkerSilly_HasMet2"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "29": {
+      "id": "29",
+      "speaker": "Lunkbug",
+      "text": "Let me be. I've got to get Beldron out of there!",
+      "context": "",
+      "checkflags": [
+        "UND_DuergarGuards_Excavation_State_PermaDefeated = False"
+      ],
+      "setflags": [
+        "UND_GnomeWorkerSilly_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "30": {
+      "id": "30",
+      "speaker": "Lunkbug",
+      "text": "Nere won't just let us go. Can't you do something?",
+      "context": "",
+      "checkflags": [
+        "UND_DuergarCamp_State_CaveInCleared"
+      ],
+      "setflags": [
+        "UND_GnomeWorkerSilly_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "31": {
+      "id": "31",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_ArguingGnomes_Event_FailedPersuasion"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "32": {
+      "id": "32",
+      "speaker": "Lunkbug",
+      "text": "You've done enough.",
+      "context": "NodeContext: Dismissive tone",
+      "checkflags": [
+        "UND_GnomeWorkerSilly_Event_ChidedPlayer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

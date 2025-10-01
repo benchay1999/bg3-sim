@@ -1,0 +1,409 @@
+{
+  "metadata": {
+    "synopsis": "Near a forest village, there are remains of an ogre campfire and meat spit over it. There's a cool dagger stuck in the meat. The player can attempt to retrieve it in a few ways (2 are listed here, but feel free to add another branch)."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*Mystery meat, tough as boar hide. Only the sharpest teeth could pierce it.*",
+      "context": "",
+      "checkflags": [
+        "FOR_KnifeInMeat_State_KnifeTaken"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*The dagger still juts from the meat.*",
+      "context": "",
+      "checkflags": [
+        "FOR_KnifeInMeat_Event_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Align the dagger with the meat's grain and pull.",
+          "context": "",
+          "checkflags": [
+            "FOR_KnifeInMeat_State_InvestigationPassed"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "Narrator",
+              "text": "*Thanks to your keen eye, the dagger glides smoothly out of the mystery meat.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "FOR_KnifeInMeat_State_KnifeTaken"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Carefully wiggle the dagger until it slides free.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "Narrator",
+                  "text": "*Your cautious method pays off. The dagger glides smoothly out of the mystery meat.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_KnifeInMeat_State_KnifeTaken"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Narrator",
+                  "text": "*Strained by your clumsy technique, the blade snaps in two.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_KnifeInMeat_State_KnifeBroken"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Grasp the handle and pull the dagger with all your might.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "Narrator",
+                  "text": "*You yank the dagger free, leaving a narrow slit behind.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_KnifeInMeat_State_KnifeTaken"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Narrator",
+                  "text": "*You tug at the dagger until the blade snaps in two. The sharp end is still stuck inside the meat.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_KnifeInMeat_State_KnifeBroken"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Examine the meat. Perhaps there is some trick to removing the dagger.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Narrator",
+                  "text": "*You notice the blade is at an angle to the meat's grain. If you align the dagger with the grain, it should slip out easily.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_KnifeInMeat_State_InvestigationPassed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "16": {
+              "id": "16",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Narrator",
+                  "text": "*The dagger is tightly embedded in the carcass. You notice nothing unusual.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "19": {
+          "id": "19",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Narrator",
+      "text": "*A feast fit for an ogre. You notice a peculiar dagger protruding from the tough, leathery meat.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "FOR_KnifeInMeat_Event_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "3",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "20": {
+      "id": "20",
+      "speaker": "Narrator",
+      "text": "*A sharp metal fragment pokes out of the meat. It's of no use to you.*",
+      "context": "",
+      "checkflags": [
+        "FOR_KnifeInMeat_State_KnifeBroken"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

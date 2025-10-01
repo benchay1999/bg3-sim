@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "synopsis": "Lassandra after the fight with the Drider, triggers only if players started with the harpers and Lassandra was present at Haven.",
+    "how_to_trigger": "- Load SCL_Main- oe havchec (if playing in the editor).- goto 59; 47; 155- Help the harpers and follow them.- Go through the checkpoint with Jaheira, Lassandra will move with the other harpers.- oe scl_unlockharpersambush- Speak with them at the bridge and start the quest.- Ambush the caravan, kill cultists and drider.- Before taking the lantern speak with Lassandra."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Harper Lassandra",
+      "text": "Take the lantern off the corpse. I doubt it will mind.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HarperScout_AtAmbush_HasMet",
+        "SCL_Drider_Event_AcquiredMoonlanternWithoutFight = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Harper Lassandra",
+      "text": "Impressive - you've a way with words.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HarperScout_AtAmbush_HasMet = False",
+        "SCL_Drider_Event_AcquiredMoonlanternWithoutFight"
+      ],
+      "setflags": [
+        "SCL_Drider_HarperScout_AtAmbush_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Harper Lassandra",
+      "text": "A battle I won't soon forget. And in such favoured company, no less.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HarperScout_AtAmbush_HasMet = False",
+        "SCL_Drider_Event_AcquiredMoonlanternWithoutFight = False"
+      ],
+      "setflags": [
+        "SCL_Drider_HarperScout_AtAmbush_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Harper Lassandra",
+          "text": "Go ahead, examine the drider. The lantern's there for the taking.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Harper Lassandra",
+      "text": "Take the lantern off the corpse. I doubt it will mind.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HarperScout_AtAmbush_HasMet",
+        "SCL_Drider_Event_AcquiredMoonlanternWithoutFight"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,3720 @@
+{
+  "metadata": {
+    "synopsis": "The dialog for the Flaming Fist manip who stands near the main entrance of the Big Barn that holds donations for the refugee camp. If any of the other Fists catch the player, they bring them to him for the interrogation.",
+    "how_to_trigger": "BGO_Main_A, Refugee Camp, Big Barn, 62; 43; -114Approach and talk to the NPC."
+  },
+  "dialogue": {
+    "8": {
+      "id": "8",
+      "speaker": "Manip Nestor",
+      "text": "You might be a nuisance but at least neither of us got blown up, eh?",
+      "context": "NodeContext: Genuinely grateful, possibly even a little warm (if gruff about it)",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Solved",
+        "WYR_RefugeeCamp_State_BigBarnSolved",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Manip Nestor",
+      "text": "Can't keep out of trouble, can you?",
+      "context": "NodeContext: Weary annoyance at the player",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "67",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "65": {
+          "id": "65",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Manip Nestor",
+      "text": "I heard you tracked down the man responsible for those explosive toys - good work.",
+      "context": "NodeContext: Genuinely grateful (if gruff about it)",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Solved = False",
+        "WYR_RefugeeCamp_State_BigBarnSolved",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Solved"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "67",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "122": {
+          "id": "122",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_Event_ManipForceInterrogate",
+        "WYR_RefugeeCamp_State_ManipInterrogationTarget = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ToysExploded = False",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+        "WYR_RefugeeCamp_State_FoundTrappedToys",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+        "WYR_RefugeeCamp_FlamingFistManip_State_NearToys"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "40",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "157": {
+          "id": "157",
+          "speaker": "Manip Nestor",
+          "text": "Now give me some room - I need to make sure the rest of these donations are safe.",
+          "context": "NodeContext: Dismissive of the player but concerned about the potentially explosive donations",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "132": {
+              "id": "132",
+              "speaker": "Manip Nestor",
+              "text": "You try and find whoever is responsible for this.",
+              "context": "NodeContext: The line should be copied from 00532ddb-1204-f29d-9375-a1f685965969, N206.\n> Resignation; really doesn't have time for this shit himself",
+              "checkflags": [],
+              "setflags": [
+                "WYR_RefugeeCamp_State_ManipInvestigatedToys"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "22": {
+                  "id": "22",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "129",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "123": {
+                  "id": "123",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "144",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "40": {
+      "id": "40",
+      "speaker": "Manip Nestor",
+      "text": "You were right - explosives!",
+      "context": "NodeContext: Very gruff and grudging apology",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ToysExploded",
+        "WYR_RefugeeCamp_State_GuardsAlerted",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+        "WYR_RefugeeCamp_State_FoundTrappedToys",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "157",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "51": {
+      "id": "51",
+      "speaker": "Manip Nestor",
+      "text": "What was that?! Are you all right?",
+      "context": "NodeContext: Has just been shocked by an explosion; genuinely concerned for a moment despite everything",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ToysExploded",
+        "WYR_RefugeeCamp_State_GuardsAlerted",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate = False",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "104",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "107": {
+          "id": "107",
+          "speaker": "Player",
+          "text": "As all right as I can be after being next to a fiery explosion.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "104",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "194": {
+          "id": "194",
+          "speaker": "Player",
+          "text": "Not really, no.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "49",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "74": {
+              "id": "74",
+              "speaker": "Manip Nestor",
+              "text": "From the sound of that explosion, I'm not surprised.",
+              "context": "NodeContext: Gruff concern despite everything",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "49",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "104": {
+                  "id": "104",
+                  "speaker": "Manip Nestor",
+                  "text": "What happened here?",
+                  "context": "NodeContext: Still gruffly concerned/a little shellshocked",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "49",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "205": {
+                      "id": "205",
+                      "speaker": "Player",
+                      "text": "I was just looking at the donations and some of them blew up.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "49",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "168": {
+                      "id": "168",
+                      "speaker": "Player",
+                      "text": "So it turns out those toy bears were explosive.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "188",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "49": {
+                          "id": "49",
+                          "speaker": "Manip Nestor",
+                          "text": "What? Those are children's toys - which means if a child had picked one up... I don't want to think about it.",
+                          "context": "NodeContext: Genuine concern",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "188",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "75": {
+                              "id": "75",
+                              "speaker": "Manip Nestor",
+                              "text": "How do I know you're not the one who planted those explosives?",
+                              "context": "NodeContext: Suspicious of the player",
+                              "checkflags": [],
+                              "setflags": [
+                                "WYR_RefugeeCamp_State_ManipInvestigatedToys"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "188",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "129": {
+                                  "id": "129",
+                                  "speaker": "Player",
+                                  "text": "Because I've already found and dealt with the real culprit: Arfur Gregorio. You're lucky I was here.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_RefugeeCamp_State_BigBarnSolved"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "188",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "69": {
+                                      "id": "69",
+                                      "speaker": "Manip Nestor",
+                                      "text": "You might be a nuisance but at least neither of us got blown up, eh?",
+                                      "context": "NodeContext: Genuinely grateful, possibly even a little warm (if gruff about it)",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                                        "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "202": {
+                                  "id": "202",
+                                  "speaker": "Player",
+                                  "text": "I just wanted to see what was inside the barn.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "188",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "3": {
+                                      "id": "3",
+                                      "speaker": "Manip Nestor",
+                                      "text": "That's not good enough. You're under arrest.",
+                                      "context": "NodeContext: Resignation/annoyance at the player having made more work for him",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "171": {
+                                          "id": "171",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "87",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        },
+                                        "130": {
+                                          "id": "130",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "90",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        },
+                                        "31": {
+                                          "id": "31",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "198",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        },
+                                        "166": {
+                                          "id": "166",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "127",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "59": {
+                                  "id": "59",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "192",
+                                  "link": "188",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                },
+                                "183": {
+                                  "id": "183",
+                                  "speaker": "Player",
+                                  "text": "I almost died in the explosion myself! I want to find whoever's responsible.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_RefugeeCamp_State_ToysExploded"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "188",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "161": {
+                                  "id": "161",
+                                  "speaker": "Player",
+                                  "text": "Why would I disarm my own explosives? I just want to find whoever's responsible.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_RefugeeCamp_State_ToysExploded = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "188": {
+                                      "id": "188",
+                                      "speaker": "",
+                                      "text": "True",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "0": {
+                                          "id": "0",
+                                          "speaker": "Manip Nestor",
+                                          "text": "All right. I guess it can't hurt. I'll check up on the rest of the goods. You try and find whoever is responsible for this.",
+                                          "context": "NodeContext: Resignation; really doesn't have time for this shit himself",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                                            "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "137": {
+                                      "id": "137",
+                                      "speaker": "",
+                                      "text": "False",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "124": {
+                                          "id": "124",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "42",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "114": {
+                                  "id": "114",
+                                  "speaker": "Player",
+                                  "text": "I was sent by the Council to check up on your operation.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "185": {
+                                      "id": "185",
+                                      "speaker": "",
+                                      "text": "True",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "103": {
+                                          "id": "103",
+                                          "speaker": "Manip Nestor",
+                                          "text": "I had a feeling something was wrong in the barn - I wanted to make sure nobody got hurt. Take a look if you must.",
+                                          "context": "NodeContext: Resignation (and slight genuine concern at possibly being reported)",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                                            "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception",
+                                            "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "24": {
+                                      "id": "24",
+                                      "speaker": "",
+                                      "text": "False",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "193": {
+                                          "id": "193",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "42",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "90": {
+                                  "id": "90",
+                                  "speaker": "Player",
+                                  "text": "Activate the toy and toss it to him.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_RefugeeCamp_State_GuardsAlerted",
+                                    "WYR_RefugeeCamp_State_ToysCrateEmpty = False",
+                                    "WYR_RefugeeCamp_State_PlayerNearToys",
+                                    "09ca858e-4bac-48ae-9aca-52602199f813 = False",
+                                    "REALLY_DARK_URGE"
+                                  ],
+                                  "setflags": [
+                                    "WYR_RefugeeCamp_Event_DUTossToy"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "198": {
+                                  "id": "198",
+                                  "speaker": "Player",
+                                  "text": "Activate the toy and toss it to him.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_RefugeeCamp_State_GuardsAlerted",
+                                    "09ca858e-4bac-48ae-9aca-52602199f813",
+                                    "REALLY_DARK_URGE"
+                                  ],
+                                  "setflags": [
+                                    "WYR_RefugeeCamp_Event_DUTossToy"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "38": {
+                      "id": "38",
+                      "speaker": "Player",
+                      "text": "I have no idea.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "75",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "201": {
+                          "id": "201",
+                          "speaker": "Manip Nestor",
+                          "text": "It stinks of smokepowder in here...",
+                          "context": "NodeContext: Thinking aloud",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "75",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "199": {
+          "id": "199",
+          "speaker": "Player",
+          "text": "Look at me - have my eyebrows been singed off?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "104",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "125": {
+              "id": "125",
+              "speaker": "Manip Nestor",
+              "text": "Well, you're still talking, so you can't be that bad.",
+              "context": "NodeContext: Gruffly relieved the player is okay despite everything",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "104",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "53": {
+      "id": "53",
+      "speaker": "Manip Nestor",
+      "text": "The hells are you doing in here?",
+      "context": "NodeContext: Angry at the player's trespassing",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "53",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "117": {
+          "id": "117",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "146",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "56": {
+      "id": "56",
+      "speaker": "Manip Nestor",
+      "text": "Show me where these explosive toys are, then.",
+      "context": "NodeContext: Suspicious/clearly doesn't quite believe the player",
+      "checkflags": [
+        "WYR_RefugeeCamp_FlamingFistManip_Knows_ExplosiveToys",
+        "WYR_RefugeeCamp_State_GuardsAlerted = False",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+        "WYR_RefugeeCamp_FlamingFistManip_State_NearToys = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "57": {
+      "id": "57",
+      "speaker": "Manip Nestor",
+      "text": "Gods - any one of us could've been blown to smithereens.",
+      "context": "NodeContext: Genuine concern",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_ToysInvestigated = False",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_ToysInvestigated"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "58": {
+      "id": "58",
+      "speaker": "Manip Nestor",
+      "text": "What was that? Stay here - I'll take a look.",
+      "context": "NodeContext: Alert/listening/authoritative after hearing something be disarmed",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_GuardsAlerted",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate = False",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_FlamingFistManip_State_NearToys = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "61": {
+      "id": "61",
+      "speaker": "Manip Nestor",
+      "text": "I don't need you standing here gawking, thanks.",
+      "context": "NodeContext: Dismissive/irritated by the player's presence",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_ToysInvestigated",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "67": {
+      "id": "67",
+      "speaker": "Manip Nestor",
+      "text": "Back again, are you?",
+      "context": "NodeContext: Weary at seeing the player again",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "53",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "152": {
+          "id": "152",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "72": {
+      "id": "72",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing = False",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "53",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "174": {
+          "id": "174",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "93",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "82": {
+      "id": "82",
+      "speaker": "Manip Nestor",
+      "text": "Donations?",
+      "context": "NodeContext: A little bored; he's been doing this all day",
+      "checkflags": [],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip",
+        "WYR_RefugeeCamp_Knows_Donations"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "141",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Donations for what?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "141",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "99": {
+              "id": "99",
+              "speaker": "Manip Nestor",
+              "text": "Do you not have eyes? The refugees.",
+              "context": "NodeContext: Mild irritation",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "141",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Manip Nestor",
+                  "text": "If you don't have anything to donate, you can get going.",
+                  "context": "NodeContext: Irritated",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "141",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "83": {
+                      "id": "83",
+                      "speaker": "Player",
+                      "text": "I need to get into the barn - right now. Something dangerous might be among the donations.",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_RefugeeCamp_State_TriedDonationsDangerous = False",
+                        "WYR_MerchantsHouse_Knows_SecretInBasement",
+                        "WYR_RefugeeCamp_State_FoundTrappedToys = False"
+                      ],
+                      "setflags": [
+                        "WYR_RefugeeCamp_State_TriedDonationsDangerous"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "141",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "6": {
+                          "id": "6",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "79": {
+                              "id": "79",
+                              "speaker": "Manip Nestor",
+                              "text": "I'm going to let you through because I don't want to take any risks. But you'd better not be lying.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+                                "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "186": {
+                          "id": "186",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "159": {
+                              "id": "159",
+                              "speaker": "Manip Nestor",
+                              "text": "Nice try. But nothing gets past us. Now move along.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "172": {
+                      "id": "172",
+                      "speaker": "Player",
+                      "text": "Did you know that somebody's donated a load of toys filled with explosives?",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_RefugeeCamp_State_ToysExploded = False",
+                        "WYR_RefugeeCamp_State_FoundTrappedToys"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "141",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "190": {
+                          "id": "190",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "141",
+                          "is_end": false,
+                          "node_type": "alias",
+                          "children": {
+                            "35": {
+                              "id": "35",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "WYR_RefugeeCamp_FlamingFistManip_Knows_ExplosiveToys",
+                                "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+                                "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                                "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "alias",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "105": {
+                      "id": "105",
+                      "speaker": "Player",
+                      "text": "Donate some gold. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                      "context": "InternalNodeContext: 500 gold",
+                      "checkflags": [
+                        "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                      ],
+                      "setflags": [
+                        "GEN_TransferNPCPayment"
+                      ],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion -1",
+                        "Lae'zel -1",
+                        "Shadowheart 1",
+                        "Wyll 1",
+                        "Karlach 1",
+                        "Jaheira 2",
+                        "Minthara -1",
+                        "Halsin 1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "96",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "96": {
+                          "id": "96",
+                          "speaker": "Manip Nestor",
+                          "text": "Thank you. I'm sure your contribution will be greatly appreciated.",
+                          "context": "NodeContext: Gruff gratefulness",
+                          "checkflags": [],
+                          "setflags": [
+                            "WYR_RefugeeCamp_State_MadeDonation"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "182": {
+                      "id": "182",
+                      "speaker": "Player",
+                      "text": "I want to donate some supplies.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "96",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "101": {
+                          "id": "101",
+                          "speaker": "Manip Nestor",
+                          "text": "Let's see what you've got.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "96",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "111": {
+                              "id": "111",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "96",
+                              "is_end": false,
+                              "node_type": "trade",
+                              "children": {
+                                "81": {
+                                  "id": "81",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_RefugeeCamp_State_DonatedBarter"
+                                  ],
+                                  "setflags": [
+                                    "WYR_RefugeeCamp_State_MadeDonation",
+                                    "WYR_RefugeeCamp_State_DonatedBarter = False"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "alias",
+                                  "children": {}
+                                },
+                                "32": {
+                                  "id": "32",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "30",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "78": {
+                      "id": "78",
+                      "speaker": "Player",
+                      "text": "I'd like to take the donation into the barn myself.",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_RefugeeCamp_State_TriedDonateInside = False",
+                        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False"
+                      ],
+                      "setflags": [
+                        "WYR_RefugeeCamp_State_TriedDonateInside"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "100": {
+                          "id": "100",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "108": {
+                              "id": "108",
+                              "speaker": "Manip Nestor",
+                              "text": "Well... if you must. I suppose it saves me the walk. But if you're going to do it, hurry up.",
+                              "context": "NodeContext: Slightly suspicious but willing to allow it (and slightly irritated by the player's presence of course)",
+                              "checkflags": [],
+                              "setflags": [
+                                "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "119": {
+                          "id": "119",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "163": {
+                              "id": "163",
+                              "speaker": "Manip Nestor",
+                              "text": "I'm not letting you into the barn. Give me what you've got to donate or leave.",
+                              "context": "NodeContext: Increasingly annoyed with the player's antics",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "98": {
+                                  "id": "98",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "105",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                },
+                                "71": {
+                                  "id": "71",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "182",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                },
+                                "165": {
+                                  "id": "165",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "47",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                },
+                                "109": {
+                                  "id": "109",
+                                  "speaker": "Player",
+                                  "text": "Leave.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "153": {
+                      "id": "153",
+                      "speaker": "Player",
+                      "text": "Maybe people would donate more if you weren't so rude.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "30": {
+                          "id": "30",
+                          "speaker": "Manip Nestor",
+                          "text": "Nothing to donate? Then, again, do kindly leave.",
+                          "context": "NodeContext: Weary irritation",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "47": {
+                      "id": "47",
+                      "speaker": "Player",
+                      "text": "Actually, I think I'll hang onto it for now.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "175": {
+                          "id": "175",
+                          "speaker": "Manip Nestor",
+                          "text": "Very giving of you. Now go waste someone else's time.",
+                          "context": "NodeContext: Sarcastic/irritated",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "128": {
+                      "id": "128",
+                      "speaker": "Player",
+                      "text": "I can heal folk, if that's any use.",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_RefugeeCamp_FlamingFistManip_OfferedHealing = False",
+                        "CLERIC"
+                      ],
+                      "setflags": [
+                        "WYR_RefugeeCamp_FlamingFistManip_OfferedHealing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "145": {
+                          "id": "145",
+                          "speaker": "Manip Nestor",
+                          "text": "These folks' empty bellies and purses need healing more than anything, priest.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "144": {
+                      "id": "144",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "70": {
+          "id": "70",
+          "speaker": "Player",
+          "text": "It looks like you have plenty already.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "15",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "134": {
+              "id": "134",
+              "speaker": "Manip Nestor",
+              "text": "You wouldn't be saying that if you'd seen this inventory - or how many refugees we have here.",
+              "context": "NodeContext: Mild irritation",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "37": {
+          "id": "37",
+          "speaker": "Player",
+          "text": "I'll take a donation, please.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Minthara 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "86",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "64": {
+              "id": "64",
+              "speaker": "Manip Nestor",
+              "text": "Very funny. You can make a donation to the refugees or you can leave.",
+              "context": "NodeContext: Irritated",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "86": {
+                  "id": "86",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "15",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "I'll make a donation - what do you need?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "86",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "126": {
+              "id": "126",
+              "speaker": "Manip Nestor",
+              "text": "Food, sundries, gold - these poor refugee sods need all the help they can get.",
+              "context": "NodeContext: Gruff sympathy",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "86",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "48": {
+          "id": "48",
+          "speaker": "Player",
+          "text": "I'm actually here to trade.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "179": {
+              "id": "179",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "trade",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "taganswer",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "112": {
+          "id": "112",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "46",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "84": {
+      "id": "84",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ToysExploded",
+        "WYR_RefugeeCamp_State_GuardsAlerted = False",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+        "WYR_RefugeeCamp_State_FoundTrappedToys",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+        "WYR_RefugeeCamp_FlamingFistManip_State_NearToys"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "40",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "88": {
+      "id": "88",
+      "speaker": "Manip Nestor",
+      "text": "Are you gonna search the barn or what?",
+      "context": "NodeContext: Annoyed at the player's faffing around/wasting time",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "97": {
+      "id": "97",
+      "speaker": "Manip Nestor",
+      "text": "You - turn around and toddle your way right back out of here.",
+      "context": "NodeContext: Brusque/no nonsense",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False",
+        "WYR_RefugeeCamp_FlamingFistManip_Event_BigBarnEntranceSpotted"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_BarnEnter",
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip",
+        "WYR_RefugeeCamp_FlamingFistManip_Event_BigBarnEntranceSpotted = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "121",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "13": {
+          "id": "13",
+          "speaker": "Manip Nestor",
+          "text": "Everything in this barn has been donated for the refugees - not you. Now piss off.",
+          "context": "NodeContext: Brusque/no nonsense",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "121",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "29": {
+              "id": "29",
+              "speaker": "Player",
+              "text": "Piss off? Charming.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "121",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "54": {
+                  "id": "54",
+                  "speaker": "Manip Nestor",
+                  "text": "I'm doing my job - you can window-shop elsewhere.",
+                  "context": "NodeContext: Irritated",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "121",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "167": {
+              "id": "167",
+              "speaker": "Player",
+              "text": "What kind of things have people donated?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "141",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Manip Nestor",
+                  "text": "Food. Sundries. Toys, even. What would you expect for people who've lost everything?",
+                  "context": "NodeContext: Clearly appreciative of the donations for the refugees but soon wary of/annoyed by the player again after the -",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "141",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "121": {
+                      "id": "121",
+                      "speaker": "Manip Nestor",
+                      "text": "Now are you going to clear off or not?",
+                      "context": "NodeContext: A little aggressive now",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "141",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "62": {
+                          "id": "62",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "83",
+                          "link": "141",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "138": {
+                          "id": "138",
+                          "speaker": "Player",
+                          "text": "Did you know that somebody's donated a load of toys filled with explosives?",
+                          "context": "",
+                          "checkflags": [
+                            "WYR_RefugeeCamp_State_FoundTrappedToys"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "141",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "9": {
+                              "id": "9",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "141",
+                              "is_end": false,
+                              "node_type": "alias",
+                              "children": {
+                                "136": {
+                                  "id": "136",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "WYR_RefugeeCamp_FlamingFistManip_Knows_ExplosiveToys",
+                                    "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+                                    "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                                    "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "alias",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "92": {
+                          "id": "92",
+                          "speaker": "Player",
+                          "text": "Why does a barn need the Flaming Fist to protect it?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "173": {
+                              "id": "173",
+                              "speaker": "Manip Nestor",
+                              "text": "In case little weasels like you come sniffing around.",
+                              "context": "NodeContext: Wary of the player/annoyed at them",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "197": {
+                          "id": "197",
+                          "speaker": "Player",
+                          "text": "Is there anything I can do to help?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "131": {
+                              "id": "131",
+                              "speaker": "Manip Nestor",
+                              "text": "Not unless you want to make a donation.",
+                              "context": "NodeContext: Irritated at the player's questions",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "180": {
+                          "id": "180",
+                          "speaker": "Player",
+                          "text": "Why do you care about the refugees so much?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "44": {
+                              "id": "44",
+                              "speaker": "Manip Nestor",
+                              "text": "And you don't after all they've been through? And with the army of the Absolute at their backs?",
+                              "context": "NodeContext: Slightly incredulous at the question; annoyed at the player's ignorance",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "50": {
+                                  "id": "50",
+                                  "speaker": "Manip Nestor",
+                                  "text": "If you can't see it, I'm not going to waste my time explaining it to you.",
+                                  "context": "NodeContext: Pretty annoyed now; wants the player to piss off so he doesn't have to deal with them",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "91": {
+                          "id": "91",
+                          "speaker": "Player",
+                          "text": "I'd like to make a donation to the refugees, actually.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "200": {
+                              "id": "200",
+                              "speaker": "Manip Nestor",
+                              "text": "Guess you're not all bad. Give it here and I'll make sure it's kept safely with the other donations.",
+                              "context": "NodeContext: Gruff and a little wary still (does genuinely want donations for the refugees underneath it all)",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "140": {
+                                  "id": "140",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "105",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                },
+                                "28": {
+                                  "id": "28",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "182",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                },
+                                "18": {
+                                  "id": "18",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "78",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                },
+                                "94": {
+                                  "id": "94",
+                                  "speaker": "Player",
+                                  "text": "Ah, I meant I'd bring my donation later.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "80": {
+                                      "id": "80",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "175",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "149": {
+                          "id": "149",
+                          "speaker": "Player",
+                          "text": "Clearing off now.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "151": {
+              "id": "151",
+              "speaker": "Player",
+              "text": "Is this really going to help the refugees?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "121",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "102": {
+                  "id": "102",
+                  "speaker": "Manip Nestor",
+                  "text": "Look around you - these poor sods need all the help they can get.",
+                  "context": "NodeContext: Gruff sympathy for the refugees (but still annoyed at the player's ignorance)",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "121",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "76": {
+              "id": "76",
+              "speaker": "Player",
+              "text": "I'm sorry - I didn't realise.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "121",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "115": {
+                  "id": "115",
+                  "speaker": "Manip Nestor",
+                  "text": "You sure? This lot have been through enough without your ignorance.",
+                  "context": "NodeContext: Mild incredulousness and irritation at the player",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "121",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "46": {
+              "id": "46",
+              "speaker": "Player",
+              "text": "Fist [GEN_PlayerName_c11eee1e-7815-6143-7233-f2427799fa53] reporting for duty, SIR! I was asked to check on the barn.",
+              "context": "",
+              "checkflags": [
+                "WYR_RefugeeCamp_State_BigBarnGainedAccess = False",
+                "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception = False",
+                "FIGHTER"
+              ],
+              "setflags": [
+                "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "204": {
+                  "id": "204",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "133": {
+                      "id": "133",
+                      "speaker": "Manip Nestor",
+                      "text": "And I wasn't informed? Bloody meddling Flames... What are you still looking at? You've got a job to do, hop to it!",
+                      "context": "NodeContext: first part whispered to self, on \"what\" realises the player's still listening",
+                      "checkflags": [],
+                      "setflags": [
+                        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "23": {
+                  "id": "23",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "Manip Nestor",
+                      "text": "Hang about - your uniform's not regulation. Neither are those weapons...",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "27": {
+                          "id": "27",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "42",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "110": {
+      "id": "110",
+      "speaker": "Manip Nestor",
+      "text": "What are you still flapping your lips at me for? Get on with it.",
+      "context": "NodeContext: Irritated",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ToysExploded = False",
+        "WYR_RefugeeCamp_State_GuardsAlerted = False",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate = False",
+        "WYR_RefugeeCamp_State_FoundTrappedToys = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "139": {
+      "id": "139",
+      "speaker": "Manip Nestor",
+      "text": "Got something else to donate, have you?",
+      "context": "NodeContext: Brusque (but not annoyed; the player DID donate before)",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_MadeDonation",
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip",
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing = False",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "154",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "60": {
+          "id": "60",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "146": {
+      "id": "146",
+      "speaker": "Manip Nestor",
+      "text": "So you were sniffing round the barn, were you? Why?",
+      "context": "NodeContext: Suspicious and annoyed by the player having trespassed",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing = False",
+        "WYR_RefugeeCamp_Event_ManipForceInterrogate"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "154",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Did you know that somebody's donated a load of toys filled with explosives?",
+          "context": "",
+          "checkflags": [
+            "WYR_RefugeeCamp_State_FoundTrappedToys"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "154",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "141": {
+              "id": "141",
+              "speaker": "Manip Nestor",
+              "text": "What? Who'd put explosives in toys?",
+              "context": "NodeContext: Incredulous",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "85": {
+                  "id": "85",
+                  "speaker": "Manip Nestor",
+                  "text": "Very well. Show me these explosive toys, then.",
+                  "context": "NodeContext: Suspicious/clearly doesn't quite believe the player",
+                  "checkflags": [],
+                  "setflags": [
+                    "WYR_RefugeeCamp_FlamingFistManip_Knows_ExplosiveToys",
+                    "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+                    "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                    "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "142": {
+          "id": "142",
+          "speaker": "Player",
+          "text": "I was investigating a crime - I think some of the donations might be dangerous.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Knows_SecretInBasement",
+            "WYR_RefugeeCamp_State_FoundTrappedToys = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "154",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "36": {
+              "id": "36",
+              "speaker": "Manip Nestor",
+              "text": "What? Dangerous? Is this a joke?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "189": {
+                  "id": "189",
+                  "speaker": "Player",
+                  "text": "So you're fine with innocent people getting hurt just because you won't own up to your guards' negligence?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "143": {
+                      "id": "143",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "45": {
+                          "id": "45",
+                          "speaker": "Manip Nestor",
+                          "text": "Look, we're doing our best here - we're just stretched pretty thin, in case you hadn't noticed.",
+                          "context": "NodeContext: Incredulous/a little angry (but also a little cowed by the player's words)",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "43": {
+                              "id": "43",
+                              "speaker": "Manip Nestor",
+                              "text": "Fine, you can look around. But if there's any funny business, it'll be straight to Wyrm's Rock with you.",
+                              "context": "NodeContext: Quiet but very real threat",
+                              "checkflags": [],
+                              "setflags": [
+                                "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                                "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "66": {
+                      "id": "66",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "113": {
+                          "id": "113",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "42",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "191": {
+                  "id": "191",
+                  "speaker": "Player",
+                  "text": "Please, go and check. It won't take much of your time, but it could save lives.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "155": {
+                          "id": "155",
+                          "speaker": "Manip Nestor",
+                          "text": "Fine, I'll look - but I'm doing it for the refugees, not you.",
+                          "context": "NodeContext: Admonishing; the latter is referring to the player's actions",
+                          "checkflags": [],
+                          "setflags": [
+                            "WYR_RefugeeCamp_State_ManipAgreedInvestigate",
+                            "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                            "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "63": {
+                      "id": "63",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "52": {
+                          "id": "52",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "42",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "39": {
+                  "id": "39",
+                  "speaker": "Player",
+                  "text": "I'll just be leaving, actually.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "118": {
+          "id": "118",
+          "speaker": "Player",
+          "text": "I was just curious about what's inside this barn.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "154",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "116": {
+              "id": "116",
+              "speaker": "Manip Nestor",
+              "text": "This is a barn, not a museum - now get gone.",
+              "context": "NodeContext: Irritated/dismissive",
+              "checkflags": [],
+              "setflags": [
+                "TeleportOutOfTrespass",
+                "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "192": {
+          "id": "192",
+          "speaker": "Player",
+          "text": "All right, all right - I was looking for stuff to steal.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "154",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "120": {
+              "id": "120",
+              "speaker": "Manip Nestor",
+              "text": "Appreciate the candour. Gonna have to arrest you, though.",
+              "context": "NodeContext: Weary and annoyed at the player having made more work for him",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "87",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "187": {
+                  "id": "187",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "127",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "68": {
+          "id": "68",
+          "speaker": "Player",
+          "text": "I'll be honest with you: I'm hot on the trail of my client's prize pig Lulabelle.",
+          "context": "",
+          "checkflags": [
+            "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception = False"
+          ],
+          "setflags": [
+            "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "154",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "21": {
+              "id": "21",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "154",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "55": {
+                  "id": "55",
+                  "speaker": "Manip Nestor",
+                  "text": "A... pig? You're looking for a pig?",
+                  "context": "NodeContext: Incredulous - but listening as he's been persuaded to",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "154",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "156": {
+                      "id": "156",
+                      "speaker": "Player",
+                      "text": "Oh, yes - and she's a wily one. There's not a sty that can hold her.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "154",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "150": {
+                          "id": "150",
+                          "speaker": "Manip Nestor",
+                          "text": "You ought to be careful - I hear pigs eat people if given the chance.",
+                          "context": "NodeContext: Wary",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "154",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "41": {
+                      "id": "41",
+                      "speaker": "Player",
+                      "text": "Lulabelle's been stolen. I've been told to check every barn in the city - no exceptions.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "154",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "77": {
+                          "id": "77",
+                          "speaker": "Manip Nestor",
+                          "text": "Well, there is a pig here, I suppose.",
+                          "context": "NodeContext: Matter of fact - but then resigned",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "154",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "34": {
+                      "id": "34",
+                      "speaker": "Player",
+                      "text": "She's an extremely rare Chionthar Swordback - I don't need to tell you how much they're worth.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "154",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "170": {
+                          "id": "170",
+                          "speaker": "Manip Nestor",
+                          "text": "I'm not one for animal husbandry - but I know Rivington certainly has its enthusiasts.",
+                          "context": "NodeContext: Is clearly wary of said enthusiastics/thinks they're weird",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "154",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "147": {
+                      "id": "147",
+                      "speaker": "Player",
+                      "text": "I'm sorry, but if I tell you any more I could be putting Lulabelle's life in danger. She has piglets depending on her.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "1": {
+                          "id": "1",
+                          "speaker": "Manip Nestor",
+                          "text": "Piglets? Oh. Well. I hope you find her in time. For the little ones' sakes.",
+                          "context": "NodeContext: Concerned for the piglets",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "154": {
+                              "id": "154",
+                              "speaker": "Manip Nestor",
+                              "text": "You can have a look. Just don't touch anything.",
+                              "context": "NodeContext: Relenting - think it's weird but will allow it",
+                              "checkflags": [],
+                              "setflags": [
+                                "WYR_RefugeeCamp_State_BigBarnGainedAccess",
+                                "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception",
+                                "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "160": {
+              "id": "160",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "42": {
+                  "id": "42",
+                  "speaker": "Manip Nestor",
+                  "text": "You're a rotten liar, mate.",
+                  "context": "NodeContext: A little amused by the player's attempt",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "93": {
+                      "id": "93",
+                      "speaker": "Manip Nestor",
+                      "text": "I'll let the boys at Wyrm's Rock deal with you.",
+                      "context": "NodeContext: Resignation/matter of fact; takes no pleasure in this, it's just required",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "203": {
+                          "id": "203",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "87",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "106": {
+                          "id": "106",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "90",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "162": {
+                          "id": "162",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "198",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "148": {
+                          "id": "148",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "127",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "19": {
+          "id": "19",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "46",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "158": {
+          "id": "158",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "127",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "169": {
+      "id": "169",
+      "speaker": "Manip Nestor",
+      "text": "Right, that's it - off to the cells with you.",
+      "context": "NodeContext: Has had it with the player's bullshit by this point",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "169",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "181": {
+          "id": "181",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "87",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "26": {
+          "id": "26",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "127",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "176": {
+      "id": "176",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_Event_ManipForceInterrogate"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "169",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "177": {
+      "id": "177",
+      "speaker": "Manip Nestor",
+      "text": "",
+      "context": "NodeContext: Angry/threatening",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ToysExploded = False",
+        "WYR_RefugeeCamp_State_GuardsAlerted",
+        "WYR_RefugeeCamp_State_TalkedAlerted = False",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate = False",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact",
+        "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception",
+        "WYR_RefugeeCamp_FlamingFistManip_State_NearToys = False"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "164",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "178": {
+      "id": "178",
+      "speaker": "Manip Nestor",
+      "text": "Did I not just tell you you weren't allowed in here? What are you doing?",
+      "context": "NodeContext: Angry at the player's trespassing",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_BarnEnter",
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "184": {
+          "id": "184",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "146",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "195": {
+      "id": "195",
+      "speaker": "Manip Nestor",
+      "text": "What are you...? Explosives? In toys?",
+      "context": "NodeContext: Confused/shocked",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ToysExploded = False",
+        "WYR_RefugeeCamp_State_GuardsAlerted",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate = False",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact",
+        "WYR_RefugeeCamp_FlamingFistManip_State_NearToys"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "95": {
+          "id": "95",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "73",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "196": {
+      "id": "196",
+      "speaker": "Manip Nestor",
+      "text": "Who's that rummaging around in there? Show yourself!",
+      "context": "NodeContext: Angry/threatening",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ToysExploded = False",
+        "WYR_RefugeeCamp_State_GuardsAlerted",
+        "WYR_RefugeeCamp_State_TalkedAlerted = False",
+        "WYR_RefugeeCamp_State_ManipAgreedInvestigate = False",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact",
+        "WYR_RefugeeCamp_FlamingFistManip_State_UsedDeception = False",
+        "WYR_RefugeeCamp_FlamingFistManip_State_NearToys = False"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_Event_ManipInterrogationStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "73": {
+          "id": "73",
+          "speaker": "Manip Nestor",
+          "text": "Why am I not surprised?",
+          "context": "NodeContext: Exasperated at the player",
+          "checkflags": [
+            "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "164": {
+              "id": "164",
+              "speaker": "Manip Nestor",
+              "text": "You have two seconds to explain yourself before you're under arrest.",
+              "context": "NodeContext: Getting annoyed now",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "89": {
+                  "id": "89",
+                  "speaker": "Player",
+                  "text": "I found a load of toy bears rigged to explode - but don't worry, I disarmed them.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "135": {
+                      "id": "135",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "49",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "87": {
+                  "id": "87",
+                  "speaker": "Player",
+                  "text": "Allow yourself to be taken to prison.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "Allow_Arrest",
+                    "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "127": {
+                  "id": "127",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "TemporaryHostilityAfterDialog",
+                    "WYR_RefugeeCamp_Event_ManipInterrogationEnded"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

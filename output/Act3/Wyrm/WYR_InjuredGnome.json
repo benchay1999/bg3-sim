@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "synopsis": "Ironhand gnome Thulla hiding in a smithy cellar (came from Act1).",
+    "how_to_trigger": "Load BGO_Main_A. Debug book \"Quest Flags and Options\" -> Act3 -> Ironhand Gnomes -> Setup allf gnomes OR Setup Barcus company -> 1. Set up Oppress Scene.Debug Book -> Go To Region -> Act3 -> WYR -> Ironhand gnomes hideout.Find Thulla gnome and talk to her. If a crime dialog is started, mention Barcus or Wulbren or \"I'm here to trade\" option."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Thulla",
+      "text": "It's you... I might have time for a catch-up later.",
+      "context": "NodeContext: Mild surprise at the player being here/recognising them - but keen to stick to protocol",
+      "checkflags": [
+        "WYR_Ironhand_Event_TerroristQuest_Offered = False",
+        "WYR_Ironhand_InAct3_UnfortunateGnome = False"
+      ],
+      "setflags": [
+        "WYR_Ironhand_HasMet_WYR_InjuredGnome_PreWulbren"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "16": {
+          "id": "16",
+          "speaker": "Thulla",
+          "text": "Wulbren will want to see you - we've been taking a beating, but he's ready to hit back.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Thulla",
+      "text": "Still here? Go talk to Wulbren - he'll take any help he can get. Just make sure you die for the cause.",
+      "context": "NodeContext: Threatening",
+      "checkflags": [
+        "WYR_Ironhand_HasMet_WYR_InjuredGnome",
+        "DUERGARDWARF"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Thulla",
+      "text": "Wulbren will want to see you - we've been taking a beating, but he's ready to hit back.",
+      "context": "",
+      "checkflags": [
+        "WYR_Ironhand_HasMet_WYR_InjuredGnome_PreWulbren",
+        "WYR_Ironhand_Event_TerroristQuest_Offered = False",
+        "WYR_Ironhand_InAct3_UnfortunateGnome"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Thulla",
+      "text": "You're here? Good luck - this damned city's more treacherous than the Underdark.",
+      "context": "NodeContext: Mild surprise at the player being here/recognising them - but mainly irritated at Barcus for Wulbrens's sake",
+      "checkflags": [
+        "WYR_Ironhand_Event_TerroristQuest_Offered = False",
+        "WYR_Ironhand_InAct3_UnfortunateGnome"
+      ],
+      "setflags": [
+        "WYR_Ironhand_HasMet_WYR_InjuredGnome_PreWulbren"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Thulla",
+      "text": "Think you ought to be somewhere else, don't you?",
+      "context": "NodeContext: Slightly spiky; the player is starting to get on her nerves",
+      "checkflags": [
+        "WYR_Ironhand_HasMet_WYR_InjuredGnome",
+        "WYR_Ironhand_Event_TerroristQuest_Offered"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Thulla",
+      "text": "Going to help us clear those Watchers from the streets?",
+      "context": "",
+      "checkflags": [
+        "WYR_Ironhand_Event_TerroristQuest_Offered"
+      ],
+      "setflags": [
+        "WYR_Ironhand_HasMet_WYR_InjuredGnome"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "They're your problem, not mine.",
+          "context": "",
+          "checkflags": [
+            "WYR_Ironhand_Event_TerroristQuest_Accepted = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Thulla",
+              "text": "If you believe in freedom, they're your problem.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Thulla",
+                  "text": "I thought you had stones. Guess I was wrong.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "No - Wulbren wants to kill innocents. He's a fanatic.",
+          "context": "",
+          "checkflags": [
+            "WYR_Ironhand_Event_TerroristQuest_Accepted = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "Thulla",
+              "text": "Roth\u00e9shit - Wulbren's the only person standing up to Gortash.",
+              "context": "NodeContext: roth\u00e9shit = the shit of a roth\u00e9 = ROW-thay-shit",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Yes, but I'll do it my own way.",
+          "context": "",
+          "checkflags": [
+            "WYR_Ironhand_Event_TerroristQuest_Accepted = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "Thulla",
+              "text": "Don't get cold feet - if you don't eliminate the Gondians, they'll rebuild.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "14",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "That's the plan - I'm not comfortable with the collateral damage, though.",
+          "context": "",
+          "checkflags": [
+            "WYR_Ironhand_Event_TerroristQuest_Accepted",
+            "PALADIN_VENGEANCE = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Thulla",
+              "text": "That bomb will save a lot more people than it kills.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Thulla",
+                  "text": "Trust me - I've seen what those Watchers can do.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Yes - and the bastards who created them.",
+          "context": "",
+          "checkflags": [
+            "WYR_Ironhand_Event_TerroristQuest_Accepted"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "23": {
+              "id": "23",
+              "speaker": "Thulla",
+              "text": "Good - the Watchers are only a weapon.",
+              "context": "NodeContext: Glad of the player's involvement/confident in Wulbren's plan",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Thulla",
+                  "text": "If you want peace, you don't just break the sword - you kill the one who wields it.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Maybe. But I might find another use for this awesome bomb.",
+          "context": "",
+          "checkflags": [
+            "WYR_Ironhand_Event_TerroristQuest_Accepted"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Thulla",
+              "text": "You're joking, right? That thing's one of a kind.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Thulla",
+                  "text": "Don't screw this up.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Thulla",
+      "text": "Keep walking, greyskin - if it were up to me, your kind wouldn't have any part in what we're doing.",
+      "context": "NodeContext: Threatening",
+      "checkflags": [
+        "DUERGARDWARF"
+      ],
+      "setflags": [
+        "WYR_Ironhand_HasMet_WYR_InjuredGnome"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Thulla",
+      "text": "It's Wulbren you should be speaking to, not me.",
+      "context": "NodeContext: Keen to stick to protocol",
+      "checkflags": [
+        "WYR_Ironhand_HasMet_WYR_InjuredGnome_PreWulbren",
+        "WYR_Ironhand_Event_TerroristQuest_Offered = False",
+        "WYR_Ironhand_InAct3_UnfortunateGnome = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

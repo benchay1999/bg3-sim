@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "synopsis": "This PAD happens if Halsin escapes the Goblin Camp on his own and then the player enteres the Worg Pens and sees corpses of dead goblins and worgs."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Player",
+      "text": "Claw marks and spells. Is this Halsin's doing? Did he return to the grove?",
+      "context": "InternalNodeContext: If the player has heard about the missing druid, Halsin. - one player version.",
+      "checkflags": [
+        "GLO_Halsin_Knows_IsMissing"
+      ],
+      "setflags": [
+        "LearnedEscaped"
+      ],
+      "ruletags": [
+        "REALLY_GENERIC"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Player",
+      "text": "This must've been where they imprisoned Halsin.",
+      "context": "InternalNodeContext: If the player has met halsin after he escaped.",
+      "checkflags": [
+        "GOB_WolfPens_State_MetHalsinAfterPrisonBreak"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "REALLY_GENERIC"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Player",
+      "text": "Someone escaped. One of the adventurers?<br>",
+      "context": "InternalNodeContext: 2 players",
+      "checkflags": [
+        "25c1ac70-f65f-4869-8a74-eff5827d9cde"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "REALLY_GENERIC"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Whoever did it left quite some claw marks. Maybe the missing druid?",
+          "context": "InternalNodeContext: If the player has heard about the missing fruid, Halsin.",
+          "checkflags": [
+            "GLO_Halsin_Knows_IsMissing"
+          ],
+          "setflags": [
+            "LearnedEscaped"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "He must have returned to the grove.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "If so, they might have returned to the grove.",
+          "context": "InternalNodeContext: If the player hasn't heard about the missing druid.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Player",
+      "text": "All slaughtered. Looks like their prisoner escaped.",
+      "context": "InternalNodeContext: Fallback in case the player has never been to the grove and couldn't logically mention the grove.",
+      "checkflags": [
+        "DEN_PartyProgress_EnteredGrove = False"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "REALLY_GENERIC"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Player",
+      "text": "Someone escaped. One of the adventurers? Did they go back to the grove?",
+      "context": "InternalNodeContext: If the player hasn't heard about the missing druid. - one player version.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [
+        "REALLY_GENERIC"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

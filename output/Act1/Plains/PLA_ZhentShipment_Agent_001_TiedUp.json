@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "synopsis": "In situations where Rugan survives after being beaten and tortured by the Zhentarim, players can interact with him in the chair he's tied to. He's exhausted, badly beaten, and barely capable of speaking full sentences.",
+    "how_to_trigger": "- loadlevel WLD_Main;- goto 31.06, 44.73, 602.95;- kill gnolls;- talk to Rugan, take the cargo (through persuasion);- goto 273.49, 5.11, -273.83;- start combat with Zhents and use killcombat right after combat starts;- talk to Rugan"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Rugan",
+      "text": "... no more...",
+      "context": "CinematicNodeContext: Character is tied to chair.\rNodeContext: badly beaten, eyes closed, barely conscious, expecting to be killed",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Free him.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Gale 1",
+            "Wyll 1",
+            "Karlach 5"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Rugan",
+              "text": "... you beautiful bastard... thought my luck had finally run out...",
+              "context": "CinematicNodeContext: either slumping in chair (no longer tied) or falling to knees, rubbing his wrists where he was bound\rNodeContext: exhausted and badly beaten - we just untied him from a chair where he was being tortured. Grateful and relieved but almost passing out from the pain",
+              "checkflags": [],
+              "setflags": [
+                "PLA_ZhentDungeon_State_AgentFreed"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Finish him off.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Gale -1",
+            "Wyll -1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Rugan",
+              "text": "... no...",
+              "context": "NodeContext: exhausted and beaten, afraid - right before being killed",
+              "checkflags": [],
+              "setflags": [
+                "PLA_ZhentDungeon_Event_KillTiedZhent"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

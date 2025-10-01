@@ -1,0 +1,480 @@
+{
+  "metadata": {
+    "synopsis": "SWA / Animal handling with the giant eagles on top of the monastery",
+    "how_to_trigger": "Approach the eagles on the roof of the monastery."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*Your repeated approach has ruffled the eagle's feathers the wrong way.*",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_HasMet",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "CRE_Eagles_State_Hostile"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Narrator",
+      "text": "*The eagle eyes you warily, but doesn't attack.*",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_HasMet",
+        "facda191-1a5f-a7ca-cc67-4d5bcab14a4e_AnimalHandlingSuccess",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Ancient Giant Eagle",
+      "text": "You've been warned plenty! GET OUT!",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_HasMet_SWA",
+        "CRE_Eagles_State_CheckpointPassed = False",
+        "PETPAL"
+      ],
+      "setflags": [
+        "CRE_Eagles_State_Hostile"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Ancient Giant Eagle",
+      "text": "INTRUDER! In MY NEST! This area was meant to be SAFE! Xavier, get behind mummy.",
+      "context": "CinematicNodeContext: The giant eagle is chewing on the corpse of a Kobold. When the player approaches it looks up, and screeches out.\rNodeContext: all capitalised words are meant to be half sqwauked / Barclay line towards other eagle",
+      "checkflags": [
+        "CRE_Eagles_HasMet_SWA = False",
+        "PETPAL"
+      ],
+      "setflags": [
+        "CRE_Eagles_HasMet_SWA"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "It's not your nest. You stole it from the little bird who used to live here. <br>",
+          "context": "",
+          "checkflags": [
+            "CRE_HungryBird_State_QuestAccepted"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Ancient Giant Eagle",
+              "text": "You would accuse ME of a CRIME in my OWN HOME? Outrageous!",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_Eagles_State_Hostile"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "I'm just interested in the big device, I promise to not meddle with the nest.",
+          "context": "",
+          "checkflags": [
+            "CRE_Eagles_State_CheckpointPassed = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Ancient Giant Eagle",
+                  "text": "Ugh, fine. Xavier! XAVIER! Don't talk to it. It might have germs.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_Eagles_State_CheckpointPassed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "Ancient Giant Eagle",
+                  "text": "Nest-meddling lies! I thought as much!",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_Eagles_State_Hostile"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CRE_Eagles_State_Hostile"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "Back away slowly.",
+          "context": "",
+          "checkflags": [
+            "CRE_Eagles_State_CheckpointPassed = False"
+          ],
+          "setflags": [
+            "TeleportOutOfTrespass",
+            "CRE_Eagles_TeleportBackAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [
+            "CRE_Eagles_State_CheckpointPassed"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Ancient Giant Eagle",
+      "text": "Please, get out of my nest. You'll give Xavier ideas.",
+      "context": "",
+      "checkflags": [
+        "CRE_Eagles_HasMet_SWA",
+        "CRE_Eagles_State_CheckpointPassed",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "21",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Narrator",
+      "text": "*The giant eagle regards you with disdain.*",
+      "context": "CinematicNodeContext: The giant eagle is chewing on the corpse of a Kobold. When the player approaches it looks up, and screeches out.",
+      "checkflags": [
+        "CRE_Eagles_HasMet = False",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "CRE_Eagles_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Turn away from the eagle as you approach, indicating that you are not interested in its nest.",
+          "context": "",
+          "checkflags": [
+            "CRE_Eagles_State_AnimalHandlingFailed = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "16": {
+              "id": "16",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Narrator",
+                  "text": "*The eagle seems satisfied, but keeps a watchful eye on you.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_Eagles_State_CheckpointPassed",
+                    "facda191-1a5f-a7ca-cc67-4d5bcab14a4e_AnimalHandlingSuccess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Ancient Giant Eagle",
+                  "text": "*SCREECH!*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRE_Eagles_State_AnimalHandlingFailed",
+                    "CRE_Eagles_State_Hostile"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Ancient Giant Eagle",
+              "text": "*Caw!*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_Eagles_State_Hostile"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TeleportOutOfTrespass",
+            "CRE_Eagles_TeleportBackAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

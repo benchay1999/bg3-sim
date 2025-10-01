@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "synopsis": "When the player convinces the mind flayer to go hunt, and the mind flayer gets into combat (not according to plan), and the mind flayer sees the player, on his turn he will ask for help.",
+    "how_to_trigger": "BGO_Main_ATeleport to S_WYR_Windmill_Point_FrontReCon \"oe Windmill_MF_AmbushHunt\" and wait for mindflayers turn"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Mind Flayer",
+      "text": "Aid me! Help me subdue this meal.",
+      "context": "InternalNodeContext: 'vessel' referring to the player.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "No, I won't let you hurt innocent people.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Mind Flayer",
+              "text": "Treacherous servant! Then you will share their fate.",
+              "context": "InternalNodeContext: \"Treacherous servant\" is referring to the player",
+              "checkflags": [
+                "ILLITHID_HIDDEN_CHECK = False"
+              ],
+              "setflags": [
+                "WYR_Windmill_Event_PlayerBetraysMindflayerHunt"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Mind Flayer",
+              "text": "Treacherous vessel! You are not worthy of the honour you have been given.",
+              "context": "InternalNodeContext: \"Treacherous vessel\" is referring to the player",
+              "checkflags": [],
+              "setflags": [
+                "WYR_Windmill_Event_PlayerBetraysMindflayerHunt"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "All right, I'll help.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Mind Flayer",
+              "text": "A worthy ally - you will be exalted by my people.",
+              "context": "InternalNodeContext: \"worthy ally' is referring to the player",
+              "checkflags": [
+                "ILLITHID_HIDDEN_CHECK = False"
+              ],
+              "setflags": [
+                "WYR_Windmill_Event_PlayerAssistsMindflayerHunt"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "4": {
+              "id": "4",
+              "speaker": "Mind Flayer",
+              "text": "A worthy vessel. When your time comes, you will be a fine addition to our people.",
+              "context": "InternalNodeContext: \"worthy vessel\" is referring to the player",
+              "checkflags": [],
+              "setflags": [
+                "WYR_Windmill_Event_PlayerAssistsMindflayerHunt"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,615 @@
+{
+  "metadata": {
+    "synopsis": "For when a player interacts with the statue to begin the stealth trial in the Shar temple.",
+    "how_to_trigger": "Use object of darkness ritual statue (-775; -5; -755)."
+  },
+  "dialogue": {
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*Another bowl, bearing the stains of an ancient blood offering.*",
+      "context": "CinematicNodeContext: The player looks at a large bowl being held by a Shar statue. Close-up of a dried blood stain in the base of the bowl.",
+      "checkflags": [
+        "SHA_Trials_State_StatueUsed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "Narrator",
+          "text": "*Another trial, for Lady Shar's initiates. This one would put their skills of stealth and infiltration to the test.*",
+          "context": "CinematicNodeContext: Shadowheart-only narration. Visuals should favour her here.\rInternalNodeContext: SH-only narration",
+          "checkflags": [
+            "REALLY_SHADOWHEART"
+          ],
+          "setflags": [
+            "SHA_Trials_Knows_LearnedAboutTrials"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Narrator",
+      "text": "*The bowl contains an ancient, rust-coloured bloodstain. It forms a neat disc, as if spilled calmly and willingly.*",
+      "context": "CinematicNodeContext: The player looks at a large bowl being held by a Shar statue. Close-up of a dried blood stain in the base of the bowl.",
+      "checkflags": [
+        "SHA_Trials_State_StatueUsed = False"
+      ],
+      "setflags": [
+        "SHA_Trials_State_StatueUsed",
+        "SHA_Trials_State_FirstStatueUsed"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "17": {
+          "id": "17",
+          "speaker": "Narrator",
+          "text": "*You recognise this as a trial, where initiates would prove themselves to Lady Shar. This one would put their skills of stealth and infiltration to the test.*",
+          "context": "CinematicNodeContext: Shadowheart-only narration. Visuals should favour her here.\rInternalNodeContext: SH-only narration",
+          "checkflags": [
+            "REALLY_SHADOWHEART"
+          ],
+          "setflags": [
+            "SHA_Trials_Knows_LearnedAboutTrials"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "SHA_Trials_State_TrialInProgress = False",
+                "SHA_Trials_Event_TrialPassed = False"
+              ],
+              "setflags": [
+                "TEST_PDD_A",
+                "ORI_Inclusion_ShadowHeart"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "12",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Shadowheart",
+                  "text": "If you're going to hesitate, just stand aside and let me do the trial myself.",
+                  "context": "",
+                  "checkflags": [
+                    "SHA_Trials_Event_SHAskedtoDoTrial",
+                    "SHA_SneakTrial_State_ShadowheartOffered = False",
+                    "542ac950-9296-7fbb-0b0a-90a564091704_TrialRequested = False",
+                    "SHA_ObjectOfDarknessTrial_Event_RefusedSH",
+                    "8a4a686d-6c47-411f-a0b3-d79ff33e2922"
+                  ],
+                  "setflags": [
+                    "542ac950-9296-7fbb-0b0a-90a564091704_TrialRequested",
+                    "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "12",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "29",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "24": {
+                  "id": "24",
+                  "speaker": "Shadowheart",
+                  "text": "Another trial. I should do this one as well.",
+                  "context": "",
+                  "checkflags": [
+                    "SHA_Trials_Event_SHAskedtoDoTrial",
+                    "SHA_SneakTrial_State_ShadowheartOffered = False",
+                    "542ac950-9296-7fbb-0b0a-90a564091704_TrialRequested = False",
+                    "SHA_ObjectOfDarknessTrial_Event_RefusedSH = False",
+                    "8a4a686d-6c47-411f-a0b3-d79ff33e2922"
+                  ],
+                  "setflags": [
+                    "542ac950-9296-7fbb-0b0a-90a564091704_TrialRequested",
+                    "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "12",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "29": {
+                  "id": "29",
+                  "speaker": "Shadowheart",
+                  "text": "This is one of Lady Shar's trials. Allow me - it's important.",
+                  "context": "",
+                  "checkflags": [
+                    "SHA_SneakTrial_State_ShadowheartOffered = False",
+                    "542ac950-9296-7fbb-0b0a-90a564091704_TrialRequested = False",
+                    "8a4a686d-6c47-411f-a0b3-d79ff33e2922"
+                  ],
+                  "setflags": [
+                    "SHA_Trials_Event_SHAskedtoDoTrial",
+                    "SHA_Trials_Knows_LearnedAboutTrials",
+                    "542ac950-9296-7fbb-0b0a-90a564091704_TrialRequested",
+                    "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "0",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "Player",
+                      "text": "As you wish.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "ORI_Shadowheart_State_NightsongPoint_AgreedToTrials",
+                        "SHA_SneakTrial_State_ShadowheartOffered",
+                        "SHA_ObjectOfDarknessTrial_Event_RefusedSH = False"
+                      ],
+                      "ruletags": [],
+                      "approval": [
+                        "Shadowheart 5"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "0",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "",
+                          "text": "",
+                          "context": "CinematicNodeContext: Companion SH produces a dagger in her right hand and cuts their left hand with it. Contact with dagger and hand doesn't need to be seen - can just show dagger poised, then a close-up of the player wincing as the cut themselves off-camera. NOTE - dagger appears in cinematic only",
+                          "checkflags": [],
+                          "setflags": [
+                            "SHA_Trials_Event_ShadowheartUsedAltar",
+                            "SHA_Trials_Event_StartTrial"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "tagcinematic",
+                          "children": {
+                            "13": {
+                              "id": "13",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted = False",
+                                "ORI_Inclusion_End_ShadowHeart"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "26": {
+                      "id": "26",
+                      "speaker": "Player",
+                      "text": "No, stand down.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "SHA_ObjectOfDarknessTrial_Event_RefusedSH"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "0",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "11": {
+                          "id": "11",
+                          "speaker": "Shadowheart",
+                          "text": "These trials mean something to me, don't you understand? I thought I could rely on you.",
+                          "context": "NodeContext: Disappointed",
+                          "checkflags": [
+                            "Approval_AtLeast_20_For_Sp2"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [
+                            "Shadowheart -1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "0",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "0": {
+                              "id": "0",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "25": {
+                                  "id": "25",
+                                  "speaker": "Player",
+                                  "text": "Fine, go ahead.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted",
+                                    "8a4a686d-6c47-411f-a0b3-d79ff33e2922"
+                                  ],
+                                  "setflags": [
+                                    "ORI_Shadowheart_State_NightsongPoint_AgreedToTrials",
+                                    "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted = False",
+                                    "SHA_ObjectOfDarknessTrial_Event_RefusedSH = False"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Shadowheart 5"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "15": {
+                                      "id": "15",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "2",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "18": {
+                                  "id": "18",
+                                  "speaker": "Player",
+                                  "text": "Offer your blood in Shar's name.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "SHA_Trials_State_TrialInProgress = False",
+                                    "SHA_Trials_Event_TrialPassed = False",
+                                    "REALLY_SHADOWHEART"
+                                  ],
+                                  "setflags": [
+                                    "SHA_SneakTrial_State_ShadowheartOffered",
+                                    "ORI_Inclusion_End_ShadowHeart",
+                                    "SHA_Trials_Event_StartTrial"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "7": {
+                                      "id": "7",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "CinematicNodeContext: Avatar SH produces a dagger in her right hand and cuts their left hand with it. Contact with dagger and hand doesn't need to be seen - can just show dagger poised, then a close-up of the player wincing as the cut themselves off-camera. NOTE - dagger appears in cinematic only",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted = False",
+                                        "ORI_Inclusion_End_ShadowHeart",
+                                        "SHA_Trials_Event_StartTrial"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "tagcinematic",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "9": {
+                                  "id": "9",
+                                  "speaker": "Player",
+                                  "text": "Spill some of your blood in the bowl.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "SHA_Trials_State_TrialInProgress = False",
+                                    "SHA_Trials_Event_TrialPassed = False",
+                                    "REALLY_SHADOWHEART = False"
+                                  ],
+                                  "setflags": [
+                                    "SHA_Trials_Event_StartTrial"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "6": {
+                                      "id": "6",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "ORI_Inclusion_ShadowHeart"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "22": {
+                                          "id": "22",
+                                          "speaker": "Shadowheart",
+                                          "text": "Try not to hit an artery.",
+                                          "context": "NodeContext: Cynical/displeased",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "4": {
+                                              "id": "4",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "ORI_Inclusion_End_ShadowHeart"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "taganswer",
+                                              "children": {
+                                                "5": {
+                                                  "id": "5",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "CinematicNodeContext: The (non-SH) player produces a dagger in their right hand and cuts their left hand with it. Contact with dagger and hand doesn't need to be seen - can just show dagger poised, then a close-up of the player wincing as the cut themselves off-camera. NOTE - dagger appears in cinematic only",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted = False",
+                                                    "ORI_Inclusion_End_ShadowHeart"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "tagcinematic",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "8": {
+                                  "id": "8",
+                                  "speaker": "Player",
+                                  "text": "Gaze at the statue.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "1": {
+                                      "id": "1",
+                                      "speaker": "GROUP_SHA_VoiceOfShar",
+                                      "text": "Reach the other side to receive my gift.",
+                                      "context": "CinematicNodeContext: Player looks at the Shar statue before them and hear's Shar's disembodied voice\rNodeContext: Haunting, disembodied voice offering guidance",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "19": {
+                                  "id": "19",
+                                  "speaker": "Player",
+                                  "text": "Leave.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "542ac950-9296-7fbb-0b0a-90a564091704_PermissionGranted = False",
+                                    "ORI_Inclusion_End_ShadowHeart"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "28": {
+                          "id": "28",
+                          "speaker": "Shadowheart",
+                          "text": "This is no time to indulge your pettiness. These trials are important to me.",
+                          "context": "NodeContext: Angry",
+                          "checkflags": [
+                            "Approval_AtLeast_20_For_Sp2 = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [
+                            "Shadowheart -1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "0",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "27": {
+                  "id": "27",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "0",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "21": {
+      "id": "21",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SHA_Trials_State_FirstStatueUsed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

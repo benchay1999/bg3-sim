@@ -1,0 +1,418 @@
+{
+  "metadata": {
+    "synopsis": "Collection of solo ADs used by character during the Jailbreak escape in Moonrise Towers.",
+    "how_to_trigger": "Free character from their jailbreak cell. The various state nodes in this dialog indicate where you would see particular branches."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Wulbren Bongle",
+      "text": "Blasted chains - keep the bastards off me!",
+      "context": "NodeContext: gritted teeth, trying to break the chains that have tied up the boat. Trying not to panic",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Wulbren Bongle",
+      "text": "Damned chains! I've almost got it.<br>",
+      "context": "NodeContext: gritted teeth, trying to break the chains that have tied up the boat. Trying not to panic",
+      "checkflags": [
+        "MOO_Jailbreak_State_OneChainLeft",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Wulbren Bongle",
+      "text": "Stop dawdling - get to the boat, or I'll leave you behind!",
+      "context": "NodeContext: yelling at player to end the combat, or he;ll leave without him",
+      "checkflags": [
+        "MOO_Jailbreak_State_BoatReady",
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_A",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_H",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Wulbren Bongle",
+      "text": "It's too late - we have to leave.",
+      "context": "NodeContext: leaving player behind to save his own skin - shouted with urgency. Resigned to the player's death.",
+      "checkflags": [
+        "MOO_Jailbreak_State_BoatReady",
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_H",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ForceBoatLeave",
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_A = False",
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_H = False",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Wulbren Bongle",
+      "text": "I need to be in the city - not twiddling my thumbs here.",
+      "context": "NodeContext: tense as he waits, aware guards could come by at any moment",
+      "checkflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_E",
+        "MOO_Jailbreak_Event_ADWaitingForBoat"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_F",
+        "MOO_Jailbreak_Event_ADWaitingForBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Wulbren Bongle",
+      "text": "Blessed Gaerdal, thank you.",
+      "context": "NodeContext: vanishes into the night, and safety, as he flees his captors",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADLeaving"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADLeaving = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Wulbren Bongle",
+      "text": "Argh, what god did I shit on to deserve this? Move it - they'll be on us soon.",
+      "context": "NodeContext: alarms have just started blaring in the middle of his escape, knows guards will be here soon",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADAlarmReaction"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADAlarmReaction = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Wulbren Bongle",
+      "text": "Blast it all - a dead end. There must be another way out.",
+      "context": "NodeContext: come to a pier with a sea of water he can't cross, looking for another way out",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADBoatMissed"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADBoatMissed = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Wulbren Bongle",
+      "text": "Gaerdal help me, let's go.",
+      "context": "NodeContext: tense as he waits, aware guards could come by at any moment",
+      "checkflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_F",
+        "MOO_Jailbreak_Event_ADWaitingForBoat"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_F = False",
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_E = False",
+        "MOO_Jailbreak_Event_ADWaitingForBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Wulbren Bongle",
+      "text": "I won't die here, damn it. I refuse!",
+      "context": "NodeContext: running for his life through a prison filled with enemies",
+      "checkflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_G",
+        "MOO_Jailbreak_Event_ADEscaping"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_G = False",
+        "MOO_Jailbreak_Event_ADEscaping = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Wulbren Bongle",
+      "text": "It's free. Go, go, go!",
+      "context": "NodeContext: player is in combat, wulbren has finally untied the boat and they are ready to flee",
+      "checkflags": [
+        "MOO_Jailbreak_State_BoatReady",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ForceBoatLeave",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Wulbren Bongle",
+      "text": "The pier over there is our way out. We'll escape right under the bastards' noses.",
+      "context": "NodeContext: Authorative and commanding. Sees a pier, and boat, and his way to freedom as he runs for his life.",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADGoingToBoat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADGoingToBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "20": {
+      "id": "20",
+      "speaker": "Wulbren Bongle",
+      "text": "Hah! Got it!",
+      "context": "NodeContext: triumphant",
+      "checkflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_D",
+        "MOO_Jailbreak_Event_ADPrepareBoat"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_State_BoatReady",
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_C = False",
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_D = False",
+        "MOO_Jailbreak_Event_ADPrepareBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Wulbren Bongle",
+      "text": "You think you can take on the Ironhand Gnomes?! Just try reach the boat!",
+      "context": "NodeContext: combat started, roaring in defiance",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADGuardsReaction"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_Event_ADGuardsReaction = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Wulbren Bongle",
+      "text": "I must make it to Baldur's Gate - I must.",
+      "context": "NodeContext: running for his life through a prison filled with enemies",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADEscaping"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_G",
+        "MOO_Jailbreak_Event_ADEscaping = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Wulbren Bongle",
+      "text": "Boat's free - get over here!",
+      "context": "NodeContext: player is in combat, yelling for player to finish the fight or he'll leave without player",
+      "checkflags": [
+        "MOO_Jailbreak_State_BoatReady",
+        "MOO_Jailbreak_State_PlayersCanUseBoat",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_A",
+        "MOO_Jailbreak_Event_ADPrepareBoatCombat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "26": {
+      "id": "26",
+      "speaker": "Wulbren Bongle",
+      "text": "Come on... come on...",
+      "context": "NodeContext: Grim and determined - trying to break the chains that have tied up the boat.",
+      "checkflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_C",
+        "MOO_Jailbreak_Event_ADPrepareBoat"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_D",
+        "MOO_Jailbreak_Event_ADPrepareBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Wulbren Bongle",
+      "text": "This thing is chained up tight - hold on.",
+      "context": "NodeContext: Grim and determined - trying to break the chains that have tied up the boat.",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADPrepareBoat"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_C",
+        "MOO_Jailbreak_Event_ADPrepareBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Wulbren Bongle",
+      "text": "Is the boat going or not?",
+      "context": "NodeContext: tense as he waits, aware guards could come by at any moment",
+      "checkflags": [
+        "MOO_Jailbreak_Event_ADWaitingForBoat"
+      ],
+      "setflags": [
+        "d19e8b02-0897-8b61-fbd3-92e5c7950eb2_E",
+        "MOO_Jailbreak_Event_ADWaitingForBoat = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

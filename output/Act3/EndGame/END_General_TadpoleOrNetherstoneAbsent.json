@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "synopsis": "If the player attempts to proceed past key points without the supreme tadpole or combined Netherstones, they will be warned that doing so will just lead to a game over. Repeated attempts will trigger a Thrall of the Absolute ending.",
+    "how_to_trigger": "load END_Mainoe end_startillithidoptionsDrop the combine stones item/give stones to Emperor then drop tadpole he gives youattempt to leave the astral prism"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*The temptation to push on is strong, but without the Emperor's gift - the parasite - you will have no means to evolve.*",
+      "context": "",
+      "checkflags": [
+        "END_General_State_SupremeTadpoleAvailable",
+        "END_General_State_PartyHasSupremeTadpole = False"
+      ],
+      "setflags": [
+        "END_General_State_LeaveWithoutStoryItemsAttempt"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*You may believe you have all you need within yourself to defeat the Netherbrain, but you are mistaken. Something is missing.*",
+      "context": "",
+      "checkflags": [
+        "END_General_State_LeaveWithoutStoryItemsAttempt"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Proceed against your better judgement.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "GLO_ThrallOfTheAbsolute_Event_EndingLost"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Narrator",
+              "text": "*You push on, knowing full well how it will end, how it will all end - with you. And your folly.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*You yearn for the final confrontation. But to face the Netherbrain without the stones would lead to only one outcome - your doom.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "END_General_State_LeaveWithoutStoryItemsAttempt"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*As bold as you may feel, with neither stones nor parasite you have no means to control or dominate the Netherbrain. You will die.*",
+      "context": "",
+      "checkflags": [
+        "END_General_State_SupremeTadpoleAvailable",
+        "END_General_State_PartyHasSupremeTadpole = False",
+        "END_General_State_PartyHasCrownController = False"
+      ],
+      "setflags": [
+        "END_General_State_LeaveWithoutStoryItemsAttempt"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

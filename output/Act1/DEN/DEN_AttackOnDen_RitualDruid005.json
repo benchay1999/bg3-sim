@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "synopsis": "This dialogue takes place after the player has successfully fought back an army of goblins that attacked the druid grove. Tahani blames the player and the tieflings for bringing a fight to their door, and she's not shy about telling them.",
+    "how_to_trigger": "Repro steps:1. Start the game2. loadlevel WLD_Main_A3. oe readyattackonden4. speak to zevlor5. Blow the horn6. killcombat to kill all goblins7. goto 237 5198. speak with Tahan"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Tahan",
+      "text": "Every drop of druid blood is on your hands. Remember that.",
+      "context": "NodeContext: She blames both players and the tieflings in the grove for causing trouble.",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_RitualDruid005"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Tahan",
+      "text": "I'm not singing your praises. You and the tieflings brought violence to this place.",
+      "context": "NodeContext: Coolly. She blames both players and the tieflings in the grove for causing trouble.",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_RitualDruid005 = False"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_RitualDruid005"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Tahan",
+          "text": "It wasn't our fight. You dragged us into it.",
+          "context": "NodeContext: She's accusing the player, pointing at them. She blames both players and the tieflings in the grove for causing trouble.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,968 @@
+{
+  "metadata": {
+    "synopsis": "Main guard's dialog in Guard Tower in Cazador's Palace.Triggered automatically when you enter the tower, but also can be triggered by clicking on the guard. Guard is a female dwarf mesmerised to do the bidding of a powerful vampire. She speaks in a slightly dreamy tone.",
+    "how_to_trigger": "oe debugbookGo To Region - Act 3 - LOW - Cazador's Palace - Guard Towerclimb the scaffolding and enter the tower"
+  },
+  "dialogue": {
+    "11": {
+      "id": "11",
+      "speaker": "Merony",
+      "text": "Enter freely. You are welcome.",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_GuardTower_State_GainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Merony",
+      "text": "You are intruding in the palace of Cazador Szarr. Leave now, citizen.",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_GuardTower_HasMet_Guard001 = False",
+        "WYR_GurCamp_State_GaveQuestToKillCazador = False"
+      ],
+      "setflags": [
+        "LOW_CazadorsPalace_GuardTower_HasMet_Guard001"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "42",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "33",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*She doesn't say a word. In fact, she barely seems there at all.*",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_GuardTower_State_GainedAccess",
+        "LOW_CazadorsPalace_GuardTower_Guard_001_State_Intimidated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "30": {
+      "id": "30",
+      "speaker": "Merony",
+      "text": "You cannot be here - it is forbidden.",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_GuardTower_HasMet_Guard001"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "42",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "38": {
+          "id": "38",
+          "speaker": "Merony",
+          "text": "Leave, citizen.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "33",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Merony",
+      "text": "This is the palace of Cazador Szarr. Entry is forbidden. Leave now, citizen.",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_GuardTower_HasMet_Guard001 = False"
+      ],
+      "setflags": [
+        "LOW_CazadorsPalace_GuardTower_HasMet_Guard001"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "42",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "LOW_CazadorsPalace_GuardTower_State_AstarionMentionedCharm = False",
+            "LOW_CazadorsPalace_GuardTower_Knows_Charmed = False",
+            "LOW_CazadorsPalace_GuardTower_State_MadePassiveInsightCheck = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "42",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Player",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "LOW_CazadorsPalace_GuardTower_State_MadePassiveInsightCheck"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "42",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "42",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Narrator",
+                      "text": "*The guard's words are clear, but spoken without thought or intent. Behind her eyes you see - nothing. She's a drone under some magical charm.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_CazadorsPalace_GuardTower_Knows_Charmed"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "42",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "Player",
+                          "text": "Another word from you and you'll fly out of this tower.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_CazadorsPalace_GuardTower_State_TriedToConvince = False"
+                          ],
+                          "setflags": [
+                            "LOW_CazadorsPalace_GuardTower_State_TriedToConvince"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "42",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "20": {
+                              "id": "20",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "Narrator",
+                                  "text": "*She pauses for a moment, but keeps her mouth shut. It seems you're free to enter.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_CazadorsPalace_GuardTower_State_GainedAccess",
+                                    "LOW_CazadorsPalace_GuardTower_Guard_001_State_Intimidated",
+                                    "LOW_CazadorsPalace_GuardTower_Event_GiveKey"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "8": {
+                              "id": "8",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "26": {
+                                  "id": "26",
+                                  "speaker": "Merony",
+                                  "text": "My life belongs to the master. I live and die in his service.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "40": {
+                                      "id": "40",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "42",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "50": {
+                          "id": "50",
+                          "speaker": "Player",
+                          "text": "I am inspecting the security, on your master's orders.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_CazadorsPalace_GuardTower_State_TriedToConvince = False",
+                            "ROGUE = False"
+                          ],
+                          "setflags": [
+                            "LOW_CazadorsPalace_GuardTower_State_TriedToConvince"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "42",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "6": {
+                              "id": "6",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "36": {
+                                  "id": "36",
+                                  "speaker": "Merony",
+                                  "text": "Of course, whatever the master desires.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "41": {
+                                      "id": "41",
+                                      "speaker": "Merony",
+                                      "text": "Enter freely and of your own will.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "LOW_CazadorsPalace_GuardTower_State_GainedAccess",
+                                        "LOW_CazadorsPalace_GuardTower_Event_GiveKey"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "49": {
+                              "id": "49",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "13": {
+                                  "id": "13",
+                                  "speaker": "Merony",
+                                  "text": "The master needs no 'inspections'. The master sees all.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "42": {
+                                      "id": "42",
+                                      "speaker": "Merony",
+                                      "text": "This place is forbidden. Leave.",
+                                      "context": "NodeContext: Stressing the last word as a threat",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "29": {
+                          "id": "29",
+                          "speaker": "Player",
+                          "text": "Cazador hired me for a job - it's very hush, hush. If you don't let me in, he's going to be most upset.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_CazadorsPalace_GuardTower_State_TriedToConvince = False",
+                            "ROGUE"
+                          ],
+                          "setflags": [
+                            "LOW_CazadorsPalace_GuardTower_State_TriedToConvince"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "42",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "34": {
+                              "id": "34",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "42",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "10": {
+                                  "id": "10",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "36",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "19": {
+                              "id": "19",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "42",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "17": {
+                                  "id": "17",
+                                  "speaker": "Merony",
+                                  "text": "The master did not mention you.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "42",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "51": {
+                          "id": "51",
+                          "speaker": "Player",
+                          "text": "I'm here to kill Cazador Szarr.",
+                          "context": "",
+                          "checkflags": [
+                            "WYR_GurCamp_State_GaveQuestToKillCazador"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "46": {
+                              "id": "46",
+                              "speaker": "Merony",
+                              "text": "Blasphemy against the master! Blasphemy!",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "FactionHostileToPlayerGroupAfterDialog"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "5": {
+                          "id": "5",
+                          "speaker": "Player",
+                          "text": "Attack.",
+                          "context": "",
+                          "checkflags": [
+                            "WYR_GurCamp_State_GaveQuestToKillCazador = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "48": {
+                              "id": "48",
+                              "speaker": "Merony",
+                              "text": "Protect the palace! Protect the master's sanctuary!",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "FactionHostileToPlayerGroupAfterDialog"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "32": {
+                          "id": "32",
+                          "speaker": "Player",
+                          "text": "All right, I'll go.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "TeleportOutOfTrespass"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "35": {
+                      "id": "35",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "18",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "44": {
+          "id": "44",
+          "speaker": "Narrator",
+          "text": "*The guard's words are clear, but spoken without thought or intent. Behind her eyes you see - nothing. She must be one of the charmed thralls Astarion mentioned.*",
+          "context": "",
+          "checkflags": [
+            "LOW_CazadorsPalace_GuardTower_State_AstarionMentionedCharm",
+            "LOW_CazadorsPalace_GuardTower_Knows_Charmed = False"
+          ],
+          "setflags": [
+            "LOW_CazadorsPalace_GuardTower_Knows_Charmed"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "22",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "22": {
+          "id": "22",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "43": {
+              "id": "43",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "18",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "39": {
+      "id": "39",
+      "speaker": "Merony",
+      "text": "Master Astarion? But the time is almost here - you should be at the ritual.",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_GuardTower_HasMet_Guard001 = False",
+        "ASTARION"
+      ],
+      "setflags": [
+        "LOW_CazadorsPalace_GuardTower_HasMet_Guard001"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "25": {
+          "id": "25",
+          "speaker": "Merony",
+          "text": "Hurry, the palace is being sealed. You must not be late. You must not anger the master.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "45": {
+              "id": "45",
+              "speaker": "Player",
+              "text": "What ritual are you talking about?",
+              "context": "",
+              "checkflags": [
+                "ORI_Astarion_Knows_RitualsPurpose = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "28": {
+                  "id": "28",
+                  "speaker": "Merony",
+                  "text": "It is the Ascension - the master expects all his children to attend. You must not be late.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_CazadorsPalace_GuardTower_State_GainedAccess",
+                    "LOW_CazadorsPalace_GuardTower_Event_GiveKey"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "21": {
+              "id": "21",
+              "speaker": "Player",
+              "text": "I'll hurry up.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Merony",
+                  "text": "Be quick!",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_CazadorsPalace_GuardTower_State_GainedAccess",
+                    "LOW_CazadorsPalace_GuardTower_Event_GiveKey"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "23": {
+              "id": "23",
+              "speaker": "Player",
+              "text": "You'll be free of 'the master' soon. I'll see to that.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "37": {
+                  "id": "37",
+                  "speaker": "Merony",
+                  "text": "Free of the master? But the master is freedom. The master is everything.",
+                  "context": "NodeContext: emphasis on 'is' in 'is freedom'",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "16": {
+                      "id": "16",
+                      "speaker": "Merony",
+                      "text": "You will be brought to the master. You will answer for your blasphemy.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "24": {
+              "id": "24",
+              "speaker": "Player",
+              "text": "Attack.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "52": {
+                  "id": "52",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "48",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "47": {
+      "id": "47",
+      "speaker": "Merony",
+      "text": "Our master awaits. Go!",
+      "context": "",
+      "checkflags": [
+        "LOW_CazadorsPalace_GuardTower_State_GainedAccess",
+        "ASTARION"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

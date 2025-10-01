@@ -1,0 +1,549 @@
+{
+  "metadata": {
+    "synopsis": "After killing the final rat during the Ultimatum stage, one of the final rats returns to its humanoid form as Lyrthindor,  the Last Justiciar. He's furious that the player has blown his cover, and quickly turns hostile.",
+    "how_to_trigger": "1. Trigger the Ultimatum stage of the last using oe SHA_LastJusticiar_SetState_Ultimatum or the Debug Book2. Go to -717; -37; -7463. Enter combat with the rats and kill them"
+  },
+  "dialogue": {
+    "17": {
+      "id": "17",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: A rat transforms into an elf. Its hisses and squeaks morph into the elf's cry of pain as he returns to his true form.\n\nKeep the camera on the player while they react to the transformation",
+      "checkflags": [],
+      "setflags": [
+        "SHA_LastJusticiar_Event_JusticiarTransforms"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "21": {
+          "id": "21",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "MUTED"
+          ],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "alias",
+          "children": {}
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Lyrthindor",
+          "text": "These hands... too big. Where are the others? Where's the rest of me?!",
+          "context": "CinematicNodeContext: Looking at his own hands in confusion\rNodeContext: Groan of pain followed by anger and confusion as he looks down at his own hands in disbelief",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Lyrthindor",
+              "text": "You - why did you have to keep prying? Why couldn't you just leave?!",
+              "context": "CinematicNodeContext: Looks up from his hands to the player, angry\rNodeContext: Angry, irrational outburst. Looks up at the player on 'you'.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Player",
+                  "text": "Hold on - who are you?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "20",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "Lyrthindor",
+                      "text": "Lyrthindor - last Dark Justiciar. I kept watch over Lady Shar's temple. Kept the faith alive, after all the others were killed.",
+                      "context": "NodeContext: lir-thin-door. Furious.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "20",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "Lyrthindor",
+                          "text": "But you ruined it. Trespassed. Spoiled our - my - secret. Now you'll rot in the dark.",
+                          "context": "NodeContext: Furious. Still mixed up, referring to himself in plural then correcting. Turns hostile immediately afterwards",
+                          "checkflags": [],
+                          "setflags": [
+                            "FactionHostileToPlayerGroupAfterDialog"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "20",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "Player",
+                              "text": "You mean Yurgir? I'm telling you, I didn't know. I was just trying to humour him so he'd let me go.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_LastJusticiar_JusticiarAppears_Event_PlayerClaimedIgnorance",
+                                "SHA_Orthon_Event_SearchPersuasionSuccess"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "20",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "4": {
+                                  "id": "4",
+                                  "speaker": "Lyrthindor",
+                                  "text": "You should have just ran from him. Now you'll die before me instead.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "FactionHostileToPlayerGroupAfterDialog"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "24": {
+                              "id": "24",
+                              "speaker": "Player",
+                              "text": "I didn't know. I was just trying to humour Yurgir so he'd let me go.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_LastJusticiar_JusticiarAppears_Event_PlayerClaimedIgnorance = False",
+                                "SHA_Orthon_Event_SearchPersuasionSuccess"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Lae'zel -1",
+                                "Shadowheart 1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "20",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "15": {
+                                  "id": "15",
+                                  "speaker": "Lyrthindor",
+                                  "text": "That devil. You should have just ran from him. Now you'll die before me instead.",
+                                  "context": "NodeContext: Furious. Turns hostile immediately afterwards",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "FactionHostileToPlayerGroupAfterDialog"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "13": {
+                              "id": "13",
+                              "speaker": "Player",
+                              "text": "I'm telling you, I didn't know. There's no need for violence - more violence.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_LastJusticiar_JusticiarAppears_Event_PlayerClaimedIgnorance",
+                                "SHA_Orthon_Event_SearchPersuasionSuccess = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "20",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Lyrthindor",
+                                  "text": "Wrong - you forced my hand. Now I'll make you into an offering for Lady Shar.",
+                                  "context": "NodeContext: Furious. Turns hostile immediately afterwards",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "FactionHostileToPlayerGroupAfterDialog"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "16": {
+                              "id": "16",
+                              "speaker": "Player",
+                              "text": "I didn't know. There's no need for violence - more violence.",
+                              "context": "",
+                              "checkflags": [
+                                "SHA_LastJusticiar_JusticiarAppears_Event_PlayerClaimedIgnorance = False",
+                                "SHA_Orthon_Event_SearchPersuasionSuccess = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Lae'zel -1",
+                                "Shadowheart 1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "20",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "0": {
+                              "id": "0",
+                              "speaker": "Player",
+                              "text": "I'd never have struck at a fellow servant of Lady Shar, had I realised.",
+                              "context": "",
+                              "checkflags": [
+                                "SHAR"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "18": {
+                                  "id": "18",
+                                  "speaker": "Lyrthindor",
+                                  "text": "Such ignorance is unworthy of the Nightsinger's followers. Her church will be stronger once you are dead.",
+                                  "context": "NodeContext: Furious. Turns hostile immediately afterwards",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "FactionHostileToPlayerGroupAfterDialog"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "5": {
+                              "id": "5",
+                              "speaker": "Player",
+                              "text": "I'm glad I did it. The world's better off without Shar worshippers skulking about.",
+                              "context": "",
+                              "checkflags": [
+                                "SHAR = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Shadowheart -1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "11": {
+                                  "id": "11",
+                                  "speaker": "Lyrthindor",
+                                  "text": "The world will never be rid of us - we are everywhere. But you...? Your miserable tale ends right now.",
+                                  "context": "NodeContext: Furious. Turns hostile immediately afterwards",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "FactionHostileToPlayerGroupAfterDialog"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "23": {
+                              "id": "23",
+                              "speaker": "Player",
+                              "text": "I'm sorry. What more can be said?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Lae'zel -1",
+                                "Shadowheart 1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "25": {
+                                  "id": "25",
+                                  "speaker": "Lyrthindor",
+                                  "text": "Nothing. You had your chance to talk - now you die.",
+                                  "context": "NodeContext: Furious. Turns hostile immediately afterwards",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "FactionHostileToPlayerGroupAfterDialog"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "22": {
+                              "id": "22",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "28",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "Player",
+                  "text": "Wait - I didn't realise. There's no quarrel between us.",
+                  "context": "",
+                  "checkflags": [
+                    "SHAR = False"
+                  ],
+                  "setflags": [
+                    "SHA_LastJusticiar_JusticiarAppears_Event_PlayerClaimedIgnorance"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "2",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Lyrthindor",
+                      "text": "Oh yes there is. All these years, I kept the Dark Lady's faith alive, against the odds, against the devil.",
+                      "context": "NodeContext: Furious",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "2",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "8": {
+                  "id": "8",
+                  "speaker": "Player",
+                  "text": "Wait - I'm a child of Lady Shar, just like you. We're on the same side.",
+                  "context": "",
+                  "checkflags": [
+                    "SHAR"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "26",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "Lyrthindor",
+                      "text": "My side is dead - just piles of old bones lying in the dark. You're nothing to me!",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "26",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "27": {
+                  "id": "27",
+                  "speaker": "Player",
+                  "text": "Stand down. I completed the rites of this place. I am a Dark Justiciar, same as you.",
+                  "context": "",
+                  "checkflags": [
+                    "SHA_Nightsong_State_PermaDefeated"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "Lyrthindor",
+                      "text": "No, there's no others. We - I - kept the faith, alone. You will not steal the Dark Lady's favour from me!",
+                      "context": "NodeContext: Furious. Still mixed up, referring to himself in plural then correcting.",
+                      "checkflags": [],
+                      "setflags": [
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "2",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "28": {
+                  "id": "28",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

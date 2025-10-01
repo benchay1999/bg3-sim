@@ -1,0 +1,714 @@
+{
+  "metadata": {
+    "synopsis": "Player interacts with statue when reaching the wyrmway, and professes themselves worthy in order to enter.",
+    "how_to_trigger": "Approach door to wyrmway and click on Statue of Balduran - S_WYR_EntranceStatue - 750036f3-7abc-41b8-8cd0-9b977500d5b3 (goto -865 32 -1053)"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+      "text": "Enter and be judged.",
+      "context": "",
+      "checkflags": [
+        "WYR_EntranceStatue_Event_HasMetOpen"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+      "text": "Be you so bold to seek the wyrm? <br>",
+      "context": "",
+      "checkflags": [
+        "WYR_Balduran_Event_OpenDoor = False",
+        "WYR_Wyrmway_State_EntryOpened"
+      ],
+      "setflags": [
+        "WYR_EntranceStatue_Event_HasMetOpen"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "25": {
+          "id": "25",
+          "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+          "text": "My domain imperilled, so it's claimed. <br>Enter, then, and prove thy merit, <br>Hero be? March forth and swear it.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "20": {
+      "id": "20",
+      "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+      "text": "Be you the hero, answer true: <br>Are you worthy?",
+      "context": "",
+      "checkflags": [
+        "WYR_Balduran_HasMet",
+        "WYR_Wyrmway_State_EntryOpened = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "26": {
+          "id": "26",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "WYR_EntranceStatue_WyllOM_Event_OMHappened",
+            "81a137d3-9f6f-3e68-2943-4c4343315c5f_WyllSpokeInclusion = False"
+          ],
+          "setflags": [
+            "ORI_Inclusion_Wyll"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "34": {
+              "id": "34",
+              "speaker": "Wyll",
+              "text": "The great dragon lies beyond. He must be freed.",
+              "context": "",
+              "checkflags": [
+                "81a137d3-9f6f-3e68-2943-4c4343315c5f_WyllSpokeInclusion = False"
+              ],
+              "setflags": [
+                "81a137d3-9f6f-3e68-2943-4c4343315c5f_WyllSpokeInclusion"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_End_Wyll"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "19",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "28": {
+      "id": "28",
+      "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+      "text": "The wyrm rises, if you be so true. <br>Breath of fire, righteous fury, <br>Ansur - take flight, judge and jury.<br>",
+      "context": "",
+      "checkflags": [
+        "WYR_Balduran_Event_OpenDoor",
+        "WYR_Wyrmway_State_EntryOpened"
+      ],
+      "setflags": [
+        "WYR_EntranceStatue_Event_HasMetOpen"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "31": {
+      "id": "31",
+      "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_Balduran_HasMet = False",
+        "WYR_Wyrmway_State_EntryOpened = False"
+      ],
+      "setflags": [
+        "WYR_Balduran_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "29": {
+          "id": "29",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "WYR_Wyrmway_MuralHelper1_Knows_MadeCheck = False",
+            "WYR_EntranceStatue_State_Attempted"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "11",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "12",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "WYR_Wyrmway_MuralHelper1_Knows_MadeCheck"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {}
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Narrator",
+          "text": "*The statue before you bears a familiar likeness. It is Balduran, the celebrated adventurer who founded the city of Baldur's Gate.*",
+          "context": "CinematicNodeContext: Camera shows statue",
+          "checkflags": [
+            "WYR_Wyrmway_MuralHelper1_Knows_MadeCheck = False",
+            "BALDURIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "22",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+              "text": "Peril floods my province, <br>The palisades fall, the earth does tremble, <br>The servants of shadow and blood assemble.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+                  "text": "Beyond lies the grand wyrm deep in slumber, <br>Awaiting a true hero's advent, <br>Should my domain drown in torment.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "10": {
+                      "id": "10",
+                      "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+                      "text": "Be you the deluge, turn away. <br>Be you the hero, answer true: <br>Are you worthy?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "19": {
+                          "id": "19",
+                          "speaker": "GROUP_Emperors",
+                          "text": "Poetic nonsense. There is no wyrm, and no saviour.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "30": {
+                              "id": "30",
+                              "speaker": "Player",
+                              "text": "Venerable Balduran, Father of the Gate, let it be known: I am worthy.",
+                              "context": "",
+                              "checkflags": [
+                                "REALLY_WYLL"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Wyll 7"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "14",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "35": {
+                              "id": "35",
+                              "speaker": "Player",
+                              "text": "What are you? What is this place?",
+                              "context": "",
+                              "checkflags": [
+                                "WYR_EntranceStatue_Event_AskedAboutPlace = False"
+                              ],
+                              "setflags": [
+                                "WYR_EntranceStatue_Event_AskedAboutPlace"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Narrator",
+                                  "text": "*The statue gives no response.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "9": {
+                              "id": "9",
+                              "speaker": "Player",
+                              "text": "Let me pass. I have come to free the city's great protector.",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Wyll_Knows_SentToFindAnsur",
+                                "WYR_Balduran_State_AskedDragon = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "15": {
+                                  "id": "15",
+                                  "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+                                  "text": "Then answer, for it is asked: <br>Are you worthy?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "WYR_Balduran_State_AskedDragon"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "33": {
+                              "id": "33",
+                              "speaker": "Player",
+                              "text": "I am worthy. Open the way.",
+                              "context": "",
+                              "checkflags": [
+                                "REALLY_WYLL = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Wyll 3"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "14": {
+                                  "id": "14",
+                                  "speaker": "GROUP_Act3_WYR_WyrmwayAnnouncer",
+                                  "text": "Ancient Ansur, hear me: A champion is proclaimed. <br>The test begins; Let your judgement follow.",
+                                  "context": "CinematicNodeContext: The door dramatically opens after the line is spoken.",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "WYR_Balduran_Event_OpenDoor"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "23": {
+                              "id": "23",
+                              "speaker": "Player",
+                              "text": "Examine the statue. What magic might be at work?",
+                              "context": "",
+                              "checkflags": [
+                                "WYR_EntranceStatue_Event_ArcanaCheck = False"
+                              ],
+                              "setflags": [
+                                "WYR_EntranceStatue_Event_ArcanaCheck"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "4": {
+                                      "id": "4",
+                                      "speaker": "Narrator",
+                                      "text": "*You sense neither life nor spirit within the statue. A powerful variant of Magic Mouth has been cast on it, allowing it to speak only recorded messages.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "3": {
+                                  "id": "3",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "37": {
+                                      "id": "37",
+                                      "speaker": "Narrator",
+                                      "text": "*Whatever magic allows this statue to speak, it lies beyond your grasp.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "6": {
+                              "id": "6",
+                              "speaker": "Player",
+                              "text": "Leave.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "36": {
+          "id": "36",
+          "speaker": "Player",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "WYR_Wyrmway_MuralHelper1_Knows_MadeCheck = False",
+            "WYR_EntranceStatue_State_Attempted = False",
+            "REALLY_PLANAR = False",
+            "BALDURIAN = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "22",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "WYR_Wyrmway_MuralHelper1_Knows_MadeCheck = False",
+            "WYR_EntranceStatue_State_Attempted = False",
+            "REALLY_PLANAR",
+            "BALDURIAN = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "WYR_Wyrmway_MuralHelper1_Knows_MadeCheck"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "8",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "32": {
+                      "id": "32",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "WYR_EntranceStatue_State_Attempted"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "11",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "32",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

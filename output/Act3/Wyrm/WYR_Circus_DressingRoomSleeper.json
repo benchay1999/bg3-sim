@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "synopsis": "A one-liner dialog with a circus worker in the dressing room. He initially sleeping, but will wake up if combat starts.",
+    "how_to_trigger": "BGO_Main_A, Circustalk to a sleeping character at -27; 45; -47"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Roustabout Vix",
+      "text": "Urgh - why did you wake me? Bloody hells - I was up half the night grooming Buddy for the show. Blighter bit me.",
+      "context": "NodeContext: player has just woken them up - grumpy and yawning",
+      "checkflags": [
+        "WYR_Circus_HasMet_DressingRoomSleeper = False"
+      ],
+      "setflags": [
+        "WYR_Circus_HasMet_DressingRoomSleeper"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Roustabout Vix",
+      "text": "Unless you have some sort of animal grooming emergency, leave me be.",
+      "context": "NodeContext: grumpy and yawning",
+      "checkflags": [
+        "WYR_Circus_HasMet_DressingRoomSleeper"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Roustabout Vix",
+      "text": "How could Madam Lucretious let this happen? And what are you doing back here? Out!",
+      "context": "NodeContext: upset, thinking about himself",
+      "checkflags": [
+        "WYR_Circus_HasMet_DressingRoomSleeper_PostCombat = False",
+        "WYR_Circus_State_PostCombat"
+      ],
+      "setflags": [
+        "WYR_Circus_HasMet_DressingRoomSleeper_PostCombat"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Roustabout Vix",
+      "text": "No - don't hurt me!",
+      "context": "NodeContext: panicked, assumes the player is an enemy. Cowering.",
+      "checkflags": [
+        "WYR_Circus_Clown_State_Hostile"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Roustabout Vix",
+      "text": "Any of us could be next - I need to pack...",
+      "context": "NodeContext: planning to flee",
+      "checkflags": [
+        "WYR_Circus_HasMet_DressingRoomSleeper_PostCombat",
+        "WYR_Circus_State_PostCombat"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

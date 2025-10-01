@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "synopsis": "In Arcane Tower there's a button on the floor near an empty bucket. Pressing the button while wearing Cleric pet's collar drops food (currently blue cheese). Kind of auto-feeding device.This PAD happens on button press. There're variants: player who pressed button wears the collar, and so it just works. Player has it in pocket, then the collar vibrates a little. Another party character nearby has the collar, then that character comments about vibrating."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Player",
+      "text": "Wait - why did my collar just vibrate?",
+      "context": "InternalNodeContext: Feed button didn't work, but one of nearby characters felt the pet's collar vibrating on its neck.\rNodeContext: Someone else pressed a button and surprisingly, it made a collar you're wearing vibrate.",
+      "checkflags": [
+        "UND_ClericPet_Event_FeedButtonSuccess = False",
+        "UND_ClericPet_EquippedCollar"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Player",
+      "text": "Hmm - only one serving for me, I guess.",
+      "context": "InternalNodeContext: The feed button doesn't work anymore. It only gave food once so player wouldnt abuse this situation.",
+      "checkflags": [
+        "UND_ClericPet_Event_FeedButtonNoMore"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Player",
+      "text": "Strange place for a button. Especially one that doesn't work.",
+      "context": "InternalNodeContext: None of nearby characters have the collar in inventory: give a hint that the button is designed for some small creature to press.",
+      "checkflags": [
+        "UND_ClericPet_Event_FeedButtonSuccess = False",
+        "UND_ClericPet_HasCollar = False",
+        "UND_ClericPet_EquippedCollar = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Player",
+      "text": "Clever. Food is dispensed for anyone wearing this collar.",
+      "context": "InternalNodeContext: The feed button worked, this means character who pressed the button had pet's collar on. And this character is commenting.",
+      "checkflags": [
+        "UND_ClericPet_Event_FeedButtonNoMore = False",
+        "UND_ClericPet_Event_FeedButtonSuccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Player",
+      "text": "Wait - why did that strange dog collar just vibrate?",
+      "context": "InternalNodeContext: Feed button didn't work, but one of nearby characters felt the pet's collar vibrating in its pocket.\rNodeContext: Someone else pressed a button and surprisingly, it made a collar you're carrying in your pocket vibrate.",
+      "checkflags": [
+        "UND_ClericPet_Event_FeedButtonSuccess = False",
+        "UND_ClericPet_HasCollar"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

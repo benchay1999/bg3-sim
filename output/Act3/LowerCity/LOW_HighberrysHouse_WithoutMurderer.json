@@ -1,0 +1,959 @@
+{
+  "metadata": {
+    "synopsis": "Dialogue between the players and the Highberrys (both, alive) in the Serial Killer situation. There are the first victims. A flag signal the dialogue happens before Dolor appears and other flag if Dolor is killed and the couple survives.",
+    "how_to_trigger": "Click on one of the Highberrys after and before Dolor appears. Not while he is there.Coordinates: S_LOW_CoraHighberry_8a520cf7-c5da-419f-bdd4-792b27c5c679Relevant flags in this page: https://larianstudios.atlassian.net/wiki/spaces/GUS/pages/2624159852/Lower+City+Debug+Commands"
+  },
+  "dialogue": {
+    "17": {
+      "id": "17",
+      "speaker": "Roger Highberry",
+      "text": "I think Master Meztli was keen for us to try his wine. Speak with him if you wish to join us.",
+      "context": "",
+      "checkflags": [
+        "LOW_SerialKiller_State_WineFestival"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Cora Highberry",
+      "text": "Why, whatever was the matter with that man? Why did he take off so quickly?",
+      "context": "InternalNodeContext: This node will only enter the first time we try to speak with the highberrys after saving cora in perfect stealth",
+      "checkflags": [
+        "LOW_SerialKiller_State_CoraSavedInStealth"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "You're on a list of murder targets. Cora. I was protecting you.",
+          "context": "",
+          "checkflags": [
+            "LOW_SerialKiller_Knows_TargetList"
+          ],
+          "setflags": [
+            "LOW_SerialKiller_State_CoraSavedInStealth = False"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "13",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "I don't know why he ran. Coward.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Cora Highberry",
+              "text": "Well, how odd.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "LOW_SerialKiller_State_CoraSavedInStealth = False"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "19": {
+          "id": "19",
+          "speaker": "Player",
+          "text": "Perhaps he left the stove on.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "32": {
+              "id": "32",
+              "speaker": "Cora Highberry",
+              "text": "Yes, I suppose so... Doesn't explain all the shouting though.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "LOW_SerialKiller_State_CoraSavedInStealth = False"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Cora Highberry",
+      "text": "I am so glad that monster was stopped.",
+      "context": "",
+      "checkflags": [
+        "LOW_SerialKiller_State_DolorIsDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "Roger Highberry",
+          "text": "Me too, my love. Me too.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_SerialKiller_HighberrysBooster"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "43": {
+      "id": "43",
+      "speaker": "Cora Highberry",
+      "text": "Roger, look, a visitor!",
+      "context": "",
+      "checkflags": [
+        "LOW_SerialKiller_State_OnlyCora_HasMet = False",
+        "LOW_SerialKiller_State_OnlyRoger_HasMet = False",
+        "LOW_SerialKiller_State_HighberrysHasMetBeforeDolor = False",
+        "LOW_SerialKiller_State_DolorIsDead = False"
+      ],
+      "setflags": [
+        "LOW_SerialKiller_State_OnlyCora_HasMet",
+        "LOW_SerialKiller_State_OnlyRoger_HasMet",
+        "LOW_SerialKiller_State_HighberrysHasMetBeforeDolor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Roger Highberry",
+          "text": "Ah, so I see. Are we expecting anyone, Cora?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "50": {
+              "id": "50",
+              "speaker": "Cora Highberry",
+              "text": "No - the grocer's just been, as has the chandler. Then there's your tailor - he's due soon to get the children outfitted for the festival...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "42": {
+                  "id": "42",
+                  "speaker": "Roger Highberry",
+                  "text": "And of course, the Wine Festival itself is but a few days away - Cora, we do forget ourselves! We've not even asked this fine young stranger's name.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "13",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "27": {
+                      "id": "27",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "30",
+                      "link": "13",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    },
+                    "23": {
+                      "id": "23",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "47",
+                      "link": "13",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    },
+                    "6": {
+                      "id": "6",
+                      "speaker": "Player",
+                      "text": "I'm [GEN_PlayerName_c11eee1e-7815-6143-7233-f2427799fa53].  And you are?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "13",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "5": {
+                          "id": "5",
+                          "speaker": "Cora Highberry",
+                          "text": "I am Cora Highberry, and this is my husband, Roger. Delighted to meet you.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "13",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "14": {
+                              "id": "14",
+                              "speaker": "Roger Highberry",
+                              "text": "More than delighted! A little extra company's always welcome as we enter our twilight years - yet another reason we're putting on the wine festival!",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "13",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "30": {
+                                  "id": "30",
+                                  "speaker": "Player",
+                                  "text": "Soon you are to be sacrificed, little lambs. You are on Father Bhaal's naughty list.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "LOW_SerialKiller_Knows_TargetList",
+                                    "REALLY_DARK_URGE"
+                                  ],
+                                  "setflags": [
+                                    "LOW_SerialKiller_Knows_CoraTargetList"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "13",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "13": {
+                                      "id": "13",
+                                      "speaker": "Roger Highberry",
+                                      "text": "I must say, if this a practical joke, it's of distinctly poor taste.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "8": {
+                                          "id": "8",
+                                          "speaker": "Cora Highberry",
+                                          "text": "I don't know, Roger... We were just talking about the city being unsafe - and what of the children? If there's even the slightest chance -",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "16": {
+                                              "id": "16",
+                                              "speaker": "Roger Highberry",
+                                              "text": "Cora, my dear, who would really take the time our of their day to harm us?",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "20": {
+                                                  "id": "20",
+                                                  "speaker": "Roger Highberry",
+                                                  "text": "Besides - if they try, well, I've got some life in me yet.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "47": {
+                                  "id": "47",
+                                  "speaker": "Player",
+                                  "text": "I'm sorry, Mrs Highberry, but you're on a list of murder targets. You're not safe here.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "LOW_SerialKiller_Knows_TargetList"
+                                  ],
+                                  "setflags": [
+                                    "LOW_SerialKiller_Knows_CoraTargetList"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "13",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "4": {
+                                  "id": "4",
+                                  "speaker": "Player",
+                                  "text": "I bet that'll draw quite the crowd in a city like this.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "26",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "48": {
+                                      "id": "48",
+                                      "speaker": "Cora Highberry",
+                                      "text": "We hope so, it's going to be right on our doorstep!",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "26",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "18": {
+                                          "id": "18",
+                                          "speaker": "Roger Highberry",
+                                          "text": "The festival was put together to raise funds for the children, you see. Times are a touch tough at the moment.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "26",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "25": {
+                                              "id": "25",
+                                              "speaker": "Player",
+                                              "text": "Which children are you raising money for?",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "26",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "37": {
+                                                  "id": "37",
+                                                  "speaker": "Roger Highberry",
+                                                  "text": "Young Molly and Timothy, who we've recently taken charge of. Their parents... Well. War leaves the nastiest scars.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "26",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "40": {
+                                                      "id": "40",
+                                                      "speaker": "Player",
+                                                      "text": "It's very kind of you to take orphans into your home.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "26",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "34": {
+                                                          "id": "34",
+                                                          "speaker": "Cora Highberry",
+                                                          "text": "We're lucky to be blessed with a rather spacious one - seems cruel to let it go unused if there are children in need.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    },
+                                                    "28": {
+                                                      "id": "28",
+                                                      "speaker": "Player",
+                                                      "text": "Perhaps a small donation would help salve those scars? ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [
+                                                        "Lae'zel 1",
+                                                        "Wyll 1",
+                                                        "Karlach 1",
+                                                        "Minthara -1",
+                                                        "Astarion -1",
+                                                        "Shadowheart 1",
+                                                        "Jaheira 1",
+                                                        "Halsin 1",
+                                                        "Minsc 1"
+                                                      ],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "26",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "1": {
+                                                          "id": "1",
+                                                          "speaker": "Cora Highberry",
+                                                          "text": "Oh, but we couldn't accept your money for nothing -",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [
+                                                            "GEN_TransferNPCPayment"
+                                                          ],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "9": {
+                                                              "id": "9",
+                                                              "speaker": "Roger Highberry",
+                                                              "text": "Nothing, Cora? All the work you put in with the little ones is hardly nothing. Thank you, any help we can get is a blessing.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "46": {
+                                                      "id": "46",
+                                                      "speaker": "Player",
+                                                      "text": "Orphans? Ew. I've heard enough.",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "REALLY_DARK_URGE"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "26",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "26": {
+                                                          "id": "26",
+                                                          "speaker": "Roger Highberry",
+                                                          "text": "You're welcome to stay a while if you like. Does us good to have a little extra life in the house.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "44": {
+                                                              "id": "44",
+                                                              "speaker": "Cora Highberry",
+                                                              "text": "But do be careful if you're out and about - city's just not as safe as it used to be.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "51": {
+                                                      "id": "51",
+                                                      "speaker": "Player",
+                                                      "text": "I should probably get going.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "26",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "7": {
+                                              "id": "7",
+                                              "speaker": "Player",
+                                              "text": "If times are tough, I'm happy to donate. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                                              "context": "",
+                                              "checkflags": [
+                                                "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [
+                                                "Lae'zel 1",
+                                                "Wyll 1",
+                                                "Karlach 1",
+                                                "Minthara -1",
+                                                "Astarion -1",
+                                                "Shadowheart 1",
+                                                "Jaheira 1",
+                                                "Halsin 1",
+                                                "Minsc 1"
+                                              ],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "35": {
+                                                  "id": "35",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "1",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "38": {
+                                              "id": "38",
+                                              "speaker": "Player",
+                                              "text": "I'll let you get on with your day.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "39": {
+                                                  "id": "39",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "26",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "52": {
+                                  "id": "52",
+                                  "speaker": "Player",
+                                  "text": "'Another' reason? Why else would you run a wine festival?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "0": {
+                                      "id": "0",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "18",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "41": {
+                                  "id": "41",
+                                  "speaker": "Player",
+                                  "text": "Lovely to meet you, but I really must be going.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "36": {
+                                      "id": "36",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "26",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "22": {
+                      "id": "22",
+                      "speaker": "Player",
+                      "text": "A wine festival sounds charming.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "31": {
+                          "id": "31",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "48",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "29": {
+                      "id": "29",
+                      "speaker": "Player",
+                      "text": "Just a stranger - and a lost one at that. I'll show my way out.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "24": {
+                          "id": "24",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "26",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "45": {
+      "id": "45",
+      "speaker": "Cora Highberry",
+      "text": "It is so lovely to see more young folk around the place. Really is.",
+      "context": "",
+      "checkflags": [
+        "LOW_SerialKiller_State_OnlyCora_HasMet",
+        "LOW_SerialKiller_State_OnlyRoger_HasMet",
+        "LOW_SerialKiller_State_HighberrysHasMetBeforeDolor",
+        "LOW_SerialKiller_State_DolorIsDead = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "49": {
+      "id": "49",
+      "speaker": "Cora Highberry",
+      "text": "I still can't believe... why would anyone want to kill... me? Th-thank you for saving us...",
+      "context": "",
+      "checkflags": [
+        "LOW_SerialKiller_State_DolorNotKillsCora"
+      ],
+      "setflags": [
+        "LOW_SerialKiller_HighberrysBooster"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

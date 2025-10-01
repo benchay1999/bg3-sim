@@ -1,0 +1,387 @@
+{
+  "metadata": {
+    "synopsis": "This drow was petrified by a spectator. And will still feel a bit sick when he's woken up. Disoriented somewhat.Now he is unpetrified.Worries about his companions and the group's leader - the wizard.Leave after a long rest.",
+    "how_to_trigger": "Repro Steps:1. Start the game.2. laodlevel WLD_Main_A3. goto 105.957; 50.067; -2494. oe und_pd_freedrow5. Talk with Arcagh."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Petrified Drow",
+      "text": "Thank you. Your help was... appreciated. We'll be leaving soon.",
+      "context": "",
+      "checkflags": [
+        "UND_PetrifiedDrow_State_WizardPermaDefeated",
+        "UND_PetrifiedDrow_State_SomeOtherDrowAlive"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "16": {
+          "id": "16",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Petrified Drow",
+      "text": "Dhourn - free him!",
+      "context": "NodeContext: Doorn, similar 'oo' to 'boot'.",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_005 = False",
+        "UND_PetrifiedDrow_State_WizardPetrified"
+      ],
+      "setflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_005",
+        "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Petrified Drow",
+      "text": "I need rest.",
+      "context": "",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_005",
+        "UND_PetrifiedDrow_State_WizardUnpetrified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Petrified Drow",
+      "text": "We can't  leave Dhourn behind. We'll find a way.",
+      "context": "NodeContext: Doorn, similar 'oo' to 'boot'.",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_005",
+        "UND_PetrifiedDrow_State_WizardPetrified"
+      ],
+      "setflags": [
+        "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Petrified Drow",
+      "text": "Ngh... my head...",
+      "context": "CinematicNodeContext: Still feeling the effects from having been petrified",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_005 = False",
+        "UND_PetrifiedDrow_State_WizardPermaDefeated"
+      ],
+      "setflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_005"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "What happened here?",
+          "context": "",
+          "checkflags": [
+            "UND_PetrifiedDrow_State_AskedWhatHappened = False"
+          ],
+          "setflags": [
+            "c476347b-e9db-8afc-4ed3-c418caaa57d7_Xargrism",
+            "UND_PetrifiedDrow_State_AskedWhatHappened"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Petrified Drow",
+              "text": "Wizard Dhourn hired us... find a... forge.",
+              "context": "NodeContext: Doorn, similar 'oo' to 'boot'.",
+              "checkflags": [],
+              "setflags": [
+                "UND_MyconidDrowDead_Knows_DhournSearchingForge",
+                "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Petrified Drow",
+                  "text": "Came across Xargrim... his friend - a fight broke out. He summoned a spectator. Fool.",
+                  "context": "NodeContext: Zar",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "Petrified Drow",
+                      "text": "He escaped. His spectator petrified us... somehow.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "What can you tell me about Xargrim?",
+          "context": "NodeContext: ZAR",
+          "checkflags": [
+            "c476347b-e9db-8afc-4ed3-c418caaa57d7_Xargrism",
+            "UND_PetrifiedDrow_State_AskedWizardFriend = False"
+          ],
+          "setflags": [
+            "UND_PetrifiedDrow_State_AskedWizardFriend"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Petrified Drow",
+              "text": "The forge... he wanted the forge...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "What will you do now?",
+          "context": "",
+          "checkflags": [
+            "UND_PetrifiedDrow_State_AskedPlans = False"
+          ],
+          "setflags": [
+            "UND_PetrifiedDrow_State_AskedPlans"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Petrified Drow",
+              "text": "The others... need to get them out...",
+              "context": "",
+              "checkflags": [
+                "UND_PetrifiedDrow_State_SomeOtherDrowPetrified"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "8": {
+              "id": "8",
+              "speaker": "Petrified Drow",
+              "text": "Rest. Go home. Soon as the others are ready.",
+              "context": "",
+              "checkflags": [
+                "UND_PetrifiedDrow_State_SomeOtherDrowAlive"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "7": {
+              "id": "7",
+              "speaker": "Petrified Drow",
+              "text": "Rest. Return home. Alone.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Petrified Drow",
+      "text": "Dhourn's your man.",
+      "context": "NodeContext: Doorn, similar 'oo' to 'boot'.",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_005 = False",
+        "UND_PetrifiedDrow_State_WizardUnpetrified"
+      ],
+      "setflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_005",
+        "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Petrified Drow",
+      "text": "I appreciate your help. I'll be leaving... soon enough.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Petrified Drow",
+      "text": "Others might be all right... now the spectator's dead.",
+      "context": "",
+      "checkflags": [
+        "UND_PetrifiedDrow_State_WizardPermaDefeated",
+        "UND_PetrifiedDrow_State_SomeOtherDrowPetrified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

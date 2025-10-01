@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "This guards gets spawned along with Counselor Florrick's executed body to keep an eye on it. Clearly didn't approve of the execution.",
+    "how_to_trigger": "CTY_Main_A, LOW, teleport to S_LOW_BasiliskGate_FlorrickHangedSpot_343dfb1c-7175-42c6-bca7-dc53cc46c617, set flag LOW_BasiliskGate_State_FlorrickExecutionKnown_aff10649-cfc1-b6d0-0984-5572383cda0a, longrest several times (currently 5x) unitl Florrick gets executed. This guard is spawned on the gallows. Talk to them."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Fist Anderson",
+      "text": "Hah - I'll be fired for this. No loss, considering I was quitting. Maybe this is a push from the gods.",
+      "context": "NodeContext: bitter laugh - considers it serendipity",
+      "checkflags": [
+        "LOW_BasiliskGate_ExecutionGuard_02_HasMet",
+        "LOW_BasiliskGate_FlorrickExecution_FlorrcikBodyGone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Fist Anderson",
+      "text": "I've met Counsellor Florrick - she didn't deserve this. Not one bit.",
+      "context": "NodeContext: bitter - clearly doesn't agree with the execution",
+      "checkflags": [
+        "LOW_BasiliskGate_ExecutionGuard_02_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Fist Anderson",
+      "text": "Be glad you missed the execution. It's a mercy when their necks snap...",
+      "context": "NodeContext: bitter - clearly doesn't agree with the execution",
+      "checkflags": [],
+      "setflags": [
+        "LOW_BasiliskGate_ExecutionGuard_02_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Fist Anderson",
+      "text": "This execution was a farce, Counsellor Florrick didn't - wait. Where's her body?!",
+      "context": "NodeContext: bitter - clearly doesn't agree with the execution, then noticing her body is gone",
+      "checkflags": [
+        "LOW_BasiliskGate_FlorrickExecution_FlorrcikBodyGone"
+      ],
+      "setflags": [
+        "LOW_BasiliskGate_ExecutionGuard_02_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

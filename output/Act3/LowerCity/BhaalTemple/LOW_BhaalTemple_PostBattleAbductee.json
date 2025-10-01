@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "synopsis": "After the companion or Yenna, survives the battle with Orin. They would leave the party as a temporary follower and take some time to recover from their ordeal before returning to camp.In Yenna's case, she will reappear after hiding somewhere safe during the combat.Players can talk to them briefly before they return to camp where the companion/Yenna will also disappear from the temple back to camp.",
+    "how_to_trigger": "1) Start game as DU2) Go to Bhaal Temple3) Talk to Orin by getting spotted.4) Make sure abductee isn't killed in dialog with skillchecks.5) Defeat Orin.6) PostBattleDarkUrge should trigger.7) Resist Bhaal when he offers DU to be chosen one.8) DU dies, Withers appears and resurrects everyone.9) Abductee would also be awakened from the altar (if they survived the battle).10) Talk to Abductee."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "GROUP_ACT3_LOW_BhaalTemple_SacrificeVictims",
+      "text": "Did - did you die? Am I dead?",
+      "context": "NodeContext: Exhausted by their ordeal",
+      "checkflags": [
+        "ORI_DarkUrge_State_BhaalResisted",
+        "LOW_BhaalTemple_State_WithersAwakenedVictim"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "MINTHARA"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "alias",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "GROUP_ACT3_LOW_BhaalTemple_SacrificeVictims",
+      "text": "You - you came for me. That lady... she... she killed Grub.",
+      "context": "NodeContext: Exhausted by their ordeal",
+      "checkflags": [
+        "ORI_DarkUrge_State_BhaalResisted = False",
+        "LOW_BhaalTemple_State_WithersAwakenedVictim = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "GROUP_ACT3_LOW_BhaalTemple_SacrificeVictims",
+          "text": "If there is anything left of her, burn it. I do not trust her to stay dead.",
+          "context": "NodeContext: exhausted from a terrible ordeal... scared - referring to Orin's corpse here",
+          "checkflags": [
+            "MINTHARA"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "GROUP_ACT3_LOW_BhaalTemple_SacrificeVictims",
+              "text": "I don't like it here. I'm going home.",
+              "context": "NodeContext: Exhausted by their ordeal",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "alias",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "synopsis": "Astarion bit Gale in gameplay. Astarion got poisoned, a short dialog between Gale and Astarion. Several possible lines:1. Party doesn't know that Astarion is a vampire. Astarion shocked Gale's blood is like bile, Gale shocked Astarion is a vampire.2. Party knows Astarion is a vampire and he tried to bite Gale during a camp night. Gale mocks him a bit - \"you don't learn, do you?\"3. Party knows Astarion is a vampire, but he hasn't bitten Gale yet. Astarion is surprised by Gale's blood, Gale tells him think before biting other people.",
+    "how_to_trigger": "Start the game as Astarion.Recruit Gale.Bite him."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Astarion",
+      "text": "Urgh, your blood tastes like bile! What is wrong with you?",
+      "context": "InternalNodeContext: Party knows Astarion is a vampire, but he hans't tried to bite Gale before.\rNodeContext: Astarion just tried to bite Gale in gameplay and got a mouthful of his blood, which tastes rotten. He spits it out.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Gale",
+          "text": "Serves you right. Next time, ask before you bite.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Astarion",
+      "text": "Urgh, your blood tastes like bile! What is wrong with you?",
+      "context": "InternalNodeContext: Party doesn't know Astarion is a vampire. Astarion is shocked by Gale's blood, Gale is shocked by Astarion being a vampire.\rNodeContext: Astarion just tried to bite Gale in gameplay and got a mouthful of his blood, which tastes rotten. He spits it out.",
+      "checkflags": [
+        "ORI_Astarion_Knows_Vampireness = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Gale",
+          "text": "You're one to talk! When exactly were you planning on telling me you were a vampire?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Gale",
+      "text": "Learned your lesson yet, Astarion? Some people are best left unbitten.",
+      "context": "InternalNodeContext: Astarion bit Gale during the camp night. Now Astarion tries to bite Gale during gameplay.",
+      "checkflags": [
+        "CAMP_AstarionAvatar_DrankGaleBlood"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

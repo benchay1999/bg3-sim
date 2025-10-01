@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "synopsis": "When a player from a class other than a paladin tries to speak with the Oathbtreaker Knight he will not want to start a conversation.From design: Any non-paladin character talking to the Oathbreaker receives no reply. The Oathbreaker looks up at the character, but shakes their head - they have no interest in you.",
+    "how_to_trigger": "1. Start the game as a paladin.2. Become an oathbreaker (oe MakeOathbreaker with the paladin selected).3. End the day.4. End the next day too.5. Select a party member who is not a paladin and speak with the knight,OR1. oe CAMP_ForceOathbreakerKnight2. Go to camp. 3. Select a party member who is not a paladin and speak with the knight,"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*The figure doesn't acknowledge your presence. They appear nothing more than an empty suit of armour.*",
+      "context": "",
+      "checkflags": [
+        "CAMP_OathbreakerKnight_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*Silent. Still. The armour does not react to your presence.*",
+      "context": "",
+      "checkflags": [
+        "CAMP_OathbreakerKnight_HasMet = False"
+      ],
+      "setflags": [
+        "CAMP_OathbreakerKnight_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

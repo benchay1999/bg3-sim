@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "synopsis": "Warning from Rolan to the player, who is blacklisted. He will give the chance to either run leave the shop or have combat",
+    "how_to_trigger": "Debugbook->Set quest flags and options \u2192 Sorcerous Sundries-> Toggle/Untoggle blacklist in shop for this characterTeleport to CTY_Main_A -9; 26; -74"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Rolan",
+      "text": "Sorry, but you're not allowed back in here. I'm afraid my hands are tied.",
+      "context": "",
+      "checkflags": [
+        "HAV_SavingPrisoners_State_BrotherReturned",
+        "HAV_SavingPrisoners_State_SisterReturned"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Rolan",
+      "text": "Take one more step in this establishment, and it'll be the last thing you do.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Please, Rolan. Can't you make an exception?",
+          "context": "",
+          "checkflags": [
+            "HAV_SavingPrisoners_State_BrotherReturned",
+            "HAV_SavingPrisoners_State_SisterReturned"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Rolan",
+              "text": "I wish I could, but this is Lorroakan's shop. He makes the rules.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Bring it on.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Rolan",
+              "text": "With pleasure.",
+              "context": "",
+              "checkflags": [
+                "HAV_SavingPrisoners_State_BrotherReturned = False",
+                "HAV_SavingPrisoners_State_SisterReturned = False"
+              ],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Rolan",
+              "text": "You leave me no choice. It's been an honour - but now it's over.",
+              "context": "",
+              "checkflags": [
+                "HAV_SavingPrisoners_State_BrotherReturned",
+                "HAV_SavingPrisoners_State_SisterReturned"
+              ],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Fine. I'll go.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_SorcerousSundries_Event_BlacklistedPlayerTeleported"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Rolan",
+      "text": "That animated armour belongs to Lorroakan personally. Touch it again, and I'll have to stop you by any means necessary.",
+      "context": "",
+      "checkflags": [
+        "LOW_SorcerousSundries_BannedPlayer = False",
+        "LOW_SorcerousSundries_State_WaitingToBeWarned"
+      ],
+      "setflags": [
+        "LOW_SorcerousSundries_State_WaitingToBeWarned = False",
+        "LOW_SorcerousSundries_State_Warned"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

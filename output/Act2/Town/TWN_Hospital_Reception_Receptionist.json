@@ -1,0 +1,1716 @@
+{
+  "metadata": {
+    "synopsis": "Receptionist at the entrance of the Hospital. She's mostly supposed to be there for flavor and to provide directions to the operating room (down the hallway and under the observation area.) If you piss her off or try to circumvent her to see the doctor, she'll fight you.",
+    "how_to_trigger": "Go to the hospital in the town in SCL. Speak to the nurse at the reception area.S_TWN_Hospital_Reception_Receptionist pos:-204; 31; -6"
+  },
+  "dialogue": {
+    "9": {
+      "id": "9",
+      "speaker": "Sister Sinda",
+      "text": "The doctor is absent today. Come back another time.",
+      "context": "NodeContext: part wistful, part mournful",
+      "checkflags": [
+        "TWN_Hospital_State_SurgeonPermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "36": {
+      "id": "36",
+      "speaker": "Sister Sinda",
+      "text": "The doctor will see you now.",
+      "context": "",
+      "checkflags": [
+        "TWN_Hospital_Reception_State_GainedAcess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "87",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "49": {
+          "id": "49",
+          "speaker": "Sister Sinda",
+          "text": "Down the corridor. Down to theatre you go.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "53": {
+      "id": "53",
+      "speaker": "Sister Sinda",
+      "text": "Not sick, not welcome!",
+      "context": "",
+      "checkflags": [
+        "TWN_Hospital_Reception_Receptionist_HasMet",
+        "TWN_Hospital_Reception_Receptionist_FailedPersuasion"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "87",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "35",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "73": {
+      "id": "73",
+      "speaker": "Sister Sinda",
+      "text": "You're not sick, not sick at all. Wait in line.",
+      "context": "",
+      "checkflags": [
+        "TWN_Hospital_Reception_Receptionist_HasMet",
+        "TWN_Hospital_Reception_State_InLine"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "87",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "87": {
+          "id": "87",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "88",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "86": {
+      "id": "86",
+      "speaker": "Sister Sinda",
+      "text": "No worse, no better, no need to be here.",
+      "context": "",
+      "checkflags": [
+        "TWN_Hospital_Reception_Receptionist_HasMet",
+        "TWN_Hospital_Reception_Receptionist_FailedPersuasion = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "87",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "88": {
+      "id": "88",
+      "speaker": "Sister Sinda",
+      "text": "Here to see the doctor? Are we poorly? Are we desperately poorly?",
+      "context": "",
+      "checkflags": [
+        "TWN_Hospital_Reception_Receptionist_HasMet = False"
+      ],
+      "setflags": [
+        "TWN_Hospital_Reception_Receptionist_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "55": {
+          "id": "55",
+          "speaker": "Sister Sinda",
+          "text": "Not so well. But well enough to wait. Join the line, and you will be seen.",
+          "context": "CinematicNodeContext: The nurse 'looks' you over, assessing your condition.\rInternalNodeContext: Upon investigation, deduces that you're not that sick.",
+          "checkflags": [
+            "TWN_Hospital_Reception_State_LowHP = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "21",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "79": {
+              "id": "79",
+              "speaker": "Player",
+              "text": "I'm sick as a dog - dark compulsions addle my mind.",
+              "context": "",
+              "checkflags": [
+                "REALLY_DARK_URGE"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "21",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "51": {
+                  "id": "51",
+                  "speaker": "Sister Sinda",
+                  "text": "Hrm, hrm. Let me check, let me check.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "37": {
+                      "id": "37",
+                      "speaker": "Sister Sinda",
+                      "text": "What is the primary symptom?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "40": {
+                          "id": "40",
+                          "speaker": "Player",
+                          "text": "I'm only truly happy when I'm ending someone's life.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "21",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "69": {
+                              "id": "69",
+                              "speaker": "Sister Sinda",
+                              "text": "There is no shame in an end. All things come to be lost. But if you wish to be examined...",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "11": {
+                                  "id": "11",
+                                  "speaker": "Sister Sinda",
+                                  "text": "Join the line - you will be seen.",
+                                  "context": "NodeContext: with a touch of desperation",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "74": {
+                                      "id": "74",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "43",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "28": {
+                          "id": "28",
+                          "speaker": "Player",
+                          "text": "My mind is full of holes, and some of them are still being punched.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "21",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "57": {
+                              "id": "57",
+                              "speaker": "Sister Sinda",
+                              "text": "Let me examine your skull.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "21",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "5": {
+                                  "id": "5",
+                                  "speaker": "Sister Sinda",
+                                  "text": "Poor dear. Poor, poor dear. Who did this to you?",
+                                  "context": "CinematicNodeContext: Nuse checking the DU's head",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "21",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "60": {
+                                      "id": "60",
+                                      "speaker": "Player",
+                                      "text": "What in the Hells can you see?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "21",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "17": {
+                                      "id": "17",
+                                      "speaker": "Player",
+                                      "text": "Get away from me!",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "21": {
+                                          "id": "21",
+                                          "speaker": "Sister Sinda",
+                                          "text": "I am but a nurse here, the Surgeon... he will be able to examine you in full.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "TWN_Hospital_Reception_State_GainedAcess"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "39": {
+                                              "id": "39",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "10",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "61": {
+                          "id": "61",
+                          "speaker": "Player",
+                          "text": "Everything. I lose control of myself, and kill without command.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "92": {
+                              "id": "92",
+                              "speaker": "Sister Sinda",
+                              "text": "A unique disease - one which has never passed through this institution before.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "TWN_Hospital_Reception_State_GainedAcess"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "63": {
+                                  "id": "63",
+                                  "speaker": "Sister Sinda",
+                                  "text": "The Surgeon will be most interested in you.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "32": {
+                                      "id": "32",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "10",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "94": {
+                          "id": "94",
+                          "speaker": "Player",
+                          "text": "When I try to sleep I am plagued by distressing sights.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "77": {
+                              "id": "77",
+                              "speaker": "Sister Sinda",
+                              "text": "Too many thoughts - a thrice-cursed ailment. The emptiness you yearn for will be yours again.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "TWN_Hospital_Reception_State_GainedAcess"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "0": {
+                                  "id": "0",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "10",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "66": {
+              "id": "66",
+              "speaker": "Player",
+              "text": "Fine fine. I'll get in line.",
+              "context": "",
+              "checkflags": [
+                "TWN_Hospital_Reception_State_InLine = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "25",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "64": {
+                  "id": "64",
+                  "speaker": "Sister Sinda",
+                  "text": "Be patient, be well.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "TWN_Hospital_Reception_State_InLine"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "95": {
+              "id": "95",
+              "speaker": "Player",
+              "text": "I don't have time to wait - I need to see the doctor right now.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "25",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Sister Sinda",
+                  "text": "Yes yes, but all must wait. The doctor's hands are full.",
+                  "context": "NodeContext: a little frantic, overwhelmed",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "25",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "43": {
+                      "id": "43",
+                      "speaker": "Sister Sinda",
+                      "text": "Join the line - you will be seen.",
+                      "context": "NodeContext: with a touch of desperation",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "25",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "19": {
+                          "id": "19",
+                          "speaker": "Player",
+                          "text": "I'm not a patient - I've been hired as a new healer.",
+                          "context": "",
+                          "checkflags": [
+                            "CLERIC"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "25",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "25": {
+                              "id": "25",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "81",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "56": {
+                          "id": "56",
+                          "speaker": "Player",
+                          "text": "I am no patient - I've been hired as a spiritual advisor.",
+                          "context": "",
+                          "checkflags": [
+                            "MONK"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "25",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "93": {
+                          "id": "93",
+                          "speaker": "Player",
+                          "text": "I am no patient - I've just been hired as an expert in maladaptive necromantic malaise.",
+                          "context": "",
+                          "checkflags": [
+                            "WIZARD"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "25",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "81": {
+                          "id": "81",
+                          "speaker": "Player",
+                          "text": "I'm not a patient - I'm the doctor's new assistant.",
+                          "context": "",
+                          "checkflags": [
+                            "CLERIC = False",
+                            "WIZARD = False",
+                            "MONK = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "67",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "26": {
+                              "id": "26",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "89": {
+                                  "id": "89",
+                                  "speaker": "Sister Sinda",
+                                  "text": "An answer to our prayers!",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "TWN_Hospital_Reception_State_GainedAcess"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "48": {
+                                      "id": "48",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "10",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "84": {
+                              "id": "84",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "Sister Sinda",
+                                  "text": "Such cruelty, such callousness. And in our time of need. Away.",
+                                  "context": "NodeContext: upset, flustered",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "TWN_Hospital_Reception_Receptionist_FailedPersuasion"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "20": {
+                                      "id": "20",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "35",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "18": {
+                          "id": "18",
+                          "speaker": "Player",
+                          "text": "Mimic the symptoms of Assassin's Blood, a well-known poison.",
+                          "context": "",
+                          "checkflags": [
+                            "ROGUE"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "67",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "67": {
+                              "id": "67",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "42",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "27": {
+                          "id": "27",
+                          "speaker": "Player",
+                          "text": "Feign the symptoms of a disease most terrible.",
+                          "context": "",
+                          "checkflags": [
+                            "BARD"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "67",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "42": {
+                          "id": "42",
+                          "speaker": "Player",
+                          "text": "Pretend to be ill.",
+                          "context": "",
+                          "checkflags": [
+                            "BARD = False",
+                            "ROGUE = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "64",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "59": {
+                              "id": "59",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "64",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "41": {
+                                  "id": "41",
+                                  "speaker": "Sister Sinda",
+                                  "text": "Poor creature - so sad, so sick.",
+                                  "context": "CinematicNodeContext: Sympathetic reaction to player's 'illness'.",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "31": {
+                                      "id": "31",
+                                      "speaker": "Sister Sinda",
+                                      "text": "The doctor will see you. The doctor will soothe.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "TWN_Hospital_Reception_State_GainedAcess"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "10": {
+                                          "id": "10",
+                                          "speaker": "Sister Sinda",
+                                          "text": "Down to the theatre, be swift, be saved.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "45": {
+                              "id": "45",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "64",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "34": {
+                                  "id": "34",
+                                  "speaker": "Sister Sinda",
+                                  "text": "You endanger the sick!",
+                                  "context": "CinematicNodeContext: Disgusted reaction to player's pretend illness.",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "TWN_Hospital_Reception_Receptionist_FailedPersuasion"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "64",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "35": {
+                                      "id": "35",
+                                      "speaker": "Sister Sinda",
+                                      "text": "Plague! Pest! In line, or leave.",
+                                      "context": "NodeContext: scathing",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "64",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "23": {
+                                          "id": "23",
+                                          "speaker": "Player",
+                                          "text": "Enough of this - I'm going in.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "64",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "83": {
+                                              "id": "83",
+                                              "speaker": "Sister Sinda",
+                                              "text": "Pestilence! Pestilence and sin!",
+                                              "context": "NodeContext: enraged, shrill",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "7": {
+                                                  "id": "7",
+                                                  "speaker": "Sister Sinda",
+                                                  "text": "Sisters! Protect the patients!",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "FactionHostileToPlayerGroupAfterDialog"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "72": {
+                                          "id": "72",
+                                          "speaker": "Player",
+                                          "text": "Fine, fine. I'll get back in line.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "TWN_Hospital_Reception_State_InLine"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "64",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "30": {
+                                              "id": "30",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "TeleportOutOfTrespass"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "alias",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "96": {
+                                          "id": "96",
+                                          "speaker": "Player",
+                                          "text": "Leave.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "TWN_Hospital_Reception_State_InLine = False"
+                                          ],
+                                          "setflags": [
+                                            "TeleportOutOfTrespass"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "68": {
+                          "id": "68",
+                          "speaker": "Player",
+                          "text": "Wait! My wounds may not be visible on the outside, but I still need help.",
+                          "context": "",
+                          "checkflags": [
+                            "RANGER = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "70": {
+                              "id": "70",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "91": {
+                                  "id": "91",
+                                  "speaker": "Narrator",
+                                  "text": "*There's a hint of recognition in her eyes as she studies you.*",
+                                  "context": "InternalNodeContext: The receptionist recognises that you're referring to your mental health.",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "29": {
+                                      "id": "29",
+                                      "speaker": "Sister Sinda",
+                                      "text": "The unseen wounds of war - the doctor's hand will close them.",
+                                      "context": "InternalNodeContext: She's familiar with PTSD",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "TWN_Hospital_Reception_State_GainedAcess"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "47": {
+                                          "id": "47",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "10",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "82": {
+                              "id": "82",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "45",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "50": {
+                          "id": "50",
+                          "speaker": "Player",
+                          "text": "Every monster you can imagine, man or beast, has tried to kill me. I should really see the doctor.",
+                          "context": "",
+                          "checkflags": [
+                            "RANGER"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "6": {
+                              "id": "6",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "59",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "44": {
+                              "id": "44",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "45",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "75": {
+                          "id": "75",
+                          "speaker": "Player",
+                          "text": "You can let me in or I can burn, electrify, or freeze this place - maybe even all three. Your choice.",
+                          "context": "",
+                          "checkflags": [
+                            "SORCERER"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "15": {
+                              "id": "15",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "76",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "3": {
+                              "id": "3",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "45",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "13": {
+                          "id": "13",
+                          "speaker": "Player",
+                          "text": "ROAR AT THIS INJUSTICE.",
+                          "context": "",
+                          "checkflags": [
+                            "BARBARIAN"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "76": {
+                              "id": "76",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "90": {
+                                  "id": "90",
+                                  "speaker": "Sister Sinda",
+                                  "text": "A most impatient patient... Very well. Still your cries, restless soul.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "2": {
+                                      "id": "2",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "31",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "46": {
+                              "id": "46",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Sister Sinda",
+                                  "text": "Quiet! Quiet! Everyone must wait their turn, wait in line... Doctor's orders.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "TWN_Hospital_Reception_Receptionist_FailedPersuasion"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "78": {
+                                      "id": "78",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "35",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "1": {
+                          "id": "1",
+                          "speaker": "Player",
+                          "text": "I've picked up a diabolic disease - the symptoms are quite hellish.",
+                          "context": "",
+                          "checkflags": [
+                            "WARLOCK"
+                          ],
+                          "setflags": [],
+                          "ruletags": [
+                            "WARLOCK_FIEND"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "54": {
+                              "id": "54",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "80": {
+                                  "id": "80",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "41",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "38": {
+                              "id": "38",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "62": {
+                                  "id": "62",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "34",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "4": {
+                          "id": "4",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "72",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "58": {
+                          "id": "58",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "96",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "22": {
+              "id": "22",
+              "speaker": "Player",
+              "text": "My dear lady - look at my complexion. I am at death's door.",
+              "context": "",
+              "checkflags": [
+                "ASTARION",
+                "REALLY_ASTARION"
+              ],
+              "setflags": [],
+              "ruletags": [
+                "REALLY_ASTARION"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "65": {
+                  "id": "65",
+                  "speaker": "Sister Sinda",
+                  "text": "As pale as a ghost. You must see the doctor immediately.",
+                  "context": "CinematicNodeContext: shocked reaction to Astarion's paleness\rNodeContext: shocked reaction -the patient is pale as a ghost",
+                  "checkflags": [],
+                  "setflags": [
+                    "TWN_Hospital_Reception_State_GainedAcess"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "52": {
+                      "id": "52",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "10",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "33": {
+              "id": "33",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "72",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            },
+            "12": {
+              "id": "12",
+              "speaker": "Player",
+              "text": "No thanks, I'll take my chances out there.",
+              "context": "",
+              "checkflags": [
+                "TWN_Hospital_Reception_State_InLine = False"
+              ],
+              "setflags": [
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "71": {
+          "id": "71",
+          "speaker": "Sister Sinda",
+          "text": "Poorly, quite poorly indeed...",
+          "context": "CinematicNodeContext: The nurse 'looks' you over, assessing your condition.",
+          "checkflags": [
+            "TWN_Hospital_Reception_State_LowHP"
+          ],
+          "setflags": [
+            "TWN_Hospital_Reception_State_GainedAcess"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "85": {
+              "id": "85",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "31",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

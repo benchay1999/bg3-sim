@@ -1,0 +1,467 @@
+{
+  "metadata": {
+    "synopsis": "One liner for when Father Carrion before starting combat, with different nodes for stages in the quest of killing him (destroying jar, destroying heart, having Thrumbo killed) as well as reactivity for him dying several times. Carrion is always angry at the player and will always start combat after these lines. He sometimes toys with the player before turning on them",
+    "how_to_trigger": "Attack father carrion in CTY_Main_A 1; 8; -160. After long rest, he will trigger this again when starting combat."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Mystic Carrion",
+      "text": "Does my immortality vex you?",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_001",
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_002",
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_003 = False",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed = False"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_003"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "21": {
+          "id": "21",
+          "speaker": "Mystic Carrion",
+          "text": "I confess, I am beginning to find you similarly tiresome.",
+          "context": "NodeContext: Threatening, leading into combat",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Mystic Carrion",
+      "text": "Thief. Vandal. Idiot. Destroying the jar means nothing so long as I am here to punish you for it.",
+      "context": "NodeContext: Hissed, furious",
+      "checkflags": [
+        "LOW_FatherCarrion_State_CommentedOnDestroyedHeart = False",
+        "LOW_FatherCarrion_State_ExplainedTask = False",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed"
+      ],
+      "setflags": [
+        "LOW_FatherCarrion_State_CommentedOnDestroyedHeart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "13": {
+          "id": "13",
+          "speaker": "Mystic Carrion",
+          "text": "I will erase your spirit from existence.",
+          "context": "NodeContext: Hissed, furious - leading to combat",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Mystic Carrion",
+      "text": "So. Rather than doing as you were told, you engaged in an act of wanton vandalism.",
+      "context": "",
+      "checkflags": [
+        "LOW_FatherCarrion_State_CommentedOnDestroyedHeart = False",
+        "LOW_FatherCarrion_State_ExplainedTask",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed"
+      ],
+      "setflags": [
+        "LOW_FatherCarrion_State_CommentedOnDestroyedHeart"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Mystic Carrion",
+          "text": "I expected better. I thought I made clear the terms of our arrangement.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Mystic Carrion",
+              "text": "You think my immortality so easily destroyed? What you have done can be undone, though you will not live to see it.",
+              "context": "NodeContext: anrgy",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "Mystic Carrion",
+                  "text": "Perhaps a few centuries of servitude will enlighten you to the benefits of honouring your agreements.",
+                  "context": "NodeContext: Threatening, leading into combat",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Mystic Carrion",
+      "text": "See, spirits, how my killer walks into this salon with such brazen indifference.",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_001 = False",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed = False"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_001"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "Mystic Carrion",
+          "text": "You are fortunate my death was only a temporary condition. Shall we see if the same goes for you?",
+          "context": "NodeContext: Threatening, leading into combat",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Mystic Carrion",
+      "text": "Thief. None steal from Mystic Carrion and live to take another breath.",
+      "context": "",
+      "checkflags": [
+        "LOW_FatherCarrion_State_IsIndebtedToPlayers",
+        "LOW_PhilgravesMansion_State_HasHeart"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "Mystic Carrion",
+          "text": "You will be punished.",
+          "context": "NodeContext: Threatening, leading into combat",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Mystic Carrion",
+      "text": "Still you do not see. You do not understand.",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_001",
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_002 = False",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed = False"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_002"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Mystic Carrion",
+          "text": "Flesh and blood bind me to this plane. I will return. I will always return.",
+          "context": "NodeContext: Threatening, leading into combat",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Mystic Carrion",
+      "text": "You destroyed something very precious of mine, and now you dare to seek an audience with me?",
+      "context": "NodeContext: Angry",
+      "checkflags": [
+        "LOW_FatherCarrion_HasMet = False",
+        "LOW_FatherCarrion_Event_DetectedFirstDestroyedJar",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed"
+      ],
+      "setflags": [
+        "LOW_FatherCarrion_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Mystic Carrion",
+          "text": "I think not.",
+          "context": "NodeContext: Hissed, angry - leading into combat",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Mystic Carrion",
+      "text": "Did you think you could destroy my property without consequence?",
+      "context": "",
+      "checkflags": [
+        "LOW_FatherCarrion_State_CommentedOnDestroyedJar = False",
+        "LOW_FatherCarrion_Event_DetectedFirstDestroyedJar",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed = False"
+      ],
+      "setflags": [
+        "LOW_FatherCarrion_State_CommentedOnDestroyedJar"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Mystic Carrion",
+          "text": "I will purge you from this plane. And I promise - you will never reach the next.",
+          "context": "NodeContext: Threatening, leading into combat",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Mystic Carrion",
+      "text": "Foolish creature. You thought killing me once would be enough?",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_CarrionWantingToBoastAboutBeggars",
+        "LOW_FatherCarrion_State_CommentedOnKilledThrumbo = False"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_State_PlayersAttackedFatherCarrion_001",
+        "LOW_PhilgravesMansion_State_CarrionWantingToBoastAboutBeggars = False",
+        "LOW_FatherCarrion_State_CommentedOnKilledThrumbo",
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "22": {
+          "id": "22",
+          "speaker": "Mystic Carrion",
+          "text": "It was enough to seal Thrumbo's fate. I destroyed him at dawn.",
+          "context": "NodeContext: Malicious",
+          "checkflags": [
+            "LOW_Thrumbo_State_HasMetParty_Waiting"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Mystic Carrion",
+              "text": "His spirit screams within these walls now. I think it's time you joined him.",
+              "context": "NodeContext: Amused by the torment he's put Thrumbo through, then threatening - leading into combat",
+              "checkflags": [],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Mystic Carrion",
+          "text": "Death will not banish me from this plane. Neither will you.",
+          "context": "NodeContext: Threatening, leading into combat",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Mystic Carrion",
+      "text": "So, you destroy my canopic jars, then dare to seek an audience with me?",
+      "context": "NodeContext: Angry",
+      "checkflags": [
+        "LOW_FatherCarrion_HasMet = False",
+        "LOW_FatherCarrion_Event_DetectedFirstDestroyedJar",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed = False"
+      ],
+      "setflags": [
+        "LOW_FatherCarrion_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

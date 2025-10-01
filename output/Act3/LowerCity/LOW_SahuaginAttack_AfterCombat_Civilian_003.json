@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue with one of the civilians (male halfling patrolling near the fishmonger) near the Sahuagin attack on a shore in the Lower City. This dialogue only gets added once the Sahuagin are defeated.",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Use ReCon command \"goto 52 3 -138\"- \"killcombat\" to kill all the Sahuagin after they appear and attack.- Talk to this civilian near the docks:S_LOW_BeachSahuagin_Civilian_003_7d8d9cb0-eb53-402b-a5a7-e8878da2427f"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Nonabune",
+      "text": "I mean, if 'When Fish Fight Back' doesn't tickle your fancy, how about... I don't know. That was the best one, to be honest.",
+      "context": "NodeContext: Strangely exhilarated by the monster fight he just witnessed (but losing a bit of momentum at his lack of alternative titles)",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_003"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Nonabune",
+      "text": "Someone said those fish monsters exist because of the stuff we dump in the harbour. Maybe we should start dumping more...",
+      "context": "NodeContext: Contemplative/thinking aloud",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_003",
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Nonabune",
+      "text": "That. Was. Incredible! And just think what a story it'd make: 'When Fish Fight Back'!",
+      "context": "NodeContext: Strangely exhilarated by the monster fight he just witnessed",
+      "checkflags": [],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_003"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Nonabune",
+      "text": "Do you reckon those fish things are gonna come back? I mean, I hope not, but that's probably the most exciting thing I've seen happen here.",
+      "context": "NodeContext: Oddly almost wistful; misses the excitement",
+      "checkflags": [
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_003"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

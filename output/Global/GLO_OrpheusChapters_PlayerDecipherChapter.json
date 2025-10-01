@@ -1,0 +1,1444 @@
+{
+  "metadata": {
+    "synopsis": "Players try to uncover the hidden messages in the Orpheus Chapters. They will be able to automatically decipher them if they have received Chapter 2 from the Gith Boy or found the Gith Cipher in the Underdark.Once a chapter has been set as Read, the true story will be available as a book the next time they interact with the item.",
+    "how_to_trigger": "Pick up or read any of the still locked Orpheus Chapters"
+  },
+  "dialogue": {
+    "14": {
+      "id": "14",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_OrpheusChapters_State_ReadOrpheusChapter1 = False",
+        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3",
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter",
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter3 = False"
+      ],
+      "setflags": [
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter3"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "13": {
+          "id": "13",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "3",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Narrator",
+      "text": "*The disc is similar to one you found before - and similarly baffling.*",
+      "context": "",
+      "checkflags": [
+        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1",
+        "GLO_OrpheusChapters_State_ReadOrpheusChapter3 = False",
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter",
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter1 = False"
+      ],
+      "setflags": [
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter1"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Narrator",
+      "text": "*The disc is formed from slate and engraved with githyanki writing.*",
+      "context": "",
+      "checkflags": [
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter = False"
+      ],
+      "setflags": [
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "39",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "39": {
+          "id": "39",
+          "speaker": "Narrator",
+          "text": "*It closely resembles the disc that Lae'zel deciphered.*",
+          "context": "",
+          "checkflags": [
+            "GLO_OrpheusChapters_State_ReadOrpheusChapter1",
+            "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "39",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "61": {
+              "id": "61",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "16",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "41": {
+          "id": "41",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1",
+            "GLO_OrpheusChapters_State_ReadOrpheusChapter3"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "39",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {}
+        },
+        "69": {
+          "id": "69",
+          "speaker": "Narrator",
+          "text": "*You examine them closely, but can't make much sense of them.*",
+          "context": "",
+          "checkflags": [
+            "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1"
+          ],
+          "setflags": [
+            "GLO_OrpheusChapters_State_TriedToDecipherChapter1"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "3",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Narrator",
+          "text": "*The symbols are striking to look at, but you aren't sure what they mean.*",
+          "context": "",
+          "checkflags": [
+            "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3"
+          ],
+          "setflags": [
+            "GLO_OrpheusChapters_State_TriedToDecipherChapter3"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "9",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Narrator",
+              "text": "*The disc from Cr\u00e8che Y'llek was distinctly similar to this one. If you can match the symbols, you might find a legible pattern.*",
+              "context": "NodeContext: cresh YIL-ik",
+              "checkflags": [
+                "ORI_Laezel_State_ReadOrpheusChapter2"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "9",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "64": {
+                  "id": "64",
+                  "speaker": "Player",
+                  "text": "Command the disc to reveal its secrets.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "9",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "72": {
+                      "id": "72",
+                      "speaker": "Narrator",
+                      "text": "*The disc doesn't respond.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "73": {
+                  "id": "73",
+                  "speaker": "Player",
+                  "text": "Compare the disc to the one from the cr\u00e8che.",
+                  "context": "",
+                  "checkflags": [
+                    "GLO_OrpheusChapters_State_ReadOrpheusChapter2"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "9",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "37": {
+                  "id": "37",
+                  "speaker": "Player",
+                  "text": "Use the cipher you found to decode the symbols.",
+                  "context": "",
+                  "checkflags": [
+                    "GLO_OrpheusChapters_State_HasCipher"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Narrator",
+                      "text": "*A pattern forms as you gaze at the disc, and from within that pattern, a story emerges.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "25": {
+                          "id": "25",
+                          "speaker": "Narrator",
+                          "text": "*It is another chapter in the tale of the githyanki prince called Orpheus.*",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Laezel_State_ReadOrpheusChapter2"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "21",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "34": {
+                              "id": "34",
+                              "speaker": "Narrator",
+                              "text": "*'The Prince of the Comet, Part One.'*",
+                              "context": "NodeContext: reading from a book, matter of factly",
+                              "checkflags": [
+                                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1"
+                              ],
+                              "setflags": [
+                                "GLO_OrpheusChapters_State_ReadOrpheusChapter1"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "21",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "59": {
+                                  "id": "59",
+                                  "speaker": "Narrator",
+                                  "text": "*'So it was that we were free from ghaik shackles and turned our blades on each other. The heavens were shattered, and one great empire was divided in two.'*",
+                                  "context": "NodeContext: reading from a book, matter of factly",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "21",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "38": {
+                                      "id": "38",
+                                      "speaker": "Narrator",
+                                      "text": "*'Gith travelled to the Hells to broker help for her people, her cause. Vlaakith would have you believe Mother Gith proclaimed her our queen.'*",
+                                      "context": "NodeContext: reading from a book, matter of factly",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "21",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "45": {
+                                          "id": "45",
+                                          "speaker": "Narrator",
+                                          "text": "*'Lies! Gith made no such proclamation. Vlaakith seized the empire against the Mother's wishes.'*",
+                                          "context": "NodeContext: reading from a book, matter of factly",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "21",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "68": {
+                                              "id": "68",
+                                              "speaker": "Narrator",
+                                              "text": "*'But Gith had nurtured a son. Orpheus, Prince of the Comet, the True Heir! He knew Vlaakith's treachery.'*",
+                                              "context": "NodeContext: reading from a book, matter of factly",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "21",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "53": {
+                                                  "id": "53",
+                                                  "speaker": "Narrator",
+                                                  "text": "*'Orpheus rallied Gith's honour guard and declared the throne for himself. The War of the Comet had begun.'*",
+                                                  "context": "NodeContext: reading from a book, matter of factly",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "21",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "21": {
+                                                      "id": "21",
+                                                      "speaker": "Narrator",
+                                                      "text": "*It's an intriguing tale - and a forbidden one, given how expertly it was encoded.*",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "GLO_Origin_PartOfTheTeam_Laezel"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "21",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "29": {
+                                                          "id": "29",
+                                                          "speaker": "Narrator",
+                                                          "text": "*Lae'zel will surely want to know of this.*",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [
+                                                            "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1 = False",
+                                                            "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter2 = False",
+                                                            "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3 = False"
+                                                          ],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": true,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    },
+                                                    "17": {
+                                                      "id": "17",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "GLO_Origin_PartOfTheTeam_Laezel = False"
+                                                      ],
+                                                      "setflags": [
+                                                        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1 = False",
+                                                        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter2 = False",
+                                                        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3 = False"
+                                                      ],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "alias",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "18": {
+                              "id": "18",
+                              "speaker": "Narrator",
+                              "text": "*'The Prince of the Comet, Part Three.'*",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3"
+                              ],
+                              "setflags": [
+                                "GLO_OrpheusChapters_State_ReadOrpheusChapter3"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "20",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "35": {
+                                  "id": "35",
+                                  "speaker": "Narrator",
+                                  "text": "*'The histories tell us that Commander Voss, Jhe'stil Kith'rak, pierced Prince Orpheus clean through with his sword of silver. That his flesh was torn and fed to the great red dragon Ephelomon.'*",
+                                  "context": "NodeContext: Reading a story, matter of factly. zhe-STILL KITH-rack. eff-ELL-eh-mahn",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "20",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "54": {
+                                      "id": "54",
+                                      "speaker": "Narrator",
+                                      "text": "*'Vlaakith's faithful roar out this tale. But beneath the roars, we hear whispers carrying truth and prophecy.'*",
+                                      "context": "NodeContext: reading from a book, matter of factly",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "20",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "31": {
+                                          "id": "31",
+                                          "speaker": "Narrator",
+                                          "text": "*'The Prince of the Comet is not dead.<br>The Prince of the Comet will come again.<br>The Prince of the Comet will liberate us from Vlaakith's tyranny.'*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "20",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "44": {
+                                              "id": "44",
+                                              "speaker": "Narrator",
+                                              "text": "*'Praise be to Mother Gith, Queen of the One Sky! Praise be to your son Orpheus, the True Heir, Prince of the Comet!'*",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "20",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "20": {
+                                                  "id": "20",
+                                                  "speaker": "Narrator",
+                                                  "text": "*It's an intriguing tale - and a forbidden one, given how expertly it was encoded.*",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "GLO_Origin_PartOfTheTeam_Laezel"
+                                                  ],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "20",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "63": {
+                                                      "id": "63",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "29",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                },
+                                                "6": {
+                                                  "id": "6",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "GLO_Origin_PartOfTheTeam_Laezel = False"
+                                                  ],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "20",
+                                                  "is_end": false,
+                                                  "node_type": "alias",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "7": {
+                  "id": "7",
+                  "speaker": "Player",
+                  "text": "Seek a pattern in the writing.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "57": {
+                      "id": "57",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "22": {
+                          "id": "22",
+                          "speaker": "Narrator",
+                          "text": "*In your mind's eye, the symbols trade places with each other until a clear pattern forms. And from that pattern, a story emerges.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "9",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "65": {
+                      "id": "65",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "0": {
+                          "id": "0",
+                          "speaker": "Narrator",
+                          "text": "*No matter how hard you try, you can't make any sense of the symbols.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "GLO_OrpheusChapters_State_FailedToDecipher"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "5": {
+                              "id": "5",
+                              "speaker": "Narrator",
+                              "text": "*You should take the disc to Lae'zel. She might know more about it.*",
+                              "context": "",
+                              "checkflags": [
+                                "GLO_Origin_PartOfTheTeam_Laezel",
+                                "9e293754-c843-7f59-d89f-cce291be8e9e_MentionedAskingLaezelAboutDisk = False"
+                              ],
+                              "setflags": [
+                                "9e293754-c843-7f59-d89f-cce291be8e9e_MentionedAskingLaezelAboutDisk"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "32": {
+                                  "id": "32",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "3",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "66": {
+                  "id": "66",
+                  "speaker": "Player",
+                  "text": "Recall your language lessons, try to arrange the symbols in a coherent order.",
+                  "context": "",
+                  "checkflags": [
+                    "REALLY_GITHYANKI"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "76": {
+                      "id": "76",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "Narrator",
+                          "text": "*You recall a method your ancestors used to conceal information from its illithid slavers and apply it to the disc. From the symbols, a pattern forms - and from that pattern, a story emerges.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "11": {
+                              "id": "11",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "9",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "36": {
+                      "id": "36",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "70": {
+                          "id": "70",
+                          "speaker": "Narrator",
+                          "text": "*You don't recall any lessons in githyanki code-breaking.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "GLO_OrpheusChapters_State_FailedToDecipher"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "62": {
+                              "id": "62",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "5",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "52": {
+                  "id": "52",
+                  "speaker": "Player",
+                  "text": "Stash the disc in your pack.",
+                  "context": "",
+                  "checkflags": [
+                    "GLO_Origin_PartOfTheTeam_Laezel",
+                    "9e293754-c843-7f59-d89f-cce291be8e9e_MentionedAskingLaezelAboutDisk = False"
+                  ],
+                  "setflags": [
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1 = False",
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter2 = False",
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3 = False"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "40": {
+                      "id": "40",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "9e293754-c843-7f59-d89f-cce291be8e9e_MentionedAskingLaezelAboutDisk"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "alias",
+                      "children": {}
+                    }
+                  }
+                },
+                "60": {
+                  "id": "60",
+                  "speaker": "Player",
+                  "text": "Stash the disc in your pack.",
+                  "context": "",
+                  "checkflags": [
+                    "GLO_Origin_PartOfTheTeam_Laezel = False"
+                  ],
+                  "setflags": [
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1 = False",
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter2 = False",
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3 = False"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "23": {
+                  "id": "23",
+                  "speaker": "Player",
+                  "text": "Stash the disc in your pack.",
+                  "context": "",
+                  "checkflags": [
+                    "9e293754-c843-7f59-d89f-cce291be8e9e_MentionedAskingLaezelAboutDisk"
+                  ],
+                  "setflags": [
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1 = False",
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter2 = False",
+                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3 = False"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "42": {
+              "id": "42",
+              "speaker": "Narrator",
+              "text": "*Using the cipher you found, you might be able to reveal the disc's meaning.*",
+              "context": "",
+              "checkflags": [
+                "GLO_OrpheusChapters_State_HasCipher"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "64",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "55": {
+              "id": "55",
+              "speaker": "Narrator",
+              "text": "*Without a cipher or primer to aid you, the disc's message could be near-impossible to discern.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "64",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "43": {
+      "id": "43",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_OrpheusChapters_State_ReadOrpheusChapter1 = False",
+        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3",
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter",
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter3 = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "67",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "16": {
+          "id": "16",
+          "speaker": "Narrator",
+          "text": "*This time, the symbols easily resolve into coherent words and sentences. The story of Orpheus further unfolds.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "34",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "30": {
+              "id": "30",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1",
+                "GLO_Origin_PartOfTheTeam_Laezel"
+              ],
+              "setflags": [
+                "GLO_OrpheusChapters_State_ReadOrpheusChapter1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "34",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "27": {
+                  "id": "27",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "59",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "19": {
+                      "id": "19",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "38",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "45",
+                          "is_end": false,
+                          "node_type": "alias",
+                          "children": {
+                            "48": {
+                              "id": "48",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "68",
+                              "is_end": false,
+                              "node_type": "alias",
+                              "children": {
+                                "10": {
+                                  "id": "10",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "53",
+                                  "is_end": false,
+                                  "node_type": "alias",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "58": {
+              "id": "58",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "GLO_Origin_PartOfTheTeam_Laezel",
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3"
+              ],
+              "setflags": [
+                "GLO_OrpheusChapters_State_ReadOrpheusChapter3"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "18",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "28": {
+                  "id": "28",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "35",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "8": {
+                      "id": "8",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "54",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {
+                        "50": {
+                          "id": "50",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "31",
+                          "is_end": false,
+                          "node_type": "alias",
+                          "children": {
+                            "2": {
+                              "id": "2",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "44",
+                              "is_end": false,
+                              "node_type": "alias",
+                              "children": {
+                                "75": {
+                                  "id": "75",
+                                  "speaker": "Narrator",
+                                  "text": "*The chapter ends there. This disc might be of some interest to Lae'zel.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1 = False",
+                                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter2 = False",
+                                    "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3 = False"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "46": {
+              "id": "46",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1"
+              ],
+              "setflags": [
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1 = False",
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter2 = False",
+                "GLO_OrpheusChapters_State_ReadOrpheusChapter1",
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3 = False"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "alias",
+              "children": {}
+            },
+            "47": {
+              "id": "47",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3"
+              ],
+              "setflags": [
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1 = False",
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter2 = False",
+                "GLO_OrpheusChapters_State_ReadOrpheusChapter3",
+                "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3 = False"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "49": {
+      "id": "49",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_OrpheusChapters_State_ReadOrpheusChapter1 = False",
+        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3",
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter",
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter3"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "74",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "56": {
+          "id": "56",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "3",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "51": {
+      "id": "51",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_OrpheusChapters_State_ReadOrpheusChapter1",
+        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter3",
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter",
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter3"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "71",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "24": {
+          "id": "24",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "16",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "67": {
+      "id": "67",
+      "speaker": "Narrator",
+      "text": "*The disc is similar to one you found before.*",
+      "context": "",
+      "checkflags": [
+        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1",
+        "GLO_OrpheusChapters_State_ReadOrpheusChapter3",
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter",
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter1 = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "71": {
+      "id": "71",
+      "speaker": "Narrator",
+      "text": "*Once more, you examine the disc.*",
+      "context": "",
+      "checkflags": [
+        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1",
+        "GLO_OrpheusChapters_State_ReadOrpheusChapter3",
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter",
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter1"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "24",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "74": {
+      "id": "74",
+      "speaker": "Narrator",
+      "text": "*Circular symbols are etched on the disc.*",
+      "context": "",
+      "checkflags": [
+        "ORI_Laezel_Event_CurrentlyReadingOrpheusChapter1",
+        "GLO_OrpheusChapters_State_ReadOrpheusChapter3 = False",
+        "GLO_OrpheusChapters_State_TriedToDecipherAChapter",
+        "GLO_OrpheusChapters_State_TriedToDecipherChapter1"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "56",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

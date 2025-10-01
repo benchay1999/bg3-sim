@@ -1,0 +1,515 @@
+{
+  "metadata": {
+    "synopsis": "An NPC noticed a murder scene, or was told about a murder by another NPC, and is interrogating a suspected player."
+  },
+  "dialogue": {
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*A body has been discovered. You're accused of being the cause of death.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "CRIME_Allow_Search"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "25",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "21": {
+          "id": "21",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "25",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Player",
+              "text": "It was me - I'm the killer.",
+              "context": "",
+              "checkflags": [
+                "CRIME_GuiltFound"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "25",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Narrator",
+                  "text": "*Your admission just booked you a trip to the cells.*",
+                  "context": "NodeContext: Confessed, has prison",
+                  "checkflags": [
+                    "GEB_Arrest_HavePrison",
+                    "69cf6c1f-fc1f-4e22-b55d-dc40768f6669"
+                  ],
+                  "setflags": [
+                    "CRIME_FoundGuiltyPlayer"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "1": {
+                      "id": "1",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "16",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "26": {
+                  "id": "26",
+                  "speaker": "Narrator",
+                  "text": "*It appears that this crime is to be your last.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRIME_FoundGuiltyPlayer",
+                    "TemporaryHostilityAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "14": {
+              "id": "14",
+              "speaker": "Player",
+              "text": "I don't know anything about it.",
+              "context": "",
+              "checkflags": [
+                "CRIME_GuiltFound = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "25",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "Narrator",
+                  "text": "*You successfully protest your innocence. It looks like you're free to go.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Player",
+              "text": "Try and talk your way out of this.",
+              "context": "",
+              "checkflags": [
+                "GEB_CharismaDisabled = False",
+                "CRIME_GuiltFound"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "25",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Player",
+                  "text": "I've been asked to investigate. Leave this with me.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "25",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "25": {
+                      "id": "25",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "0": {
+                          "id": "0",
+                          "speaker": "Narrator",
+                          "text": "*You'll walk free, for now, but your stories won't land so well if you're caught again.*",
+                          "context": "",
+                          "checkflags": [
+                            "GEB_CharismaDisabled_NextTime"
+                          ],
+                          "setflags": [
+                            "CRIME_PersuasionSuccess"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "2": {
+                          "id": "2",
+                          "speaker": "Narrator",
+                          "text": "*You deflect the accusation, and are free to go on your murderous way once more.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "CRIME_PersuasionSuccess"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "20": {
+                      "id": "20",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "24": {
+                          "id": "24",
+                          "speaker": "Narrator",
+                          "text": "*Your words only make you appear more guilty. You can't be allowed to walk free.*",
+                          "context": "NodeContext: Failed persuasion, arrest threat",
+                          "checkflags": [
+                            "GEB_Arrest_HavePrison",
+                            "IsInPrison = False",
+                            "69cf6c1f-fc1f-4e22-b55d-dc40768f6669"
+                          ],
+                          "setflags": [
+                            "CRIME_FoundGuiltyPlayer",
+                            "CRIME_PersuasionFailed"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "23": {
+                              "id": "23",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "16",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "4": {
+                          "id": "4",
+                          "speaker": "Narrator",
+                          "text": "*Your lies have been seen through - your crime won't go unpunished.*",
+                          "context": "NodeContext: Failed persuasion, player is attacked",
+                          "checkflags": [],
+                          "setflags": [
+                            "CRIME_FoundGuiltyPlayer",
+                            "TemporaryHostilityAfterDialog"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "13": {
+                  "id": "13",
+                  "speaker": "Player",
+                  "text": "If I was the murderer, I'd be more than happy to gut you next.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "25",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "18": {
+                  "id": "18",
+                  "speaker": "Player",
+                  "text": "Come, now - do I look like a killer?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "25",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "19": {
+              "id": "19",
+              "speaker": "Player",
+              "text": "I'm sure we can straighten this out. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+              "context": "",
+              "checkflags": [
+                "CRIME_GuiltFound"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "Narrator",
+                  "text": "*Improperly-acquired coin weighs heavy on the conscience. The bribe may have worked this time, but it won't work the next.*",
+                  "context": "",
+                  "checkflags": [
+                    "GEB_Crime_BribingDisabled_NextTime",
+                    "93147083-af38-43f5-8354-9737c3e928d2 = False",
+                    "e678bd59-74f4-4a7b-8776-aca807d9ef22",
+                    "CIVILIAN = False"
+                  ],
+                  "setflags": [
+                    "GEN_TransferNPCPayment"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "9": {
+                  "id": "9",
+                  "speaker": "Narrator",
+                  "text": "*It appears this was nothing more than an unfortunate accident.*",
+                  "context": "NodeContext: Don't allow infinite bribing for murders, not even for civilians",
+                  "checkflags": [
+                    "GEB_BribeDisabled = False",
+                    "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                  ],
+                  "setflags": [
+                    "GEN_TransferNPCPayment"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "3": {
+                  "id": "3",
+                  "speaker": "Narrator",
+                  "text": "*You don't have the gold to buy your way out of this situation.*",
+                  "context": "NodeContext: Don't allow infinite bribing for murders, not even for civilians",
+                  "checkflags": [
+                    "GEB_BribeDisabled = False",
+                    "e678bd59-74f4-4a7b-8776-aca807d9ef22 = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "16": {
+                  "id": "16",
+                  "speaker": "Narrator",
+                  "text": "*If you didn't seem guilty before, you certainly do now. Turn yourself in, or face the consequences.*",
+                  "context": "NodeContext: NPC moves to arrest player",
+                  "checkflags": [
+                    "GEB_Arrest_HavePrison",
+                    "69cf6c1f-fc1f-4e22-b55d-dc40768f6669"
+                  ],
+                  "setflags": [
+                    "CRIME_FoundGuiltyPlayer"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "Player",
+                      "text": "Allow yourself to be arrested.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "CRIME_FoundGuiltyPlayer",
+                        "Allow_Arrest"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "Player",
+                      "text": "Attack.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "TemporaryHostilityAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "12": {
+                  "id": "12",
+                  "speaker": "Narrator",
+                  "text": "*It seems you can't buy your way out of this.*",
+                  "context": "NodeContext: NPC attacks player",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRIME_FoundGuiltyPlayer",
+                    "CRIME_FoundEvidenceCurrentCrime",
+                    "TemporaryHostilityAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

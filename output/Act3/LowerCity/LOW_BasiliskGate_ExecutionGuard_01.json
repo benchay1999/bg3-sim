@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "This guards gets spawned along with Counselor Florrick's executed body to keep an eye on it. They might have been part of the execution. Unlike their colleague this one doesn't question the orders and is completely on board with the propaganda messaging.",
+    "how_to_trigger": "CTY_Main_A, LOW, teleport to S_LOW_BasiliskGate_FlorrickHangedSpot_343dfb1c-7175-42c6-bca7-dc53cc46c617, set flag LOW_BasiliskGate_State_FlorrickExecutionKnown_aff10649-cfc1-b6d0-0984-5572383cda0a, longrest several times (currently 5x) unitl Florrick gets executed. This guard is spawned on the gallows. Talk to them."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Fist Williams",
+      "text": "Look at the body all you like - it'll be up for a while as a 'reminder'.",
+      "context": "NodeContext: clearly agrees with the execution",
+      "checkflags": [
+        "LOW_BasiliskGate_ExecutionGuard_01_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Fist Williams",
+      "text": "How long am I supposed to guard some stiff - ah hells.",
+      "context": "NodeContext: annoyed, wants to go home when he notices the body is gone. Shocked",
+      "checkflags": [
+        "LOW_BasiliskGate_FlorrickExecution_FlorrcikBodyGone"
+      ],
+      "setflags": [
+        "LOW_BasiliskGate_ExecutionGuard_01_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Fist Williams",
+      "text": "What sicko takes a corpse? Damn it all!",
+      "context": "NodeContext: angry, slightly distraught, knows he'll likely be fired for this",
+      "checkflags": [
+        "LOW_BasiliskGate_ExecutionGuard_01_HasMet",
+        "LOW_BasiliskGate_FlorrickExecution_FlorrcikBodyGone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Fist Williams",
+      "text": "Can you believe it? Florrick - a traitor to her own. Good riddance, I say.",
+      "context": "NodeContext: feels betrayed and hurt",
+      "checkflags": [],
+      "setflags": [
+        "LOW_BasiliskGate_ExecutionGuard_01_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

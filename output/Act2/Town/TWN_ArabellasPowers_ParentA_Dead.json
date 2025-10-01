@@ -1,0 +1,905 @@
+{
+  "metadata": {
+    "synopsis": "Arabella's dead father, corpse found in the surgeon's general vicinity.",
+    "how_to_trigger": "- Load SCL_Main- Debug book - act 2 set up - Teifling path- give QUEST_SCL_Moonlantern_000  (so we don't die of shadowcurse) and equip- goto -150; 31; 18- Talk to Arabella / or not- teleport S_DEN_ParentA- oe debugbook > useful spells > speak with dead - debug- use spell on corpse."
+  },
+  "dialogue": {
+    "30": {
+      "id": "30",
+      "speaker": "Narrator",
+      "text": "*The corpse does not stir. It will answer no more questions.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Narrator",
+      "text": "*The corpse regards you lifelessly.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "31",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "TWN_ArabellasPowers_State_RecognisedParents = False",
+            "DEN_GuardedEntrance_State_ParentsSceneStarted"
+          ],
+          "setflags": [
+            "ORI_Inclusion_Random"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "31",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Lae'zel",
+              "text": "Arabella's father, in the oh-so-decaying flesh.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_LAEZEL"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "31",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "32": {
+              "id": "32",
+              "speaker": "Shadowheart",
+              "text": "Arabella's father. I recognise him from the grove - just about.",
+              "context": "NodeContext: Referring to a corpse.",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_SHADOWHEART"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "31",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "12": {
+              "id": "12",
+              "speaker": "Karlach",
+              "text": "That's... Arabella's father. From the druids' grove. Poor man.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_KARLACH"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "31": {
+                  "id": "31",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_End_Random"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Narrator",
+                      "text": "*It is a tiefling man, one you recognise from the druids' grove - the girl Arabella's father.*",
+                      "context": "CinematicNodeContext: (It is OK not to show the corpse, and only player face here)",
+                      "checkflags": [
+                        "TWN_ArabellasPowers_State_RecognisedParents = False",
+                        "DEN_GuardedEntrance_State_ParentsSceneStarted"
+                      ],
+                      "setflags": [
+                        "TWN_ArabellasPowers_State_RecognisedParents"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "45": {
+                          "id": "45",
+                          "speaker": "Player",
+                          "text": "Remind me - who are you?",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_GuardedEntrance_State_ParentsSceneStarted",
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                          ],
+                          "setflags": [
+                            "GLO_SpeakWithDead_Event_QuestionAsked"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "35": {
+                          "id": "35",
+                          "speaker": "Player",
+                          "text": "Who are you?",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_GuardedEntrance_State_ParentsSceneStarted = False",
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                          ],
+                          "setflags": [
+                            "GLO_SpeakWithDead_Event_QuestionAsked"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "29": {
+                              "id": "29",
+                              "speaker": "Locke",
+                              "text": "Locke... husband to Komira... father to Arabella...",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "ea502359-881d-8f89-9565-2bf920fba5b7_DontKnowParent = False"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "14": {
+                                  "id": "14",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "26": {
+                          "id": "26",
+                          "speaker": "Player",
+                          "text": "Where is your daughter, Arabella?",
+                          "context": "",
+                          "checkflags": [
+                            "TWN_ArabellaPowers_Event_ShadowsAppear = False",
+                            "ea502359-881d-8f89-9565-2bf920fba5b7_DontKnowParent = False",
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                          ],
+                          "setflags": [
+                            "GLO_SpeakWithDead_Event_QuestionAsked"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "38": {
+                              "id": "38",
+                              "speaker": "Locke",
+                              "text": "Ran... into... shadows...",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "21": {
+                          "id": "21",
+                          "speaker": "Player",
+                          "text": "How did you die?",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                          ],
+                          "setflags": [
+                            "GLO_SpeakWithDead_Event_QuestionAsked"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "41": {
+                              "id": "41",
+                              "speaker": "Locke",
+                              "text": "Surgeon... sisters...",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "25": {
+                                  "id": "25",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "0": {
+                          "id": "0",
+                          "speaker": "Player",
+                          "text": "Where are you from?",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                          ],
+                          "setflags": [
+                            "GLO_SpeakWithDead_Event_QuestionAsked"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "27": {
+                              "id": "27",
+                              "speaker": "Locke",
+                              "text": "Elturel...",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "22": {
+                                  "id": "22",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "1": {
+                          "id": "1",
+                          "speaker": "Player",
+                          "text": "Why were you in this place?",
+                          "context": "",
+                          "checkflags": [
+                            "DEN_TieflingLeader_State_PermaDefeated = False",
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                          ],
+                          "setflags": [
+                            "GLO_SpeakWithDead_Event_QuestionAsked"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "20": {
+                              "id": "20",
+                              "speaker": "Locke",
+                              "text": "Zevlor... betrayed... ran... shelter...",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "TWN_ArabellasPowersParentASWD_Event_MentionedZevlor",
+                                "COL_FindZevlor_Knows_MissingParent"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "23": {
+                                  "id": "23",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "10": {
+                          "id": "10",
+                          "speaker": "Player",
+                          "text": "Where is Zevlor now?",
+                          "context": "",
+                          "checkflags": [
+                            "TWN_ArabellasPowersParentASWD_Event_MentionedZevlor",
+                            "HAV_TakingIsobel_Event_SummonZevlor = False",
+                            "MOO_TieflingLeader_Knows_ZevlorChanged = False",
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                          ],
+                          "setflags": [
+                            "GLO_SpeakWithDead_Event_QuestionAsked"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "3": {
+                              "id": "3",
+                              "speaker": "Narrator",
+                              "text": "*The corpse remains silent. It does not know.*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "17": {
+                                  "id": "17",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "taganswer",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "2": {
+                          "id": "2",
+                          "speaker": "Player",
+                          "text": "Leave.",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "40": {
+                          "id": "40",
+                          "speaker": "Narrator",
+                          "text": "*The spell's power wanes. You can ask no more questions.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_SpeakWithDead_State_QuestionsLimitReached"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "36": {
+                      "id": "36",
+                      "speaker": "Narrator",
+                      "text": "*It is a tiefling man - the girl Arabella's father, presumably.*",
+                      "context": "CinematicNodeContext: (It is OK not to show the corpse, and only player face here)",
+                      "checkflags": [
+                        "TWN_ArabellasPowers_State_RecognisedParents = False",
+                        "TWN_ArabellaPowers_Event_AskedForHelp"
+                      ],
+                      "setflags": [
+                        "TWN_ArabellasPowers_State_RecognisedParents"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "Narrator",
+                      "text": "*It is a tiefling man, his face unknown to you.*",
+                      "context": "CinematicNodeContext: (It is OK not to show the corpse, and only player face here)",
+                      "checkflags": [
+                        "TWN_ArabellasPowers_State_RecognisedParents = False"
+                      ],
+                      "setflags": [
+                        "TWN_ArabellasPowers_State_RecognisedParents",
+                        "ea502359-881d-8f89-9565-2bf920fba5b7_DontKnowParent"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "8": {
+                          "id": "8",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "9",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "39": {
+              "id": "39",
+              "speaker": "Astarion",
+              "text": "Arabella's father. First the druids, now this - our little idol thief has no luck at all.",
+              "context": "NodeContext: Recognising a corpse",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_ASTARION"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "31",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "28": {
+              "id": "28",
+              "speaker": "Wyll",
+              "text": "Hells. Arabella's father's met a most unpleasant end.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_WYLL"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "31",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "33": {
+              "id": "33",
+              "speaker": "Gale",
+              "text": "Arabella's father. Poor man met a ghoulish end.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_GALE"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "31",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "TWN_ArabellasPowers_State_RecognisedParents = False",
+            "TWN_ArabellaPowers_Event_AskedForHelp"
+          ],
+          "setflags": [
+            "ORI_Inclusion_Random"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "Lae'zel",
+              "text": "Must be Arabella's father. What's left of him, anyway.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_LAEZEL"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "18",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "44": {
+              "id": "44",
+              "speaker": "Shadowheart",
+              "text": "A tiefling. That's Arabella's father, I wager - or was Arabella's father.",
+              "context": "NodeContext: Referring to a nearby corpse.",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_SHADOWHEART"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "18",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "37": {
+              "id": "37",
+              "speaker": "Karlach",
+              "text": "Must be Arabella's father. Poor man. Hope he rests in peace.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_KARLACH"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "18",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "19": {
+              "id": "19",
+              "speaker": "Astarion",
+              "text": "Not a good end. Doubly so if your little girl's asking strangers to find you.",
+              "context": "NodeContext: looking at the corpse of a man whose daughter asked us to find him",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_ASTARION"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "18",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "42": {
+              "id": "42",
+              "speaker": "Wyll",
+              "text": "The tiefling's seen better days. Arabella's father, I wager.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_WYLL"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "18",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Gale",
+              "text": "That must be Arabella's father. Poor man met a ghoulish end.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_GALE"
+              ],
+              "setflags": [
+                "TWN_ArabellasPowers_State_RecognisedParents"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_End_Random"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "31",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "31",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "43": {
+      "id": "43",
+      "speaker": "Narrator",
+      "text": "*The corpse seems willing to speak - but not to its killer.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_Killer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

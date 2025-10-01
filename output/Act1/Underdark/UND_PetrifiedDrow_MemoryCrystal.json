@@ -1,0 +1,375 @@
+{
+  "metadata": {
+    "synopsis": "This dialogue is for an artefact called a Memory Shard, a crystal taken from the Petrified Drow (Dhourn).The crystal can store memories - in this case, Dhourn's knowledge of the location of the Adamantine forge. The player either approaches knowing what it is, or can discover its function based on a check.",
+    "how_to_trigger": "Repro steps:1. Start the game.2. loadlevel WLD_Main_A3. god on4. goto 118.74, 50.67, -247.325. Move around and killcombat when spectator attacks.6. Loot Dhourn's corpse.7. Open the inventory and use the Crystal."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*A dull crystal, glowing only faintly.*",
+      "context": "CinematicNodeContext: CU on the stone sitting in player's hand. If possible, with a dull glow at the centre.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Try to determine its function.",
+          "context": "",
+          "checkflags": [
+            "UND_PetrifiedDrow_Knows_MemoryCrystal = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Narrator",
+                  "text": "*You heard its like described before - a memory shard, used to store brief mental impressions from the user's mind.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "UND_PetrifiedDrow_Knows_MemoryCrystal"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "18": {
+              "id": "18",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "Narrator",
+                  "text": "*You rack your brains but it is - for all intents and purposes - a particularly pretty rock.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "Gently probe the thoughts within.",
+          "context": "",
+          "checkflags": [
+            "UND_PetrifiedDrow_Knows_MemoryCrystal",
+            "UND_FurnaceSearch_State_ReadMap = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Narrator",
+                  "text": "*The crystal's glow swells, drawing you into its depths. You are transported - somewhere deep, loud, and hot as the Hells themselves.*",
+                  "context": "CinematicNodeContext: Zooming in on the crystal as it glows a little brighter - SFX of 'active forge' noise. Echoing hammer sounds, etc",
+                  "checkflags": [],
+                  "setflags": [
+                    "UND_PetrifiedDrow_State_LearnedForgeFromMap"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "16": {
+                      "id": "16",
+                      "speaker": "Narrator",
+                      "text": "*Within the Underdark's bowels, beyond an ancient stronghold, hovers a giant hammer, waiting to fall.*",
+                      "context": "CinematicNodeContext: Holds shot from previous node.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "11": {
+                          "id": "11",
+                          "speaker": "Narrator",
+                          "text": "*An echoing clang and you're back to yourself - left only with a firm sense of a place. A grand forge.*",
+                          "context": "CinematicNodeContext: Back to shot of player, as if startled from a reverie",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "19": {
+              "id": "19",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Narrator",
+                  "text": "*The crystal probes back - and none too gently. You're left with a sudden and sinking feeling of inadequacy.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "Narrator",
+                      "text": "*Whoever you are, you are not worthy of the secrets within.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_PetrifiedDrow_Event_MemoryCrystalRejected"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Speak the pass-phrase.",
+          "context": "",
+          "checkflags": [
+            "UND_FurnaceSearch_State_ReadMap = False",
+            "UND_PetrifiedDrow_Knows_PassPhrase"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "4",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "Focus on the glow.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Narrator",
+              "text": "*You feel your consciousness stretch, reach out... and recoil as if at a bare-handed slap.*",
+              "context": "CinematicNodeContext: Starting to zoom in on crystal in player's hand - then abrupt cut back to player",
+              "checkflags": [],
+              "setflags": [
+                "UND_PetrifiedDrow_Event_MemoryCrystalRejected"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Narrator",
+                  "text": "*Yours is not the mind it was expecting.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Narrator",
+      "text": "*The crystal shines only faintly. A memory shard, the wizard had called it.*",
+      "context": "CinematicNodeContext: CU on the stone sitting in player's hand. If possible, with a dull glow at the centre.",
+      "checkflags": [
+        "UND_PetrifiedDrow_Knows_MemoryCrystal"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

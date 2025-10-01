@@ -1,0 +1,669 @@
+{
+  "metadata": {
+    "synopsis": "Yenna approaches the camp to ask if they can stay. The player has met Yenna once before she comes to camp.",
+    "how_to_trigger": "Go to Wyrm's Crossing region and speak with Yenna at the very start. After this dialog ends, go to camp and she will be waiting for you. Speak to her in camp to trigger this dialog.Debug commands- YennaVisitCamp (send Yenna to visit camp, without having to speak to her in WYR)- YennaMovedToCamp (set up Yenna in camp as if she's already been invited to stay)"
+  },
+  "dialogue": {
+    "10": {
+      "id": "10",
+      "speaker": "Yenna",
+      "text": "I brought my own paring knife; now I just need some ingredients and... I'm gonna make something really good, I promise!",
+      "context": "",
+      "checkflags": [
+        "CAMP_Yenna_State_InviteYenna",
+        "CAMP_Yenna_HasMet",
+        "CAMP_Yenna_State_MovedToCamp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "CAMP_Yenna_HasMet = False",
+        "CAMP_Yenna_State_MovedToCamp = False"
+      ],
+      "setflags": [
+        "CAMP_Yenna_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "21",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Yenna",
+      "text": "Erm. Hi. It's me. Yenna. You remember me, right?",
+      "context": "",
+      "checkflags": [
+        "CAMP_Yenna_HasMet = False",
+        "CAMP_Yenna_State_MovedToCamp = False",
+        "WYR_MeetingYenna_State_LessKindPath"
+      ],
+      "setflags": [
+        "CAMP_Yenna_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Yenna",
+          "text": "I met you before. And erm. My mum hasn't come back yet. She might come later... I don't think she's coming.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "28": {
+              "id": "28",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "9",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Yenna",
+      "text": "Erm. Hi. It's me. Yenna. You remember me, right?",
+      "context": "",
+      "checkflags": [
+        "CAMP_Yenna_HasMet = False",
+        "CAMP_Yenna_State_MovedToCamp = False",
+        "WYR_MeetingYenna_State_KindPath"
+      ],
+      "setflags": [
+        "CAMP_Yenna_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Yenna",
+          "text": "You were really nice to me before. And erm. My mum hasn't come back yet. She might come later... I don't think she's coming.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "16",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "18": {
+              "id": "18",
+              "speaker": "Yenna",
+              "text": "Could we maybe stay here?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "16",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "13": {
+              "id": "13",
+              "speaker": "Yenna",
+              "text": "Could I maybe stay here?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "23",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_Random"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "23",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "17": {
+                      "id": "17",
+                      "speaker": "Karlach",
+                      "text": "Yes! We can play one-a-cup!",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_KARLACH"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "1": {
+                      "id": "1",
+                      "speaker": "Jaheira",
+                      "text": "Of course, girl. You can help me determine who it is doing all the snoring.",
+                      "context": "NodeContext: Warmth, suppressing pity - a young girl has just asked to stay at our camp, hinting that her mother is probably dead. Offering up a joke / activity to make her feel at ease.",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_JAHEIRA"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "23": {
+                          "id": "23",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "ORI_Inclusion_End_Random"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {
+                            "4": {
+                              "id": "4",
+                              "speaker": "Player",
+                              "text": "Of course you can stay, Yenna. Pick a spot and settle in.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Yenna",
+                                  "text": "YES! You've got a fire and everything. I can cook really good! Whatever you want! Thankyouthankyou.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "CAMP_Yenna_State_InviteYenna",
+                                    "CAMP_Yenna_State_MovedToCamp"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "35": {
+                              "id": "35",
+                              "speaker": "Player",
+                              "text": "Sorry, kid. I don't think so.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "14": {
+                                  "id": "14",
+                                  "speaker": "Yenna",
+                                  "text": "You don't?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "2": {
+                                      "id": "2",
+                                      "speaker": "Player",
+                                      "text": "Ugh. Fine. Get your stuff and come on in.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "24": {
+                                          "id": "24",
+                                          "speaker": "Yenna",
+                                          "text": "I don't have any stuff. But I can cook!",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "CAMP_Yenna_State_InviteYenna",
+                                            "CAMP_Yenna_State_MovedToCamp"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "11": {
+                                              "id": "11",
+                                              "speaker": "Yenna",
+                                              "text": "Thankyouthankyou! I won't get in the way. I promise!",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "26": {
+                                      "id": "26",
+                                      "speaker": "Player",
+                                      "text": "I already told you no - I meant it.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "6": {
+                                          "id": "6",
+                                          "speaker": "Yenna",
+                                          "text": "But erm. But - all right. I'll go. But you'll see - you should've said yes. You'll wish you said yes.",
+                                          "context": "NodeContext: Might sound a little bit like a threat, but really she's just going to come back and cook for the player.",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "CAMP_Yenna_State_DismissYenna",
+                                            "CAMP_Yenna_State_MovedToCamp = False"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "3": {
+                              "id": "3",
+                              "speaker": "Player",
+                              "text": "No kids allowed. Come back in ten years.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "0": {
+                                  "id": "0",
+                                  "speaker": "Yenna",
+                                  "text": "But - I won't make it that long on my own.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "7": {
+                                      "id": "7",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "14",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "12": {
+                      "id": "12",
+                      "speaker": "Nightwarden Minthara",
+                      "text": "I would rather share my camp with goblins again.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_MINTHARA"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "19": {
+                      "id": "19",
+                      "speaker": "Lae'zel",
+                      "text": "Ugh. Isn't there a human cr\u00e8che she can join?",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_LAEZEL"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "22": {
+                      "id": "22",
+                      "speaker": "Wyll",
+                      "text": "It isn't much of a home, but what's ours is yours.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_WYLL"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "25": {
+                      "id": "25",
+                      "speaker": "Shadowheart",
+                      "text": "What harm? She's little - won't take up much space, or make much of a dent in our provisions.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_SHADOWHEART"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "27": {
+                      "id": "27",
+                      "speaker": "Gale",
+                      "text": "If the child's desperate enough to seek safety in our company, who are we to turn her away?",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_GALE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "29": {
+                      "id": "29",
+                      "speaker": "Astarion",
+                      "text": "Absolutely not. We've hit our quota for mangy strays.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_ASTARION"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "31": {
+                      "id": "31",
+                      "speaker": "Minsc",
+                      "text": "Of course! Boo could use an extra friend to play 'chase the Boo', seeing as none here are quick enough.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_MINSC"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "32": {
+                      "id": "32",
+                      "speaker": "Halsin",
+                      "text": "Only a truly callous heart could refuse. Besides, our little abode could use a child's laughter.",
+                      "context": "NodeContext: 'Let the kid stay'",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_HALSIN"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "34": {
+      "id": "34",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "CAMP_Yenna_HasMet",
+        "CAMP_Yenna_State_MovedToCamp = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "21",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

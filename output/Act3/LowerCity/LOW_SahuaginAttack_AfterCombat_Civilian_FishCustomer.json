@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue with one of the civilians (female human near the fishmonger) near the Sahuagin attack on a shore in the Lower City. This dialogue only gets added once the Sahuagin are defeated.",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Use ReCon command \"goto 52 3 -138\"- \"killcombat\" to kill all the Sahuagin after they appear and attack.- Talk to this civilian looking at the fish near the fishmonger:S_LOW_BeachSahuagin_Civilian_FishCustomer_d861fb4a-f98c-416a-88a5-a07525b62554"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Hucinda",
+      "text": "Did you hear this was the best place to buy fish in the city as well? Seems they neglected to mention the sea devils!",
+      "context": "NodeContext: Indignant after almost getting killed by sahuagin",
+      "checkflags": [],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_FishCustomer"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Hucinda",
+      "text": "Gods, do you think they're going to chop them up and sell them? I bloody hope not.",
+      "context": "NodeContext: Disgusted",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_FishCustomer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Hucinda",
+      "text": "Glad they got those sea devils cleaned up. Just hope that's the last of them.",
+      "context": "NodeContext: Relieved",
+      "checkflags": [
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_FishCustomer"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Hucinda",
+      "text": "You... you don't think they sold those creatures' bits to the fishmongers, do you?",
+      "context": "NodeContext: Growing nausea",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_FishCustomer",
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

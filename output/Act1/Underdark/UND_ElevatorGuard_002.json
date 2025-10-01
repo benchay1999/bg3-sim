@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "synopsis": "Surly female duergar, lazy and trying to live the good life using her gnome slave. This dialogue occurs after she and her companion have ordered the duergar around.",
+    "how_to_trigger": "to trigger Greeting \"you still hanging around\"1. loadlevel WLD_Main_A2. goto -609.13, 5.32, 382.073. Talk with elevator guards and skip through the dialog.4. Talk with Ward Pistle.To trigger Greeting \"You don't need nothing i've got\"1. Same repro has above.2. Talk with Ward Pistle again.To trigger Nere Killed.1. loadlevel WLD_Main_A2. goto -609.13, 5.32, 382.073. Talk with elevator guards and skip through the dialog.4. Talk with Ward Pistle.5. goto -646.011; 14.962; 298.106. Ctrl-shift-K (kill) Nere.7. goto -609.13, 5.32, 382.078. Talk with Ward Pistle.To trigger Nere Killed HasMet1. Same repro has Nere killed.2. Talk with Ward Pistle again.."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Ward Pistle",
+      "text": "You don't need nothing I've got.",
+      "context": "",
+      "checkflags": [
+        "UND_ElevatorGuard002_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Ward Pistle",
+      "text": "Ain't you got more drow to pummel?",
+      "context": "",
+      "checkflags": [
+        "UND_ElevatorGuard02_HasMet2"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Ward Pistle",
+      "text": "Clubbed one of your own, eh? I'll drink to that.",
+      "context": "",
+      "checkflags": [
+        "UND_TheDrowNere_State_PermaDefeated"
+      ],
+      "setflags": [
+        "UND_ElevatorGuard02_HasMet2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Ward Pistle",
+      "text": "Heard you helped us out. But I ain't helpin' you back.",
+      "context": "NodeContext: drugning is an expletive (like fucking), pronounced DRUG-ning (g is silent for duergar)",
+      "checkflags": [
+        "UND_DuergarCamp_State_SidedMutineers"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Ward Pistle",
+      "text": "You still hanging around?",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "UND_ElevatorGuard002_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

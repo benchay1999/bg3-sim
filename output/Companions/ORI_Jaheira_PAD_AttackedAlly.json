@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "synopsis": "Jaheira has seen you attack her allies (specifically general allies like Harpers or her animal friends - Minsc/her family have specific reactions) and gradually loses patience with you. This is the AD variant incase she can't get you in conversation.",
+    "how_to_trigger": "- Attack harpers in Act 2/3- Attack the animals in Jaheira's Basement"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Jaheira",
+      "text": "Whatever tadpole trickery you have employed - you will not do it again.",
+      "context": "",
+      "checkflags": [
+        "GLO_Jaheira_State_CompanionAttackedAlly"
+      ],
+      "setflags": [
+        "GLO_Jaheira_State_CompanionAttackedAlly = False",
+        "GLO_Jaheira_State_WarnedPlayer"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Jaheira",
+      "text": "Careful who it is you turn your ire on. I will not stand by while you attack allies.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "GLO_Jaheira_State_WarnedPlayer"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Jaheira",
+      "text": "Some twisting of the tadpole to have me turn my blades against my own? No more - you are no better than these cultists.",
+      "context": "",
+      "checkflags": [
+        "GLO_Jaheira_State_CompanionAttackedAlly",
+        "GLO_Jaheira_State_WarnedPlayer"
+      ],
+      "setflags": [
+        "GLO_Jaheira_State_LeftInAnger",
+        "GLO_Companion_Leave"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Jaheira",
+      "text": "I made myself clear - and I am not in the habit of offering second chances. Our paths part here - I only hope one of us has the means to finish this fight.",
+      "context": "",
+      "checkflags": [
+        "GLO_Jaheira_State_WarnedPlayer"
+      ],
+      "setflags": [
+        "GLO_Jaheira_State_LeftInAnger",
+        "GLO_Companion_Leave"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

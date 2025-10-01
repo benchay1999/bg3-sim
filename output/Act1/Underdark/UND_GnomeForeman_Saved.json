@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "synopsis": "Dialog for gnome foreman on the other side of the ebon lake after they were saved by player. Mentions the other gnomes being kept at moonrise towers.",
+    "how_to_trigger": "Repro steps:1. Start the game.2. loadlevel WLD_Main_A3. goto -634, 15, 3104. Ctrl+Shift+K the Cave-In (Nere will speak to you automatically)5. Select dialogue options \"Stop! No more...\", \"I act on...\", \"You wouldn't dare...\", then \"You so much...\"6. killcombat7. Speak with Beldron"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Beldron",
+      "text": "We're moving on. There's... there's nothing left for us here.",
+      "context": "",
+      "checkflags": [
+        "UND_GnomeForeman_Saved_HasMet",
+        "UND_InjuredGnome_State_SporeServant"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Beldron",
+      "text": "I knew little Thulla would survive all this. But... not like that.",
+      "context": "",
+      "checkflags": [
+        "UND_GnomeForeman_Saved_HasMet = False",
+        "UND_InjuredGnome_State_SporeServant"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Beldron",
+      "text": "Never thought I'd owe a bunch o' mushrooms my life. Only wish the rest of my people were here.",
+      "context": "",
+      "checkflags": [
+        "UND_GnomeForeman_Saved_HasMet",
+        "UND_MyconidCircle_State_BothSovereignsDead = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Beldron",
+      "text": "What a bloodbath. Safer here than in Grymforge though, no doubt about it.",
+      "context": "",
+      "checkflags": [
+        "UND_GnomeForeman_Saved_HasMet",
+        "UND_MyconidCircle_State_BothSovereignsDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Beldron",
+      "text": "Thanks again for offing that drow. Only made it here 'cause of you. But I can't stop thinking about the rest of us...",
+      "context": "",
+      "checkflags": [
+        "UND_GnomeForeman_Saved_HasMet = False"
+      ],
+      "setflags": [
+        "UND_GnomeForeman_Saved_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Beldron",
+          "text": "... stuck in Moonrise with a bunch of sadists. Poor bastards.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

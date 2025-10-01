@@ -1,0 +1,470 @@
+{
+  "metadata": {
+    "synopsis": "One of the merregon henchmen accompanying the orthon in his lair in the Shar Temple. This one acts as a trader and beastmaster for the Orthon's displacer beast. The player can trade, learn about the merregon's connection to the displacer via detect thoughts, and convince it to hand over the potions used to control the beast.",
+    "how_to_trigger": "Speak to the merregon after peacefully resolving SHA_Orthon_TrespassLair"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*This merregon seems faintly more alive than the others - beckoning you to look at its wares.*",
+      "context": "CinematicNodeContext: The merregon beckons the player towards its wares\rInternalNodeContext: This greeting if you're speaking to the trader merregon for the first time after having read the mind of another merregon previously.",
+      "checkflags": [
+        "SHA_Merregon_000_HasMet = False",
+        "SHA_Merregon_Event_DetectThoughtsSuccess"
+      ],
+      "setflags": [
+        "SHA_Merregon_000_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "18",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Hoarding Merregon",
+      "text": "*Chitter.*",
+      "context": "CinematicNodeContext: The merregon beckons the player towards its wares\rNodeContext: NB - the text between asterisks does not have to be vocalised/pronounced exactly as written, but rather treated as a guideline. Involuntary idle sound from the merregon. Raspy breath, chittering, sighes and moans etc.",
+      "checkflags": [
+        "SHA_Merregon_000_HasMet = False"
+      ],
+      "setflags": [
+        "SHA_Merregon_000_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "I am to tend to your master's beast now. Give me the potions.",
+          "context": "",
+          "checkflags": [
+            "SHA_Merregon_State_AskedForPotions = False",
+            "989f8f48-9328-2eca-3aa2-15007aabd48b_MindHasBeenRead"
+          ],
+          "setflags": [
+            "SHA_Merregon_State_AskedForPotions"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Gale 1",
+            "Shadowheart 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "15",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Hoarding Merregon",
+              "text": "*Croak.*",
+              "context": "CinematicNodeContext: The merregon stares blankly for a beat, as if it isn't going to do anything. After a prolonged beat the Merregon finally transfers potions to the player.\rNodeContext: NB - the text between asterisks does not have to be vocalised/pronounced exactly as written, but rather treated as a guideline. Involuntary idle sound from the merregon. Raspy breath, chittering, sighes and moans etc.",
+              "checkflags": [
+                "09ca858e-4bac-48ae-9aca-52602199f813"
+              ],
+              "setflags": [
+                "SHA_Merregon_Event_GavePotions"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "19": {
+              "id": "19",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "SHA_Merregon_Event_GavePotions"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Narrator",
+                  "text": "*The desire is there, but it doesn't have any potions to give.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "Show me what you have to trade.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "trade",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Hoarding Merregon",
+                  "text": "*Sigh.*",
+                  "context": "CinematicNodeContext: The merregon gawks.\rNodeContext: NB - the text between asterisks does not have to be vocalised/pronounced exactly as written, but rather treated as a guideline. Involuntary idle sound from the merregon. Raspy breath, chittering, sighes and moans etc.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "Get much business down here?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Hoarding Merregon",
+              "text": "*Groan.*",
+              "context": "CinematicNodeContext: Merregon stares blankly.\rNodeContext: NB - the text between asterisks does not have to be vocalised/pronounced exactly as written, but rather treated as a guideline. Involuntary idle sound from the merregon. Raspy breath, chittering, sighes and moans etc.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "*Probe the merregon's mind.*",
+          "context": "",
+          "checkflags": [
+            "989f8f48-9328-2eca-3aa2-15007aabd48b_MindHasBeenRead = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "21": {
+              "id": "21",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "Hoarding Merregon",
+                  "text": "Fill master's coffers. Do all that he bids. No more, no less.",
+                  "context": "InternalNodeContext: This node if the merregon's thoughts were read and it was told it is no longer in charge of charming the displacer.\rNodeContext: A droning, almost mindless refrain",
+                  "checkflags": [
+                    "SHA_Merregon_Event_GavePotions"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "4": {
+                  "id": "4",
+                  "speaker": "Hoarding Merregon",
+                  "text": "Fill master's coffers. Tend to his beast. Feed it potions. Keep it charmed.",
+                  "context": "InternalNodeContext: This node if the merregon wasn't told it was no longer in charge of the displacer\rNodeContext: A droning, almost mindless refrain",
+                  "checkflags": [
+                    "SHA_Merregon_Event_GavePotions = False"
+                  ],
+                  "setflags": [
+                    "989f8f48-9328-2eca-3aa2-15007aabd48b_MindHasBeenRead"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Narrator",
+                      "text": "*This merregon has been charming the displacer, for the orthon. It has potions to control the beast's behaviour.*",
+                      "context": "",
+                      "checkflags": [
+                        "SHA_Displacer_HasMet",
+                        "SHA_OrthonLair_Knows_MeatPoisoned"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "6": {
+                      "id": "6",
+                      "speaker": "Narrator",
+                      "text": "*This merregon is charming the displacer, for its master. It has potions to control the beast's behaviour.*",
+                      "context": "",
+                      "checkflags": [
+                        "SHA_Displacer_HasMet",
+                        "SHA_OrthonLair_Knows_MeatPoisoned = False"
+                      ],
+                      "setflags": [
+                        "SHA_OrthonLair_Knows_MeatPoisoned"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "7": {
+                      "id": "7",
+                      "speaker": "Narrator",
+                      "text": "*This merregon is the one who applied potions to the spider carcass - to charm a beast for its master.*",
+                      "context": "",
+                      "checkflags": [
+                        "SHA_Displacer_HasMet = False",
+                        "SHA_OrthonLair_Knows_MeatPoisoned"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "3": {
+                      "id": "3",
+                      "speaker": "Narrator",
+                      "text": "*It seems this merregon is using potions to charm a beast on behalf of its master.*",
+                      "context": "",
+                      "checkflags": [
+                        "SHA_Displacer_HasMet = False",
+                        "SHA_OrthonLair_Knows_MeatPoisoned = False"
+                      ],
+                      "setflags": [
+                        "SHA_OrthonLair_Knows_MeatPoisoned"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "13": {
+              "id": "13",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Narrator",
+                  "text": "*The merregon resists your efforts. Most would be angry at such an intrusion, but this creature has no reaction at all.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Hoarding Merregon",
+      "text": "*Chatter.*",
+      "context": "CinematicNodeContext: The merregon beckons the player towards its wares\rNodeContext: NB - the text between asterisks does not have to be vocalised/pronounced exactly as written, but rather treated as a guideline. Involuntary idle sound from the merregon. Raspy breath, chittering, sighes and moans etc.",
+      "checkflags": [
+        "SHA_Merregon_000_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "14": {
+          "id": "14",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "18",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

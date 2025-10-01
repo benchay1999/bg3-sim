@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "synopsis": "This dialogue takes place in two different states. The first is after the player has successfully fought back an army of goblins that attacked the druid grove. In the second state, the goblin leaders have been killed and the tieflings in the grove are leaving. She's aware of the hard work ahead required to make things go back to normal, but she's hopeful all the same.There's an extra node to acknowledge the missing idol, if it went missing before one of those two states were triggered."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Apikusis",
+      "text": "You saved a holy place from desecration. Thank you.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_BirdSender"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Apikusis",
+      "text": "The goblins are gone, but so is our idol. We are exposed without it.",
+      "context": "",
+      "checkflags": [
+        "DEN_GroveConflict_State_IdolIsMissing"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Apikusis",
+      "text": "Safe travels. You will be remembered here.",
+      "context": "",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_BirdSender"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Apikusis",
+      "text": "We're free of the goblins, but the grove is changed. Wounded.",
+      "context": "",
+      "checkflags": [
+        "DEN_BirdSender_HasMet_GobLeadersDead = False",
+        "DEN_Refugees_State_LeadersAreDead"
+      ],
+      "setflags": [
+        "DEN_BirdSender_HasMet_GobLeadersDead"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Apikusis",
+          "text": "The days ahead won't be easy. I'm glad we have Halsin to guide us.",
+          "context": "",
+          "checkflags": [
+            "GLO_Halsin_State_Returned",
+            "GLO_Halsin_State_PermaDefeated = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Apikusis",
+          "text": "The days ahead won't be easy, but we'll manage. We have to.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Apikusis",
+      "text": "Thanks to you, we have the chance to heal.",
+      "context": "",
+      "checkflags": [
+        "DEN_Refugees_State_LeadersAreDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

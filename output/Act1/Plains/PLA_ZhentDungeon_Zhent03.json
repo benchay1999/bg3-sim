@@ -1,0 +1,2066 @@
+{
+  "metadata": {
+    "synopsis": "Brem is a trader for the Zhentarim. When we meet him, he's holding an artist prisoner and offering us a portrait. We can persuade him to release the prisoner or just buy him outright - or just trade normally. He'll indicate that there are more illicit items he can show us - once we prove ourselves to his leader."
+  },
+  "dialogue": {
+    "28": {
+      "id": "28",
+      "speaker": "Brem",
+      "text": "Something I can help you with?",
+      "context": "",
+      "checkflags": [
+        "PLA_ZhentDungeon_Zhent03_HasMet = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "99",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "91": {
+          "id": "91",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "48",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "48": {
+      "id": "48",
+      "speaker": "Brem",
+      "text": "Well now! If we're talking, my guess is you've got coin to spend.",
+      "context": "",
+      "checkflags": [
+        "PLA_ZhentDungeon_Zhent03_HasMet",
+        "PLA_ZhentDungeon_Zhent03_FailedPersuade"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "99",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "44": {
+          "id": "44",
+          "speaker": "Player",
+          "text": "I'm here to buy your prisoner.",
+          "context": "",
+          "checkflags": [
+            "PLA_DoubtingArtist_State_Dead = False",
+            "PLA_DoubtingArtist_Knows_Kidnapped",
+            "PLA_DoubtingArtist_Event_FreedByPersuade = False",
+            "ZhentDungeon_FreedByBribe = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "99",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "58": {
+              "id": "58",
+              "speaker": "Brem",
+              "text": "I doubt you've got that kinda dosh lying about. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+              "context": "",
+              "checkflags": [
+                "ZhentDungeon_LowerPrice = False"
+              ],
+              "setflags": [
+                "ZhentDungeon_KnowPrice"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "99",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "39": {
+                  "id": "39",
+                  "speaker": "Player",
+                  "text": "Pay him.",
+                  "context": "",
+                  "checkflags": [
+                    "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+                  ],
+                  "setflags": [
+                    "PLA_DoubtingArtist_State_FreeBribe",
+                    "GEN_TransferNPCPayment"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "99",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "102": {
+                      "id": "102",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "99",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "19": {
+                          "id": "19",
+                          "speaker": "Brem",
+                          "text": "He's all yours. Don't forget to feed him - he bawls something proper.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "ZhentDungeon_FreedByBribe"
+                          ],
+                          "ruletags": [],
+                          "approval": [
+                            "Astarion -1",
+                            "Gale 1",
+                            "Lae'zel -1",
+                            "Wyll 1",
+                            "Karlach 1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "112": {
+                      "id": "112",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "99",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "16": {
+                  "id": "16",
+                  "speaker": "Player",
+                  "text": "I don't have that kind of money.",
+                  "context": "",
+                  "checkflags": [
+                    "e678bd59-74f4-4a7b-8776-aca807d9ef22 = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "65",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "99": {
+                      "id": "99",
+                      "speaker": "Brem",
+                      "text": "Been there, mate. Come back when you've coin, and we can talk, eh?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "110": {
+                  "id": "110",
+                  "speaker": "Player",
+                  "text": "You're insane if you think I'm going to pay that much.",
+                  "context": "",
+                  "checkflags": [
+                    "PLA_DoubtingArtist_State_FailPriceLowered = False"
+                  ],
+                  "setflags": [
+                    "PLA_DoubtingArtist_State_FailPriceLowered"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "65",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "27": {
+                      "id": "27",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "65",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "80": {
+                          "id": "80",
+                          "speaker": "Brem",
+                          "text": "All right, so maybe I was fishing. No fooling you. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "ZhentDungeon_LowerPrice"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "65",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "34": {
+                      "id": "34",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "63": {
+                          "id": "63",
+                          "speaker": "Brem",
+                          "text": "Aye, off my rocker me - so you'd best not push me too far, eh? Price is the price. \n([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "PLA_DoubtingArtist_State_FailPriceLowered"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "93": {
+                  "id": "93",
+                  "speaker": "Player",
+                  "text": "I don't have that much gold. I have plenty of steel, though.",
+                  "context": "",
+                  "checkflags": [
+                    "PLA_DoubtingArtist_State_FailPriceLowered = False",
+                    "BARBARIAN = False"
+                  ],
+                  "setflags": [
+                    "PLA_DoubtingArtist_State_FailPriceLowered"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "81": {
+                      "id": "81",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "6": {
+                          "id": "6",
+                          "speaker": "Brem",
+                          "text": "All right mate, all right. Waukeen's clipped coins, there's no need to get arsey.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [
+                            "Gale 1",
+                            "Lae'zel 1",
+                            "Shadowheart 1",
+                            "Wyll 1",
+                            "Karlach 1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "75": {
+                              "id": "75",
+                              "speaker": "Brem",
+                              "text": "Go on then. But anything lower would be criminal. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "ZhentDungeon_LowerPrice"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "65": {
+                                  "id": "65",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "53",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "107": {
+                      "id": "107",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "Brem",
+                          "text": "Oh? More steel than the entire Zhentarim? Cos that's who you're crossing if you try to scab me on a deal.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "42": {
+                              "id": "42",
+                              "speaker": "Brem",
+                              "text": "The price is the price. Pay up or get lost.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "40": {
+                  "id": "40",
+                  "speaker": "Player",
+                  "text": "Too much. Cut your price down to size or I'll cut you down to size.",
+                  "context": "",
+                  "checkflags": [
+                    "PLA_DoubtingArtist_State_FailPriceLowered = False",
+                    "BARBARIAN"
+                  ],
+                  "setflags": [
+                    "PLA_DoubtingArtist_State_FailPriceLowered"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "37": {
+                      "id": "37",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "21": {
+                          "id": "21",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "6",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "52": {
+                      "id": "52",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "9": {
+                          "id": "9",
+                          "speaker": "Brem",
+                          "text": "Then what? You going to kill the entire Zhentarim next? Good luck, prick.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "68": {
+                              "id": "68",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "42",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "50": {
+                  "id": "50",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "36",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "53": {
+              "id": "53",
+              "speaker": "Brem",
+              "text": "Then it's the same price I gave you before. No more haggling. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+              "context": "",
+              "checkflags": [
+                "ZhentDungeon_LowerPrice"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "24": {
+                  "id": "24",
+                  "speaker": "Player",
+                  "text": "Pay him.",
+                  "context": "",
+                  "checkflags": [
+                    "d6480be7-500e-4160-927f-86acfd5c4e7b"
+                  ],
+                  "setflags": [
+                    "PLA_DoubtingArtist_State_FreeBribe",
+                    "GEN_TransferNPCPayment_2"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "97": {
+                      "id": "97",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "39",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "104": {
+                  "id": "104",
+                  "speaker": "Player",
+                  "text": "I don't have that kind of money.",
+                  "context": "",
+                  "checkflags": [
+                    "d6480be7-500e-4160-927f-86acfd5c4e7b = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "16",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "36": {
+                  "id": "36",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "46": {
+          "id": "46",
+          "speaker": "Player",
+          "text": "I want to trade.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "86": {
+              "id": "86",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "106",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            },
+            "85": {
+              "id": "85",
+              "speaker": "Brem",
+              "text": "Fancy that - so do I.",
+              "context": "",
+              "checkflags": [
+                "PLA_ZhentDungeon_State_AllowedSpecialTrade = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "41": {
+                  "id": "41",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "20",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "55": {
+          "id": "55",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "64": {
+      "id": "64",
+      "speaker": "Brem",
+      "text": "Aye? Back already?",
+      "context": "",
+      "checkflags": [
+        "PLA_ZhentDungeon_Zhent03_HasMet",
+        "ZhentDungeon_FreedByBribe"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "78",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "46",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "72": {
+          "id": "72",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "55",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "94": {
+      "id": "94",
+      "speaker": "Brem",
+      "text": "Well don't you cut a fine figure. Want your portrait done?",
+      "context": "",
+      "checkflags": [
+        "PLA_ZhentDungeon_Zhent03_HasMet = False",
+        "PLA_DoubtingArtist_State_Dead = False",
+        "ZhentDungeon_FreedByBribe = False"
+      ],
+      "setflags": [
+        "PLA_ZhentDungeon_Zhent03_HasMet",
+        "PLA_DoubtingArtist_Event_StartInclusion"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "78",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "26": {
+          "id": "26",
+          "speaker": "Brem",
+          "text": "If you have the gold, my pet artist will make you a most heroical likeness.",
+          "context": "",
+          "checkflags": [
+            "HUMAN"
+          ],
+          "setflags": [
+            "PLA_DoubtingArtist_Knows_CanGetPortrait"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "78",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "47": {
+              "id": "47",
+              "speaker": "Player",
+              "text": "It's not the art I want to buy - it's the artist.",
+              "context": "",
+              "checkflags": [
+                "PLA_DoubtingArtist_State_Dead = False",
+                "PLA_DoubtingArtist_Knows_Kidnapped",
+                "PLA_DoubtingArtist_Event_FreedByPersuade = False",
+                "ZhentDungeon_FreedByBribe = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "78",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "73": {
+                  "id": "73",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "44",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "32": {
+              "id": "32",
+              "speaker": "Player",
+              "text": "He's not a pet, he's a prisoner - let him go.",
+              "context": "",
+              "checkflags": [
+                "ZhentDungeon_MeetArtist"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "78",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "78": {
+                  "id": "78",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "31",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "88": {
+              "id": "88",
+              "speaker": "Player",
+              "text": "You have a 'pet artist'?",
+              "context": "",
+              "checkflags": [
+                "ZhentDungeon_MeetArtist = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "78",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "79": {
+                  "id": "79",
+                  "speaker": "Brem",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "78",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "59": {
+                  "id": "59",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "12",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "60": {
+                      "id": "60",
+                      "speaker": "Brem",
+                      "text": "Let's say we're his patrons, yeah? Found him wandering the wilds alone.",
+                      "context": "CinematicNodeContext: Showing the prisoner artist.",
+                      "checkflags": [],
+                      "setflags": [
+                        "PLA_DoubtingArtist_Knows_Kidnapped"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "12",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "101": {
+                          "id": "101",
+                          "speaker": "Brem",
+                          "text": "He needs protection. And if his paintings cover our costs - so much the better, eh?",
+                          "context": "CinematicNodeContext: Showing the prisoner artist.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "12",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "100": {
+                              "id": "100",
+                              "speaker": "Player",
+                              "text": "'Protection'. It sounds a bit more like kidnapping.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "12",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "31": {
+                                  "id": "31",
+                                  "speaker": "Brem",
+                                  "text": "You looking to buy him? I'm open to offers, mate. Threats, not so much.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "12",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "89": {
+                                      "id": "89",
+                                      "speaker": "Player",
+                                      "text": "Fine, I'll buy him. How much?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "12",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "109": {
+                                          "id": "109",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "44",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "69": {
+                                      "id": "69",
+                                      "speaker": "Player",
+                                      "text": "ROAR.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "BERSERKER"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "12",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "113": {
+                                          "id": "113",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "87": {
+                                              "id": "87",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "10",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "67": {
+                                          "id": "67",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "95": {
+                                              "id": "95",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "66",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "96": {
+                                      "id": "96",
+                                      "speaker": "Player",
+                                      "text": "We can skip threats and go straight to blades, if you like.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "BERSERKER = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [
+                                        "Gale 1",
+                                        "Lae'zel 1",
+                                        "Shadowheart 1",
+                                        "Wyll 1",
+                                        "Karlach 1"
+                                      ],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "12",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "92": {
+                                          "id": "92",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "12",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "10": {
+                                              "id": "10",
+                                              "speaker": "Brem",
+                                              "text": "All right mate, all right - no need to get arsey about it.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "PLA_DoubtingArtist_Event_FreedByPersuade"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "12",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "11": {
+                                          "id": "11",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "66": {
+                                              "id": "66",
+                                              "speaker": "Brem",
+                                              "text": "Look, mate - this don't have to get violent, right? You want him, pay for him.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "PLA_ZhentDungeon_Zhent03_FailedPersuade"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "54": {
+                                      "id": "54",
+                                      "speaker": "Player",
+                                      "text": "If he's as talented as you say, someone will be looking for him.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [
+                                        "Gale 1",
+                                        "Lae'zel 1",
+                                        "Shadowheart 1",
+                                        "Wyll 1",
+                                        "Karlach 1"
+                                      ],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "98",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "62": {
+                                          "id": "62",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "7": {
+                                              "id": "7",
+                                              "speaker": "Brem",
+                                              "text": "These artsy tossers always have friends in high places. That's why they're valuable.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "PLA_DoubtingArtist_Event_FreedByPersuade"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "1": {
+                                                  "id": "1",
+                                                  "speaker": "Brem",
+                                                  "text": "But... aye. Might be we've drawn enough attention to this place.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "12": {
+                                                      "id": "12",
+                                                      "speaker": "Brem",
+                                                      "text": "Take the moany bastard, if he means that much to ya. Doubt his crap would sell anyway.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "17": {
+                                          "id": "17",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "56": {
+                                              "id": "56",
+                                              "speaker": "Brem",
+                                              "text": "I expect so. And whoever wants him had best bring a heap of coin.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "PLA_ZhentDungeon_Zhent03_FailedPersuade"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "111": {
+                                      "id": "111",
+                                      "speaker": "Player",
+                                      "text": "Here's my offer: give me your slave, or become mine.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "REALLY_GITHYANKI"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [
+                                        "Gale 1",
+                                        "Lae'zel 1",
+                                        "Shadowheart 1",
+                                        "Wyll 1",
+                                        "Karlach 1"
+                                      ],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "98",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "43": {
+                                          "id": "43",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "35": {
+                                              "id": "35",
+                                              "speaker": "Brem",
+                                              "text": "Hey - I was just looking to make a little coin. Ain't after a mess.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "PLA_DoubtingArtist_Event_FreedByPersuade"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "45": {
+                                                  "id": "45",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "12",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "14": {
+                                          "id": "14",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "8": {
+                                              "id": "8",
+                                              "speaker": "Brem",
+                                              "text": "Counter-offer. Come back with coin, and I'll pretend you're as scary as you think you are.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "PLA_ZhentDungeon_Zhent03_FailedPersuade"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "30": {
+                                      "id": "30",
+                                      "speaker": "Player",
+                                      "text": "Art's more valuable once the creator is dead. I can arrange that.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "ROGUE"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [
+                                        "Gale 1",
+                                        "Lae'zel 1",
+                                        "Shadowheart 1",
+                                        "Wyll 1",
+                                        "Karlach 1"
+                                      ],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "98",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "98": {
+                                          "id": "98",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "82": {
+                                              "id": "82",
+                                              "speaker": "Brem",
+                                              "text": "What, kill him and the price of his drawings goes up? Bloody clever, that.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "PLA_DoubtingArtist_Event_FreedByPersuade"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "29": {
+                                                  "id": "29",
+                                                  "speaker": "Brem",
+                                                  "text": "Go on, then - but don't kill him here. He's going to be a bleater, I know it.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "25": {
+                                          "id": "25",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "103": {
+                                              "id": "103",
+                                              "speaker": "Brem",
+                                              "text": "What, reckon I can't deal with him myself? It's not a bad idea, mind...",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "PLA_ZhentDungeon_Zhent03_FailedPersuade"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "2": {
+                                                  "id": "2",
+                                                  "speaker": "Brem",
+                                                  "text": "But we've gabbed enough. You got something to trade or what?",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "70": {
+                                                      "id": "70",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "46",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    },
+                                                    "23": {
+                                                      "id": "23",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "18",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "114": {
+                                      "id": "114",
+                                      "speaker": "Player",
+                                      "text": "If this artist were to tragically expire, his portfolio would become finite - therefore priceless.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "BARD"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "98",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "77": {
+                                      "id": "77",
+                                      "speaker": "Player",
+                                      "text": "Slavekeeping's bad for business with any halfway-moral customer. Let him go.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "PALADIN"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "49": {
+                                          "id": "49",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "96",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "90": {
+                                      "id": "90",
+                                      "speaker": "Player",
+                                      "text": "Forget the artist - do you have anything else to trade?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "0": {
+                                          "id": "0",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "76",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "5": {
+                              "id": "5",
+                              "speaker": "Player",
+                              "text": "Sounds fair. I'll take a portrait, then.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "84": {
+                                  "id": "84",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "57",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "76": {
+                              "id": "76",
+                              "speaker": "Player",
+                              "text": "Do you have anything else to trade?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "106": {
+                                  "id": "106",
+                                  "speaker": "Brem",
+                                  "text": "Of course. Got some interesting stock for a friend of the family.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "PLA_ZhentDungeon_State_AllowedSpecialTrade"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "105": {
+                                      "id": "105",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "trade",
+                                      "children": {
+                                        "74": {
+                                          "id": "74",
+                                          "speaker": "Brem",
+                                          "text": "Pleasure.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "51": {
+                                  "id": "51",
+                                  "speaker": "Brem",
+                                  "text": "Plenty, if the finer things don't appeal.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "PLA_ZhentDungeon_State_AllowedSpecialTrade = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "20": {
+                                      "id": "20",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "trade",
+                                      "children": {
+                                        "33": {
+                                          "id": "33",
+                                          "speaker": "Brem",
+                                          "text": "Can't show you the good stuff 'til Zarys gives the say-so, mind. Friends of the Zhent only.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "22": {
+              "id": "22",
+              "speaker": "Player",
+              "text": "I do cut a fine figure. I'll take one.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "57": {
+                  "id": "57",
+                  "speaker": "Brem",
+                  "text": "You've got an eye for quality. Every noble in Baldur's Gate will be after one of these.",
+                  "context": "CinematicNodeContext: Showing the prisoner artist.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "61": {
+                      "id": "61",
+                      "speaker": "Brem",
+                      "text": "Tell him I sent you - and if he stains it up with his sniffling, there'll be hell to pay.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "13": {
+              "id": "13",
+              "speaker": "Player",
+              "text": "No, thanks - I just want to trade.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "83": {
+                  "id": "83",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "46",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "18": {
+              "id": "18",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "71": {
+          "id": "71",
+          "speaker": "Brem",
+          "text": "If you have the gold, my pet artist will make you a most heroical likeness. Follow the whining.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "38": {
+              "id": "38",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "26",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "108": {
+      "id": "108",
+      "speaker": "Brem",
+      "text": "Something I can help you with?",
+      "context": "",
+      "checkflags": [
+        "PLA_ZhentDungeon_Zhent03_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "91",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

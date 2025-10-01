@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "synopsis": "Mid combat dialogue between the Bhaal Cultists who are attacking the Players and tadpoled Flaming Fist Mercenaries who come in to aid the Players. Players mostly just watch the exchange and learn about the infighting between the tadpoled Absolutists and the Bhaal Cultists",
+    "how_to_trigger": "Automatically triggers at the start of the combat round after the Flaming Fists join the initiative in the combat against the Cultists in the Park ambush. Teleport to S_Debug_LOW_Park and walk towards waterfall a tthe rear to start the ambush sequence."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Reaper of Bhaal Clotilde",
+      "text": "Keep out of this, Captain. Do not forget who you serve.",
+      "context": "CinematicNodeContext: Gestures to his temple on 'who you serve', in reference to a tadpole.\rNodeContext: Dismissive",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Manip Edenosa",
+          "text": "Of course, apologies. I warned them not to interfere. I...",
+          "context": "NodeContext: Admonished/servile, then trailing off at the end, words failing her.",
+          "checkflags": [
+            "LOW_Park_GuardPreCombat_Event_WarnedAgainstInterference"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "9",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Manip Edenosa",
+          "text": "Of course, I just thought you might need assistance. I...",
+          "context": "NodeContext: Admonished/servile, then trailing off at the end, words failing her.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Narrator",
+              "text": "*Again, you feel her tadpole, but something's... off.*",
+              "context": "",
+              "checkflags": [
+                "LOW_Park_GuardPreCombat_Event_TadpoleRecognition",
+                "ILLITHID"
+              ],
+              "setflags": [],
+              "ruletags": [
+                "ILLITHID",
+                "TRUESOUL"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*You feel an all-too-familiar squirm in the recesses of your mind - the Fist has a tadpole. But something's... off.*",
+              "context": "InternalNodeContext: Only if the player did not have a moment of tadpole recognition with Cracklewall already",
+              "checkflags": [
+                "LOW_Park_GuardPreCombat_Event_TadpoleRecognition = False",
+                "ILLITHID"
+              ],
+              "setflags": [
+                "LOW_Park_GuardPreCombat_Event_TadpoleRecognition"
+              ],
+              "ruletags": [
+                "ILLITHID",
+                "TRUESOUL"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "12",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Manip Edenosa",
+                  "text": "Not I. We.",
+                  "context": "CinematicNodeContext: Cracklewall's face twitches and grimaces, before speaking in a halting, croaked manner.\rNodeContext: A strained, angry croak (She is being remotely possessed by a powerful netherbrain, which now speaks through her).",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "12",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "Manip Edenosa",
+                      "text": "And we. Do not. Serve.",
+                      "context": "NodeContext: A halting, croaked manner. (She is being remotely possessed by a powerful netherbrain, which now speaks through her).",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "12",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "12": {
+                          "id": "12",
+                          "speaker": "Reaper of Bhaal Clotilde",
+                          "text": "Defective. Very well - another offering to Bhaal.",
+                          "context": "CinematicNodeContext: Sneering\rNodeContext: Pronounced 'bawl'. Recognising something's amiss.",
+                          "checkflags": [
+                            "LOW_Park_Event_PlayersSidedWithCutlists"
+                          ],
+                          "setflags": [
+                            "FactionHostileToPlayerGroupAfterDialog"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "2": {
+                          "id": "2",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_Park_Event_PlayersSidedWithCutlists = False"
+                          ],
+                          "setflags": [
+                            "LOW_Park_Event_GuardsJoinCombat",
+                            "FactionHostileToPlayerGroupAfterDialog"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "alias",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "7",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Reaper of Bhaal Clotilde",
+      "text": "Join us, captain. Your service is welcome.",
+      "context": "",
+      "checkflags": [
+        "LOW_Park_Event_PlayersSidedWithCutlists"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Manip Edenosa",
+          "text": "I live to serve.",
+          "context": "NodeContext: as if hypnotised",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "synopsis": "the drow commander and goblins arrive during the attack on the grove to find the player has already gone hostile to the tieflings by attacking them. The drow is amused that the player would start the slaughter without her and either joins them to finish off the tieflings, or gives futher orders if all are dead",
+    "how_to_trigger": "Repro Steps:1. Start the game2. loadlevel WLD_Main_A3. oe readyattackonden4. Enter the grove and go to the top of the gate.5. Attack any tiefling.6. killcombat."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*A splinter of ice works its way into your mind, drowning out the goblins' battle cries.*",
+      "context": "CinematicNodeContext: The sound of goblins can be heard from the forest. The drow-led raiding party emerges from the forest and arrive outside the gates\rNodeContext: describing an uncomfortable feeling as a drow prepares to speak with us telepathically",
+      "checkflags": [],
+      "setflags": [
+        "DEN_AttackOnDen_Event_EnemiesAppear"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Nightwarden Minthara",
+              "text": "Open the gate.",
+              "context": "NodeContext: speaking telepathically (we do not see her, only hear her); a command",
+              "checkflags": [
+                "DEN_General_State_GateOpened = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Nightwarden Minthara",
+                  "text": "Exquisite work, True Soul. Now we must make sure nothing is hidden in their lair. Join me there.",
+                  "context": "NodeContext: speaking telepathically (we do not see her, only hear her); a command",
+                  "checkflags": [
+                    "DEN_AttackOnDen_State_CaveTieflingsDead"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "0": {
+                  "id": "0",
+                  "speaker": "Nightwarden Minthara",
+                  "text": "The way is clear. Now we can cleanse this place completely. Kill everyone.",
+                  "context": "NodeContext: speaking telepathically (we do not see her, only hear her); a command",
+                  "checkflags": [
+                    "DEN_AttackOnDen_State_CaveTieflingsDead = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

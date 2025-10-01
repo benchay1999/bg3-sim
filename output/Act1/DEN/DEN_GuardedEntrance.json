@@ -1,0 +1,570 @@
+{
+  "metadata": {
+    "synopsis": "Three druids guard the entrance to the inner part of their sanctuary, blocking any outsiders. They're on edge, having recently driven back some outraged tiefling refugees who know the druids hold one of their children captive. One of the druids transformed into a bear during this confrontation, causing the tieflings to back down. Now we try to gain passage while tempers are still running hot.",
+    "how_to_trigger": "Travel to the Sacred Pond area of the grove and interact with the guards manning the steps once the tieflings have been repelled."
+  },
+  "dialogue": {
+    "12": {
+      "id": "12",
+      "speaker": "Jeorna",
+      "text": "Stop! Move back at once.",
+      "context": "InternalNodeContext: Player is in the trigger S_DEN_PondTrespassBox",
+      "checkflags": [
+        "DEN_GuardedEntrance_Event_ApproachingFromPool"
+      ],
+      "setflags": [
+        "DEN_GuardedEntrance_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "25": {
+          "id": "25",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "20",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "26": {
+      "id": "26",
+      "speaker": "Maggran",
+      "text": "*Roar!*",
+      "context": "CinematicNodeContext: Threatening roar + aggressive stance from the bear/druid. But he doesn't attack.",
+      "checkflags": [
+        "DEN_GuardedEntrance_HasMet = False"
+      ],
+      "setflags": [
+        "DEN_GuardedEntrance_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Jeorna",
+          "text": "Calm, Maggran. Give them a chance.",
+          "context": "CinematicNodeContext: The druid guard raises a hand to her bear colleague, stilling him.\rNodeContext: She's addressing the bear, but 'give him/her a chance' is more for the player's benefit.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Jeorna",
+              "text": "You - get back.",
+              "context": "CinematicNodeContext: Jeorna (druid1) turns to address the player.\rNodeContext: Entry not up for discussion.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "23",
+                  "link": "8",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "30": {
+                  "id": "30",
+                  "speaker": "Player",
+                  "text": "Why? What's so special down here?",
+                  "context": "",
+                  "checkflags": [
+                    "0884581d-9f92-0a34-9440-6a54c0813bbe_WhyNoEntry = False"
+                  ],
+                  "setflags": [
+                    "0884581d-9f92-0a34-9440-6a54c0813bbe_WhyNoEntry"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "8",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "16": {
+                      "id": "16",
+                      "speaker": "Jeorna",
+                      "text": "It's forbidden to outsiders - Kagha's orders.",
+                      "context": "CinematicNodeContext: Bear-druid glowers menacingly when druid says 'see what happens'",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "Player",
+                  "text": "I'm not looking for trouble. Can't you just let me by?",
+                  "context": "InternalNodeContext: New node post-EA (GUS-149709)",
+                  "checkflags": [
+                    "DRUID = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "8",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "Jeorna",
+                      "text": "No. And you'll find trouble all the same, unless you get out of my sight.",
+                      "context": "InternalNodeContext: New node post-EA (GUS-149709)",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "Player",
+                  "text": "I am a druid, same as yourself. Allow me to pass and pay my respects. Please.",
+                  "context": "",
+                  "checkflags": [
+                    "DRUID"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "10",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "Jeorna",
+                      "text": "Druid or not, you're still an outsider to this place. Entry is forbidden.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "8": {
+                          "id": "8",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "13",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "15": {
+                  "id": "15",
+                  "speaker": "Player",
+                  "text": "Ignore them and proceed.",
+                  "context": "",
+                  "checkflags": [
+                    "0884581d-9f92-0a34-9440-6a54c0813bbe_TryPushingPast = False"
+                  ],
+                  "setflags": [
+                    "0884581d-9f92-0a34-9440-6a54c0813bbe_TryPushingPast"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "10",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Maggran",
+                      "text": "*Roar!*",
+                      "context": "CinematicNodeContext: The bear roars and looms ferociously.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "10",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "14": {
+                          "id": "14",
+                          "speaker": "Jeorna",
+                          "text": "Stop! Another step and Maggran will tear you open like a sack of grain.",
+                          "context": "CinematicNodeContext: Gestures towards the bear on 'and Maggran'.\rNodeContext: Anger starting to boil over. Between the refugees and us, she's had enough of outsiders and their demands, Stop is addressed to the player - they're pushing their luck and Jeorna's bear-druid colleague is ready to rip them apart.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "10",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "23": {
+                              "id": "23",
+                              "speaker": "Player",
+                              "text": "If it weren't for me, you'd be overrun by goblins by now. I'll go where I please.",
+                              "context": "",
+                              "checkflags": [
+                                "0884581d-9f92-0a34-9440-6a54c0813bbe_ProceedToSecondStage = False"
+                              ],
+                              "setflags": [
+                                "0884581d-9f92-0a34-9440-6a54c0813bbe_ProceedToSecondStage"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "10",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "13": {
+                                  "id": "13",
+                                  "speaker": "Jeorna",
+                                  "text": "Keep back. Force my hand, and I'll show you its claws.",
+                                  "context": "CinematicNodeContext: Bear-druid glowers menacingly when druid says 'show you its claws'.\rNodeContext: Final warning.",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "10",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "0": {
+                                      "id": "0",
+                                      "speaker": "Mino",
+                                      "text": "A moment, Jeorna.",
+                                      "context": "CinematicNodeContext: Mino  interjects, approaching Jeorna's side.",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "10",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "7": {
+                                          "id": "7",
+                                          "speaker": "Jeorna",
+                                          "text": "What...? Oh. I understand.",
+                                          "context": "CinematicNodeContext: Mino whispers something inaudible to Jeorna, who glances at you with realisation of something.",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "10",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "18": {
+                                              "id": "18",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [
+                                                "DROWELF"
+                                              ],
+                                              "setflags": [
+                                                "DEN_GroveConflict_Knows_KaghaRequestedPlayers"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "10",
+                                              "is_end": false,
+                                              "node_type": "alias",
+                                              "children": {
+                                                "29": {
+                                                  "id": "29",
+                                                  "speaker": "Jeorna",
+                                                  "text": "But a word of warning. One wrong move and every single animal here will tear you apart.",
+                                                  "context": "NodeContext: This is an extra warning spoken to drow players in particular - Jeorna (and many others) consider them a threat.",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "DEN_GuardedEntrance_State_ClearToPass"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "10": {
+                                              "id": "10",
+                                              "speaker": "Jeorna",
+                                              "text": "You - apparently Kagha wants to see you. Go ahead.",
+                                              "context": "CinematicNodeContext: Jeorna's attention is fully with the player again. She waves them through the checkpoint.\rNodeContext: Sudden change of tone. She bruskly allows the player to pass.",
+                                              "checkflags": [
+                                                "DROWELF = False"
+                                              ],
+                                              "setflags": [
+                                                "DEN_GroveConflict_Knows_KaghaRequestedPlayers",
+                                                "DEN_GuardedEntrance_State_ClearToPass"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "4": {
+                              "id": "4",
+                              "speaker": "Player",
+                              "text": "No need for threats. Why can't I move around freely here?",
+                              "context": "",
+                              "checkflags": [
+                                "0884581d-9f92-0a34-9440-6a54c0813bbe_WhyNoEntry = False"
+                              ],
+                              "setflags": [
+                                "0884581d-9f92-0a34-9440-6a54c0813bbe_WhyNoEntry"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "16",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "16",
+                                  "is_end": false,
+                                  "node_type": "alias",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "3": {
+                              "id": "3",
+                              "speaker": "Player",
+                              "text": "Attack them.",
+                              "context": "",
+                              "checkflags": [
+                                "0884581d-9f92-0a34-9440-6a54c0813bbe_TryPushingPast"
+                              ],
+                              "setflags": [
+                                "DEN_GuardedEntrance_Event_StartDruidAttack"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "9": {
+                                  "id": "9",
+                                  "speaker": "Maggran",
+                                  "text": "*Roar!*",
+                                  "context": "CinematicNodeContext: Extra-hostile. Combat breaks out immediately after this node.\rNodeContext: SFX only",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "2": {
+                              "id": "2",
+                              "speaker": "Player",
+                              "text": "Leave.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "TeleportOutOfTrespass"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "17": {
+                  "id": "17",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "2",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Jeorna",
+      "text": "You're testing my patience. Leave, unless you want to see my other face.",
+      "context": "",
+      "checkflags": [
+        "DEN_GuardedEntrance_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "20",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

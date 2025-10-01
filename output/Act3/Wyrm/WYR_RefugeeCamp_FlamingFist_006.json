@@ -1,0 +1,406 @@
+{
+  "metadata": {
+    "synopsis": "A short dialog for the female flaming fist caster reluctantly guarding the Big Barn. The barn holds donations for the refugees. Same dialog will be used in a case of this flaming fist catching the player inside the barn.",
+    "how_to_trigger": "BGO_Main_A, refugee camp, 64; 43; -108"
+  },
+  "dialogue": {
+    "5": {
+      "id": "5",
+      "speaker": "Fist Varone",
+      "text": "Stop! This place is off-limits - and you're off to a cell.",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_FlamingFistManip_State_Defeated",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "18",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Fist Varone",
+      "text": "'Spose the Manip had the right idea, letting you poke around. Good job finding those explosives.",
+      "context": "NodeContext: grudgingly, reluctanctly congratulatory",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_006_Investigated = False",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_006_Investigated"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Fist Varone",
+      "text": "I can see you over there, you know. What are you doing?",
+      "context": "NodeContext: Annoyed",
+      "checkflags": [
+        "WYR_RefugeeCamp_FlamingFistManip_State_Defeated = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "There's dangerous things in here I need to investigate!",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Knows_SecretInBasement"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Fist Varone",
+              "text": "I bet there are. Come on - let's see what Nestor thinks about these 'dangerous things'.",
+              "context": "NodeContext: Clearly doesn't believe the player; sarcastic",
+              "checkflags": [
+                "WYR_RefugeeCamp_FlamingFistManip_State_Defeated = False"
+              ],
+              "setflags": [
+                "WYR_RefugeeCamp_Event_ManipForceInterrogate",
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Just taking a peek inside this barn, is all - I didn't realise it wasn't allowed.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Fist Varone",
+              "text": "It is not. But I'll let Nestor teach you the rules.",
+              "context": "NodeContext: Irritated",
+              "checkflags": [
+                "WYR_RefugeeCamp_FlamingFistManip_State_Defeated = False"
+              ],
+              "setflags": [
+                "WYR_RefugeeCamp_Event_ManipForceInterrogate",
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "15": {
+          "id": "15",
+          "speaker": "Player",
+          "text": "All right, all right - you got me. Now what?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Fist Varone",
+              "text": "We go and have a little chat with Nestor. Well, you do.",
+              "context": "NodeContext: Mildly patronising",
+              "checkflags": [
+                "WYR_RefugeeCamp_FlamingFistManip_State_Defeated = False"
+              ],
+              "setflags": [
+                "WYR_RefugeeCamp_Event_ManipForceInterrogate",
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Attack before she raises the alarm.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Fist Varone",
+      "text": "Thank Tyr the Manip found those explosive toys. Who knows what could've happened...",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "17": {
+          "id": "17",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "18",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Fist Varone",
+      "text": "Not sure why you're poking around here. Just smells of pig piss.",
+      "context": "NodeContext: Mildly irritated",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_006"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Fist Varone",
+      "text": "Look - you found the explosives. Grand. Surely you've no reason to keep bothering me.",
+      "context": "NodeContext: Getting annoyed now",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_006_Investigated",
+        "WYR_RefugeeCamp_State_ManipInvestigatedToys",
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Fist Varone",
+      "text": "Not sure why you were so keen to get in the barn, but if the Manip says so...",
+      "context": "NodeContext: Mildly surprised (but still grumpy)",
+      "checkflags": [
+        "WYR_RefugeeCamp_State_BigBarnGainedAccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Fist Varone",
+      "text": "Back again? Did you not learn the first time? Right - off to the cells with you.",
+      "context": "NodeContext: Angry; the player is really pushing their luck now",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFistManip_Trespassing",
+        "WYR_RefugeeCamp_State_GuardsAlerted = False",
+        "WYR_RefugeeCamp_Event_BigBarnTrespassReact"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Allow yourself to be taken to prison.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "Allow_Arrest"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "12": {
+          "id": "12",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "9",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Fist Varone",
+      "text": "Be on your way, citizen. Got a lot to keep my eye on round here.",
+      "context": "NodeContext: Dismissive",
+      "checkflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_006 = False"
+      ],
+      "setflags": [
+        "WYR_RefugeeCamp_HasMet_FlamingFist_006"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

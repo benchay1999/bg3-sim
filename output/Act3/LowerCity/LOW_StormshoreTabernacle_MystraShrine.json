@@ -1,0 +1,605 @@
+{
+  "metadata": {
+    "synopsis": "Dialog when interactin with the shrine dedicated to Mystra in Stormshore Tabernacle. All players will be able to read some lore about the god. Additionally, if the player is a cleric of Mystra they'll be able to give offerings and pray/communicate with the god to get a blessing.",
+    "how_to_trigger": "Interact with the Mystra Shrine in CTY_Main_A 100; 44; -19"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*Mystra has already spoken. There is nothing else for you here.*",
+      "context": "",
+      "checkflags": [
+        "REALLY_GALE"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*Mystra, Goddess of Magic, is offended that you would rob her altar. Her disapproval hovers heavily around you - best to keep your hands to yourself.*",
+      "context": "",
+      "checkflags": [
+        "LOW_StormshoreTabernacle_State_AngeredMystra"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*Mystra's idol stands before you, as silent as the goddess herself.*",
+      "context": "",
+      "checkflags": [
+        "ORI_Gale_State_MystraOM = False",
+        "ORI_Gale_MystraOM_State_RefusedOM = False",
+        "REALLY_GALE"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "23",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Narrator",
+          "text": "*You're not sure what you expected. After all, she's not deigned to speak with you for some time.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "29": {
+              "id": "29",
+              "speaker": "Narrator",
+              "text": "*If your refusal to detonate the orb did not get her attention, perhaps pursuing the crown will. But until then, it seems you are on your own.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Narrator",
+      "text": "*You see an altar dedicated to Mystra.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "23",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "17",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "31": {
+      "id": "31",
+      "speaker": "Narrator",
+      "text": "*Mystra is attentive - the Lady of Magic welcomes your presence.*",
+      "context": "",
+      "checkflags": [
+        "CLERIC_MYSTRA"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "23",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "17": {
+          "id": "17",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "204304c2-b72b-da77-3333-84f1943a48aa_GaleOM = False",
+            "ORI_Inclusion_Gale"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "23",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "Gale",
+              "text": "Whatever you want with this idol, I'd prefer we make it quick. I'm not sure I'm comfortable catching Mystra's eye, even if it is made of stone.",
+              "context": "",
+              "checkflags": [
+                "ORI_Gale_State_MystraOM = False",
+                "ORI_Gale_MystraOM_State_RefusedOM = False",
+                "204304c2-b72b-da77-3333-84f1943a48aa_GaleOM_OnlyOnce = False"
+              ],
+              "setflags": [
+                "204304c2-b72b-da77-3333-84f1943a48aa_GaleOM",
+                "204304c2-b72b-da77-3333-84f1943a48aa_GaleOM_OnlyOnce"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "23",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_End_Gale"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "23",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Player",
+                      "text": "You don't want to make an offering? A prayer of some kind?",
+                      "context": "",
+                      "checkflags": [
+                        "204304c2-b72b-da77-3333-84f1943a48aa_GaleOM",
+                        "REALLY_GALE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "14": {
+                          "id": "14",
+                          "speaker": "Gale",
+                          "text": "Trust me - it will take a lot more than a few gold pieces and some fervent thoughts to convince Mystra to break her silence. On my account, at least.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "16": {
+                              "id": "16",
+                              "speaker": "Gale",
+                              "text": "Commune with her as you see fit. I've no wish to stand between you and any inspiration she might deign to offer.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "Player",
+                      "text": "Read the words inscribed on the altar.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "15": {
+                          "id": "15",
+                          "speaker": "Narrator",
+                          "text": "*Mystra, Mother of All Magic, is the patron of wizards, and often called upon by other spellcasters as well. She's said to be a jealous goddess.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "28": {
+                              "id": "28",
+                              "speaker": "Narrator",
+                              "text": "*As her cleric, even standing in her statue's presence makes you feel more sensitive to the Weave, and to her power.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_MYSTRA"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "32": {
+                              "id": "32",
+                              "speaker": "Player",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "4": {
+                                  "id": "4",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "30": {
+                                      "id": "30",
+                                      "speaker": "Narrator",
+                                      "text": "*Even though you do not follow her, you feel her power resonating from the statue. She is the One True Spell at the heart of all spells. The Weave could not be in better hands.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "19": {
+                                  "id": "19",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "27": {
+                                      "id": "27",
+                                      "speaker": "Narrator",
+                                      "text": "*Your studies of Religion don't suffice to tell you more.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "1": {
+                      "id": "1",
+                      "speaker": "Player",
+                      "text": "Make an offering to Mystra.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_MystraOfferingGiven = False",
+                        "LOW_StormshoreTabernacle_State_AnyOfferingGiven = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "25": {
+                          "id": "25",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "23",
+                          "is_end": false,
+                          "node_type": "trade",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "23",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "7": {
+                                  "id": "7",
+                                  "speaker": "Narrator",
+                                  "text": "*The amount you've offered proves your faith and devotion. You may now pray here once a day for a divine blessing.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "LOW_StormshoreTabernacle_State_MystraOfferingGiven"
+                                  ],
+                                  "setflags": [
+                                    "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Wyll 1",
+                                    "Minthara -1",
+                                    "Astarion -1"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "23",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "23": {
+                                      "id": "23",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "LOW_StormshoreTabernacle_Event_GiveSomething = False"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "9": {
+                                          "id": "9",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "8",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "10": {
+                                  "id": "10",
+                                  "speaker": "Narrator",
+                                  "text": "*Your offering is accepted, but more evidence of devotion is required.*",
+                                  "context": "",
+                                  "checkflags": [
+                                    "LOW_StormshoreTabernacle_Event_GiveSomething",
+                                    "LOW_StormshoreTabernacle_State_MystraOfferingGiven = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "23",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "6": {
+                      "id": "6",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from Mystra.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_MystraOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "21": {
+                          "id": "21",
+                          "speaker": "Narrator",
+                          "text": "Show reverence before your deity and open your soul to their divine power.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "26": {
+                              "id": "26",
+                              "speaker": "Narrator",
+                              "text": "*The Mistress of Magic blesses you with an enhanced attunement to the Weave. Praise her!*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "20": {
+                      "id": "20",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

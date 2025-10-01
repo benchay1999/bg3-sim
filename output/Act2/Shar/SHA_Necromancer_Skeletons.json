@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "synopsis": "A one-liner for the Necromancer's skeletons. Used after shadowquake fight has concluded. If the player hasn't yet spoken to the necromancer in person, they're directed to see him. Otherwise, they're told to not bother the skeletons. The necromancer is in fact controlling the skeletons and speaking through them here.",
+    "how_to_trigger": "After fight with ghost dark justiciars in library (around -717; -816)"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "GROUP_SHA_Necromancer_Skeletons",
+      "text": "Enough - my creations have nothing to say to you.",
+      "context": "InternalNodeContext: This hasmet after the player has met the necromancer in his chambers\rNodeContext: Hint of annoyance",
+      "checkflags": [
+        "SHA_Necromancer_Skeletons_State_PostFight_Met",
+        "SHA_Necromancer_HasMet_AtTemple"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "GROUP_SHA_Necromancer_Skeletons",
+      "text": "Head inside, now.",
+      "context": "InternalNodeContext: This node after the shadowquake fight but before the player has met the necromancer in person\rNodeContext: Demanding",
+      "checkflags": [
+        "SHA_Necromancer_Skeletons_State_PostFight_Met = False",
+        "SHA_Necromancer_HasMet_AtTemple = False"
+      ],
+      "setflags": [
+        "SHA_Necromancer_Skeletons_State_PostFight_Met"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "GROUP_SHA_Necromancer_Skeletons",
+      "text": "Enough dawdling - come to my inner chambers.",
+      "context": "InternalNodeContext: This hasmet after the shadowquake fight but before the player has met the necromancer in person\rNodeContext: Impatient",
+      "checkflags": [
+        "SHA_Necromancer_Skeletons_State_PostFight_Met",
+        "SHA_Necromancer_HasMet_AtTemple = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "GROUP_SHA_Necromancer_Skeletons",
+      "text": "Leave my creations be - they must focus on their duties.",
+      "context": "InternalNodeContext: This node after the player has met the necromancer in his chambers\rNodeContext: Hint of annoyance",
+      "checkflags": [
+        "SHA_Necromancer_Skeletons_State_PostFight_Met = False",
+        "SHA_Necromancer_HasMet_AtTemple"
+      ],
+      "setflags": [
+        "SHA_Necromancer_Skeletons_State_PostFight_Met"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

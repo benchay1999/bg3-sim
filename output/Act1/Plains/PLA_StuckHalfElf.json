@@ -1,0 +1,889 @@
+{
+  "metadata": {
+    "synopsis": "Benryn finds himself faced with multiple crises in this dialogue. When the player finds him, he is frantic and coughing, trapped beneath a collapsed beam within a burning building. If the player rescues him, he frantically and desperately searches for his wife, who was outside when a band of goblins and drow attacked the inn they were staying at. Finally, if the player finds his wife's body, he is heartbroken - he believes her death is his fault, because of a silly argument that they had.\n\nWhen players first encounter Benryn, he is trapped beneath a heavy beam in a burning building. If the player helps him escape, Benryn joins the party until they exit the building safely. Once outside, Benryn is in shock at the carnage around him - bodies of goblins and humans litter the inn's courtyard. He snaps out of his shock when he thinks of his wife, who was outside when the raiding party arrived. He pleads for the player to help him find her - when players do, she is already dead. Pointed to her body, Benryn breaks down - the weight of guilt immediately crushing him.The barbarian class will have advantage in a strength check to lift the wreckage off Benryn, however if they fail, they can try again with a higher DC. Failure the second time will lead to more debris collapsing and killing Benryn.",
+    "how_to_trigger": "Repro steps:1. Start the game2. loadlevel WLD_Main_A3. goto -82.25, 43.56, 612.254. Talk to Benryn."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Benryn",
+      "text": "*Cough!*",
+      "context": "CinematicNodeContext: Stuck under wooden beam\rNodeContext: Coughing. He's pasing out. The room is full of smoke, and he's given up.",
+      "checkflags": [
+        "PLA_StuckHalfElf_State_Failed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "PLA_StuckHalfElf_State_Failed",
+        "BARBARIAN"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "28": {
+          "id": "28",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "36",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "40": {
+          "id": "40",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "16",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Benryn",
+      "text": "The fire - hurry! Get this thing off of me!",
+      "context": "CinematicNodeContext: Stuck under wooden beam\rNodeContext: Panicking, wheezing/coughing",
+      "checkflags": [
+        "PLA_StuckHalfElf_State_Failed = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "19",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "This wreckage is no challenge - cast it aside.",
+          "context": "InternalNodeContext: Barbarian + berserker subnode",
+          "checkflags": [
+            "PLA_StuckHalfElf_State_Failed = False",
+            "BARBARIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "32": {
+                  "id": "32",
+                  "speaker": "Benryn",
+                  "text": "Yes! You did it!",
+                  "context": "CinematicNodeContext: The player grimaces and aggressively flips the beam right off Benryn. It falls away off-screen.\rNodeContext: Surprised and elated (player freed him from wreckage)",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_StuckHalfElf_Event_Free"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "30",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "39": {
+              "id": "39",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "41",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "37": {
+          "id": "37",
+          "speaker": "Player",
+          "text": "Brace yourself to lift the wreckage.",
+          "context": "",
+          "checkflags": [
+            "PLA_StuckHalfElf_State_Failed = False",
+            "BARBARIAN = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "19",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "30": {
+                  "id": "30",
+                  "speaker": "Benryn",
+                  "text": "Almost... there!",
+                  "context": "CinematicNodeContext: Player lifts the beam a couple of inches. He rolls out from under the beam on \"There\". Player drops it after he's free.",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_StuckHalfElf_Event_Free"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Gale 1",
+                    "Wyll 1",
+                    "Karlach 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "38": {
+                      "id": "38",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "PLA_StuckHalfElf_State_Door3Destroyed = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "47": {
+                          "id": "47",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "44": {
+                      "id": "44",
+                      "speaker": "Benryn",
+                      "text": "Thank you, thank you!",
+                      "context": "",
+                      "checkflags": [
+                        "PLA_StuckHalfElf_State_Door3Destroyed"
+                      ],
+                      "setflags": [
+                        "PLA_StuckHalfElf_State_DoNotAddToParty",
+                        "Freed2"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "41": {
+              "id": "41",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "19",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "46": {
+                  "id": "46",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [
+                    "BARBARIAN"
+                  ],
+                  "setflags": [
+                    "PLA_StuckHalfElf_State_OneFailed",
+                    "PLA_StuckHalfElf_State_Failed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "19",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "36": {
+                      "id": "36",
+                      "speaker": "Player",
+                      "text": "You will not be beaten. Try harder - lift.",
+                      "context": "",
+                      "checkflags": [
+                        "BARBARIAN"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "20": {
+                          "id": "20",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "13": {
+                              "id": "13",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "32",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "15": {
+                          "id": "15",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "25": {
+                              "id": "25",
+                              "speaker": "Benryn",
+                              "text": "Careful, it's unsteady - NOO!",
+                              "context": "CinematicNodeContext: Barbarian player aggressively yanks at the wreckage, There's creaking from overhead, then some more wreckage collapses on Benryn, killing him.\rInternalNodeContext: This node if the barbarian fails their second strength check and Benryn dies.\rNodeContext: Alarmed, then a shout of terror as a barbarian accidentally causes wreckage to crush him dead",
+                              "checkflags": [],
+                              "setflags": [
+                                "CharacterDieAfterDialog"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "31": {
+                      "id": "31",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "16",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "Benryn",
+                  "text": "Damn... just go. I'm done for.",
+                  "context": "CinematicNodeContext: The beam doesn't budge.\rNodeContext: Resigned.",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_StuckHalfElf_State_OneFailed",
+                    "PLA_StuckHalfElf_State_Failed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Pretend the beam is too heavy to lift.",
+          "context": "",
+          "checkflags": [
+            "PLA_StuckHalfElf_State_Failed = False",
+            "BARD"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "34": {
+              "id": "34",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "23": {
+                  "id": "23",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: The bard player dramatically struggles (not really) with the fallen beam, trying several different heroic poses to shift it.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "8",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "Benryn",
+                      "text": "Oh gods, keep trying! My wife, Miri, she'll need my help!",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "21": {
+                          "id": "21",
+                          "speaker": "Player",
+                          "text": "Actually try to shift the beam.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "6": {
+                              "id": "6",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "36",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "29": {
+                          "id": "29",
+                          "speaker": "Player",
+                          "text": "It's stuck fast. I'll help your wife. Where is she?",
+                          "context": "",
+                          "checkflags": [
+                            "BARD"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "8",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "45": {
+                                  "id": "45",
+                                  "speaker": "Benryn",
+                                  "text": "Miri... We fought. She left with the dowry. She must be nearby. Please, find her, try and help.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "PLA_StuckHalfElf_Knows_MentionedDowry"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "8",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "7": {
+                              "id": "7",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "5": {
+                                  "id": "5",
+                                  "speaker": "Benryn",
+                                  "text": "Miri... No. There's no point.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "8": {
+                                      "id": "8",
+                                      "speaker": "Benryn",
+                                      "text": "Damn... just go. I'm done for.",
+                                      "context": "CinematicNodeContext: The beam doesn't budge.\rNodeContext: Resigned.",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "PLA_StuckHalfElf_State_OneFailed",
+                                        "PLA_StuckHalfElf_State_Failed"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "35": {
+                          "id": "35",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "16",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "43": {
+              "id": "43",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "23",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "42": {
+                  "id": "42",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "23",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "27": {
+                      "id": "27",
+                      "speaker": "Benryn",
+                      "text": "Look, are you actually going to help or just piss about?",
+                      "context": "NodeContext: really angry (understandably)",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "8",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "26": {
+          "id": "26",
+          "speaker": "Player",
+          "text": "Find leverage to shift the beam.",
+          "context": "",
+          "checkflags": [
+            "PLA_StuckHalfElf_State_Failed = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Benryn",
+                  "text": "I think... that's it!",
+                  "context": "CinematicNodeContext: Player pushes against the beam. Benryn wriggles out and stands.",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_StuckHalfElf_Event_Free"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Gale 1",
+                    "Wyll 1",
+                    "Karlach 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "30",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "48": {
+              "id": "48",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Benryn",
+                  "text": "Damn... just go. I'm done for.",
+                  "context": "CinematicNodeContext: The beam doesn't budge.\rNodeContext: Resigned.",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_StuckHalfElf_State_OneFailed",
+                    "PLA_StuckHalfElf_State_Failed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "PLA_StuckHalfElf_State_Failed"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Gale -1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

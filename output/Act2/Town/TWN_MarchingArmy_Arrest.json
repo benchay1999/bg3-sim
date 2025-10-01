@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "synopsis": "Dialog which happens when the player gets too close to the marching army. In the dialog the player can either back off or continue, and if you continue you get arrested and either thrown in prison in Moonrise Towers or in Corpse Pit in the Mind Flayer colony if the Prison Break has already happened."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*The countless distant silhouettes leave you no doubt - a veritable army swarms the path ahead.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "TWN_MarchingArmy_Arrest_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "ORI_Inclusion_Random"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Lae'zel",
+              "text": "We are mighty - but we've no chance to fell such a legion. We must turn back.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_LAEZEL"
+              ],
+              "setflags": [
+                "TWN_MarchingArmy_Event_AnotherCharacterJoined"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "11": {
+              "id": "11",
+              "speaker": "Shadowheart",
+              "text": "We're hardly pushovers, but let's not pretend we can take on an entire army.<br>",
+              "context": "NodeContext: Advising caution - party is approaching a large enemy force",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_SHADOWHEART"
+              ],
+              "setflags": [
+                "TWN_MarchingArmy_Event_AnotherCharacterJoined"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "4": {
+              "id": "4",
+              "speaker": "Karlach",
+              "text": "If I learned anything during the Blood War, it was when to retreat. We gotta turn back now.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_KARLACH"
+              ],
+              "setflags": [
+                "TWN_MarchingArmy_Event_AnotherCharacterJoined"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_End_Random"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "Player",
+                      "text": "I'm not afraid. We need to press on.",
+                      "context": "",
+                      "checkflags": [
+                        "TWN_MarchingArmy_Event_AnotherCharacterJoined"
+                      ],
+                      "setflags": [
+                        "TWN_MarchingArmy_Event_AnotherCharacterJoined = False"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "6": {
+                      "id": "6",
+                      "speaker": "Player",
+                      "text": "Let's head back. We're no match for an army.",
+                      "context": "",
+                      "checkflags": [
+                        "TWN_MarchingArmy_Event_AnotherCharacterJoined"
+                      ],
+                      "setflags": [
+                        "TWN_MarchingArmy_Event_BackedOff",
+                        "TWN_MarchingArmy_Event_AnotherCharacterJoined = False"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "7": {
+                      "id": "7",
+                      "speaker": "Player",
+                      "text": "Continue forward.",
+                      "context": "",
+                      "checkflags": [
+                        "TWN_MarchingArmy_Event_AnotherCharacterJoined = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "0": {
+                      "id": "0",
+                      "speaker": "Player",
+                      "text": "Turn back.",
+                      "context": "",
+                      "checkflags": [
+                        "TWN_MarchingArmy_Event_AnotherCharacterJoined = False"
+                      ],
+                      "setflags": [
+                        "TWN_MarchingArmy_Event_BackedOff"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "speaker": "Astarion",
+              "text": "There's a point where bravery becomes stupidity. And walking into that would be very, very stupid.",
+              "context": "NodeContext: Looking at a huge army in the distance",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_ASTARION"
+              ],
+              "setflags": [
+                "TWN_MarchingArmy_Event_AnotherCharacterJoined"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "9": {
+              "id": "9",
+              "speaker": "Wyll",
+              "text": "That's a whole lot of soldiers - a dead end in every sense of the term.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_WYLL"
+              ],
+              "setflags": [
+                "TWN_MarchingArmy_Event_AnotherCharacterJoined"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "12": {
+              "id": "12",
+              "speaker": "Gale",
+              "text": "Ketheric's army. I suppose I could end them all with a bang, but my target is the Absolute itself.<br>",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_GALE"
+              ],
+              "setflags": [
+                "TWN_MarchingArmy_Event_AnotherCharacterJoined"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*A monstrous army looms ahead.*",
+      "context": "",
+      "checkflags": [
+        "TWN_MarchingArmy_Arrest_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "13": {
+          "id": "13",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "0",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

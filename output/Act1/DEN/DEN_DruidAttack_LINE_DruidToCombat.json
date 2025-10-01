@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "synopsis": "The player angered the druids by tampering with the Idol of Silvanus of by performing a serious crime.Kagha reacts if it's triggering near her. Otherwise, 'generic' druids are used for the off screen voices and call to arms shot.Can also trigger if the player goes hostile to Kagha in dialogue.",
+    "how_to_trigger": "Steal the Idol of Silvanus or anger a druid with a serious crime.If a combat already starter, this plays on the player's turnsAll players in the druids and tieflings area are added to this transition dialog"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Sentry",
+      "text": "The idol - it's gone! Stolen!",
+      "context": "CinematicNodeContext: (idol stolen)\rInternalNodeContext: Reaction from druids if players steal the idol in their vicinity without being pacified first.",
+      "checkflags": [
+        "DEN_GroveConflict_Event_IdolMissingReaction"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Sentry",
+          "text": "The time has come. Remove the outsiders.",
+          "context": "NodeContext: A grim conclusion at the end - a call for a huge battle between druids and tieflings.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Sentry",
+              "text": "To arms!",
+              "context": "NodeContext: Calling for the druids to attack all the inhabitants of the grove.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "tagcinematic",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Sentry",
+      "text": "The outlander serves Zevlor!",
+      "context": "CinematicNodeContext: (Position: not in lair, not in cave)",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Kagha",
+      "text": "The outlander has betrayed us. I should have known. Druids! We cannot compromise any longer!",
+      "context": "CinematicNodeContext: (position: in lair, Kagha)\rInternalNodeContext: From attacking Kagha in gameplay (or performing any kind of crime that turns them hostile). Kagha reacts in priority if she is available. AFTER PATCH 5: this should be hooked to the node Sentry Druid so the rest of the scene plays\rNodeContext: Furious, calling the druids to arms.",
+      "checkflags": [
+        "DEN_DruidAttack_State_DruidToCombatTransitionInLair",
+        "DEN_ShadowDruid_State_CourtHostile = False",
+        "FEMALE"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Sentry",
+      "text": "The time has come. Remove the outsiders.",
+      "context": "CinematicNodeContext: (position: in lair, Kagha already talked / fallback)\rInternalNodeContext: From SnakesCourt or DEN_ShadowDruid_Leader\nOr, if Kagha is not available to speak",
+      "checkflags": [
+        "DEN_DruidAttack_State_DruidToCombatTransitionInLair"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

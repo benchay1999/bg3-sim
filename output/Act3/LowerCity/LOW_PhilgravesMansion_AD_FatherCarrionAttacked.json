@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "synopsis": "This one-liner triggers just after players attack Father Carrion. He reacts to the way in which the combat was triggered - if the player destroyed his heart he is furious, because his means of resurrecting is gone. In other instances, he knows his death will not be permanent and is more confident.",
+    "how_to_trigger": "Attacking Father Carrion for the first time. BGO_Main_A, 15; 43; 130"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Mystic Carrion",
+      "text": "You will suffer for your stupidity.",
+      "context": "NodeContext: Combat line, seething with anger",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Mystic Carrion",
+      "text": "I am free of death's shackles. You will wear them for eternity.",
+      "context": "NodeContext: Combat line, confident anger at the player",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Mystic Carrion",
+      "text": "Thrumbo's blood is on your hands. And yours will be on mine.",
+      "context": "NodeContext: Combat line, angry",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_CarrionWantingToBoastAboutBeggars"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_State_CarrionWantingToBoastAboutBeggars = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Mystic Carrion",
+      "text": "Delinquent fool. Allow me to re-educate you.",
+      "context": "NodeContext: Combat line, angry",
+      "checkflags": [
+        "LOW_FatherCarrion_Event_DetectedFirstDestroyedJar",
+        "LOW_PhilgravesMansion_State_HeartIsDestroyed = False"
+      ],
+      "setflags": [
+        "LOW_FatherCarrion_Event_DetectedFirstDestroyedJar = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

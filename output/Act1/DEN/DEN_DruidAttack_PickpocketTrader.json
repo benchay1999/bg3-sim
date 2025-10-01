@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "synopsis": "This dialogue plays either while the druids are attacking the tieflings in the grove, or after the druids have been defeated. During the attack, Lim is hidden away with the other tiefling children. She's fairly calm, given the situation - she's used to getting out of binds. Afterward, she's already plotting how she might get out ahead, though she's a bit irked at the player for getting rid of a source of income."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Mattis",
+      "text": "Don't even think about touching the druids' stuff. We called it first.",
+      "context": "CinematicNodeContext: Points at herself when she says 'we called it first.'\rNodeContext: The druids have been killed after they attacked her fellow tieflings. She's planning on looting all of their stuff. Points at herself when she says 'we called it first.'",
+      "checkflags": [
+        "DEN_DruidAttack_HasMet_PickpocketTraderAfterAttack",
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Mattis",
+      "text": "There goes half my customers. But you'll make up the difference, right?",
+      "context": "NodeContext: The druids are all dead. She's miffed to lose her customer base, but is secretly relieved the whole thing is over.",
+      "checkflags": [
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [
+        "DEN_DruidAttack_HasMet_PickpocketTraderAfterAttack"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Mattis",
+          "text": "Just have to replenish our stock first.",
+          "context": "NodeContext: The druid attack is over - she's planning on looting the druids' belongings.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Mattis",
+      "text": "Hiding with the children, huh? I get it.",
+      "context": "NodeContext: She gets the player wanting to save their own skin by hiding with the children. She's not judging. Said while the druids are attacking.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

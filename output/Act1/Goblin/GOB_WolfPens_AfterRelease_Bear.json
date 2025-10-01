@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "synopsis": "After the goblins release the bear its asks you if you will help him to kill them.",
+    "how_to_trigger": "Repro steps:1. Start the game and proceed to TUT level.2. loadlevel WLD_Main_A3. goto 400.31, 33.03, -32.404. Resolve the automatic dialog with illithid power to open the cage's door.5. Stay there for the Bear's dialog to trigger."
+  },
+  "dialogue": {
+    "5": {
+      "id": "5",
+      "speaker": "Halsin",
+      "text": "Good. Now they die.",
+      "context": "CinematicNodeContext: [reuse] Animal Construction\rNodeContext: Speak with Animals line",
+      "checkflags": [
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Attack the goblins.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "GOB_WolfPens_Event_SidedWithPrisoner"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Karlach 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "9",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Halsin",
+              "text": "Time for blood.",
+              "context": "CinematicNodeContext: [reuse] Animal Construction\rNodeContext: Speak with animals line",
+              "checkflags": [
+                "PETPAL"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "13": {
+              "id": "13",
+              "speaker": "Halsin",
+              "text": "*Roar!*",
+              "context": "CinematicNodeContext: [reuse] Animal Construction\rInternalNodeContext: Bear allied with player against goblins.",
+              "checkflags": [
+                "PETPAL = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Charge the bear.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "GOB_WolfPens_Event_SidedWithGoblins"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Shadowheart -1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "9",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "PALADIN_ANCIENTS",
+                "OATHBREAKER = False"
+              ],
+              "setflags": [
+                "GLO_PaladinOathbreaker_Event_AncientsBrokeOath"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Halsin",
+                  "text": "You chose. Die with them.",
+                  "context": "CinematicNodeContext: [reuse] Animal Construction\rNodeContext: Speak with Animals line",
+                  "checkflags": [
+                    "PETPAL"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "6": {
+                  "id": "6",
+                  "speaker": "Halsin",
+                  "text": "*Roar!*",
+                  "context": "InternalNodeContext: Bear hostile to player & goblins",
+                  "checkflags": [
+                    "PETPAL = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Leave the bear to the goblins' mercy.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "9",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "PALADIN_ANCIENTS",
+                "OATHBREAKER = False"
+              ],
+              "setflags": [
+                "GLO_PaladinOathbreaker_Event_AncientsBrokeOath"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "9",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Halsin",
+                  "text": "So be it.",
+                  "context": "CinematicNodeContext: [reuse] Animal Construction\rNodeContext: Speak with Animals line",
+                  "checkflags": [
+                    "PETPAL"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "7": {
+                  "id": "7",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "13",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Halsin",
+      "text": "*Huff.*",
+      "context": "CinematicNodeContext: [reuse] Animal Construction",
+      "checkflags": [
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Narrator",
+          "text": "*The bear sizes you up, wary, but not yet attacking.*",
+          "context": "CinematicNodeContext: [reuse] Animal Construction",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

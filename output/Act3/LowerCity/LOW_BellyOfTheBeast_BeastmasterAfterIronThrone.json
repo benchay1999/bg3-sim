@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "synopsis": "One-liner for the Beastmaster after returning from the Iron Throne.Two possible branches - one plays if the waveservants never ambushed you and the other if they did.",
+    "how_to_trigger": "Talk to the Beastmaster after coming back from the Iron Throne."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Redhammer the Deviser",
+      "text": "Cap needs all the attention I can spare, for now. But one day, when the world's set back to rights, we ought to strike out together again. See what's out there.",
+      "context": "NodeContext: wistfully thinking of the next adventure - 'Cap' is the submarine they are repairing",
+      "checkflags": [
+        "LOW_BellyOfTheBeast_HasMet_BeastmasterAfterIronThrone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Redhammer the Deviser",
+      "text": "You were good to stick your neck out for me. Those nutters would've tossed me into the harbour with irons on my feet.",
+      "context": "NodeContext: relieved and grateful",
+      "checkflags": [
+        "LOW_BellyOfTheBeast_HasMet_BeastmasterReward = False",
+        "LOW_BellyOfTheBeast_State_WaveservantsInAmbush",
+        "LOW_BellyOfTheBeast_Event_BeastmasterExitedSubmersible"
+      ],
+      "setflags": [
+        "LOW_BellyOfTheBeast_HasMet_BeastmasterReward"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Redhammer the Deviser",
+          "text": "I never forget someone who's done me a good turn. Neither does Cap. Thanks, mate.",
+          "context": "NodeContext: relieved and grateful",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Redhammer the Deviser",
+      "text": "Hoo! What a ride! I won't forget it any time soon - and Cap neither.",
+      "context": "NodeContext: just had a great adventure and is full of the joy of life",
+      "checkflags": [
+        "LOW_BellyOfTheBeast_HasMet_BeastmasterAfterIronThrone = False"
+      ],
+      "setflags": [
+        "LOW_BellyOfTheBeast_HasMet_BeastmasterAfterIronThrone"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Redhammer the Deviser",
+          "text": "I might've underestimated you before. Won't do that again. Thanks for the adventure! Ha!",
+          "context": "NodeContext: just had a great adventure and is full of the joy of life",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BellyOfTheBeast_HasMet_BeastmasterReward"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

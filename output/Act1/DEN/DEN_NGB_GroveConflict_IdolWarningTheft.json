@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "synopsis": "This dialog triggers when you attempt to move or steal the idol."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*The punishment for tampering with the idol a second time is simple: Death.*",
+      "context": "InternalNodeContext: Has stolen and returned the idol before.",
+      "checkflags": [
+        "DEN_GroveConflict_Event_StoleIdolAttempt"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*The druids will not stand by while you abscond with their idol. Your next move will decide your fate.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "DEN_GroveConflict_Event_StoleIdolAttempt"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Apologise. You were mistaken to touch their holy relic.",
+          "context": "InternalNodeContext: No evidence was found. Can happen if everything that was stolen was stackable, e.g. gold, and was merged with existing stacks in the player's inventory",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Narrator",
+              "text": "*You are forgiven - this time.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

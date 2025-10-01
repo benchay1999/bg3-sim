@@ -1,0 +1,540 @@
+{
+  "metadata": {
+    "synopsis": "In SwA, this cub speaks in short bursts - he sounds staccato, vicious.The player has killed an owlbear - a large, predatory wild animal. The owlbear's cub remains however, and lingers by his dead mother. The player can decide whether to put the cub out of its misery, or else leave it. If the player has the speak with animals skill, they get some additional insight into the cub's anxiety. If the player lets the cub live, it will proceed to eat its mother - it's still a wild animal, after all."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*Oblivious to your presence, the cub continues to gorge himself on his dead mother.*",
+      "context": "CinematicNodeContext: Continuation of the cub eating its mother, using framing that eliminates the need to",
+      "checkflags": [
+        "ab98ba0b-432b-9a79-1b10-514ee6454278_DidPDD"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Owlbear Cub",
+      "text": "*Brawwww...*",
+      "context": "",
+      "checkflags": [
+        "FOR_OwlBear_LastCubResolution_ToGoblinCamp",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Owlbear Cub",
+      "text": "Hungry! Food!",
+      "context": "NodeContext: As in: \"I'm hungry! I need food!\"",
+      "checkflags": [
+        "FOR_OwlBear_LastCubResolution_ToGoblinCamp",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*The cub looks from you to his dead mother.*",
+      "context": "CinematicNodeContext: The cub looks from dead mother to the player, wailing.\rNodeContext: Narrator node!",
+      "checkflags": [
+        "ab98ba0b-432b-9a79-1b10-514ee6454278_DidPDD = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Owlbear Cub",
+          "text": "Wake! Hungry!<br>",
+          "context": "NodeContext: As in: \"Wake up! I'm hungry!\"",
+          "checkflags": [
+            "PETPAL"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "21",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Narrator",
+              "text": "*A single strike will end his suffering...*",
+              "context": "NodeContext: Narrator Node! The player considers what to do with a orphaned wild animal.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "21",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "Player",
+                  "text": "Let the creature live.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [
+                    "Gale 1",
+                    "Shadowheart 1",
+                    "Wyll 1",
+                    "Karlach 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "19": {
+                      "id": "19",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Shadowheart_State_SavedAnimal = False",
+                        "ORI_Shadowheart_Knows_WoundSuspicion",
+                        "ORI_Shadowheart_Knows_IncurableWound = False",
+                        "ORI_Shadowheart_State_IncurableWound_Unavailable = False",
+                        "GLO_Not_For_EA",
+                        "AVATAR",
+                        "REALLY_SHADOWHEART"
+                      ],
+                      "setflags": [
+                        "ORI_Shadowheart_State_SavedAnimal",
+                        "ORI_Shadowheart_Event_IncurableWoundFlared"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "21",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "Player",
+                          "text": "Try to understand what's happening.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "1",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "10": {
+                              "id": "10",
+                              "speaker": "Narrator",
+                              "text": "*Is Lady Shar punishing you? Or perhaps testing you? Is it the tadpole, or a curse? You cannot say.*",
+                              "context": "CinematicNodeContext: Default pose/Shadowheart no longer being affected by the pain of the incurable wound.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "1",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Owlbear Cub",
+                                  "text": "Hungry! Food!",
+                                  "context": "NodeContext: As in: \"I'm hungry! This is food!\" - He's about to eat his mother's corpse.",
+                                  "checkflags": [
+                                    "PETPAL"
+                                  ],
+                                  "setflags": [
+                                    "FOR_OwlBear_SpareCub",
+                                    "ab98ba0b-432b-9a79-1b10-514ee6454278_DidPDD"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "1",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "13": {
+                                  "id": "13",
+                                  "speaker": "Owlbear Cub",
+                                  "text": "*Squawk!*",
+                                  "context": "CinematicNodeContext: The cub moves closer to its mother, dipping its head behind her body (contact can be implicit through foreground/background framing)",
+                                  "checkflags": [
+                                    "PETPAL = False"
+                                  ],
+                                  "setflags": [
+                                    "FOR_OwlBear_SpareCub",
+                                    "ab98ba0b-432b-9a79-1b10-514ee6454278_DidPDD"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "1": {
+                                      "id": "1",
+                                      "speaker": "Narrator",
+                                      "text": "*You watch, speechless, as the cub begins to eat his mother.*",
+                                      "context": "CinematicNodeContext: The cub lunges and starts to eat its dead mother. (contact can be implicit through foreground/background framing, sound fx etc.)\rInternalNodeContext: The cub is supposed to start eating its dead mother on this node. Technical limiitations prevent this from being shown in detail so it must rely upon framing, sound fx etc.",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "25": {
+                          "id": "25",
+                          "speaker": "Player",
+                          "text": "Silently petition Lady Shar for guidance.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "24",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "9": {
+                              "id": "9",
+                              "speaker": "Narrator",
+                              "text": "*She offers you nothing.*",
+                              "context": "CinematicNodeContext: Default pose/Shadowheart no longer being affected by the pain of the incurable wound.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "24",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "8": {
+                          "id": "8",
+                          "speaker": "Player",
+                          "text": "It was nothing. Put it out of your mind.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "24",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "4": {
+                              "id": "4",
+                              "speaker": "Narrator",
+                              "text": "*But was it truly nothing?  The pain gripped you tight, robbing you of all composure for a moment...*",
+                              "context": "CinematicNodeContext: Default pose/Shadowheart no longer being affected by the pain of the incurable wound.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "24",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "21": {
+                      "id": "21",
+                      "speaker": "Narrator",
+                      "text": "*Searing pain erupts from the wound on your hand. A strange, half-familiar image comes to you: a dead mouse, seen through a veil of tears - your tears. The image fades.*",
+                      "context": "CinematicNodeContext: Shadowheart reacts to the pain of the incurable wound in her right hand. She raises the hand and grimaces in pain. After a brief moment the pain passes and she lowers her hand, face relaxing, returning to default pose.\rInternalNodeContext: Incurable wound imagery/memory fragment - SH recalls the death of her pet mouse in Shar's Grotto, when she was a child.",
+                      "checkflags": [
+                        "ORI_Shadowheart_State_SavedAnimal = False",
+                        "ORI_Shadowheart_State_IncurableWound_Unavailable = False",
+                        "GLO_Not_For_EA",
+                        "AVATAR",
+                        "REALLY_SHADOWHEART"
+                      ],
+                      "setflags": [
+                        "ORI_Shadowheart_State_SavedAnimal",
+                        "ORI_Shadowheart_Event_IncurableWoundFlared"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "24",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "5": {
+                      "id": "5",
+                      "speaker": "Player",
+                      "text": "Ngh... it hurts...",
+                      "context": "CinematicNodeContext: Shadowheart reacts to the pain of the incurable wound in her right hand. She raises the hand and grimaces in pain. After a brief moment the pain passes and she lowers her hand, face relaxing, returning to default pose.",
+                      "checkflags": [
+                        "ORI_Shadowheart_State_SavedAnimal = False",
+                        "ORI_Shadowheart_State_IncurableWound_Unavailable = False",
+                        "GLO_Not_For_EA",
+                        "AVATAR = False",
+                        "REALLY_SHADOWHEART"
+                      ],
+                      "setflags": [
+                        "ORI_Shadowheart_State_SavedAnimal",
+                        "ORI_Shadowheart_Event_IncurableWoundFlared"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "24",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_Not_For_EA"
+                      ],
+                      "setflags": [
+                        "ORI_Inclusion_ShadowHeart"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "23": {
+                          "id": "23",
+                          "speaker": "Shadowheart",
+                          "text": "Ngh... it hurts...",
+                          "context": "CinematicNodeContext: Shadowheart reacts to the pain of the incurable wound in her right hand. She raises the hand and grimaces in pain. After a brief moment the pain passes and she lowers her hand, face relaxing, returning to default pose.",
+                          "checkflags": [
+                            "ORI_Shadowheart_State_SavedAnimal = False",
+                            "ORI_Shadowheart_State_IncurableWound_Unavailable = False",
+                            "GLO_Not_For_EA"
+                          ],
+                          "setflags": [
+                            "ORI_Shadowheart_State_SavedAnimal"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "0": {
+                              "id": "0",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [
+                                "GLO_Not_For_EA"
+                              ],
+                              "setflags": [
+                                "ORI_Shadowheart_Event_IncurableWoundFlared",
+                                "ORI_Inclusion_End_ShadowHeart"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "10",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "16": {
+                  "id": "16",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FOR_OwlBear_KillCub",
+                    "ab98ba0b-432b-9a79-1b10-514ee6454278_DidPDD",
+                    "CharacterDieAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Gale -1",
+                    "Lae'zel 1",
+                    "Shadowheart -1",
+                    "Karlach -1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "26": {
+                      "id": "26",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "PALADIN_ANCIENTS"
+                      ],
+                      "setflags": [
+                        "GLO_PaladinOathbreaker_Event_AncientsBrokeOath"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "taganswer",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "15": {
+          "id": "15",
+          "speaker": "Owlbear Cub",
+          "text": "*Braawww!*",
+          "context": "",
+          "checkflags": [
+            "PETPAL = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

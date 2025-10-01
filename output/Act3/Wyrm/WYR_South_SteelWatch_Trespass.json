@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "synopsis": "A trespass dialog for Steel Watcher at WYR South checkpoint.",
+    "how_to_trigger": "Go tolarian://bookmark?mod=GustavDev&level=BGO_Main_A&camPos=4.746866;51.832020;14.251555&camTarget=4.618553;51.433636;15.159755Kill all FF guards with Ctrl+Shift+K, walk through the checkpoint (through the gates)."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "Unauthorised access to the city is a serious offence. Surrender for sentencing, villain.",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Trespassing"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Agree to be imprisoned.",
+          "context": "",
+          "checkflags": [
+            "GEB_Arrest_HavePrison"
+          ],
+          "setflags": [
+            "Allow_Arrest"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Call on your parasite. Force the watcher to stand down.",
+          "context": "",
+          "checkflags": [
+            "CRIME_PersuasionFailed = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "GROUP_SteelWatchers",
+                  "text": "An innocent mistake. Please return to the checkpoint to receive proper authorisation.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "TeleportOutOfTrespass"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "0": {
+              "id": "0",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "GROUP_SteelWatchers",
+                  "text": "By the edicts of Lord Gortash, you are sentenced to death. Please comply.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRIME_PersuasionFailed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

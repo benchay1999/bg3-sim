@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue for the confident and experienced harper when standing guard at the fountain in haven + being under siege by shadows"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Harper Essius",
+      "text": "Go safely.",
+      "context": "InternalNodeContext: Protected state. Barrier is On, nothing bad happened yet. Met.",
+      "checkflags": [
+        "HAV_Mood_State_Protected"
+      ],
+      "setflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Protected_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Harper Essius",
+      "text": "With Jaheira to lead us, and you bringing light to the shadows, we might just have a chance.",
+      "context": "NodeContext: optimistic",
+      "checkflags": [
+        "MOO_Assault_State_Started"
+      ],
+      "setflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Freed_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Harper Essius",
+      "text": "The Flaming Fist may be a bit rough, but I've respected them. Didn't expect a traitor in their ranks.",
+      "context": "InternalNodeContext: State after repelling the attack of the Flaming Fist traitor. NPCs are afraid of other possible attacks.",
+      "checkflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Alert = False"
+      ],
+      "setflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Alert"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Harper Essius",
+      "text": "Jaheira will see us through this matter. She always does.",
+      "context": "InternalNodeContext: Protected state. Barrier is On, nothing bad happened yet. Not Met.",
+      "checkflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Protected_HasMet",
+        "HAV_Mood_State_Protected"
+      ],
+      "setflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Protected_HasMet = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Harper Essius",
+      "text": "Let us pray we've had our last surprise.<br>",
+      "context": "InternalNodeContext: State after repelling the attack of the Flaming Fist traitor. NPCs are afraid of other possible attacks.",
+      "checkflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Alert"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Harper Essius",
+      "text": "It's time to fight back.",
+      "context": "NodeContext: optimistic, slightly wary",
+      "checkflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Freed_HasMet",
+        "MOO_Assault_State_Started"
+      ],
+      "setflags": [
+        "HAV_HavenOutcasts_FountainGuards_Melee_2_Freed_HasMet = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "metadata": {
+    "synopsis": "Path into the Counting House. Someone is losing count when counting their coins to pay Waukeen\u2019s Wage, someone begging for money",
+    "how_to_trigger": "CTY_Main_Agoto -96.28 -130.78"
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Rags Deelarma",
+      "text": "Have you seen what she's doing? Counting gold in front of a beggar. It's like eating bread in front of a starving child!",
+      "context": "NodeContext: Frustrated at the nearby buyer having not given them anything",
+      "checkflags": [],
+      "setflags": [
+        "LOW_CountingMoney_HasMet_Beggar"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "11",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Rags Deelarma",
+      "text": "Piss off, tight-arse!",
+      "context": "NodeContext: Bitterly (after the player has only given them a single coin)",
+      "checkflags": [
+        "LOW_CountingMoney_Beggar_Pissed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Rags Deelarma",
+      "text": "I won't forget your charity, saer - gods bless you!",
+      "context": "NodeContext: Grateful",
+      "checkflags": [
+        "LOW_CountingMoney_Beggar_Pleased"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Rags Deelarma",
+      "text": "You wouldn't happen to have a few coins to spare, would you? For my family?",
+      "context": "",
+      "checkflags": [
+        "LOW_CountingMoney_HasMet_Beggar"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Give a single coin.",
+          "context": "",
+          "checkflags": [
+            "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+          ],
+          "setflags": [
+            "LOW_CountingMoney_Beggar_GaveMoney"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Rags Deelarma",
+                  "text": "What? Really? That's all you can spare? Waukeen weeps.",
+                  "context": "NodeContext: Incredulous; \"Waukeen weeps\" said with despair",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_CountingMoney_Beggar_Pissed",
+                    "GEN_TransferNPCPayment"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "11",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Give a handful of coins. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+          "context": "",
+          "checkflags": [
+            "d6480be7-500e-4160-927f-86acfd5c4e7b"
+          ],
+          "setflags": [
+            "LOW_CountingMoney_Beggar_GaveMoney"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Karlach 1",
+            "Wyll 1",
+            "Astarion -1",
+            "Minthara -1",
+            "Halsin 1",
+            "Jaheira 1",
+            "Minsc 1",
+            "Gale 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "Rags Deelarma",
+                  "text": "Thank you, saer! At least some people in this world know kindness.",
+                  "context": "NodeContext: Grateful on the first sentence; second sentence say pointedly with the buyer who wouldn't give them money in mind",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_CountingMoney_Beggar_Pleased",
+                    "GEN_TransferNPCPayment_2"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "11",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

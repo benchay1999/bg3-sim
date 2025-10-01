@@ -1,0 +1,813 @@
+{
+  "metadata": {
+    "synopsis": "One of the goblins stops the player and accusses them of poisoning their beer and thus killing some of the goblins.",
+    "how_to_trigger": "- loadmodule Gustav WLD_Main_A- god- roll amazing- create OBJ_BasicPoison- goto -94.25, 9.78, 442.25- Use the Booze Tub nearby.- Combine Basic Poison with Booze Tub.- You will be spotted. Choose dialogue option: 2 > 1 > 3 > 2- Wait until some of the goblins die to poison.- GOB_GoblinToast_PoisoningInterrogation will trigger after one goblin approach you."
+  },
+  "dialogue": {
+    "8": {
+      "id": "8",
+      "speaker": "GROUP_Act1_GOB_Festivities",
+      "text": "You! I knew you'd been mucking with our beer! You poisoned us!",
+      "context": "NodeContext: Spotting the player and accusing them of being the one who poisoned their beer (and comrades)",
+      "checkflags": [
+        "GOB_GoblinToast_PlayerWasNoticedPoisoning",
+        "GOB_GoblinToast_GoblinNoticedPoisoning"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "40",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "31": {
+      "id": "31",
+      "speaker": "GROUP_Act1_GOB_Festivities",
+      "text": "You! Outsider! You poisoned us!",
+      "context": "NodeContext: Spotting the player and accusing them of being the one who poisoned their beer (and comrades)",
+      "checkflags": [
+        "GOB_GoblinToast_PlayerWasNoticedPoisoning = False",
+        "GOB_GoblinToast_GoblinNoticedPoisoning"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "40": {
+      "id": "40",
+      "speaker": "GROUP_Act1_GOB_Festivities",
+      "text": "You! You poisoned us!",
+      "context": "NodeContext: Spotting the player and accusing them of being the one who poisoned their beer (and comrades)",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "26": {
+          "id": "26",
+          "speaker": "Narrator",
+          "text": "*The mark glows, but you feel nothing in response. Your illithid power is beyond reach until you rest.*",
+          "context": "",
+          "checkflags": [
+            "GLO_Tadpoled_UsedToday1"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Narrator",
+          "text": "*A strange symbol glows, marked on their flesh, and something within you stirs in response.*",
+          "context": "",
+          "checkflags": [
+            "GLO_TadpoleIntro_NPC = False"
+          ],
+          "setflags": [
+            "GLO_TadpoleIntro_NPC"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "11",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Player",
+              "text": "You poisoned yourselves. This is Elderberry Beer - goblins are allergic to it.",
+              "context": "",
+              "checkflags": [
+                "233377a8-9099-ed74-4410-b8f46400bd4f_MindHasBeenRead"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "36": {
+                  "id": "36",
+                  "speaker": "GROUP_Act1_GOB_Festivities",
+                  "text": "A-allergic? You mean just the beer can kill us?! G-get out of my way. I need some fresh air.",
+                  "context": "NodeContext: surprised and scared. We just said goblins are allergic to the beer they've been drinking the whole time.",
+                  "checkflags": [],
+                  "setflags": [
+                    "GOB_GoblinToast_State_ConfrontedAboutPoisoning"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "39": {
+              "id": "39",
+              "speaker": "Player",
+              "text": "If I'd poisoned you, do you really think I'd still be here?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "GROUP_Act1_GOB_Festivities",
+                      "text": "Tnak, you're right. Whoever did this could be anywhere by now.",
+                      "context": "NodeContext: Tnak means damn it, pronounced tuh-NACK. Annoyed and disappointed. they think they'll never find the killer.",
+                      "checkflags": [],
+                      "setflags": [
+                        "GOB_GoblinToast_State_ConfrontedAboutPoisoning"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "GROUP_Act1_GOB_Festivities",
+                      "text": "Or you just thought we'd be stupid enough to believe ya!",
+                      "context": "NodeContext: We gave a lousy excuse and they're seeing right through it. They're going to attack us now.",
+                      "checkflags": [],
+                      "setflags": [
+                        "GOB_GoblinToast_State_ConfrontedAboutPoisoning",
+                        "TemporaryHostilityAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "12": {
+              "id": "12",
+              "speaker": "Player",
+              "text": "I did, but I can slit your throat if you'd prefer a quick death.",
+              "context": "",
+              "checkflags": [
+                "BARBARIAN = False",
+                "DROWELF = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "23": {
+                  "id": "23",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "32": {
+                      "id": "32",
+                      "speaker": "GROUP_Act1_GOB_Festivities",
+                      "text": "P-please don't! I won't rat you out, I swear! J-just leave me be.",
+                      "context": "NodeContext: We intimidated them and confessed we killed their comrades, but this goblin doesn't want to risk his own hide for revenge.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "16": {
+                          "id": "16",
+                          "speaker": "GROUP_Act1_GOB_Festivities",
+                          "text": "Th-this one's all right, lads! Knows nothin' about no poisonin'!",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "GOB_GoblinToast_State_ConfrontedAboutPoisoning"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "30": {
+                  "id": "30",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "GROUP_Act1_GOB_Festivities",
+                      "text": "Yeah? We'll see 'bout that!",
+                      "context": "NodeContext: We admitted to killing their comrades and threatened to kill them too, but they aren't intimidated and want to kill us.",
+                      "checkflags": [],
+                      "setflags": [
+                        "GOB_GoblinToast_State_ConfrontedAboutPoisoning",
+                        "TemporaryHostilityAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "25": {
+              "id": "25",
+              "speaker": "Player",
+              "text": "Could've done a lot worse. A lot worse.",
+              "context": "InternalNodeContext: + berserker subnode",
+              "checkflags": [
+                "BARBARIAN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "21": {
+              "id": "21",
+              "speaker": "Player",
+              "text": "Consider it a privilege. I could have just gutted you.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [
+                "DROWELF"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "22": {
+              "id": "22",
+              "speaker": "Player",
+              "text": "And why would I do that? I'm a True Soul.",
+              "context": "",
+              "checkflags": [
+                "GLO_Absolute_Knows_TrueSoul",
+                "GLO_Tadpoled_UsedToday1 = False",
+                "TRUESOUL = False",
+                "ILLITHID"
+              ],
+              "setflags": [
+                "GLO_Tadpoled_UsedToday1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "37": {
+                  "id": "37",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "GROUP_Act1_GOB_Festivities",
+                      "text": "V-very sorry - I didn't know. I swear I didn't know!",
+                      "context": "NodeContext: They just realised they are talking to someone of higher rank.",
+                      "checkflags": [],
+                      "setflags": [
+                        "GOB_GoblinToast_State_ConfrontedAboutPoisoning"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "38": {
+                          "id": "38",
+                          "speaker": "Narrator",
+                          "text": "*A shiver runs across your mind... You feel sated.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount1 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount1"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "15": {
+                          "id": "15",
+                          "speaker": "Narrator",
+                          "text": "*Something stirs deep within you, hungry and alert... it's taking something you'll never get back.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount2 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount2"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "2": {
+                          "id": "2",
+                          "speaker": "Narrator",
+                          "text": "*Your mind lurches, reeling suddenly as if... bitten.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount3 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount3"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "35": {
+                          "id": "35",
+                          "speaker": "Narrator",
+                          "text": "*A shadow swims across your vision, and a familiar voice tells you to be calm. You are loved.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount4 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount4"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "6": {
+                          "id": "6",
+                          "speaker": "Narrator",
+                          "text": "*Your blood runs quicker, feeding the gnawing absence at the centre of your mind.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount5 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount5"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "24": {
+                          "id": "24",
+                          "speaker": "Narrator",
+                          "text": "*The presence deep in your mind is awake, unblinking. This is it. A single word pervades your consciousness: 'Soon'.*",
+                          "context": "",
+                          "checkflags": [
+                            "GLO_TadpoledCount6 = False",
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "GLO_TadpoledCount6"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "42": {
+                          "id": "42",
+                          "speaker": "Narrator",
+                          "text": "*Your mind is full, bursting with ecstasy and terror. Finally, it is coming. You are becoming.*",
+                          "context": "",
+                          "checkflags": [
+                            "TRUESOUL = False"
+                          ],
+                          "setflags": [
+                            "TRUESOUL"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "41": {
+                          "id": "41",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "38",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "28": {
+                  "id": "28",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "GROUP_Act1_GOB_Festivities",
+                      "text": "You, a True Soul? I'd be shakin' in my boots if you were, but all I'm feelin' is the urge to see your guts.",
+                      "context": "NodeContext: We tried to confince them we are of higher rank, but they think the notion is laughable.",
+                      "checkflags": [],
+                      "setflags": [
+                        "GOB_GoblinToast_State_ConfrontedAboutPoisoning",
+                        "TemporaryHostilityAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "And why would I do that? I'm a True Soul.",
+              "context": "",
+              "checkflags": [
+                "GLO_Absolute_Knows_TrueSoul",
+                "GLO_Tadpoled_UsedToday1 = False",
+                "TRUESOUL"
+              ],
+              "setflags": [
+                "GLO_Tadpoled_UsedToday1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "33": {
+                  "id": "33",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "4",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "29": {
+              "id": "29",
+              "speaker": "Player",
+              "text": "Read her mind.",
+              "context": "",
+              "checkflags": [
+                "233377a8-9099-ed74-4410-b8f46400bd4f_MindHasBeenRead = False",
+                "44f9fbf3-735d-8eaf-94dc-6c1d1cf5382d"
+              ],
+              "setflags": [],
+              "ruletags": [
+                "FEMALE"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "27": {
+                  "id": "27",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "GROUP_Act1_GOB_Festivities",
+                      "text": "I knew we shouldn'tve taken that fancy berry beer. Could've tasted the poison if it hadn't been so sweet.",
+                      "context": "NodeContext: We are hearing the goblin's thoughts. The goblin is despairing because it thinks they would have tasted the poison (and thus the others wouldn't have died) if they hadn't stolen the fancy berry beer.",
+                      "checkflags": [],
+                      "setflags": [
+                        "233377a8-9099-ed74-4410-b8f46400bd4f_MindHasBeenRead"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "9": {
+                  "id": "9",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "34": {
+                      "id": "34",
+                      "speaker": "GROUP_Act1_GOB_Festivities",
+                      "text": "What are you... this one's tryin' to control my mind or somethin'!",
+                      "context": "NodeContext: The goblin felt the player poking around in their head and is freaked out and angry.",
+                      "checkflags": [],
+                      "setflags": [
+                        "GOB_GoblinToast_State_ConfrontedAboutPoisoning",
+                        "TemporaryHostilityAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Narrator",
+          "text": "*As the symbol glows, power courses through you. Authority.*",
+          "context": "",
+          "checkflags": [
+            "GLO_TadpoleIntro_NPC"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

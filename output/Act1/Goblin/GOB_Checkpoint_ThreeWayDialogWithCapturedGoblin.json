@@ -1,0 +1,706 @@
+{
+  "metadata": {
+    "synopsis": "If the player released the captured goblin in Halsin's den, the CG will be waiting for the player at the checkpoint. When the player starts the dialog with the main guard at the checkpoint (or gets closer to him) and the CG is at the checkpoint, this dialog is shown. After this dialog, the CG leaves the checkpoint and the main guard gets his normal dialog back.\n\n Olak and Sazza have a very antagonistic relationship, ripping each other to shreds.",
+    "how_to_trigger": "go to region - act 1 - goblin camp - startdebugbook - quest flags -  act 1 - goblin camp - checkpoint - call capturedgoblinsazza will run across bridge to checkpoint, follow her and dialog triggers automatically"
+  },
+  "dialogue": {
+    "15": {
+      "id": "15",
+      "speaker": "Sentinel Olak",
+      "text": "Well! Look who's gettin' dragged back. And by such high company! How badly did you mess up?",
+      "context": "NodeContext: Olak to Sazza, a fellow goblin he doesn't have respect for.",
+      "checkflags": [
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls = False"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_Guard01_HasMet"
+      ],
+      "ruletags": [
+        "DROWELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "Sazza",
+          "text": "Can it! I know something Ragzlin will want to hear.",
+          "context": "NodeContext: Sazza is ragging on Olak. They don't like each other.",
+          "checkflags": [],
+          "setflags": [
+            "DEN_GroveConflict_Knows_LeaderNameKing"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "Sentinel Olak",
+              "text": "Yeah? What's that?",
+              "context": "NodeContext: Malicious.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "Sazza",
+                  "text": "I been in some druids' grove. This one sprang me. Now move over, so I can tell Ragzlin myself!",
+                  "context": "NodeContext: Sazza is arguing on the player's behalf to the hostile Olak.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "26": {
+                      "id": "26",
+                      "speaker": "Sentinel Olak",
+                      "text": "Hold on. Where are the raiders?",
+                      "context": "NodeContext: Olak is full of gleeful malice.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "5",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "30": {
+                          "id": "30",
+                          "speaker": "Sazza",
+                          "text": "Dead. Every last one.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "5",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "24": {
+                              "id": "24",
+                              "speaker": "Sentinel Olak",
+                              "text": "Ragzlin's drow friend won't be happy to hear that.",
+                              "context": "NodeContext: Full of mockery",
+                              "checkflags": [],
+                              "setflags": [
+                                "GOB_DrowCommander_Knows_DrowLeader"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "5",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "Sazza",
+                                  "text": "She'll be happy enough when I tell her where them looters is holin' up. Let me through.",
+                                  "context": "NodeContext: Hard 'g' on ranga. Sazza's pride is wounded but she hates Olak, so doesn't want to show it.",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "5",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "7": {
+                                      "id": "7",
+                                      "speaker": "Sentinel Olak",
+                                      "text": "Go on. I ain't gonna hold up a drow.",
+                                      "context": "CinematicNodeContext: Olak turns to the player\rNodeContext: To player. Cool and malicious.",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [
+                                        "DROWELF"
+                                      ],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "22": {
+                                          "id": "22",
+                                          "speaker": "Sazza",
+                                          "text": "C'mon! Gotta let the drow True Soul know where them looters is. We'll be heroes!",
+                                          "context": "NodeContext: To player. More bright and friendly.",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "GOB_Checkpoint_State_GainedAccess",
+                                            "GOB_Checkpoint_State_GuidedByCapturedGoblin",
+                                            "GOB_Checkpoint_Event_MoveToCamp"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "34": {
+                                      "id": "34",
+                                      "speaker": "Sentinel Olak",
+                                      "text": "Hold on, now.",
+                                      "context": "CinematicNodeContext: Olak turns to the player\rNodeContext: To player. Cool and malicious.",
+                                      "checkflags": [
+                                        "GOB_Checkpoint_State_GainedAccess = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "5",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "31": {
+                                          "id": "31",
+                                          "speaker": "Sentinel Olak",
+                                          "text": "Is it true, what Saz says? You helped her escape that grove?",
+                                          "context": "NodeContext: To player. Genuine inquiry, but he's disinclined to believe you.",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "5",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "6": {
+                                              "id": "6",
+                                              "speaker": "Player",
+                                              "text": "Yes - I don't believe in keeping prisoners.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "5",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "28": {
+                                                  "id": "28",
+                                                  "speaker": "Sentinel Olak",
+                                                  "text": "Heh. Then behave while you're inside. Our people don't mind it one bit.",
+                                                  "context": "NodeContext: i.e. 'our people don't mind putting people in cages'. He's not exactly friendly here, but he will let you into camp.",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "5",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "9": {
+                                              "id": "9",
+                                              "speaker": "Player",
+                                              "text": "Just hoping she'll prove useful.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "5",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "13": {
+                                                  "id": "13",
+                                                  "speaker": "Sentinel Olak",
+                                                  "text": "Behave yourself. Saz's vouchin' for you. You mess up, you and Saz'll get it.",
+                                                  "context": "NodeContext: e's not exactly friendly here, but he will let you into camp.",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "5",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "17": {
+                                              "id": "17",
+                                              "speaker": "Player",
+                                              "text": "Shrug and say nothing.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "4": {
+                                                  "id": "4",
+                                                  "speaker": "Sentinel Olak",
+                                                  "text": "Quiet type, eh? Good. Keep outta trouble, or you and Saz'll get it.",
+                                                  "context": "NodeContext: e's not exactly friendly here, but he will let you into camp.",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "5": {
+                                                      "id": "5",
+                                                      "speaker": "Sazza",
+                                                      "text": "That's enough outta you.",
+                                                      "context": "NodeContext: Sazza to Olak. 'Shut up and let us in.'",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "27": {
+                                                          "id": "27",
+                                                          "speaker": "Sazza",
+                                                          "text": "C'mon! Gotta let the drow know where them looters is. We'll be heroes!",
+                                                          "context": "NodeContext: To player. More bright and friendly.",
+                                                          "checkflags": [],
+                                                          "setflags": [
+                                                            "GOB_Checkpoint_State_GainedAccess",
+                                                            "GOB_Checkpoint_State_GuidedByCapturedGoblin",
+                                                            "GOB_Checkpoint_Event_MoveToCamp"
+                                                          ],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": true,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "37": {
+                                              "id": "37",
+                                              "speaker": "Player",
+                                              "text": "I'm only keeping her around in case I get hungry.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "BESTIAL"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "19": {
+                                                  "id": "19",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "13",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "11": {
+                                              "id": "11",
+                                              "speaker": "Player",
+                                              "text": "My reasons are of no concern to you.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "REALLY_LAEZEL"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "32": {
+                                                  "id": "32",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "13",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "0": {
+                                              "id": "0",
+                                              "speaker": "Player",
+                                              "text": "True enough. I couldn't resist her charming company.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "REALLY_SHADOWHEART"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "38": {
+                                                  "id": "38",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "13",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "23": {
+                                              "id": "23",
+                                              "speaker": "Player",
+                                              "text": "I enjoy making new friends.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "REALLY_WYLL"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "8": {
+                                                  "id": "8",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "28",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "3": {
+                                              "id": "3",
+                                              "speaker": "Player",
+                                              "text": "I just hate seeing animals in cages.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "REALLY_ASTARION"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "16": {
+                                                  "id": "16",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "13",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "20": {
+                                              "id": "20",
+                                              "speaker": "Player",
+                                              "text": "It was a daring escape. Slew thirteen druids bare-handed, Sazza and I.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "BARD"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "21": {
+                                                  "id": "21",
+                                                  "speaker": "Sazza",
+                                                  "text": "Err... Yeah, that's right!",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "33": {
+                                                      "id": "33",
+                                                      "speaker": "Sentinel Olak",
+                                                      "text": "Hah! A ranga and Sazza killing druids? Pull the other one.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "2": {
+                                                          "id": "2",
+                                                          "speaker": "",
+                                                          "text": "",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "5",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "jump",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "29": {
+                                      "id": "29",
+                                      "speaker": "Sentinel Olak",
+                                      "text": "Go on ahead. Already met your little friend. Two of you can go celebrate together.",
+                                      "context": "CinematicNodeContext: Olak turns to the player\rNodeContext: To player. Cool and malicious.",
+                                      "checkflags": [
+                                        "GOB_Checkpoint_State_GainedAccess",
+                                        "GOB_Checkpoint_State_PretendedToBeTrueSouls = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "35": {
+                                          "id": "35",
+                                          "speaker": "Sazza",
+                                          "text": "C'mon! Gotta let the drow know where them looters is. We'll be heroes!",
+                                          "context": "NodeContext: To player. More bright and friendly.",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "GOB_Checkpoint_Event_MoveToCamp"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "14": {
+                                      "id": "14",
+                                      "speaker": "Sentinel Olak",
+                                      "text": "I ain't gonna hold up a True Soul.",
+                                      "context": "CinematicNodeContext: Olak turns to the player\rNodeContext: To player. Cool and malicious.",
+                                      "checkflags": [
+                                        "GOB_Checkpoint_State_GainedAccess",
+                                        "GOB_Checkpoint_State_PretendedToBeTrueSouls"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "1": {
+                                          "id": "1",
+                                          "speaker": "Sazza",
+                                          "text": "C'mon! Gotta let the drow know where them looters is. We'll be heroes!",
+                                          "context": "NodeContext: To player. More bright and friendly.",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "GOB_Checkpoint_Event_MoveToCamp"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "36": {
+      "id": "36",
+      "speaker": "Sentinel Olak",
+      "text": "How'd a rat like you get in with a True Soul?",
+      "context": "NodeContext: Olak to Sazza, a fellow goblin he doesn't have respect for.",
+      "checkflags": [
+        "GOB_Checkpoint_State_PretendedToBeTrueSouls"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_Guard01_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

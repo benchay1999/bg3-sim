@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "synopsis": "Dialogue triggers when the player touches the brine pool in the middle of the tutorial room"
+  },
+  "dialogue": {
+    "7": {
+      "id": "7",
+      "speaker": "Narrator",
+      "text": "*This is the pool that thing came from - the parasite now writhing behind your eye.*",
+      "context": "CinematicNodeContext: Cinematic shot of the brine pool",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Reach toward the pool.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Narrator",
+              "text": "*Its casing crumbles beneath your hands, sloshing volatile brine as it collapses.*",
+              "context": "CinematicNodeContext: Casing destructs, or will after dialogue ends.",
+              "checkflags": [],
+              "setflags": [
+                "TUT_Start_Event_TouchedPool"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Investigate the pool.",
+          "context": "",
+          "checkflags": [
+            "TUT_Start_State_InvestigatedPool = False"
+          ],
+          "setflags": [
+            "TUT_Start_State_InvestigatedPool"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Narrator",
+                  "text": "*The casing is fragile. The slightest touch could cause it to crumble.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "TUT_Start_Knows_PoolBrittle"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Narrator",
+                  "text": "*You notice nothing more than meets the eye.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

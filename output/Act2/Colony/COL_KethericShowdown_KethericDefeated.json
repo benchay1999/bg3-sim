@@ -1,0 +1,333 @@
+{
+  "metadata": {
+    "synopsis": "NOTE TO PITSTOP: We have a cinematic previz of this so be sure to ping for that if we haven't already sent it to you.This dialog plays after defeating Ketheric once and for all at the Colony Ketheric Showdown. Ketheric delivers a short speech before he dies.- If Nightsong's corpse is present in the chamber, she will revive. If she is alive by this point she will comment on finally being rid of Ketheric.",
+    "how_to_trigger": "loadlevel SCL_Main_A ; goto 833 -47 -25 (or use debug commands)Debug command: \"oe KethericShowdown_Start\" and then \"oe KethericShowdown_Defeat\"The Chosen Three cinematic will play first and set up some important stuff.In order for this dialog to trigger, Ketheric (in his Apostle of Myrkul) form must die during the Colony Ketheric Showdown. This means Nightsong must be either dead or freed from her soul cage, and Ketheric must be past his first stage and reach 0 hitpoints."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Ketheric Thorm",
+      "text": "Impossible... death cannot take me... I am its master...",
+      "context": "CinematicNodeContext: The Apostle lurches back as the final blow is struck. It sinks towards the ground, growing more insubstantial as it falls. \n\nIt fades to nothing, leaving only Ketheric, who staggers, holding a hand to a bloody wound over his heart",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Ketheric Thorm",
+          "text": "My Lord, hear me!",
+          "context": "CinematicNodeContext: calling out to his god, hands held wide, displaying the wound for the camera\rNodeContext: growing desperation as you call on your god",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "16": {
+              "id": "16",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: he falls to his knees",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "tagcinematic",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Ketheric Thorm",
+                  "text": "Nothing... I am forsaken.",
+                  "context": "CinematicNodeContext: head bowed, he speaks from his knees, fear in his voice\rNodeContext: fear in your voice - tried to speak to your god, but there was no response",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "8",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "13": {
+                      "id": "13",
+                      "speaker": "Ketheric Thorm",
+                      "text": "You... you have no idea what you've done.",
+                      "context": "NodeContext: deep sorrow",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "Ketheric Thorm",
+                          "text": "Isobel...",
+                          "context": "CinematicNodeContext:  he locks eyes with the player on the first 'you', a horrified expression on his face. The flesh falls away after he has spoken, leaving only a skull, that crashes to the ground, rolling away from his armour, now containing little but dust and shattered bones",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "17": {
+                              "id": "17",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [
+                                "COL_KethericShowdown_State_NightsongFreed",
+                                "SHA_Nightsong_State_PermaDefeated = False",
+                                "7fd98b6e-11d5-28e0-bc67-bb0925834fa3"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "8",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "11": {
+                                  "id": "11",
+                                  "speaker": "Nightsong",
+                                  "text": "The villain is DEAD!",
+                                  "context": "CinematicNodeContext: A cry of victory as she flies into the air, ending in Nightsong stomping on Ketheric's head (this will be done via animation, not in mocap)\rNodeContext: A cry of victory as she flies into the air, ending in Nightsong stomping on Ketheric's head (this will be done via animation, not in mocap)\nSpace between phrases:\n\nThe villain...is... DEAD!!!!!'",
+                                  "checkflags": [
+                                    "FEMALE"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "8",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "9": {
+                                      "id": "9",
+                                      "speaker": "Nightsong",
+                                      "text": "The wretch! Together we have crushed him, brain and body.",
+                                      "context": "CinematicNodeContext: Stomping Ketheric's brain repeatedly, punctuating her words. At the end of the line she keeps stomping - she's going too far, exercising pure rage.\rNodeContext: victorious",
+                                      "checkflags": [
+                                        "FEMALE"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "8",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "3": {
+                                          "id": "3",
+                                          "speaker": "Nightsong",
+                                          "text": "Now... now... we pick our way toward our fates... unleashed.",
+                                          "context": "CinematicNodeContext: The player steps forward, breaking her from her reverie of violence. She pauses, collects herself, then speaks.\rNodeContext: victorious",
+                                          "checkflags": [
+                                            "FEMALE"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "8",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "10": {
+                                              "id": "10",
+                                              "speaker": "Nightsong",
+                                              "text": "A pity I cannot say the same for Isobel. She may have been Ketheric's daughter, but she was my world entire.",
+                                              "context": "NodeContext: She remembers, suddenly, that Isobel is dead, truly dead, after Ketheric's machinations.",
+                                              "checkflags": [
+                                                "HAV_Isobel_State_IsDead",
+                                                "FEMALE"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "8",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            },
+                                            "7": {
+                                              "id": "7",
+                                              "speaker": "Nightsong",
+                                              "text": "Ketheric's daughter - Isobel. I... knew her. Long have I mourned her. May she know peace now - safe from her father's machinations.",
+                                              "context": "NodeContext: Looks at Isobel's corpse. Devastated but steely.",
+                                              "checkflags": [
+                                                "COL_KethericShowdown_State_IsobelDiedInCOL",
+                                                "FEMALE"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "8",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "8": {
+                                                  "id": "8",
+                                                  "speaker": "Nightsong",
+                                                  "text": "Do what you must - then we fly this foul place.",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "FEMALE"
+                                                  ],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "5": {
+                                                      "id": "5",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "taganswer",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "15": {
+                                              "id": "15",
+                                              "speaker": "Nightsong",
+                                              "text": "Though you have great crimes against my person for which to answer, strange ally.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "SHA_NightsongPrison_State_NightsongFreed = False",
+                                                "FEMALE"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "8",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            },
+                                            "14": {
+                                              "id": "14",
+                                              "speaker": "Nightsong",
+                                              "text": "You have my sword - my fealty.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "SHA_NightsongPrison_State_NightsongFreed",
+                                                "FEMALE"
+                                              ],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "8",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "1": {
+                              "id": "1",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "5",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "metadata": {
+    "synopsis": "Dialog that triggers when the players kill one person on the target list and they aren't part of the Bhaal Cult yet. Backup dialog if players kill the first doppelganger by mistake.",
+    "how_to_trigger": "Kill one of the characters of the Target List ((ITEMROOT)UNI_LOW_TargetList_4ece815c-aff2-45c3-8b07-dd3a04454243) and later use a Waypoint."
+  },
+  "dialogue": {
+    "5": {
+      "id": "5",
+      "speaker": "Doppelganger",
+      "text": "Another kill. Your technique is improving... Very novel, I must say.",
+      "context": "",
+      "checkflags": [
+        "LOW_SerialKiller_AssassinMeetsPlayer_FirstTarget"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "26": {
+          "id": "26",
+          "speaker": "Narrator",
+          "text": "*The creature fixes you with an eerie gaze. It doesn't just see you, it sees through you.*",
+          "context": "CinematicNodeContext: The doppelganger look at the player and smiles with horrible, knowing malice.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Doppelganger",
+              "text": "Tear the hand from the corpse you have made in Bhaal's name.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "23": {
+                  "id": "23",
+                  "speaker": "Doppelganger",
+                  "text": "Then enter Candulhallow's Tombstones. Announce your intention - to become an Unholy Assassin. A vessel for Lord Bhaal.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_MurderTribunal_Knows_WordOfPassage",
+                    "LOW_MurderTribunal_Knows_UnholyAssassin",
+                    "LOW_SerialKiller_AssassinMeetsPlayer_SecondTarget",
+                    "LOW_SerialKiller_Event_DoppelgangerGiveNoteFromOrin"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "Doppelganger",
+                      "text": "There you shall be judged. There you shall transcend.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_SerialKiller_Event_DoppelgangerOutOfSight"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Doppelganger",
+      "text": "Approach - unique. Form - sloppy. But the passion for killing - like a game. It's a shame I was the only acolyte here to witness you.",
+      "context": "CinematicNodeContext: The doppelganger should have a maniac smile in his face.",
+      "checkflags": [
+        "LOW_SerialKiller_Event_InvestigatorsKilledDoppel = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "13": {
+          "id": "13",
+          "speaker": "Doppelganger",
+          "text": "Would you like to be more than a common murderer? To become an avatar of slaughter?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Tell me what I must do.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Wyll -1",
+                "Karlach -1",
+                "Shadowheart -1",
+                "Astarion 1",
+                "Jaheira -1",
+                "Minthara 1",
+                "Minsc -1",
+                "Halsin -1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_Random"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "Lae'zel",
+                      "text": "Chk - I know the thirst for blood. But you must kill with purpose, not for its own sake.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_LAEZEL"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "12": {
+                      "id": "12",
+                      "speaker": "Shadowheart",
+                      "text": "Sounds like random butchery. If I kill, it has to be with purpose.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_SHADOWHEART"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "4": {
+                      "id": "4",
+                      "speaker": "Astarion",
+                      "text": "Look at you. An 'Avatar of Slaughter', indeed.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_ASTARION"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "19",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "29": {
+                          "id": "29",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "ORI_Inclusion_End_Random"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "19",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {
+                            "16": {
+                              "id": "16",
+                              "speaker": "Doppelganger",
+                              "text": "Another life must be claimed in the name of our Lord. Choose wisely from this list.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_SerialKiller_Event_InvestigatorsKilledDoppel"
+                              ],
+                              "setflags": [
+                                "LOW_SerialKiller_AssassinMeetsPlayer_FirstTarget",
+                                "LOW_SerialKiller_Event_DoppelgangerGiveTargetList"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "19",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "19": {
+                                  "id": "19",
+                                  "speaker": "Doppelganger",
+                                  "text": "We will meet again, aspirant. Hopefully in the most auspicious of circumstance.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_SerialKiller_Knows_TargetList",
+                                    "LOW_SerialKiller_Event_DoppelgangerOutOfSight"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "31": {
+                              "id": "31",
+                              "speaker": "Doppelganger",
+                              "text": "You must kill again - but I don't imagine that'll be a problem. End another target from this list.",
+                              "context": "CinematicNodeContext: He gave us a copy of the target list of future victims.",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_SerialKiller_AssassinMeetsPlayer_FirstTarget",
+                                "LOW_SerialKiller_Event_DoppelgangerGiveTargetList"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "19",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "Wyll",
+                      "text": "Don't you dare think of giving in. If you're so keen to hunt, we'll find deserving prey.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_WYLL"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "28": {
+                      "id": "28",
+                      "speaker": "Gale",
+                      "text": "I'd no idea you held such aspirations. Can't say I share them.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_GALE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "18": {
+                      "id": "18",
+                      "speaker": "Karlach",
+                      "text": "Hang on - you're not seriously considering this, are you?",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_KARLACH"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "30": {
+                      "id": "30",
+                      "speaker": "Halsin",
+                      "text": "Unnatural wickedness. Take no part in this, please.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_HALSIN"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "20": {
+                      "id": "20",
+                      "speaker": "Jaheira",
+                      "text": "Turn around, and walk the other way.",
+                      "context": "NodeContext: Flat warning - player has been approached by a creepy stranger asking if we want to become 'an avatar of slaughter'. Player asked stranger what they must do, but Jaheira butts in to respond bluntly.",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_JAHEIRA"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "21": {
+                      "id": "21",
+                      "speaker": "Minsc",
+                      "text": "This one's smile distresses Boo. If it is slaughter he wants, I will give it to him directly.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_MINSC"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "10": {
+                      "id": "10",
+                      "speaker": "Nightwarden Minthara",
+                      "text": "It is good to meet somebody who recognises our talents - better still if they reward us for doing what comes naturally.",
+                      "context": "",
+                      "checkflags": [
+                        "ORI_Inclusion_PickedAtRandom",
+                        "REALLY_MINTHARA"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "27": {
+              "id": "27",
+              "speaker": "Player",
+              "text": "Never.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Doppelganger",
+                  "text": "Our gaze will remain upon you. You have great... potential.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_SerialKiller_AssassinMeetsPlayer_FirstTarget",
+                    "LOW_SerialKiller_Event_DoppelgangerOutOfSight",
+                    "LOW_SerialKiller_Event_DoppelgangerGiveTargetList"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Player",
+              "text": "Sure thing - last time I got an invitation like this, life got a lot more interesting.",
+              "context": "",
+              "checkflags": [
+                "WARLOCK"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "0",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Doppelganger",
+      "text": "A most fitting demise for a most irksome thorn.",
+      "context": "",
+      "checkflags": [
+        "LOW_SerialKiller_Event_InvestigatorsKilledDoppel"
+      ],
+      "setflags": [
+        "LOW_SerialKiller_Event_InvestigatorsKilledDoppel = False",
+        "LOW_SerialKiller_AssassinMeetsPlayer_FirstTarget"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Doppelganger",
+          "text": "The good constable may have had the wherewithal to stop us. It brings me great pleasure to speak of her in the past tense.",
+          "context": "",
+          "checkflags": [
+            "LOW_SerialKiller_State_DevellaIsDead"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "22",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "Doppelganger",
+              "text": "Such a penchant for violence... It makes me wonder.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "13",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Doppelganger",
+          "text": "Valeria was an incompetent... but having a celestial meddle in our affairs proved most disquieting.",
+          "context": "",
+          "checkflags": [
+            "LOW_SerialKiller_State_ValeriaIsDead"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "22",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

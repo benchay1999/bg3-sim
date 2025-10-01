@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "synopsis": "AD for a mind flayer's memory imprint in the Tadpoling Centre, showing who they used to be when they entered the pod.",
+    "how_to_trigger": "- Load up GustavDev/SCL_Main_A- Go to the Colony Tadpoling Centre (ReCon command \"oe tc_teleport\")- Interact with S_COL_TadpolingCentre_MemoryImprint_007_1047a667-89ed-40c7-b7d0-e43779f57702"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*Delirium... mania... laughter. His mind broke before the end, and he was laughing uncontrollably as the skin fell from his face.*",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_MemoryImprint_FirstUse"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*The device releases a stream of fragmented memories and emotions - all that remains of the pod inhabitant's former self.*",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_MemoryImprint_FirstUse = False"
+      ],
+      "setflags": [
+        "COL_TadpolingCentre_MemoryImprint_FirstUse"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "0",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*The device does not react to your touch or presence.*",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_State_PodEmpty"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

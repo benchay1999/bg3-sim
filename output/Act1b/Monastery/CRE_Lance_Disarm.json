@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "synopsis": "The players disarms the lance after having taken or not taken the Blood of Lathander and with or without using the crest.",
+    "how_to_trigger": "Don't take Blood of Lathander then:SAFE TAKE: Insert the crest into the pedestalORTake Blood of Lathander then:CREST DISARM + BARRIER DOWN: Disarm barrier then use the crest in the pedestalCREST DISARM + BARRIER UP: Don't diisarm barrier then use the crest in the pedestalDESTRUCT DISARM + BARRIER UP - Don't disarm barrier and destroy the crystalsDESTRUCT DISARM + BARRIER DOWN - Disarm barrier and destroy the crystalsQuick set-up - oe CRE_testlance"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: Destroyed crystals shown with small smoke effect and/or sparks, having fizzled out.\n\n(NO BARRIER / CRYSTALS DESTROYED)",
+      "checkflags": [
+        "CRE_Lance_State_DisarmedByDestroy",
+        "CRE_Lance_State_WasActive",
+        "CRE_Lance_State_Disarmed",
+        "CRE_Lance_State_BarrierTrapActive = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "CinematicNodeContext: Barrier forcefield turns off and the ring sinks, locking back into the floor.",
+          "checkflags": [
+            "CRE_Lance_State_BarrierTrapActive"
+          ],
+          "setflags": [
+            "CRE_Lance_State_BarrierTrapActive = False"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: The glow from the four crystals fades off each them in quick succession.",
+              "checkflags": [
+                "CRE_Lance_State_DisarmedByDestroy = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "tagcinematic",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: The beam turns off, and the portal closes.\nThe gyro glow fades and the rings stop spinning, slowly shuddering to a stop.\nThe pillars retract back down.\n\nThe player looks around in relief, and then in admiration at the mace in their hand.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "tagcinematic",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: Destroyed crystals shown with small smoke effect and/or sparks, having fizzled out.\n\n(BARRIER ACTIVE / CRYSTALS DESTROYED)",
+      "checkflags": [
+        "CRE_Lance_State_DisarmedByDestroy",
+        "CRE_Lance_State_WasActive",
+        "CRE_Lance_State_Disarmed",
+        "CRE_Lance_State_BarrierTrapActive"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: The crest clicks into place.\n\nThe player looks up in the direction of the gyro.\n\n(NO BARRIER / CRYSTALS LIT)",
+      "checkflags": [
+        "CRE_Lance_State_DisarmedByDestroy = False",
+        "CRE_Lance_State_WasActive",
+        "CRE_Lance_State_Disarmed",
+        "CRE_Lance_State_BarrierTrapActive = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: The crest clicks into place.\n\nThe player looks up in the direction of the gyro.\n\n(BARRIER ACTIVE / CRYSTALS LIT)",
+      "checkflags": [
+        "CRE_Lance_State_DisarmedByDestroy = False",
+        "CRE_Lance_State_WasActive",
+        "CRE_Lance_State_Disarmed",
+        "CRE_Lance_State_BarrierTrapActive"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: The crest clicks into place, floor hinges unlock, and the ring on the floor begins to spin.\n\nAny companions step back, and the player looks around in positive anticipation.\n\nThe floor ring slowly rises up as the four pillars also rise, the crystals they're topped with starting to glow warmly as if suffused with sunlight.\n\nThe still-spinning floor ring aligns with the gyro, and as it also begins to move and rotate a glow forms at its core.  - The gyro aligns its rings into a flat horizontal plane over the mace.  -  A shaft of light coming down around mace, as the gyro glow fades and the mace\u2019s glow intensifies.\n\nThe mace unlocks from its rigid upright position and begins floating in the shaft of light in a slanted, bobbing, \u201ctake me\u201d manner.\n\nThe player gently takes the mace as the other glows fade slightly, admiring the mace\u2019s pulsing glow as companions step forward.",
+      "checkflags": [
+        "CRE_Lance_State_WasActive = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "tagcinematic",
+      "children": {}
+    }
+  }
+}

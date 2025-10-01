@@ -1,0 +1,1146 @@
+{
+  "metadata": {
+    "synopsis": "This dialog is started by talking to the Butcher character in the Colony. The player may ask the Butcher questions or recruit them as a temporary follower inside the Colony. Alternatively, this dialog runs through a flag in case the player has already met the Butcher, or if the Butcher was recruited as a follower. The Butcher sounds eerily vacant unless otherwise specified, his mind destroyed by his time in Colony.",
+    "how_to_trigger": "Enter the kitchen on the lower floor of the Colony, and talk to the Butcher. The Butcher can be found at 738 -38 -109 in SCL_Main_A."
+  },
+  "dialogue": {
+    "44": {
+      "id": "44",
+      "speaker": "Chop",
+      "text": "...",
+      "context": "NodeContext: Silent",
+      "checkflags": [
+        "COL_Kitchen_Butcher_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "54",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "37",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "51": {
+      "id": "51",
+      "speaker": "Chop",
+      "text": "...",
+      "context": "NodeContext: Silent",
+      "checkflags": [
+        "COL_Kitchen_Butcher_HasMet = False"
+      ],
+      "setflags": [
+        "COL_Kitchen_Butcher_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "54",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "37": {
+          "id": "37",
+          "speaker": "Narrator",
+          "text": "*No will sparks behind his eyes. His mind has been hollowed out, to better echo the commands of the collective.*",
+          "context": "",
+          "checkflags": [
+            "ILLITHID"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "54",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "COL_Kitchen_Butcher_HasMet_LaezelInclusion = False"
+              ],
+              "setflags": [
+                "ORI_Inclusion_Laezel"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "54",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "Lae'zel",
+                  "text": "A ghaik thrall. The only way to save it is to kill it.",
+                  "context": "",
+                  "checkflags": [
+                    "COL_Kitchen_Butcher_HasMet_LaezelInclusion = False"
+                  ],
+                  "setflags": [
+                    "COL_Kitchen_Butcher_HasMet_LaezelInclusion"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "54",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "ORI_Inclusion_End_Laezel"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "54",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "24": {
+                          "id": "24",
+                          "speaker": "Narrator",
+                          "text": "*You could kill it, end its miserable life of enslavement. Surely that would be the humane thing to do...*",
+                          "context": "",
+                          "checkflags": [
+                            "ILLITHID"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "54",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "9": {
+                              "id": "9",
+                              "speaker": "Narrator",
+                              "text": "*Or you could take advantage of its vulnerability and plunder what's left of its hollow mind for anything that could serve you.*",
+                              "context": "",
+                              "checkflags": [
+                                "ILLITHID"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "54",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "25": {
+                                  "id": "25",
+                                  "speaker": "Player",
+                                  "text": "Enter his thoughts.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "COL_Morgue_State_ReadButcherMind = False",
+                                    "ILLITHID"
+                                  ],
+                                  "setflags": [
+                                    "COL_Morgue_State_ReadButcherMind"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "54",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "26": {
+                                      "id": "26",
+                                      "speaker": "Narrator",
+                                      "text": "*You focus on the source of the power, but it is quiet and still. It needs to rest.*",
+                                      "context": "",
+                                      "checkflags": [
+                                        "GLO_Tadpoled_UsedToday1"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "36": {
+                                      "id": "36",
+                                      "speaker": "Narrator",
+                                      "text": "*Pliant as well-worn boots, his mind turns to his work. Chop. Cut. Sort.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "GLO_Tadpoled_UsedToday1"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "47": {
+                                          "id": "47",
+                                          "speaker": "Narrator",
+                                          "text": "*Shiver of impact. Crack of bone. He removes the brains, digs free the squirming tadpoles. The unworthy ones, given over to the illithids. To become.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "1af91160-546a-c0ab-b431-3ab7c7bd3233_MentionedBecoming"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Player",
+                                  "text": "Become what?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "1af91160-546a-c0ab-b431-3ab7c7bd3233_MentionedBecoming",
+                                    "COL_Kitchen_Butcher_HasMet_BecomeWhat = False"
+                                  ],
+                                  "setflags": [
+                                    "COL_Kitchen_Butcher_HasMet_BecomeWhat"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "54",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "42": {
+                                      "id": "42",
+                                      "speaker": "Chop",
+                                      "text": "Part of One Mind. Four little feet. Dancing. To same song.",
+                                      "context": "NodeContext: Vacant; a decent pause between each sentence",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "17": {
+                                          "id": "17",
+                                          "speaker": "Narrator",
+                                          "text": "*With a lurch, you realise he means the intellect devourers. Here the brains are harvested - made part of the hivemind.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "13": {
+                                              "id": "13",
+                                              "speaker": "Chop",
+                                              "text": "But there is one. Little. Kitty. Dances. To another song.",
+                                              "context": "",
+                                              "checkflags": [
+                                                "COL_Morgue_State_UsInColony",
+                                                "COL_Morgue_State_UsFreed = False"
+                                              ],
+                                              "setflags": [
+                                                "COL_Morgue_Butcher_State_MentionedUs"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "55": {
+                                                  "id": "55",
+                                                  "speaker": "Chop",
+                                                  "text": "Same. Song. As you?",
+                                                  "context": "CinematicNodeContext: Tilting his head at us in vacant confusion / interest",
+                                                  "checkflags": [
+                                                    "COL_Morgue_State_UsInColony",
+                                                    "COL_Morgue_State_UsFreed = False",
+                                                    "ILLITHID"
+                                                  ],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "10": {
+                                  "id": "10",
+                                  "speaker": "Player",
+                                  "text": "What is this place?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "COL_Kitchen_Butcher_HasMet_WhatIsMorgue = False"
+                                  ],
+                                  "setflags": [
+                                    "COL_Kitchen_Butcher_HasMet_WhatIsMorgue"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "54",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "1": {
+                                      "id": "1",
+                                      "speaker": "Chop",
+                                      "text": "Nur. Sery. Here. They become.",
+                                      "context": "NodeContext: Vacant; a decent pause between each word",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "1af91160-546a-c0ab-b431-3ab7c7bd3233_MentionedBecoming"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "39": {
+                                  "id": "39",
+                                  "speaker": "Player",
+                                  "text": "What did you do to all these people?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "COL_Kitchen_Butcher_HasMet_WhyButcherPeople = False"
+                                  ],
+                                  "setflags": [
+                                    "COL_Kitchen_Butcher_HasMet_WhyButcherPeople"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "54",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "40": {
+                                      "id": "40",
+                                      "speaker": "Chop",
+                                      "text": "Chop. Chop. Help them. Become?",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "1af91160-546a-c0ab-b431-3ab7c7bd3233_MentionedBecoming"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "48": {
+                                  "id": "48",
+                                  "speaker": "Player",
+                                  "text": "Where can I find this 'Little Kitty'?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "COL_Morgue_State_UsFreed = False",
+                                    "COL_Morgue_Butcher_State_MentionedUs",
+                                    "COL_Morgue_User_HasMet_Us = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "54",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "59": {
+                                      "id": "59",
+                                      "speaker": "Chop",
+                                      "text": "Locked. Up. Bad kitty. Thinks it is. Other.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "0": {
+                                  "id": "0",
+                                  "speaker": "Player",
+                                  "text": "About that creature in the cage...",
+                                  "context": "",
+                                  "checkflags": [
+                                    "COL_Morgue_State_UsFreed = False",
+                                    "COL_Morgue_Butcher_State_MentionedUs = False",
+                                    "COL_Morgue_User_HasMet_Us"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "54",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "54": {
+                                      "id": "54",
+                                      "speaker": "Chop",
+                                      "text": "Bad kitty. Sings wrong song. Must-fix.",
+                                      "context": "NodeContext: Stern",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "27": {
+                                          "id": "27",
+                                          "speaker": "Player",
+                                          "text": "What's wrong with it?",
+                                          "context": "",
+                                          "checkflags": [
+                                            "COL_Morgue_Knows_ButcherKillUsReason = False"
+                                          ],
+                                          "setflags": [
+                                            "COL_Morgue_Knows_ButcherKillUsReason"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "3": {
+                                              "id": "3",
+                                              "speaker": "Chop",
+                                              "text": "Odd. Other. Beyond One Mind.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "43": {
+                                                  "id": "43",
+                                                  "speaker": "Chop",
+                                                  "text": "Cut. Chop. Until it is us again.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "29": {
+                                          "id": "29",
+                                          "speaker": "Player",
+                                          "text": "Let it come with me. We sing the same song.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "COL_Morgue_Butcher_State_MentionedUs",
+                                            "GLO_Tadpoled_UsedToday1 = False",
+                                            "ILLITHID"
+                                          ],
+                                          "setflags": [
+                                            "GLO_Tadpoled_UsedToday1"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Lae'zel -1",
+                                            "Karlach 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "32": {
+                                              "id": "32",
+                                              "speaker": "",
+                                              "text": "True",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "rollresult",
+                                              "children": {
+                                                "33": {
+                                                  "id": "33",
+                                                  "speaker": "Chop",
+                                                  "text": "...Yes. Yes. I hear. Go then. Make. Happy?",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "COL_Morgue_Butcher_State_ConvincedReleaseUs",
+                                                    "COL_Morgue_Butcher_Event_ReceiveUsKey"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "41": {
+                                                      "id": "41",
+                                                      "speaker": "Chop",
+                                                      "text": "Careful petting. Sticky.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "18": {
+                                              "id": "18",
+                                              "speaker": "",
+                                              "text": "False",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "rollresult",
+                                              "children": {
+                                                "12": {
+                                                  "id": "12",
+                                                  "speaker": "Chop",
+                                                  "text": "No. No. Wrong song.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "FactionHostileToPlayerGroupAfterDialog"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "57": {
+                                                      "id": "57",
+                                                      "speaker": "Chop",
+                                                      "text": "OTHER. WRONG SONG!",
+                                                      "context": "NodeContext: Confusion and denial building into rage - attacking after node",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "60": {
+                                          "id": "60",
+                                          "speaker": "Player",
+                                          "text": "Let it come with me. We sing the same song.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "COL_Morgue_Butcher_State_MentionedUs",
+                                            "GLO_Tadpoled_UsedToday1",
+                                            "ILLITHID"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "46": {
+                                              "id": "46",
+                                              "speaker": "Narrator",
+                                              "text": "*You focus on the source of the power, but it is quiet and still. It needs to rest.*",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "45": {
+                                          "id": "45",
+                                          "speaker": "Player",
+                                          "text": "I'll take the creature with me. It won't disrupt the hivemind anymore.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Lae'zel -1",
+                                            "Karlach 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "23": {
+                                              "id": "23",
+                                              "speaker": "",
+                                              "text": "True",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "rollresult",
+                                              "children": {
+                                                "11": {
+                                                  "id": "11",
+                                                  "speaker": "Chop",
+                                                  "text": "...Yes. Yes. Take - only One song remains.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "COL_Morgue_Butcher_State_ConvincedReleaseUs",
+                                                    "COL_Morgue_Butcher_Event_ReceiveUsKey"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "58": {
+                                                      "id": "58",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "41",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "52": {
+                                              "id": "52",
+                                              "speaker": "",
+                                              "text": "False",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "rollresult",
+                                              "children": {
+                                                "56": {
+                                                  "id": "56",
+                                                  "speaker": "Chop",
+                                                  "text": "No. No. Must-fix. MUST-FIX!",
+                                                  "context": "NodeContext: Confusion and denial building into rage - attacking after node",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "FactionHostileToPlayerGroupAfterDialog"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "22": {
+                                          "id": "22",
+                                          "speaker": "Player",
+                                          "text": "Free the creature or I'll kill you and every one of your creations.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Lae'zel -1",
+                                            "Karlach 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "50": {
+                                              "id": "50",
+                                              "speaker": "",
+                                              "text": "True",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "rollresult",
+                                              "children": {
+                                                "28": {
+                                                  "id": "28",
+                                                  "speaker": "Chop",
+                                                  "text": "No. No. Kitties good. Sing One song. Take other. Away!",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "COL_Morgue_Butcher_State_ConvincedReleaseUs",
+                                                    "COL_Morgue_Butcher_Event_ReceiveUsKey"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "15": {
+                                                      "id": "15",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "41",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "16": {
+                                              "id": "16",
+                                              "speaker": "",
+                                              "text": "False",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "rollresult",
+                                              "children": {
+                                                "53": {
+                                                  "id": "53",
+                                                  "speaker": "Chop",
+                                                  "text": "Kill? Cut? Chop?",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "FactionHostileToPlayerGroupAfterDialog"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "34": {
+                                                      "id": "34",
+                                                      "speaker": "Chop",
+                                                      "text": "No. NO. I CHOP!",
+                                                      "context": "NodeContext: Confusion and denial building into rage - attacking after node",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "7": {
+                                          "id": "7",
+                                          "speaker": "Player",
+                                          "text": "Do as you will with it.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "4": {
+                                  "id": "4",
+                                  "speaker": "Player",
+                                  "text": "About the 'little kitty' in the cage...",
+                                  "context": "",
+                                  "checkflags": [
+                                    "COL_Morgue_State_UsFreed = False",
+                                    "COL_Morgue_Butcher_State_MentionedUs",
+                                    "COL_Morgue_User_HasMet_Us"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "54",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "38": {
+                                  "id": "38",
+                                  "speaker": "Player",
+                                  "text": "I need to find your master - Ketheric.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "MOO_KethericShowdown_State_Started = False",
+                                    "COL_KethericShowdown_Knows_ToldKethericLocation = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "21": {
+                                      "id": "21",
+                                      "speaker": "Chop",
+                                      "text": "Mas. Ter? No.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "2": {
+                                          "id": "2",
+                                          "speaker": "Chop",
+                                          "text": "Down. Deep. One of Three. One of Three.",
+                                          "context": "InternalNodeContext: This is the only moment where he becomes almost lucid/emotive\rNodeContext: Breathlessly/suddenly audibly fearful, almost sobbing - before immediately returning to being monosyllabic once this line is over",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "COL_KethericShowdown_Knows_ToldKethericLocation"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "14": {
+                                  "id": "14",
+                                  "speaker": "Player",
+                                  "text": "Why don't I send you to join all these creatures you butchered?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "1af91160-546a-c0ab-b431-3ab7c7bd3233_MentionedBecoming"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [
+                                    "Lae'zel 1",
+                                    "Shadowheart 1",
+                                    "Wyll 1",
+                                    "Minthara 1",
+                                    "Halsin 1"
+                                  ],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "35": {
+                                      "id": "35",
+                                      "speaker": "Chop",
+                                      "text": "...",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "49": {
+                                          "id": "49",
+                                          "speaker": "Chop",
+                                          "text": "Yes. Yes. Please.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "8": {
+                                  "id": "8",
+                                  "speaker": "Player",
+                                  "text": "Leave.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "31": {
+              "id": "31",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "5",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

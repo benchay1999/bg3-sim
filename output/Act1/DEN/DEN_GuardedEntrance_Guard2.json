@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "synopsis": "Maggran (druid guarding the entrance to the inner sanctum of the Emerald Grove) is in bear form. He delivers curt, bestial one-liners if the player has speak with animals. He doesn't want them around. He has a lone human fallback line should he somehow transform."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Maggran",
+      "text": "*Roar.*",
+      "context": "NodeContext: SFX only - animal sound. Do not record.",
+      "checkflags": [
+        "BEAR"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Maggran",
+      "text": "The rite has been stopped - for now. But I'm still watching you.",
+      "context": "NodeContext: In human form. A terse warning",
+      "checkflags": [
+        "DEN_GroveConflict_State_DruidsPacified"
+      ],
+      "setflags": [
+        "DEN_GuardedEntrance_Guard2_RitualStoppedHasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Maggran",
+      "text": "You're lucky I'm not in my bear form. Back off.",
+      "context": "NodeContext: Human form. He's done talking and wants rid of the player",
+      "checkflags": [
+        "DEN_GroveConflict_State_DruidsPacified = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Maggran",
+      "text": "Do not squander our generosity - respect the grove.",
+      "context": "NodeContext: In human form. A terse warning",
+      "checkflags": [
+        "DEN_GuardedEntrance_Guard2_RitualStoppedHasmet",
+        "DEN_GroveConflict_State_DruidsPacified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

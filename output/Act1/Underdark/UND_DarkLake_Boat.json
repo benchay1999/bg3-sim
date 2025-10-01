@@ -1,0 +1,336 @@
+{
+  "metadata": {
+    "synopsis": "Raft dialogue. The player can decide either to sail somewhere or to walk away from the raft.",
+    "how_to_trigger": "Go to X: -10  Y: -210Click on boat"
+  },
+  "dialogue": {
+    "10": {
+      "id": "10",
+      "speaker": "Narrator",
+      "text": "*The craft is ready to sail.*",
+      "context": "InternalNodeContext: ~Should share sequence with *A vessel wobbles on the lake's murky waters.*",
+      "checkflags": [
+        "UND_DarkLake_Boat_HasMet",
+        "UND_EbonLake_State_RaftAtCave"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "Sail into the darkness.",
+          "context": "InternalNodeContext: First time using the boat, sailing to the camp",
+          "checkflags": [
+            "UND_DarkLake_State_LakeEncounterHappened = False"
+          ],
+          "setflags": [
+            "UND_EbonLake_Event_MoveToLake"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: ~The player departs from the Myconid beach and pilots the raft out into the underground lake\n~[EA: Treat this like it's propelled by sails, there is not rowing or special animations for this]",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "tagcinematic",
+              "children": {}
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Set out for the duergar camp.",
+          "context": "InternalNodeContext: Sailing to the camp",
+          "checkflags": [
+            "UND_DarkLake_State_LakeEncounterHappened"
+          ],
+          "setflags": [
+            "UND_EbonLake_Event_MoveToCamp"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*The boat beckons you aboard.*",
+      "context": "InternalNodeContext: ~Should share sequence with *A vessel wobbles on the lake's murky waters.*",
+      "checkflags": [
+        "UND_DarkLake_Boat_HasMet",
+        "UND_EbonLake_State_RaftAtCamp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Board and sail to the cave shore.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "UND_EbonLake_Event_MoveToCave"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: ~The player departs from the Duergar Fortress and pilots the raft out into the underground lake",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "tagcinematic",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Narrator",
+      "text": "*A vessel wobbles on the lake's murky waters.*",
+      "context": "",
+      "checkflags": [
+        "UND_DarkLake_Boat_HasMet = False",
+        "UND_EbonLake_State_RaftAtCamp"
+      ],
+      "setflags": [
+        "UND_DarkLake_Boat_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Narrator",
+      "text": "*The craft is ready to sail.*",
+      "context": "",
+      "checkflags": [
+        "UND_EbonLake_State_RaftAtLake"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Continue your journey across the lake.",
+          "context": "InternalNodeContext: Sailing to the camp after the lake fight",
+          "checkflags": [],
+          "setflags": [
+            "UND_EbonLake_Event_MoveToCamp"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: ~The player stays the course, to the Fortress\n~[EA: Treat this like it's propelled by sails, there is not rowing or special animations for this]",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "tagcinematic",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "Return to the cave shore.",
+          "context": "InternalNodeContext: Sailing back to the cave after the lake fight",
+          "checkflags": [],
+          "setflags": [
+            "UND_EbonLake_Event_MoveToCave"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: ~The player pilots the raft about to head back the way it came\n~[EA: Treat this like it's propelled by sails, there is not rowing or special animations for this]",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "tagcinematic",
+              "children": {}
+            }
+          }
+        },
+        "19": {
+          "id": "19",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "20": {
+      "id": "20",
+      "speaker": "Narrator",
+      "text": "*A vessel wobbles on the lake's murky waters.*",
+      "context": "",
+      "checkflags": [
+        "UND_DarkLake_Boat_HasMet = False",
+        "UND_EbonLake_State_RaftAtCave"
+      ],
+      "setflags": [
+        "UND_DarkLake_Boat_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

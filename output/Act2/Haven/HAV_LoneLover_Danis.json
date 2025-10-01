@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "synopsis": "Danis' dialog in Haven after his rescue.He has made it safely to Haven after escaping Moonrise Towers and has been reunited with Bex, his partner, if she's alive, or is alone if she's not. If she's alive, the player witnessed a really cute reunion between them, and these dialogues cover Danis' followups to that conversation, as well as versions for if he's alone and for a few states in Haven. Not all states are covered since Danis doesn't care much about Ketheric"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Danis",
+      "text": "I owe you my life. That's not a debt I'll soon forget. Thank you.",
+      "context": "NodeContext: Fallback - Danis is grateful to the player for saving him, but not ebullient. A slight chill to him.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Danis",
+      "text": "Good luck out there.",
+      "context": "",
+      "checkflags": [
+        "HAV_LoneLover_Danis_NightsongFreedHasMet",
+        "HAV_Mood_State_NightsongFreed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Danis",
+      "text": "I just want to make it to Baldur's Gate. We've come this far, right? Just a little longer yet.",
+      "context": "",
+      "checkflags": [
+        "HAV_LoneLover_Danis_NightsongFreedHasMet = False",
+        "HAV_Mood_State_NightsongFreed"
+      ],
+      "setflags": [
+        "HAV_LoneLover_Danis_NightsongFreedHasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Danis",
+      "text": "Bex said the gods sent you to us. I think she's right.",
+      "context": "InternalNodeContext: Protected state. Barrier is On, nothing bad happened yet. Not Met.",
+      "checkflags": [
+        "HAV_Mood_State_Protected"
+      ],
+      "setflags": [
+        "HAV_LoneLover_HasMet_Danis"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Danis",
+      "text": "It's good to have you here. Thanks for everything you've done.",
+      "context": "NodeContext: Bex is dead, Danis is trying to come back to reality.",
+      "checkflags": [
+        "HAV_LoneLover_HasMet_DanisGrieving",
+        "DEN_YoungLover02_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Danis",
+      "text": "Thank you for saving us - again. I'm never leaving Bex's side again. Never ever.",
+      "context": "InternalNodeContext: Protected state. Barrier is On, nothing bad happened yet. Met.",
+      "checkflags": [
+        "HAV_LoneLover_HasMet_Danis",
+        "HAV_Mood_State_Protected"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Danis",
+      "text": "Bex isn't easily offended, so gods know what you said to upset her so much.",
+      "context": "NodeContext: If the player really offended Bex earlier, Danis reacts. He's still grateful to the player, but wary now.",
+      "checkflags": [
+        "HAV_LoneLover_State_HatesPlayer"
+      ],
+      "setflags": [
+        "HAV_LoneLover_HasMet_DanisUpset"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Danis",
+          "text": "After everything you've done for us, she'll come around eventually, I'm sure.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Danis",
+      "text": "It isn't the same here - not without Bex. Gods... if I could just hold her in my arms one more time.",
+      "context": "NodeContext: Active, teary grief. Bex died before Danis could have a reunion with her.",
+      "checkflags": [
+        "DEN_YoungLover02_State_PermaDefeated"
+      ],
+      "setflags": [
+        "HAV_LoneLover_HasMet_DanisGrieving"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Danis",
+      "text": "She's dead. Bex. How can she be dead? After everything - Elturel, the druids, this place. It makes no sense at all.",
+      "context": "NodeContext: Danis and Bex reunited, then Bex was killed at some point. Danis is cold and icy in his grief.",
+      "checkflags": [
+        "HAV_LoneLover_State_BexDiedBeforeHaven = False",
+        "DEN_YoungLover02_State_PermaDefeated"
+      ],
+      "setflags": [
+        "HAV_LoneLover_HasMet_DanisGrieving"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Danis",
+      "text": "You should probably go.",
+      "context": "NodeContext: If the player really offended Bex earlier, Danis reacts. He's still grateful to the player, but wary now.",
+      "checkflags": [
+        "HAV_LoneLover_HasMet_DanisUpset",
+        "HAV_LoneLover_State_HatesPlayer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

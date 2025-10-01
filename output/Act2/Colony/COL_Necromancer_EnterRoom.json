@@ -1,0 +1,690 @@
+{
+  "metadata": {
+    "synopsis": "A player walked into Balthazar's chambers in the colony, while Balthazar is alive, and was spotted by him (or one of his undead). Balthazar reacts with hostility, but players can convince him that they have been turned into thralls.This can only happen if Balthazar is alive at this point and you didn't try the Audience with the Absolute. If you did not send Nightsong to Ketheric, Balthazar would have died in combat in her prison.This dialog will also play when interacting with Balthazar in this route.",
+    "how_to_trigger": "- Load GustavDev/SCL_Main_A- Use ReCon command \"oe Necromancer_Assault\"- Pass through the mind flayer door and speak with Balthazar, the Necromancer."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Balthazar",
+      "text": "Away, thrall. Enough distractions.",
+      "context": "CinematicNodeContext: Balthazar is interrupted from his necromancy by the player's intrusion and turns around to face them, annoyed\rNodeContext: Annoyed",
+      "checkflags": [
+        "COL_NecromancerLab_State_PretendedToBeThralls"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "37",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "28",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Balthazar",
+      "text": "How often do I have to repeat myself? No disturbances.",
+      "context": "CinematicNodeContext: Balthazar is interrupted from his necromancy by the player's intrusion and turns around to face them with hostility\rNodeContext: Irate, distracted",
+      "checkflags": [
+        "COL_NecromancerLab_State_PretendedToBeThralls = False"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "37",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Balthazar",
+          "text": "Wait... you're that treacherous drow that failed General Thorm. Minthara. Most kind of you to turn yourself in...",
+          "context": "NodeContext: Min-thar-ah",
+          "checkflags": [
+            "MINTHARA"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "37",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Balthazar",
+          "text": "Wait... You're that wretched Harper woman who's been interfering in General Thorm's plans. Jaheira. Most kind of you to turn yourself in...",
+          "context": "NodeContext: Recognition",
+          "checkflags": [
+            "JAHEIRA"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "37",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Balthazar",
+          "text": "Wait - you're no underling of mine. Far too intact for my tastes. That means you're a trespasser.",
+          "context": "",
+          "checkflags": [
+            "SHA_Necromancer_HasMet_AtTemple = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "28",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "37": {
+              "id": "37",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "2",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Balthazar",
+          "text": "Hold on - it's you. My little helper from the Nightsong's former home.",
+          "context": "NodeContext: Recognition",
+          "checkflags": [
+            "SHA_Necromancer_HasMet_AtTemple"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "28",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Balthazar",
+              "text": "General Thorm didn't inform me you were coming, which means you're trespassing.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "28",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "22": {
+                  "id": "22",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "24",
+                  "link": "28",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "29": {
+                  "id": "29",
+                  "speaker": "Player",
+                  "text": "Hold on - this is just a misunderstanding.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "28",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Balthazar",
+                      "text": "A misunderstanding, is it? Poor creature. But fear not - you'll be relieved of all such concerns, once I'm through with you...",
+                      "context": "NodeContext: Suspicion boiling over, Attacks afterwards",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "25": {
+                  "id": "25",
+                  "speaker": "Player",
+                  "text": "I come to serve.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "28",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "28",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "32": {
+                          "id": "32",
+                          "speaker": "Balthazar",
+                          "text": "Well I didn't seek your service, did I?",
+                          "context": "NodeContext: Peeved (believes the player to be an enthralled slave)",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "28",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "20": {
+                      "id": "20",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "Balthazar",
+                          "text": "No... there's far too much life in your eyes for you to be a thrall. But I can easily remedy that...",
+                          "context": "NodeContext: Suspicion boiling over, Attacks afterwards",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "6": {
+                  "id": "6",
+                  "speaker": "Player",
+                  "text": "Stare vacantly, pretending to be a thrall.",
+                  "context": "InternalNodeContext: Bard exclusive with advantage",
+                  "checkflags": [
+                    "BARD"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "14",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "Balthazar",
+                          "text": "Ah, my mistake. I should have known by your gormless demeanour. You've had your mind decluttered and have been put to work.",
+                          "context": "NodeContext: Believing the player to be an enthralled slave",
+                          "checkflags": [],
+                          "setflags": [
+                            "COL_NecromancerLab_State_PretendedToBeThralls"
+                          ],
+                          "ruletags": [],
+                          "approval": [
+                            "Astarion 1",
+                            "Lae'zel -1",
+                            "Gale 1",
+                            "Shadowheart 1",
+                            "Karlach 1",
+                            "Minthara -1"
+                          ],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "28": {
+                              "id": "28",
+                              "speaker": "Balthazar",
+                              "text": "Just keep out of the way, thrall. I'm in the midst of a sensitive task.",
+                              "context": "NodeContext: Dismissive",
+                              "checkflags": [],
+                              "setflags": [
+                                "COL_NecromancerLab_State_PretendedToBeThralls"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "Player",
+                                  "text": "There was a tiefling child here - Mol. What did you do to her?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "DEN_Thieflings_HasMet_Mol",
+                                    "COL_NecromancerLab_HasItem_MolEyepatch"
+                                  ],
+                                  "setflags": [
+                                    "COL_FindMol_Event_AskedNecromancerAboutMol"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "13": {
+                                      "id": "13",
+                                      "speaker": "Balthazar",
+                                      "text": "Who...? Come now, do you know just how many children have been through here, in one form or another?",
+                                      "context": "NodeContext: Briefly confused, then dismissive",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "18": {
+                                          "id": "18",
+                                          "speaker": "Balthazar",
+                                          "text": "I can't be expected to remember every little morsel. But I do remember that you're supposed to be a thrall. Evidently not.",
+                                          "context": "NodeContext: Onto the player's ruse. Turns hostile at the end.",
+                                          "checkflags": [
+                                            "COL_NecromancerLab_State_PretendedToBeThralls"
+                                          ],
+                                          "setflags": [
+                                            "COL_NecromancerLab_State_PretendedToBeThralls = False",
+                                            "FactionHostileToPlayerGroupAfterDialog"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        },
+                                        "35": {
+                                          "id": "35",
+                                          "speaker": "Balthazar",
+                                          "text": "I can't be expected to remember every little morsel. But I digress, trespasser.",
+                                          "context": "NodeContext: Dismisses the thought before turning hostile",
+                                          "checkflags": [
+                                            "COL_NecromancerLab_State_PretendedToBeThralls = False"
+                                          ],
+                                          "setflags": [
+                                            "COL_NecromancerLab_State_PretendedToBeThralls = False",
+                                            "FactionHostileToPlayerGroupAfterDialog"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "Player",
+                                  "text": "I need to find Ketheric Thorm.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "MOO_KethericShowdown_State_Started = False",
+                                    "COL_NecromancerLab_Knows_KethericLocation = False"
+                                  ],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "23": {
+                                      "id": "23",
+                                      "speaker": "",
+                                      "text": "True",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "5": {
+                                          "id": "5",
+                                          "speaker": "Balthazar",
+                                          "text": "General Thorm to you, thrall. You should have told me you were meant for him from the beginning.",
+                                          "context": "NodeContext: Chastising",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "19": {
+                                              "id": "19",
+                                              "speaker": "Balthazar",
+                                              "text": "Seek out the nautiloid bay, descend the elevator, then the doorway that lies straight ahead. The general will be there.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "COL_NecromancerLab_Knows_KethericLocation"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "15": {
+                                                  "id": "15",
+                                                  "speaker": "Balthazar",
+                                                  "text": "Now chop-chop. or I'll chop-chop.",
+                                                  "context": "NodeContext: Dismissive",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "31": {
+                                      "id": "31",
+                                      "speaker": "",
+                                      "text": "False",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "34": {
+                                          "id": "34",
+                                          "speaker": "Balthazar",
+                                          "text": "Thralls don't make demands. But you're no thrall, are you?",
+                                          "context": "NodeContext: Suspicion boiling over",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "COL_NecromancerLab_State_PretendedToBeThralls = False",
+                                            "FactionHostileToPlayerGroupAfterDialog"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "30": {
+                                              "id": "30",
+                                              "speaker": "Balthazar",
+                                              "text": "An admirable charade, but you overplayed your hand. No matter - you won't need any hands soon enough.",
+                                              "context": "NodeContext: Seeing through the player's lie. Attacks afterwards.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "21": {
+                                  "id": "21",
+                                  "speaker": "Player",
+                                  "text": "Leave.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "27": {
+                      "id": "27",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "33": {
+                          "id": "33",
+                          "speaker": "Balthazar",
+                          "text": "I admire the attempt, but your acting leaves something to be desired. I'll try to make something more useful from whatever parts of you survive undamaged.",
+                          "context": "NodeContext: Unconvinced. Attacks afterwards",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "11": {
+                  "id": "11",
+                  "speaker": "Player",
+                  "text": "Stare vacantly, pretending to be a thrall.",
+                  "context": "InternalNodeContext: Non-bards. No advantage.",
+                  "checkflags": [
+                    "BARD = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "14",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "36": {
+                  "id": "36",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

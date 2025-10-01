@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "synopsis": "Mirkon is the boy who survived the Harpies trying to lull him into the water in the grove. He is a timid boy who does his best to be brave, and dreams of being an adventurer one day. This is his dialogue in Haven, which covers the main states of the kidnapping, losing Isobel, reporting that his fellow tieflings died, when the player returns them and so on."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Mirkon",
+      "text": "Once Ketheric is gone, we can get out of here. I can't wait.<br>",
+      "context": "InternalNodeContext: Nightsong arrived to Haven/dead, people know that Ketheric can be killed\rNodeContext: This is the first bit of hope you've felt in a while. Thinking of the outside and travelling without fear",
+      "checkflags": [
+        "HAV_Mirkon_NightsongFreed_HasMet",
+        "HAV_Mood_State_NightsongFreed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Mirkon",
+      "text": "I'm so glad Mol is back. She's the best.",
+      "context": "NodeContext: Delighted excited and thankful",
+      "checkflags": [
+        "HAV_SavingPrisoners_HasMet_MirkonPostRescue",
+        "MOO_NecroLab_State_KidsRescued_DEPRECATED"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Mirkon",
+      "text": "Ide keeps asking Mol if she's all right. Heh. She acts tough, but she was super worried about Mol.",
+      "context": "NodeContext: sincere, happy and grateful",
+      "checkflags": [
+        "HAV_SavingPrisoners_HasMet_MirkonPostRescue = False",
+        "MOO_NecroLab_State_KidsRescued_DEPRECATED"
+      ],
+      "setflags": [
+        "HAV_SavingPrisoners_HasMet_MirkonPostRescue"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Mirkon",
+      "text": "I miss them. I miss the others.",
+      "context": "NodeContext: Sadness. Mourning.",
+      "checkflags": [
+        "HAV_SavingPrisoners_State_AllTieflingsReportedDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Mirkon",
+      "text": "The light means that Ketheric will be gone soon, right? It is! I can tell by your face!",
+      "context": "InternalNodeContext: Nightsong arrived to Haven/dead, people know that Ketheric can be killed\rNodeContext: hopeful and joyous",
+      "checkflags": [
+        "HAV_Mirkon_NightsongFreed_HasMet = False",
+        "HAV_Mood_State_NightsongFreed"
+      ],
+      "setflags": [
+        "HAV_Mirkon_NightsongFreed_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Mirkon",
+      "text": "I just want to go home.",
+      "context": "InternalNodeContext: State after repelling the attack of the Flaming Fist traitor. NPCs are afraid of other possible attacks.\rNodeContext: Depressed. Down. Worried.",
+      "checkflags": [
+        "HAV_TieflingSurvivors_Hasmet_Mirkon_Alert",
+        "HAV_Mood_State_Alert"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Mirkon",
+      "text": "This place is awesome. There's so much stuff!",
+      "context": "NodeContext: excited. searching the room for 'cool stuff'",
+      "checkflags": [
+        "HAV_TieflingSurvivors_HasMet_Mirkon = False"
+      ],
+      "setflags": [
+        "HAV_TieflingSurvivors_HasMet_Mirkon"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Mirkon",
+      "text": "Mol is super tough. If anyone can handle Moonrise, she can... I think.",
+      "context": "InternalNodeContext: Adults back but not the kids\rNodeContext: Mostly trying to convince yourself",
+      "checkflags": [
+        "HAV_TieflingSurvivors_Mirkon_KidsNotRescued",
+        "MOO_NecroLab_State_KidsRescued_DEPRECATED = False",
+        "HAV_SavingPrisoners_State_TieflingsReturned"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAV_TieflingSurvivors_State_PromisedToSaveMol"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAV_TieflingSurvivors_State_DidNotPromiseToSaveMol"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Mirkon",
+      "text": "Maybe I'll find a sword. Or an axe!",
+      "context": "NodeContext: child-like excitement",
+      "checkflags": [
+        "HAV_TieflingSurvivors_HasMet_Mirkon"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Mirkon",
+      "text": "I keep asking Jaheira about my friends, but she says she doesn't know where they are.",
+      "context": "InternalNodeContext: Adults back but not the kids\rNodeContext: Worried and concerned. The grown ups who are supposed to help aren't",
+      "checkflags": [
+        "MOO_NecroLab_State_KidsRescued_DEPRECATED = False",
+        "HAV_SavingPrisoners_State_TieflingsReturned"
+      ],
+      "setflags": [
+        "HAV_TieflingSurvivors_Mirkon_KidsNotRescued"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Mirkon",
+      "text": "Ide keeps asking to go treasure hunting, but I don't want to. Not anymore.",
+      "context": "NodeContext: Depressed. Down. Worried.",
+      "checkflags": [
+        "HAV_TieflingSurvivors_Hasmet_Mirkon_Alert = False",
+        "HAV_Mood_State_Alert"
+      ],
+      "setflags": [
+        "HAV_TieflingSurvivors_Hasmet_Mirkon_Alert"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

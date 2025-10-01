@@ -1,0 +1,807 @@
+{
+  "metadata": {
+    "synopsis": "This goblin is operating a spit, cooking a dead dwarf. He's in a festive area, where his friends are celebrating a recent raid. The dwarf was captured when attempting to steal something from the goblin camp, and he'll tell us a little about that."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Tracker Grikka",
+      "text": "Meat ain't ready yet - dwarves take an age to roast.",
+      "context": "NodeContext: he's cooking a dead dwarf on a spit, thinks we want a piece",
+      "checkflags": [],
+      "setflags": [
+        "GOB_RoastingDwarf1_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "21": {
+          "id": "21",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "37",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Tracker Grikka",
+      "text": "Get ready to fight or get out. Party's over.",
+      "context": "NodeContext: Someone poisoned the goblin's beer and killed his mates. He's preparing for a fight.",
+      "checkflags": [
+        "GOB_GoblinToast_State_RealizedPoison"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Tracker Grikka",
+      "text": "You peckish? Didn't figure dwarves for cannibals, but yer welcome to 'ave a bite when he's done.",
+      "context": "NodeContext: he's cooking a dead dwarf on a spit - in this case the player is a dwarf too and he's surprised to see them lining up for a hunk of meat",
+      "checkflags": [
+        "DWARF"
+      ],
+      "setflags": [
+        "GOB_RoastingDwarf1_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Tracker Grikka",
+      "text": "'Scuse me, True Soul - gotta concentrate on the meat.",
+      "context": "NodeContext: he's cooking a dead dwarf on a spit - deferential because we're a drow",
+      "checkflags": [
+        "GOB_RoastingDwarf1_HasMet",
+        "DROWELF"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "37": {
+      "id": "37",
+      "speaker": "Tracker Grikka",
+      "text": "D'ya fancy a hunk of dwarf meat, under-dweller? He ain't ready yet.",
+      "context": "NodeContext: he's cooking a dead dwarf on a spit - 'under-dweller' refers to the fact the player is a duergar, a dark dwarf",
+      "checkflags": [
+        "DUERGARDWARF"
+      ],
+      "setflags": [
+        "GOB_RoastingDwarf1_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "40",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "24": {
+          "id": "24",
+          "speaker": "Player",
+          "text": "Smells delicious. Reminds me of my childhood.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "40",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Tracker Grikka",
+              "text": "Figured you'd enjoy it. Bet you wish you'd been 'ere to skewer the ugly bastard.",
+              "context": "NodeContext: he's cooking a dead dwarf on a spit, responding to a duergar player and acknowledging their hatred of dwarves",
+              "checkflags": [
+                "DUERGARDWARF"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "40",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "speaker": "Tracker Grikka",
+              "text": "Prefer human meat myself. Juicier. Yer makin' me salivate just standin' there.<br>",
+              "context": "NodeContext: talking to a human character while salivating about eating humans. He doesn't think there's anything particularly untoward about wanting to eat us.",
+              "checkflags": [
+                "HUMAN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "41": {
+                  "id": "41",
+                  "speaker": "Tracker Grikka",
+                  "text": "One of his mates woz a tasty-lookin' long pig - but he ain't ready for the spit yet.",
+                  "context": "NodeContext: telling us about a human that the goblins have captured. Salivating at the prospect of eating him.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "23",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "28": {
+              "id": "28",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "40",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "15": {
+          "id": "15",
+          "speaker": "Player",
+          "text": "That's disgusting. He smells awful.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "40",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "Tracker Grikka",
+              "text": "Yer not allergic to dwarf-flesh or anything, are ya?",
+              "context": "NodeContext: concerned - he's responding to a duergar character and is concerned their hatred of dwarves might make them allergic to the meat. He's not very bright",
+              "checkflags": [
+                "DUERGARDWARF"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "40",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Tracker Grikka",
+              "text": "That's just how dwarves is. Probably shoulda shaved him before cookin' him.",
+              "context": "NodeContext: cooking a dead dwarf and acknowledging it's disgusting",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "41",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "40": {
+                  "id": "40",
+                  "speaker": "Tracker Grikka",
+                  "text": "Prefer human meat myself. Juicier.",
+                  "context": "NodeContext: he's cooking a dead dwarf on a spit - salivating at the prospect of human meat",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "41",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "Where did you find a dwarf?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "GOB_DwarfOperator_ToldAboutDwarf"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "34": {
+              "id": "34",
+              "speaker": "Tracker Grikka",
+              "text": "He found us! Dunno wot he was doin' 'ere or where he came from.",
+              "context": "NodeContext: responding to player asking about the dead dwarf he's cooking",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "33": {
+                  "id": "33",
+                  "speaker": "Tracker Grikka",
+                  "text": "Lads inside are tryin' to get answers out of one of his mates.",
+                  "context": "NodeContext: 'tryin' to get answers' means 'torturing'. He's enjoying telling us this.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "8",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "1": {
+                      "id": "1",
+                      "speaker": "Player",
+                      "text": "Who was with the dwarf?",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_Halsin_Knows_IsMissing = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "42": {
+                          "id": "42",
+                          "speaker": "Tracker Grikka",
+                          "text": "Scabby gang of tomb-robbers sniffin' around for loot. We put the fear of the Absolute in 'em.",
+                          "context": "NodeContext: talking about some adventurers the goblins captured/killed, pleased with himself",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "32": {
+                              "id": "32",
+                              "speaker": "Tracker Grikka",
+                              "text": "Some managed to scarper, but the rest are all carved up... or wishin' they was.",
+                              "context": "NodeContext: talking about some adventurers the goblins captured/killed, pleased with himself",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "31": {
+                      "id": "31",
+                      "speaker": "Player",
+                      "text": "Was one of his 'mates' a druid?",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_Halsin_Knows_IsFound = False",
+                        "GLO_Halsin_Knows_IsMissing"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "Tracker Grikka",
+                          "text": "Nah. Druids are all beardy and woodsy, ain't they? This lot were a scabby gang of tomb-robbers.",
+                          "context": "NodeContext: responding to a question about a druid, who looked frail but wasn't. So he's building up to a reveal here (warg is a wolf-like creature)",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "44": {
+                              "id": "44",
+                              "speaker": "Tracker Grikka",
+                              "text": "Had a big ol' warbear with 'em, though. Took five of our meanest lashers to chain it up.",
+                              "context": "NodeContext: mock surprise - he's enjoying this twist in the tale he's telling. Lashers are high-tier goblins with whips.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "17": {
+                                  "id": "17",
+                                  "speaker": "Tracker Grikka",
+                                  "text": "We'll beat the fight out of it, and make it one of our own.",
+                                  "context": "NodeContext: enjoying telling hist story",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "36": {
+                      "id": "36",
+                      "speaker": "Player",
+                      "text": "I can get you answers. Where's the prisoner?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Astarion 1",
+                        "Gale -1",
+                        "Lae'zel 1",
+                        "Shadowheart 1",
+                        "Wyll -1",
+                        "Karlach -1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "19": {
+                          "id": "19",
+                          "speaker": "Tracker Grikka",
+                          "text": "Thanks, True Soul. He'll probably spill his guts as soon as he claps eyes on ya!",
+                          "context": "NodeContext: In awe - responding to a drow he just offered to help his friends torture somebody",
+                          "checkflags": [
+                            "DROWELF"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "8": {
+                              "id": "8",
+                              "speaker": "Tracker Grikka",
+                              "text": "He's inside. Keep to the right... an' follow the screams.",
+                              "context": "NodeContext: with a beat before 'an' follow the screams'. He's relishing giving us this information, directing us to a torture victim",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "30": {
+                          "id": "30",
+                          "speaker": "Tracker Grikka",
+                          "text": "Enjoy pokin' holes in people do ya?",
+                          "context": "NodeContext: amused, we just told him we're willing to help his friends torture somebody",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "29": {
+                      "id": "29",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Step away from the pit. Now.",
+          "context": "",
+          "checkflags": [
+            "GOB_RoastingDwarf1_DwarfCannibal = False",
+            "DWARF"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "Tracker Grikka",
+              "text": "Ah, bugger off wiv yer attitude. He 'ad it comin' to 'im.",
+              "context": "NodeContext: Responding to a dwarf player who just called him out for cooking a dwarf. He's amused rather than annoyed",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Tracker Grikka",
+                  "text": "An' if you don't watch yer tongue, I'll chuck that on the fire an' all.",
+                  "context": "NodeContext: Responding to a dwarf player who just called him out for cooking a dwarf. He's amused rather than annoyed",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Save me a piece.",
+          "context": "",
+          "checkflags": [
+            "DWARF"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Tracker Grikka",
+              "text": "Tha's the spirit! I ate goblin once. Me brother. Wouldn't recommend it. All grease and gristle.",
+              "context": "NodeContext: thoughtful; he's talking about eating his brother, but let's assume his brother was already dead and it was just a convenient meal",
+              "checkflags": [],
+              "setflags": [
+                "GOB_RoastingDwarf1_DwarfCannibal"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Tracker Grikka",
+                  "text": "What you really want is a good bit of human meat, with all the trimmings.",
+                  "context": "NodeContext: thoughtful: he just calmly told us he ate his own brother - now he's giving us an honest assessment of the taste",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "35": {
+                      "id": "35",
+                      "speaker": "Tracker Grikka",
+                      "text": "One of this fella's mates woz a tasty-lookin' morsel, but he ain't ready for the spit yet.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "23": {
+                          "id": "23",
+                          "speaker": "Tracker Grikka",
+                          "text": "Lads have got 'im inside for questionin'. Heh-heh-heh.",
+                          "context": "NodeContext: 'Questionin' means torturing. And he's very amused by this",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "10": {
+                              "id": "10",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "33",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "38": {
+      "id": "38",
+      "speaker": "Tracker Grikka",
+      "text": "Buzz off - gotta concentrate on the meat.",
+      "context": "NodeContext: he's cooking a dead dwarf on a spit, needs to concentrate",
+      "checkflags": [
+        "GOB_RoastingDwarf1_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "39": {
+      "id": "39",
+      "speaker": "Tracker Grikka",
+      "text": "Sorry, True Soul. Meat ain't ready yet - dwarves take an age to roast.",
+      "context": "NodeContext: he's cooking a dead dwarf on a spit - the greeting refers to the fact the player is a drow, a race he is afraid of and respects",
+      "checkflags": [
+        "DROWELF"
+      ],
+      "setflags": [
+        "GOB_RoastingDwarf1_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "43": {
+      "id": "43",
+      "speaker": "Tracker Grikka",
+      "text": "That dwarf was still half-raw. Who ate it?",
+      "context": "",
+      "checkflags": [
+        "GOB_RoastingDwarf_Quest_MeatStolen"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "synopsis": "Dialogue when clicking on boat in cave to reach Grymforge. Player can stay or cross. This dialogue only appears once player has already been to Grymforge.",
+    "how_to_trigger": "Repro steps (will only work with new game):1. Start the game.2. loadlevel WLD_Main_A3. Use debug book - go to region - act 1 - underdark - lone duergar4. Use the Recon command: \"setOnstage S_UND_DuergarCamp_BoatAtCave\"6. goto -16.45, 0.50, -235.737. Click on the boat."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*The boat is ready to sail.*",
+      "context": "CinematicNodeContext: Boat sits in the water",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Travel to Grymforge.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "UND_DarkLake_Event_MoveToCampOnBoat"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: Party boards the boat. Player sees the boat sail for a few seconds from the shore with the party on board.\rInternalNodeContext: Cinematic needs to be few seconds, a single node. Just to establish we're going through a long journey from A to B.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "tagcinematic",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

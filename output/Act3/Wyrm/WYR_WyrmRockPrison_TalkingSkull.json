@@ -1,0 +1,1884 @@
+{
+  "metadata": {
+    "synopsis": "Dialog with the Talking Skull in Wyrm Rock Prison.Belongs to a necromancer who died in this cell.He used a spell to bind his soul to his skull.Only interested in talking to prisoners, really.",
+    "how_to_trigger": "BGO_Main_AReCon: oe wyr_imprisonWait for the talking skull to play an ADClick on the talking skull"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Unusual Skull",
+      "text": "'Tis a most curious mind yond enters a prison cell of its own will.",
+      "context": "",
+      "checkflags": [
+        "IsInPrison = False"
+      ],
+      "setflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "48",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "102": {
+          "id": "102",
+          "speaker": "Unusual Skull",
+          "text": "Alas, I speak only to the caged who cannot leave of their own accord.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "84": {
+              "id": "84",
+              "speaker": "Unusual Skull",
+              "text": "Shouldst thee perform illicit acts, we wilt have much to break with.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "31": {
+      "id": "31",
+      "speaker": "Unusual Skull",
+      "text": "Solve two riddles for me. A right answer, and I teleport you to safety. A wrong answer, and I teleport you to the guards.",
+      "context": "",
+      "checkflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally",
+        "WYR_WyrmRockPrison_TalkingSkull_HasMet2"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "48",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "48": {
+          "id": "48",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "19",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Unusual Skull",
+      "text": "Thou hast returned? Mine own disappointment knows not its bounds.",
+      "context": "",
+      "checkflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway",
+        "WYR_WyrmRockPrison_TalkingSkull_State_RiddlesWrong"
+      ],
+      "setflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "48",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Teleport me out of here.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "85": {
+              "id": "85",
+              "speaker": "Unusual Skull",
+              "text": "To the guards, as was mine promise. Begone!",
+              "context": "",
+              "checkflags": [
+                "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+              ],
+              "setflags": [
+                "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToGuards"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "60": {
+              "id": "60",
+              "speaker": "Unusual Skull",
+              "text": "To the guards, as I promised. Begone!",
+              "context": "",
+              "checkflags": [
+                "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+              ],
+              "setflags": [
+                "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToGuards"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "101": {
+          "id": "101",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "47",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Unusual Skull",
+      "text": "Answer two riddles. Be true, and I teleport thee to safety. Be false, and I teleport thee to the guards.",
+      "context": "",
+      "checkflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False",
+        "WYR_WyrmRockPrison_TalkingSkull_HasMet2"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "48",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "37": {
+      "id": "37",
+      "speaker": "Unusual Skull",
+      "text": "I've no more riddles.",
+      "context": "",
+      "checkflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_State_TwoRiddlesCorrect"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "37",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Teleport me to safety.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "39": {
+              "id": "39",
+              "speaker": "Unusual Skull",
+              "text": "Thou didst answereth so wise. Tis doneth.",
+              "context": "",
+              "checkflags": [
+                "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+              ],
+              "setflags": [
+                "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                "WYR_WyrmRockPrison_TalkingSkull_Event_CastGreaterInvisibility",
+                "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToChests"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "14": {
+              "id": "14",
+              "speaker": "Unusual Skull",
+              "text": "You answered me wisely. Off with you, then.",
+              "context": "",
+              "checkflags": [
+                "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+              ],
+              "setflags": [
+                "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                "WYR_WyrmRockPrison_TalkingSkull_Event_CastGreaterInvisibility",
+                "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToChests"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "47": {
+          "id": "47",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "41": {
+      "id": "41",
+      "speaker": "Unusual Skull",
+      "text": "We shall speaketh at the most promising hour, but never ere.",
+      "context": "",
+      "checkflags": [
+        "IsInPrison = False",
+        "WYR_WyrmRockPrison_TalkingSkull_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "58": {
+      "id": "58",
+      "speaker": "Unusual Skull",
+      "text": "Must thy gaze pierce so deeply? Quite crude.",
+      "context": "",
+      "checkflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "37",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "67": {
+          "id": "67",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "82",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "72": {
+      "id": "72",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_State_RiddlesWrong"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "37",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "82": {
+      "id": "82",
+      "speaker": "Unusual Skull",
+      "text": "How malapert. Must thou stareth so?",
+      "context": "NodeContext: All of the weird old ENglish is incorrect on purpose and should be spoken with great confidence",
+      "checkflags": [],
+      "setflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "69",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "71": {
+          "id": "71",
+          "speaker": "Player",
+          "text": "Who's talking? Show yourself.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "69",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Unusual Skull",
+              "text": "Nay sir hides within me. I am merely a skull, nay more and nay less.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "69",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "88": {
+                  "id": "88",
+                  "speaker": "Unusual Skull",
+                  "text": "I call myself Marvin. Thou mayst do the same.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "69",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "70": {
+                      "id": "70",
+                      "speaker": "Unusual Skull",
+                      "text": "Unfortunate, nay, ineluctable, perchance evitable, to be confined in such immuring quarters.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "69",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "45": {
+                          "id": "45",
+                          "speaker": "Unusual Skull",
+                          "text": "Thou wisheth to escape the confines of this prison, doth thou not? I can holpest thee for the cost of two riddles.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "69",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "19": {
+                              "id": "19",
+                              "speaker": "Unusual Skull",
+                              "text": "Answer me true, and I shall telep'rt thee to safety. Answer me false, and I shall telep'rt thee near the guards.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "WYR_WyrmRockPrison_TalkingSkull_HasMet2"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "69",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "22": {
+                                  "id": "22",
+                                  "speaker": "Player",
+                                  "text": "Go on, ask your riddles.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "69",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "87": {
+                                      "id": "87",
+                                      "speaker": "Unusual Skull",
+                                      "text": "We beginneth, to delight.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "69",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "40": {
+                                          "id": "40",
+                                          "speaker": "Unusual Skull",
+                                          "text": "I fly, yet not through the firmament. I bidst and biddeth and bidstseth farewell at night and welcome thee in the morn. I am part of thee, and follow whither thou guideth.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "69",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "62": {
+                                              "id": "62",
+                                              "speaker": "Unusual Skull",
+                                              "text": "I am clothened and claddened all in black, and flee the light. Yet apart 't, I wouldst be nought. Name me.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "69",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "68": {
+                                                  "id": "68",
+                                                  "speaker": "Player",
+                                                  "text": "A child.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "WYR_WyrmRockPrison_TalkingSkull_State_RiddlesWrong"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "69",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "78": {
+                                                      "id": "78",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "93",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                },
+                                                "93": {
+                                                  "id": "93",
+                                                  "speaker": "Player",
+                                                  "text": "A raven.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "WYR_WyrmRockPrison_TalkingSkull_State_RiddlesWrong"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "69",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "53": {
+                                                      "id": "53",
+                                                      "speaker": "Unusual Skull",
+                                                      "text": "Poorly chosen, mine cousin. The correct answer was 'a shadow'.",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "69",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "9": {
+                                                          "id": "9",
+                                                          "speaker": "Unusual Skull",
+                                                          "text": "Thy freedom is yours - thy safety is not. Such was mine gage.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "69": {
+                                                              "id": "69",
+                                                              "speaker": "Unusual Skull",
+                                                              "text": "Anon begone - to the guards!",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [
+                                                                "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway",
+                                                                "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                                                                "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToGuards"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "89": {
+                                                      "id": "89",
+                                                      "speaker": "Unusual Skull",
+                                                      "text": "A shame - I thought you more clever. The true answer is 'a shadow'.",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "69",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "56": {
+                                                          "id": "56",
+                                                          "speaker": "Unusual Skull",
+                                                          "text": "I promised to free you, and so I shall. But I did not promise your safety.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "69",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "50": {
+                                                  "id": "50",
+                                                  "speaker": "Player",
+                                                  "text": "A shadow.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [
+                                                    "Astarion 1",
+                                                    "Lae'zel 1",
+                                                    "Gale 1",
+                                                    "Shadowheart 1",
+                                                    "Wyll 1",
+                                                    "Karlach 1",
+                                                    "Jaheira 1",
+                                                    "Minthara 1",
+                                                    "Minsc 1",
+                                                    "Halsin 1"
+                                                  ],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "5",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "36": {
+                                                      "id": "36",
+                                                      "speaker": "Unusual Skull",
+                                                      "text": "Marvellous deduction - a shadow, forsooth! And anon, riddle the second.",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "5",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "92": {
+                                                          "id": "92",
+                                                          "speaker": "Unusual Skull",
+                                                          "text": "I am battered, but nev'r did bow. Mine coronet bears the blunt of endless blades, but I can nev'r move.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "5",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "10": {
+                                                              "id": "10",
+                                                              "speaker": "Unusual Skull",
+                                                              "text": "I nev'r did sweat, even when the summertide sun didst fully heateth mine brow. Name me.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "5",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "94": {
+                                                                  "id": "94",
+                                                                  "speaker": "Player",
+                                                                  "text": "An anvil.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [
+                                                                    "WYR_WyrmRockPrison_TalkingSkull_State_TwoRiddlesCorrect"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [
+                                                                    "Astarion 1",
+                                                                    "Lae'zel 1",
+                                                                    "Gale 1",
+                                                                    "Shadowheart 1",
+                                                                    "Wyll 1",
+                                                                    "Karlach 1",
+                                                                    "Jaheira 1",
+                                                                    "Minthara 1",
+                                                                    "Minsc 1",
+                                                                    "Halsin 1"
+                                                                  ],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "5",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "95": {
+                                                                      "id": "95",
+                                                                      "speaker": "Unusual Skull",
+                                                                      "text": "An anvil, forsooth! Thou hast maketh me most fustian.",
+                                                                      "context": "",
+                                                                      "checkflags": [
+                                                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+                                                                      ],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "5",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "83": {
+                                                                          "id": "83",
+                                                                          "speaker": "Unusual Skull",
+                                                                          "text": "Is't thy will to forsake this decrepit cell?",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "5": {
+                                                                              "id": "5",
+                                                                              "speaker": "Player",
+                                                                              "text": "Yes. Teleport me to safety.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "44": {
+                                                                                  "id": "44",
+                                                                                  "speaker": "Unusual Skull",
+                                                                                  "text": "Hence with thee, then. Savour thy freedom, for thou cannot claim 't still. Away!",
+                                                                                  "context": "",
+                                                                                  "checkflags": [
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+                                                                                  ],
+                                                                                  "setflags": [
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_CastGreaterInvisibility",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToChests"
+                                                                                  ],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "",
+                                                                                  "is_end": true,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {}
+                                                                                },
+                                                                                "57": {
+                                                                                  "id": "57",
+                                                                                  "speaker": "Unusual Skull",
+                                                                                  "text": "Freedom is yours. Savour it, for there is no gift that cannot be reclaimed or ravaged. Away!",
+                                                                                  "context": "",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_CastGreaterInvisibility",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToChests"
+                                                                                  ],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "",
+                                                                                  "is_end": true,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {}
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "35": {
+                                                                              "id": "35",
+                                                                              "speaker": "Player",
+                                                                              "text": "Not yet.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": true,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "20": {
+                                                                      "id": "20",
+                                                                      "speaker": "Unusual Skull",
+                                                                      "text": "An anvil, indeed! You make me most proud.",
+                                                                      "context": "",
+                                                                      "checkflags": [
+                                                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+                                                                      ],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "5",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "96": {
+                                                                          "id": "96",
+                                                                          "speaker": "Unusual Skull",
+                                                                          "text": "It is time to depart. Are you ready?",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "5",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "59": {
+                                                                  "id": "59",
+                                                                  "speaker": "Player",
+                                                                  "text": "A king.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [
+                                                                    "WYR_WyrmRockPrison_TalkingSkull_State_RiddlesWrong"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "9",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "30": {
+                                                                      "id": "30",
+                                                                      "speaker": "Unusual Skull",
+                                                                      "text": "Alas, thou speaketh nay sooth to me. 'An anvil' was the answer.",
+                                                                      "context": "",
+                                                                      "checkflags": [
+                                                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+                                                                      ],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "9",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "46": {
+                                                                          "id": "46",
+                                                                          "speaker": "",
+                                                                          "text": "",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "9",
+                                                                          "is_end": false,
+                                                                          "node_type": "alias",
+                                                                          "children": {
+                                                                            "55": {
+                                                                              "id": "55",
+                                                                              "speaker": "Unusual Skull",
+                                                                              "text": "Yet thou didst answer once truly. I wilt teleporteth thee into peril - but not without reguerdon.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "69",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "54": {
+                                                                                  "id": "54",
+                                                                                  "speaker": "",
+                                                                                  "text": "",
+                                                                                  "context": "",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_CastMirrorImage",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToGuards"
+                                                                                  ],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "",
+                                                                                  "is_end": true,
+                                                                                  "node_type": "alias",
+                                                                                  "children": {}
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "90": {
+                                                                      "id": "90",
+                                                                      "speaker": "Unusual Skull",
+                                                                      "text": "Alas, what tragedy. 'An anvil' was the answer.",
+                                                                      "context": "",
+                                                                      "checkflags": [
+                                                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+                                                                      ],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "56",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "81": {
+                                                                          "id": "81",
+                                                                          "speaker": "",
+                                                                          "text": "",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "56",
+                                                                          "is_end": false,
+                                                                          "node_type": "alias",
+                                                                          "children": {
+                                                                            "2": {
+                                                                              "id": "2",
+                                                                              "speaker": "Unusual Skull",
+                                                                              "text": "Your first answer was correct, nonetheless. I will send you to the guards - but you will not go unrewarded.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "64": {
+                                                                                  "id": "64",
+                                                                                  "speaker": "Unusual Skull",
+                                                                                  "text": "Now begone!",
+                                                                                  "context": "",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_CastMirrorImage",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_CastHaste",
+                                                                                    "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportToGuards"
+                                                                                  ],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "",
+                                                                                  "is_end": true,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {}
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "28": {
+                                                                  "id": "28",
+                                                                  "speaker": "Player",
+                                                                  "text": "A shield.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [
+                                                                    "WYR_WyrmRockPrison_TalkingSkull_State_RiddlesWrong"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "16": {
+                                                                      "id": "16",
+                                                                      "speaker": "",
+                                                                      "text": "",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "59",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "jump",
+                                                                      "children": {}
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "66": {
+                                                                  "id": "66",
+                                                                  "speaker": "Player",
+                                                                  "text": "I am done answering these silly riddles. Just free me already.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [
+                                                                    "WYR_WyrmRockPrison_TalkingSkull_State_RiddlesWrong"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "8": {
+                                                                      "id": "8",
+                                                                      "speaker": "Unusual Skull",
+                                                                      "text": "Then begone with thee, and tradeth thy japes elsewhere!",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": true,
+                                                                      "node_type": "normal",
+                                                                      "children": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "91": {
+                                                      "id": "91",
+                                                      "speaker": "Unusual Skull",
+                                                      "text": "Very good - your freedom is nigh. And now, the second riddle.",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "100": {
+                                                          "id": "100",
+                                                          "speaker": "Unusual Skull",
+                                                          "text": "I am beaten and battered, but never break. My crown has felt the strike of endless blades, yet I can never move.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "74": {
+                                                              "id": "74",
+                                                              "speaker": "Unusual Skull",
+                                                              "text": "I never sweat, even when the summertide sun shines upon me. Who am I?",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "51": {
+                                                                  "id": "51",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "10",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "jump",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "49": {
+                                                  "id": "49",
+                                                  "speaker": "Player",
+                                                  "text": "This is ridiculous. Just get me out of here.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "WYR_WyrmRockPrison_TalkingSkull_State_RiddlesWrong"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "24": {
+                                                      "id": "24",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "66",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "43": {
+                                      "id": "43",
+                                      "speaker": "Unusual Skull",
+                                      "text": "Then we begin.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "73": {
+                                          "id": "73",
+                                          "speaker": "Unusual Skull",
+                                          "text": "I fly, but not through the sky. I say goodbye at night and hello in the morning. I am part of you, and follow wherever you go.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "13": {
+                                              "id": "13",
+                                              "speaker": "Unusual Skull",
+                                              "text": "I wear only black, and run from the light. Yet without it, I couldn't exist. Who am I?",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "17": {
+                                                  "id": "17",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "62",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "86": {
+                                  "id": "86",
+                                  "speaker": "Player",
+                                  "text": "What a strange game you're playing. Who put you up to this?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "32": {
+                                      "id": "32",
+                                      "speaker": "Unusual Skull",
+                                      "text": "The blame and the pleasure belong solely to me. A fine wizard I was, and a fine jester too, imprisoned for one night after a delightful rash of debauchery.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "12": {
+                                          "id": "12",
+                                          "speaker": "Unusual Skull",
+                                          "text": "The spirit of a prankster had always dwelled in me. The game laid before you is born of jest, wizardry - and whiskey.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "27": {
+                                      "id": "27",
+                                      "speaker": "Unusual Skull",
+                                      "text": "Such is mine own will. Once I did occupy this very prison after a night of most bacchanalian debauchery.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "76": {
+                                          "id": "76",
+                                          "speaker": "Unusual Skull",
+                                          "text": "I possessed the spirit of a gleeker and the art of a wizard.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "79": {
+                                              "id": "79",
+                                              "speaker": "Unusual Skull",
+                                              "text": "The merriment laid before thee is born of trifling jest, wizardry - and whiskey.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "6": {
+                                  "id": "6",
+                                  "speaker": "Player",
+                                  "text": "You talk like a drunk poet. If you wish to converse, you need to speak plainly.",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_WyrmRockPrison_TalkingSkull_State_TriedPersuasion = False",
+                                    "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally = False"
+                                  ],
+                                  "setflags": [
+                                    "WYR_WyrmRockPrison_TalkingSkull_State_TriedPersuasion"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "52": {
+                                      "id": "52",
+                                      "speaker": "",
+                                      "text": "True",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "38": {
+                                          "id": "38",
+                                          "speaker": "Unusual Skull",
+                                          "text": "*Sigh.* Common is just so very - common.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "WYR_WyrmRockPrison_TalkingSkull_Event_SpeaksNormally"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Astarion 1",
+                                            "Lae'zel 1",
+                                            "Gale 1",
+                                            "Shadowheart 1",
+                                            "Wyll 1",
+                                            "Karlach 1",
+                                            "Jaheira 1",
+                                            "Minthara 1",
+                                            "Minsc 1",
+                                            "Halsin 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "75": {
+                                              "id": "75",
+                                              "speaker": "Unusual Skull",
+                                              "text": "Very well. To rephrase: I will teleport you away for the cost of two riddles.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "18": {
+                                                  "id": "18",
+                                                  "speaker": "Unusual Skull",
+                                                  "text": "Answer them right, and I send you to safety. Answer them wrong, and I send you to the guards.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "15": {
+                                      "id": "15",
+                                      "speaker": "",
+                                      "text": "False",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "98": {
+                                          "id": "98",
+                                          "speaker": "Unusual Skull",
+                                          "text": "Mine own words are already as kersey as the travelling lamp in the summer sky.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "7": {
+                                  "id": "7",
+                                  "speaker": "Player",
+                                  "text": "Examine the skull. What magic is at work?",
+                                  "context": "",
+                                  "checkflags": [
+                                    "WYR_WyrmRockPrison_TalkingSkull_State_TriedArcana = False",
+                                    "WYR_WyrmRockPrison_TalkingSkull_State_SucceededArcana = False"
+                                  ],
+                                  "setflags": [
+                                    "WYR_WyrmRockPrison_TalkingSkull_State_TriedArcana"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "97": {
+                                      "id": "97",
+                                      "speaker": "",
+                                      "text": "True",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "77": {
+                                          "id": "77",
+                                          "speaker": "Narrator",
+                                          "text": "*The enchantment is clearly the work of an advanced caster. The body may have wasted away, but the mind that inhabited it is imprinted on the skull.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "WYR_WyrmRockPrison_TalkingSkull_State_SucceededArcana"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "21": {
+                                      "id": "21",
+                                      "speaker": "",
+                                      "text": "False",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "rollresult",
+                                      "children": {
+                                        "23": {
+                                          "id": "23",
+                                          "speaker": "Narrator",
+                                          "text": "*You can't fathom how this skull could be made to talk.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "42": {
+                                  "id": "42",
+                                  "speaker": "Player",
+                                  "text": "I'm not playing this game with you.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "25": {
+                                      "id": "25",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "66",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                },
+                                "65": {
+                                  "id": "65",
+                                  "speaker": "Player",
+                                  "text": "Leave.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "80": {
+          "id": "80",
+          "speaker": "Player",
+          "text": "Pardon me?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "88",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "26": {
+              "id": "26",
+              "speaker": "Unusual Skull",
+              "text": "I say thou art malapert to stare. But peradventure thou art new to such custom.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "88",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "A talking skull? I must be losing my mind.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "88",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "61": {
+              "id": "61",
+              "speaker": "Unusual Skull",
+              "text": "Nay, thy mind hath not betrayed thee. I am as thou perceiveth.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "88",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "63": {
+          "id": "63",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "29": {
+          "id": "29",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "99": {
+      "id": "99",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway",
+        "WYR_WyrmRockPrison_TalkingSkull_State_TwoRiddlesCorrect"
+      ],
+      "setflags": [
+        "WYR_WyrmRockPrison_TalkingSkull_Event_TeleportedAway = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "33",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

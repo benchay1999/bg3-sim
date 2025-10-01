@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "synopsis": "Player reacts to being pushed by the rings in the crypt of the Shar temple.",
+    "how_to_trigger": "1. loadLevel SCL_Main_A2. goto -717 5 -8623. Run into one of the triggers."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Player",
+      "text": "That glowing ring seems promising. Better than getting laid out on my back again.",
+      "context": "NodeContext: Just been repulsed by an invisible kinetic force that threw them a few feet backwards.",
+      "checkflags": [
+        "SHA_Crypt_Event_SawRing"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "0",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Shadowheart",
+          "text": "The Dark Lady's path lies in darkness. Perhaps that is how I can proceed.",
+          "context": "",
+          "checkflags": [
+            "SHA_Crypt_State_SHPushBackReact = False",
+            "25c1ac70-f65f-4869-8a74-eff5827d9cde"
+          ],
+          "setflags": [
+            "SHA_Crypt_State_SHPushBackReact"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Player",
+      "text": "Almost made it that time - just have to watch my step.",
+      "context": "NodeContext: Just been repulsed by an invisible kinetic force that threw them a few feet backwards.",
+      "checkflags": [
+        "SHA_Crypt_State_InnerRingVisible",
+        "SHA_Crypt_Event_SawRing",
+        "SHA_Crypt_Event_PushedByInnerRing"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Player",
+      "text": "What the hells was that...?",
+      "context": "NodeContext: Just been repulsed by an invisible kinetic force that threw them a few feet backwards.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "0",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Player",
+      "text": "I need to be more careful. There must be a way around the ring...",
+      "context": "NodeContext: Just been repulsed by an invisible kinetic force that threw them a few feet backwards.",
+      "checkflags": [
+        "SHA_Crypt_State_OuterRingVisible",
+        "SHA_Crypt_Event_SawRing",
+        "SHA_Crypt_Event_PushedByOuterRing"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

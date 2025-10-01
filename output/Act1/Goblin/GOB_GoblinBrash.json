@@ -1,0 +1,380 @@
+{
+  "metadata": {
+    "synopsis": "Newly-converted goblin is eager to talk about the virtues of the  the Absolute. He's full of religious zeal and relative good cheer, which is amplified if he finds the players are on the same side. Or pretending to be.",
+    "how_to_trigger": "Repro steps:1. Start the game2. loadlevel WLD_Main_A3. goto 298 -224. SetGlobalOsirisFlag GOB_GoblinPriest_State_LeftBranding5. Talk to Novice Greez6. Ask him to brand you"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Warlock Greez",
+      "text": "Praise the Absolute!",
+      "context": "NodeContext: As if saying 'cheers' with a pint rather than overly religious",
+      "checkflags": [
+        "GOB_GoblinBrash_HasMet",
+        "BRANDED"
+      ],
+      "setflags": [
+        "GLO_Absolute_Knows_GoblinsWorship"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Warlock Greez",
+      "text": "Pleasure to have met ya. Praise the Absolute!",
+      "context": "NodeContext: As if talking to a best friend",
+      "checkflags": [
+        "GOB_GoblinBrash_HasMet",
+        "GOB_Checkpoint_Quest_UsedPsionics"
+      ],
+      "setflags": [
+        "GLO_Absolute_Knows_GoblinsWorship"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Warlock Greez",
+      "text": "Ain't polite to stare, worm-wart. If you ain't got the guts to get branded, clear off.",
+      "context": "NodeContext: Dismissive",
+      "checkflags": [
+        "GOB_GoblinBrash_HasMet = False"
+      ],
+      "setflags": [
+        "GOB_GoblinBrash_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Any goblin that tries to brand me loses their hand.",
+          "context": "",
+          "checkflags": [
+            "BRANDED = False",
+            "DUERGARDWARF"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Warlock Greez",
+              "text": "Didn't mean no offence! Brand lets us know you're on our side is all.",
+              "context": "NodeContext: snivelling, afraid",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Warlock Greez",
+                  "text": "Ain't just a mark on the flesh: it's magic. Only them what follows the Absolute can see it.",
+                  "context": "NodeContext: explaining to a superior, afraid",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "You'd dare presume to mark my flesh?",
+          "context": "",
+          "checkflags": [
+            "BRANDED = False",
+            "LOLTHDROWELF"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Hold out your hand, revealing the mark of the Absolute seared into your flesh.",
+          "context": "",
+          "checkflags": [
+            "BRANDED"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Warlock Greez",
+              "text": "Oof. Priestess got you good. Tha's a lovely bit of work.",
+              "context": "NodeContext: Impressed - as if admiring a new tattoo",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Warlock Greez",
+                  "text": "Praise the Absolute!",
+                  "context": "NodeContext: As if saying 'cheers' with a pint rather than overly religious",
+                  "checkflags": [],
+                  "setflags": [
+                    "GLO_Absolute_Knows_GoblinsWorship"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "I'll be marked soon, don't worry.",
+          "context": "",
+          "checkflags": [
+            "GOB_GoblinPriest_State_LeftBranding = False",
+            "BRANDED = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Warlock Greez",
+              "text": "Priestess'll sort you out. Only thing she likes more than prayin' is burnin' folk...",
+              "context": "NodeContext: amused",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "Why would I let anyone scar me for life?",
+          "context": "",
+          "checkflags": [
+            "LOLTHDROWELF = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "18": {
+              "id": "18",
+              "speaker": "Warlock Greez",
+              "text": "Ain't just a mark on the flesh: it's magic. Only them what follows the Absolute can see it.",
+              "context": "NodeContext: as if trying to explain something obvious to an idiot",
+              "checkflags": [],
+              "setflags": [
+                "GLO_Absolute_Knows_GoblinsWorship"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Warlock Greez",
+                  "text": "Let's us know you're on our side. That way, nobody'll mess with ya.",
+                  "context": "NodeContext: explaining something simple, talking down to us a little",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "I have more guts than most. Brand me.",
+          "context": "",
+          "checkflags": [
+            "GOB_GoblinPriest_State_LeftBranding",
+            "BRANDED = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion -1",
+            "Shadowheart -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Warlock Greez",
+              "text": "Happy to oblige.",
+              "context": "NodeContext: smiling, preparing to brand us with a mark of his cult",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: |The goblin applies the branding iron to the player's hand, leaving a glowing mark of the Absolute burnt onto the flesh. After a beat, the glow fades.|",
+                  "checkflags": [],
+                  "setflags": [
+                    "BRANDED"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "tagcinematic",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Warlock Greez",
+      "text": "Still loiterin'?",
+      "context": "",
+      "checkflags": [
+        "GOB_GoblinBrash_HasMet",
+        "BRANDED = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "synopsis": "If a S_LOW_VaultWaveservant spots a player in a restricted area (Offering's Vault and a guardroom nearby), she'll start a dialogue, warning a player.",
+    "how_to_trigger": "1. Launch CTY_Main_A2. Get to Offerings Vault in the cellar and wait for a waveservant to arrivegoto -1821.478; 3.243; -74.007"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Untaken Fitzy Relma",
+      "text": "Stop! What are you doing down here?",
+      "context": "NodeContext: Suspicious; a little angry",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "Untaken Fitzy Relma",
+          "text": "You know what? Never mind what you're doing - leave or I'll call for help.",
+          "context": "NodeContext: Annoyed",
+          "checkflags": [],
+          "setflags": [
+            "LOW_WaterQueensHouse_Event_Trespassing"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "Sorry, I'll go.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "TeleportOutOfTrespass"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "I've seen your 'help' - I think I can handle them.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Untaken Fitzy Relma",
+                  "text": "I don't mean my sisters...",
+                  "context": "NodeContext: Ruefully",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "2",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "I do love company.",
+              "context": "",
+              "checkflags": [
+                "LOW_WaterQueensHouse_State_SahuaginsDefeated = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Untaken Fitzy Relma",
+                  "text": "Umberlee, heed my call!",
+                  "context": "NodeContext: Exultantly",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_WaterQueensHouse_Event_SahuaginsCalled",
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "Your scaly friends are gone - you'll have to deal with me yourself.",
+              "context": "",
+              "checkflags": [
+                "LOW_WaterQueensHouse_State_SahuaginsDefeated"
+              ],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Untaken Fitzy Relma",
+      "text": "You again. What are you doing?",
+      "context": "NodeContext: Suspicious; a little angry",
+      "checkflags": [
+        "LOW_WaterQueensHouse_HasMet_VaultWaveservant"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

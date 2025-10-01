@@ -1,0 +1,1115 @@
+{
+  "metadata": {
+    "synopsis": "This is an old robot guarding the top of a deserting tower. His master programmed him to speak in verse. He talks mostly in iambic pentameter (though sometimes in iambic hexameter) - think shakespearian verse.Translator node: this dialogue is linked to other poems in the game, and uses the same words. For more information, please read the 'Riddles and word puzzles of note' doc!",
+    "how_to_trigger": "- loadlevel WLD_Main_A - oe und_arcane_poems (optional \u2013 do this if you want to unlock knowledge of the poems/passphrases)- goto -26.9, 52.2, -283.7"
+  },
+  "dialogue": {
+    "10": {
+      "id": "10",
+      "speaker": "Narrator",
+      "text": "*The automaton stands lifeless before you, gears silent, head low and heavy.*",
+      "context": "CinematicNodeContext: The automaton's head is hanging down, but it's still standing otherwise.\rInternalNodeContext: Automaton is deactivated by antimagic field",
+      "checkflags": [
+        "UND_Automaton_State_Deactivated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Bernard",
+      "text": "New sounds through damp and dark oppression break / Is it the foe, that foul, contemptuous heel?",
+      "context": "NodeContext: He delivers his lines, then waits expectantly.",
+      "checkflags": [],
+      "setflags": [
+        "UND_Automaton_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "Narrator",
+          "text": "*You know these words - they are from the opening stanza of a play you found in this very tower.*",
+          "context": "",
+          "checkflags": [
+            "UND_ArcaneTower_Knows_PoemPeace"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "35": {
+              "id": "35",
+              "speaker": "Player",
+              "text": "'Or art thou friend, a rescue from my lonely wake?'",
+              "context": "",
+              "checkflags": [
+                "UND_ArcaneTower_Knows_PoemPeace"
+              ],
+              "setflags": [
+                "UND_Automaton_State_Serving"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Bernard",
+                  "text": "Come out of love for me, not love for blood and steel...",
+                  "context": "NodeContext: He bows, then waits, head stil bowed. Beat while still bowed, then looks at you expectantly. He straightens back up, not really knowing what to do.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "29": {
+                      "id": "29",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "33",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Out of my way. I'm not interested in riddles.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Bernard",
+                  "text": "An unbeknownst command by fools that would intrude.",
+                  "context": "NodeContext: The automaton has received an unknown command - he's still in protect mode, so he's getting ready to kill the intruder who gave a wrong command.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "Bernard",
+                      "text": "Now steel shall ring: false tongue will speak no more!",
+                      "context": "NodeContext: The automaton has received an unknown command - he's still in protect mode, so he's getting ready to kill the intruder who gave a wrong command.",
+                      "checkflags": [],
+                      "setflags": [
+                        "UND_Automaton_State_Guarding"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "45": {
+              "id": "45",
+              "speaker": "Player",
+              "text": "I'm a friend. I come in peace.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "28": {
+              "id": "28",
+              "speaker": "Player",
+              "text": "I'm not foul or contemptuous, but I am a foe.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "40": {
+              "id": "40",
+              "speaker": "Player",
+              "text": "Attack it while it waits for an answer.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "UND_Automaton_State_Guarding"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "33": {
+      "id": "33",
+      "speaker": "Bernard",
+      "text": "Command as you see fit, my lord, my liege.",
+      "context": "CinematicNodeContext: The robot bows.",
+      "checkflags": [
+        "UND_Automaton_HasMet",
+        "UND_Automaton_State_Serving"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "26",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "50": {
+          "id": "50",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "15b0a2b9-2b22-50ab-70c0-ab3042def597_GaleCommentTried = False"
+          ],
+          "setflags": [
+            "ORI_Inclusion_Gale"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "26",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Gale",
+              "text": "Don't get me wrong. I love poetry as much as the next wizard, but using it to command an automaton... seems a bit self-indulgent to me.",
+              "context": "NodeContext: Annoyed he didn't think of it",
+              "checkflags": [
+                "15b0a2b9-2b22-50ab-70c0-ab3042def597_GaleCommentTried = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "26",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "15b0a2b9-2b22-50ab-70c0-ab3042def597_GaleCommentTried",
+                    "ORI_Inclusion_End_Gale"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "26",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "37": {
+                      "id": "37",
+                      "speaker": "Player",
+                      "text": "'How can I trust? How will I ever know? / How can I show myself, my darkest me?'",
+                      "context": "",
+                      "checkflags": [
+                        "UND_ArcaneTower_Knows_PoemSecret",
+                        "UND_Automaton_Knows_AskedSecret = False"
+                      ],
+                      "setflags": [
+                        "UND_Automaton_Knows_AskedSecret"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "26",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "48": {
+                          "id": "48",
+                          "speaker": "Bernard",
+                          "text": "If you do not your deepest secrets show? / Reveal your truth, give what you wish to see.",
+                          "context": "NodeContext: The automaton repeats the lines, then bows and turns away.",
+                          "checkflags": [],
+                          "setflags": [
+                            "UND_Automaton_Event_ShowSecret"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "14": {
+                      "id": "14",
+                      "speaker": "Player",
+                      "text": "'These empty sheets are all that's left of you. / The last of all the thoughtless gifts you gave.'",
+                      "context": "",
+                      "checkflags": [
+                        "UND_ArcaneTower_Knows_PoemGift",
+                        "UND_Automaton_Knows_AskedPresent = False"
+                      ],
+                      "setflags": [
+                        "UND_Automaton_Knows_AskedPresent"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "26",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "26": {
+                          "id": "26",
+                          "speaker": "Bernard",
+                          "text": "I will hold onto them; it's all that I can do. / I can't throw them away; I've never been that brave.",
+                          "context": "",
+                          "checkflags": [
+                            "UND_Automaton_HasGift = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "26",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "13": {
+                              "id": "13",
+                              "speaker": "Bernard",
+                              "text": "My fault, my fault - I've nothing left to give.",
+                              "context": "NodeContext: The robot is silent and pats his thighs, as if trying to find out if his pockets are empty, then bows several times, flustered. pause while patting down pockets",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "61": {
+                          "id": "61",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [
+                            "UND_Automaton_HasGift"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "26",
+                          "is_end": false,
+                          "node_type": "alias",
+                          "children": {
+                            "41": {
+                              "id": "41",
+                              "speaker": "",
+                              "text": "",
+                              "context": "CinematicNodeContext: The automaton gives the player a gift offscreen (still unknown what the gift is, probably something small, like  a potion.",
+                              "checkflags": [],
+                              "setflags": [
+                                "UND_Automaton_Event_GiveGift"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "tagcinematic",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "47": {
+                      "id": "47",
+                      "speaker": "Player",
+                      "text": "'There is a light in every living thing. / It's crawling t'wards the surface to survive.'",
+                      "context": "",
+                      "checkflags": [
+                        "UND_ArcaneTower_Knows_PoemBerserk"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "17",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "42": {
+                          "id": "42",
+                          "speaker": "Bernard",
+                          "text": "And in its wake, it tramples everything. / We'll kill the rest, so that the one can thrive.",
+                          "context": "NodeContext: After delivering the line, the robot salutes.",
+                          "checkflags": [],
+                          "setflags": [
+                            "UND_Automaton_State_Berserk"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "32": {
+                      "id": "32",
+                      "speaker": "Player",
+                      "text": "'The silence stretches on - I'm all alone. / Please, can I hold your hands, for just a while?'",
+                      "context": "",
+                      "checkflags": [
+                        "UND_Automaton_Knows_AskedLove = False",
+                        "UND_ArcaneTower_Knows_PoemLove"
+                      ],
+                      "setflags": [
+                        "UND_Automaton_Knows_AskedLove"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "17",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "visualstate",
+                          "children": {
+                            "3": {
+                              "id": "3",
+                              "speaker": "Bernard",
+                              "text": "Of course, my love. Don't be afraid, sweet girl.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "55": {
+                                  "id": "55",
+                                  "speaker": "Narrator",
+                                  "text": "*His hands close around the air next to your face, as if he's taking the hands of someone taller.*",
+                                  "context": "CinematicNodeContext: He grabs the air with both hands, as if he's grabbing someone's hands.",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [
+                                    "DUERGARDWARF",
+                                    "DWARF",
+                                    "SHORT"
+                                  ],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "53": {
+                                      "id": "53",
+                                      "speaker": "Bernard",
+                                      "text": "What can I do? Say, would you like a hug?",
+                                      "context": "NodeContext: He's holding the air in his hands, as if he's holding two hands in his. A bit of a pause before \"Say, do you want a hug.",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "15": {
+                                          "id": "15",
+                                          "speaker": "Player",
+                                          "text": "Yes, please.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "23": {
+                                              "id": "23",
+                                              "speaker": "Bernard",
+                                              "text": "Come here. For just a moment. Let it out.",
+                                              "context": "NodeContext: He was holding the air in his hands. Now, he starts to hug the air, as if he's hugging a person who isn't there.\nVoice: he's talking more slowly and more natural. A small pause before let it out.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "46": {
+                                                  "id": "46",
+                                                  "speaker": "Bernard",
+                                                  "text": "Remember: you are loved, Lenore. So much.",
+                                                  "context": "NodeContext: He's hugging the air, as if he's hugging a person and whispering in her ear.",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "49": {
+                                                      "id": "49",
+                                                      "speaker": "Bernard",
+                                                      "text": "You're doing great. And everyone will be / so proud of you.",
+                                                      "context": "NodeContext: He's hugging the air, as if he's hugging a person and whispering in her ear.",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "19": {
+                                                          "id": "19",
+                                                          "speaker": "Bernard",
+                                                          "text": "As I already am.",
+                                                          "context": "NodeContext: He was hugging the air, as if he was hugging a person, and now lets go, looking the imaginary person in the eye. Voice should be soft and sincere.",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": true,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "58": {
+                                          "id": "58",
+                                          "speaker": "Player",
+                                          "text": "No, thanks.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "52": {
+                                              "id": "52",
+                                              "speaker": "Bernard",
+                                              "text": "You're strong. You're stronger than you ever knew.",
+                                              "context": "NodeContext: He's still holding an imaginary person's hands.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "8": {
+                                                  "id": "8",
+                                                  "speaker": "Bernard",
+                                                  "text": "Remember. I am always here for you.",
+                                                  "context": "NodeContext: He was still holding an imaginary person's hands. Now, he releases them and caresses her face,",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "36": {
+                                                      "id": "36",
+                                                      "speaker": "Bernard",
+                                                      "text": "And you will never walk this path alone.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Bernard",
+                                  "text": "What can I do? Say, would you like a hug?",
+                                  "context": "CinematicNodeContext: The automaton takes the player's hands in his. (only for normal height players)\rNodeContext: A bit of a pause before \"Say, do you want a hug.",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "22": {
+                                      "id": "22",
+                                      "speaker": "Player",
+                                      "text": "Yes, please.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "54": {
+                                          "id": "54",
+                                          "speaker": "Bernard",
+                                          "text": "Come here. For just a moment. Let it out.",
+                                          "context": "CinematicNodeContext: The automaton takes the player into a hug (only players of normal height)\rNodeContext: he's talking more slowly and more natural. A small pause before let it out.",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "38": {
+                                              "id": "38",
+                                              "speaker": "Narrator",
+                                              "text": "*His arms are too tight and too low for a comfortable hug - as if he's meant to be embracing someone slightly shorter.*",
+                                              "context": "NodeContext: The automaton is hugging you firmly.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "20": {
+                                                  "id": "20",
+                                                  "speaker": "Bernard",
+                                                  "text": "Remember: you are loved, Lenore. So much.",
+                                                  "context": "CinematicNodeContext: The automaton is hugging the player and whispering into their ear. (normal size players only)\rNodeContext: He's hugging the player and whispering into their ear.",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "60": {
+                                                      "id": "60",
+                                                      "speaker": "Bernard",
+                                                      "text": "You're doing great. And everyone will be / so proud of you.",
+                                                      "context": "CinematicNodeContext: The automaton is hugging the player and is whispering into their ear. (normal size players only)\rNodeContext: He's hugging the player and whispering into their ear.",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "11": {
+                                                          "id": "11",
+                                                          "speaker": "Bernard",
+                                                          "text": "As I already am.",
+                                                          "context": "CinematicNodeContext: The automaton releases the player from the hug (normal size players only)\rNodeContext: The automaton released the player from the hug, and is looking at them. He's very sincerely saying he's proud of them.",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": true,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "59": {
+                                      "id": "59",
+                                      "speaker": "Player",
+                                      "text": "I'm fine. Thanks.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "5": {
+                                          "id": "5",
+                                          "speaker": "Bernard",
+                                          "text": "You're strong. You're stronger than you ever knew.",
+                                          "context": "CinematicNodeContext: Still holding the player's hands.",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "18": {
+                                              "id": "18",
+                                              "speaker": "Bernard",
+                                              "text": "Remember. I am always here for you.",
+                                              "context": "CinematicNodeContext: The automaton releases the player's hands and caresses the player's cheek.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "56": {
+                                                  "id": "56",
+                                                  "speaker": "Bernard",
+                                                  "text": "And you will never walk this path alone.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "27": {
+                      "id": "27",
+                      "speaker": "Player",
+                      "text": "What is this place?",
+                      "context": "",
+                      "checkflags": [
+                        "UND_Automaton_Knows_AskedPlace = False"
+                      ],
+                      "setflags": [
+                        "UND_Automaton_Knows_AskedPlace"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "17",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "Bernard",
+                          "text": "An unbeknownst command that I cannot fulfil.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "57": {
+                      "id": "57",
+                      "speaker": "Player",
+                      "text": "Who are you?",
+                      "context": "",
+                      "checkflags": [
+                        "UND_Automaton_Knows_AskedWhoAreYou = False"
+                      ],
+                      "setflags": [
+                        "UND_Automaton_Knows_AskedWhoAreYou"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "17",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "0": {
+                      "id": "0",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "34": {
+      "id": "34",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "BARD"
+      ],
+      "setflags": [
+        "UND_Automaton_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "24",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "51": {
+          "id": "51",
+          "speaker": "Player",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "44",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "44",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "Narrator",
+                  "text": "*Long hours spent studying at your college come back to you - this is the opening stanza of an old play, 'The Roads to Darkness'.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "44": {
+                      "id": "44",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "30",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "43": {
+              "id": "43",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "44",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "39": {
+      "id": "39",
+      "speaker": "Bernard",
+      "text": "Be welcome in this house. I wait for your commands.",
+      "context": "NodeContext: The robot talks to a new person he hasn't talked to before while in peace mode. He bows.",
+      "checkflags": [
+        "UND_Automaton_State_Serving"
+      ],
+      "setflags": [
+        "UND_Automaton_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "25": {
+          "id": "25",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "33",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

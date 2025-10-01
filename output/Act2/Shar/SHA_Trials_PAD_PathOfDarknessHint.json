@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "synopsis": "The player comments after possibly figuring out a clue to successfully completing one of the trials in the Temple of Shar. They must safely cross the room while remembering where the platforms along the way are.",
+    "how_to_trigger": "Begin the trial. If the player read a book in the library beforehand, they'll get the correct clue. Otherwise no."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Player",
+      "text": "This must be what that book meant. I need to get across - and that means remembering where these platforms are.",
+      "context": "",
+      "checkflags": [
+        "SHA_Trials_Knows_PathOfDarknessHint"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Player",
+      "text": "I don't understand - what am I supposed to do?",
+      "context": "",
+      "checkflags": [
+        "SHA_Trials_Knows_PathOfDarknessHint = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Player",
+      "text": "The Dark Justiciars were said to be sure of foot in even the darkest recesses of Lady Shar's embrace. I must remember where to step, and have faith that she will guide me.",
+      "context": "",
+      "checkflags": [
+        "ShadowHeart_InParty_Knows_SharWorshipper",
+        "REALLY_SHADOWHEART"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "I must remember where to step, and have faith that she will guide me.",
+          "context": "",
+          "checkflags": [
+            "ShadowHeart_InParty_Knows_SharWorshipper",
+            "REALLY_SHADOWHEART"
+          ],
+          "setflags": [
+            "SHA_Trials_Knows_PathOfDarknessHint"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

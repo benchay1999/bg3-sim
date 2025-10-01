@@ -1,0 +1,453 @@
+{
+  "metadata": {
+    "synopsis": "Umi is upset by Mol's absence and is just barely holding it together (despite Alfira's best attempts).",
+    "how_to_trigger": "1. Run oe SCE_TieflingFollowUp_SetFlags2. Run:oe SCE_TieflingFollowUp_AllTieflings-or-oe SCE_TieflingFollowUp_NoCerys-or-oe SCE_TieflingFollowUp_NoAlfira3. Run oe SCE_SetupDebrief4. Click through the Jaheira/Florrick dialogue5. teleport S_Den_Trainee_001Add eyepatch with: oe SCE_TieflingFollowUp_AddEyepatch"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet",
+        "DEN_TieflingBard_State_ConvincedToQuit"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Umi",
+      "text": "Um, now you've won can we go home? Mattis says it's not far, and I'm tired.",
+      "context": "NodeContext: Sad/shy",
+      "checkflags": [
+        "DEN_TieflingBard_State_Unavailable"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Umi",
+      "text": "Mattis also said there's monsters in Moonrise that are bigger than you.",
+      "context": "NodeContext: Shy/scared",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet",
+        "DEN_TieflingBard_State_Unavailable"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Umi",
+      "text": "Mattis said we can go to Baldur's Gate now, but I want to go home.",
+      "context": "NodeContext: Holding back tears",
+      "checkflags": [
+        "SCE_BackupLeader_State_Dead",
+        "SCE_BackupLeader_State_AtEpilogue"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_TieflingBard_State_ConvincedToQuit"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "COL_NecromancerLab_HasItem_MolEyepatch"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "19": {
+          "id": "19",
+          "speaker": "Player",
+          "text": "I found Mol's eyepatch.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "Umi",
+              "text": "What? Where is she?",
+              "context": "NodeContext: Rising tearful panic",
+              "checkflags": [],
+              "setflags": [
+                "SCE_TieflingFollowUp_Knows_MolMissingEyepatch"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Player",
+                  "text": "Hey, calm down - I'm sure she just dropped it. Mol's fine, I promise.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [
+                    "Gale 1",
+                    "Astarion -1",
+                    "Lae'zel -1",
+                    "Wyll 1",
+                    "Karlach 1",
+                    "Halsin 1",
+                    "Minthara -1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Umi",
+                      "text": "You think so? Mol is really clever. I hope she finds us again soon.",
+                      "context": "NodeContext: Hovering on the brink of tears despite the player's reassurances",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "Player",
+                  "text": "I don't know - I found this in Ketheric's lair.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "3": {
+                      "id": "3",
+                      "speaker": "Umi",
+                      "text": "Does that mean Ketheric got her? Oh no. No. Mol...",
+                      "context": "NodeContext: Frightened - then starting to cry",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "21": {
+                  "id": "21",
+                  "speaker": "Player",
+                  "text": "Dead - like you'll be soon, you little runt.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [
+                    "Gale -1",
+                    "Astarion 1",
+                    "Wyll -1",
+                    "Karlach -1",
+                    "Minthara 1",
+                    "Halsin -1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "17": {
+                      "id": "17",
+                      "speaker": "Umi",
+                      "text": "No! No! Don't say that! Don't!",
+                      "context": "NodeContext: Goes to pieces; floods of tears at the player's meanness",
+                      "checkflags": [],
+                      "setflags": [
+                        "SCE_TieflingFollowUp_Knows_MeanAboutMol"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Say nothing.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_TieflingBard_State_ConvincedToQuit",
+        "COL_NecromancerLab_HasItem_MolEyepatch"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "11",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_TieflingBard_State_Unavailable",
+        "COL_NecromancerLab_HasItem_MolEyepatch"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SCE_BackupLeader_State_Dead",
+        "SCE_BackupLeader_State_AtEpilogue",
+        "COL_NecromancerLab_HasItem_MolEyepatch"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Umi",
+      "text": "Mol'll be cross with me if I'm crying when she finds us. I bet you never cry.",
+      "context": "NodeContext: Trying VERY hard not to cry",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet",
+        "SCE_TieflingFollowUp_Knows_MolMissingEyepatch"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Umi",
+      "text": "Miss Alfira wants to write us a song about you fighting Ketheric - but I miss Mol.",
+      "context": "NodeContext: Sad; Alfira trrying to cheer him up really isn't working (holding back tears towards the end)",
+      "checkflags": [],
+      "setflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Umi",
+      "text": "Ketheric's really gone, isn't he? Ide said he eats eyes - Mol only has one.",
+      "context": "NodeContext: Tearful/scared",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Umi_HasMet",
+        "SCE_BackupLeader_State_Dead",
+        "SCE_BackupLeader_State_AtEpilogue"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "20": {
+      "id": "20",
+      "speaker": "Umi",
+      "text": "I don't want to die!",
+      "context": "NodeContext: Racked with sobs",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Knows_MolMissingEyepatch",
+        "SCE_TieflingFollowUp_Knows_MeanAboutMol"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

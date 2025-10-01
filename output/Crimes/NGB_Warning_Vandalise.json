@@ -1,0 +1,427 @@
+{
+  "metadata": {
+    "synopsis": "A player damaged or destroyedf an item owned by an NPC, and an NPC (the owner or someone else) witnessed this and stops the player by starting this dialog.\n-- Can check the GEB_Crime_IsVictim flag on speaker 1 to distinguish the NPC from being the victim (= owner) or a witness of the crime."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*It seems you owe compensation for the item you just damaged.* ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsVictim",
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "19",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "15": {
+          "id": "15",
+          "speaker": "Player",
+          "text": "All right, I'll pay for it.",
+          "context": "",
+          "checkflags": [
+            "d6480be7-500e-4160-927f-86acfd5c4e7b"
+          ],
+          "setflags": [
+            "GEN_TransferNPCPayment_2"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "Narrator",
+              "text": "*You never knew vandalism could prove so costly. Perhaps next time you'll be more careful.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "I can't afford that.",
+          "context": "",
+          "checkflags": [
+            "d6480be7-500e-4160-927f-86acfd5c4e7b = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Narrator",
+              "text": "*Your refusal to pay has done you few favours. It will be left to the guards to loosen your purse strings.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRIME_CallGuardsFromDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "22": {
+          "id": "22",
+          "speaker": "Player",
+          "text": "I don't think so.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "19",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*It seems the owner of that item was rather attached to it. You're about to face the consequences.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsVictim",
+        "NOT_MESSING_AROUND"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*Destruction of property is taken rather seriously around here. Time to defend yourself.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsVictim = False",
+        "NOT_MESSING_AROUND"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Narrator",
+      "text": "*A witness saw you damaging someone else's property. It seems the guards are about to be called.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsVictim = False",
+        "GEB_Crime_IsAngry"
+      ],
+      "setflags": [
+        "CRIME_CallGuardsFromDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "14": {
+          "id": "14",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "16",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Narrator",
+      "text": "*You damaged something that wasn't yours. You sense trouble brewing.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsVictim = False",
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "Forgive me. I assure you it wasn't intentional.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "18": {
+              "id": "18",
+              "speaker": "Narrator",
+              "text": "*You manage to calm the situation down. Though next time, it may not be so simple.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Things break. Get over it.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Narrator",
+              "text": "*You may want to move on, but the witness doesn't. The guards are on their way.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRIME_CallGuardsFromDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Narrator",
+      "text": "*Your destructive tendencies have landed you in trouble. It looks like the owner is about to summon the guards.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsVictim",
+        "GEB_Crime_IsAngry"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "Forgive me. I assure you it wasn't intentional.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Narrator",
+              "text": "*Your contrition isn't enough. The guards will decide your punishment.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Things break. Get over it.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Narrator",
+              "text": "*You should save your arguments for the guards. It's getting you nowhere at the moment.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRIME_CallGuardsFromDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

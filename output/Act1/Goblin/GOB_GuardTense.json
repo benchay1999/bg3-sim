@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "synopsis": "This goblin is standing guard inside temple - he's a little more relaxed than his zealous companion. Offers 'beginners' advice to player. As hostile as any other goblin if you try to pass without his superior's permission."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Warrior Nrog",
+      "text": "Priestess burned ya, then? Thought I smelled somethin' tasty cookin'.",
+      "context": "CinematicNodeContext: Sniffs player before delivering line.\rNodeContext: Sniffs at player again before delivering line. Tone is mocking but friendly.",
+      "checkflags": [
+        "BRANDED"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Warrior Nrog",
+      "text": "Oi! We ain't said you pass - you don't pass.",
+      "context": "NodeContext: 'Oi' is shouted. You've tried to pass without permission, and he threatens you to go back. Should be intimidating as ignoring this leads to combat.",
+      "checkflags": [
+        "GOB_GuardTense_HasMet = False",
+        "GOB_GoblinThroneCheckpoint_Pass = False"
+      ],
+      "setflags": [
+        "TeleportOutOfTrespass"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Warrior Nrog",
+      "text": "Been boozin'? Won't make the brandin' go any easier - I tried.",
+      "context": "CinematicNodeContext: Goblin sniffs player's breath before delivering line.\rNodeContext: Goblin sniffs player's breath before delivering line - laconic, offering advice.",
+      "checkflags": [
+        "GOB_GuardTense_HasMet = False",
+        "GOB_GoblinThroneCheckpoint_Pass"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Warrior Nrog",
+      "text": "Go on. Sooner yer marked, sooner ye'll heal.",
+      "context": "NodeContext: Bored. Giving advice to one less wise than he.",
+      "checkflags": [
+        "GOB_GuardTense_HasMet",
+        "BRANDED = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

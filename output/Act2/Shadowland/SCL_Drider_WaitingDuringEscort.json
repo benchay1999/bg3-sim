@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "synopsis": "Players were following the Drider accross the shadowlands but moved too far away from the caravan. The Drider will wait for the player to speak with it again before resuming the movement towards the tower.",
+    "how_to_trigger": "(Not implemented yet, waiting for escort behaviour to be fully implemented)- Start escort with caravan.- Don't move and wait for the Drider to walk away.- Drider will stop and wait for the player."
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Kar'niss",
+      "text": "Do not stray from the light, little one. The shadows are hungry.",
+      "context": "NodeContext: panicking a little, twitchy. Stopped momentarily in a dangerous region",
+      "checkflags": [
+        "SCL_Drider_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Lead the way.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Kar'niss",
+              "text": "I do not lead. I follow Her voice - it calls us to Moonrise. Come!",
+              "context": "NodeContext: Religious certainty - the 'Her' is his god",
+              "checkflags": [],
+              "setflags": [
+                "SCL_Drider_Event_ResumeEscort"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Wait here.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Kar'niss",
+              "text": "We must reach Moonrise - She waits there for us. Hurry, hurry, and be done with the darkness.",
+              "context": "NodeContext: concerned, anxious. 'She' is his god",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Kar'niss",
+      "text": "We thought you were lost. Such a shame it would be. Stay close!",
+      "context": "NodeContext: relieved to see the allies they're speaking to, having momentarily lost track of them in a dangerous region",
+      "checkflags": [],
+      "setflags": [
+        "SCL_Drider_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

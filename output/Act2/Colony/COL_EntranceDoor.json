@@ -1,0 +1,437 @@
+{
+  "metadata": {
+    "synopsis": "Dialogue when approaching the door at the end of the Colony that precedes the Ketheric Showdown - once you're inside, it remains locked from the inside until Ketheric is defeated.The COL_EntranceDoor_State_Outside flag indicates on what side the player is.",
+    "how_to_trigger": "- Load up SCL_Main_A in GustavDev.- Use the debugbook to go to Colony \u2192 Ketheric Showdown door.- Go to S_COL_EntranceDoor4 - 378bd363-b818-4326-9883-d5a9cd5a1fcc and click on the door"
+  },
+  "dialogue": {
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*No longer a background murmur, the presence in your mind builds to a roar.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "0",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "GROUP_Daisy",
+          "text": "We've found it. The Absolute is behind this door.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [
+            "DAISY_MALE_VOICE"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "0",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "21": {
+              "id": "21",
+              "speaker": "Narrator",
+              "text": "*You take a worried pause. You didn't free the devil Mizora sent you for. If you walk through the door, you will die - and your soul will be hers eternally.*",
+              "context": "",
+              "checkflags": [
+                "COL_MizorasRescue_State_SavedMizora = False",
+                "COL_MizorasRescue_State_KilledMizora = False",
+                "MOO_MizorasRescue_Event_WalkedAway = False",
+                "REALLY_WYLL"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "0",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [
+                    "COL_MizorasRescue_State_SavedMizora = False",
+                    "COL_MizorasRescue_State_KilledMizora = False",
+                    "TWN_Wyll_State_MizorasCaptureHappened",
+                    "MOO_MizorasRescue_Event_WalkedAway = False",
+                    "REALLY_WYLL = False"
+                  ],
+                  "setflags": [
+                    "ORI_Inclusion_Wyll"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "0",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "17": {
+                      "id": "17",
+                      "speaker": "Wyll",
+                      "text": "We haven't freed Zariel's infernal asset - the one Mizora sent us to find. If we enter now, I'm good as dead.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "c01ce0af-738e-94ab-6b8e-c527205f42ad_WyllInclusion"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "0",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "Wyll",
+                          "text": "Please, we should search this illithid colony further. My soul hangs in the balance.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "c01ce0af-738e-94ab-6b8e-c527205f42ad_WyllInclusion = False"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "9": {
+                              "id": "9",
+                              "speaker": "Narrator",
+                              "text": "*The orb pulses strangely. It feels... unsettled. The Heart of the Absolute is close, as is the moment when you must decide if you will follow Mystra's orders. Or reject them.*",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_Gale_Event_BombDisarmed",
+                                "REALLY_GALE"
+                              ],
+                              "setflags": [
+                                "c01ce0af-738e-94ab-6b8e-c527205f42ad_GaleMoment"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "4",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "4": {
+                              "id": "4",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {
+                                "1": {
+                                  "id": "1",
+                                  "speaker": "Player",
+                                  "text": "Enter.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "COL_KethericShowdown_Event_Entry"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                },
+                                "8": {
+                                  "id": "8",
+                                  "speaker": "Player",
+                                  "text": "Leave.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "18": {
+                      "id": "18",
+                      "speaker": "Narrator",
+                      "text": "*You take a worried pause. You didn't free the devil Mizora sent Wyll for. If you walk through the door, he will die - and his soul will be Mizora's eternally.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "0",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "6": {
+                  "id": "6",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [
+                    "COL_MizorasRescue_State_SavedMizora = False",
+                    "COL_MizorasRescue_State_KilledMizora = False",
+                    "MOO_MizorasRescue_Event_WalkedAway",
+                    "REALLY_WYLL = False"
+                  ],
+                  "setflags": [
+                    "ORI_Inclusion_Wyll"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "0",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "16": {
+                      "id": "16",
+                      "speaker": "Narrator",
+                      "text": "*You take a worried pause. Mizora is still trapped in her pod. If you walk through the door, Wyll will die - and his soul will be hers eternally.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "0",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "Wyll",
+                      "text": "Mizora's still in that pod. If we open this door, the Hells will swallow me on the spot.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "c01ce0af-738e-94ab-6b8e-c527205f42ad_WyllInclusion"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "Wyll",
+                          "text": "Please, we should search. My soul hangs in the balance.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "c01ce0af-738e-94ab-6b8e-c527205f42ad_WyllInclusion = False"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "0": {
+                              "id": "0",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "2",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "19": {
+                  "id": "19",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "13",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Narrator",
+              "text": "*Mizora's voice rings in your mind. If you continue without freeing her, you will perish, and the Hells will claim your soul as their prize.*",
+              "context": "",
+              "checkflags": [
+                "COL_MizorasRescue_State_SavedMizora = False",
+                "COL_MizorasRescue_State_KilledMizora = False",
+                "MOO_MizorasRescue_Event_WalkedAway",
+                "REALLY_WYLL"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "22": {
+                  "id": "22",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "21",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Narrator",
+      "text": "*The door pulses in recognition.*",
+      "context": "",
+      "checkflags": [
+        "COL_EntranceDoor_State_Inside"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Narrator",
+          "text": "*The presence is weak now, a hollow vessel without a heart. It doesn't resist.*",
+          "context": "",
+          "checkflags": [
+            "GLO_Ketheric_State_Dead"
+          ],
+          "setflags": [
+            "COL_EntranceDoor_State_Open"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "20": {
+          "id": "20",
+          "speaker": "Narrator",
+          "text": "*But in denial, too. It will not open, even for you.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "synopsis": "Celebration with the goblins in camp after victory in attack on den.",
+    "how_to_trigger": "from crashsite:in reCon: oe readyattackondenoe attackondenraidervictorySetGlobalOsirisFlag DEN_AttackOnDen_Event_GoblinPartyInvitationgo to camp"
+  },
+  "dialogue": {
+    "7": {
+      "id": "7",
+      "speaker": "Narrator",
+      "text": "*As you approach your camp, the raucous celebrations have already begun.*",
+      "context": "CinematicNodeContext: Player walks up to the camp, overlooking the celebrations",
+      "checkflags": [
+        "AVATAR"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Narrator",
+          "text": "*But you are intercepted before you can join the party.*",
+          "context": "",
+          "checkflags": [
+            "CAMP_GoblinHuntCelebration_Event_CompanionsLeave"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Wyll",
+              "text": "As I feared - there is no place in your company for us. We want no part of this, or of you.",
+              "context": "",
+              "checkflags": [
+                "CAMP_GoblinHuntCelebration_Event_SeveralCompanionsLeave",
+                "607bbdd2-9891-589d-d8b0-53cbd89f0367",
+                "AVATAR = False"
+              ],
+              "setflags": [
+                "GLO_Companion_Leave",
+                "CompanionLowRelation"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "0": {
+              "id": "0",
+              "speaker": "Wyll",
+              "text": "As I feared - there is no place in your company for me. I want no part of this, or of you.",
+              "context": "",
+              "checkflags": [
+                "607bbdd2-9891-589d-d8b0-53cbd89f0367",
+                "AVATAR = False"
+              ],
+              "setflags": [
+                "GLO_Companion_Leave",
+                "CompanionLowRelation"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Karlach",
+                  "text": "I didn't escape the Hells to lose my soul to another evil. I can't be part of this anymore.",
+                  "context": "",
+                  "checkflags": [
+                    "8bbae11e-9e79-ef99-e49b-1217192221ed",
+                    "AVATAR = False"
+                  ],
+                  "setflags": [
+                    "GLO_Companion_Leave"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "4",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Narrator",
+          "text": "*Volo has fallen into the goblins' clutches again, and appears to be chronicling your misdeeds.*",
+          "context": "",
+          "checkflags": [
+            "b0a3c5e5-1bbe-7b76-76d9-6dec398a5297"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Narrator",
+              "text": "*The goblins praise the Absolute, but their celebrations also honour their leaders. Minthara - and you.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Nightwarden Minthara",
+                  "text": "You fought well. And so did these creatures, thanks to our leadership.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [
+                    "Astarion 5",
+                    "Lae'zel 5"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "Nightwarden Minthara",
+                      "text": "When you tire of their company, come to me. Tonight, you are mine.",
+                      "context": "",
+                      "checkflags": [
+                        "DEN_AttackOnDen_Drow_AcceptedSeduction"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "1": {
+                      "id": "1",
+                      "speaker": "Nightwarden Minthara",
+                      "text": "If you tire of their company, come to me. I may have other uses for you yet.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Narrator",
+      "text": "*As you approach your camp, the raucous celebrations have already begun.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Narrator",
+          "text": "*Some of your companions have left... perhaps forever.*",
+          "context": "",
+          "checkflags": [
+            "CAMP_GoblinHuntCelebration_Event_CompanionsLeave"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Narrator",
+              "text": "*The goblins praise the Absolute, but their celebrations also honour their leaders - including you.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

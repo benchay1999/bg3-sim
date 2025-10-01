@@ -1,0 +1,406 @@
+{
+  "metadata": {
+    "synopsis": "The player faces a trapped door, that can only be safely opened using the right key. Other interactions result in an alarm.",
+    "how_to_trigger": "Load up CTY_Main_Astart game in any safe locationEnter stealthTeleport to -1962; -6; 459Sneakily approach door and interact with S_LOW_DoorToControlCentre_cc6552ec-c827-4708-bc18-9fe54b96a507"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*This sturdy door is a dizzyingly complex system of cogs and gears.*",
+      "context": "",
+      "checkflags": [
+        "LOW_SteelWatchFoundry_State_AlarmDoor_Interacted = False"
+      ],
+      "setflags": [
+        "LOW_SteelWatchFoundry_State_AlarmDoor_Interacted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Examine the door.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "18": {
+              "id": "18",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Narrator",
+                  "text": "*The door and Motivators are rigged in the same way. Opening the door will set it off - with no way to deactivate it.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_SteelWatchFoundry_State_AlarmDoor_CheckPassed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "13",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "15": {
+                      "id": "15",
+                      "speaker": "Player",
+                      "text": "Open it with the key.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_SteelWatchFoundry_State_AlarmDoor_HasKey"
+                      ],
+                      "setflags": [
+                        "LOW_SteelWatchFoundry_State_AlarmDoor_AlarmDisabled",
+                        "LOW_SteelWatchFoundry_State_AlarmDoor_Unlocked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "7": {
+                      "id": "7",
+                      "speaker": "Player",
+                      "text": "Pick the lock.",
+                      "context": "",
+                      "checkflags": [
+                        "09884ae4-aa9f-07a2-2b97-3d1b6283f81e"
+                      ],
+                      "setflags": [
+                        "LOW_SteelWatchFoundry_Event_AlarmDoor_LockpickAttempt"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "13",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "5": {
+                      "id": "5",
+                      "speaker": "Player",
+                      "text": "Pick the lock.",
+                      "context": "",
+                      "checkflags": [
+                        "DEPRECATED"
+                      ],
+                      "setflags": [
+                        "LOW_SteelWatchFoundry_Event_AlarmDoor_LockpickAttempt"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "21": {
+                              "id": "21",
+                              "speaker": "Narrator",
+                              "text": "*As the lock clicks open, the alarm triggers - and the screaming begins.*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_SteelWatchFoundry_Event_AlarmDoor_AlarmTriggered",
+                                "LOW_SteelWatchFoundry_State_AlarmDoor_Unlocked",
+                                "LOW_SteelWatchFoundry_Event_AlarmDoor_TriggeredBy"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "10": {
+                          "id": "10",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "8": {
+                              "id": "8",
+                              "speaker": "Narrator",
+                              "text": "*The lock jams as the alarm goes off - and the screaming begins.*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_SteelWatchFoundry_Event_AlarmDoor_AlarmTriggered",
+                                "LOW_SteelWatchFoundry_Event_AlarmDoor_TriggeredBy"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "4": {
+                      "id": "4",
+                      "speaker": "Player",
+                      "text": "Try the door handle.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_SteelWatchFoundry_Event_AlarmDoor_AlarmTriggered",
+                        "LOW_SteelWatchFoundry_Event_AlarmDoor_TriggeredBy"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "9": {
+                      "id": "9",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "6": {
+                  "id": "6",
+                  "speaker": "Narrator",
+                  "text": "*The door is rigged to the Foundry's alarm system. Opening it will set it off.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_SteelWatchFoundry_State_AlarmDoor_CheckPassed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "19": {
+                      "id": "19",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "16",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "20": {
+              "id": "20",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Narrator",
+                  "text": "*Other than a deep sense of foreboding, nothing strikes you as unusual about the door.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Extend your magic to surround the door.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Narrator",
+      "text": "*The door, and its intricate alarm system, remain.*",
+      "context": "",
+      "checkflags": [
+        "LOW_SteelWatchFoundry_State_AlarmDoor_CheckPassed",
+        "LOW_SteelWatchFoundry_State_AlarmDoor_Interacted"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "17",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "17": {
+          "id": "17",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "16",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Narrator",
+      "text": "*The door, and its complexity, remain.*",
+      "context": "",
+      "checkflags": [
+        "LOW_SteelWatchFoundry_State_AlarmDoor_Interacted"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "17",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

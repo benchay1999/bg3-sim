@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "synopsis": "The player clicks on a bloody spot near Dolor's bed. Investigating the blood leads to the player discovering a body underneath the bed. The player can pull out the body from the bed then.",
+    "how_to_trigger": "Click on |Blood| - S_WYR_Flophouse_Blood 17942808-1666-40a6-b150-0206a11c0058 - (-11; 50; 74)"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*The blood you noticed earlier still remains on the floor.*",
+      "context": "",
+      "checkflags": [
+        "WYR_Flophouse_HasMet_Blood"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Try to discern the source of the blood.",
+          "context": "",
+          "checkflags": [
+            "WYR_Flophouse_State_FoundMother = False",
+            "WYR_Flophouse_State_TriedToInvestigateBlood = False"
+          ],
+          "setflags": [
+            "WYR_Flophouse_State_TriedToInvestigateBlood"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Narrator",
+                  "text": "*You notice the blood's source. A body - hidden under the bed.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "WYR_Flophouse_State_SuccessfullyInvestigatedBlood"
+                  ],
+                  "ruletags": [],
+                  "approval": [
+                    "Astarion 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "9": {
+              "id": "9",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Narrator",
+                  "text": "*The blood seems to have dried over the course of a few days - you can't make out where it comes from.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Follow the metallic scent of the blood - track its origin.",
+          "context": "",
+          "checkflags": [
+            "WYR_Flophouse_State_FoundMother = False",
+            "WYR_Flophouse_State_TriedToInvestigateBlood = False",
+            "RANGER"
+          ],
+          "setflags": [
+            "WYR_Flophouse_State_TriedToInvestigateBlood"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Pull out the body.",
+          "context": "",
+          "checkflags": [
+            "WYR_Flophouse_State_SuccessfullyInvestigatedBlood",
+            "WYR_Flophouse_State_FoundMother = False"
+          ],
+          "setflags": [
+            "WYR_Flophouse_State_FoundMother"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*You notice some blood has pooled on the wooden floor.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "WYR_Flophouse_HasMet_Blood"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "synopsis": "A body is found protruding out of a tunnel in the GOB prison. For patch 6: After pulling the body out, the player can use the tunnel to instantly escape. Patch 7: the player will need to find a shovel to dig their way out, but this will be outside the dialogue.",
+    "how_to_trigger": "Go to GOB prison and click on either the tunnel or the body that is sticking out of it. Recon 'oe gotogobprison' to be teleported there"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*Decaying legs protrude from the hole - a failed escape, it seems.*",
+      "context": "CinematicNodeContext: See the legs sticking out of the hole",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Pull the body free.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Narrator",
+              "text": "*The body comes loose, revealing a tunnel. Perhaps you can escape where he failed.*",
+              "context": "CinematicNodeContext: Player crouches down and pulls - grabbing the body (perhaps by the ankles?) and pulling backwards. The body comes loose - exposing the hole.",
+              "checkflags": [],
+              "setflags": [
+                "GOB_PrisonEscape_State_BodyIsFree"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Inspect the body.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Narrator",
+                  "text": "*It seems the tunnel collapsed mid-dig and suffocated him. A crooked heart is embroidered on his left shoe.*",
+                  "context": "CinematicNodeContext: Player is crouched and looking intently at the body",
+                  "checkflags": [],
+                  "setflags": [
+                    "GOB_PrisonEscape_NoticedHeart"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Narrator",
+                  "text": "*You notice the corpse is very dead, but that's all.*",
+                  "context": "CinematicNodeContext: Player is crouched and looking intently at the body",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

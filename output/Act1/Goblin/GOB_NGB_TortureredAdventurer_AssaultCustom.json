@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "synopsis": "Crime dialogue when a random goblin sees you hurting or killing Liam."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*The goblin appears annoyed. It might be best to leave the prisoner alone.*",
+      "context": "InternalNodeContext: Assault - gobs don't know about Den",
+      "checkflags": [
+        "GOB_Torturers_State_KnowDen = False",
+        "GOB_Torturers_State_PrisonerDied = False"
+      ],
+      "setflags": [
+        "GOB_GEB_TorturedAdventurer_Assault_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*It seems the prisoner you killed was rather valuable. Now the price is on your head.*",
+      "context": "InternalNodeContext: Murder - gobs don't know about Den",
+      "checkflags": [
+        "GOB_Torturers_State_KnowDen = False",
+        "GOB_Torturers_State_PrisonerDied"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*The goblin is uneasy. Drow or not, you aren't supposed to be interfering with the prisoner.*",
+      "context": "InternalNodeContext: Assault - gobs don't know about Den\rNodeContext: They have to warn the drow not to hurt the prisoner again, but they are extremely scared the drow will kill them.",
+      "checkflags": [
+        "GOB_Torturers_State_KnowDen = False",
+        "GOB_Torturers_State_PrisonerDied = False",
+        "DROWELF"
+      ],
+      "setflags": [
+        "GOB_GEB_TorturedAdventurer_Assault_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*You sense you've gone too far. Deference to your kind won't dissuade this goblin from killing you.*",
+      "context": "InternalNodeContext: Assault - gobs don't know about Den\rNodeContext: They have to kill the drow, but they are terribly scared.",
+      "checkflags": [
+        "GOB_GEB_TorturedAdventurer_Assault_HasMet",
+        "GOB_Torturers_State_KnowDen = False",
+        "GOB_Torturers_State_PrisonerDied = False",
+        "DROWELF"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*It seems the goblin is no longer content to let you have your fun. This might get messy.*",
+      "context": "InternalNodeContext: Assault - gobs don't know about Den",
+      "checkflags": [
+        "GOB_GEB_TorturedAdventurer_Assault_HasMet",
+        "GOB_Torturers_State_KnowDen = False",
+        "GOB_Torturers_State_PrisonerDied = False"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

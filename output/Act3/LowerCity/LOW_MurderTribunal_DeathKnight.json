@@ -1,0 +1,643 @@
+{
+  "metadata": {
+    "synopsis": "Dialog with the Death Knight sentry guarding the courtroom of the Murder Tribunal, in an underground area beneath Baldur's Gate. If you know that this is where you become an Unholy Assassin - and you have a victim's hand with you - he will let you through to be judged by the tribunal.",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Go to the Murder Tribunal (goto -1319 3 516) (near S_LOW_MurderTribunal_DeathKnight_c16a1ebd-4390-4309-b5d5-30df6e1333f6)- If you want to avoid the death knight becoming hostile, use \"MT_GetDolorItems\" to get one of the victim's hands and a note from Orin.- Read the note from Orin to learn about becoming an Unholy Assassin - otherwise you will not get the right dialog option to bypass the Death Knight.- Approach the Death Knight - upon spotting you, he will talk to you."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "19": {
+          "id": "19",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "5",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "34",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "20": {
+          "id": "20",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "28",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "24": {
+          "id": "24",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "32",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "35": {
+          "id": "35",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "33",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "That Which Guards",
+      "text": "A battle won, a rival slain. <br>His blood runs thick, a worthy stain.",
+      "context": "",
+      "checkflags": [
+        "LOW_MurderTribunal_HasMet_DeathKnight = False",
+        "LOW_MurderTribunal_Event_AttackDolor",
+        "LOW_SerialKiller_State_DolorIsDead"
+      ],
+      "setflags": [
+        "LOW_MurderTribunal_HasMet_DeathKnight",
+        "LOW_MurderTribunal_Event_DeathKnight_GrantedEntry"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "That Which Guards",
+      "text": "Thou hast shown proof of worthy kill. <br>Present thyself before Bhaal's will.",
+      "context": "",
+      "checkflags": [
+        "LOW_MurderTribunal_Event_DeathKnight_GrantedEntry"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "That Which Guards",
+      "text": "A chosen butcher walks anew. <br>Thou standest 'mongst a bloody few.",
+      "context": "",
+      "checkflags": [
+        "LOW_MurderTribunal_State_BecameUnholyAssassin"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "29": {
+      "id": "29",
+      "speaker": "That Which Guards",
+      "text": "Present me well from gifts thine own, <br>Or I shall rend thy flesh from bone.",
+      "context": "",
+      "checkflags": [
+        "LOW_MurderTribunal_HasMet_DeathKnight = False"
+      ],
+      "setflags": [
+        "LOW_MurderTribunal_HasMet_DeathKnight",
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "31",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "28": {
+          "id": "28",
+          "speaker": "Player",
+          "text": "I killed to be here - and took the victim's hand as proof.",
+          "context": "",
+          "checkflags": [
+            "LOW_MurderTribunal_Event_HasNoHand = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "31",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "That Which Guards",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "That Which Guards",
+                  "text": "A grasping hand, an offering vile... <br>Enter now the Dread Lord's Trial.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_MurderTribunal_Event_DeathKnight_GrantedEntry"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "That Which Guards",
+                  "text": "Thine offering is doomed to lack, <br>So face a fate most bleak and black.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "22": {
+          "id": "22",
+          "speaker": "Player",
+          "text": "I offer myself. There is no finer offering than the poison fruit of Bhaal's loins.",
+          "context": "",
+          "checkflags": [
+            "REALLY_DARK_URGE"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "31",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "2",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "I offer myself.",
+          "context": "",
+          "checkflags": [
+            "REALLY_DARK_URGE = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "31",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "4",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "34": {
+          "id": "34",
+          "speaker": "Player",
+          "text": "You seek me. Let me pass.",
+          "context": "",
+          "checkflags": [
+            "LOW_MurderTribunal_Knows_UnholyAssassin = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "31",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "2",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "I've got several powerful magic artefacts you can take.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "31",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "How about some gold? I've got plenty.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "4",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "32": {
+          "id": "32",
+          "speaker": "Player",
+          "text": "I care not for what you seek. Stand aside.",
+          "context": "",
+          "checkflags": [
+            "REALLY_DARK_URGE = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "Ugh. Father's servants are such a bore. Let me through!",
+          "context": "",
+          "checkflags": [
+            "LOW_MurderTribunal_Event_HasNoHand",
+            "REALLY_DARK_URGE"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "That Which Guards",
+              "text": "To passions brash thou art a slave. <br>This sinful ground shall be thy grave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "33": {
+          "id": "33",
+          "speaker": "Player",
+          "text": "I can't rend your flesh, but I can dent your metal.",
+          "context": "",
+          "checkflags": [
+            "REALLY_DARK_URGE"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "30": {
+          "id": "30",
+          "speaker": "Player",
+          "text": "I don't want to give you the wrong answer. Can I have some time to think?",
+          "context": "",
+          "checkflags": [
+            "LOW_MurderTribunal_Event_HasNoHand",
+            "BARD = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Grant unto me a touch more time / To ponder on your cunning rhyme.",
+          "context": "",
+          "checkflags": [
+            "LOW_MurderTribunal_Event_HasNoHand",
+            "BARD"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "That Which Guards",
+                  "text": "Return to me with what I seek, <br>Or face a fate most black and bleak.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_MurderTribunal_Event_CancelHostileAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "27": {
+              "id": "27",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "26": {
+                  "id": "26",
+                  "speaker": "That Which Guards",
+                  "text": "Thou walkest 'pon unhallowed ground, <br>A place your corpse will not be found.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "25": {
+          "id": "25",
+          "speaker": "Player",
+          "text": "I am preparing a triumphant offering, grant me more time to make it glorious.",
+          "context": "",
+          "checkflags": [
+            "LOW_MurderTribunal_Event_HasNoHand",
+            "REALLY_DARK_URGE"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "synopsis": "This dialog plays upon rolling a passive Arcana check after reading one of the illithid manuscripts in the lower Colony's Memory Library.For tadpoled companions, each companion will see this check once, after reading an illithid manuscript, unless someone else has succeeded this check.For non-tadpoled companions, a different check occurs when they try to read the illithid manuscripts. As they do not have a tadpole, they can't read the script, and will remark on this. A different Arcana Check occurs in script, and the resulting AD from this check will also play again everytime they try to read an illithid manuscript afterwards.So for non-tadpoled companions (no ILLITHID tag) this dialog is repeatable, but not for tadpoled companions.",
+    "how_to_trigger": "Go to the lower floor of the Colony, find the Memory Library (approx. 670; -44; -10) and interact with \"S_COL_MemLib_Manuscript_002\".For tadpoled companions (most of them), this Arcana Check happens after reading one of the illithid manuscripts.Non-tadpoled companions (Jaheira or Halsin) will have the Arcana Check upon interacting with the manuscripts, but are not able to read them. They will see the same dialog from the Arcana Check result every time they try to read it again.The tadpoled and non-tadpoled Arcana Checks are technically two distinct checks, so the results of the checks do not cross over between those different groups of companions."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Player",
+      "text": "Seems I can understand illithid script. Thank you, tadpole.",
+      "context": "",
+      "checkflags": [
+        "COL_MemoryLibrary_Manuscripts_ArcanaCheckSuccess"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Player",
+      "text": "These symbols are nonsense to me... so why can I read them?",
+      "context": "",
+      "checkflags": [
+        "COL_MemoryLibrary_Manuscripts_ArcanaCheckSuccess = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Player",
+      "text": "Meaningless.",
+      "context": "",
+      "checkflags": [
+        "COL_MemoryLibrary_Manuscripts_ArcanaCheckSuccess_NonTadpoled = False",
+        "ILLITHID = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Player",
+      "text": "Illithid writing. Meaningless to me.",
+      "context": "",
+      "checkflags": [
+        "COL_MemoryLibrary_Manuscripts_ArcanaCheckSuccess_NonTadpoled",
+        "ILLITHID = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

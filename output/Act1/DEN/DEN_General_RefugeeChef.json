@@ -1,0 +1,737 @@
+{
+  "metadata": {
+    "synopsis": "An older woman, responsible for feeding an entire camp of refugees before they leave. She is gruff but has a heart of gold. She offers the player some gruel. Purpose is to highlight how desperate their situation is."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Okta",
+      "text": "Not now. Someone's been messing with my bloody cooking pot.",
+      "context": "",
+      "checkflags": [
+        "DEN_RefugeeChef_State_CauldronGone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "29": {
+          "id": "29",
+          "speaker": "Okta",
+          "text": "Didn't think the food was that bad.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Okta",
+      "text": "You've had your share. Leave some for the rest.",
+      "context": "CinematicNodeContext: Shrug, as if everything is fine. \rNodeContext: You're trying to keep the worry out of your voice and make it sound like everything is under control.",
+      "checkflags": [
+        "DEN_Thieflings_HasMet_Chef",
+        "DEN_Thieflings_Event_TookGruel"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Okta",
+      "text": "We'll be leaving soon. Make sure you stock up.",
+      "context": "NodeContext: A gruff sounding chiding that comes from a place of concern.",
+      "checkflags": [
+        "DEN_Thieflings_HasMet_Chef",
+        "DEN_Thieflings_Event_TookGruel = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "28": {
+      "id": "28",
+      "speaker": "Okta",
+      "text": "You. Saw you fighting those slimy bastards.",
+      "context": "CinematicNodeContext: Bowl in hand, paused mid preperation of gruel. Next to a pot with a ladle in hand. Looking at the player, appears annoyed. \rNodeContext: Gruff sounding. Shouldn't be clear if you're annoyed at the player or not.",
+      "checkflags": [
+        "DEN_Thieflings_HasMet_Chef = False"
+      ],
+      "setflags": [
+        "DEN_Thieflings_HasMet_Chef",
+        "PreventTradeWithPlayer"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Okta",
+          "text": "Fancy a bowl?",
+          "context": "CinematicNodeContext: Holds the bowl out to the player. Nods towards it, doesn't expect to be refused. \rNodeContext: Gruff as you hand the food to the player. Doesn't expect the player to refuse.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "3",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Okta",
+              "text": "Best to fill your belly now - while we still can.",
+              "context": "CinematicNodeContext: Holding the bowl out. \rNodeContext: Warmth to her voice despite the gruff exterior. She's obviously concerned about the player but is hiding it.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "3",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "40": {
+                  "id": "40",
+                  "speaker": "Player",
+                  "text": "I much prefer roasted dwarf.",
+                  "context": "",
+                  "checkflags": [
+                    "REALLY_DARK_URGE"
+                  ],
+                  "setflags": [
+                    "ORI_DarkUrge_Event_IndulgedUrge",
+                    "ORI_DarkUrge_Event_HadUrge"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "3",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "7",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "Player",
+                  "text": "Take a bowl.",
+                  "context": "CinematicNodeContext: Take the bowl.",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_DarkUrge_Event_ResistedUrge",
+                    "DEN_Thieflings_Event_TookGruel",
+                    "ORI_DarkUrge_Event_HadUrge"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "3",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Okta",
+                      "text": "Look. It ain't much, but it might make all the difference.",
+                      "context": "CinematicNodeContext: Shrugs as she gestures to the food. \rNodeContext: Player has taken food and asked what it is. You're a bit embarassed at the paltry offering, but aware that this is as good as it gets and that you all need your strength.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "3",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "23": {
+                          "id": "23",
+                          "speaker": "Okta",
+                          "text": "The only way we'll make it to Baldur's Gate is to run, and run hard.",
+                          "context": "NodeContext: Knows that there's every chance everyone will die on the journey. Trying to stress how dangerous it is without scaring the player.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "3",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "20": {
+                  "id": "20",
+                  "speaker": "Player",
+                  "text": "I'm not hungry.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "23",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Okta",
+                      "text": "Suit yourself, but the only way we'll make it to Baldur's Gate is to run, and run hard.",
+                      "context": "CinematicNodeContext: Shrug as Okta pulls the bowl back towards her. \rNodeContext: Player has turned down your food. You're annoyed but hiding it with indifference.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "Okta",
+                          "text": "If a gnoll catches your scent, you'll need every bit of strength. Trust me.",
+                          "context": "NodeContext: Ibid.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "39": {
+                  "id": "39",
+                  "speaker": "Player",
+                  "text": "What is it, exactly?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "23",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "38": {
+                      "id": "38",
+                      "speaker": "Okta",
+                      "text": "Food. You want it or not?",
+                      "context": "NodeContext: Player has asked what it is. You're getting annoyed.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "30": {
+                          "id": "30",
+                          "speaker": "Player",
+                          "text": "Take the bowl.",
+                          "context": "CinematicNodeContext: Takes the bowl.",
+                          "checkflags": [],
+                          "setflags": [
+                            "DEN_Thieflings_Event_TookGruel"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "33": {
+                              "id": "33",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "22",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "31": {
+                          "id": "31",
+                          "speaker": "Player",
+                          "text": "I'm good, thanks.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "34": {
+                              "id": "34",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "18",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "35": {
+                  "id": "35",
+                  "speaker": "Player",
+                  "text": "This slop is beneath me.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [
+                    "REALLY_DROWELF",
+                    "REALLY_GITHYANKI"
+                  ],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "23",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "Okta",
+                      "text": "See how you feel when your pack is empty - it'll be this or a handful of weeds.",
+                      "context": "CinematicNodeContext: Shrug as Okta pulls the bowl back towards herself. \rNodeContext: Player has rudely turned down your food. You're annoyed and offended.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "Okta",
+                          "text": "We'll need every bit of strength to make it to Baldur's Gate. Trust me.",
+                          "context": "NodeContext: Thinks the player is being a spoilt idiot.Sounds very annoyed now.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "13": {
+                  "id": "13",
+                  "speaker": "Player",
+                  "text": "No, thank you. The smell is more than enough.",
+                  "context": "",
+                  "checkflags": [
+                    "ELF"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "23",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "36": {
+                      "id": "36",
+                      "speaker": "Okta",
+                      "text": "Go ahead. Turn that pretty nose of yours up.",
+                      "context": "CinematicNodeContext: Shrug as Okta pulls the bowl back towards her. \rNodeContext: Player has turned down food in a condescending way. You're a little annoyed but mainly think the player is being an idiot.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "23",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "21": {
+                  "id": "21",
+                  "speaker": "Player",
+                  "text": "I never turn down a free meal.",
+                  "context": "CinematicNodeContext: Take the bowl.",
+                  "checkflags": [
+                    "HALFLING"
+                  ],
+                  "setflags": [
+                    "DEN_Thieflings_Event_TookGruel"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "Okta",
+                      "text": "You're an easy one to please, aren't you?",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "5",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "26": {
+                  "id": "26",
+                  "speaker": "Player",
+                  "text": "This is a delicacy of your land? I'll try anything once.",
+                  "context": "",
+                  "checkflags": [
+                    "REALLY_PLANAR"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "Okta",
+                      "text": "Ha! That's a good attitude.",
+                      "context": "NodeContext: Almost a laugh at the player's enthusiasm for your food. You really appreciate the compliment.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "5": {
+                          "id": "5",
+                          "speaker": "Okta",
+                          "text": "Here. Have more. We'll need every bit of strength to make it to Baldur's Gate. Trust me.",
+                          "context": "CinematicNodeContext: Scoops out another bowl of gruel and hands it to the player. \rNodeContext: This is the warmest you've sounded in this dialog. You want the player to make the journey in one piece, and giving them more food is how you show it.",
+                          "checkflags": [],
+                          "setflags": [
+                            "DEN_Thieflings_Event_TookGruel2"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "32": {
+                  "id": "32",
+                  "speaker": "Player",
+                  "text": "Thank you. What's in this? Oats? Honey?",
+                  "context": "CinematicNodeContext: Take the bowl.",
+                  "checkflags": [
+                    "GNOME"
+                  ],
+                  "setflags": [
+                    "DEN_Thieflings_Event_TookGruel"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "5",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "15": {
+                      "id": "15",
+                      "speaker": "Okta",
+                      "text": "Ha! You're a far cry from such things. But if I fooled your nose, I must be doing something right.",
+                      "context": "NodeContext: Player has guessed that your dish is far more complicated than it is. You're happy and warmed by the compliment.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "5",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "16": {
+                  "id": "16",
+                  "speaker": "Player",
+                  "text": "Agreed. Hungry warriors make for easy prey.",
+                  "context": "",
+                  "checkflags": [
+                    "REALLY_DRAGONBORN"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "6",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "Okta",
+                      "text": "You been on hard times too, huh?",
+                      "context": "CinematicNodeContext: Eye widen slightly in surprise, gruff exterior softens. \rNodeContext: Player has mentioned a difficult upbringing. Moment of surprise and connection as you realise this person may be in the same situation as you.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "6",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "Player",
+                          "text": "No worse than what you're facing now.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "9": {
+                              "id": "9",
+                              "speaker": "Okta",
+                              "text": "Hm. Look in your eyes says otherwise.",
+                              "context": "NodeContext: Player has made light of their difficult upbringing. You have a moment of sadness at the thought of what they must have gone through, but don't want to push it.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "6": {
+                                  "id": "6",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "5",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "10": {
+                          "id": "10",
+                          "speaker": "Player",
+                          "text": "It's all in the past.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "37": {
+                              "id": "37",
+                              "speaker": "Okta",
+                              "text": "That doesn't mean it's behind us though, does it?",
+                              "context": "NodeContext: Player has made light of their difficult upbringing. You have a moment of sadness at the thought of what they must have gone through, but don't want to push it.",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "6",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "25": {
+                  "id": "25",
+                  "speaker": "Player",
+                  "text": "A bowl of grey goo. Reminds me of home.",
+                  "context": "CinematicNodeContext: Takes bowl.",
+                  "checkflags": [
+                    "REALLY_WYLL = False",
+                    "REALLY_GALE = False",
+                    "DROWELF = False"
+                  ],
+                  "setflags": [
+                    "DEN_Thieflings_Event_TookGruel"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "14",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "synopsis": "Steel Watcher at WYR South checkpoint dialog",
+    "how_to_trigger": "Go tolarian://bookmark?mod=GustavDev&level=BGO_Main_A&camPos=3.229594;52.549690;10.047598&camTarget=3.228639;52.118618;10.949918Kill all FFs with Ctrl+Shift+K. Click on the SW to talk.Alternatively, give your character some gold and BALDURIAN tag. Walk through checkpoint by paying gold and saying that you're Baldurian. Then after access allowed, talk to Steel Watcher."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "ACCESS CONFIRMED. PROCEED AT WILL.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "WYR_South_SteelWatch_Event_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "ADDRESS OFFICER FOR ACCESS.",
+      "context": "InternalNodeContext: Checkpoint main dialog. Player hasn't yet gotten admission.",
+      "checkflags": [
+        "WYR_South_State_AccessGranted = False"
+      ],
+      "setflags": [
+        "WYR_South_SteelWatch_Event_Hasmet2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "MODEL B STANDING BY.",
+      "context": "InternalNodeContext: Checkpoint main dialog. Player hasn't yet gotten admission.",
+      "checkflags": [
+        "WYR_South_SteelWatch_Event_Hasmet2",
+        "WYR_South_State_AccessGranted = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "ENTRY IS AUTHORISED. MISCONDUCT WILL BE RECORDED.",
+      "context": "",
+      "checkflags": [
+        "WYR_South_SteelWatch_Event_Hasmet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "SUBJECT FLUFFINGTON IDENTIFIED. PROCEED AT WILL.",
+      "context": "",
+      "checkflags": [
+        "WYR_South_Primary_Event_Sweetums"
+      ],
+      "setflags": [
+        "WYR_South_SteelWatch_Event_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "Halt. You are engaged in unlawful entry. The Watch demands your arrest.",
+      "context": "",
+      "checkflags": [
+        "GLO_SteelWatchers_State_EnemyOfAbsolute"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Consent to arrest.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "GROUP_SteelWatchers",
+              "text": "A cell has been identified. Prepare for transfer.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "WYR_South_Event_AgreedCustody"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "You're not taking me anywhere.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "FactionHostileToPlayerGroupAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "GROUP_SteelWatchers",
+              "text": "The Steel Watch does not tolerate resistance. You will be eliminated.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "metadata": {
+    "synopsis": "Occurs if the player tells the tieflings to lower Lae'zel and kill her, or if player lets the tieflings try to take her away. One last chance to choose a side."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Lae'zel",
+      "text": "You've but one chance. Join me, or die.",
+      "context": "InternalNodeContext: The player persuaded the tieflings that they should kill the creature",
+      "checkflags": [
+        "CHA_LaezelRecruitment_Event_PersuadedKillLaezel"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Attack the tieflings.",
+          "context": "",
+          "checkflags": [
+            "CHA_LaezelRecruitment_State_Tiefling1Missing = False",
+            "CHA_LaezelRecruitment_State_Tiefling2Missing = False"
+          ],
+          "setflags": [
+            "CHA_LaezelRecruitment_Event_TieflingsHostile",
+            "SidedLaezel"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Lae'zel 5",
+            "Shadowheart -5",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "11",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "PALADIN"
+              ],
+              "setflags": [
+                "GLO_PaladinOathbreaker_Event_BrokeOath"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "Damays",
+                  "text": "No!",
+                  "context": "",
+                  "checkflags": [
+                    "CHA_LaezelRecruitment_State_Tiefling1Missing = False",
+                    "CHA_LaezelRecruitment_State_Tiefling2Missing = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "Nymessa",
+                      "text": "You lying rat!",
+                      "context": "",
+                      "checkflags": [
+                        "CHA_LaezelRecruitment_Event_PersuadedKillLaezel"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "13": {
+                      "id": "13",
+                      "speaker": "Nymessa",
+                      "text": "You rat!",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "12": {
+                  "id": "12",
+                  "speaker": "Damays",
+                  "text": "No!",
+                  "context": "",
+                  "checkflags": [
+                    "CHA_LaezelRecruitment_State_Tiefling2Missing = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "4": {
+                  "id": "4",
+                  "speaker": "Nymessa",
+                  "text": "You lying rat!",
+                  "context": "",
+                  "checkflags": [
+                    "CHA_LaezelRecruitment_Event_PersuadedKillLaezel"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "18": {
+                  "id": "18",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "13",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Attack the tiefling.",
+          "context": "",
+          "checkflags": [
+            "CHA_LaezelRecruitment_State_Tiefling1Missing",
+            "CHA_LaezelRecruitment_State_Tiefling2Missing = False"
+          ],
+          "setflags": [
+            "CHA_LaezelRecruitment_Event_TieflingsHostile",
+            "SidedLaezelAlt"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Lae'zel 5",
+            "Shadowheart -5",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "11",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "PALADIN"
+              ],
+              "setflags": [
+                "GLO_PaladinOathbreaker_Event_BrokeOath"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "7",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "19": {
+          "id": "19",
+          "speaker": "Player",
+          "text": "Attack the tiefling.",
+          "context": "",
+          "checkflags": [
+            "CHA_LaezelRecruitment_State_Tiefling1Missing = False",
+            "CHA_LaezelRecruitment_State_Tiefling2Missing"
+          ],
+          "setflags": [
+            "CHA_LaezelRecruitment_Event_TieflingsHostile",
+            "SidedLaezelAlt"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Lae'zel 5",
+            "Shadowheart -5",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "Attack Lae'zel.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CHA_LaezelRecruitment_Event_LaezelHostile",
+            "SidedTieflings"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Lae'zel -10",
+            "Shadowheart 5"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "tagcinematic",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Lae'zel",
+                  "text": "Coward.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "This isn't my fight. I'm not picking sides.",
+          "context": "InternalNodeContext: Trying to remain neutral while the tiefling(s) want(s) to take Lae'zel away. Not available if the player explicitely persuaded the tieflings that Lae'zel must be killed",
+          "checkflags": [
+            "CHA_LaezelRecruitment_Event_PersuadedKillLaezel = False"
+          ],
+          "setflags": [
+            "CHA_LaezelRecruitment_Event_LaezelHostile",
+            "RefusedInvolvement"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "10",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Lae'zel",
+      "text": "Prove you're not a craven. Join me, or die.",
+      "context": "InternalNodeContext: The player took their leave in the dialog, or perhaps they failed all the persuasions, so the tieflings are acting on their own and wants to bring Lae'zel to camp",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "0",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

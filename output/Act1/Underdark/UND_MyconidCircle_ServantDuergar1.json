@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "synopsis": "Player tries speaking with an enthralled duergar. Duergar players get an option to go hostile afterwards."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*The servant says what it can: absolutely nothing.*",
+      "context": "",
+      "checkflags": [
+        "UND_MyconidCircle_PlantDuergar3",
+        "UND_MyconidCircle_PlantDuergarHasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*The silent servant awaits its sovereign's orders.*",
+      "context": "",
+      "checkflags": [
+        "UND_MyconidCircle_PlantDuergar2",
+        "UND_MyconidCircle_PlantDuergarHasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Narrator",
+      "text": "*The servant is silent.*",
+      "context": "",
+      "checkflags": [
+        "UND_MyconidCircle_PlantDuergarHasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Narrator",
+      "text": "*Fungus and mould glaze the servant's face and body. Through music and vision, the sovereign reveals its origins.*",
+      "context": "",
+      "checkflags": [
+        "UND_MyconidCircle_PlantDuergarHasMet = False"
+      ],
+      "setflags": [
+        "UND_MyconidCircle_PlantDuergarHasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Narrator",
+          "text": "*You see a frothing duergar, axe drawn, crazed by bloodlust, bearing down on a young myconid.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Narrator",
+              "text": "*The frightened myconid circle conjures mildewed vines. They encircle and transform the duergar.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Narrator",
+                  "text": "*It now belongs to the circle. It will obey the sovereign.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Player",
+                      "text": "Attack the circle. No duergar deserves this fate.",
+                      "context": "",
+                      "checkflags": [
+                        "REALLY_DUERGARDWARF"
+                      ],
+                      "setflags": [
+                        "UND_MyconidCircle_State_Hostile",
+                        "FactionHostileToPlayerGroupAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "5": {
+                      "id": "5",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

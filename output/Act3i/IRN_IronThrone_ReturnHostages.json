@@ -1,0 +1,448 @@
+{
+  "metadata": {
+    "synopsis": "The hostage thanks the player for saving him and/or the other hostages. He will also beg the player to save their families working in the Steelwatch Foundry, giving them the quest if they don't already have it. If the majority of Iron Throne hostages AND the majority of Steelwatch Foundry hostages are saved, they will aid the player by making Steel Watchers on their side for the final battle. Otherwise they won't.Some variation based on whether the player has already been to the Steelwatch foundry and knows about the Iron Throne hostages, promised to help free the Iron Throne hostages, or doesn't know anything about them.If enough Iron Throne hostages survived, they should hint the player that they might reward them if they save their families. If not enough Iron Throne hostages survived, they should make it clear that the player will not receive any signifacant reward, other than narrative and thanks.If EscapedHostage has died, the dialog will trigger by talking to any one of the other surviving Gondians, but a Narrator will talk instead of all of them, as otherwise the permutations are too many. This will be an edge case, as EscapedHostage is very very likely to survive.",
+    "how_to_trigger": "Talk to S_IRN_EscapingHostage_614ceeec-24a5-4491-98b3-a83ab235f158 after successfully escaping the IronThrone.If he died, talk to any other surviving hostage."
+  },
+  "dialogue": {
+    "19": {
+      "id": "19",
+      "speaker": "Obelia Toobin",
+      "text": "I just - I - I can't thank you enough. I was certain that place was to be my cold, wet tomb.",
+      "context": "",
+      "checkflags": [
+        "IRN_IronThrone_HasMet_ReturnHostages = False"
+      ],
+      "setflags": [
+        "IRN_IronThrone_HasMet_ReturnHostages",
+        "LOW_SteelWatchFoundry_Knows_GondianFamiliesTaken",
+        "LOW_SteelWatchFoundry_Knows_GondiansForcedToWorkInFoundry"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Obelia Toobin",
+          "text": "I just wish I wasn't the only one...",
+          "context": "",
+          "checkflags": [
+            "LOW_SteelWatchFoundry_State_AllButOneIronThronePrisonersDead"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Obelia Toobin",
+          "text": "I just wish more of us had made it through... But mourning can wait.",
+          "context": "",
+          "checkflags": [
+            "LOW_SteelWatchFoundry_State_MajorityIronThronePrisonersDead"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "14",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Obelia Toobin",
+              "text": "We were kept hostage to control our families in the Steel Watch Foundry. To keep them building Gortash's death machines.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "14",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "Obelia Toobin",
+                  "text": "Please. They need to know what happened here.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "14",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "10": {
+                      "id": "10",
+                      "speaker": "Obelia Toobin",
+                      "text": "They have no reason to obey Gortash anymore. If they rebel, it'll put a dent in Gortash's steel might. They need to know their loved ones are dead.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_SteelWatchFoundry_State_AllButOneIronThronePrisonersDead"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "14",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "15": {
+                          "id": "15",
+                          "speaker": "Player",
+                          "text": "The Gondians in the Steel Watch Foundry are dead. All of them.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_SteelWatchFoundry_State_AllGondiansDead"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "14",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "17": {
+                              "id": "17",
+                              "speaker": "Obelia Toobin",
+                              "text": "What? No! Nononono NO!",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "2": {
+                                  "id": "2",
+                                  "speaker": "Obelia Toobin",
+                                  "text": "No...",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "8": {
+                          "id": "8",
+                          "speaker": "Player",
+                          "text": "At least you survived. Your father sent me.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_SteelWatchFoundry_State_AgreedToHelpGondians",
+                            "LOW_SteelWatchFoundry_State_AllGondiansDead = False",
+                            "LOW_SteelWatchFoundry_State_AllButOneIronThronePrisonersDead"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "14",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "14": {
+                              "id": "14",
+                              "speaker": "Obelia Toobin",
+                              "text": "He... he did? Of COURSE he did! I knew it... I knew he would do something...",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "IRN_IronThrone_State_AgreedToHelpFoundryGondians"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "11": {
+                          "id": "11",
+                          "speaker": "Player",
+                          "text": "How do you think I found you to begin with? Your father sent me.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_SteelWatchFoundry_State_AgreedToHelpGondians",
+                            "LOW_SteelWatchFoundry_State_AllGondiansDead = False",
+                            "LOW_SteelWatchFoundry_State_AllButOneIronThronePrisonersDead = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "14",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "16": {
+                          "id": "16",
+                          "speaker": "Player",
+                          "text": "All right. I will help the foundry workers rebel.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_SteelWatchFoundry_State_AgreedToHelpGondians = False",
+                            "LOW_SteelWatchFoundry_State_AllGondiansDead = False",
+                            "PALADIN_DEVOTION = False",
+                            "PALADIN_VENGEANCE = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "4",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "6": {
+                          "id": "6",
+                          "speaker": "Player",
+                          "text": "I will do everything in my power to help them, you have my word.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_SteelWatchFoundry_State_AgreedToHelpGondians = False",
+                            "LOW_SteelWatchFoundry_State_AllGondiansDead = False",
+                            "PALADIN_DEVOTION"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "4",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "4": {
+                              "id": "4",
+                              "speaker": "Obelia Toobin",
+                              "text": "Gond smiles on me this day. Thank you.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "IRN_IronThrone_State_AgreedToHelpFoundryGondians"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "7": {
+                          "id": "7",
+                          "speaker": "Player",
+                          "text": "This will help me ruin Gortash. I'll help them rebel.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_SteelWatchFoundry_State_AgreedToHelpGondians = False",
+                            "LOW_SteelWatchFoundry_State_AllGondiansDead = False",
+                            "PALADIN_VENGEANCE"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "4",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "3": {
+                          "id": "3",
+                          "speaker": "Player",
+                          "text": "I don't have time for this.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "0": {
+                              "id": "0",
+                              "speaker": "Obelia Toobin",
+                              "text": "Then I... I suppose we're on our own. Again. Gods.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "1": {
+                      "id": "1",
+                      "speaker": "Obelia Toobin",
+                      "text": "They have no reason to obey Gortash anymore. If they rebel, it'll put a dent in Gortash's steel might.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_SteelWatchFoundry_State_MajorityIronThronePrisonersDead"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "20",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "20": {
+                          "id": "20",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "10",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "13": {
+                      "id": "13",
+                      "speaker": "Obelia Toobin",
+                      "text": "They have no reason to obey Gortash anymore. If they rebel, it'll put a dent in Gortash's steel might.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "20",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Obelia Toobin",
+          "text": "There were so many of us scattered through that place, to save so many was - it was brilliant. Just brilliant.",
+          "context": "",
+          "checkflags": [
+            "LOW_SteelWatchFoundry_State_AnyIronThronePrisonersDead"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "22": {
+          "id": "22",
+          "speaker": "Obelia Toobin",
+          "text": "You - you saved us. Saved us all. I thought it impossible, b-but you DID it!",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Obelia Toobin",
+      "text": "Th-thank you again! May Gond's grace guide you!",
+      "context": "",
+      "checkflags": [
+        "IRN_IronThrone_HasMet_ReturnHostages"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

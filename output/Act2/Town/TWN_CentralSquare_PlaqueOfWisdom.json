@@ -1,0 +1,319 @@
+{
+  "metadata": {
+    "synopsis": "Secret room in SCL_Main_A, beneath the Central Square. This statue has a dogma of Shar and asks you whether you accept it. Accepting it require a saving throw, on a failure you get a debuff and guardians appear. If you are a follower of Shar / Shadowheart you get have a special option which gives you auto-success.",
+    "how_to_trigger": "SCL_Main_A - (228 0 -847)Click on the statue"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*The Lady of Loss has abandoned you. Whatever boon found here is no longer for you, surely... yet what harm in reading on?*",
+      "context": "CinematicNodeContext: SH concerned/unsure expression",
+      "checkflags": [
+        "SHADOWHEART_ENEMYOFSHARPATH"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*The statue gazes at you impassively. Its challenge has been met.*",
+      "context": "CinematicNodeContext: A faint purple aura glows from the statue",
+      "checkflags": [
+        "TWN_CentralSquare_State_PlaqueOfWisdomActivated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Narrator",
+      "text": "*Do you think yourself wise enough to be granted Shar's blessing?*",
+      "context": "CinematicNodeContext: TWN_CentralSquare_PlaqueOfWisdom\rNodeContext: The text inscribed on a plaque at the base of a Shar statue",
+      "checkflags": [
+        "TWN_CentralSquare_HasMet_PlaqueOfWisdom = False"
+      ],
+      "setflags": [
+        "TWN_CentralSquare_HasMet_PlaqueOfWisdom"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Bow your head modestly. You are wise if Shar deems so. Ignorant if she deems so.",
+          "context": "",
+          "checkflags": [
+            "SHADOWHEART_ENEMYOFSHARPATH = False"
+          ],
+          "setflags": [],
+          "ruletags": [
+            "CLERIC_SHAR",
+            "PALADIN_SHAR",
+            "REALLY_SHADOWHEART"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Narrator",
+              "text": "*A warm swell rises through you. Acceptance - you are worthy.*",
+              "context": "CinematicNodeContext: A faint purple aura glows from the statue",
+              "checkflags": [],
+              "setflags": [
+                "TWN_CentralSquare_State_PlaqueOfWisdomActivated"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "You are wise enough to recognise Shar as a capricious, lying tyrant, yes.",
+          "context": "",
+          "checkflags": [
+            "CAMP_Shadowheart_State_HadNightsongMeeting",
+            "SHADOWHEART_ENEMYOFSHARPATH"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Show wisdom through understanding of how you have angered Lady Shar - that it cannot be undone.",
+          "context": "",
+          "checkflags": [
+            "CAMP_Shadowheart_State_HadNightsongMeeting = False",
+            "SHADOWHEART_ENEMYOFSHARPATH"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "9",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "9",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {}
+            },
+            "16": {
+              "id": "16",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Narrator",
+                  "text": "*The air seems to chill around you. Your claims of wisdom are rebuffed.*",
+                  "context": "CinematicNodeContext: Player frowns as the room seems to shudder and darken. \rInternalNodeContext: Three Dark Justiciar undead will appear and attack in gameplay immediately after this",
+                  "checkflags": [],
+                  "setflags": [
+                    "TWN_CentralSquare_Event_FailedSave"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Nod. You feel like a veritable sage, after all you've experience of late.",
+          "context": "",
+          "checkflags": [
+            "REALLY_SHADOWHEART = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Nod. Your life is richer, wiser, with your god on your side.",
+          "context": "",
+          "checkflags": [
+            "CLERIC",
+            "SHADOWHEART_ENEMYOFSHARPATH = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Narrator",
+      "text": "*The statue offers a mute stare, and nothing more. Any secret it guards will remain secret.*",
+      "context": "",
+      "checkflags": [
+        "TWN_CentralSquare_State_TrialFailed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "TWN_CentralSquare_HasMet_PlaqueOfWisdom"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "metadata": {
+    "synopsis": "Altar dedicated to Shar. Has a ritual dagger on it. The altar appears when you activate three tapestries with dogmas of Shar.When the altar appears the door that leads outside gets locked. You need to recite the dogmas at the altar and spill your blood on it to open the door.If you a follower of shar you can do it with not issue and get a blessing.If you aren't a follower of shar, but you passed all the saving throws you can also get a blessing of shar by reciting the dogmas.If you didn't pass all the saving throws and perform a ritual then the guardians appear because you aren't worthy.If you desecrate the altar by taking the dagger then the guardians appear no matter who you are.",
+    "how_to_trigger": "goto SCL_Main_A 236; 0; -839click on three tapestries and make a saving throwthe altar will appearclick on it"
+  },
+  "dialogue": {
+    "14": {
+      "id": "14",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "TWN_CentralSquare_Event_GotBlessing"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "19",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "2",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "0",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: The player stands before an altar of shar. There is no dagger present on it.",
+      "checkflags": [
+        "TWN_CentralSquare_State_AltarDesecrated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "0",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: The player stands before an altar of shar. Resting upon it is an ornate dagger.",
+      "checkflags": [
+        "TWN_CentralSquare_SharAltar_Event_PassedPassiveReligion = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Narrator",
+          "text": "*Though you are outcast, Shar's dogma remains firmly entrenched in your mind. You know what this altar seeks - blood.*",
+          "context": "",
+          "checkflags": [
+            "SHADOWHEART_ENEMYOFSHARPATH"
+          ],
+          "setflags": [
+            "TWN_CentralSquare_SharAltar_Event_PassedPassiveReligion"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "7",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "13": {
+          "id": "13",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "SHAR"
+          ],
+          "setflags": [
+            "TWN_CentralSquare_SharAltar_Event_PassedPassiveReligion"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {}
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "SHAR = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Narrator",
+                  "text": "*An altar to Shar. It appears to seek pray, and a blood offering - your blood.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "TWN_CentralSquare_SharAltar_Event_PassedPassiveReligion"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "2",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Player",
+                      "text": "Take up the dagger, recite Shar's dogma, and cut your arm.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "TWN_CentralSquare_State_RecitedDogmas"
+                      ],
+                      "ruletags": [
+                        "CLERIC_SHAR",
+                        "PALADIN_SHAR",
+                        "REALLY_SHADOWHEART"
+                      ],
+                      "approval": [
+                        "Shadowheart 1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "3": {
+                      "id": "3",
+                      "speaker": "Player",
+                      "text": "Take up the dagger, recite Shar's wisdom and offer blood from your arm.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "TWN_CentralSquare_State_RecitedDogmas"
+                      ],
+                      "ruletags": [
+                        "CLERIC_SHAR",
+                        "PALADIN_SHAR",
+                        "REALLY_SHADOWHEART"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "8": {
+                          "id": "8",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "visualstate",
+                          "children": {
+                            "10": {
+                              "id": "10",
+                              "speaker": "",
+                              "text": "",
+                              "context": "CinematicNodeContext: With the ritual dagger in their right hand, the player quickly sliced their left palm, wincing in pain.\rInternalNodeContext: Rewards will appear on two pedestals in gameplay following this node.",
+                              "checkflags": [],
+                              "setflags": [
+                                "TWN_CentralSquare_Event_GotBlessing"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "tagcinematic",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "18": {
+              "id": "18",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Narrator",
+                  "text": "*The altar's purpose is unclear - but the dagger upon it looks valuable.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "Player",
+                      "text": "The dagger won't be missed - take it.",
+                      "context": "",
+                      "checkflags": [
+                        "TWN_CentralSquare_State_AltarDesecrated = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [
+                        "Shadowheart -1"
+                      ],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "24": {
+                          "id": "24",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "visualstate",
+                          "children": {
+                            "16": {
+                              "id": "16",
+                              "speaker": "",
+                              "text": "",
+                              "context": "CinematicNodeContext: The chamber around the player seems to darken and rumble ominously (camera shake) they glance around, on-edge,",
+                              "checkflags": [],
+                              "setflags": [
+                                "TWN_CentralSquare_Event_RevealGuardians",
+                                "TWN_CentralSquare_State_AltarDesecrated",
+                                "TWN_CentralSquare_Event_TookDagger"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "tagcinematic",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "0": {
+                      "id": "0",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "23": {
+      "id": "23",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "TWN_CentralSquare_SharAltar_Event_PassedPassiveReligion"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "19",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "25": {
+          "id": "25",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

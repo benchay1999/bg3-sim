@@ -1,0 +1,394 @@
+{
+  "metadata": {
+    "synopsis": "The dialog for the alarm system. If the player activates it then the first half of the camp will become hostile.",
+    "how_to_trigger": "Repro steps:1. Start Game2. Debug book - go to region - goblin camp - start3. Walk across bridge towards goblin checkpoint4. Guard will let you through as true soul (roll amazing)5. Pass him and go up the structure on the right6. Use the wardrum"
+  },
+  "dialogue": {
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*A great, taut drum sits before you. One strike would likely ring for miles, alerting goblin reinforcements.*",
+      "context": "",
+      "checkflags": [
+        "GOB_Checkpoint_HasMet_AlarmSystem = False"
+      ],
+      "setflags": [
+        "GOB_Checkpoint_HasMet_AlarmSystem"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Bang the drum with an open palm.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "GOB_Checkpoint_Event_ReactOnPlayerRaisingAlarm"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Shadowheart -5",
+            "Karlach 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "Narrator",
+              "text": "*If the goblins didn't hear you before, they certainly do now.*",
+              "context": "InternalNodeContext: The player might play the drum again when the Backup and Checkpoint goblins are talking or dancing",
+              "checkflags": [
+                "GOB_Checkpoint_State_AlarmInProgress"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "11": {
+              "id": "11",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "tagcinematic",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "16",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "14": {
+              "id": "14",
+              "speaker": "Narrator",
+              "text": "*The echoes of the drumbeat fade to silence.*",
+              "context": "InternalNodeContext: The backup goblins are dead, can't react",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Imitate the beat of a popular goblin drinking anthem.",
+          "context": "",
+          "checkflags": [
+            "BARD"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Rap out a simple rhythm.",
+          "context": "",
+          "checkflags": [
+            "BARD = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Shadowheart -5",
+            "Karlach 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "Narrator",
+                  "text": "*From the far distance, you hear a blast of goblin voices.*",
+                  "context": "",
+                  "checkflags": [
+                    "GOB_Checkpoint_State_BackupSwept = False",
+                    "GOB_Checkpoint_State_BackupAnnoyed = False"
+                  ],
+                  "setflags": [
+                    "GOB_Checkpoint_Event_ReactOnPlayerPerformingSong"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "8": {
+                  "id": "8",
+                  "speaker": "Narrator",
+                  "text": "*If the goblins didn't hear you before, they certainly do now.*",
+                  "context": "InternalNodeContext: The player might play the drum again when the Backup and Checkpoint goblins are talking or dancing",
+                  "checkflags": [
+                    "GOB_Checkpoint_State_AlarmInProgress"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "12": {
+                  "id": "12",
+                  "speaker": "Narrator",
+                  "text": "*The echoes of the drumbeat fade to silence.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "GOB_Checkpoint_Event_ReactOnPlayerPerformingSong"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Narrator",
+                  "text": "*If the goblins didn't hear you before, they certainly do now.*",
+                  "context": "InternalNodeContext: The player might play the drum again when the Backup and Checkpoint goblins are talking or dancing",
+                  "checkflags": [
+                    "GOB_Checkpoint_State_AlarmInProgress"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "9": {
+                  "id": "9",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "16": {
+                      "id": "16",
+                      "speaker": "Narrator",
+                      "text": "*You have alerted them.*",
+                      "context": "",
+                      "checkflags": [
+                        "GOB_Checkpoint_State_BackupSwept = False",
+                        "GOB_Checkpoint_State_BackupAnnoyed = False"
+                      ],
+                      "setflags": [
+                        "GOB_Checkpoint_Event_ReactOnPlayerRaisingAlarm"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "3": {
+                  "id": "3",
+                  "speaker": "Narrator",
+                  "text": "*The echoes of the drumbeat fade to silence.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "GOB_Checkpoint_Event_ReactOnPlayerRaisingAlarm"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "19": {
+          "id": "19",
+          "speaker": "Player",
+          "text": "Tear the drumhead open.",
+          "context": "",
+          "checkflags": [
+            "GOB_Checkpoint_Event_BreakAlarm = False"
+          ],
+          "setflags": [
+            "GOB_Checkpoint_Event_BreakAlarm"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Narrator",
+      "text": "*The drum lies before you.*",
+      "context": "",
+      "checkflags": [
+        "GOB_Checkpoint_HasMet_AlarmSystem"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "5",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

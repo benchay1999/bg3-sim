@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "synopsis": "Dialog in which Lorroakan's Projection, who is substituing Rolan while Lorroakan is still in Ramazith Tower, bars entry to a banned player.",
+    "how_to_trigger": "1) call oe LOW_SorcerousSundries_AradinLeaveAndAttack in recon2)stealthly ctrl+shift+k Rolan in CTY_Main_A 205; 26; 5303) ctrl+shift+k Klank, who is at the entrance of the shop in front of Rolan4) try to walk inside the shop and get interrupted"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Lorroakan's Projection",
+      "text": "I'm sorry, but you have been banned from these premises due to HABITUAL VIOLENCE.",
+      "context": "NodeContext: All-caps text should be read like a call center answering machine with fill-in-the-blanks",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "You ought to get out of my way, unless you want me to habitually murder you, too.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Lorroakan's Projection",
+              "text": "I am not alive and cannot be killed. Unlike your unfortunate self. Good-bye and thank you for shopping at Sorcerous Sundries!",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Fine. I'll go.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_SorcerousSundries_Event_BlacklistedPlayerTeleported"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Lorroakan's Projection",
+              "text": "Thank you for your forbearance.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Lorroakan's Projection",
+      "text": "Sorcerous Sundries would like to remind you that interfering with its personnel - enchanted or otherwise - is a bannable offence. Take this as your first and final warning.",
+      "context": "",
+      "checkflags": [
+        "LOW_SorcerousSundries_BannedPlayer = False",
+        "LOW_SorcerousSundries_State_WaitingToBeWarned"
+      ],
+      "setflags": [
+        "LOW_SorcerousSundries_State_WaitingToBeWarned = False",
+        "LOW_SorcerousSundries_State_Warned"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

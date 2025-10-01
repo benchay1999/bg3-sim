@@ -1,0 +1,1957 @@
+{
+  "metadata": {
+    "synopsis": "Ettvard Needle is the editor of the Baldur's Mouth Gazette. He is proudly pro-Gortash, obnoxious towards the PC, and insinuates (wel, directly states at the moment)  that the gazette is about to print a hit piece about the players.Players can intimidate Ettvard for some info, or use blackmail on him if they have found it to keep the hit piece from being published.",
+    "how_to_trigger": "Talk to Ettvard in the main room of the Baldurs Mouth building."
+  },
+  "dialogue": {
+    "7": {
+      "id": "7",
+      "speaker": "Ettvard Needle",
+      "text": "Hah! Caught you! Bet you thought you were so clever sneaking back in... GUARDS!",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_HasMet_Ettvard",
+        "LOW_BaldursMouth_State_EttvardsBusy"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "59",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "48": {
+          "id": "48",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Ettvard Needle",
+      "text": "Lord Gortash is going to destroy me. I swear, you'll rue the day you crossed Ettvard Needle.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_State_PositiveArticlePublished"
+      ],
+      "setflags": [
+        "LOW_BaldursMouth_Ettvard_DefaultDialog_Hasmet_PositiveArticlePublished"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Ettvard Needle",
+      "text": "I know you meddled with my printing press. I know you published that fluff piece about yourself.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_Ettvard_DefaultDialog_Hasmet_PositiveArticlePublished = False",
+        "LOW_BaldursMouth_State_PositiveArticlePublished",
+        "GLO_Gortash_State_PermaDefeated"
+      ],
+      "setflags": [
+        "LOW_BaldursMouth_Ettvard_DefaultDialog_Hasmet_PositiveArticlePublished"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "59",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "95": {
+          "id": "95",
+          "speaker": "Ettvard Needle",
+          "text": "And I also know it doesn't matter. Sure, some will read it - but you're no dead duke. You're old news. To be forgotten.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "25": {
+      "id": "25",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_Ettvard_DefaultDialog_Hasmet_PositiveArticlePublished",
+        "GLO_Gortash_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "36": {
+      "id": "36",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_State_PrintedNeutral"
+      ],
+      "setflags": [
+        "LOW_BaldursMouth_Ettvard_DefaultDialog_Hasmet_PositiveArticlePublished"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "42": {
+      "id": "42",
+      "speaker": "Ettvard Needle",
+      "text": "How is one meant to cover a dead duke with an equally dead printing press...? Simply can't supply the demand...",
+      "context": "NodeContext: muttering to self, clearly very stressed ignoring player",
+      "checkflags": [
+        "GLO_Gortash_State_PermaDefeated",
+        "LOW_BaldursMouth_State_DestroyedPrinter"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "44": {
+      "id": "44",
+      "speaker": "Ettvard Needle",
+      "text": "Well, well, if it isn't the city's next celebrity! You star in our next edition's top story.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "LOW_BaldursMouth_HasMet_Ettvard",
+        "LOW_BaldursMouth_State_NegativeArticleStarted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "107": {
+          "id": "107",
+          "speaker": "Player",
+          "text": "I did, until I swapped out the articles. You'll smear me no more.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "67": {
+              "id": "67",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "24",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "15": {
+          "id": "15",
+          "speaker": "Player",
+          "text": "Seems odd you've written the article before asking me any questions.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_Knows_AboutNegativeArticle = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "62": {
+              "id": "62",
+              "speaker": "Ettvard Needle",
+              "text": "Estra deals with the personal interviews and fluff pieces. I deal with the truth. And the truth is - you're a damned menace.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "72": {
+          "id": "72",
+          "speaker": "Player",
+          "text": "Yeah - I heard all about your article, and I want you to shut it down.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "LOW_BaldursMouth_Knows_AboutNegativeArticle"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "99",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "70": {
+              "id": "70",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "41",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "68": {
+          "id": "68",
+          "speaker": "Player",
+          "text": "Sorry, who are you?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "99",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "80": {
+              "id": "80",
+              "speaker": "Ettvard Needle",
+              "text": "Ettvard Needle. Editor of the Baldur's Mouth Gazette. Speaking truth to power since 1450 DR.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "65": {
+                  "id": "65",
+                  "speaker": "Ettvard Needle",
+                  "text": "No need to introduce yourself. I make sure I become intimately familiar with my subjects before writing about them.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "32": {
+          "id": "32",
+          "speaker": "Player",
+          "text": "Are you sure you have enough ink to cover all my adventures?",
+          "context": "",
+          "checkflags": [
+            "WIZARD = False",
+            "SORCERER_WILDMAGIC = False",
+            "BARD = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "99",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "40": {
+              "id": "40",
+              "speaker": "Ettvard Needle",
+              "text": "We have plenty of ink. Enough to cover all your misadventures in this good city.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "99",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "96": {
+                  "id": "96",
+                  "speaker": "Ettvard Needle",
+                  "text": "Trafficking refugees into our city is hardly a good look. Especially when so many are Absolutists and murderers.",
+                  "context": "",
+                  "checkflags": [
+                    "WYR_RefugeeCamp_State_BigBarnSolved"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "99",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "11": {
+                  "id": "11",
+                  "speaker": "Ettvard Needle",
+                  "text": "Not many enter our fine city and immediately start meddling in murder investigations. Curious, don't you think?",
+                  "context": "",
+                  "checkflags": [
+                    "WYR_SerialKiller_State_ToldValeriaAboutTrueKiller"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "99",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "39": {
+                  "id": "39",
+                  "speaker": "Ettvard Needle",
+                  "text": "I've never heard of so much violence against innocent circus freaks before.",
+                  "context": "",
+                  "checkflags": [
+                    "WYR_Circus_State_PostCombat"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "99",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "Ettvard Needle",
+                  "text": "I heard you may be affiliated with the arsonists who destroyed our Steel Watch protectors.",
+                  "context": "",
+                  "checkflags": [
+                    "GLO_Foundry_State_ControlCentreDestroyed"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "61",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "99": {
+                      "id": "99",
+                      "speaker": "Ettvard Needle",
+                      "text": "The truth will be out with tomorrow's broadsheet. People will spit in your face. Your very presence will be bad for business. You'll be a pariah. An outcast. As you should be.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "61",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "49": {
+                          "id": "49",
+                          "speaker": "Ettvard Needle",
+                          "text": "And then we can only hope the Fist do their duty and escort you to the gallows! Your days scumming up this good city's streets will be over.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "61",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "87": {
+                              "id": "87",
+                              "speaker": "Player",
+                              "text": "I'd be terrified if I hadn't changed the article already.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_BaldursMouth_State_PlayerChangedPaper"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "61",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "Ettvard Needle",
+                                  "text": "Shall I add 'lying cretin' to your long list of misdeeds? You speak nonsense.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "66": {
+                                      "id": "66",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "98",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "38": {
+                              "id": "38",
+                              "speaker": "Player",
+                              "text": "I'm working with Lord Gortash. He wouldn't want bad rumours spread about me.",
+                              "context": "",
+                              "checkflags": [
+                                "WYR_KillDirectorGortash_State_AcceptedAlliance"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "61",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "Ettvard Needle",
+                                  "text": "Nice try - but it's not going to work. Lord Gortash and me are very close and he mentioned no such thing to me.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "61": {
+                                      "id": "61",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "98",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "29": {
+                              "id": "29",
+                              "speaker": "Player",
+                              "text": "This letter proving you're Gortash's puppet would make a better headline.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_BaldursMouth_State_FoundEttvardsBlackmail",
+                                "WYR_KillDirectorGortash_State_AcceptedAlliance = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Wyll 1",
+                                "Karlach 1",
+                                "Shadowheart 1",
+                                "Minthara 1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "61",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "56": {
+                                  "id": "56",
+                                  "speaker": "Ettvard Needle",
+                                  "text": "Pray tell - how exactly will you disseminate that information? What's the name of your highly popular broadsheet? No? Exactly.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "61",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "91": {
+                              "id": "91",
+                              "speaker": "Player",
+                              "text": "Who told you this nonsense?",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+                                "REALLY_DARK_URGE = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "98",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "86": {
+                                  "id": "86",
+                                  "speaker": "Ettvard Needle",
+                                  "text": "I would never reveal my sources, and certainly not to the likes of you. Besides, you're too late.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_BaldursMouth_State_EttvardsBusy"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "98",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "4": {
+                              "id": "4",
+                              "speaker": "Player",
+                              "text": "Perhaps a bit of coin could make the article go away?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "98",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Ettvard Needle",
+                                  "text": "You'd like me to add bribery to your list of extra-legal pursuits? How bold.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_BaldursMouth_State_EttvardsBusy"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "98",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "92": {
+                              "id": "92",
+                              "speaker": "Player",
+                              "text": "If what you've just said is true, pissing me off is a bad idea. Stop the article.",
+                              "context": "",
+                              "checkflags": [
+                                "REALLY_DARK_URGE = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "3",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "97": {
+                              "id": "97",
+                              "speaker": "Player",
+                              "text": "First I will break your printer. Then I will break YOU. STOP THE ARTICLE.",
+                              "context": "",
+                              "checkflags": [
+                                "BARBARIAN",
+                                "REALLY_DARK_URGE = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "3",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "22": {
+                              "id": "22",
+                              "speaker": "Player",
+                              "text": "It'll be your word against mine - and I'm really good with words.",
+                              "context": "",
+                              "checkflags": [
+                                "BARD"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "98",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "103": {
+                                  "id": "103",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "56",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "26": {
+                              "id": "26",
+                              "speaker": "Player",
+                              "text": "Stop the article, or I'll cook you from the inside out.",
+                              "context": "",
+                              "checkflags": [
+                                "SORCERER"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "98",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "3": {
+                                  "id": "3",
+                                  "speaker": "Ettvard Needle",
+                                  "text": "I'm not afraid of you. Lord Gortash is a passionate champion of the journalistic arts - attack me, and you face the Steel Watch.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_BaldursMouth_State_EttvardsBusy"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "98": {
+                                      "id": "98",
+                                      "speaker": "Ettvard Needle",
+                                      "text": "The headlines are loaded into the printworks already. Tomorrow you will feel the power of free speech. Vox populi, vox dei.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "77": {
+                                          "id": "77",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "6",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "18": {
+                              "id": "18",
+                              "speaker": "Player",
+                              "text": "Print that about me and I'll push your corpse through the Gazette printworks.",
+                              "context": "",
+                              "checkflags": [
+                                "BARBARIAN = False",
+                                "REALLY_DARK_URGE"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "98",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "50": {
+                                  "id": "50",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "3",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "8": {
+                              "id": "8",
+                              "speaker": "Player",
+                              "text": "You know I've done far, far worse than that, right?",
+                              "context": "",
+                              "checkflags": [
+                                "REALLY_DARK_URGE"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "98",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "30": {
+                                  "id": "30",
+                                  "speaker": "Ettvard Needle",
+                                  "text": "...Oh, really? I'm all ears, my quill dipped, dunked, and ready to tell the world whatever you wish to confess.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "98",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "53": {
+                                      "id": "53",
+                                      "speaker": "Player",
+                                      "text": "Imagine a chronicle of your deeds, written in bile on the skin of fools.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "98",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "100": {
+                                          "id": "100",
+                                          "speaker": "Narrator",
+                                          "text": "*Your tongue slithers over your glory like the snake it is, tasting each misdeed once again.*",
+                                          "context": "CinematicNodeContext: DARK URGE GRINS - DARK URGE RAGE GRAPHIC PLAYS",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "98",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "105": {
+                                              "id": "105",
+                                              "speaker": "Ettvard Needle",
+                                              "text": "Gods, the untold depravity... it is unprintable. I'll be out of syndication if I publish your gore-smut confessional.",
+                                              "context": "CinematicNodeContext: When the dark urge leaves the frenzy of their imagination, Ettvard is shocked.",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "98",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "69": {
+                                                  "id": "69",
+                                                  "speaker": "Ettvard Needle",
+                                                  "text": "We will stick to our existing story, and you're fortunate that's all.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "98",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "52": {
+                                                      "id": "52",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "98",
+                                                      "is_end": false,
+                                                      "node_type": "alias",
+                                                      "children": {
+                                                        "6": {
+                                                          "id": "6",
+                                                          "speaker": "Ettvard Needle",
+                                                          "text": "Now, GUARDS! I believe our distinguished guest was just leaving. Would you care to escort them out?",
+                                                          "context": "CinematicNodeContext: Ettvard's guards approach.",
+                                                          "checkflags": [],
+                                                          "setflags": [
+                                                            "LOW_BaldursMouth_State_EttvardsBusy"
+                                                          ],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "78": {
+                                                              "id": "78",
+                                                              "speaker": "Player",
+                                                              "text": "Let the guards take you outside.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [
+                                                                "LOW_BaldursMouth_Event_EscortedOut"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            },
+                                                            "12": {
+                                                              "id": "12",
+                                                              "speaker": "Player",
+                                                              "text": "Attack the guards.",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [
+                                                                "LOW_BaldursMouth_Event_RefusedToLeave"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "102": {
+                                      "id": "102",
+                                      "speaker": "Player",
+                                      "text": "Bite your tongue. Grant them mercy from your horrible tale.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "43",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "93": {
+                                          "id": "93",
+                                          "speaker": "Narrator",
+                                          "text": "*With great difficulty, you throw aside the desire to toot your own terror-trumpet for this smut-peddler.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "43",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    },
+                                    "104": {
+                                      "id": "104",
+                                      "speaker": "Player",
+                                      "text": "You'll never know, though.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "98",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "83": {
+                                          "id": "83",
+                                          "speaker": "Ettvard Needle",
+                                          "text": "Oh, I know plenty about you already, knave.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "98",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "43": {
+                                              "id": "43",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "98",
+                                              "is_end": false,
+                                              "node_type": "alias",
+                                              "children": {
+                                                "9": {
+                                                  "id": "9",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "6",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "76": {
+                  "id": "76",
+                  "speaker": "Ettvard Needle",
+                  "text": "Since your arrival, reports of Absolutist activity in this city have increased tenfold. Hardly seems a coincidence.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "99",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "47": {
+          "id": "47",
+          "speaker": "Player",
+          "text": "How long is this article? Because I've got a lot of stories - and I only blow up in some of them.",
+          "context": "",
+          "checkflags": [
+            "WILDSHAPE"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "40",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "37": {
+          "id": "37",
+          "speaker": "Player",
+          "text": "I have more than stories - ballads, prose, even a haiku or two, if you can spare the ink.",
+          "context": "",
+          "checkflags": [
+            "BARD"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "40",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "57": {
+          "id": "57",
+          "speaker": "Player",
+          "text": "How long is this article? I'd love to publish some of my own magical theories.",
+          "context": "",
+          "checkflags": [
+            "WIZARD"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "40",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "63": {
+          "id": "63",
+          "speaker": "Player",
+          "text": "I'd rather your paper focus on more pressing things - like this city, and how it squanders nature's gifts.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "DRUID"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "74",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "82": {
+          "id": "82",
+          "speaker": "Player",
+          "text": "How about a piece on siege tactics? Or self-defence? I have plenty of suggestions.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "FIGHTER"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "74",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "85": {
+          "id": "85",
+          "speaker": "Player",
+          "text": "I might have to check in with my patron about that first - see how they feel about being in the spotlight.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "WARLOCK"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "74",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "106": {
+          "id": "106",
+          "speaker": "Player",
+          "text": "I have no need of such attention. I suggest you focus on something useful - like the obvious corruption in this city.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "MONK"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "74",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "I'd rather you spread the word about the one I serve. I have some suggestions, if you'd like.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "CLERIC"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "41",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "74": {
+              "id": "74",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "41",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "My prowess in battle does the talking for me - I have no need of your 'stories'.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "BARBARIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "41",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "41": {
+              "id": "41",
+              "speaker": "Ettvard Needle",
+              "text": "Well, you should've considered that before disgracing yourself in public.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "40",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "I'd rather not be in your paper at all. Anonymity is helpful in my... business.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "ROGUE"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "41",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "89": {
+          "id": "89",
+          "speaker": "Player",
+          "text": "I'd rather not be in your paper at all.",
+          "context": "",
+          "checkflags": [
+            "LOW_BaldursMouth_State_PlayerChangedPaper = False",
+            "BARBARIAN = False",
+            "CLERIC = False",
+            "FIGHTER = False",
+            "DRUID = False",
+            "MONK = False",
+            "ROGUE = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "41",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "46": {
+          "id": "46",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "94": {
+              "id": "94",
+              "speaker": "Ettvard Needle",
+              "text": "Suit yourself - be sure to have a gander at tomorrow's edition - you star.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "81": {
+                  "id": "81",
+                  "speaker": "Ettvard Needle",
+                  "text": "The guards will see you out.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_BaldursMouth_Event_EscortedOut",
+                    "LOW_BaldursMouth_State_EttvardsBusy"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "54": {
+      "id": "54",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_Gortash_State_PermaDefeated",
+        "LOW_BaldursMouth_State_NegativeArticlePublished"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "58": {
+      "id": "58",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_HasMet_Ettvard",
+        "LOW_BaldursMouth_State_NegativeArticlePublished"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "59": {
+      "id": "59",
+      "speaker": "Ettvard Needle",
+      "text": "You again. Old news - I've got a dead duke to commemorate. Be on your way.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_HasMet_Ettvard",
+        "GLO_Gortash_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "64": {
+      "id": "64",
+      "speaker": "Ettvard Needle",
+      "text": "Say - I know that face. We had an absolute blinder of a piece ready to print about you. Would've been your ruin, I reckon.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_HasMet_Ettvard = False",
+        "GLO_Gortash_State_PermaDefeated"
+      ],
+      "setflags": [
+        "LOW_BaldursMouth_HasMet_Ettvard"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "96",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Ettvard Needle",
+          "text": "But alas. Any articles not about Gortash's death might as well be bog roll at the moment.",
+          "context": "NodeContext: a bit more to himself, he's ignoring the player thinking about the articles he's comissioning",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "96",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "51": {
+              "id": "51",
+              "speaker": "Player",
+              "text": "If anything bad is printed about me, I'll leak this letter to you from Lord Gortash.",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_FoundEttvardsBlackmail"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Wyll 1",
+                "Karlach 1",
+                "Shadowheart 1",
+                "Minthara 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "96",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "55": {
+                  "id": "55",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "79",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "90": {
+              "id": "90",
+              "speaker": "Player",
+              "text": "Why were you writing something negative about me?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "96",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "35": {
+                  "id": "35",
+                  "speaker": "Ettvard Needle",
+                  "text": "Oh, you gave us plenty to work with.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "96",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_RefugeeCamp_State_BigBarnSolved"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "96",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {}
+                    },
+                    "31": {
+                      "id": "31",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_SerialKiller_State_ToldValeriaAboutTrueKiller"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "11",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {}
+                    },
+                    "60": {
+                      "id": "60",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_Circus_State_PostCombat"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "39",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {}
+                    },
+                    "28": {
+                      "id": "28",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_Foundry_State_ControlCentreDestroyed"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "1",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {}
+                    },
+                    "19": {
+                      "id": "19",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "76",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {
+                        "84": {
+                          "id": "84",
+                          "speaker": "Ettvard Needle",
+                          "text": "However, column space is a rare commodity when a lord dies. So you can consider the tales of your misdeeds indefinitely postponed.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "101": {
+                              "id": "101",
+                              "speaker": "Ettvard Needle",
+                              "text": "Now, take your leave. I have so many articles to arrange for the next edition - dead men might tell no tales, but they certainly sell them.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "45": {
+              "id": "45",
+              "speaker": "Player",
+              "text": "If anything bad is printed about me, your obituary will follow soon after.",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_FoundEttvardsBlackmail = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "10",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "79": {
+                  "id": "79",
+                  "speaker": "Ettvard Needle",
+                  "text": "You think I'd dedicate precious column space to a miscreant like you when a lord's just died? Do get a grip.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "10",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "21": {
+              "id": "21",
+              "speaker": "Player",
+              "text": "A shame it was never published - I always wanted to be in a broadsheet.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "71": {
+                  "id": "71",
+                  "speaker": "Ettvard Needle",
+                  "text": "That's the spirit - better people spit your name than not say it at all.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "10": {
+                      "id": "10",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "101",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "73": {
+      "id": "73",
+      "speaker": "Ettvard Needle",
+      "text": "If you think bothering me will delay your article being published, you're quite deluded.",
+      "context": "",
+      "checkflags": [
+        "LOW_BaldursMouth_HasMet_Ettvard",
+        "LOW_BaldursMouth_State_FoundEttvardsBlackmail"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "34": {
+          "id": "34",
+          "speaker": "Player",
+          "text": "Would these blackmail letters from Gortash delay publication?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "LOW_BaldursMouth_State_UsedEttvardsBlackmail"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Wyll 1",
+            "Karlach 1",
+            "Shadowheart 1",
+            "Minthara 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "75": {
+              "id": "75",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "56",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "88": {
+      "id": "88",
+      "speaker": "Ettvard Needle",
+      "text": "We can still publish, but Gortash'll have my hide if I don't fix the printworks - You! Get out of here, I'm busy!",
+      "context": "NodeContext: muttering to self, then notices the player after hyphen",
+      "checkflags": [
+        "LOW_BaldursMouth_State_DestroyedPrinter"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

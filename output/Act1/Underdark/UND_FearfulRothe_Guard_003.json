@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "synopsis": "A coarse and unempathetic duergar, one of three guarding some Deep Rothe (beasts of burden currently being used to clear rubble).Different reactions if:- animals are panicking;- animals are calm;- animals are dead (doesn't matter how);",
+    "how_to_trigger": "To trigger ROTHE ARE AFRAID, NOT MET1. Start the game.2. Use Recon command: \"loadlevel WLD_Main_A\"3. goto -677.266; 13.025; 441.9 and leave the dialog with herdmaster.4. Talk with Morgya.To trigger ROTHE ARE AFRAID, MET1. Start the game.2. Use Recon command: \"loadlevel WLD_Main_A\"3. goto -677.266; 13.025; 441.9 and leave the dialog with herdmaster.4. Talk with Morgya.5. Talk to Morgya again.To trigger ROTHE ARE DEAD1. Start the game.2. Use Recon command: \"loadlevel WLD_Main_A\"3. goto -677.266; 13.025; 441.9 and leave the dialog with herdmaster.4. Use Recon command: \"SetGlobalOsirisFlag UND_FearfulRothe_State_RotheAreDead\"5. Talk with Morgya.To trigger ROTHE CALM, RUBBLE STILL THERE1. Start the game.2. Use Recon command: \"loadlevel WLD_Main_A\"3. goto -677.266; 13.025; 441.9 and leave the dialog with herdmaster4. Use Recon command: \"addDebugSpell Shout_SpeakWithAnimals\" and \"infiniteAp\"5. Talk with the Rothe in front of the herdmaster and convince it to attack the rubble.6. Rapidly talk with Morgya while rubbles are still up.To trigger ROTHE CALM, RUBBLE REMOVED..."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Morgya",
+      "text": "Fantastic work. You're a right master of beasts.",
+      "context": "",
+      "checkflags": [
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble",
+        "UND_FearfulRothe_State_RubbleDestroyed"
+      ],
+      "setflags": [
+        "UND_FearfulRothe_Event_MakeDuergarHostileInDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Morgya",
+          "text": "But ain't no one but clan need to be using the forge back there - and we can't have you blabbing!",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Morgya",
+      "text": "Bloody deep roth\u00e9. All the hassle of getting them up here. Now they won't work!",
+      "context": "",
+      "checkflags": [
+        "UND_FearfulRothe_HasMet_Guard_003 = False",
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble = False",
+        "UND_FearfulRothe_State_RotheArePermaDefeated = False"
+      ],
+      "setflags": [
+        "UND_FearfulRothe_HasMet_Guard_003"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Morgya",
+      "text": "Hrrmph. Them deep roth\u00e9 fought better than most gnomes, I'll give them that.",
+      "context": "",
+      "checkflags": [
+        "UND_FearfulRothe_State_RotheArePermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Morgya",
+      "text": "Halfway there, I'd wager. Now the beasts need to finish the job.",
+      "context": "",
+      "checkflags": [
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble",
+        "UND_FearfulRothe_State_RubbleDestroyed = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Morgya",
+      "text": "Would've thought these beast were too stupid to get scared.<br>",
+      "context": "",
+      "checkflags": [
+        "UND_FearfulRothe_HasMet_Guard_003",
+        "UND_FearfulRothe_State_ConvincedRotheToAttackRubble = False",
+        "UND_FearfulRothe_State_RotheArePermaDefeated = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

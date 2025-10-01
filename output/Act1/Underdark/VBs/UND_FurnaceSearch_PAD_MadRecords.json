@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "synopsis": "The party comments on reading and attempting to decipher the records of the mad drow wizard, who was one of the three looking for the Adamantine Forge.The records mention a group who located the Adamantine Forge, laying somewhere in the depth of the Underdark, and barely survived the undefeatable protector who guarded it - the adamantine golem, who has one weakness - being heated and struck by a huge forge hammer.",
+    "how_to_trigger": "* goto -55; 33; -158* kill Filro, loot and read his records"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Player",
+      "text": "A bunch of gibberish, as far as I can tell.",
+      "context": "InternalNodeContext: |Just reading through this gibberish causes a headache! Nothing but madness.|",
+      "checkflags": [
+        "UND_FurnaceSearch_Event_SucceedMadRecords = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Player",
+      "text": "According to these notes, there's an adamantine forge down here.",
+      "context": "InternalNodeContext: |Records mention Adamantine Forge... interesting.|\rNodeContext: AdamanTEEN",
+      "checkflags": [
+        "UND_FurnaceSearch_State_LearnedForgeFromMadDrowFirst",
+        "25c1ac70-f65f-4869-8a74-eff5827d9cde"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Seems it's guarded by a protector of some sort - something weak to this 'hot hammer'.",
+          "context": "InternalNodeContext: |So much madness here ... But there is some sense between the lines. The\"protector of the forge\" - whoever it is - is only vulnerable when heated.|\rNodeContext: AdamanTEEN",
+          "checkflags": [
+            "UND_FurnaceSearch_Event_SucceedMadRecords"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "The rest of the note is pure gibberish, as far as I can tell.",
+          "context": "InternalNodeContext: |But the rest is just gibberish.|\rNodeContext: AdamanTEEN",
+          "checkflags": [
+            "UND_FurnaceSearch_Event_SucceedMadRecords = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_FurnaceSearch_State_LearnedForgeFromMadDrowFirst",
+        "25c1ac70-f65f-4869-8a74-eff5827d9cde = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "A protector is guarding it, if I'm reading this right. And this 'hot hammer' is key to its downfall.",
+          "context": "InternalNodeContext: |So much madness here ... But there is some sense between the lines. The\"protector of the forge\" - whoever it is - is only vulnerable when heated.| (copy of Speaker_2 variant)\n\rNodeContext: AdamanTEEN",
+          "checkflags": [
+            "UND_FurnaceSearch_Event_SucceedMadRecords"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Too bad the rest of the note is pure gibberish.",
+          "context": "InternalNodeContext: |But the rest is just gibberish.| (copy of Speaker_2 variant)\n\rNodeContext: AdamanTEEN",
+          "checkflags": [
+            "UND_FurnaceSearch_Event_SucceedMadRecords = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Player",
+      "text": "Something's guarding that forge - and it's weak to this 'hot hammer'.",
+      "context": "InternalNodeContext: |Words of a madman ... But there is some sense between the lines. The\"protector of the forge\" - whoever it is - is only vulnerable when heated.|",
+      "checkflags": [
+        "UND_FurnaceSearch_Event_SucceedMadRecords"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

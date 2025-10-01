@@ -1,0 +1,310 @@
+{
+  "metadata": {
+    "synopsis": "Slightly out of breath, recovering from panic.A druid who was held hostage by goblin intruders speaks to the players who freed him.",
+    "how_to_trigger": "Repro steps:1. Start the game2. loadlevel WLD_Main_A3. GoTo x:-435 Y:-1734. Kill Goblins5. Speak to Findal(Alt route)5. Heal findal Then speak for majority of dialogue choices"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Findal",
+      "text": "Peace is returning to the grove. We have you to thank for that.",
+      "context": "",
+      "checkflags": [
+        "GLO_Halsin_State_Returned"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Narrator",
+      "text": "*His breaths are shallow, his wounds deep. He doesn't respond to your voice.*",
+      "context": "",
+      "checkflags": [
+        "DEN_GoblinScouts_Event_SavedCaptive = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Findal",
+      "text": "Oh, thank you, thank you. I thought I was going to die down here.",
+      "context": "NodeContext: out of breath, words spilling out of him - he's just been rescued from goblins who were tormenting him",
+      "checkflags": [],
+      "setflags": [
+        "DEN_GoblinScouts_HasMet_Captive",
+        "DEN_GoblinScouts_SavedDruid"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "How did those goblins slip into the grove?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Findal",
+              "text": "It's my fault. I thought I'd given them the slip, but they followed me through the tunnel back there.",
+              "context": "CinematicNodeContext: gesture in the direction of the concealed grove entrance\rNodeContext: regret, disappointed in himself",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "12",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "Was no one looking for you?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Findal",
+              "text": "No. I'd still be outside gathering herbs if I hadn't run into the goblins.",
+              "context": "NodeContext: with a shake of the head, slight panic",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "12",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "I'm surprised the goblins didn't gut you on sight. Why didn't they?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Findal",
+              "text": "They were asking questions - about a weapon.",
+              "context": "NodeContext: confused, he doesn't know anything about this",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "12",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Findal",
+                  "text": "I told them - the only weapons here are the ones the tieflings brought.",
+                  "context": "NodeContext: anxious, with a shrug",
+                  "checkflags": [
+                    "TIEFLING"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "12",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "0": {
+                  "id": "0",
+                  "speaker": "Findal",
+                  "text": "I told them - the only weapons here are the ones the foulbloods brought.",
+                  "context": "NodeContext: anxious, with a shrug",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "Findal",
+                      "text": "I must tell the others what happened. Step careful - there are traps in these tunnels. And thank you again.",
+                      "context": "NodeContext: frantic - he's still getting his breath back after being attacked by goblins, and is preparing to leave",
+                      "checkflags": [],
+                      "setflags": [
+                        "DEN_GoblinScouts_State_SavedDruid"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "Don't thank me yet. I'm here to finish what they started.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Gale -1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Findal",
+              "text": "What? No!",
+              "context": "NodeContext: incredulous panic as players threaten and attack him",
+              "checkflags": [],
+              "setflags": [
+                "TemporaryHostilityAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "DEN_GoblinScouts_State_SavedDruid"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Findal",
+      "text": "My saviour. I wish you could have visited in better times.",
+      "context": "NodeContext: first phrase with a bow of the head, next with slight regret",
+      "checkflags": [
+        "DEN_GoblinScouts_State_SavedDruid"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Findal",
+      "text": "From what I hear, you're making a habit of slaying goblins.",
+      "context": "",
+      "checkflags": [
+        "DEN_Refugees_State_LeadersAreDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

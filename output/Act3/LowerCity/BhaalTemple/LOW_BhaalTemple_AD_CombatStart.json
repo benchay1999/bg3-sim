@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "synopsis": "Normally, Orin will try to spot for players so she can start a dialog with them.At the end of the dialog with her, she normally turns into the Slayer in cinematic then combat ensues. ('Normally', because there is an edgecase in DU path that Orin can't turn into a Slayer if the DU already has the slayer form).But players can immediately attack Orin before her dialog and therefore miss the whole turn into slayer transformation.This AD is for 2 circumstances :-1) Players attack Orin before she spots them, therefore never entering dialog with her and therefore combat must begin immediately. Combat begins, she needs to wait for her turn to play this AD, at the end of which she will then turn into the slayer in gameplay.2) In dialog with her, players click the Attack button, and therefore ending the dialogue abruptly and starts the combat - which is then similar to scenario 1.",
+    "how_to_trigger": "They are 2 ways to trigger this dAD.1) Attack Orin before she spots you.2) Click the Dialog Attack button while in dialog with her.Different nodes is for when the players have a DU present during the initialition of this combat, or if the DU is somehow out of the temple."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Orin",
+      "text": "At last, slaughter kin. I will show you how Father loves me. I will score it into your bones.",
+      "context": "",
+      "checkflags": [
+        "LOW_BhaalTemple_State_DUMissingInTemplePrecombat = False",
+        "GLO_Origin_PartOfTheTeam_DarkUrge"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Orin",
+      "text": "Here it comes at last, craving crimson and carnage. So be it.",
+      "context": "",
+      "checkflags": [
+        "LOW_BhaalTemple_State_DUMissingInTemplePrecombat",
+        "GLO_Origin_PartOfTheTeam_DarkUrge"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_BhaalTemple_State_DUMissingInTemplePrecombat = False",
+        "GLO_Origin_PartOfTheTeam_DarkUrge = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

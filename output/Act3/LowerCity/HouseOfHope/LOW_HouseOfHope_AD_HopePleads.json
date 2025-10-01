@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "synopsis": "If players try to leave House of Hope without rescuing Hope first, she will appear and plead in approach to Foyer room",
+    "how_to_trigger": "1. CTY_Main_A2. Steal the Hammer through debug book3. teleport S_LOW_HouseOfHope_HopeSpiritLastTrigger"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "GROUP_Act3_LOW_HouseOfHope_Hope",
+      "text": "NO NO NO YOU CAN'T LEAVE ME HERE PLEASE DON'T",
+      "context": "NodeContext: outburst, begging, panicking",
+      "checkflags": [],
+      "setflags": [
+        "LOW_HouseOfHope_Event_LockFoyerDoor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "GROUP_Act3_LOW_HouseOfHope_Hope",
+          "text": "You're just two swings of that hammer away from breaking my chains. COME TO ME.",
+          "context": "NodeContext: pep talk, with a slightly panicked plea on the final all-caps phrase",
+          "checkflags": [
+            "GLO_Monitor_State_MadeDeal = False",
+            "LOW_HouseOfHope_State_PlayersStoleMainTreasure"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "LOW_HouseOfHope_State_NoHammerInHouse = False",
+            "GLO_Monitor_State_MadeDeal"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "alias",
+          "children": {}
+        },
+        "2": {
+          "id": "2",
+          "speaker": "GROUP_Act3_LOW_HouseOfHope_Hope",
+          "text": "If you run into Raphael while he has your contract, we'll both be dust and ash. I CAN HELP YOU",
+          "context": "NodeContext: explaining the very grim reality of the situation on the first sentence, and then an upbeat positive delivery on the all-caps phrase",
+          "checkflags": [
+            "GLO_Monitor_State_MadeDeal",
+            "LOW_HouseOfHope_State_PlayersStoleMainTreasure = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "GROUP_Act3_LOW_HouseOfHope_Hope",
+          "text": "YOU'RE MY ONLY FRIEND",
+          "context": "NodeContext: desperate plea, but with an edge of accusation (HOW DARE YOU is implied)",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

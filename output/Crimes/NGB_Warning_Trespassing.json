@@ -1,0 +1,459 @@
+{
+  "metadata": {
+    "synopsis": "A player got spotted by an NPC as they were trespassing."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "",
+      "context": "NodeContext: Greeting needs to be empty. It's used to cut off this flow from the others",
+      "checkflags": [
+        "GEB_Crime_IsAngry"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "21",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "CIVILIAN = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "21",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {}
+        },
+        "13": {
+          "id": "13",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "CIVILIAN",
+            "BADASSCIVILIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "21": {
+              "id": "21",
+              "speaker": "Narrator",
+              "text": "*This area is strictly off-limits. It seems you're about to learn that the hard way.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "TemporaryHostilityAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Narrator",
+          "text": "*The only thing more foolish than trespassing here is getting caught. You're being reported.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CRIME_FleeHelpFromDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Narrator",
+      "text": "*It seems the rules have not changed in your absence. You're still trespassing.*",
+      "context": "",
+      "checkflags": [
+        "GEB_CrimeWarning_2",
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Back the way I came, right?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TeleportOutOfTrespass"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Player",
+          "text": "Try to convince them you belong here.",
+          "context": "InternalNodeContext: Only for trespassing, harder persuasion checks than talking your way out of it",
+          "checkflags": [
+            "GEB_CharismaDisabled = False",
+            "GEB_Crime_TrespassCanConvincePermanently"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "11",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Player",
+              "text": "Why are you looking at me like that? I live here.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "Narrator",
+                      "text": "*Congratulations - you've convinced them to give you access. Now what?*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "GEB_Crime_ConvincedTrespassAllowedPermanently",
+                        "CRIME_PersuasionSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "3": {
+                  "id": "3",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "Narrator",
+                      "text": "*The only thing you've managed to convince them of is that you absolutely do not belong here.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "TeleportOutOfTrespass"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "speaker": "Player",
+              "text": "That uniform of yours will make a very tasteful bodybag, if you don't get out of my way.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "16": {
+              "id": "16",
+              "speaker": "Player",
+              "text": "I'm here, aren't I? You wouldn't have let me in if I didn't belong, would you?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "20",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Try to buy your way in. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+          "context": "InternalNodeContext: Gain permanent access to the trespassing area",
+          "checkflags": [
+            "GEB_Crime_TrespassCanConvincePermanently",
+            "GEB_Crime_Trespassing",
+            "93147083-af38-43f5-8354-9737c3e928d2 = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Narrator",
+              "text": "*Trespassing? What trespassing? You were always welcome here.*",
+              "context": "",
+              "checkflags": [
+                "d6480be7-500e-4160-927f-86acfd5c4e7b"
+              ],
+              "setflags": [
+                "GEN_TransferNPCPayment_2",
+                "GEB_Crime_ConvincedTrespassAllowedPermanently"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "9": {
+              "id": "9",
+              "speaker": "Narrator",
+              "text": "*You don't have the gold to buy your way out of this situation.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "GEB_CharismaDisabled",
+                "GEB_BribeDisabled"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "22": {
+          "id": "22",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Narrator",
+      "text": "*You don't have permission to be here. You're about to be ejected.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "My humble apologies. I shall remove myself immediately.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TeleportOutOfTrespass"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "18",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "19": {
+          "id": "19",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "22",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

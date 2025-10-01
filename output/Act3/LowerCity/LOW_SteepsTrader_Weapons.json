@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "synopsis": "One of the traders from Steeps Strake. She will sell weapons to the player.",
+    "how_to_trigger": "Speak with the trader at BGO_Main_A: -1818; 19; 558"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Fytz the Firecracker",
+      "text": "Something caught your eye, then? Careful - most of my wares can take an eye right out.",
+      "context": "NodeContext: Slight chuckle to self on the second sentence. Well-worn shopkeeper joke",
+      "checkflags": [
+        "LOW_SteepsTrader_Weapons_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Fytz the Firecracker",
+      "text": "Need something for defence? Or maybe offence? Either way, I've got what you need.",
+      "context": "",
+      "checkflags": [
+        "LOW_SteepsTrader_Weapons_HasMet = False"
+      ],
+      "setflags": [
+        "LOW_SteepsTrader_Weapons_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Let me see what you have to offer.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Narrator",
+              "text": "*News of your good deeds has travelled fast. The merchant is all too happy to extend a certain generosity towards you, where the price of goods is concerned.*",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_PositiveArticlePublished",
+                "LOW_BaldursMouth_State_ReactedToHeadline = False"
+              ],
+              "setflags": [
+                "LOW_BaldursMouth_State_ReactedToHeadline"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "trade",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "Fytz the Firecracker",
+                      "text": "My weapons won't be beat. Tell your friends - hells, tell your enemies if you like.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "Narrator",
+              "text": "*Your notoriety precedes you. Prices have been moderated to reflect your less than welcome presence in the city.*",
+              "context": "",
+              "checkflags": [
+                "LOW_BaldursMouth_State_NegativeArticlePublished",
+                "LOW_BaldursMouth_State_ReactedToHeadline = False"
+              ],
+              "setflags": [
+                "LOW_BaldursMouth_State_ReactedToHeadline"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

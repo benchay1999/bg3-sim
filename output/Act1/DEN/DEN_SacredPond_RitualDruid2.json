@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "synopsis": "This dialogue can occur in three different states: In the first, Kerrick is in a trance, chanting a spell that will cover the druid grove in thorns. In the second, the ritual has been stopped after a druid named Kagha was exposed as a Shadow Druid. Kerrick is furious - he feels betrayed by Kagha, and doesn't quite care if she's been killed.In the third, a group of goblins that had threatened the grove has been dealt with and the grove is considered safe again. In this state, Kerrick has calmed down a good bit - now that the danger's passed, he's seeing things with a bit more clarity. The player always encounters Kerrick around a sacred druid pool."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Karrik",
+      "text": "Defende nos ab imminentibus aequilibrio tuo.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: deh-FEN-day nohs ahb ee-mee-NEN-tee-booce AI-kwee-lee-bree-oh TWO-oh.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantB"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Karrik",
+      "text": "It'll take time to mend our grove. Thanks to you, we have it.",
+      "context": "NodeContext: Speaking of the emotional scars and rifts that their infighting has created in the grove.",
+      "checkflags": [
+        "DEN_RitualDruid_HasMet_Left2"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Karrik",
+      "text": "We wasted so much time fighting each other.",
+      "context": "NodeContext: The danger has passed, but there was much infighting in the druid grove, which he believes put them at higher risk.",
+      "checkflags": [
+        "DEN_RitualDruid_HasMet_Left2 = False",
+        "DEN_Refugees_State_LeadersAreDead"
+      ],
+      "setflags": [
+        "DEN_RitualDruid_HasMet_Left2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Karrik",
+          "text": "Silvanus taught us a lesson by letting an outsider save us.",
+          "context": "NodeContext: Players are the outsider here - they saved the druid grove from both infighting and a goblin attack.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Karrik",
+      "text": "Hostes subeunt. Protege nos. Muni nos.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: HO-stess soo-BAY-uhnt. PRO-teh-jay nohs. MOO-nee nohs.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantA"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Karrik",
+      "text": "Ab spiritu humoque, aculeus vitisque.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: Ahb SPEE-ree-too oo-MOHK, AH-coo-lay-oos VEE-tees-kway.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantD"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Karrik",
+      "text": "Kagha fooled us. We're lucky you were here.",
+      "context": "NodeContext: Calming down.",
+      "checkflags": [
+        "DEN_RitualDruid_HasMet_Pacified2"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Karrik",
+      "text": "Aggeniculamur in umbra tua, Pater Arborum.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: AH-jeh-nee-koo-lah-moor een OOM-brah TWO-ah, PAH-tehr ARR-bore-oom.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Karrik",
+      "text": "Kagha lied to us. She betrayed us.",
+      "context": "NodeContext: Angry - he feels personally betrayed by Kagha for siding with the evil shadow druids.",
+      "checkflags": [
+        "DEN_RitualDruid_HasMet_Pacified2 = False",
+        "DEN_GroveConflict_State_DruidsPacified"
+      ],
+      "setflags": [
+        "DEN_RitualDruid_HasMet_Pacified2"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Karrik",
+          "text": "She was a blight on the grove. You were right to put her down.",
+          "context": "NodeContext: Angry, but coolly. He feels personally betrayed by Kagha for siding with the evil shadow druids.",
+          "checkflags": [
+            "DEN_ShadowDruid_State_KaghaKilled"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Karrik",
+          "text": "She didn't deserve your mercy.",
+          "context": "InternalNodeContext: DEN_ShadowDruid_Event_SaghaTurnedGood\rNodeContext: Angry, but coolly. He feels personally betrayed by Kagha for siding with the evil shadow druids.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Karrik",
+      "text": "Complexum tuum, ab terra ortum, ad nos defer.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: Com-PLECK-soom TOO-oom, ahb TEH-rah ohr-TOOM, ahd nohs dee-FEHR.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantC"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Karrik",
+      "text": "In umbram cretus, sanguine iuratus.",
+      "context": "CinematicNodeContext: Eyes closed, focused on the chant, channelling magical energy.\rNodeContext: Chanting a magic spell: Een OOM-brahm CRAY-toose, sahn-GWEE-neh ee-you-RAH-toose.",
+      "checkflags": [
+        "DEN_SacredPond_Event_RitualChantE"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "synopsis": "This dialogue plays either while the druids are attacking the tieflings in the grove, or after the druids have been defeated. During the attack, Dammon fights against the druids. He's provided the tieflings with their weapons, and he hopes they're up to the task. Afterward, he's back at his forge, repairing the weapons that were damaged in the skirmish.",
+    "how_to_trigger": "- loadlevel WLD_Main_A- oe denraiddone- goto 201.54, 26.07, 537.98- oe startdruidattack- Wait until the attack starts- oe druidattackkilldruids- Wait till all the tieflings come back - goto 176.13, 19.28, 561.44- Speak to Dammon"
+  },
+  "dialogue": {
+    "5": {
+      "id": "5",
+      "speaker": "Dammon",
+      "text": "I've got a dozen weapons to reforge. Goblins better not get here first.",
+      "context": "",
+      "checkflags": [
+        "DEN_DruidAttack_HasMet_WeaponsmithAfterAttack",
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [
+        "DEN_Weaponsmith_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "3",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Dammon",
+      "text": "We managed against the druids, but half our weapons are bent or broken.",
+      "context": "",
+      "checkflags": [
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [
+        "DEN_Weaponsmith_HasMet",
+        "DEN_DruidAttack_HasMet_WeaponsmithAfterAttack"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Dammon",
+          "text": "The goblins will run us through unless I get them mended.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "How are you managing to forge anything out here?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "Dammon",
+                  "text": "When Elturel fell into Avernus, I was drafted into an infernal forge. Learned a few techniques for making a lot out of a little.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "DEN_Weaponsmith_Knows_Elturel"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "Dammon",
+                      "text": "Between you and me, there's nothing in all the realms like the utter power of infernal machinery. Can't replicate it outside the Hells. Probably for the best.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "14": {
+                          "id": "14",
+                          "speaker": "Dammon",
+                          "text": "Though I wouldn't mind a bit of hellfire to put to use protecting this place.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "Let's see your wares.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "trade",
+                  "children": {}
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "Player",
+              "text": "When do you think the goblins will attack?",
+              "context": "",
+              "checkflags": [
+                "DEN_DruidAttack_Event_WeaponsmithAboutGoblins = False"
+              ],
+              "setflags": [
+                "DEN_DruidAttack_Event_WeaponsmithAboutGoblins"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Dammon",
+                  "text": "Could be a day or a season - bad timing for us either way.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "Dammon",
+                      "text": "We'll just have to prepare as best we can.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "12": {
+              "id": "12",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Dammon",
+      "text": "Our steel better hold.",
+      "context": "NodeContext: Through gritted teeth",
+      "checkflags": [],
+      "setflags": [
+        "DEN_Weaponsmith_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

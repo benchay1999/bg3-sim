@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "synopsis": "Female Half-orc guard, a magic user and Absolute cultist.",
+    "how_to_trigger": "- Use Debug book, go to MOO region > Moonrise tower entrance- \ngoto -151.11, 27.80, -212.95- After the triggered dialog ends, speak to Fanatic Mola"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Adept Mola",
+      "text": "The General's advisor is back. Anyone left in the cells better start praying.",
+      "context": "InternalNodeContext: The player has helped Balthazar (and this Nightsong) return to Moonrise. He's down in the Colony.\rNodeContext: Almost pities the  prisoners - the man he speaks of loves toying with prisoners",
+      "checkflags": [
+        "MOO_MutuallyExclusive_State_BalthazarReturn"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Adept Mola",
+      "text": "Best get yourself ready. Order's come down - we march.",
+      "context": "InternalNodeContext: The player has kidnapped Isobel and helped return Nightsong and Balthazar to Moonrise. The army of the Absolute is ready to march.",
+      "checkflags": [
+        "MOO_Execution_Guard_001_Hasmet = False",
+        "MOO_Audience_State_Ready"
+      ],
+      "setflags": [
+        "MOO_Execution_Guard_001_Hasmet = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Adept Mola",
+      "text": "You're not the first to brave the dark for the Absolute. The war camps are full to bursting.",
+      "context": "InternalNodeContext: General fallback nodes where none of the above apply. Almost ALWAYS comes after Execution state (directly above)",
+      "checkflags": [
+        "MOO_Execution_Guard_001_Hasmet = False"
+      ],
+      "setflags": [
+        "MOO_Execution_Guard_001_Hasmet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Adept Mola",
+      "text": "I've never been to Baldur's Gate. Make sure to leave some standing for us, eh?",
+      "context": "InternalNodeContext: The player has kidnapped Isobel and helped return Nightsong and Balthazar to Moonrise. The army of the Absolute is ready to march.",
+      "checkflags": [
+        "MOO_Execution_Guard_001_Hasmet",
+        "MOO_Audience_State_Ready"
+      ],
+      "setflags": [
+        "MOO_Execution_Guard_001_Hasmet = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Adept Mola",
+      "text": "The General's advisor is back. He won't be happy to find empty cells below.",
+      "context": "InternalNodeContext: The player has helped Balthazar (and this Nightsong) return to Moonrise. He's down in the Colony.\rNodeContext: Ominous, referring to a man who likes to torture prisoners",
+      "checkflags": [
+        "MOO_Jailbreak_State_TieflingPathOpen",
+        "MOO_MutuallyExclusive_State_BalthazarReturn"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Adept Mola",
+      "text": "Step wise around the Disciple - I've seen her do some dark things in this room.",
+      "context": "InternalNodeContext: General fallback nodes where none of the above apply. Almost ALWAYS comes after Execution state (directly above)\rNodeContext: Soft, wary - they're all on the same side, but she's warning us againt the Disciple",
+      "checkflags": [
+        "MOO_Execution_Guard_001_Hasmet"
+      ],
+      "setflags": [
+        "MOO_Execution_Guard_001_Hasmet = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "metadata": {
+    "synopsis": "A kid in a protected area - think like a bunker during the blitz - waiting for an attack to come. Somebody has been telling him and his friends stories to distract them from what's coming. He looks up to the player because he saved him before.",
+    "how_to_trigger": "Repro steps:1. Start the game.2. loadlevel WLD_Main_A3. goto 299 5434. walk down to water and save the kid5. oe readyattackonden6. goto 84 777. Talk to Mirkon"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Mirkon",
+      "text": "Shh - you need to listen or go away.",
+      "context": "",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_Kid003",
+        "DEN_TieflingBard_State_Unavailable"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Mirkon",
+      "text": "Shh - you have to listen to the story.",
+      "context": "NodeContext: Innocent, absolute certainty.",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_Kid003"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Mirkon",
+      "text": "I'm telling a story - it's rude to interrupt.",
+      "context": "",
+      "checkflags": [
+        "DEN_TieflingBard_State_Unavailable"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_Kid003"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Mirkon",
+      "text": "The Harpy Killer! Are you here to save us? Like Baldy Ron saved the city?",
+      "context": "NodeContext: Chirpy, matter of fact.",
+      "checkflags": [
+        "DEN_HarpyMeal_State_HelpedSaveVictim"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_Kid003"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "21": {
+          "id": "21",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "18",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Mirkon",
+      "text": "I told everyone you'll save us. I know you will.",
+      "context": "",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_Kid003",
+        "DEN_TieflingBard_State_Unavailable",
+        "DEN_HarpyMeal_State_HelpedSaveVictim"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Mirkon",
+      "text": "Are you here to save us? Like Baldy Ron saved the city?",
+      "context": "NodeContext: Chirpy, matter of fact.",
+      "checkflags": [],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_Kid003"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "For all I know, I might actually be Baldy Ron.",
+          "context": "",
+          "checkflags": [
+            "REALLY_DARK_URGE"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "Mirkon",
+              "text": "Good. And after, the lady can tell us stories about you.",
+              "context": "NodeContext: pleased, respectful",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Who is this 'Baldy Ron'?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Mirkon",
+              "text": "From the lady's story.",
+              "context": "NodeContext: lecturing an adult",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Mirkon",
+                  "text": "He saved Baldur's Gate and became a hero!",
+                  "context": "NodeContext: lecturing an adult",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "That is exactly what I'm here for.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "I risked my life for you once. I'm not planning to do it again.",
+          "context": "",
+          "checkflags": [
+            "DEN_HarpyMeal_State_HelpedSaveVictim"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Wyll -1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "9": {
+              "id": "9",
+              "speaker": "Mirkon",
+              "text": "But... you can win. Goblins aren't as strong as bird women, right? They can't even fly.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "You're not worth the trouble, kid. You're on your own.",
+          "context": "",
+          "checkflags": [
+            "DEN_HarpyMeal_State_HelpedSaveVictim = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Wyll -1",
+            "Karlach -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Mirkon",
+              "text": "But... didn't you kill those goblins at the gate? You can win. I know you can!",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "You mean Balduran. He sailed to the edge of the world.",
+          "context": "",
+          "checkflags": [
+            "BARD"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Mirkon",
+              "text": "He did? I wonder what he found...",
+              "context": "NodeContext: surprised and daydreaming - he found out something new about one of his hero;s.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "Do you mean Balduran, the legendary founder of Baldur's Gate?",
+          "context": "",
+          "checkflags": [
+            "BALDURIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Mirkon",
+              "text": "What's a founder? The lady said he saved Baldur's Gate and became a hero!",
+              "context": "NodeContext: Confused at first because he doesn't understand what the player means, but then gets into the story again and gets excited retelling it.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Mirkon",
+      "text": "I hope we get to leave soon. I'm tired of living in a cave.",
+      "context": "NodeContext: bored, exaggerating her boredom",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_Kid003Victory",
+        "DEN_AttackOnDen_State_DenVictory"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Mirkon",
+      "text": "You saved us! Just like Baldy Ron.",
+      "context": "NodeContext: little kid trying to get answers from adults who are busy",
+      "checkflags": [
+        "DEN_AttackOnDen_State_DenVictory"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_Kid003Victory"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

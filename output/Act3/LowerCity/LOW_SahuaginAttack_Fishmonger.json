@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue with the fishmonger at the Sahuagin attack booster on the shore in the Lower City. Will sell fish, as fishmongers do, and say different things depending on the state of the Sahuagin.",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Use ReCon command \"goto 43 3 -148\"- Talk to the fishmonger.- To trigger the other flags, approach the docks, Sahuagin will appear - killcombat. For the \"cleaned up\" flag to be set, do a long rest."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Old Troutman",
+      "text": "All right, mate? What can I get you this time?",
+      "context": "NodeContext: Trying to maintain cheerful market seller vibes",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Fishmonger"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "0",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "How are things here?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "0",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "14": {
+              "id": "14",
+              "speaker": "Old Troutman",
+              "text": "Same old, same old - the Absolute's closing in and the Steel Watch is breathing down our necks. But still we fish.",
+              "context": "NodeContext: A little subdued but conversational",
+              "checkflags": [
+                "LOW_SahuaginAttack_State_SahuaginAttacked = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "15": {
+              "id": "15",
+              "speaker": "Old Troutman",
+              "text": "A bit quieter after the sahuagin attack but that's to be expected - loyal customers'll be back.",
+              "context": "NodeContext: A little subdued but conversational (and sure his fish will lure back his customers)",
+              "checkflags": [
+                "LOW_SahuaginAttack_State_SahuaginAttacked"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "What do you have in stock?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "0",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Old Troutman",
+              "text": "Fish, mainly. But I found a few shiny bits in the latest catch. Willing to sell them for a fair price, if you fancy.",
+              "context": "",
+              "checkflags": [
+                "GLO_EmperorPrelude_State_IronThroneStoneToFishmonger",
+                "GLO_EmperorPrelude_State_IronThoneStonesAtBeach"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "0",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Old Troutman",
+              "text": "Fish, mainly. The Flaming Fist commandeer the best stuff but I can show you what I've got.",
+              "context": "NodeContext: Fairly cheerful but also matter of fact",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "trade",
+                  "children": {
+                    "5": {
+                      "id": "5",
+                      "speaker": "Old Troutman",
+                      "text": "Make it last, eh?",
+                      "context": "NodeContext: Kindly/trying to stay cheerful",
+                      "checkflags": [
+                        "LOW_SahuaginAttack_State_SahuaginAttacked = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "10": {
+                      "id": "10",
+                      "speaker": "Old Troutman",
+                      "text": "Watch yourself, eh? Gods willing there won't be any more of those things.",
+                      "context": "NodeContext: Kindly warning for the player to be careful",
+                      "checkflags": [
+                        "LOW_SahuaginAttack_State_SahuaginAttacked"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Old Troutman",
+      "text": "Thanks again for dealing with those sahuagin - you saved more than just my livelihood!",
+      "context": "NodeContext: Friendly and grateful",
+      "checkflags": [
+        "LOW_SahuaginAttack_State_SahuaginAttacked"
+      ],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Fishmonger_NotCleanedUp"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "12",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Old Troutman",
+      "text": "Fancy any fish, then? You'll not find fresher inside the city.",
+      "context": "NodeContext: Bright and cheerful",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Fishmonger",
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Old Troutman",
+      "text": "Our hero's back! Fancy any celebratory seafood?",
+      "context": "NodeContext: Bright and cheerful",
+      "checkflags": [
+        "LOW_SahuaginAttack_State_SahuaginAttacked",
+        "LOW_SahuaginAttack_HasMet_Fishmonger_NotCleanedUp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Old Troutman",
+      "text": "You buying, mate? Not a lot left.",
+      "context": "NodeContext: Trying to maintain cheerful market seller vibes",
+      "checkflags": [],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Fishmonger"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Old Troutman",
+      "text": "You'll be pleased to know those sahuagin you offed have been cleaned up - gods, the smell.",
+      "context": "NodeContext: Bright and cheerful (disgusted on \"gods, the smell\")",
+      "checkflags": [
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Fishmonger"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "9",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

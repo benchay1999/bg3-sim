@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "synopsis": "An NPC was speaking with a player, and then the player got teleported out of sight from the NPC. At that point, the dialog gets stopped and the NPC starts investigating. When they notice a player, they will start this dialog."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "CRIME_Allow_Search"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "NodeContext: Need this node (with some text; could be dots if needed) for scripting reasons...",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Narrator",
+              "text": "*This individual is rather put out by your companion's sudden disappearance.*",
+              "context": "NodeContext: While these never directly lead to combat, if you teleported an NPC in the middle of a dialog that is normally followed by combat, that will still happen after this dialog ends, So it needs to be neutral, but not too friendly.",
+              "checkflags": [
+                "CRIME_GuiltFound = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "0": {
+              "id": "0",
+              "speaker": "Narrator",
+              "text": "*Suddenly vanishing and reappearing does not seem to be winning you any friends.*",
+              "context": "NodeContext: While these never directly lead to combat, if you teleported an NPC in the middle of a dialog that is normally followed by combat, that will still happen after this dialog ends, So it needs to be neutral, but not too friendly.",
+              "checkflags": [
+                "CRIME_GuiltFound"
+              ],
+              "setflags": [
+                "CRIME_FoundGuiltyPlayer"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

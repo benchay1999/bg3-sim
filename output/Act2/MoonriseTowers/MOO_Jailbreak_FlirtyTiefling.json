@@ -1,0 +1,971 @@
+{
+  "metadata": {
+    "synopsis": "Lakrissa is a tiefling from the grove who is usually quiet flirty and mischievious but has been through hell and back. There is a hint of her joyful nature here but she's much more reserved. She is currently imprisoned in moonrise towers. She usually has one liners, but if lia is dead she delivers the main beats about the tiefling rescue.",
+    "how_to_trigger": "Teleport to act 2 using the debug book, in act 2 setup choose the tiefling path. Then teleport to the moonrise dungeon - the tieflings will be there."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Lakrissa",
+      "text": "Did an orc tie this off? Gods - give me a moment.",
+      "context": "NodeContext: tense and annoyed - player interrupted her",
+      "checkflags": [
+        "MOO_Jailbreak_State_WaitingForBoat = False",
+        "MOO_Jailbreak_State_BoatEscape"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_HasMet_FlirtyAtBoat"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Lakrissa",
+      "text": "I'm not listening to another word you say. Get out of here!",
+      "context": "NodeContext: furious with the player, who has betrayed her",
+      "checkflags": [
+        "MOO_Jailbreak_HasMet_AngryFlirty"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "MOO_Jailbreak_HasMet_AngrySister"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Lakrissa",
+      "text": "The gnomes - speak to the gnomes!",
+      "context": "NodeContext: frantic - afraid guards will see you",
+      "checkflags": [
+        "MOO_Jailbreak_HasMet_FlirtyTiefling",
+        "MOO_Jailbreak_Event_SpeakToTieflingsWarning"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Lakrissa",
+      "text": "Oh no.",
+      "context": "NodeContext: Looking at someone she thought was her friend and seeing a traitor",
+      "checkflags": [
+        "MOO_Jailbreak_State_TieflingLeader"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_HasMet_FlirtyTiefling"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "45": {
+          "id": "45",
+          "speaker": "Lakrissa",
+          "text": "The cult got inside your head too?",
+          "context": "NodeContext: fearful for her friend, despite them now being an enemy",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "16",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "33": {
+              "id": "33",
+              "speaker": "Player",
+              "text": "No - the other tieflings sent me. They're in a place called Last Light - it's safe there.",
+              "context": "",
+              "checkflags": [
+                "HAV_SavingPrisoners_Knows_CapturedTieflings"
+              ],
+              "setflags": [
+                "MOO_Jailbreak_State_ToldTieflingsAboutHaven"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "16",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Lakrissa",
+                  "text": "Oh, thank the stars. When I saw Alfira disappear into the darkness, my heart just about stopped.",
+                  "context": "NodeContext: absolute relief, a spark of her old joy - she's in love with alfira and is relieved she's safe",
+                  "checkflags": [
+                    "DEN_TieflingBard_State_Unavailable = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "16",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "30": {
+                      "id": "30",
+                      "speaker": "Lakrissa",
+                      "text": "I couldn't bear the thought of her being hurt. Not after Zevlor.",
+                      "context": "NodeContext: a note of bitterness on the zevlor part",
+                      "checkflags": [
+                        "DEN_TieflingLeader_State_PermaDefeated = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "37": {
+                      "id": "37",
+                      "speaker": "Lakrissa",
+                      "text": "I couldn't bear the thought of her being hurt. Not after the attack.",
+                      "context": "NodeContext: relief and a touch of love in her voice. furstration and bitterness on attack",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "44": {
+                  "id": "44",
+                  "speaker": "Lakrissa",
+                  "text": "Oh, thank the stars. When they disappeared into the darkness, my heart just about stopped.",
+                  "context": "NodeContext: absolute relief that her friends and loved ones are safe",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "16",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "23": {
+                      "id": "23",
+                      "speaker": "Lakrissa",
+                      "text": "I couldn't bear the thought of them being hurt. Not after Zevlor.",
+                      "context": "NodeContext: a note of bitterness on the zevlor part",
+                      "checkflags": [
+                        "DEN_TieflingLeader_State_PermaDefeated = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "16": {
+                          "id": "16",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "20",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "31": {
+                      "id": "31",
+                      "speaker": "Lakrissa",
+                      "text": "I couldn't bear the thought of them being hurt. Not after the attack.",
+                      "context": "NodeContext: relief and a touch of love in her voice. furstration and bitterness on attack",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "29": {
+              "id": "29",
+              "speaker": "Player",
+              "text": "Accuse me of being with the Absolute again, and I'll leave you here to die.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "20",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "28": {
+                      "id": "28",
+                      "speaker": "Lakrissa",
+                      "text": "You're still you! Thank the gods.",
+                      "context": "NodeContext: relief, her friend is still her friend",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "20",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "35",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "speaker": "Player",
+              "text": "I'm not with the cult, I swear -  I'm here to help.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "6",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "13": {
+                      "id": "13",
+                      "speaker": "Lakrissa",
+                      "text": "Thank the gods.",
+                      "context": "NodeContext: relief, her friend is still her friend",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "6",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "20": {
+                          "id": "20",
+                          "speaker": "Lakrissa",
+                          "text": "After Zevlor, I thought I couldn't trust my judgement. Glad to see I was right about you.",
+                          "context": "NodeContext: a note of bitterness on the zevlor part. Smile and trying to be cheerier on second sentence",
+                          "checkflags": [
+                            "DEN_TieflingLeader_State_PermaDefeated = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "6",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "47": {
+                              "id": "47",
+                              "speaker": "Player",
+                              "text": "What happened with Zevlor?<br>",
+                              "context": "",
+                              "checkflags": [
+                                "DEN_TieflingLeader_State_PermaDefeated = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "6",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "39": {
+                              "id": "39",
+                              "speaker": "Player",
+                              "text": "You were attacked? Where?",
+                              "context": "",
+                              "checkflags": [
+                                "DEN_TieflingLeader_State_PermaDefeated"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "26",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "6": {
+                                  "id": "6",
+                                  "speaker": "Lakrissa",
+                                  "text": "We were trekking through the darkness when the cultists jumped us. Bastards gutted half of us - just for the fun.",
+                                  "context": "NodeContext: grief and horror at the memory but restrained",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "41": {
+                                      "id": "41",
+                                      "speaker": "Lakrissa",
+                                      "text": "I took a blow to the head, then woke up in this hellspit. Haven't seen Zevlor since - he's cosying up with Ketheric for all I know.",
+                                      "context": "NodeContext: frustration and bitterness",
+                                      "checkflags": [
+                                        "DEN_TieflingLeader_State_PermaDefeated = False"
+                                      ],
+                                      "setflags": [
+                                        "COL_FindZevlor_Knows_MissingTieflingPrisoner"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "8": {
+                                      "id": "8",
+                                      "speaker": "Lakrissa",
+                                      "text": "I took a blow to the head, then woke up in this hellspit. Barely known which way is up since.",
+                                      "context": "NodeContext: frustration and bitterness",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "22": {
+                              "id": "22",
+                              "speaker": "Player",
+                              "text": "Don't worry, I'm going to get you out of here.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Gale 1",
+                                "Astarion 1",
+                                "Lae'zel 1",
+                                "Shadowheart 1",
+                                "Wyll 1",
+                                "Karlach 1",
+                                "Minthara 1",
+                                "Halsin 1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "26",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "26": {
+                                  "id": "26",
+                                  "speaker": "Lakrissa",
+                                  "text": "I'd offer to bet on it, but I know you'll win this one.",
+                                  "context": "NodeContext: a touch of her old flirty cheekiness her but very reserved (still a touch situation)",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "18": {
+                                      "id": "18",
+                                      "speaker": "Lakrissa",
+                                      "text": "Speak to the gnomes - they've been knocking about their cell for days. Whatever they're up to? I'm in.",
+                                      "context": "NodeContext: determination returning to her voice - she will fight to survive",
+                                      "checkflags": [
+                                        "MOO_Jailbreak_Knows_ToolsNeeded = False"
+                                      ],
+                                      "setflags": [
+                                        "MOO_Jailbreak_Knows_SpeakWithGnomes"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "25": {
+                                      "id": "25",
+                                      "speaker": "Lakrissa",
+                                      "text": "Whatever the plan, I'll do what I can to help. You can count on it.",
+                                      "context": "NodeContext: determination returning to her voice - she will fight to survive",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "49": {
+                              "id": "49",
+                              "speaker": "Player",
+                              "text": "The gnomes have a plan to escape. We're going to get you out of here.",
+                              "context": "",
+                              "checkflags": [
+                                "MOO_Jailbreak_Knows_ToolsNeeded"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [
+                                "Gale 1",
+                                "Astarion 1",
+                                "Lae'zel 1",
+                                "Shadowheart 1",
+                                "Wyll 1",
+                                "Karlach 1",
+                                "Minthara 1",
+                                "Halsin 1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "26",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "32": {
+                              "id": "32",
+                              "speaker": "Player",
+                              "text": "Must I save you? Again?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "38": {
+                                  "id": "38",
+                                  "speaker": "Lakrissa",
+                                  "text": "Terribly sorry for the inconvenience, but yes, if you wouldn't mind.",
+                                  "context": "NodeContext: a touch of her old flirty cheekiness her but very reserved (still a touch situation)",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "9": {
+                              "id": "9",
+                              "speaker": "Player",
+                              "text": "I have better things to do. Get out of here your damn self.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "MOO_Jailbreak_HasMet_AngryFlirty"
+                              ],
+                              "ruletags": [],
+                              "approval": [
+                                "Astarion 1",
+                                "Shadowheart -1",
+                                "Gale -1",
+                                "Wyll -1",
+                                "Karlach -1",
+                                "Lae'zel 1",
+                                "Minthara 1",
+                                "Halsin -1"
+                              ],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "27": {
+                                  "id": "27",
+                                  "speaker": "Lakrissa",
+                                  "text": "...I can't trust anyone, can I?",
+                                  "context": "NodeContext: gutted, heart-wrenching - convinced she's going to die in here",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "4": {
+                                      "id": "4",
+                                      "speaker": "Lakrissa",
+                                      "text": "Just kill us and be done with it.",
+                                      "context": "NodeContext: bite to this, still some determination despite her terrible situation",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "15": {
+                          "id": "15",
+                          "speaker": "Lakrissa",
+                          "text": "After the attack, I thought I couldn't trust my judgement. Glad to see I was right about you.",
+                          "context": "NodeContext: a note of bitterness on the zevlor part. Smile and trying to be cheerier on second sentence",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "36": {
+                              "id": "36",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "20",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "12": {
+                  "id": "12",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "35": {
+                      "id": "35",
+                      "speaker": "Lakrissa",
+                      "text": "No - no this is a trick isn't it?",
+                      "context": "NodeContext: a little upset, she thinks the player is messing with her head",
+                      "checkflags": [],
+                      "setflags": [
+                        "MOO_Jailbreak_HasMet_AngryFlirty"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "34": {
+                          "id": "34",
+                          "speaker": "Lakrissa",
+                          "text": "It's always a trick. Just go away.",
+                          "context": "NodeContext: a little upset, she thinks the player is messing with her head",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Player",
+              "text": "Yes. Enjoy rotting in your cell.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "MOO_Jailbreak_HasMet_AngryFlirty"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Astarion 1",
+                "Shadowheart -1",
+                "Gale -1",
+                "Wyll -1",
+                "Karlach -1",
+                "Lae'zel 1",
+                "Minthara 1",
+                "Halsin -1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "50": {
+                  "id": "50",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "27",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Lakrissa",
+      "text": "There must be a way out of here, please. I don't want to end up on some necromancer's slab.",
+      "context": "NodeContext: determined, wants the player's help",
+      "checkflags": [],
+      "setflags": [
+        "MOO_Jailbreak_HasMet_FlirtyTiefling"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "40": {
+      "id": "40",
+      "speaker": "Lakrissa",
+      "text": "Are we waiting for Umberlee herself, or what? Let's go.",
+      "context": "NodeContext: tense as she waits by the boat - aware they could be spotted by guards",
+      "checkflags": [
+        "MOO_Jailbreak_HasMet_FlirtyAtBoat",
+        "MOO_Jailbreak_State_Escaping"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "42": {
+      "id": "42",
+      "speaker": "Lakrissa",
+      "text": "You're our one shot at getting out of here - don't leave us behind.",
+      "context": "NodeContext: scaredb ut trusts player to return",
+      "checkflags": [
+        "MOO_Jailbreak_HasMet_FlirtyTiefling"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "43": {
+      "id": "43",
+      "speaker": "Lakrissa",
+      "text": "Hey - don't go! Please!",
+      "context": "NodeContext: panic and fear",
+      "checkflags": [
+        "MOO_Jailbreak_HasMet_FlirtyOutcast",
+        "MOO_MoonriseTower_State_Outcast"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "46": {
+      "id": "46",
+      "speaker": "Lakrissa",
+      "text": "I swear, if we get caught now, after making it this far...",
+      "context": "NodeContext: she's scared and acting a little sassy as she waits by the boat - aware they could be spotted by guards",
+      "checkflags": [
+        "MOO_Jailbreak_HasMet_FlirtyAtBoat = False",
+        "MOO_Jailbreak_State_Escaping"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_HasMet_FlirtyAtBoat"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "48": {
+      "id": "48",
+      "speaker": "Lakrissa",
+      "text": "Hush up, will you? Go keep watch.",
+      "context": "NodeContext: tense and annoyed - player interrupted her",
+      "checkflags": [
+        "MOO_Jailbreak_HasMet_FlirtyAtBoat",
+        "MOO_Jailbreak_State_BoatLeader",
+        "MOO_Jailbreak_State_WaitingForBoat = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "51": {
+      "id": "51",
+      "speaker": "Lakrissa",
+      "text": "Hey - the guards have gone stone mad. Get me out of here before they come back, please!",
+      "context": "NodeContext: panic and fear",
+      "checkflags": [
+        "MOO_MoonriseTower_State_Outcast"
+      ],
+      "setflags": [
+        "MOO_Jailbreak_HasMet_FlirtyOutcast"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

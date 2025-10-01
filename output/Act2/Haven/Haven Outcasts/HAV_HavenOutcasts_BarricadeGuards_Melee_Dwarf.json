@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "synopsis": "several states of being for a harper guard who is protecting a barricade at the entrance to Last Light.",
+    "how_to_trigger": "- goto -18.19, 27.23, 131.69- Speak to Harper Darragh"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Harper Darragh",
+      "text": "Don't stand too close - you might be contagious.",
+      "context": "InternalNodeContext: Protected state. Barrier is On, nothing bad happened yet. Met.\rNodeContext: wary of the player",
+      "checkflags": [
+        "HAV_HavenOutcasts_BarricadeGuards_Melee_Dwarf_Protected_HasMet",
+        "HAV_Mood_State_Protected"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Harper Darragh",
+      "text": "They'll be back, and there'll be more of them. There always are...",
+      "context": "InternalNodeContext: State after repelling the attack of the Flaming Fist traitor. NPCs are afraid of other possible attacks.\rNodeContext: pensive",
+      "checkflags": [
+        "HAV_HavenOutcasts_BarricadeGuards_Melee_Dwarf_Alert_HasMet = False",
+        "HAV_Mood_State_Alert"
+      ],
+      "setflags": [
+        "HAV_HavenOutcasts_BarricadeGuards_Melee_Dwarf_Alert_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Harper Darragh",
+      "text": "I owed Marcus five rounds. Thanks for settling my debt.",
+      "context": "NodeContext: player killed marcus - gallows humour",
+      "checkflags": [
+        "HAV_EnteringHaven_State_FlamingSpyRevealed",
+        "81c429e0-7a87-d846-ba07-f240523cd6a4_MarcusComment = False"
+      ],
+      "setflags": [
+        "81c429e0-7a87-d846-ba07-f240523cd6a4_MarcusComment"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Harper Darragh",
+      "text": "If Jaheira trusts you, I trust you. But I'll be damned if a bug-brain doesn't creep me out.",
+      "context": "InternalNodeContext: Protected state. Barrier is On, nothing bad happened yet. Not Met.\rNodeContext: wary of the player",
+      "checkflags": [
+        "HAV_HavenOutcasts_BarricadeGuards_Melee_Dwarf_Protected_HasMet = False",
+        "HAV_Mood_State_Protected"
+      ],
+      "setflags": [
+        "HAV_HavenOutcasts_BarricadeGuards_Melee_Dwarf_Protected_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Harper Darragh",
+      "text": "Undead coming out of the dark... What a hellhole this is.",
+      "context": "InternalNodeContext: State after repelling the attack of the Flaming Fist traitor. NPCs are afraid of other possible attacks.\rNodeContext: bitter",
+      "checkflags": [
+        "HAV_HavenOutcasts_BarricadeGuards_Melee_Dwarf_Alert_HasMet",
+        "HAV_Mood_State_Alert"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

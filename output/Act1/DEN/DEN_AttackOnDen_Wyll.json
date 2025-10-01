@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "synopsis": "Wyll dialogue if he is an NPC and is in the goblin camp after attack on den victory. In paths where the attack has yet to begin, Wyll is enthusiastic for you to blow the horn and call for battle. After battle, you can recruit Wyll.",
+    "how_to_trigger": "oe readyattackondenSetGlobalOsirisFlag DEN_AttackOnDen_State_DenVictory teleport S_Player_WyllSetGlobalOsirisFlag DEN_AttackOnDen_State_DenVictory SetGlobalOsirisFlag Wyll_Recruitment_Event_RecruitedOnceteleport S_Player_Wyll"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Wyll",
+      "text": "Blow the horn - the trap has been set. Today, we write our own legends!",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_Wyll"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*You know this man's face - but you can't quite place it. He knows you too, judging from his quizzical expression.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Wyll",
+          "text": "Blow the horn - the trap has been set.",
+          "context": "NodeContext: Cautiously.",
+          "checkflags": [],
+          "setflags": [
+            "DEN_AttackOnDen_HasMet_Wyll"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Wyll",
+      "text": "Ah - a familiar face. Didn't think I'd see you again!",
+      "context": "",
+      "checkflags": [
+        "DEN_Wyll_HasMet",
+        "DEN_AttackOnDen_HasMet_Wyll = False"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_Wyll"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Wyll",
+          "text": "I've never been more thrilled to be wrong.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Wyll",
+              "text": "Blow the horn - the trap has been set. Today, we write our own legends!",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

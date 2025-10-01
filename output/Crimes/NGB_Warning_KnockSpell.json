@@ -1,0 +1,470 @@
+{
+  "metadata": {
+    "synopsis": "A player used a knock spell, and the NPC saw the player when they did so, and immediately reacts to the player."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*Tampering with that lock might be the last thing you ever do. This witness will make sure of that.*",
+      "context": "NodeContext: This node will start combat",
+      "checkflags": [],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*It seems that little spell just earned you a meeting with the guards.*",
+      "context": "NodeContext: Civilian calling for help",
+      "checkflags": [
+        "CIVILIAN",
+        "BADASSCIVILIAN = False"
+      ],
+      "setflags": [
+        "CRIME_FleeHelpFromDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Narrator",
+      "text": "*The lock you tampered with remains intact. The same may not be true of you, once this guard decides your punishment.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison = False",
+        "IsInPrison = False",
+        "69cf6c1f-fc1f-4e22-b55d-dc40768f6669"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "17",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Narrator",
+      "text": "*Prison guards rarely take kindly to prisoners tampering with locks. This one is no exception.*",
+      "context": "NodeContext: This node will start combat",
+      "checkflags": [
+        "IsInPrison",
+        "69cf6c1f-fc1f-4e22-b55d-dc40768f6669"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "17": {
+      "id": "17",
+      "speaker": "Narrator",
+      "text": "*That spell usually results in a lock being opened. Unfortunately, this time it's about to get you locked up.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison",
+        "IsInPrison = False",
+        "69cf6c1f-fc1f-4e22-b55d-dc40768f6669"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "6",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Try to talk your way out.",
+          "context": "",
+          "checkflags": [
+            "GEB_CharismaDisabled = False",
+            "CRIME_PersuasionFailed = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "Player",
+              "text": "I'm a locksmith! You really want to arrest me for doing my job?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "6",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "Back off. Or I'll use your bones for lockpicks instead.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Narrator",
+                      "text": "*That settles the matter. Crisis averted.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "CRIME_PersuasionSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "15": {
+                  "id": "15",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "Narrator",
+                      "text": "*You've successfully persuaded the guard that you belong in a cell.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "CRIME_PersuasionFailed"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "10": {
+                          "id": "10",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "17",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "12": {
+              "id": "12",
+              "speaker": "Player",
+              "text": "The lock is still intact. No harm done, is there?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "0",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "Take this and let's have no more unpleasantness. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "Narrator",
+              "text": "*Your gold was more than enough to defuse the situation. You're free to go.*",
+              "context": "",
+              "checkflags": [
+                "2a7c4f74-438b-4987-9def-4f918c98b9db",
+                "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+              ],
+              "setflags": [
+                "GEN_TransferNPCPayment"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "20": {
+              "id": "20",
+              "speaker": "Narrator",
+              "text": "*It's customary to possess gold in order to bribe someone with it.*",
+              "context": "",
+              "checkflags": [
+                "2a7c4f74-438b-4987-9def-4f918c98b9db",
+                "e678bd59-74f4-4a7b-8776-aca807d9ef22 = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "24": {
+              "id": "24",
+              "speaker": "Narrator",
+              "text": "*Your gold buys contempt, but not freedom. You're about to be detained.*",
+              "context": "",
+              "checkflags": [
+                "GEB_Arrest_HavePrison",
+                "69cf6c1f-fc1f-4e22-b55d-dc40768f6669"
+              ],
+              "setflags": [
+                "CRIME_PersuasionFailed"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "17",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*Your gold is of little interest. It won't buy your freedom this time.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "TemporaryHostilityAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "Follow to prison.",
+          "context": "",
+          "checkflags": [
+            "GEB_Arrest_HavePrison"
+          ],
+          "setflags": [
+            "Allow_Arrest"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Narrator",
+      "text": "*One little spell and this child's telling on you. Spoilsport.*",
+      "context": "NodeContext: Thirrd warning for Civilians: call guards, or regular warning again.",
+      "checkflags": [
+        "GOBLIN_KID = False",
+        "KID"
+      ],
+      "setflags": [
+        "CRIME_FleeHelpFromDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

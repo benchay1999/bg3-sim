@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "synopsis": "Dialog to invoke the ritual to go to House of Hope from Lower City.RELEVANT NOTE: This dialog will only appear at the first time players go to house of hope. Later, this never will be triggered again.",
+    "how_to_trigger": "Click on the ritual circle S_LOW_DevilsFee_PortalToHouseOfHope_839e5ee7-1793-4a43-9e91-6da575e188ac"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: The player approaches the blood circle, grimoire open. Any other party member stands behind them. The player finishes reading the last line, muttering its contents to themselves, and closes it. Ideally we have low infernal music to cover the need for any player lines.",
+      "checkflags": [
+        "LOW_DevilsFee_State_RitualAlreadyDone = False"
+      ],
+      "setflags": [
+        "LOW_DevilsFee_State_RitualAlreadyDone"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "InternalNodeContext: Checking if we have the infernal marble.",
+          "checkflags": [
+            "LOW_DevilsFee_State_HasInfernalMarble"
+          ],
+          "setflags": [
+            "LOW_DevilsFee_Event_OpeningPortal"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "",
+              "context": "CinematicNodeContext: The player reaches their arm out, palm outstretched, over the ritual circle. The infernal marble is in it. It begins to glow, and the entire room around it darkens. As the player closes their fist around the infernal marble, we see them from above, and the the blood underneath the player's closed fist lights ablaze, tracing around the ritual circle's outline in fire. The player drops the infernal marble, and the floor within the blazing outline ripples, We are no longer seeing a wooden floor, we see the crackling sky of Avernus.",
+              "checkflags": [],
+              "setflags": [
+                "LOW_DevilsFee_Event_OpeningPortal"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "tagcinematic",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Narrator",
+                  "text": "*As you approach the ritual circle, you feel the warm crackle of Avernus' flame across your skin.*",
+                  "context": "CinematicNodeContext: We see the player, the fire flicking shadows against them a\u00e7s they stare into the portal.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "4",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "GROUP_Emperors",
+                      "text": "Signing the devil's contract was an impulsive error. Do not seek to correct one mistake with another.",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_Emperor_Knows_PlayersTookDeal"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "4",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "6": {
+                      "id": "6",
+                      "speaker": "GROUP_Emperors",
+                      "text": "You were wise to reject the devil's offer, but there is no reason to provoke him by invading his home.",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_Emperor_Knows_PlayersTookDeal = False",
+                        "GLO_Emperor_Knows_RaphaelInvolvement"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "4",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "3": {
+                      "id": "3",
+                      "speaker": "GROUP_Emperors",
+                      "text": "There is nothing to be gained by invading the devil's home, and everything to be lost.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "",
+                          "text": "",
+                          "context": "CinematicNodeContext: Again, shot from above: The other party members gather around the circle's edge. The party takes one step together into the blazing circle. A rush of fire engulfs the group. When it clears, they are gone, only the portal to avernus remains, fiery symbol still glowing atop the Avernus skyscape.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "tagcinematic",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "CinematicNodeContext: The player reaches their arm out, palm outstretched, over the ritual circle. Player doesn't have the infernal marble. Nothing happens.\rInternalNodeContext: Maybe we can have a little bit of humour here.",
+          "checkflags": [
+            "LOW_DevilsFee_State_HasInfernalMarble = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*You feel a thrum across your palm, warm, longing. The ritual requires a component you seem to lack.*<br>",
+              "context": "CinematicNodeContext: The player looks at their hand, confused.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

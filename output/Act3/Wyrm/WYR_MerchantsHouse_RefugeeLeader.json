@@ -1,0 +1,1615 @@
+{
+  "metadata": {
+    "synopsis": "General dialog for the refugee leader - father of the refugee family who stayed in the merchant's house when he was away.",
+    "how_to_trigger": "Talk to him either outside the merchant's house or at the refugee camp depending on state."
+  },
+  "dialogue": {
+    "31": {
+      "id": "31",
+      "speaker": "Ben Golewits",
+      "text": "You did your good deed, but Torm's still watching you - don't disappoint him now.",
+      "context": "NodeContext: Gruff but good natured",
+      "checkflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader_Housed",
+        "WYR_MerchantsHouse_Refugees_State_Housed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "46": {
+      "id": "46",
+      "speaker": "Ben Golewits",
+      "text": "The poncy prat who owns this place is long gone - so I think we can both agree he doesn't need it anymore.",
+      "context": "NodeContext: A little bit pleased about it",
+      "checkflags": [
+        "WYR_MerchantsHouse_Refugees_State_Housed",
+        "WYR_RefugeeCamp_State_BigBarnSolved"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "47": {
+      "id": "47",
+      "speaker": "Ben Golewits",
+      "text": "Not quite sure why you stood up for us like that, but I won't say I'm not grateful. Thanks. And may Torm keep you.",
+      "context": "NodeContext: A little confused but grateful",
+      "checkflags": [
+        "WYR_MerchantsHouse_Refugees_State_Housed = False",
+        "WYR_MerchantsHouse_Merchant_State_Intimidated",
+        "WYR_MerchantsHouse_Knows_Refugees"
+      ],
+      "setflags": [
+        "WYR_MerchantsHouse_Refugees_State_Housed"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "61": {
+          "id": "61",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "43",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "40": {
+          "id": "40",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "8",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "79": {
+          "id": "79",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "64",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "62": {
+          "id": "62",
+          "speaker": "Player",
+          "text": "One thing: stay out of the basement. It's not safe.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Knows_SecretInBasement"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "37": {
+              "id": "37",
+              "speaker": "Ben Golewits",
+              "text": "We're much more interested in the beds and the pantry - but I'll make sure Cinta knows the basement's off-limits.",
+              "context": "NodeContext: A little worried - but glad for the warning",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "54": {
+          "id": "54",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "49": {
+      "id": "49",
+      "speaker": "Ben Golewits",
+      "text": "Who are you? Some thug here to do that stuffed shirt's dirty work?",
+      "context": "NodeContext: Wary; unsure of the player's intentions",
+      "checkflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader = False",
+        "WYR_MerchantsHouse_Refugees_State_Housed = False"
+      ],
+      "setflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "67": {
+          "id": "67",
+          "speaker": "Player",
+          "text": "What exactly is going on here?",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Knows_Refugees = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "22",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "WYR_MerchantsHouse_Knows_Refugees"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "22",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        },
+        "41": {
+          "id": "41",
+          "speaker": "Player",
+          "text": "I'm trying to help you - wait here.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Merchant_State_GoneFromHouse = False",
+            "WYR_MerchantsHouse_Knows_Refugees"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "72": {
+              "id": "72",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "26",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "86": {
+          "id": "86",
+          "speaker": "Player",
+          "text": "The owner won't mind if you stay - you have my word.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Merchant_State_GoneFromHouse",
+            "WYR_MerchantsHouse_Knows_Refugees"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "Ben Golewits",
+              "text": "Your word? Well... if you're sure. And you're definitely not pulling my leg...",
+              "context": "NodeContext: A little wary",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "39": {
+                  "id": "39",
+                  "speaker": "Ben Golewits",
+                  "text": "I don't know if it's your place to give us permission to stay here, but thank you. Really. My family needs this.",
+                  "context": "NodeContext: Gruffly grateful",
+                  "checkflags": [],
+                  "setflags": [
+                    "WYR_MerchantsHouse_Refugees_State_Housed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "59": {
+          "id": "59",
+          "speaker": "Player",
+          "text": "Here - take this. You'll be much better off in an inn than waiting to get chased out of here. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Merchant_State_GoneFromHouse = False",
+            "WYR_MerchantsHouse_Knows_Refugees",
+            "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+          ],
+          "setflags": [
+            "GEN_TransferNPCPayment"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "38": {
+              "id": "38",
+              "speaker": "Ben Golewits",
+              "text": "I don't want to take charity from some stranger. But... I will. For the sake of my daughter.",
+              "context": "NodeContext: Clearly conflicted about the charity",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Ben Golewits",
+                  "text": "...Thank you.",
+                  "context": "NodeContext: With some difficulty due to being conflicted about accepting charity",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "82": {
+                      "id": "82",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "83",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "You should leave - there'll be trouble if you stay.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_RefugeeLeader_State_TriedPersuasion = False",
+            "WYR_MerchantsHouse_Merchant_State_GoneFromHouse = False",
+            "WYR_MerchantsHouse_Knows_Refugees",
+            "WYR_MerchantsHouse_State_ThugsGone = False"
+          ],
+          "setflags": [
+            "WYR_MerchantsHouse_RefugeeLeader_State_TriedPersuasion"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "66": {
+              "id": "66",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "Ben Golewits",
+                  "text": "I spend most of my life hunting things that'd kill you as soon as they looked at you and you're telling me about 'trouble'?!",
+                  "context": "NodeContext: Rising anger",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "36": {
+                      "id": "36",
+                      "speaker": "Ben Golewits",
+                      "text": "But... you're right. I can't risk those people getting a hold of my daughter.",
+                      "context": "NodeContext: Calming himself for the sake of his family; resignation and a tinge of sadness when speaking about the kids",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "83": {
+                          "id": "83",
+                          "speaker": "Ben Golewits",
+                          "text": "We'll get going as soon as we've got our things together.",
+                          "context": "NodeContext: Trying to gather himself",
+                          "checkflags": [],
+                          "setflags": [
+                            "WYR_MerchantsHouse_State_ChasedOutNoForce",
+                            "WYR_MerchantsHouse_Event_RefugeesLeave"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "18": {
+              "id": "18",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "85": {
+                  "id": "85",
+                  "speaker": "Ben Golewits",
+                  "text": "Thanks for your concern, but it'll be safer for my family to have four walls and a roof over their heads.",
+                  "context": "NodeContext: Matter of factly",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "20": {
+                      "id": "20",
+                      "speaker": "Ben Golewits",
+                      "text": "More defensible, too...",
+                      "context": "NodeContext: Contemplative; he clearly anticipates an attack",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "This is private property. You need to leave - or I'll make you.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_RefugeeLeader_State_TriedIntimidation = False",
+            "WYR_MerchantsHouse_Merchant_State_GoneFromHouse = False",
+            "WYR_MerchantsHouse_Knows_Refugees"
+          ],
+          "setflags": [
+            "WYR_MerchantsHouse_RefugeeLeader_State_TriedIntimidation"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "29": {
+                  "id": "29",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [
+                    "PALADIN_DEVOTION",
+                    "PALADIN_ANCIENTS"
+                  ],
+                  "setflags": [
+                    "GLO_PaladinOathbreaker_Event_BrokeOath"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "60": {
+                      "id": "60",
+                      "speaker": "Ben Golewits",
+                      "text": "You're seriously gonna throw us out? Throw my child out?",
+                      "context": "NodeContext: Disbelief at the player's callousness",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "55": {
+                          "id": "55",
+                          "speaker": "Ben Golewits",
+                          "text": "You're just as bad as the rest of them.",
+                          "context": "NodeContext: Angry disappointment",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "76": {
+                              "id": "76",
+                              "speaker": "Ben Golewits",
+                              "text": "Don't worry - we'll go. May Torm split open that hard, blackened heart of yours some day.",
+                              "context": "NodeContext: Bitter resignation",
+                              "checkflags": [],
+                              "setflags": [
+                                "WYR_MerchantsHouse_Event_RefugeesLeave"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "44": {
+              "id": "44",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "78": {
+                  "id": "78",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [
+                    "PALADIN_DEVOTION",
+                    "PALADIN_ANCIENTS"
+                  ],
+                  "setflags": [
+                    "GLO_PaladinOathbreaker_Event_BrokeOath"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "45": {
+                      "id": "45",
+                      "speaker": "Ben Golewits",
+                      "text": "You city thugs are all the same. I'll protect my family with my life if I have to!",
+                      "context": "NodeContext: Desperate bravery; will do anything to protect his family",
+                      "checkflags": [],
+                      "setflags": [
+                        "TemporaryHostilityAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "56": {
+          "id": "56",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "50": {
+      "id": "50",
+      "speaker": "Ben Golewits",
+      "text": "What's the word? Can we stay?",
+      "context": "NodeContext: Tentative/wary",
+      "checkflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader_ThugsGone",
+        "WYR_MerchantsHouse_State_ThugsGone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "47",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "27": {
+          "id": "27",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "80",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "58": {
+      "id": "58",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "WYR_MerchantsHouse_Refugees_State_Housed = False",
+        "WYR_MerchantsHouse_Merchant_State_GoneFromHouse",
+        "WYR_MerchantsHouse_Knows_Refugees",
+        "WYR_MerchantsHouse_State_ThugsGone"
+      ],
+      "setflags": [
+        "WYR_MerchantsHouse_Refugees_State_Housed"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "47",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "81": {
+          "id": "81",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "47",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "63": {
+      "id": "63",
+      "speaker": "Ben Golewits",
+      "text": "Back again, are you? What do you want with us now?",
+      "context": "NodeContext: Slightly wary (not sure of the player's intentions)",
+      "checkflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader",
+        "WYR_MerchantsHouse_Refugees_State_Housed = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "26",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "49",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "77": {
+      "id": "77",
+      "speaker": "Ben Golewits",
+      "text": "I don't like being cooped up inside, but it's what's best for Cinta - I'll make sure she knows you had a hand in it.",
+      "context": "NodeContext: Gruffly grateful",
+      "checkflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader_Housed = False",
+        "WYR_MerchantsHouse_Refugees_State_Housed"
+      ],
+      "setflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader_Housed"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "80": {
+      "id": "80",
+      "speaker": "Ben Golewits",
+      "text": "I see those animals are out of the picture - can we stay now, or are you going to turn on us next?",
+      "context": "NodeContext: Wary",
+      "checkflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader_ThugsGone = False",
+        "WYR_MerchantsHouse_State_ThugsGone"
+      ],
+      "setflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader_ThugsGone"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "26",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "65": {
+          "id": "65",
+          "speaker": "Player",
+          "text": "Stay? What are you talking about?",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Knows_Refugees = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "26",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "22": {
+              "id": "22",
+              "speaker": "Ben Golewits",
+              "text": "The selfish ponce who owns this place was trying to hire some gang to throw us out - but it looks like you got rid of them.",
+              "context": "NodeContext: Cautiously pleased",
+              "checkflags": [],
+              "setflags": [
+                "WYR_MerchantsHouse_Knows_Refugees"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "There's no one here to throw you out - I don't see why you can't stay.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Merchant_State_GoneFromHouse",
+            "WYR_MerchantsHouse_Knows_Refugees",
+            "WYR_MerchantsHouse_State_ThugsGone"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "26",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "32": {
+              "id": "32",
+              "speaker": "Ben Golewits",
+              "text": "We will stay. For now. I just hope he doesn't pay anyone else to come sniffing round.",
+              "context": "NodeContext: Grateful - but also a little concerned",
+              "checkflags": [
+                "WYR_MerchantsHouse_Merchant_State_Defeated = False",
+                "WYR_MerchantsHouse_Merchant_State_PermaDefeated = False"
+              ],
+              "setflags": [
+                "WYR_MerchantsHouse_Refugees_State_Housed"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "Ben Golewits",
+                  "text": "Thank you - and may Torm keep you.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "43": {
+                      "id": "43",
+                      "speaker": "Player",
+                      "text": "You are quite welcome.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "23": {
+                          "id": "23",
+                          "speaker": "Ben Golewits",
+                          "text": "You're the first person in this city to have our backs. Thank you. Really.",
+                          "context": "NodeContext: Gruffly grateful",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "Player",
+                      "text": "And you'd better be grateful for it.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "51": {
+                          "id": "51",
+                          "speaker": "Ben Golewits",
+                          "text": "I am. It's been days since my family slept under a roof - so thank you.",
+                          "context": "NodeContext: Gruffly grateful",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "11": {
+                      "id": "11",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "62",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    },
+                    "42": {
+                      "id": "42",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "56",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "71": {
+              "id": "71",
+              "speaker": "Ben Golewits",
+              "text": "Oh. Well. Thank you. I think?",
+              "context": "NodeContext: Somewhat confused; wasn't expecting to be told they could stay",
+              "checkflags": [],
+              "setflags": [
+                "WYR_MerchantsHouse_Refugees_State_Housed"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "17",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "64": {
+          "id": "64",
+          "speaker": "Player",
+          "text": "How did you end up here?",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Knows_Refugees",
+            "MerchantsHouse_State_AskedRefugeesOrigin = False"
+          ],
+          "setflags": [
+            "MerchantsHouse_State_AskedRefugeesOrigin"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "26",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "52": {
+              "id": "52",
+              "speaker": "Ben Golewits",
+              "text": "Same way lots of us did - trying to get away from the army of the Absolute.",
+              "context": "NodeContext: Grimly",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "26",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "69": {
+                  "id": "69",
+                  "speaker": "Ben Golewits",
+                  "text": "If you had the chance to put a roof over your family's heads after being on the run for Torm knows how long, wouldn't you?",
+                  "context": "NodeContext: Matter of fact; expects the player to see where he's coming from",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "26",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "74": {
+                      "id": "74",
+                      "speaker": "Player",
+                      "text": "No one's telling you to leave - have all the roof you want.",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_MerchantsHouse_Merchant_State_GoneFromHouse",
+                        "WYR_MerchantsHouse_Knows_Refugees"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "26",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "34": {
+                          "id": "34",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "3",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "68": {
+                      "id": "68",
+                      "speaker": "Player",
+                      "text": "I understand. Let me talk to the owner of this place - maybe I can help.",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_MerchantsHouse_Refugees_State_Housed = False",
+                        "WYR_MerchantsHouse_Merchant_State_GoneFromHouse = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "26",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "48": {
+                          "id": "48",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "alias",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "75": {
+                      "id": "75",
+                      "speaker": "Player",
+                      "text": "I'm not interested in sob stories.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "5",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "53": {
+                          "id": "53",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "alias",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "33": {
+                      "id": "33",
+                      "speaker": "Player",
+                      "text": "Look, this place doesn't belong to you - get out or I'll have to throw you out.",
+                      "context": "",
+                      "checkflags": [
+                        "WYR_MerchantsHouse_RefugeeLeader_State_TriedIntimidation = False",
+                        "WYR_MerchantsHouse_Refugees_State_Housed = False",
+                        "WYR_MerchantsHouse_Merchant_State_GoneFromHouse = False",
+                        "WYR_MerchantsHouse_Knows_Refugees"
+                      ],
+                      "setflags": [
+                        "WYR_MerchantsHouse_RefugeeLeader_State_TriedIntimidation"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "",
+                          "text": "True",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "57": {
+                              "id": "57",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [
+                                "PALADIN_DEVOTION",
+                                "PALADIN_ANCIENTS"
+                              ],
+                              "setflags": [
+                                "GLO_PaladinOathbreaker_Event_BrokeOath"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "29",
+                              "is_end": false,
+                              "node_type": "alias",
+                              "children": {
+                                "0": {
+                                  "id": "0",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "60",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "24": {
+                          "id": "24",
+                          "speaker": "",
+                          "text": "False",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "rollresult",
+                          "children": {
+                            "13": {
+                              "id": "13",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [
+                                "PALADIN_DEVOTION",
+                                "PALADIN_ANCIENTS"
+                              ],
+                              "setflags": [
+                                "GLO_PaladinOathbreaker_Event_BrokeOath"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "29",
+                              "is_end": false,
+                              "node_type": "alias",
+                              "children": {
+                                "70": {
+                                  "id": "70",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "45",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "9": {
+                      "id": "9",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "56",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "28": {
+          "id": "28",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "59",
+          "link": "71",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "35": {
+          "id": "35",
+          "speaker": "Player",
+          "text": "I'm trying to help you - I just need to talk to the man in charge.",
+          "context": "",
+          "checkflags": [
+            "WYR_MerchantsHouse_Refugees_State_Housed = False",
+            "WYR_MerchantsHouse_Merchant_State_GoneFromHouse = False",
+            "WYR_MerchantsHouse_Knows_Refugees"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "71",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "26": {
+              "id": "26",
+              "speaker": "Ben Golewits",
+              "text": "Make it quick if you can - I don't like the way he's looking at us.",
+              "context": "NodeContext: Still a little wary (but matter of fact)",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "I could not care less.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "71",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "87": {
+              "id": "87",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "WYR_MerchantsHouse_Merchant_State_GoneFromHouse",
+                "WYR_MerchantsHouse_Knows_Refugees",
+                "WYR_MerchantsHouse_State_ThugsGone"
+              ],
+              "setflags": [
+                "WYR_MerchantsHouse_Refugees_State_Housed"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "71",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "73": {
+                  "id": "73",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "17",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Ben Golewits",
+              "text": "Off with you, then! We don't need an audience, that's for sure.",
+              "context": "NodeContext: Irritated",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "2",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "56",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "84": {
+      "id": "84",
+      "speaker": "Ben Golewits",
+      "text": "I heard you talking about us - you gonna kick my little girl out onto the streets, are you?",
+      "context": "NodeContext: Angry; worried about his family and defensive of them",
+      "checkflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader_HeardChasingOut = False",
+        "WYR_MerchantsHouse_Refugees_State_Housed = False",
+        "WYR_MerchantsHouse_State_ChasingOutSuggested",
+        "WYR_MerchantsHouse_Knows_Refugees"
+      ],
+      "setflags": [
+        "WYR_MerchantsHouse_HasMet_RefugeeLeader_HeardChasingOut"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "49",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

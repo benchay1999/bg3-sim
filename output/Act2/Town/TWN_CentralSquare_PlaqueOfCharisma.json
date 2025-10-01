@@ -1,0 +1,427 @@
+{
+  "metadata": {
+    "synopsis": "Secret room in SCL_Main_A, beneath the Central Square. This statue has a dogma of Shar and asks you whether you accept it. Accepting it require a saving throw, on a failure you get a debuff and enemies appear. If you are a follower of Shar / Shadowheart you get have a special option which gives you auto-success.",
+    "how_to_trigger": "SCL_Main_A - (228 0 -847)Click on the statue"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "TWN_CentralSquare_HasMet_PlaqueOfCharisma"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "12",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Narrator",
+      "text": "*The statue looms silently. Whatever hidden purpose it has will remain a secret.*",
+      "context": "",
+      "checkflags": [
+        "TWN_CentralSquare_State_TrialFailed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "Narrator",
+      "text": "*Are you bold of heart and sharp of tongue? Can you turn any and all to the Dark Lady's cause?*",
+      "context": "CinematicNodeContext: Player looks at the plaque\rNodeContext: The text inscribed on a plaque at the base of a Shar statue",
+      "checkflags": [
+        "TWN_CentralSquare_HasMet_PlaqueOfCharisma = False"
+      ],
+      "setflags": [
+        "TWN_CentralSquare_HasMet_PlaqueOfCharisma"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Narrator",
+          "text": "*A deep, eldritch hum echoes in the corners of your mind. Your patron knows a thing or two about turning people.*",
+          "context": "",
+          "checkflags": [
+            "WARLOCK"
+          ],
+          "setflags": [],
+          "ruletags": [
+            "WARLOCK_GREAT_OLD_ONE"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Player",
+              "text": "Nod. With Shar's words on your tongue and teachings in your heart, none can deny you.",
+              "context": "",
+              "checkflags": [
+                "SHADOWHEART_ENEMYOFSHARPATH = False"
+              ],
+              "setflags": [],
+              "ruletags": [
+                "CLERIC_SHAR",
+                "PALADIN_SHAR",
+                "REALLY_SHADOWHEART"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "Narrator",
+                  "text": "*Confidence surges through you. You feel like there is nothing you can't do, no one you can't win over. The statue seems to agree - and approve.*",
+                  "context": "CinematicNodeContext: A faint purple aura glows from the statue",
+                  "checkflags": [],
+                  "setflags": [
+                    "TWN_CentralSquare_State_PlaqueOfCharismaActivated"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "You no longer bow to Shar, and do not need her blessings. You can take what you wish.",
+              "context": "",
+              "checkflags": [
+                "CAMP_Shadowheart_State_HadNightsongMeeting",
+                "SHADOWHEART_ENEMYOFSHARPATH"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "Perhaps you could still win a modicrum of favour here, if you used all your charm and guile.",
+              "context": "",
+              "checkflags": [
+                "CAMP_Shadowheart_State_HadNightsongMeeting = False",
+                "SHADOWHEART_ENEMYOFSHARPATH"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "13",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {}
+                },
+                "22": {
+                  "id": "22",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "8": {
+                      "id": "8",
+                      "speaker": "Narrator",
+                      "text": "*You feel your confidence wilt under the cold stare of the statue. A great weight of self-doubt seems to drag on you.*",
+                      "context": "CinematicNodeContext: Player frowns as the room seems to shudder and darken. \rInternalNodeContext: Three Dark Justiciar undead will appear and attack in gameplay immediately after this",
+                      "checkflags": [],
+                      "setflags": [
+                        "TWN_CentralSquare_Event_FailedSave"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "16": {
+              "id": "16",
+              "speaker": "Player",
+              "text": "Smirk. Of course. Need you even say it?",
+              "context": "",
+              "checkflags": [
+                "REALLY_SHADOWHEART = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "11": {
+              "id": "11",
+              "speaker": "Player",
+              "text": "Summon your faith and devotion - letting it flow through you.",
+              "context": "",
+              "checkflags": [
+                "CLERIC",
+                "SHADOWHEART_ENEMYOFSHARPATH = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "15": {
+              "id": "15",
+              "speaker": "Player",
+              "text": "Allow your patron's ancient, immutable will to be glimpsed for but a moment.",
+              "context": "",
+              "checkflags": [
+                "WARLOCK"
+              ],
+              "setflags": [],
+              "ruletags": [
+                "WARLOCK_GREAT_OLD_ONE"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "13",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "23": {
+                  "id": "23",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "1": {
+                      "id": "1",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "8",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "10": {
+              "id": "10",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*The Nightsinger has turned on you. Surely whatever blessings she offers here are now lost to you... yet no harm in reading on, surely.*",
+      "context": "CinematicNodeContext: SH concerned/unsure expression",
+      "checkflags": [
+        "SHADOWHEART_ENEMYOFSHARPATH"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "12",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Narrator",
+      "text": "*The statue watches serenely. Its challenge has been met.*",
+      "context": "CinematicNodeContext: A faint purple aura glows from the statue",
+      "checkflags": [
+        "TWN_CentralSquare_State_PlaqueOfCharismaActivated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

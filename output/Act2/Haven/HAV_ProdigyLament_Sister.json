@@ -1,0 +1,720 @@
+{
+  "metadata": {
+    "synopsis": "Lia has been rescued from Moonrise Towers by the player and is now in Last Light. This dialogue covers multiple states: Rolan is missing, Rolan is dead, Rolan and Lia had a fight (player must pass a persuade to calm the fight, pass and fail states here), and a general state for when cal, lia and rolan are all alive and well and Lia is grateful to the player.",
+    "how_to_trigger": "Recon : loadlevel SCL_Main_ADebugBook : Act2 --> Tiefling PathDebugBook : Region --> Act2 --> Haven --> After CheckpointOthers : Walk to the barRecon : oe rolanleaveshaven (and wait a bit - optional for dead path)Recon : oe prisonersreturn (and wait a bit)Recon : SetGlobalOsirisFlag GLO_Prodigy_State_Dead (optional for dead path)Others : Talk to Lia---Resuce Cal and/or Lia from Moonrise towers (this dialogue includes solo versions for if Cal died in Moonrise), then speak to Lia in Last Light. If Rolan is present, the reunion dialogue will play first."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Lia",
+      "text": "Half this place cleared out when the sky lit up. I'm staying put until I know what's what - I suggest you do the same.",
+      "context": "NodeContext: Cautious",
+      "checkflags": [
+        "HAV_Mood_State_NightsongFreed",
+        "HAV_ProdigyLament_State_ReunionDone"
+      ],
+      "setflags": [
+        "HAV_ProdigySister_NightsongFreed_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Lia",
+      "text": "I'm not the best at showing it, but I love Cal and Rolan to death. They're family - thank you for bringing us back together.",
+      "context": "NodeContext: voice thick with sincerity and gratitude for the player",
+      "checkflags": [
+        "HAV_SavingPrisoners_HasMet_Lia = False",
+        "HAV_ProdigyLament_State_ReunionDone"
+      ],
+      "setflags": [
+        "HAV_SavingPrisoners_HasMet_Lia"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Lia",
+      "text": "Anyone gives you shit, come to me - I'll sort them out.",
+      "context": "NodeContext: grateful to the player but also clearly happy to murder someone at the player's request",
+      "checkflags": [
+        "HAV_SavingPrisoners_HasMet_Lia",
+        "HAV_SavingPrisoners_State_BrotherReturned = False",
+        "HAV_ProdigyLament_State_ReunionDone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Lia",
+      "text": "Don't. I'm grateful you saved me, but I'm a hair's breadth from pummelling everyone in this place. You can thank Rolan for that.",
+      "context": "NodeContext: lia has had a massive fight with rolan and is upset and utterly furious.",
+      "checkflags": [
+        "HAV_SavingPrisoners_HasMet_Lia = False",
+        "HAV_ProdigyLament_Event_AngrySibling"
+      ],
+      "setflags": [
+        "HAV_SavingPrisoners_HasMet_Lia"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Lia",
+      "text": "Do not try to stop me. I'm leaving and that's that.",
+      "context": "NodeContext: upset and angry, just wants to get out of there so she can grieve in peace",
+      "checkflags": [
+        "HAV_ProdigyLament_Sister_RolanDead_HasMet",
+        "GLO_Prodigy_State_PermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Lia",
+      "text": "Now that I'm here, that I'm safe, it's finally sinking in.",
+      "context": "NodeContext: voice distant, barely processing the news",
+      "checkflags": [
+        "HAV_ProdigyLament_Sister_RolanDead_HasMet = False",
+        "GLO_Prodigy_State_ToldSiblingsProdigyDead"
+      ],
+      "setflags": [
+        "HAV_ProdigyLament_Sister_RolanDead_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "30",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Lia",
+          "text": "Rolan is dead.",
+          "context": "NodeContext: fists curling, quietly angry in her grief",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "30",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Player",
+              "text": "I'm sorry.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "30",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "31": {
+                  "id": "31",
+                  "speaker": "Lia",
+                  "text": "It's my fault - we never should have stayed in the grove with these people. They were doomed from the start.",
+                  "context": "NodeContext: blaming herself for rolan's death. Angry and grieving",
+                  "checkflags": [
+                    "HAV_SavingPrisoners_State_BrotherReturned"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "30",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "13": {
+                      "id": "13",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "19",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [
+                    "HAV_SavingPrisoners_State_BrotherReturned = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "30",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "10": {
+                      "id": "10",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "20",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "35": {
+              "id": "35",
+              "speaker": "Player",
+              "text": "A little gratitude would be nice.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Lia",
+                  "text": "For what? If we hadn't stayed in the grove, if we hadn't listened to you, Rolan might be alive.",
+                  "context": "NodeContext: angry and lashing out at the player in her grief",
+                  "checkflags": [
+                    "HAV_SavingPrisoners_State_BrotherReturned"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "4": {
+                      "id": "4",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "19",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "17": {
+                  "id": "17",
+                  "speaker": "Lia",
+                  "text": "For what? I have nothing left.",
+                  "context": "NodeContext: everyone she's ever love is dead",
+                  "checkflags": [
+                    "HAV_SavingPrisoners_State_BrotherReturned = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "30",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "29": {
+              "id": "29",
+              "speaker": "Player",
+              "text": "He died as he lived - stupidly.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [
+                "Lae'zel 1",
+                "Astarion 1",
+                "Shadowheart 1",
+                "Gale 1",
+                "Karlach -1",
+                "Wyll -1",
+                "Halsin 1",
+                "Minthara 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Lia",
+                  "text": "You might have saved us, but that doesn't mean I won't beat you to a bloody pulp.",
+                  "context": "NodeContext: snapping at the player in her grief but it is halfhearted",
+                  "checkflags": [
+                    "HAV_SavingPrisoners_State_BrotherReturned"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Lia",
+                      "text": "We never should have come here. Helping these people was a mistake.",
+                      "context": "NodeContext: bitter and angry in her grief",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "19": {
+                          "id": "19",
+                          "speaker": "Lia",
+                          "text": "We're done here.",
+                          "context": "NodeContext: cold and distant in her grief",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "36": {
+                  "id": "36",
+                  "speaker": "Lia",
+                  "text": "You and everyone in this dump can rot for all I damn care. And you will.",
+                  "context": "NodeContext: player has been cruel about rolan's death and lia is lashing out in her fury",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "23": {
+                      "id": "23",
+                      "speaker": "Lia",
+                      "text": "Just pray we never meet again - you slimy sack of shit.",
+                      "context": "NodeContext: player has been cruel about rolan's death and lia is lashing out in her fury",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "33": {
+              "id": "33",
+              "speaker": "Player",
+              "text": "I did what I could to save him.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "21": {
+                  "id": "21",
+                  "speaker": "Lia",
+                  "text": "Wasn't enough though, was it?",
+                  "context": "NodeContext: her brother is dead, lashing out at the player",
+                  "checkflags": [
+                    "HAV_SavingPrisoners_State_BrotherReturned"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "28": {
+                      "id": "28",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "19",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                },
+                "3": {
+                  "id": "3",
+                  "speaker": "Lia",
+                  "text": "Doesn't matter, does it? They're gone.",
+                  "context": "NodeContext: voice distant, shellshocked in her grief",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "30": {
+                      "id": "30",
+                      "speaker": "Lia",
+                      "text": "Everyone I've ever loved is dead. I did this - I failed them.",
+                      "context": "NodeContext: her grief is starting to overwhelm he, she blames herself and thinks she's worthless",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "20": {
+                          "id": "20",
+                          "speaker": "Lia",
+                          "text": "You won't see me again.",
+                          "context": "NodeContext: she's planning to walk into the cursed darkness to die - alone",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Lia",
+      "text": "Maybe the light is good news, maybe not - who knows with this place?",
+      "context": "NodeContext: Cautious",
+      "checkflags": [
+        "HAV_ProdigySister_NightsongFreed_HasMet",
+        "HAV_Mood_State_NightsongFreed",
+        "HAV_ProdigyLament_State_ReunionDone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Lia",
+      "text": "Leave - I won't repeat myself.",
+      "context": "NodeContext: this is clearly a threat, utterly furious with the player",
+      "checkflags": [
+        "HAV_SavingPrisoners_HasMet_Lia",
+        "HAV_ProdigyLament_Event_AngrySibling"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Lia",
+      "text": "Rolan and I were blessed with hot tempers, and without Cal... well, I'm glad you talked sense into us. Thank you.",
+      "context": "NodeContext: Gratitude to player. She had a fight with rolan that was about to get ugly, and the player intervened.",
+      "checkflags": [
+        "HAV_SavingPrisoners_HasMet_Lia = False",
+        "HAV_SavingPrisoners_State_BrotherReturned = False",
+        "HAV_ProdigyLament_State_ReunionDone"
+      ],
+      "setflags": [
+        "HAV_SavingPrisoners_HasMet_Lia"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Lia",
+      "text": "Where is Rolan? Godsdammit.",
+      "context": "NodeContext: worried for rolan and frustrated that she can't find him",
+      "checkflags": [
+        "HAV_SavingPrisoners_State_ReturnCompleted = False",
+        "GLO_Prodigy_State_PermaDefeated = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "26": {
+      "id": "26",
+      "speaker": "Lia",
+      "text": "Cal dead, Rolan in the wind. This couldn't have gone more wrong.",
+      "context": "NodeContext: for the first time, lia doesn't know what to do. She's overwhelmed and feeling useless",
+      "checkflags": [
+        "HAV_SavingPrisoners_State_RolanMissing_HasMet_Lia = False",
+        "HAV_SavingPrisoners_State_BrotherReturned = False",
+        "HAV_TieflingSurvivors_State_ProdigyLeftHaven"
+      ],
+      "setflags": [
+        "HAV_SavingPrisoners_State_RolanMissing_HasMet_Lia"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Lia",
+      "text": "Of course Rolan went looking for us! If you see him, send his arse back here - and fast.",
+      "context": "NodeContext: acting annoyed but she's actually worried sick",
+      "checkflags": [
+        "HAV_SavingPrisoners_State_RolanMissing_HasMet_Lia = False",
+        "HAV_SavingPrisoners_State_BrotherReturned",
+        "HAV_TieflingSurvivors_State_ProdigyLeftHaven"
+      ],
+      "setflags": [
+        "HAV_SavingPrisoners_State_RolanMissing_HasMet_Lia",
+        "HAV_ProdigyLament_Knows_RolanMissing"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "32": {
+      "id": "32",
+      "speaker": "Lia",
+      "text": "I know. He's dead.",
+      "context": "NodeContext: voice distant, barely processing the news",
+      "checkflags": [
+        "HAV_ProdigyLament_Sister_RolanDead_HasMet = False",
+        "GLO_Prodigy_State_PermaDefeated"
+      ],
+      "setflags": [
+        "HAV_ProdigyLament_Sister_RolanDead_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Lia",
+      "text": "Where is Rolan? If he's not dead, I'll kill him myself - by the gods.",
+      "context": "NodeContext: acting annoyed but she's actually worried sick",
+      "checkflags": [
+        "HAV_SavingPrisoners_State_RolanMissing_HasMet_Lia",
+        "HAV_TieflingSurvivors_State_ProdigyLeftHaven"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "37": {
+      "id": "37",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAV_SavingPrisoners_HasMet_Lia",
+        "HAV_ProdigyLament_State_ReunionDone"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

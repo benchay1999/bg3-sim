@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "synopsis": "A player attacked an NPC, an NPC saw the player when they did so, and immediately reacts to the player.\n-- Can check the GEB_Crime_IsVictim flag on speaker 1 to distinguish the NPC from being the victim or a witness of the crime.",
+    "how_to_trigger": "Attack an NPC."
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "",
+      "context": "InternalNodeContext: Logic node\rNodeContext: Greeting needs to be empty. It's used to cut off this flow from the others",
+      "checkflags": [
+        "GEB_Crime_IsAngry"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "InternalNodeContext: Logic node",
+          "checkflags": [
+            "CIVILIAN = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Narrator",
+              "text": "*You opted for violence - now you'll receive violence in turn.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "TemporaryHostilityAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "InternalNodeContext: Logic node",
+          "checkflags": [
+            "CIVILIAN",
+            "BADASSCIVILIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {}
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Narrator",
+          "text": "*Your aggression has gone too far. You're being reported to the guards.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CRIME_FleeHelpFromDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*Your violence is drawing the wrong kind of attention. Keep going, and there might be trouble.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Narrator",
+      "text": "*Your attack has drawn cold scrutiny. Repeating your actions could have dire consequences.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False",
+        "CONSTRUCT"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "synopsis": "Brief narrator nodes concluding the hostage rescue situation. Should be treated as an edge case. Can be triggered by clicking on 9 different potential hostages and they can be both male and female.",
+    "how_to_trigger": "If the main spokesperson is dead after leaving the Iron Throne, but at least one other hostage survived, players can speak to them instead. Can be triggered by clicking on 9 different potential hostages.To trigger, play through the IronThrone by using the DebugBook -> Set Quest Flags and Options -> LOW -> Iron Throne -> StartGameplay. Then follow through the situation and save whichever number of hostages you need.ToDo: Add easier debug ways to trigger this dialog."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*A Gondian hostage - the one crouched in the corner of the submersible during your escape.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "LOW_SteelWatchFoundry_Knows_GondianFamiliesTaken",
+        "LOW_SteelWatchFoundry_Knows_GondiansForcedToWorkInFoundry"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Narrator",
+          "text": "*Still shaken, they approach you. They thank you for rescuing them, but ask for you to perform one last miracle.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "3",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Narrator",
+              "text": "*Their families are still trapped in the Steel Watch Foundry. Freeing them would allow the Gondians to reunite as a people.*",
+              "context": "",
+              "checkflags": [
+                "LOW_SteelWatchFoundry_State_MajorityIronThronePrisonersDead"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "3",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Narrator",
+              "text": "*If you free their families trapped at the Steel Watch Foundry, they promise you aid in your battle against the Absolute.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "Narrator",
+                  "text": "*They do not wait to hear your answer, perhaps scared to hear what it will be. Their mind - what's left of it - is already set on leaving.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "IRN_IronThrone_State_AgreedToHelpFoundryGondians"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

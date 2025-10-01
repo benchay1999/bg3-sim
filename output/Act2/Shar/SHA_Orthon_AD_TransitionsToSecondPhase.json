@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "synopsis": "During combat, the orthon escalates to phase two (intensifying his attacks and changing up his tactics). This is prompted by:- killing a certain number of minions- lowering his HP a certain amount- surviving for a certain number of combat rounds",
+    "how_to_trigger": "Engage in combat with the Orthon. Survive X number of rounds/kill X number of merregons/lower the Orthon's HP by X"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Yurgir",
+      "text": "Bravo - that almost stung. Perhaps I'll make a merregon of you, once you're dead.",
+      "context": "NodeContext: Pronuncation: mer-eh-gone. Taunting, during combat. The player has injured the Orthon, who responds by changing up his tactics after this utterance.",
+      "checkflags": [
+        "SHA_OrthonLair_Event_ReachedHPThreshold"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Yurgir",
+      "text": "Had your fill of my merregons yet? I'm right here, if you dare.",
+      "context": "InternalNodeContext: Triggers during combat after multiple merregon opponents are killed\rNodeContext: Pronuncation: mer-eh-gone. Taunting, during combat. The player has killed several of his merregon followers.",
+      "checkflags": [
+        "SHA_OrthonLair_Event_KilledMultipleMerregons"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Yurgir",
+      "text": "Fight's gotten stale, little rabbit. Stop embarrassing yourself - let me end this.",
+      "context": "NodeContext: Taunting. Wants to bring the fight to a swift resolution.",
+      "checkflags": [
+        "SHA_OrthonLair_Event_ReachedSpecifiedRound"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

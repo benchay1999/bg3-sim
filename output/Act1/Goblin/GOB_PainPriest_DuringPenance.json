@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "synopsis": "Father Abdirak is a follower of Loviatar, a goddess that thrives on inflicting pain on others. He is indulging in some private 'worship' (self flagellation). He offers to help alleviate the player's pain by giving them 'penance' - i.e, beating them. \nLoviatar = loh-VEE-a-tar. He is a young and charismatic preacher with a threatening and creepy edge.",
+    "how_to_trigger": "To trigger:goto 338.066; 40.842; -21.781SetCharacterOsirisFlag GOB_PainPriest_State_Penitent on main characterAdd any Companion"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Abdirak",
+      "text": "Come now, dear child. It is time to repent.",
+      "context": "NodeContext: Penance was interrupted. Player has returned to speak to Abdirak. Voice low and inviting as he wishes to continue the beating.",
+      "checkflags": [
+        "GOB_PainPriest_State_Penitent"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "Hurry up and hit me already.",
+          "context": "InternalNodeContext: The player was hit at least once by the priest during the penance",
+          "checkflags": [
+            "GOB_PainPriest_Event_FirstHitDone"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Abdirak",
+              "text": "And there is more to come, but I promise it shall be worth it. Now, face the wall - and stay absolutely still.",
+              "context": "NodeContext: Authorative tone but also a warning. He wants to hurt the player but not badly, and not outside of his realm of control. Safety first!",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "What do you want me to do?",
+          "context": "InternalNodeContext: The penance didn't really start yet, the player wasn't hit yet.",
+          "checkflags": [
+            "GOB_PainPriest_Event_FirstHitDone = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Abdirak",
+              "text": "Simply face that wall - and stay absolutely still.",
+              "context": "NodeContext: Authorative tone but also a warning. He wants to hurt the player but not badly, and not outside of his realm of control. Safety first!",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "I've changed my mind.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "GOB_PainPriest_State_Penitent = False",
+            "GOB_PainPriest_State_CancelledPenitent",
+            "GOB_PainPriest_Event_CancelPenance"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Abdirak",
+              "text": "A pity. We would have such fun together.",
+              "context": "NodeContext: Sigh and a shrug at the player's refusal of his penance. But a smile and a wink as he says the player can always return to him.",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Abdirak",
+      "text": "Now, now - I'm dealing with your friend. I'll be just a moment.",
+      "context": "NodeContext: Another player has tried to 'interrupt' the penance. Smile in his face. Intimate.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Abdirak",
+      "text": "I'm afraid someone took your place, dear one.",
+      "context": "InternalNodeContext: The speaker player character tried to accept the penance, but was too low HP. Another PC came along with enough HP and started the penance, so the PC that was too low HP lost their spot",
+      "checkflags": [
+        "GOB_PainPriest_State_NeedMoreHP"
+      ],
+      "setflags": [
+        "GOB_PainPriest_State_NeedMoreHP = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

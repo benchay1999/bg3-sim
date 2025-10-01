@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue with one of the civilians (sailor on the boat) near the Sahuagin attack on a shore in the Lower City. This dialogue only gets added once",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Use ReCon command \"goto 52 3 -138\"- \"killcombat\" to kill all the Sahuagin after they appear and attack.- Talk to the civilian on the boat.S_LOW_BeachSahuagin_Civilian_Boat_f699d950-c10b-424d-98d2-cdce112a3313"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Sailor Peete",
+      "text": "I hope the Wavemother sees fit to wash this stench away. It's burning my nose hairs...",
+      "context": "",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Sailor",
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Sailor Peete",
+      "text": "Did you see?! They popped up out of the water all around me! Bitch Queen's mercy...",
+      "context": "NodeContext: Still pretty panicked after the fight",
+      "checkflags": [],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Sailor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Sailor Peete",
+      "text": "I'm glad they're dead, but what do we do with them now? They smell awful already.",
+      "context": "NodeContext: Despairing/disgusted",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Sailor"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Sailor Peete",
+      "text": "They might've cleaned them up, but I can still smell those fish creatures. Worse than feeling seasick.",
+      "context": "",
+      "checkflags": [
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Sailor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

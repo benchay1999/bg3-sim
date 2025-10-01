@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "synopsis": "PAD where a character who doesn't have the ointment applied steps into the shadowcurse and considers applying some. Only triggers if someone has spare ointment in their inventory. (At least one application)Plays only if 2 or more characters present: first to speak doesn't have the ointment applied on them. SH speaks first if she can.WRITER, don't forget to update the voicebark file SCL_ShadowCurse_VB_WantsOintment if you change the structure here!",
+    "how_to_trigger": "After the dialog where Isobel offers you the ointment. Triggers when the party steps out of a safe area. So for example, crossing the bridge out of the Last Light area."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Player",
+      "text": "Here we go - if there's any of that ointment left, I could use it.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Check the bags - I think there's some left.",
+          "context": "",
+          "checkflags": [
+            "ACT2_SELUNEOINTMENTAPPLIED"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "We all should have applied it earlier.",
+              "context": "",
+              "checkflags": [
+                "ACT2_SELUNEOINTMENTAPPLIED"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Player",
+              "text": "I hope there's enough to go around.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Player",
+                  "text": "Better to use it now than not use it at all.",
+                  "context": "",
+                  "checkflags": [
+                    "ACT2_SELUNEOINTMENTAPPLIED"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "9": {
+                  "id": "9",
+                  "speaker": "Player",
+                  "text": "I'm not worried - I made it this far without magic ointment.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "Same here. I don't want to face whatever's out there unprotected.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "6",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Player",
+      "text": "|Can I get some ointment after all?| [Shadowheart-specific node, as she might have opinions about an ointment of Sel\u00fbne.]",
+      "context": "",
+      "checkflags": [
+        "REALLY_SHADOWHEART",
+        "ACT2_SELUNEOINTMENTAPPLIED = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "A change of heart? Good for you.",
+          "context": "",
+          "checkflags": [
+            "ACT2_SELUNEOINTMENTAPPLIED"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "0",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

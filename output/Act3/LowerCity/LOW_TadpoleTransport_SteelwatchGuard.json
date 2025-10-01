@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "synopsis": "The dialogue with Steel Watchers near the ship for Tadpole Transport booster. These watchers are guarding the ship and tell to go away.",
+    "how_to_trigger": "1. CTY_Main_A2. goto -212; 1; -1343. Talk to steel watchers"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "Halt, citizen. This is a restricted area.",
+      "context": "",
+      "checkflags": [
+        "LOW_TadpoleTransport_HasMet_SteelwatchGuard = False"
+      ],
+      "setflags": [
+        "LOW_TadpoleTransport_HasMet_SteelwatchGuard",
+        "LOW_TadpoleTransport_TeleportOut"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "GROUP_SteelWatchers",
+      "text": "Trespassing in restricted areas is not tolerated, miscreant.",
+      "context": "",
+      "checkflags": [
+        "LOW_TadpoleTransport_HasMet_SteelwatchGuard"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

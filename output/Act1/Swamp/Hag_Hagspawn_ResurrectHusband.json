@@ -1,0 +1,2324 @@
+{
+  "metadata": {
+    "synopsis": "The player has discovered a wand that will allow them to raise Mayrina's husband from the dead. Mayrina is standing by the coffin that holds her dead husband. When player raises Connor from the dead, the coffin door bursts open and he crawls out of it a zombie - unable to speak in anything other than moans and groans. Player can take the zombie as a summon, kill the zombie, or give the zombie to Mayrina.",
+    "how_to_trigger": "- loadlevel WLD_Main_A- oe HAG_SetupResurrection"
+  },
+  "dialogue": {
+    "7": {
+      "id": "7",
+      "speaker": "Mayrina",
+      "text": "What?",
+      "context": "NodeContext: Annoyed - this player has pissed you off at least once already",
+      "checkflags": [
+        "HAG_SurrogateMother_HasMet_Resurrect",
+        "HAG_Hagspawn_State_MayrinaAngry",
+        "HAG_HagSpawn_Knows_OfferedResurrectHusband = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "56",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "103": {
+          "id": "103",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "29": {
+      "id": "29",
+      "speaker": "Mayrina",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_Hagspawn_State_JakeBerserk",
+        "HAG_HagSpawn_Event_ResurrectedHusbandWithWand"
+      ],
+      "setflags": [
+        "HAG_HagSpawn_Event_LockWand"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "56",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "28": {
+          "id": "28",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "51",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "57": {
+      "id": "57",
+      "speaker": "Mayrina",
+      "text": "Gods, didn't hear you coming. I know I should head home, but I can't bring myself to leave.",
+      "context": "NodeContext: look up from quietly crying, surprised",
+      "checkflags": [
+        "HAG_SurrogateMother_HasMet_Resurrect = False",
+        "HAG_HagSpawn_Knows_OfferedResurrectHusband = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "56",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "Mayrina",
+          "text": "The thought of putting him in a wheelbarrow and making the journey all over again... *Sigh.*",
+          "context": "NodeContext: turns back to the grave, arms crossed - then gestures to the coffin. Trying not to cry.",
+          "checkflags": [],
+          "setflags": [
+            "HAG_SurrogateMother_HasMet_Resurrect"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "56",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "78": {
+              "id": "78",
+              "speaker": "Player",
+              "text": "I found a wand - I think I can resurrect your husband.",
+              "context": "",
+              "checkflags": [
+                "HAG_Hagspawn_Event_HasSummoningWand",
+                "25c1ac70-f65f-4869-8a74-eff5827d9cde"
+              ],
+              "setflags": [
+                "HAG_HagSpawn_Knows_OfferedResurrectHusband"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "56",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "113": {
+                  "id": "113",
+                  "speaker": "Mayrina",
+                  "text": "What? You can?",
+                  "context": "NodeContext: hopeful disbelief. Drop arms and stare at player.",
+                  "checkflags": [],
+                  "setflags": [
+                    "HAG_HagSpawn_Event_LockWand"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "56",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "56",
+                      "is_end": false,
+                      "node_type": "visualstate",
+                      "children": {
+                        "33": {
+                          "id": "33",
+                          "speaker": "Narrator",
+                          "text": "*You feel a surge of power from the wand - the air suddenly tastes acrid. It wants to be used.*",
+                          "context": "CinematicNodeContext: ~The player pulls out wand, which sparks in the player's hand",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "56",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "23": {
+                              "id": "23",
+                              "speaker": "Mayrina",
+                              "text": "Bring him back. Bring Connor back - please.",
+                              "context": "NodeContext: Sincere and pleading",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "56",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Player",
+                                  "text": "Point the wand towards the coffin.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "HAG_HagSpawn_Event_DoResurrection"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "56",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "74": {
+                                      "id": "74",
+                                      "speaker": "Mayrina",
+                                      "text": "What - what's happening? Why is he still dead?",
+                                      "context": "CinematicNodeContext: Player points the wand toward the grave. Door of coffin burst open. Zombie roughly stands, moaning and groaning as they stand - stepping out of it. Horrible sight, all rough movements and shuffling,\rNodeContext: Horror and fear",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "56",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "17": {
+                                          "id": "17",
+                                          "speaker": "Narrator",
+                                          "text": "*You feel something pull at you. The creature yearns - for a master.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "56",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "48": {
+                                              "id": "48",
+                                              "speaker": "Connor Vinderblad",
+                                              "text": "Arggh...",
+                                              "context": "CinematicNodeContext: ~The player moves the wand around and the zombie follows the commands implied. [Jurassic Park style]\rNodeContext: start in kneeling position, stand up as you groan",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "56",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "121": {
+                                                  "id": "121",
+                                                  "speaker": "Mayrina",
+                                                  "text": "What have you done to him?!",
+                                                  "context": "NodeContext: panicking",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "56",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "117": {
+                                                      "id": "117",
+                                                      "speaker": "Player",
+                                                      "text": "Huh. The creature's bound to this wand. How useful.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "56",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "9": {
+                                                          "id": "9",
+                                                          "speaker": "Mayrina",
+                                                          "text": "He's not a creature! He's my husband.",
+                                                          "context": "NodeContext: The player has called the zombie a 'thing'. The love and adoration for the man your husband once was obvious in your voice.",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "56",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "60": {
+                                                              "id": "60",
+                                                              "speaker": "Mayrina",
+                                                              "text": "I wanted him back - back the way he was. Not this.",
+                                                              "context": "NodeContext: fighting back tears, gesturing at the zombie on \"this\"",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "56",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "93": {
+                                                                  "id": "93",
+                                                                  "speaker": "Player",
+                                                                  "text": "This is your husband - do you want him or not?",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "56",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "56": {
+                                                                      "id": "56",
+                                                                      "speaker": "",
+                                                                      "text": "",
+                                                                      "context": "",
+                                                                      "checkflags": [
+                                                                        "PALADIN_ANCIENTS",
+                                                                        "OATHBREAKER = False"
+                                                                      ],
+                                                                      "setflags": [
+                                                                        "GLO_PaladinOathbreaker_Event_AncientsBrokeOath"
+                                                                      ],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "taganswer",
+                                                                      "children": {
+                                                                        "107": {
+                                                                          "id": "107",
+                                                                          "speaker": "Mayrina",
+                                                                          "text": "Connor? CONNOR!",
+                                                                          "context": "NodeContext: desperately trying to get through",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "39": {
+                                                                              "id": "39",
+                                                                              "speaker": "Connor Vinderblad",
+                                                                              "text": "Argh.",
+                                                                              "context": "NodeContext: Guttural noise - staring blankly",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "2": {
+                                                                                  "id": "2",
+                                                                                  "speaker": "Mayrina",
+                                                                                  "text": "I don't even know if he's in there.",
+                                                                                  "context": "NodeContext: You sound heartbroken as you look at the love of your life.",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "",
+                                                                                  "is_end": false,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {
+                                                                                    "63": {
+                                                                                      "id": "63",
+                                                                                      "speaker": "Mayrina",
+                                                                                      "text": "But he might be. And if he is, I'll find him and bring him back.",
+                                                                                      "context": "NodeContext: Firm - summoning your courage.",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "111": {
+                                                                                          "id": "111",
+                                                                                          "speaker": "Player",
+                                                                                          "text": "Here's the wand. Good luck to you and Connor.",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [
+                                                                                            "Gale 1",
+                                                                                            "Wyll 1",
+                                                                                            "Karlach 1"
+                                                                                          ],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "77": {
+                                                                                              "id": "77",
+                                                                                              "speaker": "",
+                                                                                              "text": "",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "visualstate",
+                                                                                              "children": {
+                                                                                                "24": {
+                                                                                                  "id": "24",
+                                                                                                  "speaker": "",
+                                                                                                  "text": "",
+                                                                                                  "context": "CinematicNodeContext: ~The player hands the wand to Mayrina",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "tagcinematic",
+                                                                                                  "children": {
+                                                                                                    "116": {
+                                                                                                      "id": "116",
+                                                                                                      "speaker": "Mayrina",
+                                                                                                      "text": "Thanks, but we'll need more than luck. A bloody miracle more like it.",
+                                                                                                      "context": "CinematicNodeContext: ~The player hands the wand to Mayrina\rNodeContext: Grim but trying to summon her determination",
+                                                                                                      "checkflags": [],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {
+                                                                                                        "91": {
+                                                                                                          "id": "91",
+                                                                                                          "speaker": "Mayrina",
+                                                                                                          "text": "I'll find a wizard or something. Maybe someone in Baldur's Gate can help us.",
+                                                                                                          "context": "",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": false,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {
+                                                                                                            "68": {
+                                                                                                              "id": "68",
+                                                                                                              "speaker": "Mayrina",
+                                                                                                              "text": "Connor always said you can find anything in that city. Remember?",
+                                                                                                              "context": "NodeContext: Voice soft and gentle as you think of your husband. Turn to him, this horrible zombie, at 'Remember?'/ Zombie merely stares back.",
+                                                                                                              "checkflags": [],
+                                                                                                              "setflags": [],
+                                                                                                              "ruletags": [],
+                                                                                                              "approval": [],
+                                                                                                              "rolls": "",
+                                                                                                              "goto": "",
+                                                                                                              "link": "",
+                                                                                                              "is_end": false,
+                                                                                                              "node_type": "normal",
+                                                                                                              "children": {
+                                                                                                                "100": {
+                                                                                                                  "id": "100",
+                                                                                                                  "speaker": "Mayrina",
+                                                                                                                  "text": "And thank you. I guess.",
+                                                                                                                  "context": "NodeContext: Trying to be sincere - despite how awful the situation is",
+                                                                                                                  "checkflags": [],
+                                                                                                                  "setflags": [],
+                                                                                                                  "ruletags": [],
+                                                                                                                  "approval": [],
+                                                                                                                  "rolls": "",
+                                                                                                                  "goto": "",
+                                                                                                                  "link": "",
+                                                                                                                  "is_end": false,
+                                                                                                                  "node_type": "normal",
+                                                                                                                  "children": {
+                                                                                                                    "123": {
+                                                                                                                      "id": "123",
+                                                                                                                      "speaker": "Mayrina",
+                                                                                                                      "text": "C'mon, love. Let's go.",
+                                                                                                                      "context": "NodeContext: To your zombie husband. Gentle and loving tone as you gesture to go. Like to a child.",
+                                                                                                                      "checkflags": [],
+                                                                                                                      "setflags": [
+                                                                                                                        "HAG_Hagspawn_Event_LeaveHusband",
+                                                                                                                        "HAG_Hagspawn_Event_WifeHusbandLeave",
+                                                                                                                        "HAG_Hagspawn_Event_GiveSummoningWand",
+                                                                                                                        "LeftHusband"
+                                                                                                                      ],
+                                                                                                                      "ruletags": [],
+                                                                                                                      "approval": [],
+                                                                                                                      "rolls": "",
+                                                                                                                      "goto": "",
+                                                                                                                      "link": "",
+                                                                                                                      "is_end": true,
+                                                                                                                      "node_type": "normal",
+                                                                                                                      "children": {}
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "19": {
+                                                                                          "id": "19",
+                                                                                          "speaker": "Player",
+                                                                                          "text": "Pocket the wand anyway.",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [
+                                                                                            "HAG_Hagspawn_Event_RecruitHusband",
+                                                                                            "TookHusband"
+                                                                                          ],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [
+                                                                                            "Wyll -1"
+                                                                                          ],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "59": {
+                                                                                              "id": "59",
+                                                                                              "speaker": "",
+                                                                                              "text": "",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "visualstate",
+                                                                                              "children": {
+                                                                                                "79": {
+                                                                                                  "id": "79",
+                                                                                                  "speaker": "",
+                                                                                                  "text": "",
+                                                                                                  "context": "CinematicNodeContext: ~The player stows the wand",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "tagcinematic",
+                                                                                                  "children": {
+                                                                                                    "101": {
+                                                                                                      "id": "101",
+                                                                                                      "speaker": "Mayrina",
+                                                                                                      "text": "You bastard! Give him back!",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [
+                                                                                                        "HAG_Hagspawn_State_SurrogateKnowsKilledBrothers = False"
+                                                                                                      ],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {
+                                                                                                        "51": {
+                                                                                                          "id": "51",
+                                                                                                          "speaker": "Mayrina",
+                                                                                                          "text": "I thought you were going to help! I thought - I thought...",
+                                                                                                          "context": "NodeContext: Absolute breakdown. You're hysterical, crying. collapse on the floor, bawling your eyes out",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [
+                                                                                                            "HAG_Hagspawn_Event_WifeLeavesAlone"
+                                                                                                          ],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": true,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {}
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "88": {
+                                                                                                      "id": "88",
+                                                                                                      "speaker": "Mayrina",
+                                                                                                      "text": "No! You monster! I - I won't let you!",
+                                                                                                      "context": "NodeContext: You take a defensive stance.This person has murdered your brothers and now taken your husband - you're desperate and hysterical and have nothing left to lose.",
+                                                                                                      "checkflags": [
+                                                                                                        "HAG_Hagspawn_State_SurrogateKnowsKilledBrothers"
+                                                                                                      ],
+                                                                                                      "setflags": [
+                                                                                                        "HAG_Hagspawn_State_MayrinaLostEverything"
+                                                                                                      ],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "",
+                                                                                                      "is_end": true,
+                                                                                                      "node_type": "normal",
+                                                                                                      "children": {}
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "72": {
+                                                                  "id": "72",
+                                                                  "speaker": "Player",
+                                                                  "text": "Don't worry - I have the wand. I'll make use of him.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [
+                                                                    "HAG_Hagspawn_Event_RecruitHusband",
+                                                                    "TookHusband"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [
+                                                                    "Wyll -1"
+                                                                  ],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "56",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "16": {
+                                                                      "id": "16",
+                                                                      "speaker": "",
+                                                                      "text": "",
+                                                                      "context": "",
+                                                                      "checkflags": [
+                                                                        "PALADIN_ANCIENTS",
+                                                                        "OATHBREAKER = False"
+                                                                      ],
+                                                                      "setflags": [
+                                                                        "GLO_PaladinOathbreaker_Event_AncientsBrokeOath"
+                                                                      ],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "56",
+                                                                      "is_end": false,
+                                                                      "node_type": "alias",
+                                                                      "children": {
+                                                                        "42": {
+                                                                          "id": "42",
+                                                                          "speaker": "",
+                                                                          "text": "",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "19",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "jump",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "76": {
+                                                                  "id": "76",
+                                                                  "speaker": "Player",
+                                                                  "text": "We can always bury him again.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "56",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "43": {
+                                                                      "id": "43",
+                                                                      "speaker": "",
+                                                                      "text": "",
+                                                                      "context": "",
+                                                                      "checkflags": [
+                                                                        "PALADIN_ANCIENTS",
+                                                                        "OATHBREAKER = False"
+                                                                      ],
+                                                                      "setflags": [
+                                                                        "GLO_PaladinOathbreaker_Event_AncientsBrokeOath"
+                                                                      ],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "56",
+                                                                      "is_end": false,
+                                                                      "node_type": "alias",
+                                                                      "children": {
+                                                                        "66": {
+                                                                          "id": "66",
+                                                                          "speaker": "Mayrina",
+                                                                          "text": "No! Don't put him in the ground!",
+                                                                          "context": "NodeContext: You snap back to reality as you realise they're taking your husband - zombie or not, he's still your Connor. You interrupt Ethel's spell, reaching out in protest.",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "24",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "21": {
+                                                                              "id": "21",
+                                                                              "speaker": "Mayrina",
+                                                                              "text": "He was... he is afraid of the dark.",
+                                                                              "context": "NodeContext: Gentle and soft voice as you think of Connor.",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "24",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "11": {
+                                                                                  "id": "11",
+                                                                                  "speaker": "Mayrina",
+                                                                                  "text": "I'll do it. I'll take him.",
+                                                                                  "context": "NodeContext: Firm - summoning your courage.",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "24",
+                                                                                  "is_end": false,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {
+                                                                                    "30": {
+                                                                                      "id": "30",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "No. The dead should stay dead.",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "24",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "53": {
+                                                                                          "id": "53",
+                                                                                          "speaker": "Mayrina",
+                                                                                          "text": "No! I won't let you put him back there.",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "24",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "58": {
+                                                                                              "id": "58",
+                                                                                              "speaker": "Player",
+                                                                                              "text": "He's all yours - you'll need this wand.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [
+                                                                                                "HAG_Hagspawn_Event_LeaveHusband",
+                                                                                                "HAG_Hagspawn_Event_WifeHusbandLeave",
+                                                                                                "HAG_Hagspawn_Event_GiveSummoningWand",
+                                                                                                "LeftHusband"
+                                                                                              ],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [
+                                                                                                "Gale 1",
+                                                                                                "Wyll 1",
+                                                                                                "Karlach 1"
+                                                                                              ],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "24",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "97": {
+                                                                                                  "id": "97",
+                                                                                                  "speaker": "",
+                                                                                                  "text": "",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "24",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "visualstate",
+                                                                                                  "children": {
+                                                                                                    "32": {
+                                                                                                      "id": "32",
+                                                                                                      "speaker": "",
+                                                                                                      "text": "",
+                                                                                                      "context": "",
+                                                                                                      "checkflags": [],
+                                                                                                      "setflags": [],
+                                                                                                      "ruletags": [],
+                                                                                                      "approval": [],
+                                                                                                      "rolls": "",
+                                                                                                      "goto": "",
+                                                                                                      "link": "24",
+                                                                                                      "is_end": false,
+                                                                                                      "node_type": "alias",
+                                                                                                      "children": {
+                                                                                                        "112": {
+                                                                                                          "id": "112",
+                                                                                                          "speaker": "Mayrina",
+                                                                                                          "text": "Thank you.",
+                                                                                                          "context": "",
+                                                                                                          "checkflags": [],
+                                                                                                          "setflags": [],
+                                                                                                          "ruletags": [],
+                                                                                                          "approval": [],
+                                                                                                          "rolls": "",
+                                                                                                          "goto": "",
+                                                                                                          "link": "",
+                                                                                                          "is_end": false,
+                                                                                                          "node_type": "normal",
+                                                                                                          "children": {
+                                                                                                            "64": {
+                                                                                                              "id": "64",
+                                                                                                              "speaker": "Mayrina",
+                                                                                                              "text": "I promised him I'd fix this. And I'm gonna. Maybe - maybe someone in Baldur's Gate can help us.",
+                                                                                                              "context": "NodeContext: This is softest and most loving we've seen Mayrina. She loves her husband and is gonna do everything she can to help him.",
+                                                                                                              "checkflags": [],
+                                                                                                              "setflags": [],
+                                                                                                              "ruletags": [],
+                                                                                                              "approval": [],
+                                                                                                              "rolls": "",
+                                                                                                              "goto": "",
+                                                                                                              "link": "",
+                                                                                                              "is_end": false,
+                                                                                                              "node_type": "normal",
+                                                                                                              "children": {
+                                                                                                                "37": {
+                                                                                                                  "id": "37",
+                                                                                                                  "speaker": "Mayrina",
+                                                                                                                  "text": "I'll... I'll figure something out. C'mon, love. Let's... let's go.",
+                                                                                                                  "context": "NodeContext: Voice almost breaking on 'let's go home' as she takes the man that was once her husband back to the home they built together.",
+                                                                                                                  "checkflags": [],
+                                                                                                                  "setflags": [],
+                                                                                                                  "ruletags": [],
+                                                                                                                  "approval": [],
+                                                                                                                  "rolls": "",
+                                                                                                                  "goto": "",
+                                                                                                                  "link": "",
+                                                                                                                  "is_end": true,
+                                                                                                                  "node_type": "normal",
+                                                                                                                  "children": {}
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "109": {
+                                                                                              "id": "109",
+                                                                                              "speaker": "Player",
+                                                                                              "text": "He's already dead. Don't get in my way.",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [
+                                                                                                "HAG_Hagspawn_Event_KillHusband",
+                                                                                                "FightJake"
+                                                                                              ],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [
+                                                                                                "Gale 1",
+                                                                                                "Wyll 1"
+                                                                                              ],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "46": {
+                                                                                                  "id": "46",
+                                                                                                  "speaker": "Mayrina",
+                                                                                                  "text": "No! Don't! CONNOR!",
+                                                                                                  "context": "NodeContext: Player is about to kill the zombie - your husband. You scream and are about to throw yoruself in their path.",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "",
+                                                                                                  "link": "",
+                                                                                                  "is_end": true,
+                                                                                                  "node_type": "normal",
+                                                                                                  "children": {}
+                                                                                                }
+                                                                                              }
+                                                                                            },
+                                                                                            "10": {
+                                                                                              "id": "10",
+                                                                                              "speaker": "",
+                                                                                              "text": "",
+                                                                                              "context": "",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "19",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "jump",
+                                                                                              "children": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "94": {
+                                                                                      "id": "94",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Are you sure you want to do this?",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [
+                                                                                        "HAG_Hagspawn_Event_LeaveHusband",
+                                                                                        "HAG_Hagspawn_Event_WifeHusbandLeave",
+                                                                                        "HAG_Hagspawn_Event_GiveSummoningWand",
+                                                                                        "LeftHusband"
+                                                                                      ],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [
+                                                                                        "Gale 1",
+                                                                                        "Wyll 1",
+                                                                                        "Karlach 1"
+                                                                                      ],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "45",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "87": {
+                                                                                          "id": "87",
+                                                                                          "speaker": "",
+                                                                                          "text": "",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "64",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "jump",
+                                                                                          "children": {}
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "27": {
+                                                                                      "id": "27",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "I'm sorry this is how things turned out.",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [
+                                                                                        "HAG_Hagspawn_Event_LeaveHusband",
+                                                                                        "HAG_Hagspawn_Event_WifeHusbandLeave",
+                                                                                        "HAG_Hagspawn_Event_GiveSummoningWand",
+                                                                                        "LeftHusband"
+                                                                                      ],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [
+                                                                                        "Gale 1",
+                                                                                        "Wyll 1",
+                                                                                        "Karlach 1"
+                                                                                      ],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "45",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "83": {
+                                                                                          "id": "83",
+                                                                                          "speaker": "Mayrina",
+                                                                                          "text": "No. This is my fault. And I'm - I'm gonna fix it.",
+                                                                                          "context": "NodeContext: This is softest and most loving we've seen Mayrina. She loves her husband and is gonna do everything she can to help him.",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "45",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {}
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "47": {
+                                                                                      "id": "47",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Your husband's gone - this thing is just a monster.",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [
+                                                                                        "HAG_Hagspawn_Event_LeaveHusband",
+                                                                                        "HAG_Hagspawn_Event_WifeHusbandLeave",
+                                                                                        "HAG_Hagspawn_Event_GiveSummoningWand",
+                                                                                        "LeftHusband"
+                                                                                      ],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [
+                                                                                        "Gale 1",
+                                                                                        "Wyll 1",
+                                                                                        "Karlach 1"
+                                                                                      ],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "81": {
+                                                                                          "id": "81",
+                                                                                          "speaker": "Mayrina",
+                                                                                          "text": "You don't know that. He - he could still be in there. And I gotta try.",
+                                                                                          "context": "NodeContext: This is softest and most loving we've seen Mayrina. She loves her husband and is gonna do everything she can to help him.",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "normal",
+                                                                                          "children": {
+                                                                                            "45": {
+                                                                                              "id": "45",
+                                                                                              "speaker": "Mayrina",
+                                                                                              "text": "Maybe someone in Baldur's Gate can help us. Connor always said you can find anything in that city.",
+                                                                                              "context": "NodeContext: Firm - summoning your courage.",
+                                                                                              "checkflags": [],
+                                                                                              "setflags": [],
+                                                                                              "ruletags": [],
+                                                                                              "approval": [],
+                                                                                              "rolls": "",
+                                                                                              "goto": "",
+                                                                                              "link": "",
+                                                                                              "is_end": false,
+                                                                                              "node_type": "normal",
+                                                                                              "children": {
+                                                                                                "118": {
+                                                                                                  "id": "118",
+                                                                                                  "speaker": "",
+                                                                                                  "text": "",
+                                                                                                  "context": "",
+                                                                                                  "checkflags": [],
+                                                                                                  "setflags": [],
+                                                                                                  "ruletags": [],
+                                                                                                  "approval": [],
+                                                                                                  "rolls": "",
+                                                                                                  "goto": "37",
+                                                                                                  "link": "",
+                                                                                                  "is_end": false,
+                                                                                                  "node_type": "jump",
+                                                                                                  "children": {}
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "75": {
+                                                                                      "id": "75",
+                                                                                      "speaker": "Player",
+                                                                                      "text": "Leave.",
+                                                                                      "context": "",
+                                                                                      "checkflags": [],
+                                                                                      "setflags": [],
+                                                                                      "ruletags": [],
+                                                                                      "approval": [
+                                                                                        "Gale 1",
+                                                                                        "Wyll 1",
+                                                                                        "Karlach 1"
+                                                                                      ],
+                                                                                      "rolls": "",
+                                                                                      "goto": "",
+                                                                                      "link": "",
+                                                                                      "is_end": false,
+                                                                                      "node_type": "normal",
+                                                                                      "children": {
+                                                                                        "34": {
+                                                                                          "id": "34",
+                                                                                          "speaker": "",
+                                                                                          "text": "",
+                                                                                          "context": "",
+                                                                                          "checkflags": [],
+                                                                                          "setflags": [],
+                                                                                          "ruletags": [],
+                                                                                          "approval": [],
+                                                                                          "rolls": "",
+                                                                                          "goto": "123",
+                                                                                          "link": "",
+                                                                                          "is_end": false,
+                                                                                          "node_type": "jump",
+                                                                                          "children": {}
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "106": {
+                                                                  "id": "106",
+                                                                  "speaker": "Player",
+                                                                  "text": "Kill the undead abomination.",
+                                                                  "context": "",
+                                                                  "checkflags": [
+                                                                    "CLERIC_GOOD = False"
+                                                                  ],
+                                                                  "setflags": [
+                                                                    "HAG_Hagspawn_Event_KillHusband",
+                                                                    "FightJake"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [
+                                                                    "Gale 1",
+                                                                    "Wyll 1"
+                                                                  ],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "105",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {}
+                                                                },
+                                                                "54": {
+                                                                  "id": "54",
+                                                                  "speaker": "Player",
+                                                                  "text": "Call on your god to smite the undead.",
+                                                                  "context": "",
+                                                                  "checkflags": [
+                                                                    "CLERIC_GOOD"
+                                                                  ],
+                                                                  "setflags": [
+                                                                    "HAG_Hagspawn_Event_KillHusband",
+                                                                    "FightJake"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [
+                                                                    "Gale 1",
+                                                                    "Wyll 1"
+                                                                  ],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "105": {
+                                                                      "id": "105",
+                                                                      "speaker": "",
+                                                                      "text": "",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "46",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "jump",
+                                                                      "children": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "61": {
+                                                      "id": "61",
+                                                      "speaker": "Player",
+                                                      "text": "So the hag fulfils her promise. It can never be simple, can it?",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "60",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "80": {
+                                                          "id": "80",
+                                                          "speaker": "Mayrina",
+                                                          "text": "But this isn't what she promised!",
+                                                          "context": "NodeContext: Fighting back tears as you realise the hag double crossed you",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "60",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    },
+                                                    "52": {
+                                                      "id": "52",
+                                                      "speaker": "Player",
+                                                      "text": "Hold on - maybe it's not permanent.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "60",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "22": {
+                                                          "id": "22",
+                                                          "speaker": "Mayrina",
+                                                          "text": "Not permanent? Bits of him are falling off.",
+                                                          "context": "NodeContext: Horrified - upset",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "60",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "122": {
+                                  "id": "122",
+                                  "speaker": "Player",
+                                  "text": "Snap the wand in two.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "HAG_HagSpawn_Event_DestroyWand"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "18": {
+                                      "id": "18",
+                                      "speaker": "Mayrina",
+                                      "text": "What have you done?! You BASTARD!",
+                                      "context": "CinematicNodeContext: ~The player snaps the wand in two\rNodeContext: Absolute horror, pain and fury",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "84": {
+                                          "id": "84",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "51",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "92": {
+              "id": "92",
+              "speaker": "Player",
+              "text": "Are you all right?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "89": {
+                  "id": "89",
+                  "speaker": "Mayrina",
+                  "text": "Not even a little bit. But I will be.",
+                  "context": "NodeContext: Sad but determined - you're allowing yourself this time to grieve but you're determined to get through it. Arms crossed, not looking at player - staring at coffin.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "82": {
+              "id": "82",
+              "speaker": "Player",
+              "text": "You could just leave him here.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "90": {
+                  "id": "90",
+                  "speaker": "Mayrina",
+                  "text": "No. He deserves a proper burial. He deserves some rest. And he won't get that here.",
+                  "context": "NodeContext: Pain at the thought - he's been through enough. Arms crossed, not looking at player - staring at coffin.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "38": {
+              "id": "38",
+              "speaker": "Player",
+              "text": "Whining won't get you there any faster.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "36": {
+                  "id": "36",
+                  "speaker": "Mayrina",
+                  "text": "You're a miserable bastard, you know that?",
+                  "context": "NodeContext: Shaking head as you look at player with anger and pity.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "125": {
+              "id": "125",
+              "speaker": "Player",
+              "text": "Stand with her in silence.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "104": {
+                  "id": "104",
+                  "speaker": "Mayrina",
+                  "text": "We were just kids when we met. Heh. I might have pushed him off a swing I wanted.",
+                  "context": "NodeContext: Smile and love in your voice as you talk about your husband",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "55": {
+                      "id": "55",
+                      "speaker": "Mayrina",
+                      "text": "He got right up and pushed me back. I was so surprised that I just laughed. He did too.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "15": {
+                          "id": "15",
+                          "speaker": "Mayrina",
+                          "text": "We've barely spent a day apart since.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "35": {
+              "id": "35",
+              "speaker": "Player",
+              "text": "I could say a prayer, if you'd like.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [
+                "CLERIC"
+              ],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "26": {
+                  "id": "26",
+                  "speaker": "Mayrina",
+                  "text": "Please. Connor used to say only a fool turned down the divine.",
+                  "context": "NodeContext: Sincere. Grateful. Trying not to cry.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "4",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "126": {
+                      "id": "126",
+                      "speaker": "Player",
+                      "text": "The weak fall to make way for the strong - and the Dark One smiles.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_BANE",
+                        "PALADIN_BANE"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "4",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "85": {
+                      "id": "85",
+                      "speaker": "Player",
+                      "text": "Chaff for the Reaper's harvest. May his bleached bones march in your host, great Myrkul.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_MYRKUL",
+                        "PALADIN_MYRKUL"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "4",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "96": {
+                      "id": "96",
+                      "speaker": "Player",
+                      "text": "Vermin dies as vermin lived. Good riddance.",
+                      "context": "",
+                      "checkflags": [
+                        "CLERIC_LOLTH"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "4",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "67": {
+                      "id": "67",
+                      "speaker": "Player",
+                      "text": "You died as you lived - pathetically and without purpose.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_VLAAKITH",
+                        "PALADIN_VLAAKITH"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "4",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "8": {
+                      "id": "8",
+                      "speaker": "Player",
+                      "text": "Another reminder of mortal fragility. I am grateful for this gift.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_EVIL",
+                        "PALADIN_EVIL"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "25",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "Mayrina",
+                          "text": "What in the hells was that?",
+                          "context": "NodeContext: Player has said a cruel prayer you're horrified and shocked - quickly turning to anger.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "98": {
+                              "id": "98",
+                              "speaker": "Mayrina",
+                              "text": "Get away from us. Now.",
+                              "context": "NodeContext: Ibid.",
+                              "checkflags": [],
+                              "setflags": [
+                                "HAG_Hagspawn_State_MayrinaAngry"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "71": {
+                      "id": "71",
+                      "speaker": "Player",
+                      "text": "May you dance beneath the boughs - happy and free.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_EILISTRAEE",
+                        "PALADIN_EILISTRAEE"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "25",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "95": {
+                      "id": "95",
+                      "speaker": "Player",
+                      "text": "A beloved husband and father - his vigil is ended, great Guardian.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_HELM",
+                        "PALADIN_HELM"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "25",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "5": {
+                      "id": "5",
+                      "speaker": "Player",
+                      "text": "You suffered and endured - may the Broken One shoulder your burdens, that you might walk free.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_ILMATER",
+                        "PALADIN_ILMATER"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "25",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "40": {
+                      "id": "40",
+                      "speaker": "Player",
+                      "text": "You join the same path as all those before - may Kelemvor guide your steps.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_KELEMVOR",
+                        "PALADIN_KELEMVOR"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "25",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "3": {
+                      "id": "3",
+                      "speaker": "Player",
+                      "text": "Light wanes only to wax again - and though life fades, memory shall not.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_SELUNE",
+                        "PALADIN_SELUNE"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "25",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "25": {
+                          "id": "25",
+                          "speaker": "Mayrina",
+                          "text": "He'd have liked that. Thanks.",
+                          "context": "NodeContext: Player has said a prayer that has made you feel much better. Sincere thanks as you hold back tears.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "108": {
+                      "id": "108",
+                      "speaker": "Player",
+                      "text": "Where there is peace, may you have it. Where there is comfort, may those you love know it.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_NEUTRAL",
+                        "PALADIN_NEUTRAL"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "25",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "31": {
+                      "id": "31",
+                      "speaker": "Player",
+                      "text": "This man's death came too soon. See to it, Wounded Tyr, that he find some justice beyond the grave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_TYR",
+                        "PALADIN_TYR"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "49",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "49": {
+                          "id": "49",
+                          "speaker": "Mayrina",
+                          "text": "Gods. Why wasn't it me? Connor...",
+                          "context": "NodeContext: The player has said some harsh words that have made you cry even harder - the full reality of your grief hittin gyou.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "73": {
+                      "id": "73",
+                      "speaker": "Player",
+                      "text": "Quietly whisper a blessing for protection. May Mayrina and her child suffer no harm.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_GOOD",
+                        "PALADIN_GOOD"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "49",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "65": {
+                          "id": "65",
+                          "speaker": "Mayrina",
+                          "text": "I miss him. Every moment of every day. Godsdammit.",
+                          "context": "NodeContext: Annoyed at yourself as you sturggle to hold back tears. Just about keeping it together",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "115": {
+                      "id": "115",
+                      "speaker": "Player",
+                      "text": "Wife without husband, child without father - Dark Lady, two more know the loss of your embrace.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [
+                        "CLERIC_SHAR",
+                        "PALADIN_SHAR"
+                      ],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "49",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "110": {
+              "id": "110",
+              "speaker": "Player",
+              "text": "Leave her to mourn.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "86": {
+                  "id": "86",
+                  "speaker": "Mayrina",
+                  "text": "I'm sorry. I'm sorry I couldn't bring you back.",
+                  "context": "NodeContext: Staring at coffin - crying",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "69": {
+      "id": "69",
+      "speaker": "Mayrina",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_Hagspawn_State_JakeBerserk = False",
+        "HAG_HagSpawn_Event_ResurrectedHusbandWithWand"
+      ],
+      "setflags": [
+        "HAG_HagSpawn_Event_LockWand"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "120",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "70": {
+          "id": "70",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "74",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "102": {
+      "id": "102",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "25c1ac70-f65f-4869-8a74-eff5827d9cde = False",
+        "HAG_HagSpawn_Knows_OfferedResurrectHusband"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "114": {
+      "id": "114",
+      "speaker": "Mayrina",
+      "text": "I can't believe it didn't work. That all of this was for nothing.",
+      "context": "NodeContext: Trying not to cry - feeling hopeless and exhausted",
+      "checkflags": [
+        "HAG_SurrogateMother_HasMet_Resurrect",
+        "HAG_HagSpawn_Knows_OfferedResurrectHusband = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "14": {
+          "id": "14",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "119": {
+      "id": "119",
+      "speaker": "Mayrina",
+      "text": "Gods, don't creep up on people.",
+      "context": "NodeContext: Annoyed and frustrated. Looks up from quietly crying",
+      "checkflags": [
+        "HAG_SurrogateMother_HasMet_Resurrect = False",
+        "HAG_Hagspawn_State_MayrinaAngry",
+        "HAG_HagSpawn_Knows_OfferedResurrectHusband = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "124": {
+          "id": "124",
+          "speaker": "Mayrina",
+          "text": "I'll be out of your hair soon. I just... can't bring myself to leave.",
+          "context": "NodeContext: Frustration turning to sadness",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "41": {
+              "id": "41",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "6",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "120": {
+      "id": "120",
+      "speaker": "Mayrina",
+      "text": "You said you can resurrect my husband? Bring him back. Bring Connor back. Please.",
+      "context": "",
+      "checkflags": [
+        "25c1ac70-f65f-4869-8a74-eff5827d9cde",
+        "HAG_HagSpawn_Knows_OfferedResurrectHusband"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "44": {
+          "id": "44",
+          "speaker": "Player",
+          "text": "I can't. I don't have the wand anymore.",
+          "context": "",
+          "checkflags": [
+            "HAG_Hagspawn_Event_HasSummoningWand = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "Mayrina",
+              "text": "Then why are you even here? Damn it.",
+              "context": "NodeContext: Disgusted and angry",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "50": {
+          "id": "50",
+          "speaker": "Player",
+          "text": "Point the wand towards the grave.",
+          "context": "",
+          "checkflags": [
+            "HAG_Hagspawn_Event_HasSummoningWand"
+          ],
+          "setflags": [
+            "HAG_HagSpawn_Event_LockWand"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "74",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Snap the wand in two.",
+          "context": "",
+          "checkflags": [
+            "HAG_Hagspawn_Event_HasSummoningWand"
+          ],
+          "setflags": [
+            "HAG_HagSpawn_Event_LockWand"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "62": {
+              "id": "62",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "18",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "99": {
+          "id": "99",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

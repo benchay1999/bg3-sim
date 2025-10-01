@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "synopsis": "If you attacked Ketheric on the rooftop of Moonrise Tower, the Myrkulites in the Colony Barracks will be on high alert. If she spots you, she will assume you are one of the traitors that attacked Ketheric - but you can try to convince her otherwise.",
+    "how_to_trigger": "- Load up GustavDev/SCL_Main_A- Use ReCon command \"oe barracks_assault\"- Go to the Colony Barracks with the debugbook options.- Get spotted by Krustine, Mistress of Souls (don't get spotted as the Dark Urge character)."
+  },
+  "dialogue": {
+    "11": {
+      "id": "11",
+      "speaker": "Kressa Bonedaughter",
+      "text": "General Thorm was attacked, the order to evacuate given. You should not be here. I conclude you are one of the attackers.",
+      "context": "NodeContext: Suspicious. Believes she's caught a would-be assassin",
+      "checkflags": [],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "You should be careful, throwing such accusations at a True Soul.",
+          "context": "",
+          "checkflags": [
+            "ILLITHID_HIDDEN_CHECK"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Kressa Bonedaughter",
+              "text": "Trying to pull rank? And yet not a word of concern for our dear General.",
+              "context": "NodeContext: Unswayed. Convinced the player is a traitor",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "0",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "This is a misunderstanding. I was sent to support you with the eradication of these traitors.",
+          "context": "InternalNodeContext: Non-bards. No advantage.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Kressa Bonedaughter",
+                  "text": "I have no need for a thrall - you would merely get in the way.",
+                  "context": "NodeContext: Suspicion fades. Becomes officious/dismissive",
+                  "checkflags": [],
+                  "setflags": [
+                    "COL_Barracks_Mistress_Knows_ThinksPlayerIsThrall",
+                    "COL_Barracks_State_InterruptConvinced"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "6": {
+                      "id": "6",
+                      "speaker": "Kressa Bonedaughter",
+                      "text": "Go find Balthazar - he always has use for another body.",
+                      "context": "NodeContext: Dismissive",
+                      "checkflags": [
+                        "MOO_Necromancer_State_AtMoonrise"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "10": {
+                      "id": "10",
+                      "speaker": "Kressa Bonedaughter",
+                      "text": "Go on, make yourself useful somewhere. If you cannot manage that, just stay out of the way.",
+                      "context": "NodeContext: Dismissive",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Kressa Bonedaughter",
+                  "text": "Lies!",
+                  "context": "NodeContext: Unswayed. Convinced the player is a traitor",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Kressa Bonedaughter",
+                      "text": "I shall present your bones to General Thorm as retribution for what you did to him.",
+                      "context": "NodeContext: Hostile (combat ensues afterward)",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

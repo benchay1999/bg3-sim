@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue with one of the civilians (male gnome near the docks) near the Sahuagin attack on a shore in the Lower City. This dialogue only gets added once the Sahuagin are defeated.",
+    "how_to_trigger": "- Load up GustavDev/CTY_Main_A- Use ReCon command \"goto 52 3 -138\"- \"killcombat\" to kill all the Sahuagin after they appear and attack.- Talk to this civilian near the docks:S_LOW_BeachSahuagin_Civilian_002_da3dafe4-f014-41e1-8dfe-56670ac9fd0a"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Grout",
+      "text": "It's certainly a lot nicer here without sea devil corpses strewn everywhere.",
+      "context": "NodeContext: Pleased",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_002",
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Grout",
+      "text": "Gods - all we wanted was a nice dockside walk, not an unscheduled menagerie visit.",
+      "context": "NodeContext: Still recovering from the shock of the monster attack - but still indignant with it",
+      "checkflags": [],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_002"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Grout",
+      "text": "Finally! Those awful things have been dealt with - and not a moment too soon.",
+      "context": "NodeContext: Relieved",
+      "checkflags": [
+        "LOW_SahuaginAttack_State_SahuaginCleanedUp"
+      ],
+      "setflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_002"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Grout",
+      "text": "Disgusting creatures - I hope they dispose of them soon.",
+      "context": "NodeContext: Disgust",
+      "checkflags": [
+        "LOW_SahuaginAttack_HasMet_Civilian_002"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

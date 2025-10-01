@@ -1,0 +1,119 @@
+{
+  "metadata": {
+    "synopsis": "Player tried to pickpocket an NPC but got caught.\n-- Can check the GEB_Crime_IsVictim flag on speaker 1 to distinguish the NPC from being the victim or a witness of the crime.",
+    "how_to_trigger": "Pickpocket an NPC unsuccessfully"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "GROUP_Bugbear, GROUP_Constructs, GROUP_Daisy, GROUP_Demons, GROUP_Desire, GROUP_Dwarves, GROUP_Elves, GROUP_Gith, GROUP_Gnolls, GROUP_Gnomes, GROUP_Goblins, GROUP_HalfElves, GROUP_Halflings, GROUP_Hobgoblin, GROUP_Humans, GROUP_Ogres, GROUP_Origins, GROUP_SmartUndead, GROUP_Tiefling, GROUP_Trolls",
+      "text": "",
+      "context": "NodeContext: Greeting needs to be empty. It's used to cut off this flow from the others",
+      "checkflags": [
+        "GEB_Crime_IsAngry"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "CIVILIAN = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {}
+        },
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "CIVILIAN",
+            "BADASSCIVILIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*How unfortunate. You'll need to prove you're a better fighter than you are a pickpocket.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "TemporaryHostilityAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Narrator",
+          "text": "*Your pickpocketing has ended in failure - and a raised alarm.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CRIME_FleeHelpFromDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*Caught red-handed. Perhaps you should practise on a mannequin, or a corpse.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

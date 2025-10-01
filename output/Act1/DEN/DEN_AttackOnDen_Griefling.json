@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "synopsis": "A tiefling preparing for the goblin assault on the grove - she's scared but excited about the attack because she sees it as a chance to avenge her friend, Kanon, who was killed by goblins earlier. She's trying to sound more sure of herself than she is.",
+    "how_to_trigger": "Repro steps:1. Start the game.2. loadlevel WLD_Main_A3. oe readyattackonden4. goto 230.06, 35.80, 432.905. Talk with Arka."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Arka",
+      "text": "I'm ready for this - I'd rather die fighting than with an arrow in my back.<br>",
+      "context": "NodeContext: Deep breath at beginning of line - pysching herself up",
+      "checkflags": [],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_Griefling"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Arka",
+      "text": "Wish I'd been with you - would have killed a few goblins myself.",
+      "context": "NodeContext: mournful - Kanon (pronounced 'canon') died during a previous raid",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_GrieflingVictory",
+        "DEN_Refugees_State_LeadersAreDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Arka",
+      "text": "It won't bring the dead back... but that felt good.",
+      "context": "NodeContext: relieved - the fight's over. they won.",
+      "checkflags": [
+        "DEN_AttackOnDen_State_DenVictory"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_GrieflingVictory"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Arka",
+      "text": "You killed the goblins? Hope you made them suffer.",
+      "context": "NodeContext: relieved - the fight's over. they won.",
+      "checkflags": [
+        "DEN_Refugees_State_LeadersAreDead"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_GrieflingVictory"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Arka",
+      "text": "Kanon can rest now...",
+      "context": "NodeContext: mournful - Kanon (pronounced 'canon') died during a previous raid",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_GrieflingVictory",
+        "DEN_AttackOnDen_State_DenVictory"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Arka",
+      "text": "You ready? I can't wait.",
+      "context": "NodeContext: psyching herself up",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_Griefling"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

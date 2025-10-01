@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "synopsis": "The party comes across a trio of goblins who've captured a gnome and have turned to tormenting him - they've tied him to a windmill and are rotating him around for their amusement.The party can try to intervene and save the gnome, possibly using the amulet of the Conquering God as a way to convince the goblins,  if they took it from the priests in the wilderness. GnomeGobllin2 is one of two lackeys, there to support the leading goblin, Fezzerk. He doesn't have much to say; either snarling threats or grovelling to those who intimidate him (drow, in this case)."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Goblin Devout",
+      "text": "Fezzerk does the talking here. Bother him.",
+      "context": "NodeContext: Fez-erk",
+      "checkflags": [
+        "FOR_UnfortunateGnome_Event_RedirectToGnomeGoblin1"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Goblin Devout",
+      "text": "What you think you're - oh, erm, a drow. 'pologies, carry on.",
+      "context": "NodeContext: Grovelling",
+      "checkflags": [
+        "GLO_UnfortunateGnome_State_Still"
+      ],
+      "setflags": [
+        "WLD_FOR_GnomeGoblinsAngry = False"
+      ],
+      "ruletags": [
+        "DROWELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Goblin Devout",
+      "text": "Time to scarper.",
+      "context": "",
+      "checkflags": [
+        "FOR_GnomeGoblinsPacified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Goblin Devout",
+      "text": "What're you playin' at?! C'mere, I've got a blade with your name on it...",
+      "context": "NodeContext: The goblin utters a taunt to a player who ventured too close, before attacking.\nIf the player is a drow, the goblin is immediately nervous and subservient.",
+      "checkflags": [
+        "GLO_UnfortunateGnome_State_Still",
+        "DROWELF = False"
+      ],
+      "setflags": [
+        "WLD_FOR_GnomeGoblinsAngry"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Goblin Devout",
+      "text": "Lookin' to die, are ya? Have it your way!",
+      "context": "NodeContext: The goblin utters a taunt to a player who ventured too close, before attacking.\nIf the player is a drow, the goblin is immediately nervous and subservient.",
+      "checkflags": [
+        "GLO_UnfortunateGnome_State_Still = False",
+        "DROWELF = False"
+      ],
+      "setflags": [
+        "WLD_FOR_GnomeGoblinsAngry"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Goblin Devout",
+      "text": "Erm, p-praise the Absolute. Always an honour to have a drow with us...",
+      "context": "NodeContext: Grovelling",
+      "checkflags": [
+        "GLO_UnfortunateGnome_State_Still = False"
+      ],
+      "setflags": [
+        "WLD_FOR_GnomeGoblinsAngry = False"
+      ],
+      "ruletags": [
+        "DROWELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

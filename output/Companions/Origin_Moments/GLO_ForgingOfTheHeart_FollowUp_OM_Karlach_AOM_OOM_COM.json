@@ -1,0 +1,799 @@
+{
+  "metadata": {
+    "synopsis": "Follow up OM between Karlach and Dammon to give her her upgrades if she has infernal metal in her inventory.",
+    "how_to_trigger": "Speak with Dammon once in each act with Karlach near and with some infernal metal in her inventory. Refuse to get the upgrade and speak with him again."
+  },
+  "dialogue": {
+    "17": {
+      "id": "17",
+      "speaker": "Dammon",
+      "text": "Bring your friends if you've found some infernal iron. You shouldn't be alone, in case anything goes wrong.",
+      "context": "",
+      "checkflags": [
+        "OOM",
+        "DEN_ForgingOfTheHeart_Karlach_TurnedDownHelp = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Dammon",
+      "text": "Bring your friends if you want me to take a look at that engine after all. You shouldn't be alone, in case anything goes wrong.",
+      "context": "",
+      "checkflags": [
+        "OOM",
+        "DEN_ForgingOfTheHeart_Karlach_TurnedDownHelp"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Dammon",
+      "text": "You're back! Thank the gods. I feared the worst. If we both survive this horror, let's speak again - please.",
+      "context": "",
+      "checkflags": [
+        "DEN_AttackOnDen_State_UnderAttack",
+        "OOM",
+        "GLO_ForgingOfTheHeart_State_DammonInAct1"
+      ],
+      "setflags": [
+        "GLO_ForgingOfTheHeart_State_SpokeToDammonDuringGoblinAttack"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "23": {
+      "id": "23",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_AttackOnDen_State_UnderAttack",
+        "GLO_ForgingOfTheHeart_State_DammonInAct1",
+        "AOM"
+      ],
+      "setflags": [
+        "GLO_ForgingOfTheHeart_State_SpokeToDammonDuringGoblinAttack"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "28": {
+      "id": "28",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_AttackOnDen_State_UnderAttack",
+        "GLO_ForgingOfTheHeart_State_DammonInAct1",
+        "COM"
+      ],
+      "setflags": [
+        "GLO_ForgingOfTheHeart_State_SpokeToDammonDuringGoblinAttack"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "32": {
+      "id": "32",
+      "speaker": "Dammon",
+      "text": "How fares the search?",
+      "context": "",
+      "checkflags": [
+        "COM"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "|DEBUG donate UI test.|",
+          "context": "",
+          "checkflags": [
+            "Debug_ORI_Karlach_DonateUI"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "trade",
+              "children": {}
+            }
+          }
+        },
+        "36": {
+          "id": "36",
+          "speaker": "Player",
+          "text": "I found the infernal iron you mentioned.",
+          "context": "",
+          "checkflags": [
+            "GLO_ForgingOfTheHeart_Knows_DammonCanUpgradeKarlach",
+            "9b27a650-12bb-ccb7-c4c8-a7173ef08f4e"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "4",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "29": {
+              "id": "29",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "GLO_ForgingOfTheHeart_State_HasInfernalMetal_A"
+              ],
+              "setflags": [
+                "GLO_ForgingOfTheHeart_Event_GiveInfernalMetal_A"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {}
+            },
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "GLO_ForgingOfTheHeart_State_HasInfernalMetal_B"
+              ],
+              "setflags": [
+                "GLO_ForgingOfTheHeart_Event_GiveInfernalMetal_B"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "31": {
+              "id": "31",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "GLO_ForgingOfTheHeart_State_HasInfernalMetal_C"
+              ],
+              "setflags": [
+                "GLO_ForgingOfTheHeart_Event_GiveInfernalMetal_C"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "4",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {}
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Dammon",
+              "text": "I'm not seeing any. Do let me know if it turns up.<br>",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "26": {
+          "id": "26",
+          "speaker": "Player",
+          "text": "Would you be able to take a look at Karlach's heart?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "DEN_ForgingOfTheHeart_Karlach_TurnedDownHelp = False"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "43": {
+              "id": "43",
+              "speaker": "Dammon",
+              "text": "Maybe, but I'd need infernal iron. And a prayer that my hammer'll survive the work.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "GLO_ForgingOfTheHeart_Knows_DammonCanUpgradeKarlach"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "38": {
+                  "id": "38",
+                  "speaker": "Player",
+                  "text": "Thanks, Dammon. We'll keep our eyes open.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Karlach",
+                      "text": "We certainly will.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "37": {
+                  "id": "37",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "36",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "33": {
+                  "id": "33",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "3",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                },
+                "35": {
+                  "id": "35",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "27",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Let me see your wares.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "trade",
+              "children": {}
+            }
+          }
+        },
+        "27": {
+          "id": "27",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "41": {
+      "id": "41",
+      "speaker": "Dammon",
+      "text": "Hello again.",
+      "context": "",
+      "checkflags": [
+        "AOM"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Karlach",
+          "text": "I found the infernal iron you mentioned.",
+          "context": "",
+          "checkflags": [
+            "GLO_ForgingOfTheHeart_Knows_DammonCanUpgradeKarlach",
+            "ff582573-2c62-aadb-f904-922ed6fa4fe5"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "39": {
+              "id": "39",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "GLO_ForgingOfTheHeart_State_HasInfernalMetal_A"
+              ],
+              "setflags": [
+                "GLO_ForgingOfTheHeart_Event_GiveInfernalMetal_A"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {}
+            },
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "GLO_ForgingOfTheHeart_State_HasInfernalMetal_B"
+              ],
+              "setflags": [
+                "GLO_ForgingOfTheHeart_Event_GiveInfernalMetal_B"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "GLO_ForgingOfTheHeart_State_HasInfernalMetal_C"
+              ],
+              "setflags": [
+                "GLO_ForgingOfTheHeart_Event_GiveInfernalMetal_C"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "20",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Dammon",
+              "text": "I'm not seeing any. Do let me know if it turns up.<br>",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Karlach",
+          "text": "I changed my mind. Perhaps you'd like to check out my infernal engine after all?",
+          "context": "",
+          "checkflags": [
+            "DEN_ForgingOfTheHeart_Karlach_TurnedDownHelp"
+          ],
+          "setflags": [
+            "GLO_ForgingOfTheHeart_Knows_DammonCanUpgradeKarlach",
+            "DEN_ForgingOfTheHeart_Karlach_TurnedDownHelp = False"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Dammon",
+              "text": "Certainly, if it's all right with you. Let me have a listen.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Dammon",
+                  "text": "Phew! You really are burning up. Whoever put that engine together tried to house metallurgised demono-valves inside a ra-gnax alloy casement. Very risky.",
+                  "context": "CinematicNodeContext: Dammon approaches Karlach and leans his ear toward her chest, trying to listen to her heart. We hear its fire burning, cogs grinding, etc. After a moment, Dammon jerks away, feeling the heat of her.\rNodeContext: RAG-nax",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Dammon",
+                      "text": "That thing isn't meant to operate outside Avernus. I'm not sure how much longer it'll keep running, the way it's going.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "34": {
+                          "id": "34",
+                          "speaker": "Dammon",
+                          "text": "I might be able to help, but I'd need infernal iron. And a prayer that my hammer'll survive the work.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "22": {
+                              "id": "22",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "8",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "42": {
+                              "id": "42",
+                              "speaker": "Karlach",
+                              "text": "Thanks - I'll try to find some right away.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Dammon",
+                                  "text": "I'll be here.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "21": {
+                              "id": "21",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "30",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "40": {
+                              "id": "40",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "11",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "30": {
+          "id": "30",
+          "speaker": "Karlach",
+          "text": "Let me see your wares.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "24": {
+              "id": "24",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "trade",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Karlach",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "metadata": {
+    "synopsis": "You approach a door inside the burning building. Someone is trapped behind it."
+  },
+  "dialogue": {
+    "6": {
+      "id": "6",
+      "speaker": "Counsellor Florrick",
+      "text": "I'm trapped! Someone, open this door!",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "FoundCounsellor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "I can't, it's locked.",
+          "context": "",
+          "checkflags": [
+            "PLA_Desire_Quest_LockedDoorKey = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Counsellor Florrick",
+              "text": "The key must be with the innkeep. Please - hurry!",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "PLA_Desire_Quest_LockedDoorKey"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Unlock the door.",
+          "context": "",
+          "checkflags": [
+            "PLA_Desire_State_HasDesireKey"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "PLA_Desire_Quest_OpenDoor"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "tagcinematic",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Try to force it open.",
+          "context": "CinematicNodeContext: Player strikes door with their fist, hoping to open it.",
+          "checkflags": [
+            "PLA_Desire_Quest_TriedForceDoor = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Narrator",
+                  "text": "*The door gives way with a loud crack.*",
+                  "context": "CinematicNodeContext: The door gives way and lets out a crack",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_Desire_Quest_TriedForceDoor",
+                    "PLA_Desire_Quest_BreakDoor"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "13": {
+                      "id": "13",
+                      "speaker": "Counsellor Florrick",
+                      "text": "Let's move. Quickly - before the whole place collapses!",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Narrator",
+                  "text": "*The door remains intact, despite your efforts.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "PLA_Desire_Quest_TriedForceDoor"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "12": {
+          "id": "12",
+          "speaker": "Player",
+          "text": "Charge at the door.",
+          "context": "CinematicNodeContext: Player charges at the door.",
+          "checkflags": [
+            "BARBARIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "1",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

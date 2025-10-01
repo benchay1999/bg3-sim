@@ -1,0 +1,462 @@
+{
+  "metadata": {
+    "synopsis": "Kagha's dialog after the Celebration (post-AttackOnDen or post-GoblinHunt), if the scene with the parents occured and the player saved her.CAMP_GoblinHuntCelebration_Event_SavedKagha = true",
+    "how_to_trigger": "goto 205 406oe denraiddonewalk inside the grove to the middle of the caveoe snakecourtdoneoe killgobleadersgoto 211 456talk to Zevlor (he's up the ladder there)go to camp, after the camp intro you can see that a bunch of tieflings are theregoto -629 -161 (that's a position in the camp, where Kagha + the parents are)If parents aren't visible (previous bug) use:setOnstage S_DEN_ParentAsetOnstage S_DEN_ParentBTalk to one of the parents. Use shift+Q or roll amazing to make sure you succeed your persuasion and save Kagha. You can skip through the dialogNow Kagha has the dialog DEN_ShadowDruid_LeaderSaved"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Kagha",
+      "text": "Halsin's cancelled the rite and I will face judgement. My fate belongs with the Treefather.",
+      "context": "",
+      "checkflags": [
+        "GLO_Halsin_State_Returned",
+        "GLO_Halsin_State_PermaDefeated = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Kagha",
+      "text": "Peace. Enjoy it while it lasts.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Kagha",
+      "text": "I have been so blind, that an outsider would show me the way of Silvanus.",
+      "context": "",
+      "checkflags": [
+        "CAMP_GoblinHuntCelebration_Event_SavedKagha"
+      ],
+      "setflags": [
+        "DEN_ShadowDruidLeader_State_SavedHasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "25",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "22": {
+          "id": "22",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "DEN_ShadowDruid_Event_KaghaTurnedGood"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "25",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "5",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "25": {
+          "id": "25",
+          "speaker": "Kagha",
+          "text": "After all I've done, you've no reason to believe me, but... I'm grateful.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "5",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Kagha",
+              "text": "Halsin's cancelled the rite and I will face judgement. My fate belongs with the Treefather.",
+              "context": "",
+              "checkflags": [
+                "GLO_Halsin_State_Returned",
+                "GLO_Halsin_State_PermaDefeated = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Kagha",
+                  "text": "I sought the shadows and imperilled the grove. Thanks to you, I've seen light.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "DEN_ShadowDruid_Event_KaghaTurnedGood"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Player",
+                      "text": "This wasn't for you. It was to spare that girl's parents.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "Kagha",
+                          "text": "Then trust when I say I bear their burden along with my own.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "21": {
+                              "id": "21",
+                              "speaker": "Kagha",
+                              "text": "Justice will be done - the circle will see to that. Cold comfort for them, but comfort nonetheless.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "14": {
+                      "id": "14",
+                      "speaker": "Player",
+                      "text": "The light welcomes even those who have strayed.",
+                      "context": "",
+                      "checkflags": [
+                        "REALLY_LOLTHDROWELF = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "Kagha",
+                          "text": "I'll use it to heal blight wherever it reaches.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "Kagha",
+                              "text": "And I'll remember a serpent lives within me, waiting to strike. Treefather guide me, that I choose my targets more wisely.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "6": {
+                      "id": "6",
+                      "speaker": "Player",
+                      "text": "Don't let me think about it too long. I'll start having regrets.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "18": {
+                          "id": "18",
+                          "speaker": "Kagha",
+                          "text": "Then I won't stretch your patience. But do allow me one last word:",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "0": {
+                              "id": "0",
+                              "speaker": "Kagha",
+                              "text": "'Mercy'. You carry it with you. And now I must carry it with me.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "10": {
+                      "id": "10",
+                      "speaker": "Player",
+                      "text": "Saving you was one matter. Forgiving you is another.",
+                      "context": "",
+                      "checkflags": [
+                        "REALLY_TIEFLING"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "11": {
+                          "id": "11",
+                          "speaker": "Kagha",
+                          "text": "Don't saddle yourself with that loathing. I will carry it for us both.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "16": {
+                              "id": "16",
+                              "speaker": "Kagha",
+                              "text": "You can trust that Silvanus will punish me for it twice over.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "id": "2",
+                      "speaker": "Player",
+                      "text": "May the sun rise in the valley...",
+                      "context": "",
+                      "checkflags": [
+                        "DRUID"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "15": {
+                          "id": "15",
+                          "speaker": "Kagha",
+                          "text": "...and may the wind carry you to mount's peak. Until we meet again.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "20": {
+                      "id": "20",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "Kagha",
+              "text": "I will cancel the rite and subject myself to the circle for judgement.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "5",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Kagha",
+      "text": "The grove is forever in your debt. Walk freely among us for as long as the sun sets and rises.",
+      "context": "",
+      "checkflags": [
+        "DEN_ShadowDruid_Event_KaghaTurnedGood"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Kagha",
+      "text": "You saved my life. I won't forget it.",
+      "context": "",
+      "checkflags": [
+        "DEN_ShadowDruidLeader_State_SavedHasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

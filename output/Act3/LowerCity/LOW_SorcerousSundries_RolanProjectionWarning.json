@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "synopsis": "Dialog in which Rolan's Projection, who is substituing Rolan after Lorroakan is dead. The projection bars entry to the Sorcerous Sundries shop to a banned player.",
+    "how_to_trigger": "1) kill Lorroakan at  CTY_Main_A 4960; 0; 7052) Kill Rolan when he appears at the scene3) Go through any portal that is not the left one on the second floor of Ramazith at -1; 30; -97 (and revive yourself)4) call oe LOW_SorcerousSundries_AradinLeaveAndAttack in recon5)  ctrl+shift+k Klank at -15; 26; -686) attempt to enter the shop, getting interrupted"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Rolan's Projection",
+      "text": "Interfering with the magical staff of Sorcerous Sundries is prohibited. Any further transgressions, and you will be banned.",
+      "context": "NodeContext: as a projection - cheery but stern warning",
+      "checkflags": [
+        "LOW_SorcerousSundries_State_WaitingToBeWarned"
+      ],
+      "setflags": [
+        "LOW_SorcerousSundries_State_WaitingToBeWarned = False",
+        "LOW_SorcerousSundries_State_Warned"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Rolan's Projection",
+      "text": "Congratulations - you have been banned from Sorcerous Sundries. You will now be escorted outside.",
+      "context": "NodeContext: as a projection - cheery but stern warning",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Rolan's Projection",
+              "text": "Sorcerous Sundries assumes no responsibility for the harm you are about to suffer.",
+              "context": "NodeContext: as a projection - cheery but stern warning",
+              "checkflags": [],
+              "setflags": [
+                "FactionHostileToPlayerGroupAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "All right - I'll go.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Rolan's Projection",
+              "text": "Thank you - do not return.",
+              "context": "NodeContext: as a projection - cheery but stern warning",
+              "checkflags": [],
+              "setflags": [
+                "LOW_SorcerousSundries_Event_BlacklistedPlayerTeleported"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

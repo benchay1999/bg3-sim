@@ -1,0 +1,2855 @@
+{
+  "metadata": {
+    "synopsis": "Dialog with shrine where player can give blessings to gods that do not have their onw statue in Stormshore Tabernacle. Narratively we can say that that money will be spent on getting those gods a space of their own, or another well-intentioned purpose.Only one god will be on the dialog at the same time. And no one will be if a non-cleric character interacts with the shrine and begin the dialog.",
+    "how_to_trigger": "Interact with S_LOW_GenericGodStatue in CTY_Main_A 109; 46; -10"
+  },
+  "dialogue": {
+    "19": {
+      "id": "19",
+      "speaker": "Narrator",
+      "text": "*You have defiled a holy place. The gods will speak to you no more.*",
+      "context": "",
+      "checkflags": [
+        "LOW_StormshoreTabernacle_State_AngeredGenericShrine"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "71": {
+      "id": "71",
+      "speaker": "Narrator",
+      "text": "*This altar isn't dedicated to a single god, but instead acts as a conduit to many.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "101",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "123": {
+          "id": "123",
+          "speaker": "Narrator",
+          "text": "*Your god is one of many, and in this place you sense a spark of its mighty divine flame.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "101",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "Narrator",
+              "text": "*As a cleric, you may sacrifice wealth to your deity and expect to receive a boon.*",
+              "context": "",
+              "checkflags": [
+                "CLERIC_SELUNE = False",
+                "CLERIC_TYR = False",
+                "CLERIC",
+                "CLERIC_HELM = False",
+                "CLERIC_MYSTRA = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "101",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "96": {
+                  "id": "96",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "101",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "40": {
+                      "id": "40",
+                      "speaker": "Player",
+                      "text": "Think of Bhaal, think of blood.",
+                      "context": "",
+                      "checkflags": [
+                        "REALLY_DARK_URGE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "1": {
+                      "id": "1",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Bahamut.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BahamutOfferingGiven",
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "101": {
+                          "id": "101",
+                          "speaker": "Narrator",
+                          "text": "*Your soul opens to their divine power.*",
+                          "context": "CinematicNodeContext: Player bows.",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "70": {
+                              "id": "70",
+                              "speaker": "Narrator",
+                              "text": "*Father claws into your heart and stops it for a single moment. As you begin to fear for your life, you know his love is close.*",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_DarkUrge_State_GivenSlayerForm",
+                                "REALLY_DARK_URGE"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "106": {
+                              "id": "106",
+                              "speaker": "Narrator",
+                              "text": "*Your Father's power stops your heart for one horrible, terrible moment, then starts it again with the lash of duty.*",
+                              "context": "",
+                              "checkflags": [
+                                "ORI_DarkUrge_State_GivenSlayerForm = False",
+                                "REALLY_DARK_URGE"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "29": {
+                              "id": "29",
+                              "speaker": "Narrator",
+                              "text": "*Warmth suffuses your body from within as you feel the righteous will of Bahamut, Grandfather of Dragons.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_BAHAMUT"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "74": {
+                              "id": "74",
+                              "speaker": "Narrator",
+                              "text": "*Your body and soul shiver with delight as you receive the blessing of Corellon, First of the Seldarine.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_CORELLONLARETHIAN"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "75": {
+                              "id": "75",
+                              "speaker": "Narrator",
+                              "text": "*The blood in your veins beats to the rhythms of Eilistraee as the Dark Dancer's blessing strums you like a lyre.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_EILISTRAEE"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "22": {
+                              "id": "22",
+                              "speaker": "Narrator",
+                              "text": "*Glitterbright cleric, feel your wits sharpen and muscles harden under the blessing of Garl the Watchful Protector.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_GARLGLITTERGOLD"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "59": {
+                              "id": "59",
+                              "speaker": "Narrator",
+                              "text": "*Your heart swells with fury and defiance as the iron will of Gruumsh One-Eye infuses you with orcish power! Repay his blessing with blood!*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_GRUUMSH"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "122": {
+                              "id": "122",
+                              "speaker": "Narrator",
+                              "text": "*Ilmater, the One Who Endures, gently imbues you with the resolve and resignation to persevere through the trials to come.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_ILMATER"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "28": {
+                              "id": "28",
+                              "speaker": "Narrator",
+                              "text": "*Doomguide of Kelemvor, receive His blessing: the death of fear, anxiety, and hesitation. For all must die and come to judgement.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_KELEMVOR"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "55": {
+                              "id": "55",
+                              "speaker": "Narrator",
+                              "text": "*Accept Laduguer's blessing of bitter resentment! Count your grievances and draw strength therefrom, for in malice there is power.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_LADUGUER"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "100": {
+                              "id": "100",
+                              "speaker": "Narrator",
+                              "text": "*Be of good cheer, for Lathander the Morninglord blesses you with vigour and joy! 'In the dawn, the way is clear.'*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_LATHANDER"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "81": {
+                              "id": "81",
+                              "speaker": "Narrator",
+                              "text": "*You are blessed by Lolth, and her spiderlings of cruelty, lust, and ambition seem to hatch in your chest and skitter along your nerves.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_LOLTH"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "136": {
+                              "id": "136",
+                              "speaker": "Narrator",
+                              "text": "*Walker, you are blessed by Mielikki, and even here among the stones of the city you smell the fragrance of the forest and feel moss beneath your feet.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_MIELIKKI"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "20": {
+                              "id": "20",
+                              "speaker": "Narrator",
+                              "text": "*Moradin seems to hammer your body and soul into a fine-tempered tool wrought to work the will of the Forger. So be it!*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_MORADIN"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "11": {
+                              "id": "11",
+                              "speaker": "Narrator",
+                              "text": "*Oghma the Wise blesses you, and your doubts and fears are replaced by knowledge and insight. Go forth and be judicious.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_OGHMA"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "149": {
+                              "id": "149",
+                              "speaker": "Narrator",
+                              "text": "*The blessing of Talos empowers you with the surging fury of storm! Fear not, for none can stand against you.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_TALOS"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "145": {
+                              "id": "145",
+                              "speaker": "Narrator",
+                              "text": "*Tempus, the Lord of Honourable Battle, calls upon you to confront and defeat your enemies, and blesses you with the will to victory!*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_TEMPUS"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "99": {
+                              "id": "99",
+                              "speaker": "Narrator",
+                              "text": "*Blessed by Tiamat, the flame of the Dragon Queen seems to roar in your breast like fire in a furnace. Let your enemies beware!*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_TIAMAT"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "26": {
+                              "id": "26",
+                              "speaker": "Narrator",
+                              "text": "*As Tymora smiles upon you, your fortune and wit are burnished and shine as bright as a new gold coin.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_TYMORA"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "65": {
+                              "id": "65",
+                              "speaker": "Narrator",
+                              "text": "*Blessed Child of Yondalla, accept her protection and extend her blessing to all who need guidance and guarding.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_YONDALLA"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "156": {
+                              "id": "156",
+                              "speaker": "Narrator",
+                              "text": "*The Lady of Loss blesses you - be troubled by neither memory nor misgiving.*",
+                              "context": "",
+                              "checkflags": [
+                                "CLERIC_SHAR"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            },
+                            "69": {
+                              "id": "69",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "33": {
+                      "id": "33",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Corellon.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_CorellonLarethianOfferingGiven",
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "148": {
+                      "id": "148",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Eilistraee.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_EilitraeeOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "21": {
+                      "id": "21",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Garl Glittergold.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_GarlGlittergoldOfferingGiven",
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "60": {
+                      "id": "60",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Gruumsh.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_GruumshOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "93": {
+                      "id": "93",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Ilmater.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_IlmaterOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "97": {
+                      "id": "97",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Kelemvor.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_KelemvorOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "131": {
+                      "id": "131",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Laduguer.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_LadugerOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "137": {
+                      "id": "137",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Lathander.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_LathanderOfferingGiven",
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "82": {
+                      "id": "82",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Lolth.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_LolthOfferingGiven",
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "90": {
+                      "id": "90",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Mielikki.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_MielikkiOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "125": {
+                      "id": "125",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Moradin.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_MoradinOfferingGiven",
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "127": {
+                      "id": "127",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Oghma.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_OghmaOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "120": {
+                      "id": "120",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Talos.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_TalosOfferingGiven",
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "83": {
+                      "id": "83",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Tempus.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_TempusOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "38": {
+                      "id": "38",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Tiamat.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_TiamatOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "36": {
+                      "id": "36",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Tymora.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_TymoraOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "134": {
+                      "id": "134",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Yondalla.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_YondallaOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "25": {
+                      "id": "25",
+                      "speaker": "Player",
+                      "text": "Beseech a blessing from your deity, Shar.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_BlessingGiven = False",
+                        "LOW_StormshoreTabernacle_State_SharOfferingGiven"
+                      ],
+                      "setflags": [
+                        "LOW_StormshoreTabernacle_Event_GiveBlessing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "101",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "39": {
+                      "id": "39",
+                      "speaker": "Player",
+                      "text": "Read what is inscribed on the altar.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_AnyOfferingGiven = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "112",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "91": {
+                          "id": "91",
+                          "speaker": "Narrator",
+                          "text": "*It reads: 'Show your devotion with an offering in your god's name. Blessings may follow.'*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "108": {
+                      "id": "108",
+                      "speaker": "Player",
+                      "text": "Make an offering to Bhaal. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+                      "context": "",
+                      "checkflags": [
+                        "e678bd59-74f4-4a7b-8776-aca807d9ef22",
+                        "REALLY_DARK_URGE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "112",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "143": {
+                          "id": "143",
+                          "speaker": "Narrator",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "112",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "154": {
+                              "id": "154",
+                              "speaker": "Narrator",
+                              "text": "*You offer your paltry gold to the void, like a child at the sweet shop.*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "GEN_TransferNPCPayment"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "112",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "66": {
+                          "id": "66",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "112": {
+                              "id": "112",
+                              "speaker": "Narrator",
+                              "text": "*There is no response, and you know why - Bhaal will accept the world from you, and nothing less.*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "16": {
+                      "id": "16",
+                      "speaker": "Player",
+                      "text": "Pay homage and honour to the gods of light and justice.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_AnyOfferingGiven = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "158",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "Narrator",
+                          "text": "*The gods are ready to receive your joyful donation.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "158",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "87": {
+                              "id": "87",
+                              "speaker": "Player",
+                              "text": "Make an offering to Bahamut, the dragon god of justice.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_BahamutOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "61": {
+                                  "id": "61",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "102": {
+                                      "id": "102",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "142": {
+                                          "id": "142",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_BahamutOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "72": {
+                              "id": "72",
+                              "speaker": "Player",
+                              "text": "Make an offering to Corellon the Protector, Creator of the Elves.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_CorellonLarethianOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "9": {
+                                  "id": "9",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "27": {
+                                      "id": "27",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "128": {
+                                          "id": "128",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_CorellonLarethianOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "2": {
+                              "id": "2",
+                              "speaker": "Player",
+                              "text": "Make an offering to Eilistraee, the Dancing Goddess of beauty and freedom.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_EilitraeeOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "115": {
+                                  "id": "115",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "94": {
+                                      "id": "94",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "46": {
+                                          "id": "46",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_EilitraeeOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "80": {
+                              "id": "80",
+                              "speaker": "Player",
+                              "text": "Make an offering to Garl Glittergold, the bright and clever Father of All Gnomes.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_GarlGlittergoldOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "4": {
+                                  "id": "4",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "146": {
+                                      "id": "146",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "48": {
+                                          "id": "48",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_GarlGlittergoldOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "50": {
+                              "id": "50",
+                              "speaker": "Player",
+                              "text": "Make an offering to Ilmater, the One Who Endures, god of the oppressed and persecuted.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_IlmaterOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "114": {
+                                  "id": "114",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "45": {
+                                      "id": "45",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "132": {
+                                          "id": "132",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_IlmaterOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "0": {
+                              "id": "0",
+                              "speaker": "Player",
+                              "text": "Make an offering to Lathander the Morninglord, god of vitality, of hope, and of beginnings.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_LathanderOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "105": {
+                                  "id": "105",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "42": {
+                                      "id": "42",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "23": {
+                                          "id": "23",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_LathanderOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "155": {
+                              "id": "155",
+                              "speaker": "Player",
+                              "text": "Make an offering to Mielikki, the Lady of the Forest and Supreme Ranger.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_MielikkiOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "130": {
+                                  "id": "130",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "126": {
+                                      "id": "126",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "86": {
+                                          "id": "86",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_MielikkiOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Halsin 1",
+                                            "Jaheira 1",
+                                            "Minsc 1",
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "52": {
+                              "id": "52",
+                              "speaker": "Player",
+                              "text": "Make an offering to Moradin the Soul Forger, All-Father of the Dwarves.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_MoradinOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "57": {
+                                  "id": "57",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "54": {
+                                      "id": "54",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "17": {
+                                          "id": "17",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_MoradinOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "68": {
+                              "id": "68",
+                              "speaker": "Player",
+                              "text": "Make an offering to Yondalla the Blessed, Matriarch of the Halflings.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_YondallaOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "150": {
+                                  "id": "150",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "5": {
+                                      "id": "5",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "13": {
+                                          "id": "13",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_YondallaOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "51": {
+                              "id": "51",
+                              "speaker": "Player",
+                              "text": "Choose from another group of deities.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "152": {
+                                  "id": "152",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "96",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "147": {
+                              "id": "147",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "117",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "119": {
+                      "id": "119",
+                      "speaker": "Player",
+                      "text": "Seek the wisdom and judgement of the gods of balance and ambiguity.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_AnyOfferingGiven = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "158",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "41": {
+                          "id": "41",
+                          "speaker": "Narrator",
+                          "text": "*The gods are ready to receive your donation.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "158",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "7": {
+                              "id": "7",
+                              "speaker": "Player",
+                              "text": "Make an offering to Kelemvor the Great Guide, Lord of the Dead.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_KelemvorOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "129": {
+                                  "id": "129",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "121": {
+                                      "id": "121",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "58": {
+                                          "id": "58",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_KelemvorOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "111": {
+                              "id": "111",
+                              "speaker": "Player",
+                              "text": "Make an offering to Oghma, Lord of Knowledge and Patron of Bards.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_OghmaOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "77": {
+                                  "id": "77",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "8": {
+                                      "id": "8",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "63": {
+                                          "id": "63",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_OghmaOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Gale 1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "84": {
+                              "id": "84",
+                              "speaker": "Player",
+                              "text": "Make an offering to Tempus, God  of War and Lord of Honourable Battle.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_TempusOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "30": {
+                                  "id": "30",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "15": {
+                                      "id": "15",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "144": {
+                                          "id": "144",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_TempusOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "53": {
+                              "id": "53",
+                              "speaker": "Player",
+                              "text": "Make an offering to Tymora, the Bright Smiling Lady of Luck.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_TymoraOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "141": {
+                                  "id": "141",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "110": {
+                                      "id": "110",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "138": {
+                                          "id": "138",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_TymoraOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "67": {
+                              "id": "67",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "51",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "98": {
+                              "id": "98",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "117",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "151": {
+                      "id": "151",
+                      "speaker": "Player",
+                      "text": "Seek power and self-justification from the gods of greed and darkness.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_StormshoreTabernacle_State_AnyOfferingGiven = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "158",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "103": {
+                          "id": "103",
+                          "speaker": "Narrator",
+                          "text": "*The gods are ready to receive your sacrifice.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "158",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "18": {
+                              "id": "18",
+                              "speaker": "Player",
+                              "text": "Make an offering to Gruumsh One-Eye, He Who Watches, God of the Orcs.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_GruumshOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "32": {
+                                  "id": "32",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "133": {
+                                      "id": "133",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "49": {
+                                          "id": "49",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_GruumshOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll -1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "47": {
+                              "id": "47",
+                              "speaker": "Player",
+                              "text": "Make an offering to Laduguer the Exile, Deity of the Duergar.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_LadugerOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "43": {
+                                  "id": "43",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "62": {
+                                      "id": "62",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "118": {
+                                          "id": "118",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_LadugerOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll -1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "92": {
+                              "id": "92",
+                              "speaker": "Player",
+                              "text": "Make an offering to Lolth, the Weaver of Destiny and Queen of Spiders and Darkness.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_LolthOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "24": {
+                                  "id": "24",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "76": {
+                                      "id": "76",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "88": {
+                                          "id": "88",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_LolthOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll -1",
+                                            "Minthara -4"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "116": {
+                              "id": "116",
+                              "speaker": "Player",
+                              "text": "Make an offering to Talos the Storm Lord, God of Fury and Destruction.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_TalosOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "124": {
+                                  "id": "124",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "37": {
+                                      "id": "37",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "73": {
+                                          "id": "73",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_TalosOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll -1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "12": {
+                              "id": "12",
+                              "speaker": "Player",
+                              "text": "Make an offering to Tiamat, Dragon Queen of Chaos and Avarice.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_TiamatOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "34",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "157": {
+                                  "id": "157",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "34",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "79": {
+                                      "id": "79",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "34",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "6": {
+                                          "id": "6",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_TiamatOfferingGiven"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Wyll -1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "34",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {
+                                            "158": {
+                                              "id": "158",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "34",
+                                              "is_end": false,
+                                              "node_type": "taganswer",
+                                              "children": {
+                                                "139": {
+                                                  "id": "139",
+                                                  "speaker": "Narrator",
+                                                  "text": "*The amount you've offered proves your piety and devotion. You may now pray here once a day for a divine blessing.*",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven"
+                                                  ],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [
+                                                    "Astarion -1",
+                                                    "Minthara -1"
+                                                  ],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "34",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                },
+                                                "10": {
+                                                  "id": "10",
+                                                  "speaker": "Narrator",
+                                                  "text": "*Your offering is accepted, but more evidence of devotion is required.*",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven = False",
+                                                    "LOW_StormshoreTabernacle_Event_GiveSomething"
+                                                  ],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "34": {
+                                                      "id": "34",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [
+                                                        "LOW_StormshoreTabernacle_Event_GiveSomething = False"
+                                                      ],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "taganswer",
+                                                      "children": {
+                                                        "109": {
+                                                          "id": "109",
+                                                          "speaker": "",
+                                                          "text": "",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "96",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "jump",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "135": {
+                              "id": "135",
+                              "speaker": "Player",
+                              "text": "Make an offering to Shar, Dark Lady of Loss and Mistress of the Night.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_StormshoreTabernacle_State_SharOfferingGiven = False"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "158",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "78": {
+                                  "id": "78",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "158",
+                                  "is_end": false,
+                                  "node_type": "trade",
+                                  "children": {
+                                    "44": {
+                                      "id": "44",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "158",
+                                      "is_end": false,
+                                      "node_type": "taganswer",
+                                      "children": {
+                                        "56": {
+                                          "id": "56",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_SharOfferingGiven",
+                                            "SHADOWHEART_SHARPATH"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven",
+                                            "LOW_StormshoreTabernacle_State_AnyOfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Shadowheart 5",
+                                            "Wyll -1",
+                                            "Lae'zel -1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "158",
+                                          "is_end": false,
+                                          "node_type": "taganswer",
+                                          "children": {}
+                                        },
+                                        "85": {
+                                          "id": "85",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [
+                                            "LOW_StormshoreTabernacle_State_SharOfferingGiven",
+                                            "SHADOWHEART_SHARPATH = False"
+                                          ],
+                                          "setflags": [
+                                            "5c8a1655-0ffc-46f5-32bb-21994c5d7179_LOW_StormshoreTabernacle_Local_OfferingGiven"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Shadowheart -1",
+                                            "Wyll -1",
+                                            "Lae'zel -1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "56",
+                                          "is_end": false,
+                                          "node_type": "alias",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "113": {
+                              "id": "113",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "51",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            },
+                            "14": {
+                              "id": "14",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "117",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "117": {
+                      "id": "117",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

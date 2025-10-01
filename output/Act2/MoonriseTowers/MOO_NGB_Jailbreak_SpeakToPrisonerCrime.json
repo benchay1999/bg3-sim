@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "synopsis": "This dialogues occurs when you try to speak to the prisoners in Moonrise and are caught by one of the scrying eyes (who summons a guard who will use this dialogues). It can be triggered by any guard.",
+    "how_to_trigger": "Teleport to the jails in moonrise, 571, -629 (at the time of writing) and speak to any of the prisoners as a scrying eye approaches."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Narrator",
+      "text": "*You've been caught in the act. This time, however, there is no talking your way out of it.*",
+      "context": "",
+      "checkflags": [
+        "MOO_Jailbreak_Event_SpeakToGnomesWarning"
+      ],
+      "setflags": [
+        "CRIME_FoundGuiltyPlayer",
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Narrator",
+      "text": "*You've been spotted helping the prisoners. Prepare to defend yourself.*",
+      "context": "",
+      "checkflags": [
+        "MOO_Jailbreak_State_GnomesHaveTools"
+      ],
+      "setflags": [
+        "CRIME_FoundGuiltyPlayer",
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*Your conversation has been cut short. These prisoners are for Disciple Balthazar's attention only.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "MOO_Jailbreak_Event_SpeakToTieflingsWarning",
+        "MOO_Jailbreak_Event_SpeakToGnomesWarning",
+        "MOO_Jailbreak_State_WulbrenAlerted"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "I have permission from Balthazar. Ask him.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Narrator",
+                  "text": "*Your association with Disciple Balthazar inspires respect and a touch of fear. You are free to speak to the prisoners.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "MOO_Jailbreak_State_WulbrenAlerted = False",
+                    "MOO_Jailbreak_State_WulbrenSuspicious",
+                    "MOO_Jailbreak_State_PrisonerInterogationAllowed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Narrator",
+                  "text": "*Your argument is dismissed. Only the Warden can grant such exceptions.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "7",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "What are the prisoners going to do? Talk me to death?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "Narrator",
+                  "text": "*Your reasoning is hard to argue with. You're free to speak to the prisoners.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "MOO_Jailbreak_State_WulbrenAlerted = False",
+                    "MOO_Jailbreak_State_WulbrenSuspicious",
+                    "MOO_Jailbreak_State_PrisonerInterogationAllowed"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "Narrator",
+                  "text": "*Your words fail to be convincing.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "Narrator",
+                      "text": "*You have been let off with a warning, but you will not be so lucky next time.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "My apologies - won't happen again.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "MOO_Jailbreak_Event_SpeakToTieflingsWarning"
+      ],
+      "setflags": [
+        "CRIME_FoundGuiltyPlayer",
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

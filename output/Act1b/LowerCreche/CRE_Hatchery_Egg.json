@@ -1,0 +1,360 @@
+{
+  "metadata": {
+    "synopsis": "The player inspects the egg, having never seen anything like it before. In addition to taking or destroying it, they can do a variety of other odd things with the egg - including commune with the unborn gith inside.",
+    "how_to_trigger": "Interacts with the unhatched egg in the hatchery."
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*A large green egg with an uneven shell.*",
+      "context": "",
+      "checkflags": [
+        "REALLY_GITHYANKI = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "16": {
+          "id": "16",
+          "speaker": "Narrator",
+          "text": "*You can see a vague outline of something within it.*",
+          "context": "CinematicNodeContext: Shot of the very alien-looking egg - enough to make your skin crawl JUST a little",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "8",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "18": {
+              "id": "18",
+              "speaker": "Player",
+              "text": "Reach out and touch the egg.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "Narrator",
+                  "text": "*The egg is warm to the touch, the rough shell like slate beneath your fingers.*",
+                  "context": "CinematicNodeContext: The player crouches and reaches out to touch the egg cautiously.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "Narrator",
+                      "text": "*Whatever is within is stirring ever so slightly.*",
+                      "context": "CinematicNodeContext: The player returns to their original standing position.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "speaker": "Player",
+              "text": "Pick it up gingerly and stow it in your pack.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_Hatchery_State_EggTaken"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: Picking up the egg itself takes place in gameplay",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "tagcinematic",
+                  "children": {}
+                }
+              }
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "Crush the egg beneath your foot.",
+              "context": "",
+              "checkflags": [
+                "CRE_Hatchery_State_AffectedByGas = False",
+                "REALLY_GITHYANKI = False"
+              ],
+              "setflags": [
+                "CRE_Hatchery_State_EggDestroyed"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Lae'zel -3",
+                "Gale -1",
+                "Wyll -1",
+                "Karlach -1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "8",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "",
+                  "text": "",
+                  "context": "CinematicNodeContext: The player lifts their foot and brings it down hard, smashing the egg to pieces. We see the VFX with the egg offscreen, similar to CRA_Escape_Mindflayer",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "8",
+                  "is_end": false,
+                  "node_type": "tagcinematic",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "ORI_Inclusion_Random"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "8",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "5": {
+                          "id": "5",
+                          "speaker": "Lae'zel",
+                          "text": "By Vlaakith's blade, what devil's got hold of you, that you'd slay an unborn?!",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_LAEZEL"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "9": {
+                          "id": "9",
+                          "speaker": "Shadowheart",
+                          "text": "Hells, was that really necessary? You almost got hatchling on me.",
+                          "context": "NodeContext: Annoyed. (player just smashed a gith egg)",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_SHADOWHEART"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "2": {
+                          "id": "2",
+                          "speaker": "Karlach",
+                          "text": "Whoa! What in the Hells is wrong with you?!",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_KARLACH"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "8": {
+                              "id": "8",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "CRE_Hatchery_State_HatcheryHostile",
+                                "ORI_Inclusion_End_Random"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "17": {
+                          "id": "17",
+                          "speaker": "Astarion",
+                          "text": "It's all over your foot! Oh that's disgusting.",
+                          "context": "NodeContext: Astarion just watched the player smash a gith egg with their foot.",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_ASTARION"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "6": {
+                          "id": "6",
+                          "speaker": "Wyll",
+                          "text": "Damn - you showed that egg who's boss. A real hero.",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_WYLL"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "14": {
+                          "id": "14",
+                          "speaker": "Gale",
+                          "text": "Right then. I do understand the rule about omelets and breaking eggs, but when there's more embryo than yolk involved... Well, ew.",
+                          "context": "",
+                          "checkflags": [
+                            "ORI_Inclusion_PickedAtRandom",
+                            "REALLY_GALE"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "8",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Player",
+              "text": "Leave the egg alone.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Narrator",
+      "text": "*A fine githyanki egg. At least on the outside.*",
+      "context": "",
+      "checkflags": [
+        "REALLY_GITHYANKI"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "16",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

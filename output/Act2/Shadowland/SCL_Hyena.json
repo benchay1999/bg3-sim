@@ -1,0 +1,1391 @@
+{
+  "metadata": {
+    "synopsis": "This hyena is full grown but acts more like a pup. He was raised by the goblins and tries his best to make them love him, but he is tormented by them constantly. He desperately wishes to flee but lacks the courage. Player can encourage him to stay or convince him to leave.",
+    "how_to_trigger": "Speak with the Hyena at SCL_Main_A (92; 51; -52)"
+  },
+  "dialogue": {
+    "14": {
+      "id": "14",
+      "speaker": "Hyena",
+      "text": "Please don't talk to me. Or the goblins will be mad.",
+      "context": "NodeContext: full of shame, scared the goblins will see",
+      "checkflags": [
+        "SCL_Hyena_State_Sad"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Hyena",
+      "text": "Leave me alone.",
+      "context": "NodeContext: sad and angry with the player",
+      "checkflags": [
+        "SCL_Hyena_State_Upset"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Hyena",
+      "text": "*Whimper.*",
+      "context": "NodeContext: player upset the hyena. He doesn't want to see the player.",
+      "checkflags": [
+        "SCL_Hyena_State_AnimalHandlingFailed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Hyena",
+      "text": "*Bark.*",
+      "context": "NodeContext: low, sad bark, not sure if player is friend or foe",
+      "checkflags": [
+        "SCL_Hyena_HasMet",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "50",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "Narrator",
+          "text": "*The hyena watches you, and the surrounding camp, with eyes burdened by fear. He appears terrified.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "50",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "53": {
+              "id": "53",
+              "speaker": "Player",
+              "text": "Examine the animal.",
+              "context": "",
+              "checkflags": [
+                "19c0fac1-22da-332f-a8ec-4dca8dc35951_examinedhyena = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "50",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "36": {
+                  "id": "36",
+                  "speaker": "Narrator",
+                  "text": "*Judging by his bowed head, fearful nature, and underweight physique, this hyena is being abused by his goblin owners.*",
+                  "context": "CinematicNodeContext: head down",
+                  "checkflags": [],
+                  "setflags": [
+                    "19c0fac1-22da-332f-a8ec-4dca8dc35951_examinedhyena"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "57": {
+              "id": "57",
+              "speaker": "Player",
+              "text": "Hold out your hand, letting it sniff.",
+              "context": "",
+              "checkflags": [
+                "SCL_Hyena_State_AnimalHandlingFailed = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "50",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "64": {
+                  "id": "64",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "50",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "61": {
+                      "id": "61",
+                      "speaker": "Narrator",
+                      "text": "*The hyena brightens, cautiously pleased.*",
+                      "context": "CinematicNodeContext: The hyena's posture is happier",
+                      "checkflags": [],
+                      "setflags": [
+                        "SCL_Hyena_State_AnimalHandlingSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "50",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "40": {
+                          "id": "40",
+                          "speaker": "Player",
+                          "text": "Do you want to be here, boy? If not, you should get out of here. Go on! Go!",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_EntryPoint_Event_HyenaGoblinScene = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "50",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "44": {
+                              "id": "44",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "59": {
+                                  "id": "59",
+                                  "speaker": "Narrator",
+                                  "text": "*For a moment, it appears the hyena's fear is too great, but then...*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "48": {
+                                      "id": "48",
+                                      "speaker": "Hyena",
+                                      "text": "*Bark!*",
+                                      "context": "NodeContext: big, cheerful bark",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "5": {
+                                          "id": "5",
+                                          "speaker": "Narrator",
+                                          "text": "*His voice is filled with determination as he prepares to flee - thankful to have found you, a friend.*",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "SCL_Hyena_Event_Flees"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "67": {
+                              "id": "67",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "Narrator",
+                                  "text": "*The creature cowers, too afraid to move.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "37": {
+                          "id": "37",
+                          "speaker": "Player",
+                          "text": "You deserve to be out in the wild, not abused by goblins. Go on - go!",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_EntryPoint_Event_HyenaGoblinScene = False",
+                            "19c0fac1-22da-332f-a8ec-4dca8dc35951_examinedhyena"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "50",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "31": {
+                          "id": "31",
+                          "speaker": "Player",
+                          "text": "You deserve to be out in the wild, not tormented by a goblin with a bone. Go on - go!",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_EntryPoint_Event_HyenaGoblinScene",
+                            "19c0fac1-22da-332f-a8ec-4dca8dc35951_examinedhyena = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "50",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "50": {
+                              "id": "50",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "40",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "49": {
+                          "id": "49",
+                          "speaker": "Player",
+                          "text": "You deserve to be out in the wild, not tormented by a goblin with a bone. Go on - go!",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_EntryPoint_Event_HyenaGoblinScene",
+                            "19c0fac1-22da-332f-a8ec-4dca8dc35951_examinedhyena"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "50",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "4": {
+                          "id": "4",
+                          "speaker": "Player",
+                          "text": "Get out of here, or I'll beat you senseless - stupid mutt.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "24": {
+                              "id": "24",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "3": {
+                                  "id": "3",
+                                  "speaker": "Narrator",
+                                  "text": "*He flees, more terrified of you than the goblins.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "SCL_Hyena_Event_Flees"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "39": {
+                              "id": "39",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "67",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "66": {
+                          "id": "66",
+                          "speaker": "Player",
+                          "text": "You'll be a good boy for the Absolute, won't you?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "9": {
+                              "id": "9",
+                              "speaker": "Hyena",
+                              "text": "*Bark.*",
+                              "context": "NodeContext: half hearted bark - clearly sad but attempts a tail wag",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "26": {
+                          "id": "26",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "62",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "28": {
+                  "id": "28",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "13": {
+                      "id": "13",
+                      "speaker": "Narrator",
+                      "text": "*The hyena shirks from you, afraid.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "SCL_Hyena_State_AnimalHandlingFailed"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "62": {
+              "id": "62",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "30": {
+      "id": "30",
+      "speaker": "Hyena",
+      "text": "*Yip.*",
+      "context": "CinematicNodeContext: sad whine but tries to raise his head to greet the player\rNodeContext: sad whine but tries to raise his head to greet the player",
+      "checkflags": [
+        "SCL_Hyena_State_AnimalHandlingSuccess",
+        "PETPAL = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "69": {
+      "id": "69",
+      "speaker": "Hyena",
+      "text": "*Whine.* I don't know your smell.",
+      "context": "NodeContext: unsure if player will hurt them or not",
+      "checkflags": [
+        "SCL_Hyena_HasMet_SpeakWithAnimals = False",
+        "PETPAL"
+      ],
+      "setflags": [
+        "SCL_Hyena_HasMet_SpeakWithAnimals"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "42",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "34": {
+          "id": "34",
+          "speaker": "Hyena",
+          "text": "Are - are you a friend?",
+          "context": "NodeContext: small sad voice, afraid he'll be beaten",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "42",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "Depends. Why are you here all alone?",
+              "context": "",
+              "checkflags": [
+                "SCL_Drider_Event_StartCaravanEscort",
+                "SCL_Drider_State_WaitAtCaravanStart = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "42",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Hyena",
+                  "text": "The goblins left me behind. I'm a bad hyena.",
+                  "context": "NodeContext: full of shame",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "42",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "Hyena",
+                      "text": "They beat me because I am weak. Because I am soft. Even though I try my best.",
+                      "context": "NodeContext: full of shame and sadness. He feels like he deserves it.",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "42",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "11": {
+                          "id": "11",
+                          "speaker": "Player",
+                          "text": "You belong to the wild, little one. Go and be free.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [
+                            "DRUID",
+                            "RANGER"
+                          ],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "42",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "77": {
+                              "id": "77",
+                              "speaker": "",
+                              "text": "True",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "42",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "17": {
+                                  "id": "17",
+                                  "speaker": "Hyena",
+                                  "text": "But - but the goblins said I must stay here. Or they'll cut me. Kill me.",
+                                  "context": "NodeContext: player is trying to convince hyena to leave. He want to but he's terrified of the goblins",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "42",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "0": {
+                                      "id": "0",
+                                      "speaker": "Player",
+                                      "text": "You are a hunter, like me - swift and true. They'll never catch you.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "RANGER"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "42",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "18": {
+                                          "id": "18",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "45": {
+                                              "id": "45",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "52",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "42": {
+                                          "id": "42",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "60": {
+                                              "id": "60",
+                                              "speaker": "Hyena",
+                                              "text": "No, no it's too risky. I can't - I can't.",
+                                              "context": "NodeContext: terrified and upset",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "SCL_Hyena_State_Sad"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [
+                                                "Astarion -1",
+                                                "Shadowheart -1"
+                                              ],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "47": {
+                                      "id": "47",
+                                      "speaker": "Player",
+                                      "text": "If not now, when? Go on - while you still can.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "42",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "65": {
+                                          "id": "65",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "52",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "73": {
+                                              "id": "73",
+                                              "speaker": "Hyena",
+                                              "text": "You're right. The goblins are cruel.",
+                                              "context": "NodeContext: sad but determined",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "52",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "46": {
+                                      "id": "46",
+                                      "speaker": "Player",
+                                      "text": "I'll slit their necks if they so much as try.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "22",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    },
+                                    "6": {
+                                      "id": "6",
+                                      "speaker": "Player",
+                                      "text": "Let them try - I am nature's guardian. And I will not back down.",
+                                      "context": "",
+                                      "checkflags": [
+                                        "DRUID"
+                                      ],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "22": {
+                                          "id": "22",
+                                          "speaker": "",
+                                          "text": "True",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "51": {
+                                              "id": "51",
+                                              "speaker": "Hyena",
+                                              "text": "You would fight the goblins? For me?",
+                                              "context": "NodeContext: shock - no one has ever stood up for him before",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "52": {
+                                                  "id": "52",
+                                                  "speaker": "Hyena",
+                                                  "text": "I - I'm scared. But I don't want them to hurt me anymore. Maybe I should go...",
+                                                  "context": "NodeContext: scared but growing more confident",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "15": {
+                                                      "id": "15",
+                                                      "speaker": "Hyena",
+                                                      "text": "Thank you. Goodbye, new friend.",
+                                                      "context": "NodeContext: summon his courage - he's about to run away but not before he thanks his new friend",
+                                                      "checkflags": [],
+                                                      "setflags": [
+                                                        "SCL_Hyena_Event_Flees"
+                                                      ],
+                                                      "ruletags": [],
+                                                      "approval": [
+                                                        "Astarion 1",
+                                                        "Lae'zel 1",
+                                                        "Wyll 1",
+                                                        "Karlach 1",
+                                                        "Halsin 1"
+                                                      ],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": true,
+                                                      "node_type": "normal",
+                                                      "children": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "32": {
+                                          "id": "32",
+                                          "speaker": "",
+                                          "text": "False",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "rollresult",
+                                          "children": {
+                                            "35": {
+                                              "id": "35",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "60",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "7": {
+                                      "id": "7",
+                                      "speaker": "Player",
+                                      "text": "Fine. Stay here then.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "41": {
+                                          "id": "41",
+                                          "speaker": "Hyena",
+                                          "text": "Sorry...",
+                                          "context": "CinematicNodeContext: head down, utterly dejected\rNodeContext: heartwrencingly sad. Head down, dejected.",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "SCL_Hyena_State_Sad"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [
+                                            "Astarion -1",
+                                            "Shadowheart -1"
+                                          ],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "56": {
+                              "id": "56",
+                              "speaker": "",
+                              "text": "False",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "rollresult",
+                              "children": {
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Hyena",
+                                  "text": "No, no, they're trying to help me - you're the problem! Get away!",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "SCL_Hyena_State_Upset"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "33": {
+                          "id": "33",
+                          "speaker": "Player",
+                          "text": "You belong to the wild, not to the goblins. Go and be free.",
+                          "context": "",
+                          "checkflags": [
+                            "RANGER = False",
+                            "DRUID = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "77",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "72": {
+                          "id": "72",
+                          "speaker": "Player",
+                          "text": "Fight back. Hurt the goblins like they hurt you.",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_Drider_Event_StartCaravanEscort = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "20",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "29": {
+                          "id": "29",
+                          "speaker": "Player",
+                          "text": "Without the goblins here, you can do whatever you want.",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_Drider_Event_StartCaravanEscort",
+                            "SCL_Drider_State_WaitAtCaravanStart = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "54": {
+                              "id": "54",
+                              "speaker": "Hyena",
+                              "text": "I could never! I do what the goblins tell me - I want to be a good hyena.",
+                              "context": "NodeContext: surprised - really wants the goblins approval",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "2": {
+                          "id": "2",
+                          "speaker": "Player",
+                          "text": "You deserve to be beaten. I've never met such a weakling.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "8": {
+                              "id": "8",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "68",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "74": {
+              "id": "74",
+              "speaker": "Player",
+              "text": "Of course I am.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "21",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "58": {
+                  "id": "58",
+                  "speaker": "Hyena",
+                  "text": "That makes me happy. I like the goblins, but the goblins... don't like me.",
+                  "context": "NodeContext: happy in the first half and then sadness and shame in the rest",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "70": {
+              "id": "70",
+              "speaker": "Player",
+              "text": "I'm more of a friend than the goblin with the bone. You know he tried to kill you?",
+              "context": "",
+              "checkflags": [
+                "SCL_EntryPoint_Event_HyenaGoblinScene"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "21",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "43": {
+                  "id": "43",
+                  "speaker": "Hyena",
+                  "text": "He... he did? Then I must have been bad.",
+                  "context": "NodeContext: player has told hyena one of the goblins tried to kill him. Full of shame.",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "38": {
+              "id": "38",
+              "speaker": "Player",
+              "text": "What's this sad act? You're a predator.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "21",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "Hyena",
+                  "text": "The goblins say I can't be a predator.",
+                  "context": "NodeContext: full of shame",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "21",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "55": {
+              "id": "55",
+              "speaker": "Player",
+              "text": "I could never be friends with such a pathetic creature.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "68": {
+                  "id": "68",
+                  "speaker": "Hyena",
+                  "text": "Oh...",
+                  "context": "CinematicNodeContext: head down, utterly dejected\rNodeContext: heartwrencingly sad. Head down, dejected.",
+                  "checkflags": [],
+                  "setflags": [
+                    "SCL_Hyena_State_Upset"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "75": {
+              "id": "75",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "71": {
+      "id": "71",
+      "speaker": "Hyena",
+      "text": "You came back? Am I - are you a friend?",
+      "context": "NodeContext: cheerful, almost pup like",
+      "checkflags": [
+        "SCL_Hyena_HasMet_SpeakWithAnimals",
+        "PETPAL"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "23",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "63": {
+          "id": "63",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "34",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "76": {
+      "id": "76",
+      "speaker": "Hyena",
+      "text": "*Whine.*",
+      "context": "CinematicNodeContext: low head, not sure if player is going to be mean to him or not",
+      "checkflags": [
+        "SCL_Hyena_HasMet = False",
+        "PETPAL = False"
+      ],
+      "setflags": [
+        "SCL_Hyena_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "23",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

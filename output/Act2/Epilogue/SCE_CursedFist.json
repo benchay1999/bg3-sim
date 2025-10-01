@@ -1,0 +1,1385 @@
+{
+  "metadata": {
+    "synopsis": "This covers arts three states 1) Thaniel is dead, which means the curse cannot be lifted [he is heartbroken and grieving] 2) the curse quest is in progress, and Thaniel hasn't been saved yet [he's worried for thaniel and frantic] and 3) curse has been lifted and Thaniel is safe [Art is grateful and contemplative, but also a little reserved - he knows he's going to die soon]",
+    "how_to_trigger": "Cure Art Cullagh in Haven or use oe SCE_CureArtCullagh"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Art Cullagh",
+      "text": "Thank you, my friend. Maybe we'll meet again, in another life.",
+      "context": "",
+      "checkflags": [
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored",
+        "SCE_AncientFist_ToldStory"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Art Cullagh",
+      "text": "Don't worry about me, please focus on saving Thaniel.",
+      "context": "",
+      "checkflags": [
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored = False",
+        "GLO_LiftingtheCurse_State_ThanielReleased",
+        "SCE_AncientFist_HasMet_Epilogue"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Art Cullagh",
+      "text": "Thaniel...",
+      "context": "",
+      "checkflags": [
+        "HAV_LiftingTheCurse_State_HalsinInShadowfell",
+        "SCE_AncientFist_HasMet_Epilogue"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "23": {
+      "id": "23",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAV_LiftingTheCurse_State_HalsinAtLakeside",
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored = False",
+        "SCE_AncientFist_HasMet_Epilogue"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GLO_LiftingtheCurse_State_ThanielReleased",
+        "SCE_AncientFist_HasMet_Epilogue = False"
+      ],
+      "setflags": [
+        "SCE_AncientFist_HasMet_Epilogue"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "38",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "35": {
+          "id": "35",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "38",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "31": {
+      "id": "31",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAV_LiftingTheCurse_State_HalsinWaitingInCamp",
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored = False",
+        "SCE_AncientFist_HasMet_Epilogue"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "38": {
+      "id": "38",
+      "speaker": "Art Cullagh",
+      "text": "Any word on Thaniel? And the curse?",
+      "context": "",
+      "checkflags": [
+        "HAV_LiftingTheCurse_State_HalsinWaitingInCamp",
+        "SCE_AncientFist_HasMet_Epilogue = False"
+      ],
+      "setflags": [
+        "SCE_AncientFist_HasMet_Epilogue"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "64",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "59": {
+          "id": "59",
+          "speaker": "Player",
+          "text": "I just killed Ketheric and this is all you have to say?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Astarion 1",
+            "Lae'zel 1",
+            "Halsin -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "64",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "27": {
+              "id": "27",
+              "speaker": "Art Cullagh",
+              "text": "Sorry, I didn't mean - I'm just worried.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "71": {
+                  "id": "71",
+                  "speaker": "Art Cullagh",
+                  "text": "Please, - I don't know how much longer Thaniel can last in the Shadowfell. Help him - and hurry.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "66": {
+          "id": "66",
+          "speaker": "Player",
+          "text": "Last I saw you were bed-bound. How did you make it here?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "64",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "HAV_HavenOutcasts_State_FlamingFistsInHaven"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "64",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "Art Cullagh",
+                  "text": "Duke Eltan would be proud of what the order has become. A pity they cannot spare the resources to help you with Thaniel.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "77": {
+              "id": "77",
+              "speaker": "Art Cullagh",
+              "text": "With great difficulty. Even after all that rest, I... don't seem to be getting better.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "43": {
+                  "id": "43",
+                  "speaker": "Art Cullagh",
+                  "text": "And Thaniel has been trapped in that cursed darkness even longer than I. Please, help him. Please.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "48": {
+          "id": "48",
+          "speaker": "Player",
+          "text": "I'm working on it.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "49": {
+              "id": "49",
+              "speaker": "Art Cullagh",
+              "text": "Please, hurry. I don't know how much longer Thaniel can last.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "44": {
+      "id": "44",
+      "speaker": "Art Cullagh",
+      "text": "When Duke Eltan formed the Flaming Fist, he sought out people of courage and honour to fill its ranks.",
+      "context": "",
+      "checkflags": [
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored",
+        "SCE_AncientFist_ToldStory = False"
+      ],
+      "setflags": [
+        "SCE_AncientFist_ToldStory"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "47",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "14": {
+          "id": "14",
+          "speaker": "Art Cullagh",
+          "text": "You saved Thaniel, lifted the curse, and killed an immortal.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "47",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "52": {
+              "id": "52",
+              "speaker": "Art Cullagh",
+              "text": "It's safe to say, you'd have been recruited in an instant.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "47",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "34": {
+                  "id": "34",
+                  "speaker": "Player",
+                  "text": "Thank you - it would have been an honour to serve under Duke Eltan.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "47",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "67": {
+                      "id": "67",
+                      "speaker": "Art Cullagh",
+                      "text": "Of course, I have no idea what life is like under Duke Ravengard's rule.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "47",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "78": {
+                  "id": "78",
+                  "speaker": "Player",
+                  "text": "The Flaming Fist are nothing but mercenaries now. Immoral ones at that.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "53",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "Art Cullagh",
+                      "text": "Maybe. I don't know what this Duke Ravengard is like.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "53",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "47": {
+                          "id": "47",
+                          "speaker": "Art Cullagh",
+                          "text": "But I've seen the respect he inspires in the Flaming Fist - and that tells me all I need about him as a leader.",
+                          "context": "",
+                          "checkflags": [
+                            "HAV_HavenOutcasts_State_FlamingFistsInHaven"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "53",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "54": {
+                              "id": "54",
+                              "speaker": "Art Cullagh",
+                              "text": "I hope you can save Duke Ravengard - for the good of Baldur's Gate.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "53",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "75": {
+                                  "id": "75",
+                                  "speaker": "Player",
+                                  "text": "Come with me - I could use a Flaming Fist by my side.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "53",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "72": {
+                                      "id": "72",
+                                      "speaker": "Art Cullagh",
+                                      "text": "Thank you, but look at me - I am a relic: a glimpse of history barely strong enough to stand on his own two feet.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "53",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "57": {
+                                          "id": "57",
+                                          "speaker": "Art Cullagh",
+                                          "text": "Besides - Thaniel should have someone here when he wakes up. It's the least I can do.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "53",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "1": {
+                                  "id": "1",
+                                  "speaker": "Player",
+                                  "text": "What about you?",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "26",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "24": {
+                                      "id": "24",
+                                      "speaker": "Art Cullagh",
+                                      "text": "When this land fell to the curse, I should have gone with it - Thaniel is the only reason I survived.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "26",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "10": {
+                                          "id": "10",
+                                          "speaker": "Art Cullagh",
+                                          "text": "It's only fair I stay here and wait for him to awaken.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "26",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "53": {
+                                              "id": "53",
+                                              "speaker": "Player",
+                                              "text": "Then I wish you luck. Thank you for your help.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [
+                                                "Gale 1",
+                                                "Wyll 1",
+                                                "Karlach 1",
+                                                "Halsin 1"
+                                              ],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "26",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "22": {
+                                                  "id": "22",
+                                                  "speaker": "Art Cullagh",
+                                                  "text": "You too, my friend. Thank you - from Thaniel and I.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            },
+                                            "55": {
+                                              "id": "55",
+                                              "speaker": "Player",
+                                              "text": "Once we leave, this place will be pretty empty. Will you be all right?",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "26",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "6": {
+                                                  "id": "6",
+                                                  "speaker": "Art Cullagh",
+                                                  "text": "You don't have to worry about me.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "26": {
+                                                      "id": "26",
+                                                      "speaker": "Art Cullagh",
+                                                      "text": "The truth is... the Shadowfell broke something inside me - something no healer can fix. I don't know how long I have.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "41": {
+                                                          "id": "41",
+                                                          "speaker": "Art Cullagh",
+                                                          "text": "But - because of you, Thaniel is safe. Because of you, I could help him, as he helped me. So thank you, my friend, and know that I have no regrets.",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": true,
+                                                          "node_type": "normal",
+                                                          "children": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "45": {
+                                              "id": "45",
+                                              "speaker": "Player",
+                                              "text": "And after Thaniel awakens?",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "26",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "69": {
+                                                  "id": "69",
+                                                  "speaker": "Art Cullagh",
+                                                  "text": "I don't think there will be an after.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "26",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "39": {
+                                  "id": "39",
+                                  "speaker": "Player",
+                                  "text": "I have enough to deal with - some useless duke isn't my problem.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "32": {
+                                      "id": "32",
+                                      "speaker": "Art Cullagh",
+                                      "text": "I can't make you - nor can I go in your place. In truth... I do not know how much longer I will live. The Shadowfell's damage runs deep I fear.",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "9": {
+                                          "id": "9",
+                                          "speaker": "Art Cullagh",
+                                          "text": "So consider this a dying man's wish. Help Duke Ravengard... save the city. Please.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "76": {
+                          "id": "76",
+                          "speaker": "Art Cullagh",
+                          "text": "But the Flaming Fist are the cornerstone of the city, and the Dukes are the foundation.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "54",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "11": {
+                  "id": "11",
+                  "speaker": "Player",
+                  "text": "How did you make it here?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "74",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "64": {
+                      "id": "64",
+                      "speaker": "Art Cullagh",
+                      "text": "A Flaming Fist - a novice, actually. She dropped everything to make sure I made it here safe.",
+                      "context": "",
+                      "checkflags": [
+                        "HAV_HavenOutcasts_State_FlamingFistsInHaven"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "74",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "42": {
+                          "id": "42",
+                          "speaker": "Art Cullagh",
+                          "text": "I heard about Duke Ravengard capture. If his soldiers are anything to go by, he is a man to admire and respect.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "74",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "68": {
+                              "id": "68",
+                              "speaker": "Art Cullagh",
+                              "text": "I hope you can save him - for the good of Baldur's Gate.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "74",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "20": {
+                      "id": "20",
+                      "speaker": "Art Cullagh",
+                      "text": "Luck and stubbornness. I'm still weak, so the walk took... longer than I'd like to admit. But my health can wait.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "Art Cullagh",
+                          "text": "I heard about the Dead Three. And, more importantly, Duke Ravengard.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "28": {
+                              "id": "28",
+                              "speaker": "Art Cullagh",
+                              "text": "The Flaming Fist are the cornerstone of Baldur's Gate - and the Dukes are its foundation. I hope you can save him.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "74": {
+                                  "id": "74",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "54",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "36": {
+                  "id": "36",
+                  "speaker": "Player",
+                  "text": "What about the Flaming Fist you've met here? What do you think of them?",
+                  "context": "",
+                  "checkflags": [
+                    "HAV_HavenOutcasts_State_FlamingFistsInHaven"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "56": {
+                      "id": "56",
+                      "speaker": "Art Cullagh",
+                      "text": "They are... different to what Duke Eltan envisioned.  And I can't comment on Duke Ravengard himself.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "12",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "30": {
+                  "id": "30",
+                  "speaker": "Player",
+                  "text": "I grew up hearing stories of Duke Eltan - I'm curious about what he was like.",
+                  "context": "",
+                  "checkflags": [
+                    "BALDURIAN"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "51": {
+                      "id": "51",
+                      "speaker": "Art Cullagh",
+                      "text": "Gruff. And intimidating. But he had the courage of ten men - and a love for Baldur's Gate few could match.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "19": {
+                          "id": "19",
+                          "speaker": "Art Cullagh",
+                          "text": "I don't know if this Duke Ravengard is the same, but I will say this - the Flaming Fist are the cornerstone of the city, and the Dukes are its foundation.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "21": {
+                              "id": "21",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "68",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "46": {
+      "id": "46",
+      "speaker": "Art Cullagh",
+      "text": "He's gone, I can feel it.",
+      "context": "NodeContext: distant, heartbroken",
+      "checkflags": [
+        "HAV_LiftingTheCurse_State_HalsinInShadowfell",
+        "SCE_AncientFist_HasMet_Epilogue = False"
+      ],
+      "setflags": [
+        "SCE_AncientFist_HasMet_Epilogue"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "18",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "62": {
+          "id": "62",
+          "speaker": "Art Cullagh",
+          "text": "Thaniel is gone... and with him, any chance of breaking the curse.",
+          "context": "NodeContext: distant, heartbroken",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "73": {
+              "id": "73",
+              "speaker": "Player",
+              "text": "Surely there's something we can still do.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "18",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "58": {
+                  "id": "58",
+                  "speaker": "Art Cullagh",
+                  "text": "No. When I first awoke, I felt him. Here. But that's faded.",
+                  "context": "NodeContext: touches heart on 'hear' , sad and distant",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "18",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "Player",
+              "text": "You're alive - isn't that something to be grateful about?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "18",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "33": {
+                  "id": "33",
+                  "speaker": "Art Cullagh",
+                  "text": "I am, please don't mistake that. But saving me was in vain.",
+                  "context": "NodeContext: sad, grrieving",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "18",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "40": {
+              "id": "40",
+              "speaker": "Player",
+              "text": "I beat Ketheric - that's something.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Art Cullagh",
+                  "text": "Ketheric was never my concern - I wanted to help Thaniel.",
+                  "context": "NodeContext: sad, grrieving",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "18": {
+                      "id": "18",
+                      "speaker": "Art Cullagh",
+                      "text": "My friend is gone - lost to the darkness. And I... I think I am too. I feel it - deep inside.",
+                      "context": "NodeContext: heartbroken - he knows he's going to die soon",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "29",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "61": {
+                          "id": "61",
+                          "speaker": "Player",
+                          "text": "What are you talking about?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "70": {
+                              "id": "70",
+                              "speaker": "Art Cullagh",
+                              "text": "I didn't want to tell you in Last Light, but the Shadowfell... broke something in me - something no healer can fix.",
+                              "context": "NodeContext: a sad smile and shrug - he knows he's going to die",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Art Cullagh",
+                                  "text": "I hoped to save Thaniel, as he saved me. But it was all for nothing.",
+                                  "context": "NodeContext: sad and grieving",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "29": {
+                                      "id": "29",
+                                      "speaker": "Art Cullagh",
+                                      "text": "Thank you, for trying to help us. I'm sure Thaniel would feel the same - wherever he is now.",
+                                      "context": "NodeContext: sad and grieving",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "normal",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "37": {
+                          "id": "37",
+                          "speaker": "Player",
+                          "text": "I'm sorry.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "29",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "60": {
+                              "id": "60",
+                              "speaker": "Art Cullagh",
+                              "text": "Don't be. The Shadowfell claims everyone in the end - it just took its time with me.",
+                              "context": "NodeContext: a sad smile",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "29",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "65": {
+                          "id": "65",
+                          "speaker": "Player",
+                          "text": "I never really cared about Thaniel anyway.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "50": {
+                              "id": "50",
+                              "speaker": "Art Cullagh",
+                              "text": "I did.",
+                              "context": "NodeContext: sad and grieving",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "63": {
+      "id": "63",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAV_LiftingTheCurse_State_HalsinAtLakeside",
+        "SCE_AncientFist_HasMet_Epilogue = False"
+      ],
+      "setflags": [
+        "SCE_AncientFist_HasMet_Epilogue"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "38",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

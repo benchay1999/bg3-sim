@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "synopsis": "This well sits just outside of the hag's teahouse. When the player drinks from it, they feel a rush of power and gain a positive status (regardless of whether the illusion is up or down). However, once they enter combat with the hag, it turns to poison in their veins.",
+    "how_to_trigger": "From crash site:teleport S_HAG_Wellclick on welloe hagblight for no illusion path"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*Fresh, sweet-smelling water gurgles gently below.*",
+      "context": "NodeContext: Soft and idyllic description of the well",
+      "checkflags": [
+        "HAG_ForestIllusion_Event_DropIllusion = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Drink from the well.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Narrator",
+              "text": "*The warm rush of power flows through you. You feel stronger, faster - better.*",
+              "context": "NodeContext: Occurs after drinking from the well",
+              "checkflags": [
+                "HAG_Well_Event_WellPoisoned = False"
+              ],
+              "setflags": [
+                "HAG_Well_Event_DrinkWell"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Gale 1",
+                "Lae'zel 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*A cloying rot jams in your throat. All you can taste is bile.*",
+              "context": "NodeContext: This occurs if the player is already poisoned. They become even weaker.",
+              "checkflags": [
+                "HAG_Well_Event_WellPoisoned"
+              ],
+              "setflags": [
+                "HAG_Well_Event_DrinkWell"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Shadowheart -1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "*A fetid smell assaults your nostrils. Dead flesh lies below - a great deal of it.*",
+      "context": "NodeContext: The well is disgusting and well",
+      "checkflags": [
+        "HAG_ForestIllusion_Event_DropIllusion"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "2",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    }
+  }
+}

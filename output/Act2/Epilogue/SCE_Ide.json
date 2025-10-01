@@ -1,0 +1,473 @@
+{
+  "metadata": {
+    "synopsis": "Ide is frustrated by Alfira's attempts to cheer her and the other tiefling kids up - she's more worried about Mol (who is missing).",
+    "how_to_trigger": "1. Run oe SCE_TieflingFollowUp_SetFlags2. Run oe SCE_SetupDebrief3. Click through the Jaheira/Florrick dialogue4. Run:oe SCE_TieflingFollowUp_AllTieflings-or-oe SCE_TieflingFollowUp_NoCerys-or-oe SCE_TieflingFollowUp_NoAlfiraAdd eyepatch with: oe SCE_TieflingFollowUp_AddEyepatch"
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Ide",
+      "text": "Mattis'll get us to Baldur's Gate - I know it. And Mol'll be there!",
+      "context": "NodeContext: Confident - almost forced brightness on the last sentence (she's worried Mol might not be there)",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet",
+        "SCE_BackupLeader_State_Dead",
+        "SCE_BackupLeader_State_AtEpilogue"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Ide",
+      "text": "If Mol were here, she'd have cracked Ketheric's skull before you even got close to him.",
+      "context": "NodeContext: false bravado",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet",
+        "DEN_TieflingBard_State_Unavailable"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Ide",
+      "text": "Gha sha chydd! Leave us alone!",
+      "context": "InternalNodeContext: gah shah CHID (means \"Go to Hell\")\rNodeContext: Angry",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Knows_MolMissingEyepatch",
+        "SCE_TieflingFollowUp_Knows_MeanAboutMol"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Ide",
+      "text": "Now you've smashed Ketheric, Mattis said it's safe to go to Baldur's Gate - thank you!",
+      "context": "NodeContext: Excited",
+      "checkflags": [
+        "SCE_BackupLeader_State_Dead",
+        "SCE_BackupLeader_State_AtEpilogue"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Ide",
+      "text": "When did singing ever save anyone anyway?",
+      "context": "NodeContext: Sad",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_TieflingBard_State_ConvincedToQuit",
+        "COL_NecromancerLab_HasItem_MolEyepatch"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "19": {
+          "id": "19",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_TieflingBard_State_ConvincedToQuit"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Ide",
+      "text": "You did it! You squished Ketheric! I knew you could do it - even if Mol said you couldn't.",
+      "context": "NodeContext: Excited/congratulatory (a little quieter on the bit after the - though)",
+      "checkflags": [
+        "DEN_TieflingBard_State_Unavailable"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "12": {
+      "id": "12",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_TieflingBard_State_Unavailable",
+        "COL_NecromancerLab_HasItem_MolEyepatch"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Ide",
+      "text": "Alfira's writing us a song - a stupid song won't bring Mol back! Tell her, won't you?",
+      "context": "NodeContext: Irritated/sad",
+      "checkflags": [],
+      "setflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "COL_NecromancerLab_HasItem_MolEyepatch"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "Player",
+          "text": "I found Mol's eyepatch.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Ide",
+              "text": "This is Mol's... Where did you find it?",
+              "context": "NodeContext: Almost accusatory",
+              "checkflags": [],
+              "setflags": [
+                "SCE_TieflingFollowUp_Knows_MolMissingEyepatch"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Player",
+                  "text": "Somewhere unpleasant. But I didn't see Mol - she's probably safe somewhere.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [
+                    "Astarion -1",
+                    "Lae'zel -1",
+                    "Gale 1",
+                    "Wyll 1",
+                    "Karlach 1",
+                    "Minthara 1",
+                    "Halsin 1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "2": {
+                      "id": "2",
+                      "speaker": "Ide",
+                      "text": "'Course she is! You hang onto that - I bet Mol'll be angry at you for touching her stuff.",
+                      "context": "NodeContext: Defiant but secretly a little relieved - she's glad the player didn't say Mol was dead",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "18": {
+                  "id": "18",
+                  "speaker": "Player",
+                  "text": "In a place filled with death. Mol's gone - I'm sorry.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "17": {
+                      "id": "17",
+                      "speaker": "Ide",
+                      "text": "Just because you found that somewhere spooky doesn't mean she's dead - you'll see!",
+                      "context": "NodeContext: Clearly somewhat upset but defiant",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "22": {
+                  "id": "22",
+                  "speaker": "Player",
+                  "text": "What does it matter? Your friend's dead anyway.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [
+                    "Astarion 1",
+                    "Lae'zel 1",
+                    "Gale -1",
+                    "Shadowheart 1",
+                    "Wyll -1",
+                    "Karlach -1",
+                    "Minthara 1",
+                    "Halsin -1"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Ide",
+                      "text": "And I bet you'll be dead in a ditch before you even smell Baldur's Gate! Go away!",
+                      "context": "NodeContext: Anger jostling with upset at the implication of her friend's death",
+                      "checkflags": [],
+                      "setflags": [
+                        "SCE_TieflingFollowUp_Knows_MeanAboutMol"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Say nothing.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet",
+        "DEN_TieflingBard_State_ConvincedToQuit"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "21": {
+      "id": "21",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SCE_BackupLeader_State_Dead",
+        "SCE_BackupLeader_State_AtEpilogue",
+        "COL_NecromancerLab_HasItem_MolEyepatch"
+      ],
+      "setflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Ide",
+      "text": "Mol's probably already at Baldur's Gate - she'll tell you where to stick that eyepatch when you get there.",
+      "context": "NodeContext: A little like she's convincing herself, then defiant after the -",
+      "checkflags": [
+        "SCE_TieflingFollowUp_Ide_HasMet",
+        "SCE_TieflingFollowUp_Knows_MolMissingEyepatch"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

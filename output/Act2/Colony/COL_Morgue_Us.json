@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "synopsis": "Default dialogue with Us while they are in the Colony. Us is either locked in a cage in the Morgue, trying to sneak away from the Butcher, or thanking you for saving them, after which they will disappear.",
+    "how_to_trigger": "- Load up GustavDev/SCL_Main_A- \"goto 676 21 -74\" or \"oe COL_Butcher\" to get to the Colony Morgue- Use \"oe morgue_us\" to get Us into the cage here.- Talk to Us."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Us",
+      "text": "Friend! You found the helm!",
+      "context": "NodeContext: Recognition/excited ('helm' referencing their previous adventures to get to a nautiloid helm during the tutorial)",
+      "checkflags": [
+        "COL_Morgue_HasMet_Us = False"
+      ],
+      "setflags": [
+        "COL_Morgue_User_HasMet_Us"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "7",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Us",
+          "text": "We remember you well. You saved Us once. Perhaps you can do it again?",
+          "context": "NodeContext: Pleading",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Us",
+              "text": "They are not kind to Us here. We are different, they say. Aberrant.",
+              "context": "NodeContext: Pleading",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "7",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "0": {
+                  "id": "0",
+                  "speaker": "Us",
+                  "text": "They wish to repurpose Us - destroy what they cannot fix. Please, help Us escape harm!",
+                  "context": "NodeContext: Pleading",
+                  "checkflags": [],
+                  "setflags": [
+                    "COL_Morgue_HasMet_Us"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "7",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "8": {
+                      "id": "8",
+                      "speaker": "Player",
+                      "text": "I'll free you.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "7",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "Us",
+                          "text": "Oh, thank you, thank you! You are a good friend - no, more. Rescuer.",
+                          "context": "NodeContext: Relieved/grateful",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "12": {
+                      "id": "12",
+                      "speaker": "Player",
+                      "text": "Let me think about it.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "7",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "5": {
+                      "id": "5",
+                      "speaker": "Player",
+                      "text": "Not my concern.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "7": {
+                          "id": "7",
+                          "speaker": "Us",
+                          "text": "But we need your help! Friend is not kind. Friend is perhaps no friend at all...",
+                          "context": "NodeContext: Devastated",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Us",
+      "text": "We are loose, but not safe - time to flee!",
+      "context": "NodeContext: Urgent",
+      "checkflags": [
+        "COL_Morgue_State_UsFreed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Us",
+      "text": "We are free! Thank you, friend.",
+      "context": "NodeContext: Elated",
+      "checkflags": [
+        "COL_Morgue_State_UsSaved"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "Us",
+          "text": "But perils remain, near and far - better to stay together. You and Us - WE.",
+          "context": "NodeContext: Sincere. 'Let's team up'",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Us",
+              "text": "We will remain with you. Call Us, and we will be at your side.",
+              "context": "NodeContext: Sincere (will be available as a summon afterwards)",
+              "checkflags": [],
+              "setflags": [
+                "COL_Morgue_Event_ReceiveUsSavedReward"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Us",
+      "text": "Friend, help Us! Free Us!",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "COL_Morgue_User_HasMet_Us"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

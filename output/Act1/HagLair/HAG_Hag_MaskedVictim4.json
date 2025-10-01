@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "synopsis": "A victim of the hag, bound into her service for so long that their mind is almost completely lost. This one is wearing the Mask of Servitude and is brainwashed to serve the hag and her 'visitors'.",
+    "how_to_trigger": "- In ReCon, type these:(ClearGlobalOsirisFlag HAG_Hag_SummonedVictims) (SetGlobalOsirisFlag HAG_Hag_State_IsDead)- goto -326.88, 16.05, 561.47- speak to the Mask of Terror"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Mask of Terror",
+      "text": "Quiet, please. Auntie is resting.",
+      "context": "NodeContext: as if drugged - hushed voice",
+      "checkflags": [
+        "HAG_Hag_SummonedVictims"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "'Auntie' is dead - I killed her.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Mask of Terror",
+              "text": "Very droll, my friend. Most amusing.",
+              "context": "NodeContext:  a deranged but poltie butler",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Mask of Terror",
+                  "text": "Auntie cannot die.",
+                  "context": "NodeContext: sinister edge",
+                  "checkflags": [],
+                  "setflags": [
+                    "HAG_Hag_MaskedVictim4_HasMet"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Sleeping. Of course - everything's fine.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Mask of Terror",
+              "text": "Oh dear - I forgot to plump her pillows this morning!",
+              "context": "NodeContext: overexaggerated concern - a deranged but poltie butler",
+              "checkflags": [],
+              "setflags": [
+                "HAG_Hag_MaskedVictim4_HasMet"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "HAG_Hag_MaskedVictim4_HasMet"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Mask of Terror",
+      "text": "Did something happen to auntie? I can't feel her anymore.",
+      "context": "NodeContext: confused as if drugged, halting",
+      "checkflags": [
+        "HAG_Hag_SummonedVictims = False",
+        "HAG_Hag_State_IsDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Mask of Terror",
+      "text": "Are you here to see Auntie? Sorry the place is such a mess.",
+      "context": "NodeContext: curious, confused - brainwashed to serve the hag",
+      "checkflags": [
+        "HAG_Hag_SummonedVictims = False",
+        "HAG_Hag_State_IsDead = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Mask of Terror",
+      "text": "You should leave. Auntie isn't receiving guests just now.",
+      "context": "NodeContext: quietly apologetic, and slightly deranged",
+      "checkflags": [
+        "HAG_Hag_MaskedVictim4_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

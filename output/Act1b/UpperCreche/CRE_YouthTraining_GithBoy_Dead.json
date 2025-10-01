@@ -1,0 +1,712 @@
+{
+  "metadata": {
+    "synopsis": "The boy speaks about the situation the player encountered, and his knowledge of Orpheus.",
+    "how_to_trigger": "loadlevel CRE_Main_Ateleport S_CRE_GithBoykill GithBoy, killcombatoe debugbook > useful spells > speak with dead - debug > leaveuse spell.***for limit reached: oe Debug_SWD_LimitReached"
+  },
+  "dialogue": {
+    "21": {
+      "id": "21",
+      "speaker": "Narrator",
+      "text": "*The corpse does not stir. It will answer no more questions.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*The corpse regards you lifelessly.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "20",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "Player",
+          "text": "Who are you?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedBoysIdentity",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Youth Varrl",
+              "text": "Varrl... hatchling...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "Youth Varrl",
+                  "text": "...believer... in the true prince...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "16": {
+          "id": "16",
+          "speaker": "Player",
+          "text": "Who is the true prince?",
+          "context": "",
+          "checkflags": [
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedBoysIdentity",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "CRE_YouthTraining_Knows_BoyWasReadingOrpheus",
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_LearnedOrpheusTruePrince",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "24": {
+              "id": "24",
+              "speaker": "Youth Varrl",
+              "text": "Orpheus...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "25": {
+          "id": "25",
+          "speaker": "Player",
+          "text": "What happened to you?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "28": {
+              "id": "28",
+              "speaker": "Youth Varrl",
+              "text": "Refused to kill... punishment is death...",
+              "context": "",
+              "checkflags": [
+                "CRE_YouthTraining_State_BoyKilledIntentionallyByPlayer = False",
+                "CRE_YouthTraining_State_BoyKilledAccidentallyByPlayer = False"
+              ],
+              "setflags": [
+                "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedWhatHappened"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "7": {
+              "id": "7",
+              "speaker": "Youth Varrl",
+              "text": "Refused to kill... cut down by stranger...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "26": {
+          "id": "26",
+          "speaker": "Player",
+          "text": "About that. My friend wants to apologise. For killing you.",
+          "context": "",
+          "checkflags": [
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedWhatHappened",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "CRE_YouthTraining_State_BoyKilledIntentionallyByPlayer"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "20",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "About that. My friend wants to apologise. For accidentally killing you.",
+          "context": "",
+          "checkflags": [
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedWhatHappened",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "CRE_YouthTraining_State_BoyKilledAccidentallyByPlayer"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "Narrator",
+              "text": "*The corpse remains silent. It waits for you to ask a question.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Why didn't you fight back?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "33": {
+              "id": "33",
+              "speaker": "Youth Varrl",
+              "text": "Tired of killing... Orpheus... better way...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_YouthTraining_Knows_BoyWasReadingOrpheus"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "What do you think of your teacher?",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [
+            "REALLY_GITHYANKI"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "32": {
+              "id": "32",
+              "speaker": "Youth Varrl",
+              "text": "Weak-minded... sycophantic... cruel...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Youth Varrl",
+                  "text": "...everything... I tried not to be...",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "Why were you carrying this book?",
+          "context": "",
+          "checkflags": [
+            "GLO_OrpheusChapters_State_ReadOrpheusChapter2",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Youth Varrl",
+              "text": "Orpheus... inspiration... gives me hope...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRE_YouthTraining_Knows_BoyWasReadingOrpheus"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "27": {
+          "id": "27",
+          "speaker": "Player",
+          "text": "Who is Orpheus?",
+          "context": "",
+          "checkflags": [
+            "CRE_YouthTraining_Knows_BoyWasReadingOrpheus",
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_LearnedOrpheusTruePrince = False",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "REALLY_GITHYANKI = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "19": {
+          "id": "19",
+          "speaker": "Player",
+          "text": "What can you tell me about Orpheus?",
+          "context": "",
+          "checkflags": [
+            "CRE_YouthTraining_Knows_BoyWasReadingOrpheus",
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_LearnedOrpheusTruePrince",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "REALLY_GITHYANKI = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "18": {
+              "id": "18",
+              "speaker": "Youth Varrl",
+              "text": "Lost prince... son of Gith... forbidden...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedAboutOrpheus"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "35": {
+          "id": "35",
+          "speaker": "Player",
+          "text": "What do you know about Orpheus?",
+          "context": "",
+          "checkflags": [
+            "CRE_YouthTraining_Knows_BoyWasReadingOrpheus",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "REALLY_GITHYANKI"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "18",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Why is he forbidden?",
+          "context": "",
+          "checkflags": [
+            "GLO_OrpheusChapters_State_ReadOrpheusChapter2",
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedAboutOrpheus",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False",
+            "REALLY_GITHYANKI = False"
+          ],
+          "setflags": [
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_BoyMentionedVlaakith",
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Youth Varrl",
+              "text": "Vlaakith... threatens... punishes...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "1d7a6554-1938-70c1-d9f4-c115c4b6d354_LearnedOrpheusForbidden"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "17": {
+          "id": "17",
+          "speaker": "Player",
+          "text": "What do you think of Vlaakith?",
+          "context": "",
+          "checkflags": [
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_BoyMentionedVlaakith",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "29": {
+              "id": "29",
+              "speaker": "Youth Varrl",
+              "text": "Cruel queen... taints... poisons... keeps control...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "How did you find out about Orpheus?",
+          "context": "",
+          "checkflags": [
+            "GLO_OrpheusChapters_State_ReadOrpheusChapter2",
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedAboutOrpheus",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Youth Varrl",
+              "text": "Armour... Voss' warriors... hidden inside...",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "Do others here believe in Orpheus?",
+          "context": "",
+          "checkflags": [
+            "GLO_OrpheusChapters_State_ReadOrpheusChapter2",
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_AskedAboutOrpheus",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Do others here read the Orpheus stories?",
+          "context": "",
+          "checkflags": [
+            "GLO_OrpheusChapters_State_ReadOrpheusChapter2",
+            "1d7a6554-1938-70c1-d9f4-c115c4b6d354_LearnedOrpheusForbidden",
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [
+            "GLO_SpeakWithDead_Event_QuestionAsked"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Narrator",
+              "text": "*The corpse remains silent. It does not know.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "31": {
+          "id": "31",
+          "speaker": "Narrator",
+          "text": "*The spell's power wanes. You can ask no more questions.*",
+          "context": "",
+          "checkflags": [
+            "GLO_SpeakWithDead_State_QuestionsLimitReached"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Narrator",
+      "text": "*The corpse seems willing to speak - but not to its killer.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_Killer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "synopsis": "A worg stands guard along with a band of goblins while they torment a captive deep gnome. If the player gets too close or interferes, the worg turns hostile. An exception is if the player is a drow - then the worg is cowed and servile."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Worg",
+      "text": "Away! Speak to Fezzerk.",
+      "context": "NodeContext: Fez-erk",
+      "checkflags": [
+        "FOR_UnfortunateGnome_Event_RedirectToGnomeGoblin1"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Worg",
+      "text": "Urh...  drow. No hurt me, goblin-master. Me good. Me kill for you.",
+      "context": "NodeContext: Grovelling",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [
+        "DROWELF"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Worg",
+      "text": "Blood. Hot blood, salty blood. Under your skin. Want it. Want it!",
+      "context": "",
+      "checkflags": [
+        "FOR_GnomeGoblin1_State_Incapacitated"
+      ],
+      "setflags": [
+        "WLD_FOR_GnomeGoblinsAngry"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Worg",
+      "text": "Leaving. Fresh meat someplace else.",
+      "context": "",
+      "checkflags": [
+        "FOR_GnomeGoblinsPacified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Worg",
+      "text": "Stranger! With bones and blood, under your skin. Gimme!",
+      "context": "NodeContext: The worg utters a taunt to a player who ventured too close, before attacking.\nIf the player is a drow, the worg  is immediately nervous and subservient.",
+      "checkflags": [],
+      "setflags": [
+        "WLD_FOR_GnomeGoblinsAngry"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

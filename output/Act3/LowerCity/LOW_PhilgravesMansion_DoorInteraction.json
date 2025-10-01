@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "synopsis": "Dialog when interacting with the hidden door at Philgrave's Mansion. It's possible that door door has been revealed by succeeding a passive perception check or automatically if the player is carrying the letter, which the player has to read in order to learn the password they have to say to have it open.",
+    "how_to_trigger": "oe LOW_PhilgravesMansion_GetLetterFatherCarrionteleport to CTY_Main_A -8; 8; -157, the door will reveal itselfinteract with the door"
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_StreetDoor"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "5",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "19": {
+          "id": "19",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "0",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*Set into the mansion's faded exterior, you see the faintest outline of a door. An entrance designed to provide the utmost discretion.*",
+      "context": "",
+      "checkflags": [
+        "LOW_PhilgravesMansion_HasMet_StreetDoor = False"
+      ],
+      "setflags": [
+        "LOW_PhilgravesMansion_HasMet_StreetDoor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "22": {
+          "id": "22",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "LOW_OskarsBeloved_State_ReadLetter"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {}
+        },
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "LOW_OskarsBeloved_State_ReadLetter = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Player",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "Narrator",
+                      "text": "*The door pulses with a heavy, melancholic magic. Whatever lies behind it concerns the living and the dead.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "6f488b92-e578-9520-9f5d-25e61e387dd7_CanTryPasswords"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "0": {
+                          "id": "0",
+                          "speaker": "Narrator",
+                          "text": "*You sense it waits for the right words. It requires permission to open.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "21": {
+                              "id": "21",
+                              "speaker": "Player",
+                              "text": "Secreta mortuorum.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_PhilgravesMansion_State_MagicDoorIsLocked = False",
+                                "LOW_OskarsBeloved_State_ReadLetter"
+                              ],
+                              "setflags": [
+                                "LOW_PhilgravesMansion_Event_OpenMagicDoor"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "7": {
+                                  "id": "7",
+                                  "speaker": "Narrator",
+                                  "text": "*The door shudders. It has no choice but to let you inside.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "6": {
+                              "id": "6",
+                              "speaker": "Player",
+                              "text": "Praise the Absolute?",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_PhilgravesMansion_TriedThirdPassord = False",
+                                "6f488b92-e578-9520-9f5d-25e61e387dd7_CanTryPasswords"
+                              ],
+                              "setflags": [
+                                "LOW_PhilgravesMansion_TriedThirdPassord"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "16": {
+                                  "id": "16",
+                                  "speaker": "Narrator",
+                                  "text": "*The door does not stir. It will not answer to the cult's demands.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "14": {
+                              "id": "14",
+                              "speaker": "Player",
+                              "text": "Long live Gortash?",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_PhilgravesMansion_TriedSecondPassword = False",
+                                "6f488b92-e578-9520-9f5d-25e61e387dd7_CanTryPasswords"
+                              ],
+                              "setflags": [
+                                "LOW_PhilgravesMansion_TriedSecondPassword"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "3": {
+                                  "id": "3",
+                                  "speaker": "Narrator",
+                                  "text": "*Lord Gortash's name opens many doors, but it does not open this one.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "1": {
+                              "id": "1",
+                              "speaker": "Player",
+                              "text": "Balduran's butter knife?",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_PhilgravesMansion_State_TriedFirstPasswords = False",
+                                "6f488b92-e578-9520-9f5d-25e61e387dd7_CanTryPasswords"
+                              ],
+                              "setflags": [
+                                "LOW_PhilgravesMansion_State_TriedFirstPasswords"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "18": {
+                                  "id": "18",
+                                  "speaker": "Narrator",
+                                  "text": "*Whatever this door is waiting to hear, it is not the name of some ancient tableware.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "13": {
+                              "id": "13",
+                              "speaker": "Player",
+                              "text": "Hello? Anybody there?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "20": {
+                                  "id": "20",
+                                  "speaker": "Narrator",
+                                  "text": "*Nothing responds within. It is silent as the grave.*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            },
+                            "17": {
+                              "id": "17",
+                              "speaker": "Player",
+                              "text": "Leave.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "10": {
+                  "id": "10",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Narrator",
+                      "text": "*Whatever lies behind the door, it guards such secrets closely. It will not reveal them to just anyone.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "0",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "metadata": {
+    "synopsis": "Dialogue covers the transition from the pretty illusion that is on the swamp to the fetid reality.Triggers when entering the area, or when the illusion is disrupted because of combat or because Ethel is dropping her disguise.This means it may play for a Wildshaped player or even a summon or follower.",
+    "how_to_trigger": "In WLD_Main_A, go to the \"riverside teahouse\" waypoint."
+  },
+  "dialogue": {
+    "10": {
+      "id": "10",
+      "speaker": "",
+      "text": "",
+      "context": "CinematicNodeContext: ~Ethel dramatically transforms into her true hag form.",
+      "checkflags": [
+        "HAG_Hag_Event_DropDisguise",
+        "FEMALE"
+      ],
+      "setflags": [
+        "GLO_Hag_State_Transformed"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "tagcinematic",
+      "children": {
+        "6": {
+          "id": "6",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "HAG_ForestIllusion_Event_DropIllusion"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Narrator",
+              "text": "*You blink and the wilderness changes. A swamp, stinking and insidious, assaults your senses.*",
+              "context": "InternalNodeContext: Variant without showing player character",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "speaker": "GROUP_PartyMembers",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_ForestIllusion_Event_DropIllusion"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "12",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Narrator",
+      "text": "*A chill runs up your spine. You feel like you're being watched.*",
+      "context": "CinematicNodeContext: Players is shapeshifted - don't show player.",
+      "checkflags": [
+        "HAG_ForestIllusion_Event_DropIllusion = False",
+        "PLAYABLE = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "19",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Narrator",
+      "text": "*A chill runs up your spine. You feel like you're being watched.*",
+      "context": "",
+      "checkflags": [
+        "HAG_ForestIllusion_Event_DropIllusion = False",
+        "PLAYABLE"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "GROUP_PartyMembers",
+          "text": "Look for anything out of the ordinary.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "12",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "HAG_ForestIllusion_Event_DropIllusion"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "12",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "21": {
+                      "id": "21",
+                      "speaker": "Narrator",
+                      "text": "*You blink and the wilderness changes. A swamp, stinking and insidious, assaults your senses.*",
+                      "context": "",
+                      "checkflags": [
+                        "PLAYABLE"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "3": {
+                      "id": "3",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [
+                        "PLAYABLE = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "alias",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "id": "5",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "8": {
+                  "id": "8",
+                  "speaker": "Narrator",
+                  "text": "*The place has a quiet sense of calm. You can't see anything strange.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "22": {
+          "id": "22",
+          "speaker": "GROUP_PartyMembers",
+          "text": "Search for any disruption in the Weave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [
+            "CLERIC_MYSTRA"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "18": {
+          "id": "18",
+          "speaker": "GROUP_PartyMembers",
+          "text": "Carefully probe with your magic. Is the disturbance around you, or within you?",
+          "context": "",
+          "checkflags": [
+            "SORCERER_WILDMAGIC"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "GROUP_PartyMembers",
+          "text": "Looks for signs of unnatural activity.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [
+            "DRUID",
+            "RANGER"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "13": {
+              "id": "13",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "7",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "GROUP_PartyMembers",
+          "text": "Reach out with your senses - check the balance of this place.",
+          "context": "",
+          "checkflags": [
+            "PALADIN_MYSTRA = False",
+            "CLERIC_MYSTRA = False"
+          ],
+          "setflags": [],
+          "ruletags": [
+            "CLERIC_NEUTRAL",
+            "MONK",
+            "PALADIN_NEUTRAL"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "14": {
+          "id": "14",
+          "speaker": "GROUP_PartyMembers",
+          "text": "Tap into the preternatural awareness granted by your oath. Seek the truth.",
+          "context": "",
+          "checkflags": [
+            "PALADIN"
+          ],
+          "setflags": [],
+          "ruletags": [
+            "PALADIN_ANCIENTS"
+          ],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        },
+        "17": {
+          "id": "17",
+          "speaker": "GROUP_PartyMembers",
+          "text": "Ignore the feeling.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "20": {
+      "id": "20",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "HAG_Hag_Event_DropDisguise",
+        "FEMALE = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    }
+  }
+}

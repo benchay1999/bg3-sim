@@ -1,0 +1,2667 @@
+{
+  "metadata": {
+    "synopsis": "Postmaster Danzo Arkwright asks the player to find missing letters and will offer a reward on delivery. Reading the letters first will allow the player to blackmail the postmaster.",
+    "how_to_trigger": "Teleport to S_WYR_Post_Postmaster and speak to the Postmaster."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Danzo Arkwright",
+      "text": "Deliveries are on hold while we sort out some, er, logistical issues. My apologies.",
+      "context": "NodeContext: Irritated",
+      "checkflags": [
+        "WYR_Posthouse_HasMet_Postmaster = False",
+        "WYR_Posthouse_Postmaster_Pleased"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "27": {
+      "id": "27",
+      "speaker": "Danzo Arkwright",
+      "text": "Go on, bugger off. I've a business to run, in case you hadn't noticed.",
+      "context": "NodeContext: Irritated",
+      "checkflags": [
+        "WYR_Posthouse_Postmaster_Displeased"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "37": {
+      "id": "37",
+      "speaker": "Danzo Arkwright",
+      "text": "Clear off. I've business to attend to.",
+      "context": "NodeContext: Trying to sound intimidating, but very. very worried",
+      "checkflags": [
+        "WYR_Posthouse_Postmaster_Scared"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "62": {
+      "id": "62",
+      "speaker": "Danzo Arkwright",
+      "text": "Welcome... again... to Sword Coast Couriers - to Send and to Serve. Delivery not guaranteed.",
+      "context": "",
+      "checkflags": [
+        "WYR_Posthouse_HasMet_Postmaster",
+        "WYR_Posthouse_State_PromisePostmasterToFindLetters = False",
+        "WYR_Posthouse_State_RefusedToFindLetters = False",
+        "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "91",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "75": {
+          "id": "75",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "98",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "67": {
+      "id": "67",
+      "speaker": "Danzo Arkwright",
+      "text": "Clear off. We're closed.",
+      "context": "NodeContext: Irritated",
+      "checkflags": [
+        "WYR_Posthouse_HasMet_Postmaster = False",
+        "WYR_Posthouse_Postmaster_Scared"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "70": {
+      "id": "70",
+      "speaker": "Danzo Arkwright",
+      "text": "If you happen to stumble across those letters, do bring them by. There'd be a tip in it for you.",
+      "context": "",
+      "checkflags": [
+        "WYR_Posthouse_State_RefusedToFindLetters"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "91",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "87": {
+          "id": "87",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "110",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "98": {
+      "id": "98",
+      "speaker": "Danzo Arkwright",
+      "text": "Welcome to Sword Coast Couriers - to Send and to Serve. Delivery not guaranteed.",
+      "context": "NodeContext: Employee spiel. \"To Send and to Serve\" said proudly, like a company motto. \"Delivery not guaranteed\" rushed, as though a hidden terms and condition line",
+      "checkflags": [
+        "WYR_Posthouse_HasMet_Postmaster = False",
+        "WYR_Posthouse_State_PromisePostmasterToFindLetters = False",
+        "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster = False"
+      ],
+      "setflags": [
+        "WYR_Posthouse_HasMet_Postmaster"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "91",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "107": {
+          "id": "107",
+          "speaker": "Player",
+          "text": "I'm sorry to tell you - I found the body of one of your couriers. He carried this letter.",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_State_PlayerHasCourierLetter"
+          ],
+          "setflags": [
+            "WYR_Posthouse_Event_GiveCourierLetterToPostmaster"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "91",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "147": {
+              "id": "147",
+              "speaker": "Danzo Arkwright",
+              "text": "Gomwick... that's a real shame. Fine courier, he was.",
+              "context": "CinematicNodeContext: Player hands Danzo a letter. Danzo looks at it for a moment, then puts it away\rNodeContext: Tutting to himself - another problem to solve",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "91",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "58": {
+                  "id": "58",
+                  "speaker": "Danzo Arkwright",
+                  "text": "Stumped how I'll replace him - most want to get into the city these days, not leave it. We've had to cut our courier services completely.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "91",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "29": {
+                      "id": "29",
+                      "speaker": "Danzo Arkwright",
+                      "text": "I'll tell you, it's left me in a right pickle. I've sent what I can by pigeon, but now something's attacking them and all!",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "WYR_Posthouse_Knows_LettersAreMissing"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "91",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "131": {
+                          "id": "131",
+                          "speaker": "Danzo Arkwright",
+                          "text": "'Become a postmaster, Danzo. It'll be easy.' Nobody mentions having to spend your evenings hunting for pigeon carcasses, do they?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "91",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "24": {
+                              "id": "24",
+                              "speaker": "Player",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [
+                                "WYR_Posthouse_Postmaster_PassiveInsightAttempted = False"
+                              ],
+                              "setflags": [
+                                "WYR_Posthouse_Postmaster_PassiveInsightAttempted"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "91",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "53": {
+                                  "id": "53",
+                                  "speaker": "",
+                                  "text": "True",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "91",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "39": {
+                                      "id": "39",
+                                      "speaker": "Narrator",
+                                      "text": "*You sense there's more to his anxiety than a few missing letters.*",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_InsightSuccess"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "91",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "13": {
+                                          "id": "13",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "120",
+                                          "link": "91",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        },
+                                        "85": {
+                                          "id": "85",
+                                          "speaker": "",
+                                          "text": "",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "119",
+                                          "link": "91",
+                                          "is_end": false,
+                                          "node_type": "jump",
+                                          "children": {}
+                                        },
+                                        "113": {
+                                          "id": "113",
+                                          "speaker": "Player",
+                                          "text": "You must be particularly keen to retrieve the Zhentarim letters about the Iron Flask.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "WYR_Posthouse_State_PlayerHasReadMissingLetters",
+                                            "WYR_Posthouse_State_PlayerHasOpenedMissingLetters"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "91",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "90": {
+                                              "id": "90",
+                                              "speaker": "",
+                                              "text": "",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "18",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "jump",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "99": {
+                                          "id": "99",
+                                          "speaker": "Player",
+                                          "text": "Level with me. What's really going on here?",
+                                          "context": "",
+                                          "checkflags": [
+                                            "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_InsightSuccess"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "91",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "78": {
+                                              "id": "78",
+                                              "speaker": "Danzo Arkwright",
+                                              "text": "Oh, well, er, one of the missing letters is my own correspondence.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "91",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "115": {
+                                                  "id": "115",
+                                                  "speaker": "Danzo Arkwright",
+                                                  "text": "A personal matter. Nothing serious. But you can understand, if people think I can't even deliver my own letters, I'd be finished!",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "91",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {
+                                                    "42": {
+                                                      "id": "42",
+                                                      "speaker": "Player",
+                                                      "text": "Especially if they discovered you were meddling in Guild business on the Zhentarim's behalf.",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "WYR_Posthouse_State_PlayerHasReadMissingLetters",
+                                                        "WYR_Posthouse_State_PlayerHasOpenedMissingLetters"
+                                                      ],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "91",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "18": {
+                                                          "id": "18",
+                                                          "speaker": "Danzo Arkwright",
+                                                          "text": "You - you read it? Technically that's interfering with someone else's property. I should report you to the nearest manip.",
+                                                          "context": "NodeContext: Knows he doesn't have a leg to stand on",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "91",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "34": {
+                                                              "id": "34",
+                                                              "speaker": "Danzo Arkwright",
+                                                              "text": "Tell you what - give it here and we'll say no more about it.",
+                                                              "context": "CinematicNodeContext: Danzo beckons for the player to hand the letters over\rNodeContext: nervous but acting like this is doing you a favour",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "91",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "137": {
+                                                                  "id": "137",
+                                                                  "speaker": "Danzo Arkwright",
+                                                                  "text": "I'll give you a nice little bonus as well. A finder's fee. What do you say?",
+                                                                  "context": "NodeContext: Desperate, trying to act casual",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "91",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "142": {
+                                                                      "id": "142",
+                                                                      "speaker": "Player",
+                                                                      "text": "I've got another buyer lined up. I'd make it a very generous fee.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "91",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "25": {
+                                                                          "id": "25",
+                                                                          "speaker": "",
+                                                                          "text": "True",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "91",
+                                                                          "is_end": false,
+                                                                          "node_type": "rollresult",
+                                                                          "children": {
+                                                                            "148": {
+                                                                              "id": "148",
+                                                                              "speaker": "Danzo Arkwright",
+                                                                              "text": "Fine. Just give me the letter.",
+                                                                              "context": "CinematicNodeContext: Player hands letters to Danzo",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [
+                                                                                "Karlach 1",
+                                                                                "Astarion 1",
+                                                                                "Minthara 1",
+                                                                                "Lae'zel 1",
+                                                                                "Shadowheart 1"
+                                                                              ],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "69": {
+                                                                                  "id": "69",
+                                                                                  "speaker": "Danzo Arkwright",
+                                                                                  "text": "Forget you saw anything. This never happened.",
+                                                                                  "context": "",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [
+                                                                                    "WYR_Posthouse_Postmaster_Displeased",
+                                                                                    "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster",
+                                                                                    "WYR_Posthouse_Event_GiveOpenedMissingLettersToPostmaster",
+                                                                                    "WYR_Posthouse_Event_PostmasterGivesLargeReward"
+                                                                                  ],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "",
+                                                                                  "is_end": true,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {}
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "0": {
+                                                                          "id": "0",
+                                                                          "speaker": "",
+                                                                          "text": "False",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "91",
+                                                                          "is_end": false,
+                                                                          "node_type": "rollresult",
+                                                                          "children": {
+                                                                            "130": {
+                                                                              "id": "130",
+                                                                              "speaker": "Danzo Arkwright",
+                                                                              "text": "If you'd shown that letter to anyone but the Zhent, you'd already be dead.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "91",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "73": {
+                                                                      "id": "73",
+                                                                      "speaker": "Player",
+                                                                      "text": "Give me everything the Zhentarim paid you, or this letter is the least of your worries.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "22": {
+                                                                          "id": "22",
+                                                                          "speaker": "",
+                                                                          "text": "True",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "rollresult",
+                                                                          "children": {
+                                                                            "15": {
+                                                                              "id": "15",
+                                                                              "speaker": "",
+                                                                              "text": "",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "148",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "jump",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "104": {
+                                                                          "id": "104",
+                                                                          "speaker": "",
+                                                                          "text": "False",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "rollresult",
+                                                                          "children": {
+                                                                            "93": {
+                                                                              "id": "93",
+                                                                              "speaker": "Danzo Arkwright",
+                                                                              "text": "You really think I'm intimidated by the likes of you?",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "normal",
+                                                                              "children": {
+                                                                                "91": {
+                                                                                  "id": "91",
+                                                                                  "speaker": "Danzo Arkwright",
+                                                                                  "text": "That letter's not leaving this room. Neither are you.",
+                                                                                  "context": "NodeContext: Steely, about to start a combat with you.",
+                                                                                  "checkflags": [],
+                                                                                  "setflags": [
+                                                                                    "WYR_Posthouse_Event_PostmasterGivesNoReward",
+                                                                                    "FactionHostileToPlayerGroupAfterDialog"
+                                                                                  ],
+                                                                                  "ruletags": [],
+                                                                                  "approval": [],
+                                                                                  "rolls": "",
+                                                                                  "goto": "",
+                                                                                  "link": "",
+                                                                                  "is_end": true,
+                                                                                  "node_type": "normal",
+                                                                                  "children": {}
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "10": {
+                                                                      "id": "10",
+                                                                      "speaker": "Player",
+                                                                      "text": "It'd be a shame if anyone told the Zhentarim you lost this. A real shame...",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "3": {
+                                                                          "id": "3",
+                                                                          "speaker": "",
+                                                                          "text": "True",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "rollresult",
+                                                                          "children": {
+                                                                            "92": {
+                                                                              "id": "92",
+                                                                              "speaker": "",
+                                                                              "text": "",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "148",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "jump",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "41": {
+                                                                          "id": "41",
+                                                                          "speaker": "",
+                                                                          "text": "False",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "rollresult",
+                                                                          "children": {
+                                                                            "11": {
+                                                                              "id": "11",
+                                                                              "speaker": "",
+                                                                              "text": "",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "93",
+                                                                              "link": "",
+                                                                              "is_end": false,
+                                                                              "node_type": "jump",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "5": {
+                                                                      "id": "5",
+                                                                      "speaker": "Player",
+                                                                      "text": "I graciously accept.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "140": {
+                                                                          "id": "140",
+                                                                          "speaker": "Danzo Arkwright",
+                                                                          "text": "Much obliged, much obliged.",
+                                                                          "context": "CinematicNodeContext: Player hands Danzo the letters",
+                                                                          "checkflags": [],
+                                                                          "setflags": [
+                                                                            "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster",
+                                                                            "WYR_Posthouse_Event_GiveOpenedMissingLettersToPostmaster"
+                                                                          ],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "82": {
+                                                                              "id": "82",
+                                                                              "speaker": "Danzo Arkwright",
+                                                                              "text": "Here's your fee. Our little secret, all right?",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [
+                                                                                "WYR_Posthouse_Postmaster_Pleased",
+                                                                                "WYR_Posthouse_Event_PostmasterGivesSmallReward"
+                                                                              ],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": true,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "83": {
+                                                                      "id": "83",
+                                                                      "speaker": "Player",
+                                                                      "text": "No, thanks. I'm keeping the letter.",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "71": {
+                                                                          "id": "71",
+                                                                          "speaker": "Danzo Arkwright",
+                                                                          "text": "You bloody arse rat. Fine - keep it. Much good it'll do you.",
+                                                                          "context": "NodeContext: Snappy, pleasant demeanor vanished",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {
+                                                                            "97": {
+                                                                              "id": "97",
+                                                                              "speaker": "Danzo Arkwright",
+                                                                              "text": "Go on, get out of my post house. We're closed.",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [
+                                                                                "WYR_Posthouse_Postmaster_Scared",
+                                                                                "WYR_Posthouse_Event_PostmasterGivesNoReward"
+                                                                              ],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": true,
+                                                                              "node_type": "normal",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "119": {
+                                                      "id": "119",
+                                                      "speaker": "Player",
+                                                      "text": "Is this the letter you were looking for?",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "WYR_Posthouse_State_PlayerHasReadMissingLetters = False",
+                                                        "WYR_Posthouse_State_PlayerHasOpenedMissingLetters"
+                                                      ],
+                                                      "setflags": [
+                                                        "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster",
+                                                        "WYR_Posthouse_Event_GiveMissingLettersToPostmaster"
+                                                      ],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "93",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "17": {
+                                                          "id": "17",
+                                                          "speaker": "Danzo Arkwright",
+                                                          "text": "Ah. You've opened it, I see.",
+                                                          "context": "CinematicNodeContext: Player hands Danzo the letters (unseen)",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "93",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "109": {
+                                                              "id": "109",
+                                                              "speaker": "Danzo Arkwright",
+                                                              "text": "Well, let's cut to the chase. Go on. Tell me how much your silence is going to cost me.",
+                                                              "context": "CinematicNodeContext: Danzo pays the player\rNodeContext: Suddenly businesslike, his charm vanished",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "93",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "121": {
+                                                                  "id": "121",
+                                                                  "speaker": "Player",
+                                                                  "text": "Erm, give me all of your gold. Or I start breaking fingers.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "93",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "146": {
+                                                                      "id": "146",
+                                                                      "speaker": "",
+                                                                      "text": "True",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "93",
+                                                                      "is_end": false,
+                                                                      "node_type": "rollresult",
+                                                                      "children": {
+                                                                        "35": {
+                                                                          "id": "35",
+                                                                          "speaker": "Danzo Arkwright",
+                                                                          "text": "Fine. Take it all, and keep your trap shut.",
+                                                                          "context": "CinematicNodeContext: Danzo hands over gold (unseen)\rNodeContext: Reluctant, scared you'll get him in trouble",
+                                                                          "checkflags": [],
+                                                                          "setflags": [
+                                                                            "WYR_Posthouse_Postmaster_Displeased",
+                                                                            "WYR_Posthouse_Event_PostmasterGivesLargeReward"
+                                                                          ],
+                                                                          "ruletags": [],
+                                                                          "approval": [
+                                                                            "Karlach 1",
+                                                                            "Astarion 1",
+                                                                            "Minthara 1",
+                                                                            "Lae'zel 1",
+                                                                            "Shadowheart 1"
+                                                                          ],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": true,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "36": {
+                                                                      "id": "36",
+                                                                      "speaker": "",
+                                                                      "text": "False",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "93",
+                                                                      "is_end": false,
+                                                                      "node_type": "rollresult",
+                                                                      "children": {
+                                                                        "64": {
+                                                                          "id": "64",
+                                                                          "speaker": "",
+                                                                          "text": "",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "93",
+                                                                          "is_end": false,
+                                                                          "node_type": "alias",
+                                                                          "children": {
+                                                                            "12": {
+                                                                              "id": "12",
+                                                                              "speaker": "",
+                                                                              "text": "",
+                                                                              "context": "",
+                                                                              "checkflags": [],
+                                                                              "setflags": [
+                                                                                "WYR_Posthouse_Postmaster_Displeased"
+                                                                              ],
+                                                                              "ruletags": [],
+                                                                              "approval": [],
+                                                                              "rolls": "",
+                                                                              "goto": "",
+                                                                              "link": "",
+                                                                              "is_end": true,
+                                                                              "node_type": "alias",
+                                                                              "children": {}
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "103": {
+                                                                  "id": "103",
+                                                                  "speaker": "Player",
+                                                                  "text": "Everything you have. It will take a lot of gold to make me forget that horrible letter I definitely read.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "12",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "48": {
+                                                                      "id": "48",
+                                                                      "speaker": "",
+                                                                      "text": "True",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "12",
+                                                                      "is_end": false,
+                                                                      "node_type": "rollresult",
+                                                                      "children": {
+                                                                        "106": {
+                                                                          "id": "106",
+                                                                          "speaker": "",
+                                                                          "text": "",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "35",
+                                                                          "link": "",
+                                                                          "is_end": false,
+                                                                          "node_type": "jump",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "123": {
+                                                                      "id": "123",
+                                                                      "speaker": "",
+                                                                      "text": "False",
+                                                                      "context": "",
+                                                                      "checkflags": [],
+                                                                      "setflags": [],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "12",
+                                                                      "is_end": false,
+                                                                      "node_type": "rollresult",
+                                                                      "children": {
+                                                                        "66": {
+                                                                          "id": "66",
+                                                                          "speaker": "Danzo Arkwright",
+                                                                          "text": "You... you didn't read it, did you?",
+                                                                          "context": "NodeContext: Realising the player is lying to them",
+                                                                          "checkflags": [],
+                                                                          "setflags": [],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "12",
+                                                                          "is_end": false,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "112": {
+                                                                  "id": "112",
+                                                                  "speaker": "Player",
+                                                                  "text": "I didn't read it. I'm not here to blackmail you.",
+                                                                  "context": "",
+                                                                  "checkflags": [],
+                                                                  "setflags": [],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": false,
+                                                                  "node_type": "normal",
+                                                                  "children": {
+                                                                    "136": {
+                                                                      "id": "136",
+                                                                      "speaker": "Danzo Arkwright",
+                                                                      "text": "You aren't? Right. Well, er, here's a little something anyway. A gift.",
+                                                                      "context": "CinematicNodeContext: Danzo hands the player some gold (unseen)",
+                                                                      "checkflags": [],
+                                                                      "setflags": [
+                                                                        "WYR_Posthouse_Event_PostmasterGivesSmallReward"
+                                                                      ],
+                                                                      "ruletags": [],
+                                                                      "approval": [],
+                                                                      "rolls": "",
+                                                                      "goto": "",
+                                                                      "link": "",
+                                                                      "is_end": false,
+                                                                      "node_type": "normal",
+                                                                      "children": {
+                                                                        "57": {
+                                                                          "id": "57",
+                                                                          "speaker": "Danzo Arkwright",
+                                                                          "text": "Let's not mention this to anyone else. Our little secret, all right?",
+                                                                          "context": "",
+                                                                          "checkflags": [],
+                                                                          "setflags": [
+                                                                            "WYR_Posthouse_Postmaster_Pleased"
+                                                                          ],
+                                                                          "ruletags": [],
+                                                                          "approval": [],
+                                                                          "rolls": "",
+                                                                          "goto": "",
+                                                                          "link": "",
+                                                                          "is_end": true,
+                                                                          "node_type": "normal",
+                                                                          "children": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "120": {
+                                                      "id": "120",
+                                                      "speaker": "Player",
+                                                      "text": "Is this the letter you were looking for?",
+                                                      "context": "",
+                                                      "checkflags": [
+                                                        "WYR_Posthouse_State_PlayerHasMissingLetters"
+                                                      ],
+                                                      "setflags": [
+                                                        "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster",
+                                                        "WYR_Posthouse_Event_GiveMissingLettersToPostmaster"
+                                                      ],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "56",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "52": {
+                                                          "id": "52",
+                                                          "speaker": "Danzo Arkwright",
+                                                          "text": "Thank the gods! Unopened as well. Oh, what a relief. My customers will be most pleased.",
+                                                          "context": "CinematicNodeContext: Player hands letters to Danzo (unseen. Danzo inspects the letters, then puts them away (unseen)\rNodeContext: Palpable relief",
+                                                          "checkflags": [],
+                                                          "setflags": [
+                                                            "WYR_Posthouse_Postmaster_Pleased"
+                                                          ],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "43": {
+                                                              "id": "43",
+                                                              "speaker": "Danzo Arkwright",
+                                                              "text": "Here's your fee, as promised.",
+                                                              "context": "CinematicNodeContext:  Danzo hands the player some gold (unseen)",
+                                                              "checkflags": [
+                                                                "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                              ],
+                                                              "setflags": [
+                                                                "WYR_Posthouse_Postmaster_Pleased",
+                                                                "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster",
+                                                                "WYR_Posthouse_Event_GiveMissingLettersToPostmaster",
+                                                                "WYR_Posthouse_Event_PostmasterGivesSmallReward"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            },
+                                                            "128": {
+                                                              "id": "128",
+                                                              "speaker": "Danzo Arkwright",
+                                                              "text": "Please, take this. You've earned it ten times over.",
+                                                              "context": "CinematicNodeContext: Danzo hands the player some gold (unseen)",
+                                                              "checkflags": [],
+                                                              "setflags": [
+                                                                "WYR_Posthouse_Postmaster_Pleased",
+                                                                "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster",
+                                                                "WYR_Posthouse_Event_GiveMissingLettersToPostmaster",
+                                                                "WYR_Posthouse_Event_PostmasterGivesSmallReward"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "101": {
+                                                      "id": "101",
+                                                      "speaker": "Player",
+                                                      "text": "Any idea where the birds went missing?",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "56",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "63": {
+                                                          "id": "63",
+                                                          "speaker": "",
+                                                          "text": "",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [
+                                                            "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers"
+                                                          ],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "56",
+                                                          "is_end": false,
+                                                          "node_type": "alias",
+                                                          "children": {
+                                                            "102": {
+                                                              "id": "102",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [],
+                                                              "setflags": [],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "116",
+                                                              "is_end": false,
+                                                              "node_type": "alias",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "61": {
+                                                      "id": "61",
+                                                      "speaker": "Player",
+                                                      "text": "Do you want me to track down your letter?",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "54",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "80": {
+                                                          "id": "80",
+                                                          "speaker": "Danzo Arkwright",
+                                                          "text": "You'd do that? Well, if it's not too much bother I - yes, I'd appreciate the help.",
+                                                          "context": "NodeContext: Very hesitant - torn between needing the letters found, and fear that you'll read them",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "54",
+                                                          "is_end": false,
+                                                          "node_type": "normal",
+                                                          "children": {
+                                                            "54": {
+                                                              "id": "54",
+                                                              "speaker": "Danzo Arkwright",
+                                                              "text": "Bring me the letter - unopened, of course - and I'll happily compensate you for your troubles.",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers"
+                                                              ],
+                                                              "setflags": [
+                                                                "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            },
+                                                            "81": {
+                                                              "id": "81",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers = False"
+                                                              ],
+                                                              "setflags": [
+                                                                "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "alias",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "139": {
+                                                      "id": "139",
+                                                      "speaker": "",
+                                                      "text": "",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "49",
+                                                      "link": "88",
+                                                      "is_end": false,
+                                                      "node_type": "jump",
+                                                      "children": {}
+                                                    },
+                                                    "16": {
+                                                      "id": "16",
+                                                      "speaker": "Player",
+                                                      "text": "I can track this letter down. But I'll need my expenses paid up front.",
+                                                      "context": "",
+                                                      "checkflags": [],
+                                                      "setflags": [],
+                                                      "ruletags": [],
+                                                      "approval": [],
+                                                      "rolls": "",
+                                                      "goto": "",
+                                                      "link": "88",
+                                                      "is_end": false,
+                                                      "node_type": "normal",
+                                                      "children": {
+                                                        "72": {
+                                                          "id": "72",
+                                                          "speaker": "",
+                                                          "text": "True",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "88",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "129": {
+                                                              "id": "129",
+                                                              "speaker": "Danzo Arkwright",
+                                                              "text": "I suppose there's no harm in you taking a look. Here's something to get you started.",
+                                                              "context": "CinematicNodeContext: Danzo hands the player some money (unseen)\rNodeContext: flustered, trying not to sound too desperate",
+                                                              "checkflags": [],
+                                                              "setflags": [
+                                                                "WYR_Posthouse_Event_PostmasterGivesMoneyUpfront"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "88",
+                                                              "is_end": false,
+                                                              "node_type": "normal",
+                                                              "children": {
+                                                                "145": {
+                                                                  "id": "145",
+                                                                  "speaker": "",
+                                                                  "text": "",
+                                                                  "context": "",
+                                                                  "checkflags": [
+                                                                    "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers"
+                                                                  ],
+                                                                  "setflags": [
+                                                                    "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": true,
+                                                                  "node_type": "alias",
+                                                                  "children": {}
+                                                                },
+                                                                "88": {
+                                                                  "id": "88",
+                                                                  "speaker": "Danzo Arkwright",
+                                                                  "text": "Bring me the letter - unopened - and you'll get the rest.",
+                                                                  "context": "",
+                                                                  "checkflags": [
+                                                                    "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers = False"
+                                                                  ],
+                                                                  "setflags": [
+                                                                    "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                                  ],
+                                                                  "ruletags": [],
+                                                                  "approval": [],
+                                                                  "rolls": "",
+                                                                  "goto": "",
+                                                                  "link": "",
+                                                                  "is_end": true,
+                                                                  "node_type": "normal",
+                                                                  "children": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "96": {
+                                                          "id": "96",
+                                                          "speaker": "",
+                                                          "text": "False",
+                                                          "context": "",
+                                                          "checkflags": [],
+                                                          "setflags": [],
+                                                          "ruletags": [],
+                                                          "approval": [],
+                                                          "rolls": "",
+                                                          "goto": "",
+                                                          "link": "14",
+                                                          "is_end": false,
+                                                          "node_type": "rollresult",
+                                                          "children": {
+                                                            "45": {
+                                                              "id": "45",
+                                                              "speaker": "",
+                                                              "text": "",
+                                                              "context": "",
+                                                              "checkflags": [
+                                                                "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers"
+                                                              ],
+                                                              "setflags": [
+                                                                "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "alias",
+                                                              "children": {}
+                                                            },
+                                                            "14": {
+                                                              "id": "14",
+                                                              "speaker": "Danzo Arkwright",
+                                                              "text": "I'll pay when that letter's on my counter, unopened. Not one moment before.",
+                                                              "context": "NodeContext: Jocular scolding, putting an end to the discussion",
+                                                              "checkflags": [
+                                                                "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers = False"
+                                                              ],
+                                                              "setflags": [
+                                                                "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                              ],
+                                                              "ruletags": [],
+                                                              "approval": [],
+                                                              "rolls": "",
+                                                              "goto": "",
+                                                              "link": "",
+                                                              "is_end": true,
+                                                              "node_type": "normal",
+                                                              "children": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "86": {
+                                          "id": "86",
+                                          "speaker": "Player",
+                                          "text": "Any idea where the birds went missing?",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "108",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "56": {
+                                              "id": "56",
+                                              "speaker": "Danzo Arkwright",
+                                              "text": "Not the foggiest. Normally they fly true as an elven arrow.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "116": {
+                                                  "id": "116",
+                                                  "speaker": "Danzo Arkwright",
+                                                  "text": "Something nearby is snatching them, I can tell you that much.",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "143": {
+                                          "id": "143",
+                                          "speaker": "Player",
+                                          "text": "I could find the pigeons for you. My fees are very reasonable.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "108",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        },
+                                        "7": {
+                                          "id": "7",
+                                          "speaker": "Player",
+                                          "text": "I'd be happy to take a look.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "47",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "108": {
+                                              "id": "108",
+                                              "speaker": "Danzo Arkwright",
+                                              "text": "Well, er, if it's not too much trouble, I'd be much obliged.",
+                                              "context": "",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "47",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "4": {
+                                                  "id": "4",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers"
+                                                  ],
+                                                  "setflags": [
+                                                    "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "alias",
+                                                  "children": {}
+                                                },
+                                                "47": {
+                                                  "id": "47",
+                                                  "speaker": "Danzo Arkwright",
+                                                  "text": "Any letters you find, bring them back to me - unopened, of course - and there's some gold in it for you.",
+                                                  "context": "",
+                                                  "checkflags": [
+                                                    "ffbbea84-1c4a-c054-814e-70d9ed8f38fd_KnowsAboutJeffers = False"
+                                                  ],
+                                                  "setflags": [
+                                                    "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "49": {
+                                          "id": "49",
+                                          "speaker": "Player",
+                                          "text": "Good luck with that. I've got bigger problems to solve.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "28": {
+                                              "id": "28",
+                                              "speaker": "Danzo Arkwright",
+                                              "text": "I'm sure you do. What's a few letters gone astray at a time like this? Hardly life and death, is it?",
+                                              "context": "NodeContext: Hiding his panic - it might be life and death for him",
+                                              "checkflags": [],
+                                              "setflags": [
+                                                "WYR_Posthouse_State_RefusedToFindLetters"
+                                              ],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": true,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "65": {
+                                  "id": "65",
+                                  "speaker": "",
+                                  "text": "False",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "rollresult",
+                                  "children": {
+                                    "89": {
+                                      "id": "89",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "39",
+                                      "link": "",
+                                      "is_end": false,
+                                      "node_type": "jump",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "40": {
+          "id": "40",
+          "speaker": "Player",
+          "text": "Wait - delivery not guaranteed?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "74": {
+              "id": "74",
+              "speaker": "Danzo Arkwright",
+              "text": "Well, we've had to change the policy. Hard to send letters by road when there's a rampaging army of fanatics bearing down on you.",
+              "context": "NodeContext: Jolly, as if this is just a run-of-the-mill problem",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "125": {
+          "id": "125",
+          "speaker": "Player",
+          "text": "I'm not sending anything. You can drop the sales routine.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "55": {
+              "id": "55",
+              "speaker": "Danzo Arkwright",
+              "text": "No routine here - we're the best in the city, delivering from Candlekeep to Waterdeep and beyond!",
+              "context": "NodeContext: Not rising to the allegation, staying positive",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "77": {
+                  "id": "77",
+                  "speaker": "Danzo Arkwright",
+                  "text": "At least, normally that's the case. We've had to limit our service - hard to send letters by road when there's a rampaging army of fanatics bearing down on you.",
+                  "context": "NodeContext: Bragging, then hesitantly admitting there's a problem",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "127": {
+          "id": "127",
+          "speaker": "Player",
+          "text": "It's rare to meet someone so cheerful these days. Why the good mood?",
+          "context": "NodeContext: Obnoxiously bright and cheerful customer service",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "29",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "144": {
+              "id": "144",
+              "speaker": "Danzo Arkwright",
+              "text": "I'm alive and well, aren't I? Earning an honest living. Serving my community. I've plenty to be happy about.",
+              "context": "NodeContext: Sincere",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "29",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "114": {
+                  "id": "114",
+                  "speaker": "Danzo Arkwright",
+                  "text": "Though, I will admit it's been tough recently. We've had to cut down our courier routes. Too risky with that army rampaging nearby.",
+                  "context": "NodeContext: Trying to sound positive, actually unsettled/nervous about this",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "29",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "126": {
+          "id": "126",
+          "speaker": "Player",
+          "text": "Still need help tracking down those letters?",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_Knows_LettersAreMissing"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "31": {
+              "id": "31",
+              "speaker": "Danzo Arkwright",
+              "text": "I do, as a matter of fact. Would you be interested in lending a hand?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "44": {
+                  "id": "44",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "39",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "118": {
+          "id": "118",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "110": {
+      "id": "110",
+      "speaker": "Danzo Arkwright",
+      "text": "I don't suppose you've, er, stumbled across those letters yet?",
+      "context": "",
+      "checkflags": [
+        "WYR_Posthouse_State_PromisePostmasterToFindLetters",
+        "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "147",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "38": {
+          "id": "38",
+          "speaker": "Player",
+          "text": "I found a different letter. It was on the body of one of your employees.",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_Event_GiveCourierLetterToPostmaster = False",
+            "WYR_Posthouse_State_PlayerHasCourierLetter"
+          ],
+          "setflags": [
+            "WYR_Posthouse_Event_GiveCourierLetterToPostmaster"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "147",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "117": {
+              "id": "117",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "147",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {
+                "122": {
+                  "id": "122",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "58",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "50": {
+          "id": "50",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "120",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "132": {
+          "id": "132",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "119",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "I found the letter intended for the Zhentarim. It made for very interesting reading.",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_State_PlayerHasReadMissingLetters",
+            "WYR_Posthouse_State_PlayerHasOpenedMissingLetters"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "20": {
+              "id": "20",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "18",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "26": {
+          "id": "26",
+          "speaker": "Player",
+          "text": "I found the letter, but it was very difficult. I'm afraid my fees have gone up.",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_State_PlayerHasMissingLetters"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "79": {
+              "id": "79",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "68": {
+                  "id": "68",
+                  "speaker": "Danzo Arkwright",
+                  "text": "Yes, fine, just give me the letters.",
+                  "context": "CinematicNodeContext: Player hands over the letters to Danzo\rNodeContext: snappy, betraying his stress",
+                  "checkflags": [],
+                  "setflags": [
+                    "WYR_Posthouse_State_ReturnedMissingLettersToPostmaster",
+                    "WYR_Posthouse_Event_GiveMissingLettersToPostmaster"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "59": {
+                      "id": "59",
+                      "speaker": "Danzo Arkwright",
+                      "text": "Still sealed, thank the gods!",
+                      "context": "CinematicNodeContext: Danzo inspects the letters/envelopes",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "111": {
+                          "id": "111",
+                          "speaker": "Danzo Arkwright",
+                          "text": "You've no idea the kindness you've done me. What a relief!",
+                          "context": "CinematicNodeContext: Danzo pays the player",
+                          "checkflags": [],
+                          "setflags": [
+                            "WYR_Posthouse_Postmaster_Pleased",
+                            "WYR_Posthouse_Event_PostmasterGivesSmallReward"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "60": {
+              "id": "60",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "134": {
+                  "id": "134",
+                  "speaker": "Danzo Arkwright",
+                  "text": "And I'm afraid my offer has stayed the same. Give me the letters, please.",
+                  "context": "NodeContext: Firm",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "94": {
+                      "id": "94",
+                      "speaker": "Player",
+                      "text": "Fair enough. Here you go.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "WYR_Posthouse_Event_GiveMissingLettersToPostmaster"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "1": {
+                          "id": "1",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "52",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "30": {
+                      "id": "30",
+                      "speaker": "Player",
+                      "text": "On second thoughts, I think I'll hang on to them.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "95": {
+                          "id": "95",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "71",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "33": {
+          "id": "33",
+          "speaker": "Player",
+          "text": "Nothing yet. I'll keep looking.",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_State_PromisePostmasterToFindLetters"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "100": {
+              "id": "100",
+              "speaker": "Danzo Arkwright",
+              "text": "Much appreciated. They'll turn up in the last place you look, I'm sure!",
+              "context": "NodeContext: optimistic, bright",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "I'll think about it.",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_State_PromisePostmasterToFindLetters = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Danzo Arkwright",
+              "text": "That's all I ask.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "84": {
+          "id": "84",
+          "speaker": "Player",
+          "text": "I'm afraid the letters have been destroyed.",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_State_MissingLetterDestroyed"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "6": {
+              "id": "6",
+              "speaker": "Danzo Arkwright",
+              "text": "Better than having them fall into the wrong hands, but still totally unacceptable.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "76": {
+                  "id": "76",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "97",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "133": {
+      "id": "133",
+      "speaker": "Danzo Arkwright",
+      "text": "Normal service resumed at last.",
+      "context": "NodeContext: Palpable relief/satisfaction",
+      "checkflags": [
+        "WYR_Posthouse_Postmaster_Pleased"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "135": {
+      "id": "135",
+      "speaker": "Danzo Arkwright",
+      "text": "Clear off. We're closed.",
+      "context": "NodeContext: Irritated",
+      "checkflags": [
+        "WYR_Posthouse_HasMet_Postmaster = False",
+        "WYR_Posthouse_Postmaster_Displeased"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "138": {
+      "id": "138",
+      "speaker": "Danzo Arkwright",
+      "text": "Welcome to Sword Coast Couriers - to Send and to Serve. Delivery guaranteed.",
+      "context": "",
+      "checkflags": [
+        "WYR_Posthouse_State_Tressym_QuestDisabled"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "147",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "32": {
+          "id": "32",
+          "speaker": "Player",
+          "text": "I'm sorry to tell you - I found the body of one of your couriers. He carried this letter.",
+          "context": "",
+          "checkflags": [
+            "WYR_Posthouse_State_PlayerHasCourierLetter"
+          ],
+          "setflags": [
+            "WYR_Posthouse_Event_GiveCourierLetterToPostmaster"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "147",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "46": {
+              "id": "46",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "147",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        },
+        "124": {
+          "id": "124",
+          "speaker": "Player",
+          "text": "I'm not sending anything. You can drop the sales routine.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "55",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "51": {
+              "id": "51",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "55",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        },
+        "23": {
+          "id": "23",
+          "speaker": "Player",
+          "text": "It's rare to meet someone so cheerful these days. Why the good mood?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "144",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "105": {
+              "id": "105",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "144",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        },
+        "141": {
+          "id": "141",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

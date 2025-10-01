@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "synopsis": "This dialog plays when interacting with the button at the Colony Vault. It is an interaction with the mind within the illithid machine. Only companions with a tadpole may interact with the machine, or they will be denied access.Interacting with the mind allows the player to start solving the puzzle, reset the puzzle or talk to it after the puzzle is solved. When it is solved, the mind considers you its master, and you can ask it to do things like open or close the vaults (which contain rewards), show you a map of the Colony or \"shatter\" the mind to its original state.",
+    "how_to_trigger": "- Load GustavDev/SCL_Main_A- Teleport near S_COL_Vault_PuzzleButton3_0f07d5be-159d-48f4-94c4-4c9ee0234423- Press the button."
+  },
+  "dialogue": {
+    "7": {
+      "id": "7",
+      "speaker": "Narrator",
+      "text": "*The console glows as you approach, the mind still desperately yearning for connection.*",
+      "context": "",
+      "checkflags": [
+        "COL_Vault_State_BeingSolved = False",
+        "COL_Vault_State_HasAccess",
+        "COL_Vault_State_Unlocked = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "1",
+          "link": "12",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "Ask what the mind needs you to do.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "12",
+              "is_end": false,
+              "node_type": "alias",
+              "children": {}
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Wipe the connection clean and start over.",
+          "context": "",
+          "checkflags": [
+            "COL_Vault_State_HasConnections"
+          ],
+          "setflags": [
+            "COL_Vault_Event_Restart"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Narrator",
+      "text": "*An illithid console, dull and inert - to you, at least.*",
+      "context": "",
+      "checkflags": [
+        "ILLITHID = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Narrator",
+      "text": "*The mind passively awaits your input.*",
+      "context": "",
+      "checkflags": [
+        "COL_Vault_State_BeingSolved",
+        "COL_Vault_State_Unlocked = False",
+        "ACT2_COL_VAULT_SOLVING"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "16",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "0": {
+          "id": "0",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "5",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Narrator",
+      "text": "*The mind needs no further input or connections - it is complete.*",
+      "context": "",
+      "checkflags": [
+        "COL_Vault_State_Unlocked"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Narrator",
+      "text": "*The mind is connected to another - it can only sustain a single connection at a time.*",
+      "context": "",
+      "checkflags": [
+        "COL_Vault_State_BeingSolved",
+        "ACT2_COL_VAULT_SOLVING = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Narrator",
+      "text": "*As the console bursts into life, a mind touches your own. Alien and full of desperate need - but fragmented, too.*",
+      "context": "CinematicNodeContext: Shot of puzzle space as it winks into existence",
+      "checkflags": [
+        "COL_Vault_State_HasAccess = False",
+        "COL_Vault_State_Unlocked = False"
+      ],
+      "setflags": [
+        "COL_Vault_State_HasAccess"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Narrator",
+          "text": "*It is... incomplete. It yearns to connect - but needs you to guide the process, linking each part of your mind to its like.*",
+          "context": "CinematicNodeContext: Shot of the starting point of the player's mind, and the ending point of the machine's, with all the unconnected paths in between.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "Begin to manipulate the mind.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "COL_Vault_Event_Start"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "16": {
+              "id": "16",
+              "speaker": "Player",
+              "text": "Sever the connection and start over.",
+              "context": "",
+              "checkflags": [
+                "COL_Vault_State_HasConnections"
+              ],
+              "setflags": [
+                "COL_Vault_Event_Restart"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

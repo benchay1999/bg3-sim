@@ -1,0 +1,580 @@
+{
+  "metadata": {
+    "synopsis": "A player character interacts with a pod in the Tadpoling Centre that once belonged to the Dark Urge character. Other player characters may also investigate the pod, and imply something about who the pod belonged to if they succeed a skill check.",
+    "how_to_trigger": "- Load up GustavDev/SCL_Main_A- \"goto 678 18 41\"- Interact with S_COL_TadpolingCentre_DarkUrgePod_1c7028d3-bb96-4bc5-8fb6-8b6e1d6a5e27- This interaction will be disabled if you enter the Colony without the Dark Urge in party/camp (meaning the DU would not exist in this playthrough). This only happens if you enter the Colony through gameplay or the debugbook. It will get re-enabled if you recruit the Dark Urge via debug."
+  },
+  "dialogue": {
+    "5": {
+      "id": "5",
+      "speaker": "Narrator",
+      "text": "*This was the pod of someone who was among the very first to be tadpoled - the blood inside is already stale.*",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_Knows_ImpliedDarkUrgePod"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Narrator",
+      "text": "*Perhaps even this very pod was your prison... where were you first captured? It's impossible to remember...*",
+      "context": "",
+      "checkflags": [
+        "REALLY_DARK_URGE"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "15": {
+      "id": "15",
+      "speaker": "Narrator",
+      "text": "*This mind-flayer pod is not only empty, it looks abandoned.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "27",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "Player",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "COL_TadpolingCentre_State_FailedSkillCheck = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "27",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "27",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Narrator",
+                  "text": "*This pod has a different air to its chitinous cavern. Dust and dirt gather on the inside.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "27",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "31": {
+                      "id": "31",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "COL_TadpolingCentre_Knows_IdentifiedDarkUrgePod"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "27",
+                      "is_end": false,
+                      "node_type": "alias",
+                      "children": {
+                        "12": {
+                          "id": "12",
+                          "speaker": "Narrator",
+                          "text": "*This pod's inhabitant must have taken a lot of damage while they were inside.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "COL_TadpolingCentre_Knows_ImpliedDarkUrgePod"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "7": {
+              "id": "7",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Narrator",
+                  "text": "*This was the pod of someone who was among the very first to be tadpoled - the blood inside is already stale.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "COL_TadpolingCentre_State_FailedSkillCheck"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "18": {
+          "id": "18",
+          "speaker": "Narrator",
+          "text": "*Its inhabitant is long gone... and not peacefully.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Narrator",
+      "text": "*This was the pod of someone whose tadpoling happened bloodily: they damaged themselves fighting back.*",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_Knows_IdentifiedDarkUrgePod"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "30": {
+      "id": "30",
+      "speaker": "Narrator",
+      "text": "*This pod has a different air to its chitinous cavern. Dust and dirt are gathered on the inside.*",
+      "context": "",
+      "checkflags": [
+        "COL_TadpolingCentre_Knows_IdentifiedDarkUrgePod = False",
+        "REALLY_DARK_URGE"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "27": {
+          "id": "27",
+          "speaker": "Narrator",
+          "text": "*It's broken beyond repair. Seemingly by a blunt impact, as if whoever was inside threw themselves against it in an effort to break out.*",
+          "context": "CinematicNodeContext: Dark Urge bends down next to the pod, to look into the area beyond the glass, it doesn't have to be shown",
+          "checkflags": [],
+          "setflags": [
+            "COL_TadpolingCentre_Knows_IdentifiedDarkUrgePod"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "11": {
+              "id": "11",
+              "speaker": "Narrator",
+              "text": "*Your brain hurls an image towards you. Your own head-blood gushing down in front of your eyes.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "26": {
+                  "id": "26",
+                  "speaker": "Player",
+                  "text": "Push deeper into the memory.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "13",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "25": {
+                      "id": "25",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "Narrator",
+                          "text": "*Banging your fists on a chamber until half your fingers were broken. How long inside? Days? Months? Lifetimes?*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "22": {
+                              "id": "22",
+                              "speaker": "Narrator",
+                              "text": "*The parasite was inserted into your head, and your body crammed into a pod long before you were moved to the nautiloid.*",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "29": {
+                                  "id": "29",
+                                  "speaker": "Narrator",
+                                  "text": "*A laughing woman, taunting you... She betrayed you... Who was she?*",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "14": {
+                      "id": "14",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "2": {
+                          "id": "2",
+                          "speaker": "Narrator",
+                          "text": "*You were in the pod a long, long while, but it seems you have no recollection of ever entering the nautiloid.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "6": {
+                  "id": "6",
+                  "speaker": "Player",
+                  "text": "Try to discern how long this pod has been empty.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "13",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "32": {
+                          "id": "32",
+                          "speaker": "Narrator",
+                          "text": "*The blood inside has not started to rot. There is a fresh hint to it.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "10": {
+                              "id": "10",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "11",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "17": {
+                      "id": "17",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "19": {
+                          "id": "19",
+                          "speaker": "Narrator",
+                          "text": "*These pods are made to preserve. Time means nothing.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "0": {
+                  "id": "0",
+                  "speaker": "Player",
+                  "text": "Humour me, Astarion, can you give this blood a smell?",
+                  "context": "",
+                  "checkflags": [
+                    "ORI_Astarion_Knows_Vampireness",
+                    "REALLY_ASTARION"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "13",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "23": {
+                      "id": "23",
+                      "speaker": "Astarion",
+                      "text": "Oh yes, that's yours all right. Even stale, I'd recognise that bouquet anywhere.",
+                      "context": "",
+                      "checkflags": [
+                        "CAMP_Astarion_TheHungerC_Bite"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "13",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "11",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "28": {
+                      "id": "28",
+                      "speaker": "Astarion",
+                      "text": "Excuse me? I'm not some bloodhound tracking your scent. I'm of a much higher pedigree.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "13",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "1": {
+                  "id": "1",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

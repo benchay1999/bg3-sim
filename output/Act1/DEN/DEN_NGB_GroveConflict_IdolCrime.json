@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "synopsis": "The player has stolen a most sacred idol from the druids.Though the druids have made peace with the players and the tieflings at this time, they can't let anyone steal their idol, so they interrogate the player when they see him."
+  },
+  "dialogue": {
+    "10": {
+      "id": "10",
+      "speaker": "Narrator",
+      "text": "*It seems the Idol of Silvanus has been stolen. Choose your next move carefully.*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "DEN_GroveConflict_Event_StoleIdolAttempt",
+        "CRIME_Allow_Search"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "2",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "2",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Player",
+              "text": "Return the idol and apologise.",
+              "context": "",
+              "checkflags": [
+                "CRIME_FoundEvidenceCurrentCrime"
+              ],
+              "setflags": [
+                "DEN_GroveConflict_Event_ReturnIdol"
+              ],
+              "ruletags": [],
+              "approval": [
+                "Astarion -1",
+                "Gale -1",
+                "Lae'zel -1",
+                "Wyll 1",
+                "Karlach 1"
+              ],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Narrator",
+                  "text": "*You return the relic, but your guilt is not so easily discarded. You will be closely watched.*",
+                  "context": "NodeContext: The player stole a sacred idol, but gave it back, still the druid is quite angry,",
+                  "checkflags": [],
+                  "setflags": [
+                    "CRIME_FoundGuiltyPlayer",
+                    "CRIME_AgreedToForgiveCrime"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "speaker": "Player",
+              "text": "I'm afraid I haven't seen it, sorry.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "11",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "11": {
+              "id": "11",
+              "speaker": "Player",
+              "text": "It's in my bag. But if you tell anyone, I'll rip your tongue out.",
+              "context": "",
+              "checkflags": [
+                "BARBARIAN = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "2",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "IT'S MINE. PISS OFF.",
+              "context": "",
+              "checkflags": [
+                "BARBARIAN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "2": {
+                  "id": "2",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Narrator",
+                      "text": "*You certainly are convincing. The druid is letting you leave.*",
+                      "context": "CinematicNodeContext: The druid slightly steps aside, letting the player go.\rNodeContext: The player admitted to stealing a sacred idol, but threatened the druids into letting him go",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "8": {
+                  "id": "8",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "0": {
+                      "id": "0",
+                      "speaker": "Narrator",
+                      "text": "*The druid realises you're the thief. The idol will not be allowed to leave. Neither will you.*",
+                      "context": "NodeContext: The player admitted to stealing a sacred idol, and tried to threaten the druids into letting him go, but failed.",
+                      "checkflags": [],
+                      "setflags": [
+                        "CRIME_PersuasionFailed",
+                        "TemporaryHostilityAfterDialog"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Attack.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRIME_FoundGuiltyPlayer",
+                "CRIME_Resist_Search"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Narrator",
+      "text": "*Your second attempt has gone no better than the first - you've been caught stealing the idol. The punishment is death.*",
+      "context": "InternalNodeContext: Has stolen and returned the idol before.",
+      "checkflags": [
+        "DEN_GroveConflict_Event_StoleIdolAttempt"
+      ],
+      "setflags": [
+        "TemporaryHostilityAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

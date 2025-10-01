@@ -1,0 +1,771 @@
+{
+  "metadata": {
+    "synopsis": "Dialog with Ghast guard in Phildrave's Mansion, where he can give the player access to the whole house checkpoint. He will give access automatically if the player has the letter from father carrion (from Oskar's Beloved) and can also be tricked or intimidated into giving access.",
+    "how_to_trigger": "Talk to the ghast or enter the primary checkpoint trigger.Location: BGO_Main_ALocation: 22; 47; 136"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Thenar",
+      "text": "Mystic Carrion no more. Thrumbo in charge. Better. Much better.",
+      "context": "NodeContext: Appraising the situation, deciding it's a good thing.",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_ZombiesMastersOfHouse",
+        "LOW_PhilgravesMansion_State_AllZombiesPermaDefeated = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Thenar",
+      "text": "Hush. No noises. Disturbs the spirits.",
+      "context": "NodeContext: Urgent - worried about getting in trouble",
+      "checkflags": [
+        "LOW_Ghast_State_HasMet",
+        "LOW_PhilgravesMansion_State_CheckpointGivenAccess",
+        "LOW_PhilgravesMansion_GhastIdentifiedCustomer = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Thenar",
+      "text": "Downstairs, guest. Mystic Carrions waits.",
+      "context": "NodeContext: Directing politely",
+      "checkflags": [
+        "LOW_Ghast_State_HasMet",
+        "LOW_PhilgravesMansion_State_CheckpointGivenAccess",
+        "LOW_PhilgravesMansion_GhastIdentifiedCustomer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Thenar",
+      "text": "Told to leave. Intruder. INTRUDER.",
+      "context": "NodeContext: Getting angry",
+      "checkflags": [
+        "LOW_Ghast_State_HasMet"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "29": {
+      "id": "29",
+      "speaker": "Thenar",
+      "text": "What do you here?",
+      "context": "NodeContext: Curious but with a threatening undercurrent. Strange phrasing is intentional - meaning is \"What are you doing here?\"",
+      "checkflags": [
+        "LOW_Ghast_State_HasMet = False"
+      ],
+      "setflags": [
+        "LOW_Ghast_State_HasMet"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "41",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "27": {
+          "id": "27",
+          "speaker": "Thenar",
+          "text": "Ah, invited. Carrying a letter.",
+          "context": "NodeContext: Air of recognition - a bit more respectful, now he thinks you're a customer",
+          "checkflags": [
+            "LOW_PhilgravesMansion_State_PlayerHasLetter"
+          ],
+          "setflags": [
+            "LOW_PhilgravesMansion_State_CheckpointGivenAccess",
+            "LOW_PhilgravesMansion_GhastIdentifiedCustomer"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "41",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Thenar",
+              "text": "Please, valued customer - enter. Mystic Carrion waits below.",
+              "context": "NodeContext: Fawning, obsequious",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "31": {
+          "id": "31",
+          "speaker": "Thenar",
+          "text": "No invitation. No permission. Not expected.",
+          "context": "NodeContext: Listing the reasons you can't come in",
+          "checkflags": [
+            "LOW_PhilgravesMansion_State_PlayerHasLetter = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "41",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "37": {
+              "id": "37",
+              "speaker": "Thenar",
+              "text": "Leave. Must leave.",
+              "context": "NodeContext: Firm, urgent but not yet aggressive",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "41",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "4": {
+                  "id": "4",
+                  "speaker": "Player",
+                  "text": "Leave? I don't even know where I am!",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "41",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "1": {
+                      "id": "1",
+                      "speaker": "Thenar",
+                      "text": "In Mystic Carrion's halls. But not allowed. Customers only.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_PhilgravesMansion_State_KnowGhastWorksForCarrion"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "32": {
+                  "id": "32",
+                  "speaker": "Player",
+                  "text": "Who's Mystic Carrion? He sounds very dramatic.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_PhilgravesMansion_State_KnowGhastWorksForCarrion"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "41",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "Thenar",
+                      "text": "Master of death. Spirit weaver. Necromancer.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "40": {
+                          "id": "40",
+                          "speaker": "Thenar",
+                          "text": "Important and rich. Like his clients. Not like you.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "39": {
+                              "id": "39",
+                              "speaker": "Thenar",
+                              "text": "Must leave. Only come by invitation.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_PhilgravesMansion_GhastMentionedInvitation"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "20": {
+                  "id": "20",
+                  "speaker": "Player",
+                  "text": "I've plenty of gold to spare. Can I become a customer?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "41",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "23": {
+                      "id": "23",
+                      "speaker": "Thenar",
+                      "text": "No. Only special. Only selected.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "38": {
+                          "id": "38",
+                          "speaker": "Thenar",
+                          "text": "Cannot ask for help. Only take, if offered.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "26": {
+                              "id": "26",
+                              "speaker": "Thenar",
+                              "text": "Must leave now. Cannot stay. Forbidden.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "10": {
+                  "id": "10",
+                  "speaker": "Player",
+                  "text": "I'm sure I had an invite here somewhere... Must have dropped the bloody thing.",
+                  "context": "",
+                  "checkflags": [
+                    "UNDEAD = False"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "41",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "41",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "16": {
+                          "id": "16",
+                          "speaker": "Thenar",
+                          "text": "Customer always right. Must be kept happy.",
+                          "context": "NodeContext: Remembering his instructions, obviously something that's beeen drilled into him",
+                          "checkflags": [
+                            "UNDEAD = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "41",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        },
+                        "7": {
+                          "id": "7",
+                          "speaker": "Thenar",
+                          "text": "A grave born client. Strange.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "41": {
+                              "id": "41",
+                              "speaker": "Thenar",
+                              "text": "Come in. But quick.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "2": {
+                                  "id": "2",
+                                  "speaker": "Thenar",
+                                  "text": "Mystic Carrion waits. In the salon.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [
+                                    "LOW_PhilgravesMansion_State_CheckpointGivenAccess",
+                                    "LOW_PhilgravesMansion_GhastIdentifiedCustomer"
+                                  ],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "28": {
+                      "id": "28",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "34": {
+                          "id": "34",
+                          "speaker": "Thenar",
+                          "text": "No. Not allowed.",
+                          "context": "NodeContext: Getting angry",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "30": {
+                              "id": "30",
+                              "speaker": "Thenar",
+                              "text": "Breaking the rules. Get out. GET OUT.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "FactionHostileToPlayerGroupAfterDialog"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "36": {
+                  "id": "36",
+                  "speaker": "Player",
+                  "text": "Let me through, or you're the one who'll be going downstairs. Head first.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "11": {
+                      "id": "11",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "Thenar",
+                          "text": "No. No pain. Do not hurt.",
+                          "context": "NodeContext: \"There's no need for that\" - fearful",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "15": {
+                              "id": "15",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "8",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "18": {
+                      "id": "18",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "33": {
+                          "id": "33",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "34",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "42": {
+                  "id": "42",
+                  "speaker": "Player",
+                  "text": "Do you really get paid enough to worry about who wanders in that door?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "14": {
+                      "id": "14",
+                      "speaker": "",
+                      "text": "True",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "Thenar",
+                          "text": "No pay. None at all.",
+                          "context": "NodeContext: Lamenting -  a disappointing situation",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "8": {
+                              "id": "8",
+                              "speaker": "Thenar",
+                              "text": "Enter then. Saw nothing. Know nothing.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [
+                                "LOW_PhilgravesMansion_State_CheckpointGivenAccess"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "25": {
+                      "id": "25",
+                      "speaker": "",
+                      "text": "False",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "rollresult",
+                      "children": {
+                        "3": {
+                          "id": "3",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "34",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "5": {
+                  "id": "5",
+                  "speaker": "Player",
+                  "text": "Attack.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "FactionHostileToPlayerGroupAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "21": {
+                  "id": "21",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "LOW_PhilgravesMansion_Event_TeleportOutsideCheckpoint"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "35": {
+      "id": "35",
+      "speaker": "Thenar",
+      "text": "House so quiet. Strange.",
+      "context": "NodeContext: Indifferent",
+      "checkflags": [
+        "LOW_PhilgravesMansion_State_ZombiesMastersOfHouse",
+        "LOW_PhilgravesMansion_State_AllZombiesPermaDefeated"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

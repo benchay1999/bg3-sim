@@ -1,0 +1,506 @@
+{
+  "metadata": {
+    "synopsis": "NOTE: the 'lair door' speaker is supposed to be Marcoryl, one of the druid servants (though he is unseen throughout, behind a locked door)Doni the grunting tiefling kid stands by the sealed entrance to the druid lair. A voice from with warns both player and Doni away. It becomes apparent that the druid servants have sealed themselves in the inner sanctum before asn impending goblin attack, Efforts by the player to get them to open the sanctum to others fail  - the servants just want to ensure their own safety.",
+    "how_to_trigger": "Trigger:- oe readyattackonden- goto 224, 527- Talk to the door"
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Stone Door",
+      "text": "This door is staying shut - just be sensible and leave!",
+      "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+      "checkflags": [
+        "DEN_AttackOnDen_Event_TryConvinceLairDoor"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_LairDoor",
+        "CANTSPEAK"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Stone Door",
+      "text": "You people have endangered the grove for long enough. Go away!",
+      "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+      "checkflags": [],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_LairDoor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "13": {
+          "id": "13",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "15",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "6",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "8": {
+          "id": "8",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "17",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "27": {
+          "id": "27",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "21": {
+      "id": "21",
+      "speaker": "Doni",
+      "text": "*Grunt.*",
+      "context": "CinematicNodeContext: Camera pans down to show Doni, Player and the Door\rNodeContext: Worried grunt as he greets the player - trying to communicate a hopeless situation",
+      "checkflags": [
+        "8a4a686d-6c47-411f-a0b3-d79ff33e2922"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_LairDoor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "23": {
+          "id": "23",
+          "speaker": "Stone Door",
+          "text": "Go away! There's nothing in here for you - for any of you.",
+          "context": "CinematicNodeContext: Only the door is seen - voice is OS\rInternalNodeContext: This voice is supposed to be the same as Marcoryl, one of the druid servants.\rNodeContext: Urgent, a little frightened even. This voice is supposed to be the same as Marcoryl, one of the druid servants.",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "15": {
+              "id": "15",
+              "speaker": "Player",
+              "text": "What's going on here?",
+              "context": "CinematicNodeContext: Addressed to door",
+              "checkflags": [
+                "DEN_AttackOnDen_Knows_WhyDoorIsClosed = False"
+              ],
+              "setflags": [
+                "DEN_AttackOnDen_Knows_WhyDoorIsClosed"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "Stone Door",
+                  "text": "I said go away. You people have endangered this sacred place long enough.",
+                  "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "22": {
+                      "id": "22",
+                      "speaker": "Stone Door",
+                      "text": "This door is staying closed until you're gone, one way or another.",
+                      "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Come on now, open up! There's people out here who need shelter.",
+              "context": "CinematicNodeContext: Addressed to door",
+              "checkflags": [
+                "DEN_AttackOnDen_Knows_WhyDoorIsClosed"
+              ],
+              "setflags": [
+                "DEN_AttackOnDen_Event_TryConvinceLairDoor"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "Stone Door",
+                  "text": "We've been more than generous already! We have to take care of the grove's future.",
+                  "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "Stone Door",
+                      "text": "Move away.",
+                      "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "17": {
+              "id": "17",
+              "speaker": "Player",
+              "text": "Coward. Innocents are going to die, thanks to you.",
+              "context": "CinematicNodeContext: Addressed to door",
+              "checkflags": [
+                "DEN_AttackOnDen_Knows_WhyDoorIsClosed"
+              ],
+              "setflags": [
+                "DEN_AttackOnDen_Event_TryConvinceLairDoor"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Stone Door",
+                  "text": "Then this sacred grove can be a comfort to them in their final moments.",
+                  "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: Eldath pronounced 'EL-dath' 'Stone door' = Marcoryl voice",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "24": {
+                      "id": "24",
+                      "speaker": "Stone Door",
+                      "text": "But this door is staying closed. Now leave!",
+                      "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "Go rejoin the others, kid.",
+              "context": "CinematicNodeContext: Addressed to Doni",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "3": {
+                  "id": "3",
+                  "speaker": "Doni",
+                  "text": "*Grunt.*",
+                  "context": "NodeContext: resigned grunt - feels rejected",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "16": {
+              "id": "16",
+              "speaker": "Player",
+              "text": "You're a disgrace to this sacred grove. You should wither with shame.",
+              "context": "CinematicNodeContext: Addressed to door",
+              "checkflags": [
+                "DEN_AttackOnDen_Knows_WhyDoorIsClosed",
+                "DRUID"
+              ],
+              "setflags": [
+                "DEN_AttackOnDen_Event_TryConvinceLairDoor"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "7": {
+                  "id": "7",
+                  "speaker": "Stone Door",
+                  "text": "There's no shame in ensuring the sanctity of this grove. Now leave!",
+                  "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "18": {
+                  "id": "18",
+                  "speaker": "Doni",
+                  "text": "*Grunt.*",
+                  "context": "NodeContext: resigned grunt - has been asking for help from the druids and feels abandoned",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Stone Door",
+      "text": "You're wasting your time. This door is staying shut.",
+      "context": "CinematicNodeContext: Only the door is seen - voice is OS\rNodeContext: 'Stone door' = Marcoryl voice",
+      "checkflags": [
+        "DEN_AttackOnDen_HasMet_LairDoor"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "13",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "14": {
+          "id": "14",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "16",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "26": {
+      "id": "26",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "CANTSPEAK"
+      ],
+      "setflags": [
+        "DEN_AttackOnDen_HasMet_LairDoor"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "19",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "8a4a686d-6c47-411f-a0b3-d79ff33e2922"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "alias",
+          "children": {}
+        }
+      }
+    }
+  }
+}

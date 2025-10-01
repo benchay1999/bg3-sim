@@ -1,0 +1,783 @@
+{
+  "metadata": {
+    "synopsis": "Crime reaction for Chop, the Colony Butcher, after we either free Us from its cage, mess with the cage or kill Us.",
+    "how_to_trigger": "- Load up GustavDev/SCL_Main_A- \"goto 676 21 -74\" or \"oe COL_Butcher\" to get to the Colony Morgue- Use \"oe morgue_us\" to get Us into the cage here.- Free Us from the cage, and get spotted by Chop.- You can unlock/use/cast Knock on the cage door or somehow teleport Us outside of the cage."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Chop",
+      "text": "NO! No touch. It is wrong - Other.",
+      "context": "NodeContext: Catching us meddling with a caged creature that we shouldn't be",
+      "checkflags": [
+        "COL_Morgue_State_UsFreed = False"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "30",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "18": {
+          "id": "18",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "7",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "14": {
+          "id": "14",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "2",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "31": {
+          "id": "31",
+          "speaker": "Player",
+          "text": "No touch. I was just taking a look.",
+          "context": "",
+          "checkflags": [
+            "COL_Morgue_State_TriedDenyingCrime = False"
+          ],
+          "setflags": [
+            "COL_Morgue_State_TriedDenyingCrime",
+            "COL_Morgue_Event_ButcherCancelHostility"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Chop",
+              "text": "No look. No touch. No smell or taste.",
+              "context": "NodeContext: Surly rundown of the rules",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "37": {
+          "id": "37",
+          "speaker": "Player",
+          "text": "No touch. I was just taking a look.",
+          "context": "",
+          "checkflags": [
+            "COL_Morgue_State_TriedDenyingCrime"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "20": {
+                  "id": "20",
+                  "speaker": "Chop",
+                  "text": "No look. No touch. No more warning.",
+                  "context": "NodeContext: Letting us pass with a final warning.",
+                  "checkflags": [],
+                  "setflags": [
+                    "COL_Morgue_Event_ButcherCancelHostility"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "39": {
+                  "id": "39",
+                  "speaker": "Chop",
+                  "text": "No TOUCH. No LOOK. No MORE!",
+                  "context": "NodeContext: Building rage - attacking us at the end",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "speaker": "Chop",
+      "text": "NO! Creature was wrong - Other. But mine to fix.",
+      "context": "",
+      "checkflags": [
+        "COL_Morgue_State_Us_IsDead"
+      ],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "12",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "36": {
+          "id": "36",
+          "speaker": "Player",
+          "text": "I am a True Soul. Are you questioning my will?",
+          "context": "",
+          "checkflags": [
+            "ILLITHID"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "12",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "32": {
+              "id": "32",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "GLO_Tadpoled_UsedToday1 = False"
+              ],
+              "setflags": [
+                "COL_Morgue_Event_ButcherCancelHostility",
+                "GLO_Tadpoled_UsedToday1"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "alias",
+              "children": {}
+            },
+            "41": {
+              "id": "41",
+              "speaker": "Narrator",
+              "text": "*You focus on the source of the power, but it is quiet and still. It needs to rest.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "13": {
+          "id": "13",
+          "speaker": "Player",
+          "text": "Shall I 'fix' you as well?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "25": {
+              "id": "25",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "12": {
+                  "id": "12",
+                  "speaker": "Chop",
+                  "text": "... no. Please. I hear. I obey.",
+                  "context": "NodeContext: Broken - wilting under the threat of punishment from us",
+                  "checkflags": [],
+                  "setflags": [
+                    "COL_Morgue_Event_ButcherCancelHostility"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "22": {
+                  "id": "22",
+                  "speaker": "Chop",
+                  "text": "No. NO! CHOP FIX.",
+                  "context": "NodeContext: Growing rage - we tried and failed to intimidate him",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Player",
+          "text": "Why do you care?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "23": {
+              "id": "23",
+              "speaker": "Chop",
+              "text": "Part of One Mind. Us. Even if... wrong.",
+              "context": "NodeContext: Uncertain itself why it's grieving this creature",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "33": {
+          "id": "33",
+          "speaker": "Player",
+          "text": "I'll send you to join it then.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Lae'zel 1",
+            "Jaheira 1",
+            "Minthara 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "28": {
+              "id": "28",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "22",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Chop",
+      "text": "NO! Back in cage. It is wrong. Sings wrong. Other.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "FactionHostileToPlayerGroupAfterDialog"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "30": {
+          "id": "30",
+          "speaker": "Player",
+          "text": "We are alike. It belongs with me.",
+          "context": "",
+          "checkflags": [
+            "COL_Morgue_Butcher_State_MentionedUs",
+            "GLO_Tadpoled_UsedToday1 = False",
+            "ILLITHID"
+          ],
+          "setflags": [
+            "GLO_Tadpoled_UsedToday1"
+          ],
+          "ruletags": [],
+          "approval": [
+            "Lae'zel -1",
+            "Jaheira -1",
+            "Halsin -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "1",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "29": {
+              "id": "29",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Chop",
+                  "text": "It sings... wrong song. But... same song - as you?",
+                  "context": "NodeContext: Confused - he senses our mind and realizes we are somehow bound to the intellect devourer he has been ordered to 'correct'",
+                  "checkflags": [],
+                  "setflags": [
+                    "COL_Morgue_Butcher_State_ConvincedReleaseUs",
+                    "COL_Morgue_Butcher_Event_ReceiveUsKey"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "17": {
+                      "id": "17",
+                      "speaker": "Chop",
+                      "text": "Sing other song together, then - but AWAY from here.",
+                      "context": "NodeContext: Hushed and hurried relief - he's supposed to kill the intellect devourer for singing the \"wrong\" song, but he'd rather we take it away to safety",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "16": {
+              "id": "16",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "1",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "10": {
+                  "id": "10",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "1",
+                  "is_end": false,
+                  "node_type": "alias",
+                  "children": {
+                    "40": {
+                      "id": "40",
+                      "speaker": "Chop",
+                      "text": "No! Wrong - ALL WRONG!",
+                      "context": "NodeContext: Overwhelmed, flying into a confused rage - we're not supposed to be here, and he has to kill us",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "We are alike. It belongs with me.<br>",
+          "context": "",
+          "checkflags": [
+            "COL_Morgue_Butcher_State_MentionedUs",
+            "GLO_Tadpoled_UsedToday1",
+            "ILLITHID"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "35": {
+              "id": "35",
+              "speaker": "Narrator",
+              "text": "*You focus on the source of the power, but it is quiet and still. It needs to rest.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "You're right. It is 'other' - so let me take it away.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Lae'zel -1",
+            "Jaheira -1",
+            "Halsin -1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "42": {
+              "id": "42",
+              "speaker": "",
+              "text": "True",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "27": {
+                  "id": "27",
+                  "speaker": "Chop",
+                  "text": "You sing wrong song too. In wrong voice.",
+                  "context": "NodeContext: Confused, coming to realization he will let us go",
+                  "checkflags": [],
+                  "setflags": [
+                    "COL_Morgue_Butcher_State_ConvincedReleaseUs",
+                    "COL_Morgue_Butcher_Event_ReceiveUsKey"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "38": {
+                      "id": "38",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "17",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "id": "3",
+              "speaker": "",
+              "text": "False",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "rollresult",
+              "children": {
+                "34": {
+                  "id": "34",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "40",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "21": {
+          "id": "21",
+          "speaker": "Player",
+          "text": "Stand aside or die.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [
+            "Lae'zel 1",
+            "Jaheira 1",
+            "Minthara 1",
+            "Halsin 1"
+          ],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "5": {
+              "id": "5",
+              "speaker": "Chop",
+              "text": "Die. Die. Die?",
+              "context": "NodeContext: Mulling through the word with growing recognition - only realizing the threat at the end, and welcoming death",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "26": {
+                  "id": "26",
+                  "speaker": "Chop",
+                  "text": "Yes - PLEASE!",
+                  "context": "NodeContext: desperate joyful rage - he wants us to kill him, and will attack us",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

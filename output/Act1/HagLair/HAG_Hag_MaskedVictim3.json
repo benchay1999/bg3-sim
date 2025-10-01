@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "synopsis": "A victim of the hag, bound into her service for so long that their mind is almost completely lost. This one is wearing the Mask of Vengeance, and is brainwashed to take revenge on anyone who hurts the hag."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Mask of Vengeance",
+      "text": "They'll suffer - whoever hurt Auntie will suffer.",
+      "context": "NodeContext: muttering angrily",
+      "checkflags": [
+        "HAG_Hag_MaskedVictim3_HasMet"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Mask of Vengeance",
+      "text": "Somebody hurt Auntie - I'll open their veins.",
+      "context": "NodeContext: confused - mind almost completely lost - 'hurt' is past tense (ie 'somebody has hurt auntie')",
+      "checkflags": [
+        "HAG_Hag_SummonedVictims"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "That mask is warping your mind - I need to remove it.",
+          "context": "",
+          "checkflags": [
+            "HAG_Hag_RemovedMaskFromVictim = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "3": {
+              "id": "3",
+              "speaker": "Mask of Vengeance",
+              "text": "You can't take Auntie's gift! I won't let you!",
+              "context": "NodeContext: Rage",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "The hag's dead - you're free now.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "4": {
+              "id": "4",
+              "speaker": "Mask of Vengeance",
+              "text": "I'll tear your throat out!",
+              "context": "NodeContext: rage",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "2": {
+          "id": "2",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "HAG_Hag_MaskedVictim3_HasMet"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Mask of Vengeance",
+      "text": "Auntie will be awake soon. She'll be so angry.",
+      "context": "NodeContext: halting, confused",
+      "checkflags": [
+        "HAG_Hag_SummonedVictims = False",
+        "HAG_Hag_State_IsDead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "1",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Mask of Vengeance",
+      "text": "If you hurt Auntie, I'll cut out your eyes.",
+      "context": "NodeContext: Sinister warning, but delivered by a brainwashed character - a little halting and confused",
+      "checkflags": [
+        "HAG_Hag_SummonedVictims = False",
+        "HAG_Hag_State_IsDead = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

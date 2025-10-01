@@ -1,0 +1,2576 @@
+{
+  "metadata": {
+    "synopsis": "An NPC wants to arrest a player for committing a crime (the NPC saw you commit the crime, or another NPC told them you did it). We have custom greeting nodes for the common crime types, and also fallbacks in case there is no prison, or in case this crime happens while the player was already in prison."
+  },
+  "dialogue": {
+    "2": {
+      "id": "2",
+      "speaker": "Narrator",
+      "text": "*Someone caught you stealing. Best give them a good reason not to kill you.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Theft",
+        "BADASSCIVILIAN"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "84",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "93": {
+          "id": "93",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Narrator",
+      "text": "*Your bad behaviour caught this guard's eye. What do you have to say?*",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "84",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "92": {
+          "id": "92",
+          "speaker": "Player",
+          "text": "Acquiesce and follow to prison.",
+          "context": "",
+          "checkflags": [
+            "GEB_Arrest_HavePrison",
+            "69cf6c1f-fc1f-4e22-b55d-dc40768f6669"
+          ],
+          "setflags": [
+            "Allow_Arrest",
+            "CRIME_Allow_Search"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        },
+        "53": {
+          "id": "53",
+          "speaker": "Player",
+          "text": "Try to talk your way out of it.",
+          "context": "",
+          "checkflags": [
+            "GEB_CharismaDisabled = False",
+            "CRIME_PersuasionFailed = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "84",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "Player",
+              "text": "Would you look at that - my map's upside down! I should have turned right at that crossroads...",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Trespassing"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "84",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "40": {
+                  "id": "40",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "9": {
+                      "id": "9",
+                      "speaker": "Narrator",
+                      "text": "*Your words are enough to resolve the matter. Still, you need to leave.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "TeleportOutOfTrespass",
+                        "CRIME_PersuasionSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "134": {
+                          "id": "134",
+                          "speaker": "Narrator",
+                          "text": "*Best not try that again lest your actions speak louder than your words.*",
+                          "context": "",
+                          "checkflags": [
+                            "GEB_CharismaDisabled_NextTime"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "25": {
+                  "id": "25",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "72",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "103": {
+              "id": "103",
+              "speaker": "Player",
+              "text": "You should be asking for my permission to be here. You're. In. My. Way.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Trespassing"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "84",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "84": {
+                  "id": "84",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "17",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "123": {
+              "id": "123",
+              "speaker": "Player",
+              "text": "Haven't you ever been turned around on your way to a date with destiny?",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Trespassing"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "84",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "58": {
+              "id": "58",
+              "speaker": "Player",
+              "text": "I was trying to save it, but I was too late.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Vandalise"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "28",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "73": {
+              "id": "73",
+              "speaker": "Player",
+              "text": "That was just for starters. Back off, or you're next.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Vandalise"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "28",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "12": {
+              "id": "12",
+              "speaker": "Player",
+              "text": "No need to go causing a fuss over a little accident, is there?",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Vandalise"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "100",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "28": {
+                  "id": "28",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "59": {
+                      "id": "59",
+                      "speaker": "Narrator",
+                      "text": "*You've convinced them, for now. But transgress again, and no amount of talking will get you out of trouble.*",
+                      "context": "",
+                      "checkflags": [
+                        "GEB_CharismaDisabled_NextTime"
+                      ],
+                      "setflags": [
+                        "CRIME_PersuasionSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "83": {
+                      "id": "83",
+                      "speaker": "Narrator",
+                      "text": "*You managed to get away with it. Better not try your luck too often.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "CRIME_PersuasionSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "72": {
+                  "id": "72",
+                  "speaker": "",
+                  "text": "False",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "62": {
+                      "id": "62",
+                      "speaker": "Narrator",
+                      "text": "*If your intention was to make things worse, you certainly succeeded.*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "CRIME_PersuasionFailed"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "75": {
+                          "id": "75",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "4",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "70": {
+              "id": "70",
+              "speaker": "Player",
+              "text": "There's something... unnatural about this body. Get yourself to safety - I'll handle it.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Murder"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "100",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "33": {
+              "id": "33",
+              "speaker": "Player",
+              "text": "If I committed murder, I guess I'd have to kill any witnesses, wouldn't I?",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Murder"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "100",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "100": {
+                  "id": "100",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "125": {
+              "id": "125",
+              "speaker": "Player",
+              "text": "Do I look like a killer to you? I was raised better than that.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Murder"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "100",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "16": {
+              "id": "16",
+              "speaker": "Player",
+              "text": "We weren't fighting. I was merely demonstrating a new martial technique.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Assault"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "108",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "108": {
+                  "id": "108",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "118": {
+              "id": "118",
+              "speaker": "Player",
+              "text": "Go on. Try me. I'm finished warming up.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Assault"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "108",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "66": {
+              "id": "66",
+              "speaker": "Player",
+              "text": "Please. That was barely a scuffle. No need to overreact.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Assault"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "108",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "85": {
+              "id": "85",
+              "speaker": "Player",
+              "text": "What spell? That was just a trick of the light.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_KnockSpell"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "121",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "130": {
+              "id": "130",
+              "speaker": "Player",
+              "text": "Interrupt me again and you'll be needing that spell to open your jaw.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_KnockSpell"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "121",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "You know us spellcasting types. Can't help showing off.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_KnockSpell"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "129",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "121": {
+                  "id": "121",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "115": {
+              "id": "115",
+              "speaker": "Player",
+              "text": "This item was stolen from me! If you'd done your job I wouldn't need to retrieve it!",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Theft"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "129",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "80": {
+              "id": "80",
+              "speaker": "Player",
+              "text": "What's worth more to you - getting this back, or leaving here alive?",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Theft"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "129",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "56": {
+              "id": "56",
+              "speaker": "Player",
+              "text": "Since when is it a crime to admire fine craftsmanship? I just wanted a better look.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Theft"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "19",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "129": {
+                  "id": "129",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "61": {
+              "id": "61",
+              "speaker": "Player",
+              "text": "I was merely admiring the metalwork. I'm something of a locksmith myself.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Lockpicking"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "19",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "51": {
+              "id": "51",
+              "speaker": "Player",
+              "text": "Want to find out what else I can do with a lockpick? You won't like it.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Lockpicking"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "19",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "19": {
+                  "id": "19",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "116": {
+              "id": "116",
+              "speaker": "Player",
+              "text": "Far worse goes on around here than lockpicking. Shouldn't you be focused on that?",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Lockpicking"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "19",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "104": {
+              "id": "104",
+              "speaker": "Player",
+              "text": "Just admiring the mechanism. Nashkel-made, if I'm not mistaken.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_DisarmingTrap"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "89",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "76": {
+              "id": "76",
+              "speaker": "Player",
+              "text": "Let's test it on you, shall we?",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_DisarmingTrap"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "89",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "89": {
+                  "id": "89",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "105": {
+              "id": "105",
+              "speaker": "Player",
+              "text": "Why do you even need this trap? Surely you're strong enough to deal with troublemakers yourself?",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_DisarmingTrap"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "89",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "57": {
+              "id": "57",
+              "speaker": "Player",
+              "text": "I was trying to help. Now you'll never see the benefits of my little incantation.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Polymorphed"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "77",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "77": {
+                  "id": "77",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "68": {
+              "id": "68",
+              "speaker": "Player",
+              "text": "Mutter guttural syllables as though placing a particularly vile curse.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Polymorphed"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "77",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "65": {
+              "id": "65",
+              "speaker": "Player",
+              "text": "It's not like that spell does any real harm. Just makes you feel a bit funny.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Polymorphed"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "77",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "20": {
+              "id": "20",
+              "speaker": "Player",
+              "text": "I was trying to help. Now you'll never see the benefits of my little spell.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Charmed"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "132": {
+              "id": "132",
+              "speaker": "Player",
+              "text": "Mutter guttural syllables as though placing a particularly vile curse.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Charmed"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "109": {
+              "id": "109",
+              "speaker": "Player",
+              "text": "It's not like that spell does any real harm. Just makes you feel a bit funny.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Charmed"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "34": {
+              "id": "34",
+              "speaker": "Player",
+              "text": "A decorative replica only. I thought the place needed sprucing up.",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_PlacedTrap"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "39",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "You'll wish that trap had caught you by the time I'm done with you.",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_PlacedTrap"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "39",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "39": {
+                  "id": "39",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "1": {
+              "id": "1",
+              "speaker": "Player",
+              "text": "No harm done. I'll just pick it up and be on my way.",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_PlacedTrap"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "39",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "74": {
+              "id": "74",
+              "speaker": "Player",
+              "text": "There's something... unnatural about this body. Get yourself to safety - I'll handle it.",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_DroppedOwnedCorpse"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "50",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "42": {
+              "id": "42",
+              "speaker": "Player",
+              "text": "If I committed murder, I guess I'd have to kill any witnesses, wouldn't I?",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_DroppedOwnedCorpse"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "50",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "50": {
+                  "id": "50",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "135": {
+              "id": "135",
+              "speaker": "Player",
+              "text": "Do I look like a killer to you? I was raised better than that.",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_DroppedOwnedCorpse"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "50",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "128": {
+              "id": "128",
+              "speaker": "Player",
+              "text": "There's something... unnatural about this body. Get yourself to safety - I'll handle it.",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_PickUpOwnedCorpse"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "24",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "87": {
+              "id": "87",
+              "speaker": "Player",
+              "text": "Turn around and walk away. Trust me - you'll live longer.",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_PickUpOwnedCorpse"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "24",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "24": {
+                  "id": "24",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "97": {
+              "id": "97",
+              "speaker": "Player",
+              "text": "I'm sorry - nobody taught me any better. You've shown me the error of my ways.<br>",
+              "context": "",
+              "checkflags": [
+                "GEB_CRIME_PickUpOwnedCorpse"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "24",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "102": {
+              "id": "102",
+              "speaker": "Player",
+              "text": "I was just testing your observational skills. Congratulations - your eyesight is in full working order.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Vandalise = False",
+                "GEB_Crime_KnockSpell = False",
+                "GEB_Crime_Polymorphed = False",
+                "GEB_Crime_Charmed = False",
+                "GEB_CRIME_DroppedOwnedCorpse = False",
+                "GEB_Crime_Trespassing = False",
+                "GEB_Crime_Theft = False",
+                "GEB_Crime_Assault = False",
+                "GEB_Crime_Murder = False",
+                "GEB_CRIME_PickUpOwnedCorpse = False",
+                "GEB_Crime_Lockpicking = False",
+                "GEB_Crime_DisarmingTrap = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "49",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "49": {
+                  "id": "49",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "12",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "113": {
+              "id": "113",
+              "speaker": "Player",
+              "text": "This only ends two ways - you leave me alone, or you die. What will it be?",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Vandalise = False",
+                "GEB_Crime_KnockSpell = False",
+                "GEB_Crime_Polymorphed = False",
+                "GEB_Crime_Charmed = False",
+                "GEB_CRIME_DroppedOwnedCorpse = False",
+                "GEB_Crime_Trespassing = False",
+                "GEB_Crime_Theft = False",
+                "GEB_Crime_Assault = False",
+                "GEB_Crime_Murder = False",
+                "GEB_CRIME_PickUpOwnedCorpse = False",
+                "GEB_Crime_Lockpicking = False",
+                "GEB_Crime_DisarmingTrap = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "49",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "136": {
+              "id": "136",
+              "speaker": "Player",
+              "text": "I'm sorry - nobody taught me any better. You've shown me the error of my ways.",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Vandalise = False",
+                "GEB_Crime_KnockSpell = False",
+                "GEB_Crime_Polymorphed = False",
+                "GEB_Crime_Charmed = False",
+                "GEB_CRIME_DroppedOwnedCorpse = False",
+                "GEB_Crime_Trespassing = False",
+                "GEB_Crime_Theft = False",
+                "GEB_Crime_Assault = False",
+                "GEB_Crime_Murder = False",
+                "GEB_CRIME_PickUpOwnedCorpse = False",
+                "GEB_Crime_Lockpicking = False",
+                "GEB_Crime_DisarmingTrap = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "49",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Try to convince them you belong here.",
+          "context": "InternalNodeContext: Only for trespassing, harder persuasion checks than talking your way out of it",
+          "checkflags": [
+            "GEB_CharismaDisabled = False",
+            "GEB_Crime_TrespassCanConvincePermanently",
+            "GEB_Crime_Trespassing"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "13",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "63": {
+              "id": "63",
+              "speaker": "Player",
+              "text": "Why are you looking at me like that? I live here.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "111": {
+                  "id": "111",
+                  "speaker": "",
+                  "text": "True",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "rollresult",
+                  "children": {
+                    "7": {
+                      "id": "7",
+                      "speaker": "Narrator",
+                      "text": "*Congratulations - you've convinced them to give you access. Now what?*",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "GEB_Crime_ConvincedTrespassAllowedPermanently",
+                        "CRIME_PersuasionSuccess"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                },
+                "52": {
+                  "id": "52",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "72",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "27": {
+              "id": "27",
+              "speaker": "Player",
+              "text": "That uniform of yours will make a very tasteful bodybag, if you don't get out of my way.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "13": {
+                  "id": "13",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "63",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "133": {
+              "id": "133",
+              "speaker": "Player",
+              "text": "Better act as if I'm allowed to be here rather than admit you let me get this far.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "13",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "44": {
+          "id": "44",
+          "speaker": "Player",
+          "text": "Offer a bribe. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+          "context": "",
+          "checkflags": [
+            "93147083-af38-43f5-8354-9737c3e928d2"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "94": {
+              "id": "94",
+              "speaker": "Narrator",
+              "text": "*Tempting as it is, the guard will not accept a bribe in this case.*",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_Murder"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "117": {
+                  "id": "117",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "4",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "jump",
+                  "children": {}
+                }
+              }
+            },
+            "21": {
+              "id": "21",
+              "speaker": "Narrator",
+              "text": "*Some guards would appreciate your generosity, but not this one. This one prefers old-fashioned justice.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "GEB_CharismaDisabled",
+                "GEB_BribeDisabled"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "36": {
+          "id": "36",
+          "speaker": "Player",
+          "text": "Offer a bribe. ([GEN_CheckMagicPocketGold_6057ad05-9492-4630-9f0a-be548b134c54])",
+          "context": "",
+          "checkflags": [
+            "93147083-af38-43f5-8354-9737c3e928d2 = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "71": {
+              "id": "71",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "94",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            },
+            "95": {
+              "id": "95",
+              "speaker": "Narrator",
+              "text": "*Improperly-acquired coin weighs heavy on the conscience. The bribe may have worked this time, but it won't work the next.*",
+              "context": "",
+              "checkflags": [
+                "GEB_Crime_BribingDisabled_NextTime",
+                "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+              ],
+              "setflags": [
+                "TeleportOutOfTrespass",
+                "GEN_TransferNPCPayment"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "64": {
+              "id": "64",
+              "speaker": "Narrator",
+              "text": "*You wonder if all your problems could be so easily solved. For now it's enough to have solved this one.*",
+              "context": "",
+              "checkflags": [
+                "e678bd59-74f4-4a7b-8776-aca807d9ef22"
+              ],
+              "setflags": [
+                "TeleportOutOfTrespass",
+                "GEN_TransferNPCPayment"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "79": {
+              "id": "79",
+              "speaker": "Narrator",
+              "text": "*You don't have the gold to buy your way out of this situation.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "GEB_CharismaDisabled",
+                "GEB_BribeDisabled"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "90": {
+          "id": "90",
+          "speaker": "Player",
+          "text": "Try to buy your way in. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+          "context": "",
+          "checkflags": [
+            "GEB_Crime_TrespassCanConvincePermanently",
+            "GEB_Crime_Trespassing",
+            "93147083-af38-43f5-8354-9737c3e928d2"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "106": {
+              "id": "106",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "44",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "31": {
+          "id": "31",
+          "speaker": "Player",
+          "text": "Try to buy your way in. ([GEN_CheckMagicPocketGold_2_463b0f43-5410-412d-aba3-875cf81c38ca])",
+          "context": "",
+          "checkflags": [
+            "GEB_Crime_TrespassCanConvincePermanently",
+            "GEB_Crime_Trespassing",
+            "93147083-af38-43f5-8354-9737c3e928d2 = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "126": {
+              "id": "126",
+              "speaker": "Narrator",
+              "text": "*Trespassing? What trespassing? You were always welcome here.*",
+              "context": "",
+              "checkflags": [
+                "d6480be7-500e-4160-927f-86acfd5c4e7b"
+              ],
+              "setflags": [
+                "GEN_TransferNPCPayment_2",
+                "GEB_Crime_ConvincedTrespassAllowedPermanently"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            },
+            "78": {
+              "id": "78",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "79",
+              "link": "",
+              "is_end": false,
+              "node_type": "jump",
+              "children": {}
+            }
+          }
+        },
+        "47": {
+          "id": "47",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Charmed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "67",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "11": {
+          "id": "11",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*Your light fingers were too heavy this time - you've been caught stealing. What will you do?*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison = False",
+        "GEB_Crime_Theft"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "93",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "Narrator",
+      "text": "*You were caught casting a forbidden spell. This guard's come to make sure you don't do it again.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Polymorphed",
+        "GEB_Arrest_HavePrison"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "22": {
+      "id": "22",
+      "speaker": "Narrator",
+      "text": "*Destruction of property is a dangerous hobby. This guard has come to remind you of that.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Vandalise",
+        "GEB_Arrest_HavePrison = False"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "93",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "35": {
+          "id": "35",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "23": {
+      "id": "23",
+      "speaker": "Narrator",
+      "text": "*You were seen picking a lock. Prison guards are rarely happy to let such behaviour slide.*",
+      "context": "",
+      "checkflags": [
+        "IsInPrison",
+        "GEB_Crime_Lockpicking"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "93",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "114": {
+          "id": "114",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "26": {
+      "id": "26",
+      "speaker": "Narrator",
+      "text": "*Setting a trap in prison was a bold move. Avoiding a return to your cell will require similar confidence.*",
+      "context": "",
+      "checkflags": [
+        "GEB_CRIME_PlacedTrap",
+        "IsInPrison"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "93",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "81": {
+          "id": "81",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "30": {
+      "id": "30",
+      "speaker": "Narrator",
+      "text": "*Violence amongst prisoners is not tolerated. It looks like you're about to learn that the hard way.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Assault",
+        "IsInPrison"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "93",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "32": {
+      "id": "32",
+      "speaker": "Narrator",
+      "text": "*You've been seen stealing from your cell. It's a low point, but this guard might be about to make things even worse...*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Theft",
+        "IsInPrison"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "93",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "37": {
+      "id": "37",
+      "speaker": "Narrator",
+      "text": "*You've been caught trespassing. Best explain yourself, before this gets out of hand.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Trespassing",
+        "BADASSCIVILIAN"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "8": {
+          "id": "8",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "41": {
+      "id": "41",
+      "speaker": "Narrator",
+      "text": "*You were seen committing an assault. This guard appears ready to respond in kind.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Assault"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "43": {
+      "id": "43",
+      "speaker": "Narrator",
+      "text": "*Your wanton criminality is attracting attention. Perhaps you should defuse the situation, before things turn ugly.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison = False"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "81",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "38": {
+          "id": "38",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "45": {
+      "id": "45",
+      "speaker": "Narrator",
+      "text": "*Setting that trap has earned you a trip to the cells. This guard appears more than ready to escort you.*",
+      "context": "",
+      "checkflags": [
+        "GEB_CRIME_PlacedTrap"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "81",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "46": {
+      "id": "46",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Charmed",
+        "GEB_Arrest_HavePrison"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "18",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "48": {
+      "id": "48",
+      "speaker": "Narrator",
+      "text": "*You were seen picking a lock. Now this guard's picking a fight.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison = False",
+        "GEB_Crime_Lockpicking"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "114",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "54": {
+      "id": "54",
+      "speaker": "Narrator",
+      "text": "*Murder is forbidden. Unless you're a guard, in which case it's called meting out justice. You're about to pay for your crimes.*",
+      "context": "InternalNodeContext: No BADASSCIVILIAN version because they never start this dialog for murder",
+      "checkflags": [
+        "GEB_Crime_Murder"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "29": {
+          "id": "29",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "55": {
+      "id": "55",
+      "speaker": "Narrator",
+      "text": "*You murdered someone in view of a guard. Perhaps unsurprisingly, you're under arrest.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison",
+        "GEB_Crime_Murder"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "60": {
+      "id": "60",
+      "speaker": "Narrator",
+      "text": "*Vandalising your captors' property is one way to get yourself in trouble. Now would be a good time to explain yourself.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Vandalise",
+        "IsInPrison"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "35",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "67": {
+      "id": "67",
+      "speaker": "Narrator",
+      "text": "*Casting a spell like that is dangerous business. When a guard sees you do it, it's usually fatal.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Polymorphed"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "69": {
+      "id": "69",
+      "speaker": "Narrator",
+      "text": "*Perhaps that spell was an unwise choice, given your current incarceration. This guard clearly thinks so.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Polymorphed",
+        "IsInPrison"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "82": {
+      "id": "82",
+      "speaker": "Narrator",
+      "text": "*You were witnessed assaulting someone. You're headed for the cells.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison",
+        "GEB_Crime_Assault"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "86": {
+      "id": "86",
+      "speaker": "Narrator",
+      "text": "*Trespassing in a prison is one way to get yourself arrested. At least you won't have far to walk.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Trespassing",
+        "IsInPrison"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "88": {
+      "id": "88",
+      "speaker": "Narrator",
+      "text": "*Your vandalism is causing considerable anger. It seems this individual is more than ready to put a stop to you.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Vandalise",
+        "BADASSCIVILIAN"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "35",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "91": {
+      "id": "91",
+      "speaker": "Narrator",
+      "text": "*You're stopped by a guard. It seems your presence here is forbidden.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison = False",
+        "GEB_Crime_Trespassing"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "96": {
+      "id": "96",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Charmed",
+        "IsInPrison"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "69",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "98": {
+      "id": "98",
+      "speaker": "Narrator",
+      "text": "*You're being arrested for theft. If you have a defence, make it now.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Theft"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "93",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "99": {
+      "id": "99",
+      "speaker": "Narrator",
+      "text": "*Disarming someone else's trap is a one-way ticket to the cells. This guard seems more than willing to escort you.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_DisarmingTrap"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "81",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "110": {
+          "id": "110",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "101": {
+      "id": "101",
+      "speaker": "Narrator",
+      "text": "*Getting caught setting a trap was the easy part. Getting away with it will be more of a challenge.*",
+      "context": "",
+      "checkflags": [
+        "GEB_CRIME_PlacedTrap",
+        "GEB_Arrest_HavePrison = False"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "81",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "107": {
+      "id": "107",
+      "speaker": "Narrator",
+      "text": "*You've been spotted interfering with a trap. Tread carefully. This guard looks every bit as dangerous.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Arrest_HavePrison = False",
+        "GEB_Crime_DisarmingTrap"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "110",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "112": {
+      "id": "112",
+      "speaker": "Narrator",
+      "text": "*You've been seen disarming a trap. Your incarceration could be heading for a swift and violent end.*",
+      "context": "",
+      "checkflags": [
+        "IsInPrison",
+        "GEB_Crime_DisarmingTrap"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "110",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "119": {
+      "id": "119",
+      "speaker": "Narrator",
+      "text": "*This is a restricted area. Time to explain yourself, or this guard will be restricting you to a cell.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Trespassing"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "120": {
+      "id": "120",
+      "speaker": "Narrator",
+      "text": "*Even in prison, your criminal impulses are enough to anger the guards. You might want to explain yourself.*",
+      "context": "",
+      "checkflags": [
+        "IsInPrison"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "38",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "122": {
+      "id": "122",
+      "speaker": "Narrator",
+      "text": "*You killed another prisoner, and judging by the look in this guard's eye - you're about to be executed for it.*",
+      "context": "",
+      "checkflags": [
+        "IsInPrison",
+        "GEB_Crime_Murder"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "29",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "124": {
+      "id": "124",
+      "speaker": "Narrator",
+      "text": "*You were seen vandalising someone else's property. Now would be a good time to justify your actions.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Vandalise"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "35",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "127": {
+      "id": "127",
+      "speaker": "Narrator",
+      "text": "*Your violent behaviour is proving unpopular. Tread carefully, or things may get out of hand.*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Assault",
+        "BADASSCIVILIAN"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "3",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "131": {
+      "id": "131",
+      "speaker": "Narrator",
+      "text": "*This guard caught you picking a lock. Perhaps you'd like to try the lock of your very own cell?*",
+      "context": "",
+      "checkflags": [
+        "GEB_Crime_Lockpicking"
+      ],
+      "setflags": [],
+      "ruletags": [
+        "AGGRESSIVE_GUARD"
+      ],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "114",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,937 @@
+{
+  "metadata": {
+    "synopsis": "A door blocking the entrance to the Bhaal section of the undercity ruins. Being rewritten - It was originally a skull, so it probably doesn't fit a door, but the original idea was to give it a little irreverance for characterisation.",
+    "how_to_trigger": "- Teleport into Undercity Ruins (Debug trigger teleport)- Approach and talk to the skull on the stick"
+  },
+  "dialogue": {
+    "6": {
+      "id": "6",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "LOW_UndercityRuins_State_CoveredSkullInBlood"
+      ],
+      "setflags": [
+        "LOW_UndercityRuins_State_BloodDoorOpened"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "29": {
+      "id": "29",
+      "speaker": "Narrator",
+      "text": "*A rush of ancient whispers fills your mind as you approach the door. It is rife with magic - old, deathly magic.*",
+      "context": "InternalNodeContext: As if the skull is bored - like someone repeating a script for the millionth time.",
+      "checkflags": [],
+      "setflags": [
+        "LOW_UndercityRuins_HasMet_TalkingSkull"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "36",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "Door",
+          "text": "A new vessel brimming with blood darkens Bhaal's door - to baptise his dais most holy.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "36",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "21": {
+              "id": "21",
+              "speaker": "Door",
+              "text": "Do you have proof of your faith to our lord?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "36",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "30": {
+                  "id": "30",
+                  "speaker": "Player",
+                  "text": "I have an Amulet of Bhaal - let me pass, door.",
+                  "context": "",
+                  "checkflags": [
+                    "LOW_BhaalTemple_State_HasBhaalAmulet"
+                  ],
+                  "setflags": [
+                    "LOW_UndercityRuins_Event_ShowedAmuletToSkull"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "36",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "Door",
+                      "text": "Worthy hands hold proof of faith - as the Dread Lord desires.",
+                      "context": "InternalNodeContext: I'm putting the \"person approvals\" under one bracket for brevity, For clarity all of these pass the same check, where you can have:\n\n- Persuaded/deceived the skull into approving you as a person\n- Be the Dark Urge\n- Be the Unholy Assassin",
+                      "checkflags": [
+                        "LOW_UndercityRuins_Event_SkullKnowsWorthy"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "0": {
+                          "id": "0",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "34",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "44": {
+                      "id": "44",
+                      "speaker": "Door",
+                      "text": "You hold proof of faith - but to hold and deserve are different. How have you proven yourself in the Dread Lord's eyes?",
+                      "context": "InternalNodeContext: Cowed, realising they probably shouldn't have been irreverent",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "22": {
+                          "id": "22",
+                          "speaker": "Player",
+                          "text": "I'm one of Bhaal's Unholy Assassins.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_MurderTribunal_Knows_UnholyAssassin"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "42": {
+                              "id": "42",
+                              "speaker": "Door",
+                              "text": "The truth is heard, and it pleases Him. The door will part.",
+                              "context": "",
+                              "checkflags": [
+                                "LOW_MurderTribunal_State_BecameUnholyAssassin"
+                              ],
+                              "setflags": [
+                                "LOW_UndercityRuins_Event_SkullKnowsWorthy"
+                              ],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "34": {
+                                  "id": "34",
+                                  "speaker": "Door",
+                                  "text": "Walk in blood.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "normal",
+                                  "children": {
+                                    "39": {
+                                      "id": "39",
+                                      "speaker": "",
+                                      "text": "",
+                                      "context": "",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "LOW_UndercityRuins_State_BloodDoorOpened"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "",
+                                      "is_end": true,
+                                      "node_type": "taganswer",
+                                      "children": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "16": {
+                              "id": "16",
+                              "speaker": "Door",
+                              "text": "You lie. You are not faithful. The door stays closed.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "28": {
+                          "id": "28",
+                          "speaker": "Player",
+                          "text": "Father says it's my turn at the Temple. Let me in!",
+                          "context": "",
+                          "checkflags": [
+                            "REALLY_DARK_URGE"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "37": {
+                              "id": "37",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "42",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "jump",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "47": {
+                          "id": "47",
+                          "speaker": "Player",
+                          "text": "I slaughtered the murder tribunal.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "52": {
+                              "id": "52",
+                              "speaker": "Door",
+                              "text": "Unorthodox - but a show of faith nonetheless.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "49": {
+                                  "id": "49",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "34",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "14": {
+                          "id": "14",
+                          "speaker": "Player",
+                          "text": "How could I prove my faith?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "46": {
+                              "id": "46",
+                              "speaker": "Door",
+                              "text": "The faithful know.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "3": {
+                          "id": "3",
+                          "speaker": "Player",
+                          "text": "I have not.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "36": {
+                              "id": "36",
+                              "speaker": "Door",
+                              "text": "Then shut this door shall stay.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "24": {
+                  "id": "24",
+                  "speaker": "Player",
+                  "text": "Bhaal created me above all others. Open for his prodigy!",
+                  "context": "",
+                  "checkflags": [
+                    "REALLY_DARK_URGE"
+                  ],
+                  "setflags": [
+                    "LOW_UndercityRuins_TalkingSkull_ToldDarkUrge"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "36",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "26": {
+                      "id": "26",
+                      "speaker": "Door",
+                      "text": "Present the symbol, noble spawn.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_UndercityRuins_Event_SkullKnowsWorthy"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "36",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "15": {
+                          "id": "15",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "17",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "4": {
+                          "id": "4",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "35",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "19": {
+                      "id": "19",
+                      "speaker": "Door",
+                      "text": "Then you must know the way. Present the symbol, proof of your Father's favour.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "LOW_UndercityRuins_Event_SkullKnowsWorthy"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "36",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "17": {
+                          "id": "17",
+                          "speaker": "Player",
+                          "text": "Here - the Amulet of Bhaal.",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_BhaalTemple_State_HasBhaalAmulet"
+                          ],
+                          "setflags": [
+                            "LOW_UndercityRuins_Event_ShowedAmuletToSkull"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "36",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "27": {
+                              "id": "27",
+                              "speaker": "Door",
+                              "text": "Proof of faith, held in worthy hands. It is as the Dread Lord requires.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "45": {
+                                  "id": "45",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "34",
+                                  "link": "",
+                                  "is_end": false,
+                                  "node_type": "jump",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "35": {
+                          "id": "35",
+                          "speaker": "Player",
+                          "text": "I don't have the symbol on me.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "36",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "11": {
+                              "id": "11",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "alias",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "32": {
+                          "id": "32",
+                          "speaker": "Player",
+                          "text": "What symbol?",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "7": {
+                              "id": "7",
+                              "speaker": "Door",
+                              "text": "An Amulet of the Dread Lord's likeness. Simple for his spawn to acquire.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "8": {
+                  "id": "8",
+                  "speaker": "Player",
+                  "text": "I have proven my faith to the Tribunal. I'm an Unholy Assassin of Bhaal.",
+                  "context": "InternalNodeContext: Skull assesses the viability after this.",
+                  "checkflags": [
+                    "LOW_MurderTribunal_Knows_UnholyAssassin"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "16",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "12": {
+                      "id": "12",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "26",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "jump",
+                      "children": {}
+                    },
+                    "2": {
+                      "id": "2",
+                      "speaker": "Door",
+                      "text": "Then show the symbol the Justice granted you.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_MurderTribunal_State_BecameUnholyAssassin",
+                        "LOW_UndercityRuins_Event_ShowedAmuletToSkull"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "38": {
+                          "id": "38",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "17",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "1": {
+                          "id": "1",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "35",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "50": {
+                      "id": "50",
+                      "speaker": "Door",
+                      "text": "Then you will show the symbol granted by the Justice.",
+                      "context": "",
+                      "checkflags": [
+                        "LOW_MurderTribunal_State_BecameUnholyAssassin"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "16",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "41": {
+                          "id": "41",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "17",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "48": {
+                          "id": "48",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "35",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        },
+                        "20": {
+                          "id": "20",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "32",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "jump",
+                          "children": {}
+                        }
+                      }
+                    },
+                    "5": {
+                      "id": "5",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "alias",
+                      "children": {}
+                    }
+                  }
+                },
+                "25": {
+                  "id": "25",
+                  "speaker": "Player",
+                  "text": "How can I prove myself?",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "40": {
+                      "id": "40",
+                      "speaker": "Door",
+                      "text": "You must bear proof of the Dread Lord's favour - or pay His toll of blood.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "9": {
+                          "id": "9",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [
+                            "LOW_MurderTribunal_Knows_UnholyAssassin = False",
+                            "LOW_BhaalTemple_State_HasBhaalAmulet = False",
+                            "REALLY_DARK_URGE = False"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": true,
+                          "node_type": "taganswer",
+                          "children": {}
+                        },
+                        "23": {
+                          "id": "23",
+                          "speaker": "",
+                          "text": "",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "taganswer",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "13": {
+                  "id": "13",
+                  "speaker": "Player",
+                  "text": "Leave.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "31": {
+      "id": "31",
+      "speaker": "Door",
+      "text": "The vessel returns, most shamefully unleaking. Prove your faith.",
+      "context": "",
+      "checkflags": [
+        "LOW_UndercityRuins_HasMet_TalkingSkull"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "10": {
+          "id": "10",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "21",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "43": {
+      "id": "43",
+      "speaker": "Door",
+      "text": "The spill of murderous loins approaches once more. Show a proof of faith, spillage.",
+      "context": "",
+      "checkflags": [
+        "LOW_UndercityRuins_TalkingSkull_ToldDarkUrge"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "10",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    },
+    "51": {
+      "id": "51",
+      "speaker": "Door",
+      "text": "It has shown its worth, the door will part. Walk in blood.",
+      "context": "",
+      "checkflags": [
+        "LOW_UndercityRuins_Event_ShowedAmuletToSkull",
+        "LOW_UndercityRuins_Event_SkullKnowsWorthy"
+      ],
+      "setflags": [
+        "LOW_UndercityRuins_State_BloodDoorOpened"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

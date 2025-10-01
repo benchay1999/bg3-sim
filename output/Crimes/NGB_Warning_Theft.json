@@ -1,0 +1,342 @@
+{
+  "metadata": {
+    "synopsis": "A player stole something, an NPC witness this act, and starts this dialog with the player\n-- Can check the GEB_Crime_IsVictim flag on speaker 1 to distinguish the NPC from being the victim or a witness of the crime.",
+    "how_to_trigger": "Steal something in view of an NPC."
+  },
+  "dialogue": {
+    "3": {
+      "id": "3",
+      "speaker": "Narrator",
+      "text": "",
+      "context": "NodeContext: Greeting needs to be empty. It's used to cut off this flow from the others",
+      "checkflags": [
+        "GEB_Crime_IsAngry"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "17",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "13": {
+          "id": "13",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "CIVILIAN = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "17",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {}
+        },
+        "4": {
+          "id": "4",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "CIVILIAN",
+            "BADASSCIVILIAN"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "17": {
+              "id": "17",
+              "speaker": "Narrator",
+              "text": "*You won't be allowed to get away with that. Swift and violent retribution is headed your way...*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "TemporaryHostilityAfterDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "11": {
+          "id": "11",
+          "speaker": "Narrator",
+          "text": "*Stealing in plain view was a bold move. That confidence will come in handy when the guards arrive.*",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "CRIME_FleeHelpFromDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Narrator",
+      "text": "*You've been caught in the act. So much for the perfect crime.*",
+      "context": "InternalNodeContext: A player stole an item while an NPC witnessed this.",
+      "checkflags": [
+        "GEB_Crime_IsAngry = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "15",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "Hand the stolen goods back.",
+          "context": "",
+          "checkflags": [
+            "GEB_Crime_IsVictim",
+            "GEB_CrimeHasEvidenceInInventory"
+          ],
+          "setflags": [
+            "CRIME_ReturnGoodsToOwner"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "15",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Narrator",
+              "text": "*No harm done, save for any pride you take in your thieving skills.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Drop the item.",
+          "context": "",
+          "checkflags": [
+            "GEB_Crime_IsVictim = False",
+            "GEB_CrimeHasEvidenceInInventory"
+          ],
+          "setflags": [
+            "GEB_CrimeDropEvidence"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "15",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "16": {
+              "id": "16",
+              "speaker": "Narrator",
+              "text": "*With your ill-gotten gains discarded, the accusation fizzles away.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "14": {
+          "id": "14",
+          "speaker": "Player",
+          "text": "Hold firm. What was taken is now yours.",
+          "context": "",
+          "checkflags": [
+            "GEB_CrimeHasEvidenceInInventory"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "15",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "CIVILIAN = False"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "15": {
+                  "id": "15",
+                  "speaker": "Narrator",
+                  "text": "*Your defiance holds little sway. Your thievery will be rectified, though you may not live to see it.*",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "TemporaryHostilityAfterDialog"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "2": {
+              "id": "2",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [
+                "CIVILIAN",
+                "BADASSCIVILIAN"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "15",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {}
+            },
+            "5": {
+              "id": "5",
+              "speaker": "Narrator",
+              "text": "*Your refusal has done you few favours. The guards are being summoned.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "CRIME_FleeHelpFromDialog"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "7": {
+          "id": "7",
+          "speaker": "Player",
+          "text": "Deny the accusation.",
+          "context": "InternalNodeContext: No evidence was found. Can happen if everything that was stolen was stackable, e.g. gold, and was merged with existing stacks in the player's inventory",
+          "checkflags": [
+            "GEB_CrimeHasEvidenceInInventory = False"
+          ],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Narrator",
+              "text": "*The accusation falters. Nothing can be found to hold against you.*",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "0": {
+          "id": "0",
+          "speaker": "Player",
+          "text": "Attack.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "TemporaryHostilityAfterDialog"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "metadata": {
+    "synopsis": "A Harper, getting ready for a mission that will see them trying to kill a drider - a big, dangerous monster. Main path only available when group dialogue is unavailable. This Harper is boisterous and eager.",
+    "how_to_trigger": "Kill or silence any of the other harpers so no group dialog triggers. Or finish the ambush and meet the harper back at the inn."
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Harper Elindale",
+      "text": "I'm ready - I think. Am I? Yes.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperCaster000 = False",
+        "HAV_Mood_State_Siege"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperCaster000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Harper Elindale",
+      "text": "You will fight with us won't you?",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperCaster000",
+        "HAV_Mood_State_Siege"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "3": {
+      "id": "3",
+      "speaker": "Harper Elindale",
+      "text": "You were something else, out in the shadows. Won't forget it, that's for damn sure.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperCaster000 = False",
+        "SCL_Drider_State_HarpersBackAtInn",
+        "SCL_Drider_State_SidedWithHarpers"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperCaster000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Harper Elindale",
+      "text": "Join us, and we'll take that convoy down. It's the only way to survive the curse.<br>",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperCaster000",
+        "SCL_Drider_State_HarpersWaitingAtBridge"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "15": {
+          "id": "15",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "25",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "Harper Elindale",
+      "text": "We survived one attack. I don't know if we can survive another.",
+      "context": "",
+      "checkflags": [
+        "HAV_Mood_State_Alert"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperCaster000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Harper Elindale",
+      "text": "Jaheira says wait. So we wait.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperCaster000"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Harper Elindale",
+      "text": "It's all up to you, chum. But no pressure.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_State_HarpersBackAtInn"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperCaster000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Harper Elindale",
+      "text": "Reckon you're our last hope. But can't say I'm worried.",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperCaster000",
+        "SCL_Drider_State_HarpersBackAtInn",
+        "SCL_Drider_State_SidedWithHarpers"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "16": {
+      "id": "16",
+      "speaker": "Harper Elindale",
+      "text": "I'll miss that magic wall. But no Isobel - no protection.",
+      "context": "",
+      "checkflags": [
+        "HAV_Mood_State_Unprotected"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperCaster000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "20": {
+      "id": "20",
+      "speaker": "Harper Elindale",
+      "text": "Take a stroll, have a drink. Enjoy them while you can.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperCaster000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "24": {
+      "id": "24",
+      "speaker": "Harper Elindale",
+      "text": "Heard you're planning to infiltrate Moonrise, and take the fight to Ketheric. That'd be a tale for the ages.<br>",
+      "context": "",
+      "checkflags": [
+        "SCL_Drider_HasMet_HarperCaster000 = False",
+        "SCL_Drider_State_HarpersWaitingAtBridge"
+      ],
+      "setflags": [
+        "SCL_Drider_HasMet_HarperCaster000"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "18": {
+          "id": "18",
+          "speaker": "Harper Elindale",
+          "text": "But the curse is at its strongest between here and there. You won't even reach the tower unless you can survive the darkest shadows.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Harper Elindale",
+              "text": "That's where we come in.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "14": {
+                  "id": "14",
+                  "speaker": "Harper Elindale",
+                  "text": "There's a cultist convoy that brings supplies and personnel to the tower - by some strange magic, they move through the curse unharmed.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "25": {
+                      "id": "25",
+                      "speaker": "Harper Elindale",
+                      "text": "With your help, we'll ambush them, and seize their secret. When we do, it's yours, and the path to Moonrise will be open.",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "23": {
+                          "id": "23",
+                          "speaker": "Player",
+                          "text": "Let's do it. You lead, I follow.",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_Drider_Event_PlayersWillFindCaravanAtAmbush = False"
+                          ],
+                          "setflags": [
+                            "SCL_Drider_State_StartedAmbushQuestWithHarpers",
+                            "SCL_Drider_Event_StartHarpersAmbush"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "2": {
+                              "id": "2",
+                              "speaker": "Harper Elindale",
+                              "text": "You got it, chum. I'll mark your map, in case you get lost.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "8": {
+                                  "id": "8",
+                                  "speaker": "Harper Elindale",
+                                  "text": "But - try not to get lost. Frightful weather out there.",
+                                  "context": "NodeContext: A little cheeky. The cursed shadows could kill you!",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "9": {
+                          "id": "9",
+                          "speaker": "Player",
+                          "text": "Go on ahead. I'll catch up.",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_Drider_Event_PlayersWillFindCaravanAtAmbush = False"
+                          ],
+                          "setflags": [
+                            "SCL_Drider_State_StartedAmbushQuestWithHarpers",
+                            "SCL_Drider_Event_StartHarpersAmbush"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "21": {
+                              "id": "21",
+                              "speaker": "Harper Elindale",
+                              "text": "You got it. Here - I'll mark your map. But don't keep me waiting.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        },
+                        "7": {
+                          "id": "7",
+                          "speaker": "Player",
+                          "text": "You're too late - I've encountered the convoy, led by a drider.",
+                          "context": "",
+                          "checkflags": [
+                            "SCL_Drider_Event_PlayersWillFindCaravanAtAmbush"
+                          ],
+                          "setflags": [
+                            "SCL_Drider_State_HarpersLearnMissedCaravan"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "17": {
+                              "id": "17",
+                              "speaker": "Harper Elindale",
+                              "text": "Damn. You're lucky to be in one piece.",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "normal",
+                              "children": {
+                                "12": {
+                                  "id": "12",
+                                  "speaker": "Harper Elindale",
+                                  "text": "It's all up to you, then. Do us proud.",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "",
+                                  "is_end": true,
+                                  "node_type": "normal",
+                                  "children": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "22": {
+                          "id": "22",
+                          "speaker": "Player",
+                          "text": "I need time to prepare.",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "6": {
+                              "id": "6",
+                              "speaker": "Harper Elindale",
+                              "text": "All right. But hurry it along, yeah?",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "normal",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

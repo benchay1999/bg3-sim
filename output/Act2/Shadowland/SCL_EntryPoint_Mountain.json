@@ -1,0 +1,705 @@
+{
+  "metadata": {
+    "synopsis": "Players enter SCL for the first time through the mountain pass. They reflect upon having had a difficult journey. If a second party member is present, they'll point out that you're not alone.The camera then pans to show a group of Absolute cultists nearby, waiting for the drider to guide them.If Minthara has given you the mission to go to SCL the group will be a mix of half-orcs and goblins and the 2nd character will recognise them as the cultists you were looking for.If Minthara has NOT given you the mission to go to SCL the group will just be two goblins.",
+    "how_to_trigger": "Enter SCL through the mountain pass and walk forward. Will only trigger if you haven't entered SCL before."
+  },
+  "dialogue": {
+    "27": {
+      "id": "27",
+      "speaker": "Goblin Brawler",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "SCL_EntryPointGoblin_HasMet = False",
+        "SCL_EntryPoint_State_IntroPlayed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "36",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "30",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "32": {
+      "id": "32",
+      "speaker": "Goblin Brawler",
+      "text": "Don't stick about. A torch will keep you safe - more or less.",
+      "context": "NodeContext: nervous and fearful",
+      "checkflags": [
+        "SCL_EntryPointGoblin_HasMet",
+        "SCL_EntryPoint_State_IntroPlayed"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "36",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "5": {
+          "id": "5",
+          "speaker": "Player",
+          "text": "What about you?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "12": {
+              "id": "12",
+              "speaker": "Goblin Brawler",
+              "text": "I'll keep an eye for other True Souls and then head to camp. Can't get out of here fast enough.",
+              "context": "NodeContext: nervous and fearful",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "6": {
+          "id": "6",
+          "speaker": "Player",
+          "text": "What do you mean 'more or less'?",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "19": {
+              "id": "19",
+              "speaker": "Goblin Brawler",
+              "text": "There's things in the dark, True Soul. Things that... been touched by the curse. Run and run fast.",
+              "context": "NodeContext: nervous and fearful",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "29": {
+          "id": "29",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "34": {
+      "id": "34",
+      "speaker": "Goblin Brawler",
+      "text": "",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "36",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "17": {
+          "id": "17",
+          "speaker": "",
+          "text": "",
+          "context": "CinematicNodeContext: Cinematic view of the shadowlands, dark and clouded by the shadow curse. The party approaches, stopping just where the shadows grow thickest",
+          "checkflags": [],
+          "setflags": [
+            "SCL_EntryPoint_State_IntroPlayed"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "36",
+          "is_end": false,
+          "node_type": "tagcinematic",
+          "children": {
+            "24": {
+              "id": "24",
+              "speaker": "",
+              "text": "",
+              "context": "",
+              "checkflags": [],
+              "setflags": [
+                "ORI_Inclusion_Random"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "36",
+              "is_end": false,
+              "node_type": "taganswer",
+              "children": {
+                "1": {
+                  "id": "1",
+                  "speaker": "Lae'zel",
+                  "text": "Can you feel it? The shadows gnaw at us. Do not take them for granted.",
+                  "context": "",
+                  "checkflags": [
+                    "ORI_Inclusion_PickedAtRandom",
+                    "REALLY_LAEZEL"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "36",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "33": {
+                      "id": "33",
+                      "speaker": "",
+                      "text": "",
+                      "context": "",
+                      "checkflags": [],
+                      "setflags": [
+                        "ORI_Inclusion_End_Random"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "36",
+                      "is_end": false,
+                      "node_type": "taganswer",
+                      "children": {
+                        "28": {
+                          "id": "28",
+                          "speaker": "Narrator",
+                          "text": "*This is no ordinary darkness. It feels powerful... and familiar. These lands have been blessed by Lady Shar. You must learn more about her presence here.*",
+                          "context": "",
+                          "checkflags": [
+                            "REALLY_SHADOWHEART"
+                          ],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "36",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "0": {
+                              "id": "0",
+                              "speaker": "",
+                              "text": "",
+                              "context": "CinematicNodeContext: A torch bobs in the darkness, resolving into a goblin. She looks scared.",
+                              "checkflags": [
+                                "c6b28a2d-4095-40fc-bed0-de222e6af105"
+                              ],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "36",
+                              "is_end": false,
+                              "node_type": "tagcinematic",
+                              "children": {
+                                "37": {
+                                  "id": "37",
+                                  "speaker": "",
+                                  "text": "",
+                                  "context": "",
+                                  "checkflags": [],
+                                  "setflags": [],
+                                  "ruletags": [],
+                                  "approval": [],
+                                  "rolls": "",
+                                  "goto": "",
+                                  "link": "36",
+                                  "is_end": false,
+                                  "node_type": "visualstate",
+                                  "children": {
+                                    "30": {
+                                      "id": "30",
+                                      "speaker": "Goblin Brawler",
+                                      "text": "Are... are you... the True Soul?",
+                                      "context": "CinematicNodeContext: Jogs to position, before addressing player\rNodeContext: scared and out of breath",
+                                      "checkflags": [],
+                                      "setflags": [
+                                        "SCL_EntryPointGoblin_HasMet"
+                                      ],
+                                      "ruletags": [],
+                                      "approval": [],
+                                      "rolls": "",
+                                      "goto": "",
+                                      "link": "36",
+                                      "is_end": false,
+                                      "node_type": "normal",
+                                      "children": {
+                                        "22": {
+                                          "id": "22",
+                                          "speaker": "Player",
+                                          "text": "Who wants to know?",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "36",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "9": {
+                                              "id": "9",
+                                              "speaker": "Goblin Brawler",
+                                              "text": "I'll take that as a yes. Listen up.",
+                                              "context": "NodeContext: nodding frantically, clearly nervous",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "36": {
+                                                  "id": "36",
+                                                  "speaker": "Goblin Brawler",
+                                                  "text": "Grab a torch, stay outta the dark, and move fast. The shadows have eyes. Go on.",
+                                                  "context": "NodeContext: nervous and fearful",
+                                                  "checkflags": [],
+                                                  "setflags": [
+                                                    "SCL_ShadowCurse_Knows_Curse",
+                                                    "SCL_EntryPoint_State_GoblinInvited"
+                                                  ],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "",
+                                                  "link": "",
+                                                  "is_end": true,
+                                                  "node_type": "normal",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "18": {
+                                          "id": "18",
+                                          "speaker": "Player",
+                                          "text": "I am. Minthara sent me.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "CAMP_GoblinHuntCelebration_Knows_CreaturePath"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "36",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "26": {
+                                              "id": "26",
+                                              "speaker": "Goblin Brawler",
+                                              "text": "Bless the Absolute. I couldn't take standin' out here much longer.",
+                                              "context": "NodeContext: clearly nervous and fearful",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "36",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {}
+                                            }
+                                          }
+                                        },
+                                        "2": {
+                                          "id": "2",
+                                          "speaker": "Player",
+                                          "text": "I may or may not be the single greatest True Soul you may or may not have met in your life.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "BARD"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "10",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "10": {
+                                              "id": "10",
+                                              "speaker": "Goblin Brawler",
+                                              "text": "Uh.",
+                                              "context": "NodeContext: Confused, kinda scared - thinks it's a test",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "31": {
+                                                  "id": "31",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "9",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "16": {
+                                          "id": "16",
+                                          "speaker": "Player",
+                                          "text": "I am death itself, with a tadpole in my skull and sin in my heart.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "REALLY_DARK_URGE"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "10",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        },
+                                        "21": {
+                                          "id": "21",
+                                          "speaker": "Player",
+                                          "text": "Probably. I'm still trying to figure out who I am.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "REALLY_DARK_URGE"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "10",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        },
+                                        "25": {
+                                          "id": "25",
+                                          "speaker": "Player",
+                                          "text": "Faith keeps my soul true, yes. What of it?",
+                                          "context": "",
+                                          "checkflags": [
+                                            "CLERIC"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "9",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        },
+                                        "8": {
+                                          "id": "8",
+                                          "speaker": "Player",
+                                          "text": "We are all everything, and yet nothing, at the same time.",
+                                          "context": "",
+                                          "checkflags": [
+                                            "MONK"
+                                          ],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "10",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        },
+                                        "11": {
+                                          "id": "11",
+                                          "speaker": "Player",
+                                          "text": "I don't have time for this - begone.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": false,
+                                          "node_type": "normal",
+                                          "children": {
+                                            "3": {
+                                              "id": "3",
+                                              "speaker": "Goblin Brawler",
+                                              "text": "A - a thousand sorrys, True Soul, but I've gotta warn you.",
+                                              "context": "NodeContext: clearly nervous and fearful",
+                                              "checkflags": [],
+                                              "setflags": [],
+                                              "ruletags": [],
+                                              "approval": [],
+                                              "rolls": "",
+                                              "goto": "",
+                                              "link": "",
+                                              "is_end": false,
+                                              "node_type": "normal",
+                                              "children": {
+                                                "38": {
+                                                  "id": "38",
+                                                  "speaker": "",
+                                                  "text": "",
+                                                  "context": "",
+                                                  "checkflags": [],
+                                                  "setflags": [],
+                                                  "ruletags": [],
+                                                  "approval": [],
+                                                  "rolls": "",
+                                                  "goto": "36",
+                                                  "link": "",
+                                                  "is_end": false,
+                                                  "node_type": "jump",
+                                                  "children": {}
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "13": {
+                                          "id": "13",
+                                          "speaker": "Player",
+                                          "text": "No, I kill them. And you're next.",
+                                          "context": "",
+                                          "checkflags": [],
+                                          "setflags": [
+                                            "FactionHostileToPlayerGroupAfterDialog"
+                                          ],
+                                          "ruletags": [],
+                                          "approval": [],
+                                          "rolls": "",
+                                          "goto": "",
+                                          "link": "",
+                                          "is_end": true,
+                                          "node_type": "normal",
+                                          "children": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "35": {
+                              "id": "35",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": true,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "15": {
+                  "id": "15",
+                  "speaker": "Shadowheart",
+                  "text": "That's no ordinary darkness. It feels powerful... and familiar. Stay on your guard.",
+                  "context": "",
+                  "checkflags": [
+                    "ORI_Inclusion_PickedAtRandom",
+                    "REALLY_SHADOWHEART"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "33",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "7": {
+                  "id": "7",
+                  "speaker": "Karlach",
+                  "text": "Phew. This place is dark beyond dark. You feel it too, right? I'm sticking to light wherever I can find it.",
+                  "context": "",
+                  "checkflags": [
+                    "ORI_Inclusion_PickedAtRandom",
+                    "REALLY_KARLACH"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "33",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "4": {
+                  "id": "4",
+                  "speaker": "Astarion",
+                  "text": "Can you feel that? The dark, it's... hungry. Best watch the shadows.",
+                  "context": "NodeContext: Cautious, assessing a threat",
+                  "checkflags": [
+                    "ORI_Inclusion_PickedAtRandom",
+                    "REALLY_ASTARION"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "33",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "23": {
+                  "id": "23",
+                  "speaker": "Wyll",
+                  "text": "This darkness. It hurts. You must feel it too.",
+                  "context": "",
+                  "checkflags": [
+                    "ORI_Inclusion_PickedAtRandom",
+                    "REALLY_WYLL"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "33",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "14": {
+                  "id": "14",
+                  "speaker": "Gale",
+                  "text": "This is no typical gloom. Need to stay alert.",
+                  "context": "",
+                  "checkflags": [
+                    "ORI_Inclusion_PickedAtRandom",
+                    "REALLY_GALE"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "33",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

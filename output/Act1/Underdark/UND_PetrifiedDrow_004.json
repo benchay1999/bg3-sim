@@ -1,0 +1,507 @@
+{
+  "metadata": {
+    "synopsis": "This drow was petrified by a spectator.Now he is unpetrified.Worries about his companions and the group's leader - the wizard. He should seem in shock. Short sentences, short delivery.Leave after a long rest.",
+    "how_to_trigger": "Repro steps:1. Start the game.2. peace3. loadlevel WLD_Main_A4. goto 131.852; 49.695; -235.9485. create OBJ_Oil_Of_The_Basilisk6. Apply it on the petrified drow7. Ctrl Shift K the Spectator (if he's attacking you)8. Speak to the Drow1. One variation is use oe und_pd_freedrow. Then talk to Tecothy (S_UND_PetrifiedDrow_004).2. Second variation  is use oe und_pd_freedrow. Then ctrl+shift+K on Dhourn (S_UND_PetrifiedDrow_Wizard) to kill him before talking to Tecothy.3. Third variation is use goto 121; -235, then use god on, addDebugSpell Target_UND_Spectator_UnpetrifyingRay, and infiniteAp. Climb up the rocks to the north. A Spectator will appear and you will enter battle. Use the unpetrifying ray spell on Tecothy. Then Ctrl+Shift+K on Dhourn, Spectator, and Hook Horror. Then talk to Tecothy.4. There is a fourth variation where Dhourn is still petrified after the battle. I could not figure this out."
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Petrified Drow",
+      "text": "Spectator's dead. The spell could fade...",
+      "context": "CinematicNodeContext: To himself, still shocked",
+      "checkflags": [
+        "UND_PetrifiedDrow_State_WizardPermaDefeated",
+        "UND_PetrifiedDrow_State_SomeOtherDrowPetrified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "22",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Petrified Drow",
+          "text": "Too late for Dhourn.",
+          "context": "CinematicNodeContext: To himself, still shocked\rNodeContext: Door-n",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "22",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [],
+      "setflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004",
+        "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "22": {
+          "id": "22",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "20",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        }
+      }
+    },
+    "4": {
+      "id": "4",
+      "speaker": "Petrified Drow",
+      "text": "Dhourn.",
+      "context": "CinematicNodeContext: Drow should look a bit fearful if possible\n\rNodeContext: Said to himself. Door-n",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004 = False",
+        "UND_PetrifiedDrow_State_WizardPetrified"
+      ],
+      "setflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004",
+        "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "8",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "7": {
+          "id": "7",
+          "speaker": "Narrator",
+          "text": "*The drow is silent.*",
+          "context": "CinematicNodeContext: Drow should look a bit fearful if possible",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "5": {
+      "id": "5",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "alias",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Narrator",
+      "text": "*The drow eyes you warily.*",
+      "context": "CinematicNodeContext: The drow should eye player warily",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004",
+        "UND_PetrifiedDrow_State_WizardUnpetrified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "10": {
+      "id": "10",
+      "speaker": "Petrified Drow",
+      "text": "Speak with Dhourn.",
+      "context": "NodeContext: Said qietlyf. Door-n",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004 = False",
+        "UND_PetrifiedDrow_State_WizardUnpetrified"
+      ],
+      "setflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004",
+        "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "11": {
+      "id": "11",
+      "speaker": "Narrator",
+      "text": "*The drow says nothing more, his eyes wide with shock.*",
+      "context": "CinematicNodeContext: Drow should look a bit fearful if possible",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004",
+        "UND_PetrifiedDrow_State_WizardPetrified"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "18": {
+      "id": "18",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_PetrifiedDrow_State_WizardPermaDefeated",
+        "UND_PetrifiedDrow_State_SomeOtherDrowAlive"
+      ],
+      "setflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004",
+        "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {}
+    },
+    "26": {
+      "id": "26",
+      "speaker": "",
+      "text": "",
+      "context": "",
+      "checkflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004 = False",
+        "UND_PetrifiedDrow_State_WizardPermaDefeated"
+      ],
+      "setflags": [
+        "UND_PetrifiedDrow_HasMet_Drow_004",
+        "UND_PetrifiedDrow_Knows_WizardIsDhourn"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "4",
+      "is_end": false,
+      "node_type": "alias",
+      "children": {
+        "20": {
+          "id": "20",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "7",
+          "is_end": false,
+          "node_type": "alias",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Player",
+              "text": "Dhourn? Who is that?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "9": {
+                  "id": "9",
+                  "speaker": "Petrified Drow",
+                  "text": "The wizard. Our employer.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "24": {
+              "id": "24",
+              "speaker": "Player",
+              "text": "Looks like the spectator got the best of you. Weren't you prepared?",
+              "context": "",
+              "checkflags": [
+                "UND_PetrifiedDrow_State_AskedWhatHappened = False"
+              ],
+              "setflags": [
+                "UND_PetrifiedDrow_State_AskedWhatHappened"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "25": {
+                  "id": "25",
+                  "speaker": "Petrified Drow",
+                  "text": "No. Not this time.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {
+                    "19": {
+                      "id": "19",
+                      "speaker": "Petrified Drow",
+                      "text": "Dhourn hired us. Promised riches. Then Xargrim came. Dhourn's old friend.",
+                      "context": "NodeContext: Zar. Door-n",
+                      "checkflags": [],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "13": {
+                          "id": "13",
+                          "speaker": "Petrified Drow",
+                          "text": "They fought. Loud and nasty. Xargrim summoned the spectator and ran.",
+                          "context": "NodeContext: ZAR",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "14": {
+              "id": "14",
+              "speaker": "Player",
+              "text": "Tell me more about this fight between Dhourn and Xargrim.",
+              "context": "",
+              "checkflags": [
+                "UND_PetrifiedDrow_State_AskedWizardFriend = False",
+                "UND_PetrifiedDrow_State_AskedWhatHappened"
+              ],
+              "setflags": [
+                "UND_PetrifiedDrow_State_AskedWizardFriend"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "23": {
+                  "id": "23",
+                  "speaker": "Petrified Drow",
+                  "text": "First they argued. About a pact, a forge. Then came spells. You know the rest.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "UND_MyconidDrowDead_Knows_DhournSearchingForge"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "15": {
+              "id": "15",
+              "speaker": "Player",
+              "text": "You seem distressed. Will you be all right?",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "16": {
+                  "id": "16",
+                  "speaker": "Petrified Drow",
+                  "text": "Yes.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "21": {
+              "id": "21",
+              "speaker": "Player",
+              "text": "Where will you go next?",
+              "context": "",
+              "checkflags": [
+                "UND_PetrifiedDrow_State_AskedPlans = False"
+              ],
+              "setflags": [
+                "UND_PetrifiedDrow_State_AskedPlans"
+              ],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "Petrified Drow",
+                  "text": "Help them. Then home.",
+                  "context": "",
+                  "checkflags": [
+                    "UND_PetrifiedDrow_State_SomeOtherDrowPetrified"
+                  ],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                },
+                "3": {
+                  "id": "3",
+                  "speaker": "Petrified Drow",
+                  "text": "Home.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            },
+            "6": {
+              "id": "6",
+              "speaker": "Player",
+              "text": "Leave.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

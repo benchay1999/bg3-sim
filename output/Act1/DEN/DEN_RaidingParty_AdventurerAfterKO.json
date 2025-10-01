@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "synopsis": "After the main confrontation dialogue, one leader may attack the other. This dialogue the plays if the Adventurer Leader is the sole survivor regardless of who attacked who.",
+    "how_to_trigger": "Repro Steps:1. Start the game.2. loadlevel WLD_Main_A3. goto 212.35, 26.28, 400.384. Advance towards the gate to trigger Attack on Den cinematic.5. killcombat6. Advance into the Grove.7. KO or let Zevlor KO Aradin.8. Talk with Aradin"
+  },
+  "dialogue": {
+    "1": {
+      "id": "1",
+      "speaker": "Aradin",
+      "text": "First I damn near die at the hands of goblins. Then a foulblood takes his frustrations out on me.",
+      "context": "",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "0",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "0": {
+          "id": "0",
+          "speaker": "Aradin",
+          "text": "I'm done with this hellhole.",
+          "context": "CinematicNodeContext: He clears his throat, looking flustered as he barks at the tieflings. \rNodeContext: Flustered and then angry. Trying to be authorative and threatening. Pushing the panic and fear down.",
+          "checkflags": [],
+          "setflags": [
+            "DEN_RaidingParty_Event_AdventurersLeave"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "speaker": "Aradin",
+      "text": "First I damn near die at the hands of goblins. Then I get sucker-punched by a bloody randomer.",
+      "context": "",
+      "checkflags": [
+        "DEN_RaidingParty_Event_PlayerDidTheKO"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "0",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "synopsis": "Minthara is being psychically tortured in the Moonrise Tower dungeon, having been sent there for failing in her mission to capture the weapon the Absolute was seeking (the Orpheus artefact).Two drow guards are torturing her, but they do not lay a finger on her. Instead, they have stripped away her psychic defenses and are using mind-melds to destroy her from the inside.The player can free her by killing the guards, or by mind-melding with Minthara and pulling her out of the despair. If she is freed from the mind-meld while the guards are alive, she kills them.The player can also destroy Minthara completely, by telepathically lobotomising her inside her own mind.",
+    "how_to_trigger": "Rescue Minthara from the dungeon in Moonrise Towers, and have her follow you. This dialogue will then trigger when you speak to her as a follower."
+  },
+  "dialogue": {
+    "5": {
+      "id": "5",
+      "speaker": "Nightwarden Minthara",
+      "text": "I will speak when I am free.",
+      "context": "NodeContext: A dismissal - she's focused on getting out, not chatting with us",
+      "checkflags": [
+        "MOO_MintharaFate_State_FollowedPlayer = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "7": {
+      "id": "7",
+      "speaker": "Nightwarden Minthara",
+      "text": "I will follow you to freedom, not into greater peril. I will hold here until you are done.",
+      "context": "NodeContext: Warning that the party are heading toward danger rather than away from it - she will temporarily leave them",
+      "checkflags": [
+        "MOO_MintharaFate_Event_EnteredForbiddenArea"
+      ],
+      "setflags": [
+        "MOO_MintharaFate_State_Waiting"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Nightwarden Minthara",
+      "text": "Go on. Move.",
+      "context": "NodeContext: Slight edge - she's used to betrayal, and we briefly left her alone in enemy territory. She's nervous, not commanding.",
+      "checkflags": [
+        "MOO_MintharaFate_Event_TravelInterrupted"
+      ],
+      "setflags": [
+        "MOO_MintharaFate_Event_TravelInterrupted = False"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "2": {
+          "id": "2",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "4",
+          "link": "",
+          "is_end": false,
+          "node_type": "jump",
+          "children": {}
+        },
+        "1": {
+          "id": "1",
+          "speaker": "Player",
+          "text": "Let's get moving.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "10": {
+              "id": "10",
+              "speaker": "Nightwarden Minthara",
+              "text": "The quicker, the better.",
+              "context": "NodeContext: Relief, impatience",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": true,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "9": {
+      "id": "9",
+      "speaker": "Nightwarden Minthara",
+      "text": "What is it? What's wrong?",
+      "context": "NodeContext: Hushed, spike of worry - we're sneaking her out through enemy territory and she's wary of being caught.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "4": {
+          "id": "4",
+          "speaker": "Player",
+          "text": "I need you to wait here.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [
+            "MOO_MintharaFate_State_Waiting"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Nightwarden Minthara",
+              "text": "We're between the Absolute's teeth and you ask me to sit still?",
+              "context": "NodeContext: Hushed, incredulous - she wants to be free of this place",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "6": {
+                  "id": "6",
+                  "speaker": "Nightwarden Minthara",
+                  "text": "Be. Swift.",
+                  "context": "NodeContext: Emphatic, gritted teeth",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "Leave.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": true,
+          "node_type": "normal",
+          "children": {}
+        }
+      }
+    }
+  }
+}

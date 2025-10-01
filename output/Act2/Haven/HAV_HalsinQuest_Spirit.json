@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "synopsis": "The player tries to interact with Thaniel, the spirit of the land, after Halsin rescues him from the Shadowfell. Thaniel is unconscious/unresponsive however.Later - Thaniel is recovering and able to talk. A somewhat otherworldly, wise far beyond his years 'child'. He instructs you on what comes next/offers his thanks once you have succeeded.",
+    "how_to_trigger": "1. Go to debug book2. Set quest flags and optiond -> act 2 -> GLO - Lifting the Curse -> Quest States -> Halsin at camp with spirit3. Go to camp4. Talk to Thaniel"
+  },
+  "dialogue": {
+    "4": {
+      "id": "4",
+      "speaker": "Thaniel",
+      "text": "Your path leads away from me, I sense. Be safe. Perhaps one day you will see the fruits that your victory has sown here.",
+      "context": "",
+      "checkflags": [
+        "SCL_LiftingTheCurse_State_HasMet_ThanielEpilogue",
+        "GLO_Ketheric_State_Dead"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "6": {
+      "id": "6",
+      "speaker": "Thaniel",
+      "text": "You did it. Ketheric Thorm is no more - the shadows' grip is broken. Soon the land shall heal.",
+      "context": "NodeContext: Grateful",
+      "checkflags": [
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored",
+        "GLO_Ketheric_State_Dead"
+      ],
+      "setflags": [
+        "SCL_LiftingTheCurse_State_HasMet_ThanielEpilogue"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "11",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "3": {
+          "id": "3",
+          "speaker": "Player",
+          "text": "I'm glad I could help.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "11",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "1": {
+              "id": "1",
+              "speaker": "Thaniel",
+              "text": "Not as glad as I am.",
+              "context": "NodeContext: Grateful",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "10": {
+          "id": "10",
+          "speaker": "Player",
+          "text": "Seems like the sort of feat that might deserve a reward...",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "11",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "2": {
+              "id": "2",
+              "speaker": "Thaniel",
+              "text": "I would agree. But patience is needed.",
+              "context": "NodeContext: knowing",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "11",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        },
+        "9": {
+          "id": "9",
+          "speaker": "Player",
+          "text": "My work here is done, I think.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "0": {
+              "id": "0",
+              "speaker": "Thaniel",
+              "text": "It is. But mine is just beginning again. Soon this will be a place of sunlight and greenery again, with birdsong honouring your triumph.",
+              "context": "NodeContext: Forward-looking",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "11": {
+                  "id": "11",
+                  "speaker": "Thaniel",
+                  "text": "Nature moves at its own pace, and bestows its bounty when it sees fit. Give it time - a reward shall come to you, when you need it most.",
+                  "context": "NodeContext: Knowing",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [
+                    "Halsin 20"
+                  ],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "8": {
+      "id": "8",
+      "speaker": "Thaniel",
+      "text": "Ketheric's soul still nourishes the shadows. Destroy him, so the land may heal. So that I may heal.",
+      "context": "NodeContext: emphasis on the final 'I'. he himself is the spirit of the land so he's making the connection to the previous phrase explicitly",
+      "checkflags": [
+        "CAMP_HalsinQuest_HasMet_WakedThaniel",
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "13": {
+      "id": "13",
+      "speaker": "Thaniel",
+      "text": "The druid Halsin spoke to me while I was sleeping. He spoke of you - said that you fought shadow and spite to restore me.",
+      "context": "",
+      "checkflags": [
+        "CAMP_HalsinQuest_HasMet_WakedThaniel = False",
+        "GLO_LiftingTheCurse_State_BreathHasBeenRestored"
+      ],
+      "setflags": [
+        "CAMP_HalsinQuest_HasMet_WakedThaniel"
+      ],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "12": {
+          "id": "12",
+          "speaker": "Thaniel",
+          "text": "A hundred years of sickness, almost ended. I feel every root that riddles the earth beginning to unfold.",
+          "context": "",
+          "checkflags": [],
+          "setflags": [],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "",
+          "is_end": false,
+          "node_type": "normal",
+          "children": {
+            "7": {
+              "id": "7",
+              "speaker": "Thaniel",
+              "text": "But there is one anchor still holding the shadows in place. The soul that brought it into being.",
+              "context": "",
+              "checkflags": [],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "5": {
+                  "id": "5",
+                  "speaker": "Thaniel",
+                  "text": "For the land to heal, Ketheric Thorm must die.",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": true,
+                  "node_type": "normal",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "speaker": "Narrator",
+      "text": "*Thaniel is unresponsive. He hardly looks alive.*",
+      "context": "CinematicNodeContext: Thaniel is lying on the ground, unconscious.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "synopsis": "Two states: one where the child is about to get attacked by the druids and is panicking, and one where the player has saved him and he's grateful.",
+    "how_to_trigger": "select player characterin reCon: addTag BARBARIANteleport S_DEN_CharmedKidtrigger dialogue DEN_HarpyMeal_CharmedVictimgo through these choices- You shouldn't be standing out in the water. It's dangerous.-  Focus and try to hear what he hears.-  Struggle against the music's pull. (roll amazing)- Roar at the top of your lungs to overpower the voice.dialogue exitskillcombatclick through next dialogue (spacebar all the way)oe startdruidattackteleport S_DEN_CharmedKid"
+  },
+  "dialogue": {
+    "0": {
+      "id": "0",
+      "speaker": "Mirkon",
+      "text": "Wh-what's happening? Please help!",
+      "context": "NodeContext: About to get attacked.",
+      "checkflags": [],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "1": {
+      "id": "1",
+      "speaker": "Mirkon",
+      "text": "I wish you could stay with us - you'd keep everyone safe forever.",
+      "context": "NodeContext: The player saved him.",
+      "checkflags": [
+        "DEN_DruidAttack_State_PrepAfterDeathOfDruids"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}

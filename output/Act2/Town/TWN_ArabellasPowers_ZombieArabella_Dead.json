@@ -1,0 +1,584 @@
+{
+  "metadata": {
+    "synopsis": "Arabella has been found dead. This means player refused to find her parents earlier, and she then ran off.",
+    "how_to_trigger": "goto -150; 31; 18, ctrl-k Arabella to kill her and test SWD.Alternatively, go to -150; 31; 18, speak with Arabella, say that you aren't going to help her. She will disappear out of sight - then go to-157; 21; -85, find her corpse and SwD"
+  },
+  "dialogue": {
+    "24": {
+      "id": "24",
+      "speaker": "Narrator",
+      "text": "*The corpse does not stir. It will answer no more questions.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    },
+    "25": {
+      "id": "25",
+      "speaker": "Narrator",
+      "text": "*The corpse regards you lifelessly.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "17",
+      "is_end": false,
+      "node_type": "normal",
+      "children": {
+        "1": {
+          "id": "1",
+          "speaker": "",
+          "text": "",
+          "context": "",
+          "checkflags": [
+            "cf141fa8-51ff-5661-d8b1-bc8c47931882_ArabellaSWDInclusion = False"
+          ],
+          "setflags": [
+            "cf141fa8-51ff-5661-d8b1-bc8c47931882_ArabellaSWDInclusion",
+            "ORI_Inclusion_Random"
+          ],
+          "ruletags": [],
+          "approval": [],
+          "rolls": "",
+          "goto": "",
+          "link": "17",
+          "is_end": false,
+          "node_type": "taganswer",
+          "children": {
+            "8": {
+              "id": "8",
+              "speaker": "Lae'zel",
+              "text": "Her fate was writ the moment she fled.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_LAEZEL"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "19": {
+              "id": "19",
+              "speaker": "Shadowheart",
+              "text": "She survived the druids' wrath, just to wind up like this. What a waste.",
+              "context": "NodeContext: Quiet anger/sorrow",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_SHADOWHEART"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "2": {
+              "id": "2",
+              "speaker": "Karlach",
+              "text": "Tsk. I really hoped it wouldn't come to this. Poor thing.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_KARLACH"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {
+                "17": {
+                  "id": "17",
+                  "speaker": "",
+                  "text": "",
+                  "context": "",
+                  "checkflags": [],
+                  "setflags": [
+                    "ORI_Inclusion_End_Random"
+                  ],
+                  "ruletags": [],
+                  "approval": [],
+                  "rolls": "",
+                  "goto": "",
+                  "link": "",
+                  "is_end": false,
+                  "node_type": "taganswer",
+                  "children": {
+                    "27": {
+                      "id": "27",
+                      "speaker": "Player",
+                      "text": "Who are you?",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                      ],
+                      "setflags": [
+                        "GLO_SpeakWithDead_Event_QuestionAsked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "23": {
+                          "id": "23",
+                          "speaker": "Arabella",
+                          "text": "Arabella...",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "10": {
+                              "id": "10",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "21": {
+                      "id": "21",
+                      "speaker": "Player",
+                      "text": "How did you die?",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                      ],
+                      "setflags": [
+                        "TWN_ZombieArabellaDead_Event_AskedAboutSpell",
+                        "GLO_SpeakWithDead_Event_QuestionAsked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "28": {
+                          "id": "28",
+                          "speaker": "Arabella",
+                          "text": "Shadows... attacked...",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "18": {
+                              "id": "18",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "14": {
+                      "id": "14",
+                      "speaker": "Player",
+                      "text": "Why didn't your spell keep you safe?",
+                      "context": "",
+                      "checkflags": [
+                        "cf141fa8-51ff-5661-d8b1-bc8c47931882_ArabellaSWDInclusion",
+                        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                      ],
+                      "setflags": [
+                        "GLO_SpeakWithDead_Event_QuestionAsked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "16": {
+                          "id": "16",
+                          "speaker": "Arabella",
+                          "text": "Too... many...",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "7": {
+                              "id": "7",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "0": {
+                      "id": "0",
+                      "speaker": "Player",
+                      "text": "Why were you alone here?",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                      ],
+                      "setflags": [
+                        "GLO_SpeakWithDead_Event_QuestionAsked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "22": {
+                          "id": "22",
+                          "speaker": "Arabella",
+                          "text": "Zevlor... betrayed us... escaped...",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [
+                            "COL_FindZevlor_Knows_MissingArabella"
+                          ],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "15": {
+                              "id": "15",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "9": {
+                      "id": "9",
+                      "speaker": "Player",
+                      "text": "Did you find your parents?",
+                      "context": "",
+                      "checkflags": [
+                        "TWN_ArabellasPowers_State_ParentsFoundDead = False",
+                        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                      ],
+                      "setflags": [
+                        "GLO_SpeakWithDead_Event_QuestionAsked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "5": {
+                          "id": "5",
+                          "speaker": "Arabella",
+                          "text": "No...",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "12": {
+                              "id": "12",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "6": {
+                      "id": "6",
+                      "speaker": "Player",
+                      "text": "I'm sorry. I should have helped you.",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                      ],
+                      "setflags": [
+                        "GLO_SpeakWithDead_Event_QuestionAsked"
+                      ],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": false,
+                      "node_type": "normal",
+                      "children": {
+                        "4": {
+                          "id": "4",
+                          "speaker": "Narrator",
+                          "text": "*The corpse remains silent. You did not ask it a question.*",
+                          "context": "",
+                          "checkflags": [],
+                          "setflags": [],
+                          "ruletags": [],
+                          "approval": [],
+                          "rolls": "",
+                          "goto": "",
+                          "link": "",
+                          "is_end": false,
+                          "node_type": "normal",
+                          "children": {
+                            "11": {
+                              "id": "11",
+                              "speaker": "",
+                              "text": "",
+                              "context": "",
+                              "checkflags": [],
+                              "setflags": [],
+                              "ruletags": [],
+                              "approval": [],
+                              "rolls": "",
+                              "goto": "",
+                              "link": "",
+                              "is_end": false,
+                              "node_type": "taganswer",
+                              "children": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "3": {
+                      "id": "3",
+                      "speaker": "Player",
+                      "text": "Leave.",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_SpeakWithDead_State_QuestionsLimitReached = False"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    },
+                    "29": {
+                      "id": "29",
+                      "speaker": "Narrator",
+                      "text": "*The spell's power wanes. You can ask no more questions.*",
+                      "context": "",
+                      "checkflags": [
+                        "GLO_SpeakWithDead_State_QuestionsLimitReached"
+                      ],
+                      "setflags": [],
+                      "ruletags": [],
+                      "approval": [],
+                      "rolls": "",
+                      "goto": "",
+                      "link": "",
+                      "is_end": true,
+                      "node_type": "normal",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "26": {
+              "id": "26",
+              "speaker": "Astarion",
+              "text": "A pity - she was fun.",
+              "context": "NodeContext: Looking down at a dead child. Astarion saw her try to rob a sacred idol from some druids and respected her gumption. A touch of wistfulness, but not enough to betray his true emotions",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_ASTARION"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "13": {
+              "id": "13",
+              "speaker": "Wyll",
+              "text": "Poor thing. We could have - should have - done more...",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_WYLL"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            },
+            "20": {
+              "id": "20",
+              "speaker": "Gale",
+              "text": "I'm sorry it had to come to this, Arabella. You were brave and fierce beyond your years.",
+              "context": "",
+              "checkflags": [
+                "ORI_Inclusion_PickedAtRandom",
+                "REALLY_GALE"
+              ],
+              "setflags": [],
+              "ruletags": [],
+              "approval": [],
+              "rolls": "",
+              "goto": "",
+              "link": "17",
+              "is_end": false,
+              "node_type": "normal",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "30": {
+      "id": "30",
+      "speaker": "Narrator",
+      "text": "*The corpse seems willing to speak - but not to its killer.*",
+      "context": "",
+      "checkflags": [
+        "GLO_SpeakWithDead_State_Killer"
+      ],
+      "setflags": [],
+      "ruletags": [],
+      "approval": [],
+      "rolls": "",
+      "goto": "",
+      "link": "",
+      "is_end": true,
+      "node_type": "normal",
+      "children": {}
+    }
+  }
+}
