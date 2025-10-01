@@ -6,6 +6,7 @@ What to do (in order)
 ```python
 python batch_approval_paths.py -w 10
 ```
+The above will generate `approval-paths/` folder with conversation trajectories containing approvals.(TODO: remove my personal paths in the code)
 
 ## Generate context for the sessions
 ```python
@@ -20,14 +21,17 @@ python scripts/build_approval_dataset.py
 ```python
 python scripts/sample_approval_dataset_subset.py
 ```
+The above will generate a QA set in `result-dataset/`0
+(TODO: remove my personal paths in the code)
 
 ## Run LLM approval inference
 ```python
-python3 /home/wschay/bg3sim/scripts/run_llm_approval_inference.py \
-  --input /home/wschay/bg3sim/result-dataset/astarion_approval_dataset_subset.json \
-  --output /home/wschay/bg3sim/test/gpt-4o-mini_astarion_llm_approvals.jsonl \
-  --template /home/wschay/bg3sim/bg3_characters_llm_input_prompt_example.txt \
+mkdir test
+python3 scripts/run_llm_approval_inference.py \
+  --input result-dataset/astarion_approval_dataset_subset.json \
+  --output test/gpt-4o-mini_astarion_llm_approvals.jsonl \
+  --template bg3_characters_llm_input_prompt_example.txt \
   --model gpt-4o-mini \
   --sleep 0.2 \
-  --metrics_dir /home/wschay/bg3sim/test
+  --metrics_dir test
 ```
