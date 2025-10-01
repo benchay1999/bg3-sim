@@ -1157,7 +1157,7 @@ class DialogSimulator:
             export_json=False,
             export_dict=False,
             verbose=False,
-            time_limit_seconds=120,
+            time_limit_seconds=30,
         )
 
         all_examples = []
