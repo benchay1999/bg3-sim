@@ -5,12 +5,15 @@ import re
 from typing import Dict, List, Tuple, Optional
 from tqdm import tqdm
 import random
+import signal
 
-APPROVAL_DIR = "/nfs_edlab/wschay/bg3-approval-paths/approval-paths"
-QA_CONTEXTS_DIR_PRIMARY = "/home/wschay/bg3sim/qa-contexts-rag"
-QA_CONTEXTS_DIR_ALT = "/home/wschay/bg3sim/qa-context-rag"  # fallback if singular dir exists
-WORKSPACE_ROOT = "/home/wschay/bg3sim"
-OUTPUT_PATH = "/home/wschay/bg3sim/approval-dataset/approval_dataset.jsonl"
+APPROVAL_DIR = "/nfs_edlab/wschay/bg3-sim/approval-paths"
+QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
+QA_CONTEXTS_DIR_ALT = "qa-context-rag"  # fallback if singular dir exists
+WORKSPACE_ROOT = "/home/wschay/bg3-sim"
+OUTPUT_PATH = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset.jsonl"
+
+MAX_OUTPUT_SIZE_BYTES = 500 * 1024 * 1024 * 1024
 
 
 ORIGIN_CANONICAL = {
@@ -192,49 +195,82 @@ def build_conversation_and_label(path_lines: List[str]) -> Optional[Tuple[str, D
 
 
 def main() -> None:
-    all_samples: List[Dict] = []
-    # To deduplicate, use a set keyed by (context_rel_path, conversation)
+    # To deduplicate within this run, use a set keyed by (context_rel_path, conversation)
     seen_keys = set()
+    num_written = 0
 
-    for root, dirs, files in os.walk(APPROVAL_DIR):
-        # Shuffle traversal order for directories and files to increase variety
-        random.shuffle(dirs)
-        random.shuffle(files)
-        
-        files = files[:100]
-        for fname in tqdm(files):
-            if not fname.endswith("_approval_paths.txt"):
-                continue
-            fpath = os.path.join(root, fname)
-            try:
-                lines = read_text(fpath)
-            except Exception:
-                continue
-            context_rel = compute_context_relpath(fpath)
-            paths = extract_paths(lines)
-            for path_lines in paths:
-                result = build_conversation_and_label(path_lines)
-                if not result:
-                    continue
-                conversation, label = result
-                if not label:
-                    continue
-                key = (context_rel, conversation)
-                if key in seen_keys:
-                    continue
-                seen_keys.add(key)
-                all_samples.append({
-                    "context": context_rel,
-                    "conversation": conversation,
-                    "label": label,
-                })
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "a", encoding="utf-8") as out:
+        # If file already exceeds limit, terminate immediately
+        try:
+            current_size = os.fstat(out.fileno()).st_size
+            if current_size > MAX_OUTPUT_SIZE_BYTES:
+                print(f"Output file exceeded 500GB at {OUTPUT_PATH}. Terminating.")
+                try:
+                    out.flush()
+                    os.fsync(out.fileno())
+                except Exception:
+                    pass
+                os.kill(os.getpid(), signal.SIGKILL)
+        except Exception:
+            pass
 
-        os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-        with open(OUTPUT_PATH, "w", encoding="utf-8") as out:
-            for sample in all_samples:
-                out.write(json.dumps(sample, ensure_ascii=False) + "\n")
+        for root, dirs, files in os.walk(APPROVAL_DIR):
+            # Shuffle traversal order for directories and files to increase variety
+            random.shuffle(dirs)
+            random.shuffle(files)
 
-    print(f"Wrote {len(all_samples)} samples to {OUTPUT_PATH}")
+            files = files[:100]
+            for fname in tqdm(files):
+                if not fname.endswith("_approval_paths.txt"):
+                    continue
+                fpath = os.path.join(root, fname)
+                try:
+                    lines = read_text(fpath)
+                except Exception:
+                    continue
+                context_rel = compute_context_relpath(fpath)
+                paths = extract_paths(lines)
+                # Collect this file's samples to write in a single batch
+                file_batch_lines: List[str] = []
+                for path_lines in paths:
+                    result = build_conversation_and_label(path_lines)
+                    if not result:
+                        continue
+                    conversation, label = result
+                    if not label:
+                        continue
+                    key = (context_rel, conversation)
+                    if key in seen_keys:
+                        continue
+                    seen_keys.add(key)
+                    sample = {
+                        "context": context_rel,
+                        "conversation": conversation,
+                        "label": label,
+                    }
+                    file_batch_lines.append(json.dumps(sample, ensure_ascii=False) + "\n")
+
+                # Write this file's batch, then perform a single size check
+                if file_batch_lines:
+                    out.writelines(file_batch_lines)
+                    out.flush()
+                    num_written += len(file_batch_lines)
+                    try:
+                        size_bytes = os.fstat(out.fileno()).st_size
+                    except Exception:
+                        size_bytes = os.path.getsize(OUTPUT_PATH) if os.path.exists(OUTPUT_PATH) else 0
+                    print(f"File {fpath} wrote {len(file_batch_lines)} samples, total size: {size_bytes/1024**3} GB.")
+                    if size_bytes > MAX_OUTPUT_SIZE_BYTES:
+                        print(f"Output file exceeded 500GB at {OUTPUT_PATH}. Terminating.")
+                        try:
+                            out.flush()
+                            os.fsync(out.fileno())
+                        except Exception:
+                            pass
+                        os.kill(os.getpid(), signal.SIGKILL)
+
+    print(f"Wrote {num_written} samples to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

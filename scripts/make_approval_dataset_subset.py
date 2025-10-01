@@ -8,6 +8,10 @@ from typing import Dict, List
 DEFAULT_INPUT = "/home/wschay/bg3sim/approval-dataset/approval_dataset_subset.jsonl"
 DEFAULT_OUTPUT_DIR = "/home/wschay/bg3sim/result-dataset"
 
+# Context roots used in dataset `context` field
+QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
+QA_CONTEXTS_DIR_ALT = "qa-context-rag"
+
 
 # Category mapping
 # 1) Highly Disapprove: score <= -5
@@ -81,6 +85,12 @@ def parse_args() -> argparse.Namespace:
         help="Max samples per category per character",
     )
     parser.add_argument(
+        "--session-max",
+        type=int,
+        default=20,
+        help="Global maximum samples allowed from a single session (context JSON) across all categories for a character",
+    )
+    parser.add_argument(
         "--seed",
         type=int,
         default=42,
@@ -114,14 +124,34 @@ def build_buckets(input_path: str, characters: List[str]) -> Dict[str, Dict[str,
     return by_char_category
 
 
-def sample_character(by_category: Dict[str, List[Dict]], per_bucket: int) -> List[Dict]:
+def _session_id_from_context(context_path: str) -> str:
+    if context_path.startswith(f"{QA_CONTEXTS_DIR_PRIMARY}/"):
+        return context_path[len(QA_CONTEXTS_DIR_PRIMARY) + 1 :]
+    if context_path.startswith(f"{QA_CONTEXTS_DIR_ALT}/"):
+        return context_path[len(QA_CONTEXTS_DIR_ALT) + 1 :]
+    return context_path
+
+
+def sample_character(by_category: Dict[str, List[Dict]], per_bucket: int, session_max: int) -> List[Dict]:
     sampled: List[Dict] = []
+    session_counts: Dict[str, int] = {}
     for key in CATEGORY_KEYS:
         items = list(by_category[key])
         random.shuffle(items)
-        take = items[:per_bucket]
-        sampled.extend(take)
-        print(f"  {CATEGORY_HUMAN[key]}: have {len(items)}, taking {len(take)}")
+        taken_in_cat = 0
+        for obj in items:
+            if taken_in_cat >= per_bucket:
+                break
+            context_path = obj.get("context", "")
+            session_id = _session_id_from_context(context_path)
+            if session_counts.get(session_id, 0) >= session_max:
+                continue
+            sampled.append(obj)
+            session_counts[session_id] = session_counts.get(session_id, 0) + 1
+            taken_in_cat += 1
+        print(
+            f"  {CATEGORY_HUMAN[key]}: have {len(items)}, taking {taken_in_cat} (session-capped)"
+        )
     return sampled
 
 
@@ -143,7 +173,7 @@ def main() -> None:
 
     for char in args.characters:
         print(f"Character: {char}")
-        sampled = sample_character(by_char_category[char], args.per_bucket)
+        sampled = sample_character(by_char_category[char], args.per_bucket, args.session_max)
         output_path = os.path.join(
             args.output_dir, f"{char.lower()}_approval_dataset_subset.json"
         )

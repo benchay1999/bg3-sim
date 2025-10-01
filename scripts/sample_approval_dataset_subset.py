@@ -8,11 +8,11 @@ from typing import Dict, List, Tuple, Optional, Any
 
 
 # Defaults mirror the builder script for paths
-APPROVAL_DIR_DEFAULT = "/nfs_edlab/wschay/bg3-approval-paths/approval-paths"
-QA_CONTEXTS_DIR_PRIMARY = "/home/wschay/bg3sim/qa-contexts-rag"
-QA_CONTEXTS_DIR_ALT = "/home/wschay/bg3sim/qa-context-rag"
-WORKSPACE_ROOT = "/home/wschay/bg3sim"
-OUTPUT_DEFAULT = "/home/wschay/bg3sim/approval-dataset/approval_dataset_subset.jsonl"
+APPROVAL_DIR_DEFAULT = "/nfs_edlab/wschay/bg3-sim/approval-paths"
+QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
+QA_CONTEXTS_DIR_ALT = "qa-context-rag"
+WORKSPACE_ROOT = "/home/wschay/bg3-sim"
+OUTPUT_DEFAULT = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_subset.jsonl"
 
 
 APPROVAL_RE = re.compile(r"\[approval\]\s*(.+)")
@@ -220,6 +220,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-files", type=int, default=0, help="Maximum number of files to process in total (0 = no limit).")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for shuffling acts and files.")
     parser.add_argument("--acts", nargs="*", default=None, help="Optional list of act names to include (e.g., Act1 Act1b Act2 Act3 Camp Companions).")
+    parser.add_argument("--per-category", type=int, default=200, help="Number of samples to write per act category.")
+    parser.add_argument("--session-max", type=int, default=20, help="Global maximum samples allowed from a single session (context JSON) across all categories.")
     return parser.parse_args()
 
 
@@ -236,12 +238,20 @@ def main() -> None:
     schedule = round_robin_files(groups, args.chunk_size, args.max_files)
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     seen_keys = set()
-    per_act_counts = {act: 0 for act in groups.keys()}
+    per_act_counts = {act: 0 for act in groups.keys()}  # files processed per act
+    category_counts = {act: 0 for act in groups.keys()}  # samples written per act category
+    session_counts: Dict[str, int] = {}
     written = 0
 
     with open(args.output, "w", encoding="utf-8") as out:
         for act, fpath in schedule:
             per_act_counts[act] += 1
+            # If this category already met quota, skip this file quickly
+            if category_counts.get(act, 0) >= args.per_category:
+                # Check if all targets are met to allow early exit
+                if all(category_counts.get(a, 0) >= args.per_category for a in category_counts.keys()):
+                    break
+                continue
             try:
                 lines = read_text(fpath)
             except Exception:
@@ -259,6 +269,22 @@ def main() -> None:
                 if key in seen_keys:
                     continue
                 seen_keys.add(key)
+                # Determine session id from context path (strip qa contexts prefix)
+                if context_rel.startswith(f"{QA_CONTEXTS_DIR_PRIMARY}/"):
+                    session_id = context_rel[len(QA_CONTEXTS_DIR_PRIMARY) + 1 :]
+                elif context_rel.startswith(f"{QA_CONTEXTS_DIR_ALT}/"):
+                    session_id = context_rel[len(QA_CONTEXTS_DIR_ALT) + 1 :]
+                else:
+                    session_id = context_rel
+
+                # Enforce global per-session cap
+                if session_counts.get(session_id, 0) >= args.session_max:
+                    continue
+
+                # Enforce per-category quota
+                if category_counts.get(act, 0) >= args.per_category:
+                    # Category full; skip remaining from this act
+                    continue
                 obj: Dict[str, Any] = {
                     "context": context_rel,
                     "conversation": conversation,
@@ -266,11 +292,23 @@ def main() -> None:
                 }
                 out.write(json.dumps(obj, ensure_ascii=False) + "\n")
                 written += 1
+                category_counts[act] = category_counts.get(act, 0) + 1
+                session_counts[session_id] = session_counts.get(session_id, 0) + 1
+
+                # If all categories have reached targets, stop early
+                if all(category_counts.get(a, 0) >= args.per_category for a in category_counts.keys()):
+                    break
+            # After finishing this file, if all targets met, exit outer loop
+            if all(category_counts.get(a, 0) >= args.per_category for a in category_counts.keys()):
+                break
 
     # Summary
     acts_str = ", ".join(sorted(groups.keys()))
     print(f"Processed files per act: {per_act_counts}")
+    print(f"Samples written per act: {category_counts}")
     print(f"Acts included: {acts_str}")
+    print(f"Per-category target: {args.per_category}, per-session global cap: {args.session_max}")
+    print(f"Unique sessions used: {len(session_counts)} (capped at {args.session_max} each)")
     print(f"Wrote {written} samples to {args.output}")
 
 
