@@ -4,6 +4,7 @@ import os
 import random
 import argparse
 from typing import Dict, List
+import hashlib
 
 DEFAULT_INPUT = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset.jsonl"
 DEFAULT_OUTPUT_DIR = "result-dataset"
@@ -111,6 +112,12 @@ def build_buckets(input_path: str, characters: List[str]) -> Dict[str, Dict[str,
                 obj = json.loads(line)
             except json.JSONDecodeError:
                 continue
+            # Ensure a stable id exists
+            if isinstance(obj, dict) and "conversation" in obj and "id" not in obj:
+                try:
+                    obj["id"] = hashlib.sha256(obj["conversation"].encode("utf-8")).hexdigest()
+                except Exception:
+                    pass
             label = obj.get("label", {})
             if not isinstance(label, dict):
                 continue

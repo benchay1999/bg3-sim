@@ -222,6 +222,7 @@ def main() -> None:
     y_pred: List[str] = []
     y_true_bin: List[int] = []  # 1 = positive, 0 = negative
     y_pred_bin: List[int] = []
+    predicted_neutral_count: int = 0
 
     sent = 0
     for sample in tqdm(samples):
@@ -263,6 +264,9 @@ def main() -> None:
         parsed = parse_model_response(content)
         predicted_approval_raw = parsed.get("player_approval")
         predicted_category = canonicalize_category(predicted_approval_raw)
+
+        if predicted_category == "Neutral":
+            predicted_neutral_count += 1
 
         character_label_value = None
         if isinstance(label, dict) and args.character in label:
@@ -363,7 +367,7 @@ def main() -> None:
         ),
     }
     character_slug = args.character.lower().replace(" ", "_")
-    metrics_path = os.path.join(args.metrics_dir, f"{args.model.split('/')[-1]}_{character_slug}_llm_metrics.json")
+    metrics_path = os.path.join(args.metrics_dir, f"{args.model.split('/')[-1].lower()}_{character_slug}_llm_metrics.json")
     with open(metrics_path, "w", encoding="utf-8") as mf:
         json.dump(metrics, mf, ensure_ascii=False, indent=2)
     print(f"Saved metrics to {metrics_path}")
@@ -387,9 +391,18 @@ def main() -> None:
             ax.text(j, i, format(cm[i, j], 'd'), ha="center", va="center",
                     color="white" if cm[i, j] > thresh else "black")
 
-    plt.tight_layout()
-    cm_path = os.path.join(args.metrics_dir, f"{args.model}_{character_slug}_llm_confusion_matrix.png")
-    plt.savefig(cm_path, dpi=200)
+    # Reserve right margin for a side legend showing neutral count
+    fig.tight_layout(rect=[0, 0, 0.82, 1])
+    fig.text(
+        0.84,
+        0.5,
+        f"Predicted Neutral: {predicted_neutral_count}",
+        ha="left",
+        va="center",
+        bbox=dict(facecolor="white", alpha=0.7, edgecolor="none"),
+    )
+    cm_path = os.path.join(args.metrics_dir, f"{args.model.split('/')[-1].lower()}_{character_slug}_llm_confusion_matrix.png")
+    fig.savefig(cm_path, dpi=200)
     plt.close(fig)
     print(f"Saved confusion matrix to {cm_path}")
 
@@ -440,9 +453,17 @@ def main() -> None:
             for j in range(cm_bin.shape[1]):
                 ax2.text(j, i, format(cm_bin[i, j], 'd'), ha="center", va="center",
                         color="white" if cm_bin[i, j] > thresh2 else "black")
-        plt.tight_layout()
-        cm_bin_path = os.path.join(args.metrics_dir, f"{args.model}_{character_slug}_llm_confusion_matrix_binary.png")
-        plt.savefig(cm_bin_path, dpi=200)
+        fig2.tight_layout(rect=[0, 0, 0.82, 1])
+        fig2.text(
+            0.84,
+            0.5,
+            f"Predicted Neutral: {predicted_neutral_count}",
+            ha="left",
+            va="center",
+            bbox=dict(facecolor="white", alpha=0.7, edgecolor="none"),
+        )
+        cm_bin_path = os.path.join(args.metrics_dir, f"{args.model.split('/')[-1].lower()}_{character_slug}_llm_confusion_matrix_binary.png")
+        fig2.savefig(cm_bin_path, dpi=200)
         plt.close(fig2)
         print(f"Saved binary confusion matrix to {cm_bin_path}")
 

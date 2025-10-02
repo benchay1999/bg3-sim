@@ -6,6 +6,7 @@ from typing import Dict, List, Tuple, Optional
 from tqdm import tqdm
 import random
 import signal
+import hashlib
 
 APPROVAL_DIR = "/nfs_edlab/wschay/bg3-sim/approval-paths"
 QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
@@ -245,6 +246,7 @@ def main() -> None:
                         continue
                     seen_keys.add(key)
                     sample = {
+                        "id": hashlib.sha256(conversation.encode("utf-8")).hexdigest(),
                         "context": context_rel,
                         "conversation": conversation,
                         "label": label,

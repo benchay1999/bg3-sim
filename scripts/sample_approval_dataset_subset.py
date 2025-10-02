@@ -5,6 +5,7 @@ import os
 import re
 import random
 from typing import Dict, List, Tuple, Optional, Any
+import hashlib
 
 
 # Defaults mirror the builder script for paths
@@ -286,6 +287,7 @@ def main() -> None:
                     # Category full; skip remaining from this act
                     continue
                 obj: Dict[str, Any] = {
+                    "id": hashlib.sha256(conversation.encode("utf-8")).hexdigest(),
                     "context": context_rel,
                     "conversation": conversation,
                     "label": label,
