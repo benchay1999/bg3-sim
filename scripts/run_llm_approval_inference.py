@@ -248,7 +248,7 @@ def main() -> None:
             skipped += 1
             continue
         context_rel: str = sample.get("context", "")
-        conversation_text: str = sample.get("conversation", "")
+        conversation_text: str = sample.get("conversation", "").replace("\n:True\n", "\n").replace("\n:False\n", "\n").replace(":True", "").replace(":False", "")
         label: Dict[str, Any] = sample.get("label", {})
 
         # Load context text from the QA JSON referenced by relative path
