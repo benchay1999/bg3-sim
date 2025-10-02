@@ -26,8 +26,8 @@ The script resolves each line's context path, loads that JSON, extracts its
 
 Usage:
   python scripts/generate_poll_csv.py \
-      /home/wschay/bg3-sim/test/1002_gpt-4o-mini_astarion_llm_approvals.jsonl \
-      /home/wschay/bg3-sim/test/astarion_poll.csv
+      test/1002_gpt-4o-mini_astarion_llm_approvals.jsonl \
+      test/astarion_poll.csv
 
 Optional flags:
   --base-dir BASE_DIR   Base directory for resolving relative context paths

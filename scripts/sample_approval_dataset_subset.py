@@ -12,7 +12,7 @@ import hashlib
 APPROVAL_DIR_DEFAULT = "/nfs_edlab/wschay/bg3-sim/approval-paths"
 QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
 QA_CONTEXTS_DIR_ALT = "qa-context-rag"
-WORKSPACE_ROOT = "/home/wschay/bg3-sim"
+WORKSPACE_ROOT = "."
 OUTPUT_DEFAULT = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_subset.jsonl"
 
 
