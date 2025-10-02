@@ -374,15 +374,20 @@ def main() -> None:
 
     # Confusion matrix plot (multiclass)
     cm = confusion_matrix(y_true, y_pred, labels=labels_order)
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig = plt.figure(figsize=(8, 5))
+    gs = fig.add_gridspec(1, 3, width_ratios=[1.0, 0.05, 0.35], wspace=0.3)
+    ax = fig.add_subplot(gs[0, 0])
+    cax = fig.add_subplot(gs[0, 1])
+    lax = fig.add_subplot(gs[0, 2])
+
     im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
-    ax.figure.colorbar(im, ax=ax)
+    fig.colorbar(im, cax=cax)
     ax.set(xticks=range(len(labels_order)), yticks=range(len(labels_order)))
     ax.set_xticklabels(target_names, rotation=45, ha="right")
     ax.set_yticklabels(target_names)
     ax.set_ylabel('True label')
     ax.set_xlabel('Predicted label')
-    ax.set_title(f"{args.character} Approval Confusion Matrix")
+    fig.suptitle(f"{args.character} Approval Confusion Matrix")
 
     # Annotate cells
     thresh = cm.max() / 2.0 if cm.size > 0 else 0
@@ -391,16 +396,15 @@ def main() -> None:
             ax.text(j, i, format(cm[i, j], 'd'), ha="center", va="center",
                     color="white" if cm[i, j] > thresh else "black")
 
-    # Reserve right margin for a side legend showing neutral count
-    fig.tight_layout(rect=[0, 0, 0.82, 1])
-    fig.text(
-        0.84,
-        0.5,
+    # Legend/notes panel (inside figure)
+    lax.axis('off')
+    legend_lines = [
         f"Predicted Neutral: {predicted_neutral_count}",
-        ha="left",
-        va="center",
-        bbox=dict(facecolor="white", alpha=0.7, edgecolor="none"),
-    )
+    ]
+    lax.text(0.0, 0.5, "\n".join(legend_lines), ha="left", va="center",
+             fontsize=10, bbox=dict(facecolor="white", alpha=0.7, edgecolor="lightgray"))
+
+    fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     cm_path = os.path.join(args.metrics_dir, f"{args.model.split('/')[-1].lower()}_{character_slug}_llm_confusion_matrix.png")
     fig.savefig(cm_path, dpi=200)
     plt.close(fig)
@@ -439,29 +443,32 @@ def main() -> None:
 
         # Plot binary confusion matrix
         cm_bin = confusion_matrix(y_true_bin, y_pred_bin, labels=[0, 1])
-        fig2, ax2 = plt.subplots(figsize=(5, 4))
+        fig2 = plt.figure(figsize=(7, 4))
+        gs2 = fig2.add_gridspec(1, 3, width_ratios=[1.0, 0.05, 0.35], wspace=0.3)
+        ax2 = fig2.add_subplot(gs2[0, 0])
+        cax2 = fig2.add_subplot(gs2[0, 1])
+        lax2 = fig2.add_subplot(gs2[0, 2])
+
         im2 = ax2.imshow(cm_bin, interpolation='nearest', cmap=plt.cm.Blues)
-        ax2.figure.colorbar(im2, ax=ax2)
+        fig2.colorbar(im2, cax=cax2)
         ax2.set(xticks=[0, 1], yticks=[0, 1])
         ax2.set_xticklabels(["negative", "positive"], rotation=45, ha="right")
-        ax2.set_yticklabels(["negative", "positive"])
+        ax2.set_yticklabels(["negative", "positive"]) 
         ax2.set_ylabel('True label')
         ax2.set_xlabel('Predicted label')
-        ax2.set_title(f"{args.character} Approval Binary Confusion Matrix")
+        fig2.suptitle(f"{args.character} Approval Binary Confusion Matrix")
         thresh2 = cm_bin.max() / 2.0 if cm_bin.size > 0 else 0
         for i in range(cm_bin.shape[0]):
             for j in range(cm_bin.shape[1]):
                 ax2.text(j, i, format(cm_bin[i, j], 'd'), ha="center", va="center",
                         color="white" if cm_bin[i, j] > thresh2 else "black")
-        fig2.tight_layout(rect=[0, 0, 0.82, 1])
-        fig2.text(
-            0.84,
-            0.5,
-            f"Predicted Neutral: {predicted_neutral_count}",
-            ha="left",
-            va="center",
-            bbox=dict(facecolor="white", alpha=0.7, edgecolor="none"),
-        )
+
+        # Legend panel
+        lax2.axis('off')
+        lax2.text(0.0, 0.5, f"Predicted Neutral: {predicted_neutral_count}", ha="left", va="center",
+                  fontsize=10, bbox=dict(facecolor="white", alpha=0.7, edgecolor="lightgray"))
+
+        fig2.tight_layout(rect=[0, 0.03, 1, 0.95])
         cm_bin_path = os.path.join(args.metrics_dir, f"{args.model.split('/')[-1].lower()}_{character_slug}_llm_confusion_matrix_binary.png")
         fig2.savefig(cm_bin_path, dpi=200)
         plt.close(fig2)

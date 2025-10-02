@@ -12,7 +12,7 @@ APPROVAL_DIR = "/nfs_edlab/wschay/bg3-sim/approval-paths"
 QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
 QA_CONTEXTS_DIR_ALT = "qa-context-rag"  # fallback if singular dir exists
 WORKSPACE_ROOT = "/home/wschay/bg3-sim"
-OUTPUT_PATH = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset.jsonl"
+OUTPUT_PATH = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_with_id.jsonl"
 
 MAX_OUTPUT_SIZE_BYTES = 500 * 1024 * 1024 * 1024
 
@@ -199,6 +199,7 @@ def main() -> None:
     # To deduplicate within this run, use a set keyed by (context_rel_path, conversation)
     seen_keys = set()
     num_written = 0
+    used_ids = set()
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "a", encoding="utf-8") as out:
@@ -245,8 +246,17 @@ def main() -> None:
                     if key in seen_keys:
                         continue
                     seen_keys.add(key)
+                    # Generate unique id (64-hex chars) with collision handling
+                    base_id = hashlib.sha256(conversation.encode("utf-8")).hexdigest()
+                    candidate_id = base_id
+                    counter = 1
+                    while candidate_id in used_ids:
+                        candidate_id = hashlib.sha256((conversation + f"#{counter}").encode("utf-8")).hexdigest()
+                        counter += 1
+                    used_ids.add(candidate_id)
+
                     sample = {
-                        "id": hashlib.sha256(conversation.encode("utf-8")).hexdigest(),
+                        "id": candidate_id,
                         "context": context_rel,
                         "conversation": conversation,
                         "label": label,

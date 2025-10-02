@@ -112,10 +112,10 @@ def build_buckets(input_path: str, characters: List[str]) -> Dict[str, Dict[str,
                 obj = json.loads(line)
             except json.JSONDecodeError:
                 continue
-            # Ensure a stable id exists
+            # Ensure a stable id exists (short 64-bit hex)
             if isinstance(obj, dict) and "conversation" in obj and "id" not in obj:
                 try:
-                    obj["id"] = hashlib.sha256(obj["conversation"].encode("utf-8")).hexdigest()
+                    obj["id"] = hashlib.sha256(obj["conversation"].encode("utf-8")).digest()[:8].hex()
                 except Exception:
                     pass
             label = obj.get("label", {})
@@ -139,7 +139,7 @@ def _session_id_from_context(context_path: str) -> str:
     return context_path
 
 
-def sample_character(by_category: Dict[str, List[Dict]], per_bucket: int, session_max: int) -> List[Dict]:
+def sample_character(by_category: Dict[str, List[Dict]], per_bucket: int, session_max: int, used_ids: set) -> List[Dict]:
     sampled: List[Dict] = []
     session_counts: Dict[str, int] = {}
     for key in CATEGORY_KEYS:
@@ -153,6 +153,17 @@ def sample_character(by_category: Dict[str, List[Dict]], per_bucket: int, sessio
             session_id = _session_id_from_context(context_path)
             if session_counts.get(session_id, 0) >= session_max:
                 continue
+            # Ensure unique 16-char id per run (rehash with counter on collision)
+            conv = obj.get("conversation", "")
+            base_id = obj.get("id") or hashlib.sha256(conv.encode("utf-8")).digest()[:8].hex()
+            candidate_id = base_id
+            counter = 1
+            while candidate_id in used_ids:
+                candidate_id = hashlib.sha256((conv + f"#{counter}").encode("utf-8")).digest()[:8].hex()
+                counter += 1
+            obj["id"] = candidate_id
+            used_ids.add(candidate_id)
+
             sampled.append(obj)
             session_counts[session_id] = session_counts.get(session_id, 0) + 1
             taken_in_cat += 1
@@ -178,9 +189,10 @@ def main() -> None:
 
     by_char_category = build_buckets(args.input, args.characters)
 
+    used_ids = set()
     for char in args.characters:
         print(f"Character: {char}")
-        sampled = sample_character(by_char_category[char], args.per_bucket, args.session_max)
+        sampled = sample_character(by_char_category[char], args.per_bucket, args.session_max, used_ids)
         output_path = os.path.join(
             args.output_dir, f"{char.lower()}_approval_dataset_subset.json"
         )

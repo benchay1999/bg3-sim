@@ -243,6 +243,7 @@ def main() -> None:
     category_counts = {act: 0 for act in groups.keys()}  # samples written per act category
     session_counts: Dict[str, int] = {}
     written = 0
+    used_ids = set()
 
     with open(args.output, "w", encoding="utf-8") as out:
         for act, fpath in schedule:
@@ -286,8 +287,17 @@ def main() -> None:
                 if category_counts.get(act, 0) >= args.per_category:
                     # Category full; skip remaining from this act
                     continue
+                # Generate collision-checked short id (16 hex chars from 64-bit truncated SHA-256)
+                base_id = hashlib.sha256(conversation.encode("utf-8")).digest()[:8].hex()
+                candidate_id = base_id
+                counter = 1
+                while candidate_id in used_ids:
+                    candidate_id = hashlib.sha256((conversation + f"#{counter}").encode("utf-8")).digest()[:8].hex()
+                    counter += 1
+                used_ids.add(candidate_id)
+
                 obj: Dict[str, Any] = {
-                    "id": hashlib.sha256(conversation.encode("utf-8")).hexdigest(),
+                    "id": candidate_id,
                     "context": context_rel,
                     "conversation": conversation,
                     "label": label,
