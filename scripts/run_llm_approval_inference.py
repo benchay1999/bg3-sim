@@ -212,6 +212,22 @@ def main() -> None:
 
     persona_template = load_txt("prompt/prompt.txt")
 
+    # If output exists, read processed ids to support resuming/skipping
+    processed_ids: set[str] = set()
+    if os.path.exists(args.output):
+        try:
+            with open(args.output, "r", encoding="utf-8") as rf:
+                for line in rf:
+                    try:
+                        obj = json.loads(line)
+                        sid = obj.get("id")
+                        if isinstance(sid, str):
+                            processed_ids.add(sid)
+                    except Exception:
+                        continue
+        except Exception:
+            processed_ids = set()
+
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     os.makedirs(args.metrics_dir, exist_ok=True)
     # Open in append mode to persist progress across interruptions
@@ -225,7 +241,12 @@ def main() -> None:
     predicted_neutral_count: int = 0
 
     sent = 0
+    skipped = 0
     for sample in tqdm(samples):
+        sample_id: Optional[str] = sample.get("id") if isinstance(sample, dict) else None
+        if isinstance(sample_id, str) and sample_id in processed_ids:
+            skipped += 1
+            continue
         context_rel: str = sample.get("context", "")
         conversation_text: str = sample.get("conversation", "")
         label: Dict[str, Any] = sample.get("label", {})
@@ -294,6 +315,7 @@ def main() -> None:
             binary_correct = (binary_true == binary_pred)
 
         out_obj = {
+            "id": sample_id,
             "context": context_rel,
             "conversation": conversation_text,
             "label": label,
@@ -327,7 +349,7 @@ def main() -> None:
                 y_pred_bin.append(binary_pred)
 
     out_f.close()
-    print(f"Completed {sent} requests. Wrote: {args.output}")
+    print(f"Completed {sent} requests (skipped {skipped} already processed). Wrote: {args.output}")
 
     # Compute metrics
     try:

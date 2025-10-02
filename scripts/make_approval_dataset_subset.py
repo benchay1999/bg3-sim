@@ -6,7 +6,7 @@ import argparse
 from typing import Dict, List
 import hashlib
 
-DEFAULT_INPUT = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset.jsonl"
+DEFAULT_INPUT = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_with_id.jsonl"
 DEFAULT_OUTPUT_DIR = "result-dataset"
 
 # Context roots used in dataset `context` field
@@ -153,16 +153,22 @@ def sample_character(by_category: Dict[str, List[Dict]], per_bucket: int, sessio
             session_id = _session_id_from_context(context_path)
             if session_counts.get(session_id, 0) >= session_max:
                 continue
-            # Ensure unique 16-char id per run (rehash with counter on collision)
-            conv = obj.get("conversation", "")
-            base_id = obj.get("id") or hashlib.sha256(conv.encode("utf-8")).digest()[:8].hex()
-            candidate_id = base_id
-            counter = 1
-            while candidate_id in used_ids:
-                candidate_id = hashlib.sha256((conv + f"#{counter}").encode("utf-8")).digest()[:8].hex()
-                counter += 1
-            obj["id"] = candidate_id
-            used_ids.add(candidate_id)
+            # Use existing ID if present; only generate when missing.
+            if "id" in obj and isinstance(obj["id"], str) and obj["id"]:
+                # Preserve existing ID from input
+                candidate_id = obj["id"]
+                # Track it so generated IDs don't collide with it
+                used_ids.add(candidate_id)
+            else:
+                # Generate 16-char ID and resolve collisions only for newly generated IDs
+                conv = obj.get("conversation", "")
+                candidate_id = hashlib.sha256(conv.encode("utf-8")).digest()[:8].hex()
+                counter = 1
+                while candidate_id in used_ids:
+                    candidate_id = hashlib.sha256((conv + f"#{counter}").encode("utf-8")).digest()[:8].hex()
+                    counter += 1
+                obj["id"] = candidate_id
+                used_ids.add(candidate_id)
 
             sampled.append(obj)
             session_counts[session_id] = session_counts.get(session_id, 0) + 1
