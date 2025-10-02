@@ -6,7 +6,7 @@ import argparse
 from typing import Dict, List
 import hashlib
 
-DEFAULT_INPUT = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_with_id.jsonl"
+DEFAULT_INPUT = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_final.jsonl"
 DEFAULT_OUTPUT_DIR = "result-dataset"
 
 # Context roots used in dataset `context` field

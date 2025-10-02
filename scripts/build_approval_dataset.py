@@ -12,7 +12,7 @@ APPROVAL_DIR = "/nfs_edlab/wschay/bg3-sim/approval-paths"
 QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
 QA_CONTEXTS_DIR_ALT = "qa-context-rag"  # fallback if singular dir exists
 WORKSPACE_ROOT = "/home/wschay/bg3-sim"
-OUTPUT_PATH = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_with_id.jsonl"
+OUTPUT_PATH = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_final.jsonl"
 
 MAX_OUTPUT_SIZE_BYTES = 500 * 1024 * 1024 * 1024
 
@@ -155,7 +155,7 @@ def build_conversation_and_label(path_lines: List[str]) -> Optional[Tuple[str, D
     for idx, raw in enumerate(path_lines):
         line = raw
         # Skip pure check-result metadata lines like ":: True" / ":: False"
-        if re.match(r"^\s*::\s*(True|False)\s*$", line):
+        if re.match(r"^\s*:\s*(True|False)\s*$", line):
             continue
 
         text_part = line
