@@ -20,23 +20,23 @@ Features:
 
 Usage examples:
   # Full run (no sub-sampling; all four non-neutral categories included)
-  python scripts/cli_poll.py \
+  python src/cli_poll.py \
       --input /home/wschay/bg3-sim/test/1002_gpt-4o-mini_astarion_llm_approvals.jsonl \
       --output /home/wschay/bg3-sim/poll/astarion_cli_answers.jsonl \
       --base-dir /home/wschay/bg3-sim
 
   # Balanced sub-sample with 20 per class (total up to 80)
-  python scripts/cli_poll.py \
+  python src/cli_poll.py \
       --input /home/wschay/bg3-sim/test/1002_gpt-4o-mini_astarion_llm_approvals.jsonl \
       --output /home/wschay/bg3-sim/poll/astarion_cli_answers.jsonl \
       --base-dir /home/wschay/bg3-sim \
       --per_class 20 --seed 123
 
   # Resume a previous session (just re-run with same --output path)
-  python scripts/cli_poll.py --input ... --output /home/wschay/bg3-sim/poll/astarion_cli_answers.jsonl
+  python src/cli_poll.py --input ... --output /home/wschay/bg3-sim/poll/astarion_cli_answers.jsonl
 
   # Compute stats only (without running the poll)
-  python scripts/cli_poll.py --input ... --output /home/wschay/bg3-sim/poll/astarion_cli_answers.jsonl --stats-only
+  python src/cli_poll.py --input ... --output /home/wschay/bg3-sim/poll/astarion_cli_answers.jsonl --stats-only
 """
 
 import argparse
@@ -489,7 +489,7 @@ def main() -> None:
         return
 
     print(f"Starting poll: {total} questions (index {state['current_index']}..{total-1}).")
-    print("Answer with 1) Highly approve  2) Approve  3) Neutral  4) Disapprove  5) Highly disapprove")
+    print("Answer with 1) Highly disapprove  2) Disapprove  3) Neutral  4) Approve  5) Highly approve")
     print("Press 'q' then Enter to quit at any time (progress is saved).\n")
 
     try:
