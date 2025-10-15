@@ -23,13 +23,13 @@ Usage examples:
   python src/cli_poll.py \
       --input test/1002_gpt-4o-mini_astarion_llm_approvals.jsonl \
       --output poll/astarion_cli_answers.jsonl \
-      --base-dir /home/wschay/bg3-sim
+      --base-dir .
 
   # Balanced sub-sample with 20 per class (total up to 80)
   python src/persona_evaluation/cli_poll.py \
       --input test/astarion/1014_new_gpt-4o-mini_astarion_llm_approvals.jsonl \
       --output poll/astarion_cli_answers.jsonl \
-      --base-dir /home/wschay/bg3-sim \
+      --base-dir . \
       --per_class 20 --seed 123
 
   # Resume a previous session (just re-run with same --output path)
