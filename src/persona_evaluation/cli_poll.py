@@ -26,8 +26,8 @@ Usage examples:
       --base-dir /home/wschay/bg3-sim
 
   # Balanced sub-sample with 20 per class (total up to 80)
-  python src/cli_poll.py \
-      --input /home/wschay/bg3-sim/test/1002_gpt-4o-mini_astarion_llm_approvals.jsonl \
+  python src/persona_evaluation/cli_poll.py \
+      --input /home/wschay/bg3-sim/test/astarion/1014_new_gpt-4o-mini_astarion_llm_approvals.jsonl \
       --output /home/wschay/bg3-sim/poll/astarion_cli_answers.jsonl \
       --base-dir /home/wschay/bg3-sim \
       --per_class 20 --seed 123

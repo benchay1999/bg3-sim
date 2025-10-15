@@ -12,7 +12,7 @@ APPROVAL_DIR = "/nfs_edlab/wschay/bg3-sim/approval-paths"
 QA_CONTEXTS_DIR_PRIMARY = "qa-contexts-rag"
 QA_CONTEXTS_DIR_ALT = "qa-context-rag"  # fallback if singular dir exists
 WORKSPACE_ROOT = "/home/wschay/bg3-sim"
-OUTPUT_PATH = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_final.jsonl"
+OUTPUT_PATH = "/nfs_edlab/wschay/bg3-sim/approval-dataset/approval_dataset_251014.jsonl"
 
 MAX_OUTPUT_SIZE_BYTES = 500 * 1024 * 1024 * 1024
 
@@ -154,12 +154,24 @@ def build_conversation_and_label(path_lines: List[str]) -> Optional[Tuple[str, D
 
     for idx, raw in enumerate(path_lines):
         line = raw
-        # Skip pure check-result metadata lines like ":: True" / ":: False"
-        if re.match(r"^\s*:\s*(True|False)\s*$", line):
+        # Skip pure check-result metadata lines like ": True" / ": False"
+        if ": True" in line or ": False" in line:
             continue
-
+        
         text_part = line
         labels: Optional[Dict[str, int]] = None
+
+        # Join a line that begins with [description] NodeContext: to the previous line
+        # so that the node context annotation sits inline with the prior utterance.
+        # This triggers only when there is a previous line to join against.
+        stripped_for_nodecontext = text_part.lstrip()
+        if stripped_for_nodecontext.lower().startswith("[description] NodeContext:"):
+            if processed_lines:
+                # Append the node context inline to the last processed line
+                processed_lines[-1] = f"{processed_lines[-1].rstrip()} {stripped_for_nodecontext}"
+                if labels:
+                    approval_positions.append((len(processed_lines) - 1, labels))
+                continue
 
         if "||" in line:
             left, right = line.split("||", 1)
@@ -173,6 +185,26 @@ def build_conversation_and_label(path_lines: List[str]) -> Optional[Tuple[str, D
             if appr_match_inline:
                 text_part = line[: appr_match_inline.start()].rstrip()
                 labels = parse_approval_payload(appr_match_inline.group(1))
+
+        # If the current line has the same speaker as the previous line, merge them.
+        # Keep the speaker prefix only on the first line and append the latter content inline.
+        if processed_lines:
+            prev_line = processed_lines[-1]
+            prev_speaker_match = re.match(r"^([^:\[\n]+):\s*(.*)$", prev_line)
+            curr_speaker_match = re.match(r"^([^:\[\n]+):\s*(.*)$", text_part)
+            if prev_speaker_match and curr_speaker_match:
+                prev_speaker = prev_speaker_match.group(1).strip()
+                curr_speaker = curr_speaker_match.group(1).strip()
+                if prev_speaker == curr_speaker:
+                    # Merge by appending only the content (without the repeated speaker label)
+                    merged_lead = prev_line.rstrip()
+                    merged_tail = curr_speaker_match.group(2).lstrip()
+                    if merged_lead and not merged_lead.endswith((" ", "\t")):
+                        merged_lead += " "
+                    processed_lines[-1] = merged_lead + merged_tail
+                    if labels:
+                        approval_positions.append((len(processed_lines) - 1, labels))
+                    continue
 
         processed_lines.append(text_part)
 

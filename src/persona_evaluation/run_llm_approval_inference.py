@@ -249,6 +249,9 @@ def main() -> None:
             continue
         context_rel: str = sample.get("context", "")
         conversation_text: str = sample.get("conversation", "")
+        conversation_text = conversation_text.replace("\nNodeContext:", " || Context of this utterance:")
+        conversation_text = conversation_text.replace("\n[description] CinematicNodeContext:", " || Cinematic Description:")
+        conversation_text = conversation_text.replace("[description] CinematicNodeContext:", " || Cinematic Description:")
         label: Dict[str, Any] = sample.get("label", {})
 
         # Load context text from the QA JSON referenced by relative path
