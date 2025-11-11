@@ -45,11 +45,24 @@ def read_jsonl(path: str) -> List[Dict[str, Any]]:
 
 
 def parse_model_response(text: str) -> Dict[str, Optional[Any]]:
-    """Parse model output. Expect JSON with player_reason and player_approval.
+    """Parse model output. Expect <reasoning> block followed by JSON with player_reason and player_approval.
     If not valid JSON, try to extract approval category via keyword search.
     """
     approval = None
     reason = None
+    reasoning_text = None
+
+    # 0) Extract reasoning block if present
+    if isinstance(text, str):
+        reasoning_match = re.search(r"<reasoning>([\s\S]*?)</reasoning>", text, flags=re.IGNORECASE)
+        if reasoning_match:
+            reasoning_text = reasoning_match.group(1).strip()
+            # Remove reasoning block from text to focus on JSON extraction
+            text_without_reasoning = text[reasoning_match.end():]
+        else:
+            text_without_reasoning = text
+    else:
+        text_without_reasoning = text
 
     # --- Prefer structured extraction over keyword heuristics ---
     # 1) Try to parse JSON, including when wrapped in markdown code fences
@@ -64,8 +77,8 @@ def parse_model_response(text: str) -> Dict[str, Optional[Any]]:
     data_obj: Optional[Dict[str, Any]] = None
 
     # a) Extract first fenced code block and try JSON
-    if isinstance(text, str):
-        fenced_blocks = re.findall(r"```(?:\w+)?\s*([\s\S]*?)```", text, flags=re.IGNORECASE)
+    if isinstance(text_without_reasoning, str):
+        fenced_blocks = re.findall(r"```(?:\w+)?\s*([\s\S]*?)```", text_without_reasoning, flags=re.IGNORECASE)
         for block in fenced_blocks:
             candidate = block.strip()
             # If block isn't pure JSON, try to locate the outermost braces
@@ -77,13 +90,13 @@ def parse_model_response(text: str) -> Dict[str, Optional[Any]]:
             if data_obj is not None:
                 break
 
-    # b) If no fenced JSON, try to find an object within braces in the whole text
-    if data_obj is None and isinstance(text, str) and ("{" in text and "}" in text):
-        brace_match = re.search(r"\{[\s\S]*\}", text)
+    # b) If no fenced JSON, try to find an object within braces in the text after reasoning
+    if data_obj is None and isinstance(text_without_reasoning, str) and ("{" in text_without_reasoning and "}" in text_without_reasoning):
+        brace_match = re.search(r"\{[\s\S]*\}", text_without_reasoning)
         if brace_match:
             data_obj = try_parse_json(brace_match.group(0))
 
-    # c) As a last resort, try the whole text
+    # c) As a last resort, try the whole original text
     if data_obj is None and isinstance(text, str):
         data_obj = try_parse_json(text)
 
@@ -120,6 +133,7 @@ def parse_model_response(text: str) -> Dict[str, Optional[Any]]:
     return {
         "player_reason": reason,
         "player_approval": approval,
+        "reasoning": reasoning_text,
     }
 
 
@@ -266,28 +280,46 @@ def main() -> None:
 
         prompt_text = build_prompt_from_template(persona_template, args.character, context_text, conversation_text)
 
-        try:
-            kwargs = {}
-            if args.api_base:
-                kwargs["api_base"] = args.api_base
-            if args.api_key:
-                kwargs["api_key"] = args.api_key
-            if args.timeout is not None:
-                kwargs["timeout"] = args.timeout
-            resp = litellm_completion(
-                model=args.model,
-                messages=[
-                    {"role": "user", "content": prompt_text},
-                ],
-                max_completion_tokens=1000,
-                **kwargs
-            )
-            content = resp.choices[0].message["content"].strip()
-        except Exception as e:
-            content = f"ERROR: {e}"
+        # Retry logic: up to 5 attempts
+        max_retries = 5
+        content = None
+        last_error = None
+        
+        for attempt in range(max_retries):
+            try:
+                kwargs = {}
+                if args.api_base:
+                    kwargs["api_base"] = args.api_base
+                if args.api_key:
+                    kwargs["api_key"] = args.api_key
+                if args.timeout is not None:
+                    kwargs["timeout"] = args.timeout
+                resp = litellm_completion(
+                    model=args.model,
+                    messages=[
+                        {"role": "user", "content": prompt_text},
+                    ],
+                    max_completion_tokens=1000,
+                    **kwargs
+                )
+                content = resp.choices[0].message["content"].strip()
+                if content == "":
+                    raise Exception("Empty response")
+                break  # Success, exit retry loop
+            except Exception as e:
+                last_error = e
+                if attempt < max_retries - 1:
+                    # Wait before retrying (exponential backoff: 1s, 2s, 4s, 8s)
+                    retry_delay = 2 ** attempt
+                    time.sleep(retry_delay)
+                else:
+                    # Final attempt failed
+                    content = f"ERROR: {e}"
         parsed = parse_model_response(content)
         predicted_approval_raw = parsed.get("player_approval")
         predicted_category = canonicalize_category(predicted_approval_raw)
+        predicted_reason = parsed.get("player_reason")
+        reasoning_block = parsed.get("reasoning")
 
         if predicted_category == "Neutral":
             predicted_neutral_count += 1
@@ -324,6 +356,8 @@ def main() -> None:
             "label": label,
             "model": args.model,
             "response": content,
+            "reasoning": reasoning_block,
+            "player_reason": predicted_reason,
             "character": args.character,
             "ground_truth_category": ground_truth_category,
             "predicted_approval": predicted_category,
