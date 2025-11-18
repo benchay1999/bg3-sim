@@ -161,10 +161,11 @@ def compute_selection(
     per_class: int,
     rng: random.Random,
     include_categories: List[str],
+    default_character: str,
 ) -> List[str]:
     by_cat: Dict[str, List[Dict[str, Any]]] = {c: [] for c in include_categories}
     for r in rows:
-        cat = derive_ground_truth_category(r, default_character="Astarion")
+        cat = derive_ground_truth_category(r, default_character=default_character)
         if cat in by_cat:
             by_cat[cat].append(r)
 
@@ -395,6 +396,20 @@ def compute_metrics(answers: List[Dict[str, Any]], metrics_dir: str) -> None:
         print(f"Saved binary confusion matrix to {cm_bin_path}")
 
 
+def detect_character_from_rows(rows: List[Dict[str, Any]]) -> str:
+    """Detect the character from input rows. Returns the most common character, or 'Astarion' as fallback."""
+    character_counts: Dict[str, int] = {}
+    for r in rows:
+        char = r.get("character")
+        if isinstance(char, str) and char.strip():
+            char = char.strip()
+            character_counts[char] = character_counts.get(char, 0) + 1
+    if character_counts:
+        # Return the most common character
+        return max(character_counts.items(), key=lambda x: x[1])[0]
+    return "Astarion"  # Fallback
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run an interactive CLI poll with resume and balanced sampling.")
     parser.add_argument("--input", required=True, help="Path to input JSONL file.")
@@ -421,6 +436,10 @@ def main() -> None:
 
     # Load input rows
     rows = read_jsonl(args.input)
+    # Detect character from input data
+    detected_character = detect_character_from_rows(rows)
+    print(f"Detected character: {detected_character}")
+    
     # Pre-compute a map by id for fast lookup
     id_to_row: Dict[str, Dict[str, Any]] = {}
     usable_rows: List[Dict[str, Any]] = []
@@ -428,7 +447,7 @@ def main() -> None:
         sid = r.get("id")
         if isinstance(sid, str):
             # Filter to only rows with a usable ground-truth among four classes
-            cat = derive_ground_truth_category(r, default_character="Astarion")
+            cat = derive_ground_truth_category(r, default_character=detected_character)
             if cat in CANONICAL_ORDER:
                 id_to_row[sid] = r
                 usable_rows.append(r)
@@ -468,6 +487,7 @@ def main() -> None:
             per_class=args.per_class,
             rng=rng,
             include_categories=list(CANONICAL_ORDER),
+            default_character=detected_character,
         )
         current_index = 0
         while current_index < len(selected_ids) and selected_ids[current_index] in answered_ids:
@@ -508,7 +528,7 @@ def main() -> None:
             conversation_text = row.get("conversation", "")
             question_text = build_question(context_text, conversation_text)
 
-            gt_category = derive_ground_truth_category(row, default_character="Astarion") or ""
+            gt_category = derive_ground_truth_category(row, default_character=detected_character) or ""
 
             print(f"[{idx+1}/{total}] id={sid}")
             print(question_text)
